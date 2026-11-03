@@ -1,0 +1,262 @@
+
+/* ========================================
+   V4.8.1 MOBILE TRAINING LAYOUT
+   Layout-only update.
+   Existing games, logic and data preserved.
+   ======================================== */
+
+body:has(#trainSession:not(.hidden)) {
+  overflow: hidden;
+}
+
+/* Remove non-training navigation while playing */
+body:has(#trainSession:not(.hidden)) > header,
+body:has(#trainSession:not(.hidden)) > nav {
+  display: none;
+}
+
+/* Full viewport training area */
+body:has(#trainSession:not(.hidden)) #train {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  padding: env(safe-area-inset-top) 0
+           env(safe-area-inset-bottom);
+  overflow: hidden;
+  background: var(--bg);
+}
+
+#trainSession:not(.hidden) {
+  display: grid;
+  grid-template-rows: auto minmax(0,1fr) auto;
+  gap: 7px;
+  height: 100%;
+  padding: 7px 10px;
+  min-height: 0;
+}
+
+/* Compact session timer */
+#trainSession > .card:first-child {
+  margin: 0;
+  padding: 8px 13px;
+  border-radius: 12px;
+}
+
+#trainSession #sessionClock {
+  margin: 4px 0;
+  font-size: 27px;
+}
+
+#trainSession > .card:first-child .statLine {
+  font-size: 12px;
+  padding: 4px 0;
+}
+
+#trainSession > .card:first-child .progress {
+  height: 4px;
+}
+
+/* Main exercise panel */
+#trainSession > .card:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+#exerciseName {
+  text-align: center;
+  font-size: clamp(18px,5vw,23px);
+  margin: 0 0 5px;
+}
+
+#trainSession > .card:nth-child(2) > .statLine {
+  padding: 4px 0;
+  font-size: 12px;
+}
+
+#trainSession #exerciseBar {
+  height: 100%;
+}
+
+#trainSession .rulePanel {
+  margin: 6px 0;
+  padding: 7px 9px;
+  flex-shrink: 0;
+  max-height: 46px;
+  overflow: hidden;
+}
+
+#trainSession .rule {
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+/* Main target and game area */
+#trainSession #playArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-height: 0;
+  padding: 2px 0;
+}
+
+#trainSession #gameTarget {
+  font-size: clamp(42px,12vw,68px);
+  line-height: 1.1;
+  margin: 5px 0;
+}
+
+#trainSession #gameProgress {
+  font-size: 14px;
+  margin: 5px 0 10px;
+}
+
+#trainSession #gameControls {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 9px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+#trainSession #gameControls button {
+  min-width: 0;
+  min-height: 70px;
+  padding: 12px 5px;
+  font-size: clamp(16px,4.5vw,21px);
+  border-radius: 14px;
+  touch-action: manipulation;
+}
+
+/* Large scoring entry */
+#trainSession #scoreInput {
+  width: 100%;
+  min-width: 0;
+  min-height: 70px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 14px;
+}
+
+/* Straight: scores remain visible */
+#trainSession #straightDisplay {
+  flex-shrink: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#trainSession .straightScores {
+  margin: 5px 0;
+  gap: 7px;
+}
+
+#trainSession .straightScore {
+  padding: 7px 4px;
+}
+
+#trainSession .straightScore strong {
+  font-size: 27px;
+}
+
+#trainSession .straightHeader,
+#trainSession .straightNote {
+  margin: 3px 0;
+  font-size: 10px;
+}
+
+#trainSession .targetGrid {
+  margin: 5px 0;
+  gap: 3px;
+}
+
+#trainSession .targetGrid div {
+  padding: 5px 2px;
+}
+
+#trainSession .targetGrid strong {
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+/* Hide the long exercise list while playing */
+#trainSession > .card:nth-child(3) {
+  display: none;
+}
+
+/* Undo and complete controls */
+#trainSession > .card:nth-child(2) > .row {
+  margin: 6px 0;
+  flex-shrink: 0;
+}
+
+#trainSession #undoButton {
+  min-height: 43px;
+  font-size: 15px;
+}
+
+#trainSession #completeButton {
+  min-height: 52px;
+  font-size: 17px;
+  flex-shrink: 0;
+  padding: 9px;
+}
+
+/* Bottom session controls */
+#trainSession > .card:last-child {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 6px 9px;
+  border-radius: 12px;
+}
+
+#pauseButton {
+  min-height: 45px;
+  font-size: 15px;
+}
+
+#trainSession > .card:last-child .linklike {
+  min-height: 45px;
+  font-size: 12px;
+}
+
+/* Small-screen adjustments */
+@media (max-height: 730px) {
+  #trainSession:not(.hidden) {
+    gap: 4px;
+    padding: 5px 8px;
+  }
+
+  #trainSession > .card:nth-child(2) {
+    padding: 8px;
+  }
+
+  #trainSession .rulePanel {
+    max-height: 35px;
+    margin: 4px 0;
+  }
+
+  #trainSession #gameControls button,
+  #trainSession #scoreInput {
+    min-height: 58px;
+  }
+
+  #trainSession #completeButton {
+    min-height: 45px;
+  }
+
+  #trainSession #gameTarget {
+    font-size: 43px;
+  }
+}
