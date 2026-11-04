@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#101820">
-<title>Darts Coach V4.8.1</title>
+<title>Darts Coach V4.8.2</title>
 <style>
 :root{
  --bg:#101820;--panel:#1d2b39;--panel2:#283b4c;
@@ -84,7 +84,7 @@ input[type=file]{max-width:100%;margin:12px 0}
 .backupHelp{color:var(--muted);font-size:12px;line-height:1.6}
 .backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
 
-/* V4.8.1 FULL-SCREEN TRAINING */
+/* FULL-SCREEN TRAINING */
 body.trainingActive{overflow:hidden}
 body.trainingActive>header,
 body.trainingActive>nav{display:none}
@@ -100,9 +100,7 @@ body.trainingActive #train{
 }
 #trainSession>.card{margin:0;border-radius:12px}
 #trainSession>.card:first-child{padding:7px 12px}
-#trainSession>.card:first-child .statLine{
- padding:3px 0;font-size:12px
-}
+#trainSession>.card:first-child .statLine{padding:3px 0;font-size:12px}
 #sessionClock{font-size:27px;margin:4px 0}
 #trainSession>.card:first-child .progress{height:4px}
 #exercisePanel{
@@ -113,12 +111,8 @@ body.trainingActive #train{
  font-size:clamp(18px,5vw,23px);
  margin:0 0 5px;text-align:center;flex-shrink:0
 }
-#exercisePanel>.statLine{
- padding:4px 0;font-size:12px;flex-shrink:0
-}
-#exercisePanel>.progress{
- height:5px;flex-shrink:0
-}
+#exercisePanel>.statLine{padding:4px 0;font-size:12px;flex-shrink:0}
+#exercisePanel>.progress{height:5px;flex-shrink:0}
 #exercisePanel .rulePanel{
  margin:6px 0;padding:7px 9px;
  flex-shrink:0;max-height:42px;overflow:hidden
@@ -132,9 +126,7 @@ body.trainingActive #train{
  font-size:clamp(43px,12vw,66px);
  line-height:1.08;margin:4px 0
 }
-#gameProgress{
- text-align:center;font-size:14px;margin:4px 0 9px
-}
+#gameProgress{text-align:center;font-size:14px;margin:4px 0 9px}
 #gameControls{
  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
  gap:9px;width:100%;margin:6px 0
@@ -161,8 +153,7 @@ body.trainingActive #train{
 #undoRow{margin:5px 0;flex-shrink:0}
 #undoButton{min-height:42px;font-size:15px}
 #completeButton{
- min-height:51px;flex-shrink:0;
- padding:8px;font-size:17px
+ min-height:51px;flex-shrink:0;padding:8px;font-size:17px
 }
 #sessionStepsCard{display:none}
 #sessionFooter{
@@ -230,7 +221,7 @@ body.assessing{overflow:hidden}
 
 <header>
 <h1>🎯 DARTS COACH</h1>
-<small>PERSONALISED TRAINING · V4.8.1</small>
+<small>PERSONALISED TRAINING · V4.8.2</small>
 </header>
 
 <nav>
@@ -355,12 +346,19 @@ Pause Session
 <div class="aMetric"><small>Progress</small><strong id="aCount">0/30</strong></div>
 </div>
 <div class="aProgress">
-<div class="aProgressText"><span id="assessmentProgress">Ready</span><span id="aPercent">0%</span></div>
+<div class="aProgressText">
+<span id="assessmentProgress">Ready</span>
+<span id="aPercent">0%</span>
+</div>
 <div class="progress"><div id="aBar"></div></div>
 </div>
 <div class="aBoardZone">
-<svg id="board" viewBox="-215 -215 430 430" xmlns="http://www.w3.org/2000/svg">
-<g id="segments"></g><g id="rings"></g><g id="numbers"></g><g id="markers"></g>
+<svg id="board" viewBox="-215 -215 430 430"
+ xmlns="http://www.w3.org/2000/svg">
+<g id="segments"></g>
+<g id="rings"></g>
+<g id="numbers"></g>
+<g id="markers"></g>
 </svg>
 </div>
 <div class="aBottom">
@@ -379,10 +377,22 @@ Pause Session
 </div>
 
 <section id="progress" class="hidden">
-<div class="card"><h2>Training Progress</h2><div id="progressSummary"></div></div>
-<div class="card"><h2>Four-Week Training Blocks</h2><div id="blockReport"></div></div>
-<div class="card"><h2>Recent Sessions</h2><div id="sessionHistory"></div></div>
-<div class="card"><h2>Recent Games</h2><div id="gameHistory"></div></div>
+<div class="card">
+<h2>Training Progress</h2>
+<div id="progressSummary"></div>
+</div>
+<div class="card">
+<h2>Four-Week Training Blocks</h2>
+<div id="blockReport"></div>
+</div>
+<div class="card">
+<h2>Recent Sessions</h2>
+<div id="sessionHistory"></div>
+</div>
+<div class="card">
+<h2>Recent Games</h2>
+<div id="gameHistory"></div>
+</div>
 </section>
 
 <section id="settings" class="hidden">
@@ -392,10 +402,13 @@ Pause Session
 <div class="dayRow" id="days"></div>
 <p id="dayStatus" class="muted"></p>
 </div>
+
 <div class="card">
 <h2>Training Data</h2>
 <p class="muted">Your data is stored locally in this browser.</p>
-<div class="info">Backups include assessments, sessions, games, coaching history and unfinished training.</div>
+<div class="info">
+Backups include assessments, sessions, games, coaching history and unfinished training.
+</div>
 <h3>1. Create Backup</h3>
 <button class="primary" onclick="generateBackup()">Generate Backup</button>
 <div id="backupOutput" class="hidden">
@@ -406,108 +419,192 @@ Pause Session
 <button onclick="copyBackup()">Copy Backup</button>
 <button class="secondary" onclick="selectBackup()">Select All</button>
 </div>
-<p class="backupHelp">If copying is blocked, use Select All and the iPhone Copy menu.</p>
+<p class="backupHelp">
+If copying is blocked, use Select All and the iPhone Copy menu.
+</p>
 <div id="backupStatus" class="backupStatus" aria-live="polite"></div>
-<button class="secondary" style="width:100%" onclick="downloadBackup()">Try Download File</button>
+<button class="secondary" style="width:100%"
+ onclick="downloadBackup()">Try Download File</button>
 </div>
+
 <hr class="backupDivider">
+
 <h3>2. Restore Backup</h3>
-<p class="muted">Paste a previous JSON backup. Restoring replaces current saved data.</p>
-<textarea id="restoreText" class="backupText" placeholder="Paste your JSON backup here"
- spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off"></textarea>
-<button class="secondary" style="width:100%" onclick="restoreFromText()">
-Restore from Pasted Text
-</button>
+<p class="muted">
+Paste a previous JSON backup. Restoring replaces current saved data.
+</p>
+<textarea id="restoreText" class="backupText"
+ placeholder="Paste your JSON backup here" spellcheck="false"
+ autocapitalize="off" autocomplete="off" autocorrect="off"></textarea>
+<button class="secondary" style="width:100%"
+ onclick="restoreFromText()">Restore from Pasted Text</button>
 <p class="muted">Or restore a saved JSON file:</p>
-<input type="file" accept=".json,application/json" onchange="importData(event)">
-<div id="restoreStatus" class="backupStatus" aria-live="polite">No backup restored.</div>
+<input type="file" accept=".json,application/json"
+ onchange="importData(event)">
+<div id="restoreStatus" class="backupStatus" aria-live="polite">
+No backup restored.
 </div>
+</div>
+
 <div class="card">
 <h2>Coach Status</h2>
 <div id="coachSystemStatus"></div>
-<p class="muted">Coaching decisions happen automatically. Difficulty tiers and performance analysis remain hidden during training.</p>
+<p class="muted">
+Coaching decisions happen automatically. Difficulty tiers and
+performance analysis remain hidden during training.
+</p>
 </div>
 </section>
 
 <script>
 "use strict";
 
+/* STORAGE: UNCHANGED FROM V4.8.1 */
 const KEY="dartsCoachV4";
 const OLD_KEYS=["dartsCoachV3","dartsCoachV2"];
+
 const $=id=>document.getElementById(id);
+
 const STAGES=["scoring","doubles","bull","checkout"];
+
 const STAGE_NAMES={
- scoring:"Scoring Assessment",doubles:"Doubles Assessment",
- bull:"Bull Accuracy",checkout:"Checkout Assessment"
+ scoring:"Scoring Assessment",
+ doubles:"Doubles Assessment",
+ bull:"Bull Accuracy",
+ checkout:"Checkout Assessment"
 };
+
 const CHECKOUT_TARGETS=[41,42,43,44,45,46,47,48,49,50];
 const STRAIGHT_TARGETS=[20,19,18,17,16];
-const ORDER=[20,1,18,4,13,6,10,15,2,17,3,19,7,16,8,11,14,9,12,5];
-const DAY_NAMES=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+const ORDER=[
+ 20,1,18,4,13,6,10,15,2,17,
+ 3,19,7,16,8,11,14,9,12,5
+];
+
+const DAY_NAMES=[
+ "Sunday","Monday","Tuesday","Wednesday",
+ "Thursday","Friday","Saturday"
+];
+
 const SKILL_KEYS=["scoring","doubles","checkout"];
 const FOCUS=["scoring","doubles","checkout","accuracy","pressure"];
-const DAY_MS=86400000;
-const R_DOUBLE_OUT=170,R_DOUBLE_IN=153;
-const R_TREBLE_OUT=118,R_TREBLE_IN=101;
-const R_BULL_OUT=30,R_BULL_IN=15;
 
-function num(v){const n=Number(v);return Number.isFinite(n)?n:0}
-function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
-function clone(v){return JSON.parse(JSON.stringify(v))}
+const DAY_MS=86400000;
+
+const R_DOUBLE_OUT=170;
+const R_DOUBLE_IN=153;
+const R_TREBLE_OUT=118;
+const R_TREBLE_IN=101;
+const R_BULL_OUT=30;
+const R_BULL_IN=15;
+
+/* GENERAL UTILITIES */
+
+function num(v){
+ const n=Number(v);
+ return Number.isFinite(n)?n:0;
+}
+
+function clamp(v,a,b){
+ return Math.max(a,Math.min(b,v));
+}
+
+function clone(v){
+ return JSON.parse(JSON.stringify(v));
+}
+
 function esc(v){
  return String(v).replace(/[&<>"']/g,c=>({
-  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  "&":"&amp;",
+  "<":"&lt;",
+  ">":"&gt;",
+  '"':"&quot;",
+  "'":"&#39;"
  })[c]);
 }
+
 function dateKey(t=Date.now()){
  const d=new Date(t);
- return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+
- String(d.getDate()).padStart(2,"0");
+ return d.getFullYear()+"-"+
+  String(d.getMonth()+1).padStart(2,"0")+"-"+
+  String(d.getDate()).padStart(2,"0");
 }
+
 function fmt(seconds){
  const s=Math.max(0,Math.floor(seconds));
  return String(Math.floor(s/60)).padStart(2,"0")+":"+
- String(s%60).padStart(2,"0");
+  String(s%60).padStart(2,"0");
 }
+
 function weekStart(t){
- const d=new Date(t);d.setHours(0,0,0,0);
+ const d=new Date(t);
+ d.setHours(0,0,0,0);
  d.setDate(d.getDate()-(d.getDay()+6)%7);
  return d.getTime();
 }
+
 function addDays(t,n){
- const d=new Date(t);d.setDate(d.getDate()+n);return d.getTime();
+ const d=new Date(t);
+ d.setDate(d.getDate()+n);
+ return d.getTime();
 }
+
 function formatDate(t){
  return new Date(t).toLocaleDateString("en-GB",{
   day:"numeric",month:"short",year:"numeric"
  });
 }
+
+/* DATA MODEL */
+
 function newAssessment(){
  return{
-  version:2,scoring:[],doubles:[],bull:[],checkout:[],
-  finished:false,completedAt:null,profile:null
+  version:2,
+  scoring:[],
+  doubles:[],
+  bull:[],
+  checkout:[],
+  finished:false,
+  completedAt:null,
+  profile:null
  };
 }
+
 function blank(){
  return{
-  sessions:[],games:[],days:[1,2,3,4,5],
-  bestDouble:0,bestCheckout:0,doublesHit:0,doublesThrown:0,
+  sessions:[],
+  games:[],
+  days:[1,2,3,4,5],
+  bestDouble:0,
+  bestCheckout:0,
+  doublesHit:0,
+  doublesThrown:0,
   baseline:null,
   skills:{
    scoring:{level:7,results:[]},
    doubles:{level:7,results:[]},
    checkout:{level:7,results:[]}
   },
-  activeSession:null,game:null,assessment:newAssessment(),
-  assessmentHistory:[],legacyCheckoutAttempts:[],
+  activeSession:null,
+  game:null,
+  assessment:newAssessment(),
+  assessmentHistory:[],
+  legacyCheckoutAttempts:[],
   coach:{
-   version:2,firstStarted:null,reviews:[],
-   lastTierChanges:{},completedBlocks:[],
-   lastReviewedWeek:null,lastUsedEvidence:{},
-   lastEvidenceCount:{},lastChangeEvidence:{}
+   version:3,
+   firstStarted:null,
+   reviews:[],
+   lastTierChanges:{},
+   completedBlocks:[],
+   lastReviewedWeek:null,
+   lastUsedEvidence:{},
+   lastEvidenceCount:{},
+   lastChangeEvidence:{}
   }
  };
 }
+
 function normaliseData(d){
  if(!Array.isArray(d.sessions))d.sessions=[];
  if(!Array.isArray(d.games))d.games=[];
@@ -515,19 +612,39 @@ function normaliseData(d){
  if(!d.skills||typeof d.skills!=="object")d.skills={};
 
  for(const k of SKILL_KEYS){
-  d.skills[k]=Object.assign({level:7,results:[]},d.skills[k]||{});
-  if(!Array.isArray(d.skills[k].results))d.skills[k].results=[];
-  d.skills[k].level=clamp(Math.round(num(d.skills[k].level)||7),1,7);
+  d.skills[k]=Object.assign(
+   {level:7,results:[]},d.skills[k]||{}
+  );
+  if(!Array.isArray(d.skills[k].results)){
+   d.skills[k].results=[];
+  }
+  d.skills[k].level=clamp(
+   Math.round(num(d.skills[k].level)||7),1,7
+  );
  }
- if(!Array.isArray(d.assessmentHistory))d.assessmentHistory=[];
- if(!Array.isArray(d.legacyCheckoutAttempts))d.legacyCheckoutAttempts=[];
- d.assessment=Object.assign(newAssessment(),d.assessment||{});
+
+ if(!Array.isArray(d.assessmentHistory)){
+  d.assessmentHistory=[];
+ }
+ if(!Array.isArray(d.legacyCheckoutAttempts)){
+  d.legacyCheckoutAttempts=[];
+ }
+
+ d.assessment=Object.assign(
+  newAssessment(),d.assessment||{}
+ );
+
  for(const s of STAGES){
-  if(!Array.isArray(d.assessment[s]))d.assessment[s]=[];
+  if(!Array.isArray(d.assessment[s])){
+   d.assessment[s]=[];
+  }
  }
 
  const attempts=d.assessment.checkout;
- if(attempts.some((a,i)=>!a||a.target!==CHECKOUT_TARGETS[i])){
+
+ if(attempts.some((a,i)=>
+  !a||a.target!==CHECKOUT_TARGETS[i]
+ )){
   d.legacyCheckoutAttempts.push({
    savedAt:Date.now(),
    reason:"Previous checkout target sequence",
@@ -540,28 +657,44 @@ function normaliseData(d){
  }
 
  d.coach=Object.assign(blank().coach,d.coach||{});
- if(!Array.isArray(d.coach.reviews))d.coach.reviews=[];
- if(!Array.isArray(d.coach.completedBlocks))d.coach.completedBlocks=[];
- for(const f of [
-  "lastTierChanges","lastUsedEvidence","lastEvidenceCount","lastChangeEvidence"
- ]){
-  if(!d.coach[f]||typeof d.coach[f]!=="object")d.coach[f]={};
+
+ if(!Array.isArray(d.coach.reviews)){
+  d.coach.reviews=[];
  }
+ if(!Array.isArray(d.coach.completedBlocks)){
+  d.coach.completedBlocks=[];
+ }
+
+ for(const f of [
+  "lastTierChanges",
+  "lastUsedEvidence",
+  "lastEvidenceCount",
+  "lastChangeEvidence"
+ ]){
+  if(!d.coach[f]||typeof d.coach[f]!=="object"){
+   d.coach[f]={};
+  }
+ }
+
  if(num(d.coach.version)<2){
-  d.coach.version=2;
   d.coach.lastReviewedWeek=weekStart(Date.now());
   d.coach.lastUsedEvidence={};
   d.coach.lastEvidenceCount={};
   d.coach.lastChangeEvidence={};
  }
+
+ d.coach.version=3;
  return d;
 }
+
 function load(){
  for(const key of [KEY,...OLD_KEYS]){
   try{
    const obj=JSON.parse(localStorage.getItem(key));
    if(obj&&typeof obj==="object"&&!Array.isArray(obj)){
-    return normaliseData(Object.assign(blank(),obj));
+    return normaliseData(
+     Object.assign(blank(),obj)
+    );
    }
   }catch(e){}
  }
@@ -569,8 +702,10 @@ function load(){
 }
 
 let data=load();
-let activeStage=null,currentTab="home";
-let activeGame=null,undoSnapshot=null;
+let activeStage=null;
+let currentTab="home";
+let activeGame=null;
+let undoSnapshot=null;
 
 function save(render=true){
  try{
@@ -580,98 +715,235 @@ function save(render=true){
  }
  if(render)renderAll();
 }
+
 function show(id){
  currentTab=id;
- for(const tab of ["home","train","assess","progress","settings"]){
+
+ for(const tab of [
+  "home","train","assess","progress","settings"
+ ]){
   $(tab).classList.toggle("hidden",tab!==id);
   $("nav"+tab.charAt(0).toUpperCase()+tab.slice(1))
    .classList.toggle("selected",tab===id);
  }
+
  if(id==="progress")checkCompletedBlocks();
+
  renderAll();
  window.scrollTo(0,0);
 }
 
 /* PERFORMANCE DATA */
+
 function gameTime(g){
  if(num(g.at)>0)return num(g.at);
+
  if(g.day&&/^\d{4}-\d{2}-\d{2}$/.test(g.day)){
   const t=new Date(g.day+"T12:00:00").getTime();
   if(Number.isFinite(t))return t;
  }
+
  if(g.date){
   const t=new Date(g.date).getTime();
   if(Number.isFinite(t))return t;
  }
+
  return 0;
 }
+
+function isBenchmark(g){
+ /* Old V4.8.1 records remain eligible.
+    New, manually stopped games are excluded. */
+ return g.benchmark!==false;
+}
+
+function survivalMode(g){
+ return g.variant==="singles"?"singles":"doubles";
+}
+
 function collectSkillData(){
- const result={scoring:[],doubles:[],checkout:[]};
+ const result={
+  scoring:[],
+  doubles:[],
+  checkout:[]
+ };
+
  for(let i=0;i<data.games.length;i++){
-  const g=data.games[i],name=g.name||g.mode,time=gameTime(g);
-  if(!time)continue;
+  const g=data.games[i];
+  const name=g.name||g.mode;
+  const time=gameTime(g);
+
+  if(!time||!isBenchmark(g))continue;
 
   if(name==="Scoring Challenge"||name==="scoring"){
    const visits=num(g.visits);
-   if(visits>=10)result.scoring.push({
-    time,value:num(g.points)/visits,volume:visits*3,
-    points:num(g.points),visits,extra:!!g.extra,id:i
-   });
+
+   if(visits>=10){
+    result.scoring.push({
+     time,
+     value:num(g.points)/visits,
+     volume:visits*3,
+     points:num(g.points),
+     visits,
+     extra:!!g.extra,
+     id:i
+    });
+   }
   }
-  if(name==="Doubles Survival"||name==="doubles"){
+
+  if(
+   (name==="Doubles Survival"||name==="doubles")&&
+   survivalMode(g)==="doubles"
+  ){
    const thrown=num(g.thrown);
-   if(thrown>0)result.doubles.push({
-    time,value:100*num(g.hits)/thrown,volume:thrown,
-    hits:num(g.hits),extra:!!g.extra,id:i
-   });
+
+   if(thrown>=9){
+    result.doubles.push({
+     time,
+     value:100*num(g.hits)/thrown,
+     volume:thrown,
+     hits:num(g.hits),
+     extra:!!g.extra,
+     id:i
+    });
+   }
   }
+
   if(name==="Checkout Climb"){
    const attempts=num(g.success)+num(g.fail);
-   if(attempts>0)result.checkout.push({
-    time,value:100*num(g.success)/attempts,
-    volume:attempts,hits:num(g.success),extra:!!g.extra,id:i
-   });
+
+   if(attempts>=3){
+    result.checkout.push({
+     time,
+     value:100*num(g.success)/attempts,
+     volume:attempts,
+     hits:num(g.success),
+     extra:!!g.extra,
+     id:i
+    });
+   }
   }
  }
+
  for(const key of SKILL_KEYS){
-  result[key].sort((a,b)=>a.time-b.time||a.id-b.id);
+  result[key].sort(
+   (a,b)=>a.time-b.time||a.id-b.id
+  );
  }
+
  return result;
 }
+
+function collectSinglesData(){
+ const rows=[];
+
+ for(let i=0;i<data.games.length;i++){
+  const g=data.games[i];
+
+  if(
+   g.name!=="Doubles Survival"||
+   survivalMode(g)!=="singles"||
+   !isBenchmark(g)
+  )continue;
+
+  const thrown=num(g.thrown);
+  const time=gameTime(g);
+
+  if(!time||thrown<9)continue;
+
+  rows.push({
+   time,
+   volume:thrown,
+   hits:num(g.hits),
+   extra:!!g.extra,
+   id:i
+  });
+ }
+
+ rows.sort((a,b)=>a.time-b.time||a.id-b.id);
+ return rows;
+}
+
 function metric(rows,key){
  if(!rows.length)return null;
+
  if(key==="scoring"){
-  const visits=rows.reduce((n,r)=>n+r.visits,0);
-  const points=rows.reduce((n,r)=>n+r.points,0);
+  const visits=rows.reduce(
+   (n,r)=>n+r.visits,0
+  );
+  const points=rows.reduce(
+   (n,r)=>n+r.points,0
+  );
   return visits?points/visits:null;
  }
- const volume=rows.reduce((n,r)=>n+r.volume,0);
- const hits=rows.reduce((n,r)=>n+r.hits,0);
+
+ const volume=rows.reduce(
+  (n,r)=>n+r.volume,0
+ );
+ const hits=rows.reduce(
+  (n,r)=>n+r.hits,0
+ );
+
  return volume?100*hits/volume:null;
 }
+
 function evidence(rows,key){
- const min={scoring:150,doubles:100,checkout:30}[key];
- const volume=rows.reduce((n,r)=>n+r.volume,0);
- return{count:rows.length,volume,ready:rows.length>=5&&volume>=min};
+ const min={
+  scoring:150,
+  doubles:100,
+  checkout:30
+ }[key];
+
+ const volume=rows.reduce(
+  (n,r)=>n+r.volume,0
+ );
+
+ return{
+  count:rows.length,
+  volume,
+  ready:rows.length>=5&&volume>=min
+ };
 }
+
 function skillStatus(key,results){
- const rows=results[key],recent=rows.slice(-5),earlier=rows.slice(-10,-5);
- if(!evidence(recent,key).ready||!evidence(earlier,key).ready){
-  return{ready:false,trend:"unknown",change:0};
+ const rows=results[key];
+ const recent=rows.slice(-5);
+ const earlier=rows.slice(-10,-5);
+
+ if(
+  !evidence(recent,key).ready||
+  !evidence(earlier,key).ready
+ ){
+  return{
+   ready:false,
+   trend:"unknown",
+   change:0
+  };
  }
- const current=metric(recent,key),previous=metric(earlier,key);
+
+ const current=metric(recent,key);
+ const previous=metric(earlier,key);
+
  if(current===null||previous===null){
-  return{ready:false,trend:"unknown",change:0};
+  return{
+   ready:false,
+   trend:"unknown",
+   change:0
+  };
  }
+
  const diff=current-previous;
+
  return{
   ready:true,
-  trend:diff>=5?"improving":diff<=-5?"declining":"stable",
+  trend:diff>=5?"improving":
+   diff<=-5?"declining":"stable",
   change:diff
  };
 }
 
 /* INVISIBLE SEVEN-TIER COACH */
+
 function thresholds(key){
  return{
   scoring:[95,80,65,50,40,30],
@@ -679,1371 +951,3205 @@ function thresholds(key){
   checkout:[70,60,50,40,30,20]
  }[key];
 }
+
 function tierFor(value,key){
  const levels=thresholds(key);
+
  for(let i=0;i<levels.length;i++){
   if(value>=levels[i])return i+1;
  }
+
  return 7;
 }
+
 function cappedEvidence(rows){
- const chosen=[],extraDays=new Set();
+ const chosen=[];
+ const extraDays=new Set();
+
  for(const row of rows){
   if(row.extra){
    const day=dateKey(row.time);
+
    if(extraDays.has(day))continue;
+
    extraDays.add(day);
   }
   chosen.push(row);
  }
+
  return chosen;
 }
+
+function freshEvidence(rows,lastId){
+ if(lastId===undefined||lastId===null){
+  return rows;
+ }
+ return rows.filter(r=>r.id>num(lastId));
+}
+
 function performCoachReview(){
  const coach=data.coach;
- const completedWeek=addDays(weekStart(Date.now()),-7);
- if(coach.lastReviewedWeek!==null&&
-    num(coach.lastReviewedWeek)>=completedWeek)return;
+ const completedWeek=addDays(
+  weekStart(Date.now()),-7
+ );
+
+ if(
+  coach.lastReviewedWeek!==null&&
+  num(coach.lastReviewedWeek)>=completedWeek
+ )return;
 
  const all=collectSkillData();
+ const singles=collectSinglesData();
  const weekEnd=addDays(completedWeek,7);
+
  const review={
-  week:completedWeek,at:Date.now(),version:2,decisions:[]
+  week:completedWeek,
+  at:Date.now(),
+  version:3,
+  decisions:[]
  };
 
  for(const key of SKILL_KEYS){
-  const eligible=cappedEvidence(all[key].filter(r=>r.time<weekEnd));
+  const currentTier=clamp(
+   Math.round(num(data.skills[key].level)||7),
+   1,7
+  );
+
+  const lastChange=num(
+   coach.lastTierChanges[key]
+  );
+
+  if(lastChange&&weekEnd-lastChange<14*DAY_MS){
+   continue;
+  }
+
+  /*
+   * Beginner doubles levels 6 and 7:
+   * singles only, nine darts per target.
+   * Promotion requires sustained singles accuracy.
+   * Singles are never counted as doubles accuracy.
+   */
+  if(key==="doubles"&&currentTier>=6){
+   const eligible=cappedEvidence(
+    singles.filter(r=>r.time<weekEnd)
+   );
+
+   const recent=eligible.slice(-5);
+   const volume=recent.reduce(
+    (n,r)=>n+r.volume,0
+   );
+
+   if(recent.length<5||volume<60)continue;
+
+   const fresh=freshEvidence(
+    eligible,coach.lastChangeEvidence[key]
+   );
+
+   if(fresh.length<5)continue;
+
+   const rate=100*recent.reduce(
+    (n,r)=>n+r.hits,0
+   )/volume;
+
+   const required=currentTier===7?65:80;
+
+   if(rate>=required){
+    const nextTier=currentTier-1;
+
+    data.skills.doubles.level=nextTier;
+    coach.lastTierChanges[key]=weekEnd;
+    coach.lastChangeEvidence[key]=
+     recent[recent.length-1].id;
+
+    review.decisions.push({
+     key,
+     from:currentTier,
+     to:nextTier,
+     reason:"Sustained singles accuracy",
+     currentValue:rate,
+     evidenceIds:recent.map(r=>r.id)
+    });
+   }
+
+   coach.lastUsedEvidence[key]=
+    recent[recent.length-1].id;
+   coach.lastEvidenceCount[key]=eligible.length;
+
+   continue;
+  }
+
+  const eligible=cappedEvidence(
+   all[key].filter(r=>r.time<weekEnd)
+  );
+
   const recent=eligible.slice(-5);
   const previous=eligible.slice(-10,-5);
-  if(!evidence(recent,key).ready||!evidence(previous,key).ready)continue;
+
+  if(
+   !evidence(recent,key).ready||
+   !evidence(previous,key).ready
+  )continue;
 
   const currentValue=metric(recent,key);
   const previousValue=metric(previous,key);
-  if(currentValue===null||previousValue===null)continue;
 
-  const latest=recent[recent.length-1];
-  const previousChangeId=coach.lastChangeEvidence[key];
-  if(previousChangeId!==undefined){
-   const fresh=eligible.filter(r=>r.id>num(previousChangeId));
-   if(fresh.length<5)continue;
-  }
-  const lastChange=num(coach.lastTierChanges[key]);
-  if(lastChange&&weekEnd-lastChange<14*DAY_MS)continue;
+  if(
+   currentValue===null||
+   previousValue===null
+  )continue;
+
+  const fresh=freshEvidence(
+   eligible,coach.lastChangeEvidence[key]
+  );
+
+  if(
+   coach.lastChangeEvidence[key]!==undefined&&
+   fresh.length<5
+  )continue;
 
   const targetTier=tierFor(currentValue,key);
-  const currentTier=clamp(Math.round(num(data.skills[key].level)||7),1,7);
   const difference=currentValue-previousValue;
+
   let nextTier=currentTier;
 
-  if(difference>=5&&targetTier<currentTier)nextTier=currentTier-1;
-  if(difference<=-8&&targetTier>currentTier)nextTier=currentTier+1;
+  if(
+   difference>=5&&
+   targetTier<currentTier
+  ){
+   nextTier=currentTier-1;
+  }
+
+  if(
+   difference<=-8&&
+   targetTier>currentTier
+  ){
+   nextTier=currentTier+1;
+  }
+
   nextTier=clamp(nextTier,1,7);
 
   if(nextTier!==currentTier){
    data.skills[key].level=nextTier;
    coach.lastTierChanges[key]=weekEnd;
-   coach.lastChangeEvidence[key]=latest.id;
+
+   coach.lastChangeEvidence[key]=
+    recent[recent.length-1].id;
+
    review.decisions.push({
-    key,from:currentTier,to:nextTier,
-    previousValue,currentValue,evidenceIds:recent.map(r=>r.id)
+    key,
+    from:currentTier,
+    to:nextTier,
+    previousValue,
+    currentValue,
+    evidenceIds:recent.map(r=>r.id)
    });
   }
-  coach.lastUsedEvidence[key]=latest.id;
+
+  coach.lastUsedEvidence[key]=
+   recent[recent.length-1].id;
   coach.lastEvidenceCount[key]=eligible.length;
  }
 
  coach.reviews.push(review);
  coach.lastReviewedWeek=completedWeek;
- coach.version=2;
+ coach.version=3;
  save(false);
 }
+
 function trainingPriorities(){
  const results=collectSkillData();
+
  const weights={
-  scoring:1,doubles:1,checkout:1,accuracy:1,pressure:1
+  scoring:1,
+  doubles:1,
+  checkout:1,
+  accuracy:1,
+  pressure:1
  };
+
  for(const key of SKILL_KEYS){
   const status=skillStatus(key,results);
+
   if(status.ready){
-   if(status.trend==="declining")weights[key]+=.35;
-   if(status.trend==="improving")weights[key]-=.12;
+   if(status.trend==="declining"){
+    weights[key]+=.35;
+   }
+   if(status.trend==="improving"){
+    weights[key]-=.12;
+   }
   }
  }
- const straight=data.games.slice(-20).filter(g=>
-  g.name==="Staying Straight"&&
-  Array.isArray(g.hits)&&Array.isArray(g.misses)
+
+ const straight=data.games.slice(-20).filter(
+  g=>
+   g.name==="Staying Straight"&&
+   Array.isArray(g.hits)&&
+   Array.isArray(g.misses)
  );
+
  if(straight.length>=5){
   let hits=0,misses=0;
+
   for(const g of straight){
-   hits+=g.hits.reduce((a,n)=>a+num(n),0);
-   misses+=g.misses.reduce((a,n)=>a+num(n),0);
+   hits+=g.hits.reduce(
+    (a,n)=>a+num(n),0
+   );
+   misses+=g.misses.reduce(
+    (a,n)=>a+num(n),0
+   );
   }
-  if(hits+misses>0&&hits/(hits+misses)<.65){
+
+  if(
+   hits+misses>0&&
+   hits/(hits+misses)<.65
+  ){
    weights.accuracy+=.2;
   }
  }
+
  return weights;
 }
+
 function focusForDay(extra=false){
  const priorities=trainingPriorities();
- const order=[...data.days].sort((a,b)=>a-b);
- const day=new Date().getDay(),index=order.indexOf(day);
+ const order=[...data.days].sort(
+  (a,b)=>a-b
+ );
+
+ const day=new Date().getDay();
+ const index=order.indexOf(day);
+
  let base;
+
  if(index>=0){
   base=FOCUS[index%FOCUS.length];
  }else{
-  const completed=data.sessions.filter(s=>s.extra);
-  base=FOCUS[completed.length%FOCUS.length];
+  const completed=data.sessions.filter(
+   s=>s.extra
+  );
+  base=FOCUS[
+   completed.length%FOCUS.length
+  ];
  }
+
  if(extra){
-  const todayCount=data.sessions.filter(s=>s.date===dateKey()).length;
-  base=FOCUS[(Math.max(0,index)+todayCount+1)%5];
+  const todayCount=data.sessions.filter(
+   s=>s.date===dateKey()
+  ).length;
+
+  base=FOCUS[
+   (Math.max(0,index)+todayCount+1)%5
+  ];
  }
- const ranked=Object.entries(priorities).sort((a,b)=>b[1]-a[1]);
+
+ const ranked=Object.entries(priorities)
+  .sort((a,b)=>b[1]-a[1]);
+
  const need=ranked[0];
- if(need[1]>=1.3&&need[0]!==base&&data.sessions.length%3===2){
+
+ if(
+  need[1]>=1.3&&
+  need[0]!==base&&
+  data.sessions.length%3===2
+ ){
   base=need[0];
  }
+
  return base;
 }
+
+/* STABLE SESSION PLANNER */
+
 function generateSession(extra=false){
  const focus=focusForDay(extra);
- const variations={
+
+ const plans={
   scoring:[
-   ["Warm-up",10],["Scoring Challenge",15],
-   ["Staying Straight",15],["Scoring Challenge",15],["Review",5]
+   ["Warm-up",10],
+   ["Scoring Challenge",15],
+   ["Staying Straight",15],
+   ["Scoring Challenge",15],
+   ["Review",5]
   ],
   doubles:[
-   ["Warm-up",10],["Doubles Survival",15],
-   ["Staying Straight",15],["Doubles Survival",15],["Review",5]
+   ["Warm-up",10],
+   ["Doubles Survival",15],
+   ["Staying Straight",15],
+   ["Doubles Survival",15],
+   ["Review",5]
   ],
   checkout:[
-   ["Warm-up",10],["Checkout Climb",30],
-   ["Doubles Survival",15],["Review",5]
+   ["Warm-up",10],
+   ["Checkout Climb",30],
+   ["Doubles Survival",15],
+   ["Review",5]
   ],
   accuracy:[
-   ["Warm-up",10],["Staying Straight",15],
-   ["Scoring Challenge",15],["Doubles Survival",15],["Review",5]
+   ["Warm-up",10],
+   ["Staying Straight",15],
+   ["Scoring Challenge",15],
+   ["Doubles Survival",15],
+   ["Review",5]
   ],
   pressure:[
-   ["Warm-up",10],["Doubles Survival",15],
-   ["Staying Straight",15],["Scoring Challenge",15],["Review",5]
+   ["Warm-up",10],
+   ["Doubles Survival",15],
+   ["Staying Straight",15],
+   ["Scoring Challenge",15],
+   ["Review",5]
   ]
  };
- let entries=variations[focus].map(([name,minutes])=>({name,minutes}));
- const rotation=data.sessions.length%4;
- if(rotation===1&&focus!=="checkout"){
-  entries=[entries[0],...entries.slice(1,-1).reverse(),entries[entries.length-1]];
- }
- if(rotation===2&&focus==="scoring"){
-  entries[2]={name:"Doubles Survival",minutes:15};
- }
- if(rotation===3&&focus==="doubles"){
-  entries[2]={name:"Scoring Challenge",minutes:15};
- }
- return entries;
+
+ /*
+  * The core session stays unchanged.
+  * Variation happens occasionally inside a
+  * game, not through frequent game substitutions.
+  */
+ return plans[focus].map(
+  ([name,minutes])=>({name,minutes})
+ );
 }
 
 /* FOUR-WEEK BLOCKS */
+
 function blockStart(){
- return data.coach.firstStarted?weekStart(data.coach.firstStarted):null;
+ return data.coach.firstStarted?
+  weekStart(data.coach.firstStarted):null;
 }
+
 function currentBlockIndex(){
  const start=blockStart();
  if(start===null)return 0;
+
  let index=0,cursor=start;
- while(addDays(cursor,28)<=Date.now()&&index<1000){
-  index++;cursor=addDays(cursor,28);
+
+ while(
+  addDays(cursor,28)<=Date.now()&&
+  index<1000
+ ){
+  index++;
+  cursor=addDays(cursor,28);
  }
+
  return index;
 }
+
 function blockBoundary(i){
  const start=blockStart();
- return start===null?null:addDays(start,i*28);
+
+ return start===null?
+  null:addDays(start,i*28);
 }
+
 function gamesBetween(start,end){
  return data.games.filter(g=>{
-  const time=gameTime(g);return time>=start&&time<end;
+  const time=gameTime(g);
+  return time>=start&&time<end;
  });
 }
+
 function blockPerformance(start,end){
  const games=gamesBetween(start,end);
+
  const scoring=games.filter(g=>
-  g.name==="Scoring Challenge"&&num(g.visits)>=10
+  g.name==="Scoring Challenge"&&
+  num(g.visits)>=10&&
+  isBenchmark(g)
  );
- const doubles=games.filter(g=>g.name==="Doubles Survival");
- const checkouts=games.filter(g=>g.name==="Checkout Climb");
- const visits=scoring.reduce((a,g)=>a+num(g.visits),0);
- const points=scoring.reduce((a,g)=>a+num(g.points),0);
- const thrown=doubles.reduce((a,g)=>a+num(g.thrown),0);
- const hits=doubles.reduce((a,g)=>a+num(g.hits),0);
+
+ const doubles=games.filter(g=>
+  g.name==="Doubles Survival"&&
+  survivalMode(g)==="doubles"&&
+  isBenchmark(g)
+ );
+
+ const checkouts=games.filter(g=>
+  g.name==="Checkout Climb"&&
+  isBenchmark(g)
+ );
+
+ const visits=scoring.reduce(
+  (a,g)=>a+num(g.visits),0
+ );
+ const points=scoring.reduce(
+  (a,g)=>a+num(g.points),0
+ );
+
+ const thrown=doubles.reduce(
+  (a,g)=>a+num(g.thrown),0
+ );
+ const hits=doubles.reduce(
+  (a,g)=>a+num(g.hits),0
+ );
+
  const attempts=checkouts.reduce(
   (a,g)=>a+num(g.success)+num(g.fail),0
  );
- const finishes=checkouts.reduce((a,g)=>a+num(g.success),0);
+ const finishes=checkouts.reduce(
+  (a,g)=>a+num(g.success),0
+ );
+
  return{
   scoring:visits?points/visits:null,
   doubles:thrown?100*hits/thrown:null,
-  checkout:attempts?100*finishes/attempts:null,
-  scoringDarts:visits*3,doublesDarts:thrown,
-  checkoutAttempts:attempts,games:games.length
+  checkout:attempts?
+   100*finishes/attempts:null,
+  scoringDarts:visits*3,
+  doublesDarts:thrown,
+  checkoutAttempts:attempts,
+  games:games.length
  };
 }
+
 function checkCompletedBlocks(){
  if(blockStart()===null)return;
+
  const current=currentBlockIndex();
  let changed=false;
 
  for(let i=0;i<current;i++){
-  if(data.coach.completedBlocks.some(b=>b.index===i))continue;
+  if(
+   data.coach.completedBlocks.some(
+    b=>b.index===i
+   )
+  )continue;
+
   const beginning=blockBoundary(i);
   const ending=blockBoundary(i+1);
   const midpoint=addDays(beginning,14);
-  const first=blockPerformance(beginning,midpoint);
-  const second=blockPerformance(midpoint,ending);
+
+  const first=blockPerformance(
+   beginning,midpoint
+  );
+  const second=blockPerformance(
+   midpoint,ending
+  );
+
   const highlights=[];
+
   const checks=[
    ["scoring","Scoring average"," points",30,30],
    ["doubles","Doubles accuracy"," percentage points",30,30],
    ["checkout","Checkout success"," percentage points",10,10]
   ];
+
   for(const [key,label,unit,min1,min2] of checks){
    const countKey={
-    scoring:"scoringDarts",doubles:"doublesDarts",
+    scoring:"scoringDarts",
+    doubles:"doublesDarts",
     checkout:"checkoutAttempts"
    }[key];
-   if(first[countKey]<min1||second[countKey]<min2||
-      first[key]===null||second[key]===null)continue;
+
+   if(
+    first[countKey]<min1||
+    second[countKey]<min2||
+    first[key]===null||
+    second[key]===null
+   )continue;
+
    const diff=second[key]-first[key];
+
    if(diff>=2){
     highlights.push({
-     name:label,improvement:diff,unit,
-     before:first[key],after:second[key]
+     name:label,
+     improvement:diff,
+     unit,
+     before:first[key],
+     after:second[key]
     });
    }
   }
+
   data.coach.completedBlocks.push({
-   index:i,start:beginning,end:ending,highlights,
-   games:first.games+second.games,createdAt:Date.now()
+   index:i,
+   start:beginning,
+   end:ending,
+   highlights,
+   games:first.games+second.games,
+   createdAt:Date.now()
   });
+
   changed=true;
  }
+
  if(changed)save(false);
 }
 
-/* SESSIONS AND GAMES */
-function session(){return data.activeSession}
-function currentExercise(){
- const s=session();return s?s.plan[s.index]:null;
+/* SESSIONS AND EXERCISES */
+
+function session(){
+ return data.activeSession;
 }
+
+function currentExercise(){
+ const s=session();
+ return s?s.plan[s.index]:null;
+}
+
 function exerciseElapsed(){
- const s=session();if(!s)return 0;
+ const s=session();
+ if(!s)return 0;
+
  if(s.activityStarted){
-  const extra=(s.pausedAt||Date.now())-s.activityStarted;
-  return Math.max(0,(num(s.activityAccumulated)+extra)/1000);
+  const extra=
+   (s.pausedAt||Date.now())-
+   s.activityStarted;
+
+  return Math.max(
+   0,
+   (num(s.activityAccumulated)+extra)/1000
+  );
  }
+
  return num(s.activityAccumulated)/1000;
 }
+
 function sessionElapsed(){
- const s=session();if(!s)return 0;
- return Math.max(0,((s.pausedAt||Date.now())-s.start-num(s.pausedTotal))/1000);
+ const s=session();
+ if(!s)return 0;
+
+ return Math.max(
+  0,
+  (
+   (s.pausedAt||Date.now())-
+   s.start-
+   num(s.pausedTotal)
+  )/1000
+ );
 }
+
 function beginTraining(extra){
- if(session()){show("train");return;}
+ if(session()){
+  show("train");
+  return;
+ }
+
  if(data.days.length!==5){
   alert("Please select five training days in Settings.");
-  show("settings");return;
+  show("settings");
+  return;
  }
- if(!extra&&!data.days.includes(new Date().getDay())){
-  alert("Today is a rest day. Extra training is available.");return;
+
+ if(
+  !extra&&
+  !data.days.includes(new Date().getDay())
+ ){
+  alert(
+   "Today is a rest day. Extra training is available."
+  );
+  return;
  }
- if(!extra&&data.sessions.some(s=>
-  s.date===dateKey()&&!s.extra&&s.completed
- )){
-  alert("Today's scheduled session is already complete.");return;
+
+ if(
+  !extra&&
+  data.sessions.some(s=>
+   s.date===dateKey()&&
+   !s.extra&&
+   s.completed
+  )
+ ){
+  alert(
+   "Today's scheduled session is already complete."
+  );
+  return;
  }
- if(!data.coach.firstStarted)data.coach.firstStarted=Date.now();
+
+ if(!data.coach.firstStarted){
+  data.coach.firstStarted=Date.now();
+ }
+
  performCoachReview();
+
  data.activeSession={
-  id:Date.now(),start:Date.now(),extra:!!extra,
-  plan:generateSession(extra),index:0,completed:[],
-  pausedAt:null,pausedTotal:0,
-  activityStarted:null,activityAccumulated:0,
+  id:Date.now(),
+  start:Date.now(),
+  extra:!!extra,
+  plan:generateSession(extra),
+  index:0,
+  completed:[],
+  pausedAt:null,
+  pausedTotal:0,
+  activityStarted:null,
+  activityAccumulated:0,
   activityResults:[]
  };
- data.game=null;activeGame=null;undoSnapshot=null;
+
+ data.game=null;
+ activeGame=null;
+ undoSnapshot=null;
+
  $("sessionFinished").classList.add("hidden");
+
  startExercise();
  save();
  show("train");
 }
+
 function startExercise(){
- const s=session();if(!s)return;
- if(s.index>=s.plan.length){finishSession(true);return;}
+ const s=session();
+ if(!s)return;
+
+ if(s.index>=s.plan.length){
+  finishSession(true);
+  return;
+ }
+
  const item=s.plan[s.index];
+
  s.activityStarted=Date.now();
  s.activityAccumulated=0;
  s.activityResults=[];
+
  activeGame=buildGame(item.name);
  data.game=activeGame;
+ undoSnapshot=null;
+
  save(false);
 }
+
+/* V4.8.2 SURVIVAL MODES */
+
+function isBeginnerDoubles(){
+ return num(data.skills.doubles.level)>=6;
+}
+
+function survivalSequence(){
+ const normal=Array.from(
+  {length:20},(_,i)=>i+1
+ );
+
+ /*
+  * Only one in eight doubles games has a
+  * reversed target order.
+  * Beginner singles always use ascending order.
+  */
+ if(isBeginnerDoubles())return normal;
+
+ const previous=data.games.filter(
+  g=>g.name==="Doubles Survival"&&
+   survivalMode(g)==="doubles"
+ ).length;
+
+ return previous>0&&previous%8===7?
+  [...normal].reverse():normal;
+}
+
 function buildGame(name){
- const g={name,started:Date.now()};
+ const g={
+  name,
+  started:Date.now()
+ };
+
  if(name==="Doubles Survival"){
+  const beginner=isBeginnerDoubles();
+  const sequence=survivalSequence();
+
   Object.assign(g,{
-   target:1,used:0,
-   allowed:clamp(num(data.skills.doubles.level)+2,3,9),
-   hits:0,thrown:0,highest:0
+   variant:beginner?"singles":"doubles",
+   sequence,
+   index:0,
+   target:sequence[0],
+   used:0,
+   allowed:beginner?
+    9:clamp(
+     num(data.skills.doubles.level)+2,3,9
+    ),
+   hits:0,
+   thrown:0,
+   highest:0,
+   lastHit:0
   });
  }
+
  if(name==="Scoring Challenge"){
-  Object.assign(g,{visits:0,points:0,scores:[]});
+  Object.assign(g,{
+   visits:0,
+   points:0,
+   scores:[]
+  });
  }
+
  if(name==="Staying Straight"){
   Object.assign(g,{
-   index:0,points:0,
+   index:0,
+   points:0,
    counts:[0,0,0,0,0],
    hits:[0,0,0,0,0],
-   misses:[0,0,0,0,0],darts:0
+   misses:[0,0,0,0,0],
+   darts:0
   });
  }
+
  if(name==="Checkout Climb"){
   Object.assign(g,{
-   target:61,attempt:0,highest:61,
-   success:0,fail:0,dartsUsed:0
+   target:61,
+   attempt:0,
+   highest:61,
+   success:0,
+   fail:0,
+   dartsUsed:0
   });
  }
+
  return g;
 }
+
+function normaliseSurvivalGame(g){
+ if(!g||g.name!=="Doubles Survival")return;
+
+ /* Keep any unfinished V4.8.1 game intact. */
+ if(!Array.isArray(g.sequence)||!g.sequence.length){
+  g.sequence=Array.from(
+   {length:20},(_,i)=>i+1
+  );
+  g.variant="doubles";
+  g.index=clamp(
+   Math.floor(num(g.target))-1,0,19
+  );
+ }
+
+ if(g.variant!=="singles"){
+  g.variant="doubles";
+ }
+
+ g.index=clamp(
+  Math.floor(num(g.index)),
+  0,g.sequence.length-1
+ );
+
+ g.target=g.sequence[g.index];
+ g.allowed=clamp(
+  Math.floor(num(g.allowed)||9),3,9
+ );
+ g.used=num(g.used);
+ g.hits=num(g.hits);
+ g.thrown=num(g.thrown);
+ g.highest=num(g.highest);
+ g.lastHit=num(g.lastHit)||num(g.highest);
+}
+
 function normaliseStraightGame(g){
  if(!g||g.name!=="Staying Straight")return;
- for(const key of ["counts","hits","misses"]){
-  if(!Array.isArray(g[key]))g[key]=[];
-  for(let i=0;i<5;i++)g[key][i]=num(g[key][i]);
+
+ for(const key of [
+  "counts","hits","misses"
+ ]){
+  if(!Array.isArray(g[key])){
+   g[key]=[];
+  }
+
+  for(let i=0;i<5;i++){
+   g[key][i]=num(g[key][i]);
+  }
  }
- g.index=clamp(Math.floor(num(g.index)),0,5);
- g.points=num(g.points);g.darts=num(g.darts);
+
+ g.index=clamp(
+  Math.floor(num(g.index)),0,5
+ );
+ g.points=num(g.points);
+ g.darts=num(g.darts);
 }
+
 function snapshotGame(){
- undoSnapshot=activeGame?clone(activeGame):null;
+ undoSnapshot=activeGame?
+  clone(activeGame):null;
 }
+
 function undoGame(){
  if(!undoSnapshot||!activeGame)return;
+
  activeGame=clone(undoSnapshot);
+
  normaliseStraightGame(activeGame);
+ normaliseSurvivalGame(activeGame);
+
  data.game=activeGame;
  undoSnapshot=null;
+
  save();
 }
-function doubleDart(hit){
+
+function survivalDart(hit){
  const g=activeGame;
- if(!g||g.name!=="Doubles Survival"||session()?.pausedAt)return;
+
+ if(
+  !g||
+  g.name!=="Doubles Survival"||
+  session()?.pausedAt
+ )return;
+
+ normaliseSurvivalGame(g);
  snapshotGame();
- g.used++;g.thrown++;
+
+ g.used++;
+ g.thrown++;
+
  if(hit){
-  g.hits++;g.highest=g.target;
-  g.target++;g.used=0;
-  if(g.target>20){completeExercise();return;}
+  g.hits++;
+  g.lastHit=g.target;
+  g.highest=Math.max(g.highest,g.target);
+  g.index++;
+  g.used=0;
+
+  if(g.index>=g.sequence.length){
+   completeExercise("natural");
+   return;
+  }
+
+  g.target=g.sequence[g.index];
+
  }else if(g.used>=g.allowed){
-  completeExercise();return;
+  completeExercise("natural");
+  return;
  }
- data.game=g;save();
+
+ data.game=g;
+ save();
 }
+
+/* Keep old handler compatible if referenced. */
+function doubleDart(hit){
+ survivalDart(hit);
+}
+
 function recordScore(){
  const input=$("scoreInput");
+
  if(!input||input.value==="")return;
+
  const n=Number(input.value);
- if(!Number.isInteger(n)||n<0||n>180){
-  alert("Enter a score from 0 to 180.");return;
+
+ if(
+  !Number.isInteger(n)||
+  n<0||n>180
+ ){
+  alert("Enter a score from 0 to 180.");
+  return;
  }
+
  const g=activeGame;
- if(!g||g.name!=="Scoring Challenge"||session()?.pausedAt)return;
+
+ if(
+  !g||
+  g.name!=="Scoring Challenge"||
+  session()?.pausedAt
+ )return;
+
  snapshotGame();
- g.points+=n;g.visits++;g.scores.push(n);
- if(g.visits>=10){completeExercise();return;}
- data.game=g;save();
+
+ g.points+=n;
+ g.visits++;
+ g.scores.push(n);
+
+ if(g.visits>=10){
+  completeExercise("natural");
+  return;
+ }
+
+ data.game=g;
+ save();
 }
+
 function straightDart(value){
  const g=activeGame;
- if(!g||g.name!=="Staying Straight"||session()?.pausedAt)return;
+
+ if(
+  !g||
+  g.name!=="Staying Straight"||
+  session()?.pausedAt
+ )return;
+
  normaliseStraightGame(g);
- if(g.index>=5||![0,1,2,3].includes(value))return;
+
+ if(
+  g.index>=5||
+  ![0,1,2,3].includes(value)
+ )return;
+
  snapshotGame();
- const index=g.index;g.darts++;
+
+ const index=g.index;
+ g.darts++;
+
  if(value){
-  g.points+=value;g.counts[index]+=value;g.hits[index]++;
+  g.points+=value;
+  g.counts[index]+=value;
+  g.hits[index]++;
  }else{
-  g.misses[index]++;g.index++;
-  if(g.index>=5){completeExercise();return;}
+  g.misses[index]++;
+  g.index++;
+
+  if(g.index>=5){
+   completeExercise("natural");
+   return;
+  }
  }
- data.game=g;save();
+
+ data.game=g;
+ save();
 }
+
 function checkoutMiss(){
  const g=activeGame;
- if(!g||g.name!=="Checkout Climb"||session()?.pausedAt)return;
+
+ if(
+  !g||
+  g.name!=="Checkout Climb"||
+  session()?.pausedAt
+ )return;
+
  snapshotGame();
+
  g.attempt++;
+
  if(g.attempt>=3){
-  g.dartsUsed+=3;g.fail++;g.target--;g.attempt=0;
-  if(g.target<50){completeExercise();return;}
+  g.dartsUsed+=3;
+  g.fail++;
+  g.target--;
+  g.attempt=0;
+
+  if(g.target<50){
+   completeExercise("natural");
+   return;
+  }
  }
- data.game=g;save();
+
+ data.game=g;
+ save();
 }
+
 function checkoutHit(){
  const g=activeGame;
- if(!g||g.name!=="Checkout Climb"||session()?.pausedAt)return;
+
+ if(
+  !g||
+  g.name!=="Checkout Climb"||
+  session()?.pausedAt
+ )return;
+
  const remaining=3-g.attempt;
+
  const answer=prompt(
-  "How many more darts to finish? (1–"+remaining+")","1"
+  "How many more darts to finish? (1–"+
+  remaining+")","1"
  );
+
  if(answer===null)return;
+
  const darts=Number(answer);
- if(!Number.isInteger(darts)||darts<1||darts>remaining){
-  alert("Enter a valid number of darts.");return;
+
+ if(
+  !Number.isInteger(darts)||
+  darts<1||
+  darts>remaining
+ ){
+  alert("Enter a valid number of darts.");
+  return;
  }
+
  snapshotGame();
+
  g.dartsUsed+=g.attempt+darts;
  g.success++;
- g.highest=Math.max(g.highest,g.target);
- g.target+=5;g.attempt=0;
- data.game=g;save();
+ g.highest=Math.max(
+  g.highest,g.target
+ );
+ g.target+=5;
+ g.attempt=0;
+
+ data.game=g;
+ save();
 }
-function gameResult(g){
+
+/* GAME RECORDS */
+
+function gameResult(g,completion="manual"){
+ const isComplete=
+  completion==="natural"||
+  completion==="timed";
+
  const entry={
-  name:g.name,mode:g.name,at:Date.now(),
-  day:dateKey(),date:new Date().toLocaleString(),
-  extra:!!session()?.extra,result:"Activity completed"
+  name:g.name,
+  mode:g.name,
+  at:Date.now(),
+  day:dateKey(),
+  date:new Date().toLocaleString(),
+  extra:!!session()?.extra,
+  completion,
+  benchmark:isComplete,
+  version:"4.8.2",
+  result:"Activity completed"
  };
+
  switch(g.name){
-  case"Doubles Survival":
-   entry.hits=g.hits;entry.thrown=g.thrown;
-   entry.allowed=g.allowed;entry.highest=g.highest;
-   entry.result="Last double "+
-    (g.highest?"D"+g.highest:"none")+
+  case "Doubles Survival":{
+   normaliseSurvivalGame(g);
+
+   entry.variant=g.variant;
+   entry.sequence=[...g.sequence];
+   entry.hits=g.hits;
+   entry.thrown=g.thrown;
+   entry.allowed=g.allowed;
+   entry.highest=g.highest;
+   entry.lastHit=g.lastHit;
+
+   const prefix=g.variant==="singles"?
+    "S":"D";
+
+   entry.result=
+    (g.variant==="singles"?
+     "Singles Survival":"Doubles Survival")+
+    " · Last hit "+
+    (g.lastHit?prefix+g.lastHit:"none")+
     " · "+g.hits+"/"+g.thrown+" hits";
-   data.bestDouble=Math.max(num(data.bestDouble),g.highest);
-   data.doublesHit=num(data.doublesHit)+g.hits;
-   data.doublesThrown=num(data.doublesThrown)+g.thrown;
+
+   if(g.variant==="doubles"){
+    data.bestDouble=Math.max(
+     num(data.bestDouble),
+     g.highest
+    );
+
+    data.doublesHit=
+     num(data.doublesHit)+g.hits;
+
+    data.doublesThrown=
+     num(data.doublesThrown)+g.thrown;
+   }
+
    break;
-  case"Scoring Challenge":
-   entry.points=g.points;entry.visits=g.visits;
+  }
+
+  case "Scoring Challenge":
+   entry.points=g.points;
+   entry.visits=g.visits;
    entry.scores=[...g.scores];
-   entry.result=g.points+" points · "+
-    (g.visits?g.points/g.visits:0).toFixed(1)+" average";
+
+   entry.benchmark=
+    isComplete&&g.visits>=10;
+
+   entry.result=
+    g.points+" points · "+
+    (g.visits?
+     g.points/g.visits:0
+    ).toFixed(1)+" average";
+
    break;
-  case"Staying Straight":
+
+  case "Staying Straight":
    normaliseStraightGame(g);
+
    entry.points=g.points;
    entry.targets=[...STRAIGHT_TARGETS];
    entry.counts=[...g.counts];
-   entry.hits=[...g.hits];entry.misses=[...g.misses];
-   entry.successfulDarts=g.hits.reduce((a,n)=>a+n,0);
-   entry.missedDarts=g.misses.reduce((a,n)=>a+n,0);
-   entry.darts=g.darts;entry.complete=g.index>=5;
-   entry.version="4.8.1";
-   entry.result=g.points+" points · "+
-    STRAIGHT_TARGETS.map((n,i)=>n+"s: "+g.counts[i]).join(", ");
+   entry.hits=[...g.hits];
+   entry.misses=[...g.misses];
+
+   entry.successfulDarts=
+    g.hits.reduce((a,n)=>a+n,0);
+
+   entry.missedDarts=
+    g.misses.reduce((a,n)=>a+n,0);
+
+   entry.darts=g.darts;
+   entry.complete=g.index>=5;
+
+   entry.result=
+    g.points+" points · "+
+    STRAIGHT_TARGETS.map(
+     (n,i)=>n+"s: "+g.counts[i]
+    ).join(", ");
+
    break;
-  case"Checkout Climb":
-   entry.success=g.success;entry.fail=g.fail;
+
+  case "Checkout Climb":
+   entry.success=g.success;
+   entry.fail=g.fail;
    entry.attempts=g.success+g.fail;
-   entry.dartsUsed=g.dartsUsed;entry.highest=g.highest;
-   entry.result=g.success+" successful checkouts";
-   data.bestCheckout=Math.max(num(data.bestCheckout),g.highest);
+   entry.dartsUsed=g.dartsUsed;
+   entry.highest=g.highest;
+
+   entry.result=
+    g.success+" successful checkouts";
+
+   data.bestCheckout=Math.max(
+    num(data.bestCheckout),
+    g.highest
+   );
+
    break;
  }
+
  return entry;
 }
-function completeExercise(){
+
+function completeExercise(completion="manual"){
  const s=session();
+
  if(!s||s.pausedAt)return;
+
  const item=currentExercise();
  if(!item)return;
- if(activeGame&&
-    !["Warm-up","Review"].includes(activeGame.name)&&
-    !(activeGame.name==="Scoring Challenge"&&activeGame.visits===0)){
-  const entry=gameResult(activeGame);
+
+ if(
+  activeGame&&
+  !["Warm-up","Review"].includes(
+   activeGame.name
+  )&&
+  !(
+   activeGame.name==="Scoring Challenge"&&
+   activeGame.visits===0
+  )
+ ){
+  const entry=gameResult(
+   activeGame,completion
+  );
+
   data.games.push(entry);
   s.activityResults.push(entry);
  }
+
  s.completed.push({
-  name:item.name,minutes:item.minutes,at:Date.now()
+  name:item.name,
+  minutes:item.minutes,
+  at:Date.now()
  });
- s.index++;activeGame=null;data.game=null;undoSnapshot=null;
- if(s.index>=s.plan.length){finishSession(true);return;}
- startExercise();save();
+
+ s.index++;
+ activeGame=null;
+ data.game=null;
+ undoSnapshot=null;
+
+ if(s.index>=s.plan.length){
+  finishSession(true);
+  return;
+ }
+
+ startExercise();
+ save();
 }
+
 function finishSession(success){
- const s=session();if(!s)return;
- const elapsed=Math.min(60,Math.round(sessionElapsed()/6)/10);
+ const s=session();
+ if(!s)return;
+
+ const elapsed=Math.min(
+  60,
+  Math.round(sessionElapsed()/6)/10
+ );
+
  data.sessions.push({
-  start:s.start,date:dateKey(s.start),minutes:elapsed,
-  extra:s.extra,completed:!!success,
-  activities:s.completed,focus:s.plan.map(p=>p.name)
+  start:s.start,
+  date:dateKey(s.start),
+  minutes:elapsed,
+  extra:s.extra,
+  completed:!!success,
+  activities:s.completed,
+  focus:s.plan.map(p=>p.name)
  });
- data.activeSession=null;data.game=null;
- activeGame=null;undoSnapshot=null;
+
+ data.activeSession=null;
+ data.game=null;
+ activeGame=null;
+ undoSnapshot=null;
+
  performCoachReview();
  checkCompletedBlocks();
  save();
+
  $("finishedText").textContent=success?
-  "Today's practice is saved.":"Your practice has been saved.";
- $("sessionFinished").classList.remove("hidden");
+  "Today's practice is saved.":
+  "Your practice has been saved.";
+
+ $("sessionFinished").classList.remove(
+  "hidden"
+ );
+
  show("train");
 }
+
 function finishSessionEarly(){
  if(!session())return;
- if(!confirm("End this training session?"))return;
+
+ if(!confirm(
+  "End this training session?"
+ ))return;
+
  finishSession(false);
 }
+
 function pauseSession(){
- const s=session();if(!s)return;
+ const s=session();
+ if(!s)return;
+
  if(s.pausedAt){
   const elapsed=Date.now()-s.pausedAt;
+
   s.pausedTotal+=elapsed;
-  s.pausedAt=null;s.activityStarted=Date.now();
+  s.pausedAt=null;
+  s.activityStarted=Date.now();
+
  }else{
   s.pausedAt=Date.now();
-  if(s.activityStarted)s.activityAccumulated+=s.pausedAt-s.activityStarted;
+
+  if(s.activityStarted){
+   s.activityAccumulated+=
+    s.pausedAt-s.activityStarted;
+  }
+
   s.activityStarted=null;
  }
+
  save();
 }
+
 function finishView(){
- $("sessionFinished").classList.add("hidden");
+ $("sessionFinished").classList.add(
+  "hidden"
+ );
  show("home");
 }
 
 /* MOBILE TRAINING DISPLAY */
+
 const EXERCISE_RULES={
- "Warm-up":"Warm up naturally. Focus on a smooth, comfortable throw.",
- "Doubles Survival":"Hit the displayed double within your allowed darts. Move to the next double when successful.",
- "Scoring Challenge":"Throw three darts and enter the total for the visit. Complete ten visits.",
- "Staying Straight":"Hit the displayed number. Single = 1, double = 2, treble = 3. Keep throwing until you miss, then move to the next number.",
- "Checkout Climb":"Complete the displayed checkout in three darts. Success moves you up five; failure moves you down one.",
- "Review":"Finish with a few comfortable throws. Keep the same relaxed rhythm."
+ "Warm-up":
+  "Warm up naturally. Focus on a smooth, comfortable throw.",
+
+ "Doubles Survival":
+  "Hit the displayed double within your allowed darts. Move to the next target when successful.",
+
+ "Scoring Challenge":
+  "Throw three darts and enter the total for the visit. Complete ten visits.",
+
+ "Staying Straight":
+  "Hit the displayed number. Single = 1, double = 2, treble = 3. Keep throwing until you miss, then move to the next number.",
+
+ "Checkout Climb":
+  "Complete the displayed checkout in three darts. Success moves you up five; failure moves you down one.",
+
+ "Review":
+  "Finish with a few comfortable throws. Keep the same relaxed rhythm."
 };
+
+const SINGLES_RULE=
+ "Hit the displayed single within your allowed darts. Move to the next number when successful.";
+
 function renderStraightDisplay(g){
  normaliseStraightGame(g);
- const index=clamp(g.index,0,4);
- const boxes=STRAIGHT_TARGETS.map((n,i)=>
-  '<div class="'+(i===index?"active":"")+'">'+
-  n+'s<strong>'+g.counts[i]+'</strong></div>'
+
+ const index=clamp(
+  g.index,0,4
+ );
+
+ const boxes=STRAIGHT_TARGETS.map(
+  (n,i)=>
+   '<div class="'+
+   (i===index?"active":"")+
+   '">'+n+
+   's<strong>'+g.counts[i]+
+   '</strong></div>'
  ).join("");
+
  $("straightDisplay").innerHTML=
   '<div class="straightScores">'+
-  '<div class="straightScore"><small>CURRENT NUMBER</small><strong>'+
-  g.counts[index]+'</strong></div>'+
-  '<div class="straightScore"><small>TOTAL SCORE</small><strong>'+
-  g.points+'</strong></div></div>'+
-  '<div class="straightHeader">POINTS BY NUMBER</div>'+
-  '<div class="targetGrid">'+boxes+'</div>'+
-  '<p class="straightNote">Single +1 · Double +2 · Treble +3</p>';
- $("straightDisplay").classList.remove("hidden");
+   '<div class="straightScore">'+
+    '<small>CURRENT NUMBER</small>'+
+    '<strong>'+g.counts[index]+
+    '</strong>'+
+   '</div>'+
+   '<div class="straightScore">'+
+    '<small>TOTAL SCORE</small>'+
+    '<strong>'+g.points+
+    '</strong>'+
+   '</div>'+
+  '</div>'+
+  '<div class="straightHeader">'+
+   'POINTS BY NUMBER'+
+  '</div>'+
+  '<div class="targetGrid">'+
+   boxes+
+  '</div>'+
+  '<p class="straightNote">'+
+   'Single +1 · Double +2 · Treble +3'+
+  '</p>';
+
+ $("straightDisplay").classList.remove(
+  "hidden"
+ );
 }
+
 function renderTraining(){
  const s=session();
  const visible=!!s&&currentTab==="train";
- document.body.classList.toggle("trainingActive",visible);
- $("trainIdle").classList.toggle(
-  "hidden",!!s||!$("sessionFinished").classList.contains("hidden")
+
+ document.body.classList.toggle(
+  "trainingActive",visible
  );
- $("trainSession").classList.toggle("hidden",!s);
+
+ $("trainIdle").classList.toggle(
+  "hidden",
+  !!s||
+  !$("sessionFinished").classList.contains(
+   "hidden"
+  )
+ );
+
+ $("trainSession").classList.toggle(
+  "hidden",!s
+ );
+
  if(!s){
-  $("straightDisplay").classList.add("hidden");
+  $("straightDisplay").classList.add(
+   "hidden"
+  );
   return;
  }
- const item=currentExercise(),g=activeGame||data.game;
+
+ const item=currentExercise();
+ const g=activeGame||data.game;
+
  if(!item)return;
 
- $("sessionType").textContent=s.extra?"Extra Training":"Today's Training";
- $("sessionStepLabel").textContent="Exercise "+(s.index+1)+"/"+s.plan.length;
- $("exerciseName").textContent=item.name;
- $("exerciseRules").textContent=EXERCISE_RULES[item.name]||"";
- const elapsed=exerciseElapsed(),seconds=item.minutes*60;
- $("exerciseClock").textContent=fmt(Math.max(0,seconds-elapsed));
- $("exerciseBar").style.width=clamp(100*elapsed/seconds,0,100)+"%";
- $("sessionClock").textContent=fmt(Math.max(0,3600-sessionElapsed()));
- $("sessionBar").style.width=clamp(100*sessionElapsed()/3600,0,100)+"%";
- $("pauseButton").textContent=s.pausedAt?"Resume Session":"Pause Session";
- $("completeButton").disabled=!!s.pausedAt;
- $("undoButton").disabled=!undoSnapshot||!!s.pausedAt;
+ const isSingles=
+  g&&
+  g.name==="Doubles Survival"&&
+  survivalMode(g)==="singles";
 
- const target=$("gameTarget"),progress=$("gameProgress");
+ $("sessionType").textContent=
+  s.extra?"Extra Training":"Today's Training";
+
+ $("sessionStepLabel").textContent=
+  "Exercise "+(s.index+1)+"/"+s.plan.length;
+
+ $("exerciseName").textContent=
+  isSingles?"Singles Survival":item.name;
+
+ $("exerciseRules").textContent=
+  isSingles?
+   SINGLES_RULE:
+   (EXERCISE_RULES[item.name]||"");
+
+ const elapsed=exerciseElapsed();
+ const seconds=item.minutes*60;
+
+ $("exerciseClock").textContent=fmt(
+  Math.max(0,seconds-elapsed)
+ );
+
+ $("exerciseBar").style.width=
+  clamp(100*elapsed/seconds,0,100)+"%";
+
+ $("sessionClock").textContent=fmt(
+  Math.max(0,3600-sessionElapsed())
+ );
+
+ $("sessionBar").style.width=
+  clamp(
+   100*sessionElapsed()/3600,0,100
+  )+"%";
+
+ $("pauseButton").textContent=
+  s.pausedAt?
+   "Resume Session":"Pause Session";
+
+ $("completeButton").disabled=!!s.pausedAt;
+
+ $("undoButton").disabled=
+  !undoSnapshot||!!s.pausedAt;
+
+ const target=$("gameTarget");
+ const progress=$("gameProgress");
  const controls=$("gameControls");
+
  if(!g){
-  target.textContent="Ready";progress.textContent="";
+  target.textContent="Ready";
+  progress.textContent="";
   controls.innerHTML="";
-  $("straightDisplay").classList.add("hidden");
+
+  $("straightDisplay").classList.add(
+   "hidden"
+  );
   return;
  }
- let html="",heading="",detail="";
- const b=(text,fn)=>'<button onclick="'+fn+'">'+text+'</button>';
- $("straightDisplay").classList.add("hidden");
+
+ let html="";
+ let heading="";
+ let detail="";
+
+ const b=(text,fn)=>
+  '<button onclick="'+fn+'">'+
+  text+'</button>';
+
+ $("straightDisplay").classList.add(
+  "hidden"
+ );
 
  switch(g.name){
-  case"Doubles Survival":
-   heading="D"+Math.min(g.target,20);
-   detail="Darts remaining: "+(g.allowed-g.used);
-   html=b("Hit","doubleDart(true)")+b("Miss","doubleDart(false)");
+  case "Doubles Survival":{
+   normaliseSurvivalGame(g);
+
+   const prefix=
+    g.variant==="singles"?"S":"D";
+
+   heading=prefix+g.target;
+
+   detail=
+    "Darts remaining: "+
+    (g.allowed-g.used);
+
+   html=
+    b("Hit","survivalDart(true)")+
+    b("Miss","survivalDart(false)");
+
    break;
-  case"Scoring Challenge":
-   heading="Visit "+Math.min(g.visits+1,10);
-   detail=g.visits+"/10 visits completed";
-   html='<input type="number" id="scoreInput" min="0" max="180" '+
-    'placeholder="Score" inputmode="numeric">'+
+  }
+
+  case "Scoring Challenge":
+   heading=
+    "Visit "+Math.min(g.visits+1,10);
+
+   detail=
+    g.visits+"/10 visits completed";
+
+   html=
+    '<input type="number" '+
+    'id="scoreInput" min="0" max="180" '+
+    'placeholder="Score" '+
+    'inputmode="numeric">'+
     b("Record","recordScore()");
+
    break;
-  case"Staying Straight":
+
+  case "Staying Straight":
    normaliseStraightGame(g);
-   heading=STRAIGHT_TARGETS[Math.min(g.index,4)]+"s";
-   detail="Mini-game "+(Math.min(g.index,4)+1)+"/5";
+
+   heading=
+    STRAIGHT_TARGETS[
+     Math.min(g.index,4)
+    ]+"s";
+
+   detail=
+    "Mini-game "+
+    (Math.min(g.index,4)+1)+"/5";
+
    renderStraightDisplay(g);
-   html=b("Single +1","straightDart(1)")+
+
+   html=
+    b("Single +1","straightDart(1)")+
     b("Double +2","straightDart(2)")+
     b("Treble +3","straightDart(3)")+
     b("Miss / Next","straightDart(0)");
+
    break;
-  case"Checkout Climb":
+
+  case "Checkout Climb":
    heading=String(g.target);
-   detail="Darts remaining: "+(3-g.attempt);
-   html=b("Checkout Hit","checkoutHit()")+
+
+   detail=
+    "Darts remaining: "+
+    (3-g.attempt);
+
+   html=
+    b("Checkout Hit","checkoutHit()")+
     b("Missed Dart","checkoutMiss()");
+
    break;
+
   default:
-   heading=g.name;detail="Throw comfortably.";
+   heading=g.name;
+   detail="Throw comfortably.";
  }
+
  target.textContent=heading;
  progress.textContent=detail;
 
- if(g.name!=="Scoring Challenge"||!controls.querySelector("#scoreInput")){
+ if(
+  g.name!=="Scoring Challenge"||
+  !controls.querySelector("#scoreInput")
+ ){
   controls.innerHTML=html;
  }
+
  if(g.name==="Scoring Challenge"){
-  const input=controls.querySelector("#scoreInput");
+  const input=controls.querySelector(
+   "#scoreInput"
+  );
+
   if(input)input.disabled=!!s.pausedAt;
  }
- controls.querySelectorAll("button").forEach(x=>x.disabled=!!s.pausedAt);
- $("sessionSteps").innerHTML=s.plan.map((p,i)=>{
-  const cls=i<s.index?"done":i===s.index?"active":"";
-  return '<div class="step '+cls+'"><strong>'+
-   (i<s.index?"✓ ":"")+esc(p.name)+'</strong>'+
-   '<br><small>'+p.minutes+' minutes</small></div>';
- }).join("");
+
+ controls.querySelectorAll("button")
+  .forEach(x=>
+   x.disabled=!!s.pausedAt
+  );
+
+ $("sessionSteps").innerHTML=
+  s.plan.map((p,i)=>{
+   const cls=
+    i<s.index?"done":
+    i===s.index?"active":"";
+
+   return '<div class="step '+cls+'">'+
+    '<strong>'+
+    (i<s.index?"✓ ":"")+
+    esc(p.name)+
+    '</strong>'+
+    '<br><small>'+
+    p.minutes+
+    ' minutes</small></div>';
+  }).join("");
 }
+
 function trainingTimer(){
  const s=session();
+
  if(!s||s.pausedAt)return;
+
  const item=currentExercise();
  if(!item)return;
+
  const elapsed=exerciseElapsed();
 
- if(elapsed>=item.minutes*60){completeExercise();return;}
- if(sessionElapsed()>=3600){finishSession(true);return;}
+ if(elapsed>=item.minutes*60){
+  completeExercise("timed");
+  return;
+ }
+
+ if(sessionElapsed()>=3600){
+  finishSession(true);
+  return;
+ }
 
  if(currentTab==="train"){
-  $("exerciseClock").textContent=fmt(Math.max(0,item.minutes*60-elapsed));
-  $("exerciseBar").style.width=clamp(elapsed/(item.minutes*60)*100,0,100)+"%";
-  $("sessionClock").textContent=fmt(Math.max(0,3600-sessionElapsed()));
-  $("sessionBar").style.width=clamp(sessionElapsed()/3600*100,0,100)+"%";
+  $("exerciseClock").textContent=
+   fmt(Math.max(
+    0,item.minutes*60-elapsed
+   ));
+
+  $("exerciseBar").style.width=
+   clamp(
+    elapsed/(item.minutes*60)*100,
+    0,100
+   )+"%";
+
+  $("sessionClock").textContent=
+   fmt(Math.max(
+    0,3600-sessionElapsed()
+   ));
+
+  $("sessionBar").style.width=
+   clamp(
+    sessionElapsed()/3600*100,
+    0,100
+   )+"%";
  }
 }
 
 /* HOME AND SETTINGS */
+
 function renderHome(){
  const s=session();
- const today=new Date().getDay(),scheduled=data.days.includes(today);
- $("homeHeading").textContent=s?"Training In Progress":
-  scheduled?"Your Training Is Ready":"Today Is a Rest Day";
- $("homeMessage").textContent=s?"Continue where you left off.":
-  scheduled?"Your coach has prepared today's session.":
-  "Rest and recovery are part of your programme.";
+
+ const today=new Date().getDay();
+ const scheduled=data.days.includes(today);
+
+ $("homeHeading").textContent=
+  s?"Training In Progress":
+  scheduled?"Your Training Is Ready":
+  "Today Is a Rest Day";
+
+ $("homeMessage").textContent=
+  s?"Continue where you left off.":
+  scheduled?
+   "Your coach has prepared today's session.":
+   "Rest and recovery are part of your programme.";
+
  $("homeDuration").textContent=
-  s?fmt(Math.max(0,3600-sessionElapsed())):"60 MIN";
+  s?
+   fmt(Math.max(
+    0,3600-sessionElapsed()
+   )):
+   "60 MIN";
 
  let actions="";
+
  if(s){
-  actions='<button class="primary" onclick="show(\'train\')">Continue Training</button>';
+  actions=
+   '<button class="primary" '+
+   'onclick="show(\'train\')">'+
+   'Continue Training</button>';
  }else{
   const completed=data.sessions.some(x=>
-   x.date===dateKey()&&!x.extra&&x.completed
+   x.date===dateKey()&&
+   !x.extra&&x.completed
   );
+
   if(scheduled&&!completed){
-   actions='<button class="primary" onclick="beginTraining(false)">Start Training</button>';
+   actions=
+    '<button class="primary" '+
+    'onclick="beginTraining(false)">'+
+    'Start Training</button>';
+
   }else if(scheduled){
-   actions='<div class="info">Scheduled training completed today.</div>';
+   actions=
+    '<div class="info">'+
+    'Scheduled training completed today.'+
+    '</div>';
   }
-  actions+='<button class="secondary" style="width:100%;margin-top:10px" '+
-   'onclick="beginTraining(true)">Extra Training</button>';
+
+  actions+=
+   '<button class="secondary" '+
+   'style="width:100%;margin-top:10px" '+
+   'onclick="beginTraining(true)">'+
+   'Extra Training</button>';
  }
+
  $("homeAction").innerHTML=actions;
- $("homeDays").innerHTML=[...data.days].sort((a,b)=>a-b).map(day=>
-  '<span class="tag" style="margin:3px">'+DAY_NAMES[day]+'</span>'
- ).join("");
+
+ $("homeDays").innerHTML=
+  [...data.days]
+   .sort((a,b)=>a-b)
+   .map(day=>
+    '<span class="tag" '+
+    'style="margin:3px">'+
+    DAY_NAMES[day]+
+    '</span>'
+   ).join("");
 
  if(blockStart()===null){
   $("blockStatus").textContent=
    "Your first training block begins with your first session.";
-  $("blockBar").style.width="0%";
-  $("blockInfo").textContent="Four weeks per block.";
- }else{
-  const index=currentBlockIndex(),beginning=blockBoundary(index);
-  const ending=blockBoundary(index+1),elapsed=Date.now()-beginning;
-  $("blockStatus").textContent="Training Block "+(index+1);
-  $("blockBar").style.width=clamp(elapsed/(ending-beginning)*100,0,100)+"%";
-  const week=clamp(Math.floor(elapsed/(7*DAY_MS))+1,1,4);
-  $("blockInfo").textContent="Week "+week+" of 4";
- }
-}
-function renderSettings(){
- $("days").innerHTML=DAY_NAMES.map((name,i)=>
-  '<label><input type="checkbox" '+
-  (data.days.includes(i)?"checked":"")+
-  ' onchange="changeDay('+i+',this.checked)"> '+
-  name.slice(0,3)+'</label>'
- ).join("");
- $("dayStatus").textContent=data.days.length+"/5 days selected";
- $("coachSystemStatus").innerHTML=
-  '<p>Automatic training: <strong>Active</strong></p>'+
-  '<p>Skill adaptation: <strong>Active when evidence is sufficient</strong></p>'+
-  '<p>Training blocks: <strong>Four weeks</strong></p>';
-}
-function changeDay(day,checked){
- const days=data.days.filter(d=>d!==day);
- if(checked)days.push(day);
- if(days.length>5){
-  alert("Select exactly five training days.");renderSettings();return;
- }
- data.days=days;save();
-}
-function renderProgress(){
- const minutes=data.sessions.reduce((a,s)=>a+num(s.minutes),0);
- $("progressSummary").innerHTML='<div class="grid">'+
-  '<div class="metric"><strong>'+data.sessions.length+
-  '</strong><small>Sessions</small></div>'+
-  '<div class="metric"><strong>'+data.games.length+
-  '</strong><small>Games</small></div>'+
-  '<div class="metric"><strong>'+Math.round(minutes)+
-  '</strong><small>Minutes</small></div></div>';
 
- const blocks=[...data.coach.completedBlocks].reverse();
+  $("blockBar").style.width="0%";
+
+  $("blockInfo").textContent=
+   "Four weeks per block.";
+
+ }else{
+  const index=currentBlockIndex();
+  const beginning=blockBoundary(index);
+  const ending=blockBoundary(index+1);
+  const elapsed=Date.now()-beginning;
+
+  $("blockStatus").textContent=
+   "Training Block "+(index+1);
+
+  $("blockBar").style.width=
+   clamp(
+    elapsed/(ending-beginning)*100,
+    0,100
+   )+"%";
+
+  const week=clamp(
+   Math.floor(elapsed/(7*DAY_MS))+1,
+   1,4
+  );
+
+  $("blockInfo").textContent=
+   "Week "+week+" of 4";
+ }
+}
+
+function renderSettings(){
+ $("days").innerHTML=
+  DAY_NAMES.map((name,i)=>
+   '<label>'+
+   '<input type="checkbox" '+
+   (data.days.includes(i)?"checked":"")+
+   ' onchange="changeDay('+
+   i+',this.checked)"> '+
+   name.slice(0,3)+
+   '</label>'
+  ).join("");
+
+ $("dayStatus").textContent=
+  data.days.length+"/5 days selected";
+
+ $("coachSystemStatus").innerHTML=
+  '<p>Automatic training: '+
+  '<strong>Active</strong></p>'+
+  '<p>Skill adaptation: '+
+  '<strong>Active when evidence is sufficient</strong></p>'+
+  '<p>Training blocks: '+
+  '<strong>Four weeks</strong></p>';
+}
+
+function changeDay(day,checked){
+ const days=data.days.filter(
+  d=>d!==day
+ );
+
+ if(checked)days.push(day);
+
+ if(days.length>5){
+  alert(
+   "Select exactly five training days."
+  );
+  renderSettings();
+  return;
+ }
+
+ data.days=days;
+ save();
+}
+
+function renderProgress(){
+ const minutes=data.sessions.reduce(
+  (a,s)=>a+num(s.minutes),0
+ );
+
+ $("progressSummary").innerHTML=
+  '<div class="grid">'+
+
+   '<div class="metric">'+
+    '<strong>'+
+    data.sessions.length+
+    '</strong>'+
+    '<small>Sessions</small>'+
+   '</div>'+
+
+   '<div class="metric">'+
+    '<strong>'+
+    data.games.length+
+    '</strong>'+
+    '<small>Games</small>'+
+   '</div>'+
+
+   '<div class="metric">'+
+    '<strong>'+
+    Math.round(minutes)+
+    '</strong>'+
+    '<small>Minutes</small>'+
+   '</div>'+
+
+  '</div>';
+
+ const blocks=[
+  ...data.coach.completedBlocks
+ ].reverse();
+
  if(!blocks.length){
   $("blockReport").innerHTML=
-   '<p class="muted">Your first progress summary will appear after four weeks of training.</p>';
+   '<p class="muted">'+
+   'Your first progress summary will appear '+
+   'after four weeks of training.'+
+   '</p>';
+
  }else{
-  $("blockReport").innerHTML=blocks.map(b=>{
-   let html='<div class="entry"><h3>Training Block '+(b.index+1)+
-    '</h3><p class="muted">'+formatDate(b.start)+
-    " to "+formatDate(b.end-1)+"</p>";
-   if(b.highlights.length){
-    for(const h of b.highlights){
-     html+='<p>✓ '+esc(h.name)+': improved by '+
-      h.improvement.toFixed(1)+esc(h.unit)+'</p>';
+  $("blockReport").innerHTML=
+   blocks.map(b=>{
+    let html=
+     '<div class="entry">'+
+     '<h3>Training Block '+
+     (b.index+1)+
+     '</h3>'+
+     '<p class="muted">'+
+     formatDate(b.start)+
+     " to "+
+     formatDate(b.end-1)+
+     '</p>';
+
+    if(b.highlights.length){
+     for(const h of b.highlights){
+      html+=
+       '<p>✓ '+
+       esc(h.name)+
+       ': improved by '+
+       h.improvement.toFixed(1)+
+       esc(h.unit)+
+       '</p>';
+     }
+    }else{
+     html+=
+      '<p>Training block completed. '+
+      'Your coach has prepared the next phase.</p>';
     }
-   }else{
-    html+='<p>Training block completed. Your coach has prepared the next phase.</p>';
-   }
-   return html+"</div>";
-  }).join("");
+
+    return html+"</div>";
+   }).join("");
  }
+
  $("sessionHistory").innerHTML=
-  data.sessions.slice(-15).reverse().map(s=>
-   '<div class="entry"><strong>'+esc(s.date||"Session")+
-   '</strong> · '+num(s.minutes).toFixed(1)+' minutes'+
-   (s.extra?" · Extra session":"")+'</div>'
-  ).join("")||'<p>No sessions recorded yet.</p>';
+  data.sessions.slice(-15).reverse()
+   .map(s=>
+    '<div class="entry">'+
+    '<strong>'+
+    esc(s.date||"Session")+
+    '</strong> · '+
+    num(s.minutes).toFixed(1)+
+    ' minutes'+
+    (s.extra?" · Extra session":"")+
+    '</div>'
+   ).join("")||
+   '<p>No sessions recorded yet.</p>';
+
  $("gameHistory").innerHTML=
-  data.games.slice(-15).reverse().map(g=>
-   '<div class="entry"><strong>'+esc(g.name||"Game")+
-   '</strong><p>'+esc(g.result||"Completed")+'</p></div>'
-  ).join("")||'<p>No games recorded yet.</p>';
+  data.games.slice(-15).reverse()
+   .map(g=>
+    '<div class="entry">'+
+    '<strong>'+
+    esc(
+     g.name==="Doubles Survival"&&
+     survivalMode(g)==="singles"?
+      "Singles Survival":
+      (g.name||"Game")
+    )+
+    '</strong>'+
+    '<p>'+
+    esc(g.result||"Completed")+
+    '</p>'+
+    '</div>'
+   ).join("")||
+   '<p>No games recorded yet.</p>';
 }
 
 /* ASSESSMENT */
+
 function doublesTarget(i){
- return i<20?{segment:"D"+(i+1),label:"D"+(i+1)}:
-  {segment:"BULL",label:"Bull"};
+ return i<20?
+  {
+   segment:"D"+(i+1),
+   label:"D"+(i+1)
+  }:
+  {
+   segment:"BULL",
+   label:"Bull"
+  };
 }
+
 function stageCount(stage){
  const a=data.assessment[stage];
- if(stage==="checkout")return a.filter(x=>x.ended).length;
- if(stage==="doubles"){
-  return a.reduce((n,x)=>n+(Array.isArray(x.darts)?x.darts.length:0),0);
+
+ if(stage==="checkout"){
+  return a.filter(x=>x.ended).length;
  }
+
+ if(stage==="doubles"){
+  return a.reduce(
+   (n,x)=>
+    n+(
+     Array.isArray(x.darts)?
+     x.darts.length:0
+    ),
+   0
+  );
+ }
+
  return a.length;
 }
+
 function stageMax(stage){
- if(stage==="scoring"||stage==="bull")return 30;
+ if(
+  stage==="scoring"||
+  stage==="bull"
+ )return 30;
+
  if(stage==="doubles")return 63;
+
  return 10;
 }
+
 function stageComplete(stage){
  const a=data.assessment[stage];
+
  if(stage==="doubles"){
-  return a.length===21&&a.every(x=>x.darts.length===3);
+  return a.length===21&&
+   a.every(x=>x.darts.length===3);
  }
+
  if(stage==="checkout"){
-  return a.length===10&&a.every(x=>x.ended);
+  return a.length===10&&
+   a.every(x=>x.ended);
  }
+
  return a.length===30;
 }
+
 function renderAssessmentMenu(){
- const complete=STAGES.filter(stageComplete).length;
- $("assessmentStatus").innerHTML='<div class="grid">'+
-  '<div class="metric"><strong>'+complete+
-  '/4</strong><small>Completed</small></div>'+
-  '<div class="metric"><strong>'+
-  (data.assessment.finished?"Yes":"No")+
-  '</strong><small>Ready</small></div>'+
-  '<div class="metric"><strong>'+data.assessmentHistory.length+
-  '</strong><small>Previous</small></div></div>';
- $("assessmentList").innerHTML=STAGES.map((stage,i)=>{
-  const count=stageCount(stage),done=stageComplete(stage);
-  return '<div class="entry"><strong>'+(i+1)+". "+
-   STAGE_NAMES[stage]+'</strong><p>'+
-   count+"/"+stageMax(stage)+(done?" · Completed":"")+
-   '</p><button class="'+(done?"secondary":"")+
-   '" onclick="openAssessment(\''+stage+'\')">'+
-   (done?"View Result":count?"Resume Test":"Start Test")+
-   '</button></div>';
- }).join("");
+ const complete=STAGES.filter(
+  stageComplete
+ ).length;
+
+ $("assessmentStatus").innerHTML=
+  '<div class="grid">'+
+
+   '<div class="metric">'+
+    '<strong>'+
+    complete+'/4'+
+    '</strong>'+
+    '<small>Completed</small>'+
+   '</div>'+
+
+   '<div class="metric">'+
+    '<strong>'+
+    (data.assessment.finished?
+     "Yes":"No")+
+    '</strong>'+
+    '<small>Ready</small>'+
+   '</div>'+
+
+   '<div class="metric">'+
+    '<strong>'+
+    data.assessmentHistory.length+
+    '</strong>'+
+    '<small>Previous</small>'+
+   '</div>'+
+
+  '</div>';
+
+ $("assessmentList").innerHTML=
+  STAGES.map((stage,i)=>{
+   const count=stageCount(stage);
+   const done=stageComplete(stage);
+
+   return '<div class="entry">'+
+    '<strong>'+
+    (i+1)+". "+
+    STAGE_NAMES[stage]+
+    '</strong>'+
+    '<p>'+
+    count+"/"+stageMax(stage)+
+    (done?" · Completed":"")+
+    '</p>'+
+    '<button class="'+
+    (done?"secondary":"")+
+    '" onclick="openAssessment(\''+
+    stage+'\')">'+
+    (done?
+     "View Result":
+     count?
+      "Resume Test":"Start Test")+
+    '</button>'+
+    '</div>';
+  }).join("");
 }
+
 function openAssessment(stage){
  if(!STAGES.includes(stage))return;
+
  activeStage=stage;
- $("assessmentScreen").classList.remove("hidden");
- document.body.classList.add("assessing");
- drawBoard();renderAssessment();
+
+ $("assessmentScreen").classList.remove(
+  "hidden"
+ );
+
+ document.body.classList.add(
+  "assessing"
+ );
+
+ drawBoard();
+ renderAssessment();
 }
+
 function closeAssessment(){
  activeStage=null;
- $("assessmentScreen").classList.add("hidden");
- document.body.classList.remove("assessing");
+
+ $("assessmentScreen").classList.add(
+  "hidden"
+ );
+
+ document.body.classList.remove(
+  "assessing"
+ );
+
  renderAssessmentMenu();
 }
+
 function getAssessmentTarget(){
  const a=data.assessment;
- if(activeStage==="scoring")return "T20";
- if(activeStage==="bull")return "Bull";
+
+ if(activeStage==="scoring"){
+  return "T20";
+ }
+
+ if(activeStage==="bull"){
+  return "Bull";
+ }
+
  if(activeStage==="doubles"){
-  const completed=a.doubles.filter(x=>x.darts.length===3).length;
-  return completed>=21?"Done":doublesTarget(completed).label;
+  const completed=a.doubles.filter(
+   x=>x.darts.length===3
+  ).length;
+
+  return completed>=21?
+   "Done":
+   doublesTarget(completed).label;
  }
+
  if(activeStage==="checkout"){
-  const completed=a.checkout.filter(x=>x.ended).length;
+  const completed=a.checkout.filter(
+   x=>x.ended
+  ).length;
+
   if(completed>=10)return "Done";
-  const current=a.checkout.find(x=>!x.ended);
-  return String(current?current.target:CHECKOUT_TARGETS[completed]);
+
+  const current=a.checkout.find(
+   x=>!x.ended
+  );
+
+  return String(
+   current?
+    current.target:
+    CHECKOUT_TARGETS[completed]
+  );
  }
+
  return "-";
 }
+
 function checkoutRemaining(attempt){
- return attempt.target-attempt.darts.reduce((a,d)=>a+d.score,0);
+ return attempt.target-
+  attempt.darts.reduce(
+   (a,d)=>a+d.score,0
+  );
 }
+
 function assessmentEntry(d){
  const stage=activeStage;
- if(!stage||stageComplete(stage))return;
+
+ if(
+  !stage||
+  stageComplete(stage)
+ )return;
+
  const a=data.assessment[stage];
+
  const dart={
-  segment:d.segment,number:d.number,
-  multiplier:d.multiplier,score:d.score,
-  x:d.x,y:d.y,at:Date.now()
+  segment:d.segment,
+  number:d.number,
+  multiplier:d.multiplier,
+  score:d.score,
+  x:d.x,
+  y:d.y,
+  at:Date.now()
  };
- if(stage==="scoring"||stage==="bull")a.push(dart);
+
+ if(
+  stage==="scoring"||
+  stage==="bull"
+ ){
+  a.push(dart);
+ }
+
  if(stage==="doubles"){
   let attempt=a[a.length-1];
-  if(!attempt||attempt.darts.length===3){
-   attempt={target:doublesTarget(a.length).segment,darts:[]};
+
+  if(
+   !attempt||
+   attempt.darts.length===3
+  ){
+   attempt={
+    target:doublesTarget(
+     a.length
+    ).segment,
+    darts:[]
+   };
+
    a.push(attempt);
   }
+
   attempt.darts.push(dart);
  }
+
  if(stage==="checkout"){
   let attempt=a[a.length-1];
+
   if(!attempt||attempt.ended){
    attempt={
-    target:CHECKOUT_TARGETS[a.length],darts:[],
-    ended:false,success:false,bust:false
+    target:CHECKOUT_TARGETS[
+     a.length
+    ],
+    darts:[],
+    ended:false,
+    success:false,
+    bust:false
    };
+
    a.push(attempt);
   }
-  const before=checkoutRemaining(attempt);
+
+  const before=checkoutRemaining(
+   attempt
+  );
   const remaining=before-dart.score;
+
   dart.remainingBefore=before;
   dart.remaining=remaining;
+
   attempt.darts.push(dart);
 
-  if(remaining===0&&dart.multiplier===2){
-   attempt.success=true;attempt.ended=true;dart.outcome="checkout";
-  }else if(remaining<0||remaining===1||
-           (remaining===0&&dart.multiplier!==2)){
-   attempt.bust=true;attempt.ended=true;dart.outcome="bust";
-  }else if(attempt.darts.length>=3){
-   attempt.ended=true;dart.outcome="failed";
+  if(
+   remaining===0&&
+   dart.multiplier===2
+  ){
+   attempt.success=true;
+   attempt.ended=true;
+   dart.outcome="checkout";
+
+  }else if(
+   remaining<0||
+   remaining===1||
+   (
+    remaining===0&&
+    dart.multiplier!==2
+   )
+  ){
+   attempt.bust=true;
+   attempt.ended=true;
+   dart.outcome="bust";
+
+  }else if(
+   attempt.darts.length>=3
+  ){
+   attempt.ended=true;
+   dart.outcome="failed";
+
   }else{
    dart.outcome="continue";
   }
  }
- if(STAGES.every(stageComplete)&&!data.assessment.finished){
+
+ if(
+  STAGES.every(stageComplete)&&
+  !data.assessment.finished
+ ){
   completeAssessment();
  }
- save(false);renderAssessment();
+
+ save(false);
+ renderAssessment();
 }
+
 function assessMiss(){
  assessmentEntry({
-  segment:"MISS",number:0,multiplier:0,
-  score:0,x:null,y:null
+  segment:"MISS",
+  number:0,
+  multiplier:0,
+  score:0,
+  x:null,
+  y:null
  });
 }
+
 function assessUndo(){
  if(!activeStage)return;
- const a=data.assessment[activeStage];
- if(activeStage==="doubles"||activeStage==="checkout"){
+
+ const a=data.assessment[
+  activeStage
+ ];
+
+ if(
+  activeStage==="doubles"||
+  activeStage==="checkout"
+ ){
   const last=a[a.length-1];
+
   if(!last)return;
+
   last.darts.pop();
+
   if(activeStage==="checkout"){
-   last.ended=false;last.success=false;last.bust=false;
+   last.ended=false;
+   last.success=false;
+   last.bust=false;
   }
-  if(!last.darts.length)a.pop();
+
+  if(!last.darts.length){
+   a.pop();
+  }
+
  }else{
   if(!a.length)return;
   a.pop();
  }
+
  if(data.assessment.finished){
   data.assessment.finished=false;
   data.assessment.completedAt=null;
   data.assessment.profile=null;
  }
- save(false);renderAssessment();
+
+ save(false);
+ renderAssessment();
 }
+
 function completeAssessment(){
  const a=data.assessment;
- const scoringTotal=a.scoring.reduce((n,d)=>n+d.score,0);
- const scoringAverage=scoringTotal/10;
- const doubleHits=a.doubles.reduce((n,x)=>
-  n+x.darts.filter(d=>d.segment===x.target).length,0
+
+ const scoringTotal=a.scoring.reduce(
+  (n,d)=>n+d.score,0
  );
- const doubleRate=100*doubleHits/63;
- const successfulCheckouts=a.checkout.filter(x=>x.success).length;
- const checkoutRate=10*successfulCheckouts;
- const bullHits=a.bull.filter(d=>d.number===25).length;
+
+ const scoringAverage=
+  scoringTotal/10;
+
+ const doubleHits=a.doubles.reduce(
+  (n,x)=>
+   n+x.darts.filter(
+    d=>d.segment===x.target
+   ).length,
+  0
+ );
+
+ const doubleRate=
+  100*doubleHits/63;
+
+ const successfulCheckouts=
+  a.checkout.filter(
+   x=>x.success
+  ).length;
+
+ const checkoutRate=
+  10*successfulCheckouts;
+
+ const bullHits=a.bull.filter(
+  d=>d.number===25
+ ).length;
 
  const profile={
   scoring:{
-   level:tierFor(scoringAverage,"scoring"),
-   average:scoringAverage,total:scoringTotal
+   level:tierFor(
+    scoringAverage,"scoring"
+   ),
+   average:scoringAverage,
+   total:scoringTotal
   },
+
   doubles:{
-   level:tierFor(doubleRate,"doubles"),
-   percentage:doubleRate,hits:doubleHits
+   level:tierFor(
+    doubleRate,"doubles"
+   ),
+   percentage:doubleRate,
+   hits:doubleHits
   },
+
   checkout:{
-   level:tierFor(checkoutRate,"checkout"),
-   percentage:checkoutRate,successful:successfulCheckouts
+   level:tierFor(
+    checkoutRate,"checkout"
+   ),
+   percentage:checkoutRate,
+   successful:successfulCheckouts
   },
-  bull:{percentage:100*bullHits/30,hits:bullHits},
-  provisional:true,createdAt:Date.now()
+
+  bull:{
+   percentage:100*bullHits/30,
+   hits:bullHits
+  },
+
+  provisional:true,
+  createdAt:Date.now()
  };
- a.profile=profile;a.finished=true;a.completedAt=Date.now();
+
+ a.profile=profile;
+ a.finished=true;
+ a.completedAt=Date.now();
+
  data.baseline=profile;
- for(const key of SKILL_KEYS)data.skills[key].level=profile[key].level;
- data.coach.lastReviewedWeek=weekStart(Date.now());
+
+ for(const key of SKILL_KEYS){
+  data.skills[key].level=
+   profile[key].level;
+ }
+
+ data.coach.lastReviewedWeek=
+  weekStart(Date.now());
+
  data.coach.lastChangeEvidence={};
  data.coach.lastTierChanges={};
 }
+
 function restartAssessment(){
  if(!confirm(
   "Start a new assessment? Completed assessments will be retained."
  ))return;
+
  const a=data.assessment;
- if(a.finished)data.assessmentHistory.push(clone(a));
+
+ if(a.finished){
+  data.assessmentHistory.push(
+   clone(a)
+  );
+ }
+
  data.assessment=newAssessment();
- closeAssessment();save();
+
+ closeAssessment();
+ save();
 }
+
 function renderAssessment(){
  if(!activeStage)return;
- const stage=activeStage,a=data.assessment[stage];
- const count=stageCount(stage),max=stageMax(stage);
+
+ const stage=activeStage;
+ const a=data.assessment[stage];
+ const count=stageCount(stage);
+ const max=stageMax(stage);
  const done=stageComplete(stage);
 
- $("assessmentTitle").textContent=STAGE_NAMES[stage];
- $("aCount").textContent=count+"/"+max;
- $("aTarget").textContent=getAssessmentTarget();
- $("aBar").style.width=count/max*100+"%";
- $("aPercent").textContent=Math.round(count/max*100)+"%";
+ $("assessmentTitle").textContent=
+  STAGE_NAMES[stage];
 
- let scoreLabel="Score",score="0";
- let last=null,current=[],progress="";
+ $("aCount").textContent=
+  count+"/"+max;
+
+ $("aTarget").textContent=
+  getAssessmentTarget();
+
+ $("aBar").style.width=
+  count/max*100+"%";
+
+ $("aPercent").textContent=
+  Math.round(count/max*100)+"%";
+
+ let scoreLabel="Score";
+ let score="0";
+ let last=null;
+ let current=[];
+ let progress="";
  let visitLabel="Visit 1";
- let status="Tap the board to record a dart.";
 
- if(stage==="scoring"||stage==="bull"){
+ let status=
+  "Tap the board to record a dart.";
+
+ if(
+  stage==="scoring"||
+  stage==="bull"
+ ){
   scoreLabel="Total Score";
-  score=String(a.reduce((n,d)=>n+d.score,0));
-  const completed=Math.floor(a.length/3);
-  const previousVisit=a.length>0&&a.length%3===0;
-  const visitIndex=previousVisit?completed-1:completed;
-  current=a.slice(visitIndex*3,visitIndex*3+3);
+
+  score=String(
+   a.reduce(
+    (n,d)=>n+d.score,0
+   )
+  );
+
+  const completed=Math.floor(
+   a.length/3
+  );
+
+  const previousVisit=
+   a.length>0&&a.length%3===0;
+
+  const visitIndex=previousVisit?
+   completed-1:completed;
+
+  current=a.slice(
+   visitIndex*3,
+   visitIndex*3+3
+  );
+
   last=a[a.length-1];
-  visitLabel="Visit "+Math.min(10,visitIndex+1)+"/10";
-  progress="Darts remaining: "+(30-a.length);
+
+  visitLabel=
+   "Visit "+
+   Math.min(10,visitIndex+1)+
+   "/10";
+
+  progress=
+   "Darts remaining: "+
+   (30-a.length);
  }
+
  if(stage==="doubles"){
   scoreLabel="Target Hits";
-  score=String(a.reduce((n,x)=>
-   n+x.darts.filter(d=>d.segment===x.target).length,0
-  ));
+
+  score=String(
+   a.reduce(
+    (n,x)=>
+     n+x.darts.filter(
+      d=>d.segment===x.target
+     ).length,
+    0
+   )
+  );
+
   const attempt=a[a.length-1];
+
   if(attempt){
    current=attempt.darts;
    last=current[current.length-1];
-   if(current.length===3&&!done)current=[];
+
+   if(
+    current.length===3&&
+    !done
+   ){
+    current=[];
+   }
   }
-  const completed=a.filter(x=>x.darts.length===3).length;
-  visitLabel="Target "+Math.min(21,completed+1)+"/21";
-  progress="Darts recorded: "+count+"/63";
+
+  const completed=a.filter(
+   x=>x.darts.length===3
+  ).length;
+
+  visitLabel=
+   "Target "+
+   Math.min(21,completed+1)+
+   "/21";
+
+  progress=
+   "Darts recorded: "+
+   count+"/63";
  }
+
  if(stage==="checkout"){
   scoreLabel="Remaining";
+
   const attempt=a[a.length-1];
-  const completed=a.filter(x=>x.ended).length;
-  const successes=a.filter(x=>x.success).length;
+
+  const completed=a.filter(
+   x=>x.ended
+  ).length;
+
+  const successes=a.filter(
+   x=>x.success
+  ).length;
+
   if(attempt&&!attempt.ended){
    current=attempt.darts;
    last=current[current.length-1];
-   score=String(checkoutRemaining(attempt));
-   visitLabel="Checkout "+(completed+1)+"/10";
-   status="Darts remaining: "+(3-attempt.darts.length);
+
+   score=String(
+    checkoutRemaining(attempt)
+   );
+
+   visitLabel=
+    "Checkout "+
+    (completed+1)+
+    "/10";
+
+   status=
+    "Darts remaining: "+
+    (3-attempt.darts.length);
+
   }else{
    if(attempt){
-    last=attempt.darts[attempt.darts.length-1];
+    last=attempt.darts[
+     attempt.darts.length-1
+    ];
+
     status=attempt.success?
      "Checkout successful. Next target ready.":
-     attempt.bust?"Bust. Next target ready.":
-     "Attempt finished. Next target ready.";
+     attempt.bust?
+      "Bust. Next target ready.":
+      "Attempt finished. Next target ready.";
    }
-   score=done?"Done":String(CHECKOUT_TARGETS[completed]);
-   visitLabel="Checkout "+Math.min(10,completed+1)+"/10";
+
+   score=done?
+    "Done":
+    String(
+     CHECKOUT_TARGETS[completed]
+    );
+
+   visitLabel=
+    "Checkout "+
+    Math.min(10,completed+1)+
+    "/10";
   }
-  progress="Successful finishes: "+successes;
+
+  progress=
+   "Successful finishes: "+
+   successes;
  }
- $("aScoreLabel").textContent=scoreLabel;
- $("aScore").textContent=score;
- $("assessmentProgress").textContent=done?"Assessment complete":progress;
- $("aVisitLabel").textContent=visitLabel;
- $("aLast").textContent=last?last.segment:"-";
- $("aVisit").innerHTML=[0,1,2].map(i=>{
-  const dart=current[i];
-  return '<div class="aDart '+(dart?"":"empty")+'">'+
-   (dart?esc(dart.segment):"Dart "+(i+1))+"</div>";
- }).join("");
- $("aStatus").textContent=done?"Stage complete. Return to stages.":status;
- $("board").style.opacity=done?".65":"1";
+
+ $("aScoreLabel").textContent=
+  scoreLabel;
+
+ $("aScore").textContent=
+  score;
+
+ $("assessmentProgress").textContent=
+  done?
+   "Assessment complete":
+   progress;
+
+ $("aVisitLabel").textContent=
+  visitLabel;
+
+ $("aLast").textContent=
+  last?last.segment:"-";
+
+ $("aVisit").innerHTML=
+  [0,1,2].map(i=>{
+   const dart=current[i];
+
+   return '<div class="aDart '+
+    (dart?"":"empty")+
+    '">'+
+    (dart?
+     esc(dart.segment):
+     "Dart "+(i+1))+
+    '</div>';
+  }).join("");
+
+ $("aStatus").textContent=
+  done?
+   "Stage complete. Return to stages.":
+   status;
+
+ $("board").style.opacity=
+  done?".65":"1";
+
  drawMarkers();
 }
 
 /* SVG DARTBOARD */
+
 function polar(r,a){
  const rad=a*Math.PI/180;
- return{x:r*Math.sin(rad),y:-r*Math.cos(rad)};
+
+ return{
+  x:r*Math.sin(rad),
+  y:-r*Math.cos(rad)
+ };
 }
+
 function wedge(inner,outer,start,end){
- const a=polar(outer,start),b=polar(outer,end);
- const c=polar(inner,end),d=polar(inner,start);
+ const a=polar(outer,start);
+ const b=polar(outer,end);
+ const c=polar(inner,end);
+ const d=polar(inner,start);
+
  return[
   "M",a.x,a.y,
   "A",outer,outer,0,0,1,b.x,b.y,
   "L",c.x,c.y,
-  "A",inner,inner,0,0,0,d.x,d.y,"Z"
+  "A",inner,inner,0,0,0,d.x,d.y,
+  "Z"
  ].join(" ");
 }
+
 function svgElement(tag,attributes,parent){
  const el=document.createElementNS(
-  "http://www.w3.org/2000/svg",tag
+  "http://www.w3.org/2000/svg",
+  tag
  );
- for(const key in attributes)el.setAttribute(key,attributes[key]);
- parent.appendChild(el);return el;
+
+ for(const key in attributes){
+  el.setAttribute(
+   key,attributes[key]
+  );
+ }
+
+ parent.appendChild(el);
+ return el;
 }
+
 function drawBoard(){
- const segments=$("segments"),rings=$("rings"),numbers=$("numbers");
- segments.innerHTML="";rings.innerHTML="";numbers.innerHTML="";
+ const segments=$("segments");
+ const rings=$("rings");
+ const numbers=$("numbers");
+
+ segments.innerHTML="";
+ rings.innerHTML="";
+ numbers.innerHTML="";
+
  svgElement("circle",{
-  cx:0,cy:0,r:204,fill:"#101010",
-  stroke:"#777","stroke-width":3
+  cx:0,cy:0,r:204,
+  fill:"#101010",
+  stroke:"#777",
+  "stroke-width":3
  },segments);
 
  for(let i=0;i<20;i++){
-  const center=i*18,start=center-9,end=center+9;
+  const center=i*18;
+  const start=center-9;
+  const end=center+9;
+
   const alternate=i%2===0;
-  const base=alternate?"#e9dfc3":"#252525";
-  const ring=alternate?"#c42b36":"#178d58";
+
+  const base=alternate?
+   "#e9dfc3":"#252525";
+
+  const ring=alternate?
+   "#c42b36":"#178d58";
+
   const bands=[
    [R_BULL_OUT,R_TREBLE_IN,base],
    [R_TREBLE_IN,R_TREBLE_OUT,ring],
    [R_TREBLE_OUT,R_DOUBLE_IN,base],
    [R_DOUBLE_IN,R_DOUBLE_OUT,ring]
   ];
+
   for(const [inner,outer,color] of bands){
    svgElement("path",{
-    d:wedge(inner,outer,start,end),fill:color
+    d:wedge(
+     inner,outer,start,end
+    ),
+    fill:color
    },segments);
   }
+
   const p=polar(188,center);
+
   const t=svgElement("text",{
-   x:p.x,y:p.y,class:"number"
+   x:p.x,
+   y:p.y,
+   class:"number"
   },numbers);
+
   t.textContent=ORDER[i];
  }
+
  svgElement("circle",{
-  cx:0,cy:0,r:R_BULL_OUT,fill:"#178d58"
+  cx:0,cy:0,
+  r:R_BULL_OUT,
+  fill:"#178d58"
  },rings);
+
  svgElement("circle",{
-  cx:0,cy:0,r:R_BULL_IN,fill:"#c42b36"
+  cx:0,cy:0,
+  r:R_BULL_IN,
+  fill:"#c42b36"
  },rings);
 
  for(const r of [
-  R_BULL_IN,R_BULL_OUT,R_TREBLE_IN,
-  R_TREBLE_OUT,R_DOUBLE_IN,R_DOUBLE_OUT
+  R_BULL_IN,
+  R_BULL_OUT,
+  R_TREBLE_IN,
+  R_TREBLE_OUT,
+  R_DOUBLE_IN,
+  R_DOUBLE_OUT
  ]){
   svgElement("circle",{
-   cx:0,cy:0,r,class:"ringline"
+   cx:0,cy:0,r,
+   class:"ringline"
   },rings);
  }
+
  for(let i=0;i<20;i++){
   const angle=i*18+9;
+
   for(const range of [
    [R_BULL_OUT,R_TREBLE_IN],
    [R_TREBLE_OUT,R_DOUBLE_IN]
   ]){
-   const p1=polar(range[0],angle),p2=polar(range[1],angle);
+   const p1=polar(
+    range[0],angle
+   );
+
+   const p2=polar(
+    range[1],angle
+   );
+
    svgElement("line",{
-    x1:p1.x,y1:p1.y,x2:p2.x,y2:p2.y,
-    stroke:"#c7c5b7","stroke-width":1.1
+    x1:p1.x,
+    y1:p1.y,
+    x2:p2.x,
+    y2:p2.y,
+    stroke:"#c7c5b7",
+    "stroke-width":1.1
    },rings);
   }
  }
+
  svgElement("circle",{
-  cx:0,cy:0,r:R_DOUBLE_OUT,
-  fill:"transparent","pointer-events":"all"
+  cx:0,cy:0,
+  r:R_DOUBLE_OUT,
+  fill:"transparent",
+  "pointer-events":"all"
  },rings);
+
  drawMarkers();
 }
+
 function identifyDart(x,y){
  const radius=Math.hypot(x,y);
+
  if(radius>R_DOUBLE_OUT){
-  return{segment:"MISS",number:0,multiplier:0,score:0,x,y};
+  return{
+   segment:"MISS",
+   number:0,
+   multiplier:0,
+   score:0,x,y
+  };
  }
+
  if(radius<=R_BULL_IN){
-  return{segment:"BULL",number:25,multiplier:2,score:50,x,y};
+  return{
+   segment:"BULL",
+   number:25,
+   multiplier:2,
+   score:50,x,y
+  };
  }
+
  if(radius<=R_BULL_OUT){
-  return{segment:"25",number:25,multiplier:1,score:25,x,y};
+  return{
+   segment:"25",
+   number:25,
+   multiplier:1,
+   score:25,x,y
+  };
  }
- let degrees=Math.atan2(x,-y)*180/Math.PI;
+
+ let degrees=
+  Math.atan2(x,-y)*180/Math.PI;
+
  if(degrees<0)degrees+=360;
- const index=Math.floor((degrees+9)/18)%20;
+
+ const index=
+  Math.floor((degrees+9)/18)%20;
+
  const number=ORDER[index];
- let multiplier=1,prefix="S";
+
+ let multiplier=1;
+ let prefix="S";
+
  if(radius>=R_DOUBLE_IN){
-  multiplier=2;prefix="D";
- }else if(radius>=R_TREBLE_IN&&radius<=R_TREBLE_OUT){
-  multiplier=3;prefix="T";
+  multiplier=2;
+  prefix="D";
+
+ }else if(
+  radius>=R_TREBLE_IN&&
+  radius<=R_TREBLE_OUT
+ ){
+  multiplier=3;
+  prefix="T";
  }
+
  return{
-  segment:prefix+number,number,multiplier,
-  score:number*multiplier,x,y
+  segment:prefix+number,
+  number,
+  multiplier,
+  score:number*multiplier,
+  x,y
  };
 }
+
 function boardTap(e){
- if(!activeStage||stageComplete(activeStage))return;
- const svg=$("board"),matrix=svg.getScreenCTM();
+ if(
+  !activeStage||
+  stageComplete(activeStage)
+ )return;
+
+ const svg=$("board");
+ const matrix=svg.getScreenCTM();
+
  if(!matrix)return;
+
  const point=svg.createSVGPoint();
- point.x=e.clientX;point.y=e.clientY;
- const local=point.matrixTransform(matrix.inverse());
- assessmentEntry(identifyDart(local.x,local.y));
+
+ point.x=e.clientX;
+ point.y=e.clientY;
+
+ const local=point.matrixTransform(
+  matrix.inverse()
+ );
+
+ assessmentEntry(
+  identifyDart(
+   local.x,local.y
+  )
+ );
 }
+
 function drawMarkers(){
- const layer=$("markers");layer.innerHTML="";
+ const layer=$("markers");
+ layer.innerHTML="";
+
  if(!activeStage)return;
+
  let darts=[];
- const a=data.assessment[activeStage];
- if(activeStage==="scoring"||activeStage==="bull"){
+ const a=data.assessment[
+  activeStage
+ ];
+
+ if(
+  activeStage==="scoring"||
+  activeStage==="bull"
+ ){
   darts=a.slice(-3);
+
  }else if(a.length){
   darts=a[a.length-1].darts.slice(-3);
  }
+
  for(const dart of darts){
-  if(!Number.isFinite(dart.x)||!Number.isFinite(dart.y))continue;
+  if(
+   !Number.isFinite(dart.x)||
+   !Number.isFinite(dart.y)
+  )continue;
+
   svgElement("circle",{
-   cx:dart.x,cy:dart.y,r:5,
-   fill:"#49b5ff",stroke:"white",
-   "stroke-width":1.6,class:"dartMarker"
+   cx:dart.x,
+   cy:dart.y,
+   r:5,
+   fill:"#49b5ff",
+   stroke:"white",
+   "stroke-width":1.6,
+   class:"dartMarker"
   },layer);
  }
 }
 
 /* BACKUP AND RESTORE */
+
 function backupMessage(message,type=""){
  const el=$("backupStatus");
+
  el.textContent=message;
- el.className="backupStatus"+(type?" "+type:"");
+ el.className=
+  "backupStatus"+
+  (type?" "+type:"");
 }
+
 function restoreMessage(message,type=""){
  const el=$("restoreStatus");
+
  el.textContent=message;
- el.className="backupStatus"+(type?" "+type:"");
+ el.className=
+  "backupStatus"+
+  (type?" "+type:"");
 }
+
 function generateBackup(){
  try{
   const stored=localStorage.getItem(KEY);
-  const backup=stored?JSON.parse(stored):clone(data);
-  if(!backup||!Array.isArray(backup.games)||
-     !Array.isArray(backup.sessions)){
-   throw Error("Saved data could not be verified.");
+
+  const backup=stored?
+   JSON.parse(stored):
+   clone(data);
+
+  if(
+   !backup||
+   !Array.isArray(backup.games)||
+   !Array.isArray(backup.sessions)
+  ){
+   throw Error(
+    "Saved data could not be verified."
+   );
   }
-  const json=JSON.stringify(backup,null,2);
-  $("backupText").value=json;
-  $("backupOutput").classList.remove("hidden");
-  const kb=(new Blob([json]).size/1024).toFixed(1);
-  backupMessage(
-   "Backup generated. Size: "+kb+
-   " KB. Copy and save outside the app.","ok"
+
+  const json=JSON.stringify(
+   backup,null,2
   );
+
+  $("backupText").value=json;
+
+  $("backupOutput").classList.remove(
+   "hidden"
+  );
+
+  const kb=(
+   new Blob([json]).size/1024
+  ).toFixed(1);
+
+  backupMessage(
+   "Backup generated. Size: "+
+   kb+
+   " KB. Copy and save outside the app.",
+   "ok"
+  );
+
  }catch(error){
-  $("backupOutput").classList.remove("hidden");
-  backupMessage("Backup failed: "+error.message,"error");
+  $("backupOutput").classList.remove(
+   "hidden"
+  );
+
+  backupMessage(
+   "Backup failed: "+error.message,
+   "error"
+  );
  }
 }
+
 function selectBackup(){
  const box=$("backupText");
+
  if(!box.value)generateBackup();
  if(!box.value)return;
- box.focus();box.select();
- try{box.setSelectionRange(0,box.value.length);}catch(e){}
- backupMessage("Text selected. Use the iPhone Copy menu.");
+
+ box.focus();
+ box.select();
+
+ try{
+  box.setSelectionRange(
+   0,box.value.length
+  );
+ }catch(e){}
+
+ backupMessage(
+  "Text selected. Use the iPhone Copy menu."
+ );
 }
+
 async function copyBackup(){
  const box=$("backupText");
+
  if(!box.value)generateBackup();
+
  const json=box.value;
+
  if(!json){
-  backupMessage("No backup available.","error");return;
+  backupMessage(
+   "No backup available.",
+   "error"
+  );
+  return;
  }
- if(navigator.clipboard&&
-    typeof navigator.clipboard.writeText==="function"){
+
+ if(
+  navigator.clipboard&&
+  typeof navigator.clipboard.writeText===
+   "function"
+ ){
   try{
-   await navigator.clipboard.writeText(json);
-   backupMessage("Copy requested. Paste into Notes to verify.","ok");
+   await navigator.clipboard.writeText(
+    json
+   );
+
+   backupMessage(
+    "Copy requested. Paste into Notes to verify.",
+    "ok"
+   );
    return;
+
   }catch(e){}
  }
- box.focus();box.select();
- try{box.setSelectionRange(0,json.length);}catch(e){}
+
+ box.focus();
+ box.select();
+
+ try{
+  box.setSelectionRange(
+   0,json.length
+  );
+ }catch(e){}
+
  let copied=false;
- try{copied=document.execCommand("copy");}catch(e){}
+
+ try{
+  copied=document.execCommand(
+   "copy"
+  );
+ }catch(e){}
+
  backupMessage(
-  copied?"Copy requested. Paste into Notes to verify.":
-  "Text selected. Use the iPhone Copy menu.",
+  copied?
+   "Copy requested. Paste into Notes to verify.":
+   "Text selected. Use the iPhone Copy menu.",
   copied?"ok":""
  );
 }
+
 function downloadBackup(){
  const json=$("backupText").value;
- if(!json){backupMessage("Generate a backup first.","error");return;}
+
+ if(!json){
+  backupMessage(
+   "Generate a backup first.",
+   "error"
+  );
+  return;
+ }
+
  try{
-  const blob=new Blob([json],{type:"application/json"});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement("a");
+  const blob=new Blob(
+   [json],
+   {type:"application/json"}
+  );
+
+  const url=URL.createObjectURL(
+   blob
+  );
+
+  const a=document.createElement(
+   "a"
+  );
+
   a.href=url;
-  a.download="darts-coach-v4.8.1-"+dateKey()+".json";
-  document.body.appendChild(a);a.click();a.remove();
-  setTimeout(()=>URL.revokeObjectURL(url),1000);
-  backupMessage("Download requested. If no file appears, use Copy Backup.");
+
+  a.download=
+   "darts-coach-v4.8.2-"+
+   dateKey()+
+   ".json";
+
+  document.body.appendChild(a);
+
+  a.click();
+  a.remove();
+
+  setTimeout(
+   ()=>URL.revokeObjectURL(url),
+   1000
+  );
+
+  backupMessage(
+   "Download requested. If no file appears, use Copy Backup."
+  );
+
  }catch(error){
-  backupMessage("Download unavailable. Use Copy Backup.","error");
+  backupMessage(
+   "Download unavailable. Use Copy Backup.",
+   "error"
+  );
  }
 }
+
 function validateRestore(json){
  let restored;
- try{restored=JSON.parse(json);}
- catch(e){throw Error("The supplied text is not valid JSON.");}
- if(!restored||typeof restored!=="object"||
-    Array.isArray(restored)||
-    !Array.isArray(restored.games)||
-    !Array.isArray(restored.sessions)||
-    !restored.assessment||
-    typeof restored.assessment!=="object"||
-    !restored.skills||
-    typeof restored.skills!=="object"){
-  throw Error("This is not a valid Darts Coach backup.");
+
+ try{
+  restored=JSON.parse(json);
+ }catch(e){
+  throw Error(
+   "The supplied text is not valid JSON."
+  );
  }
+
+ if(
+  !restored||
+  typeof restored!=="object"||
+  Array.isArray(restored)||
+  !Array.isArray(restored.games)||
+  !Array.isArray(restored.sessions)||
+  !restored.assessment||
+  typeof restored.assessment!=="object"||
+  !restored.skills||
+  typeof restored.skills!=="object"
+ ){
+  throw Error(
+   "This is not a valid Darts Coach backup."
+  );
+ }
+
  return restored;
 }
+
 function applyRestoredData(restored){
  if(!confirm(
   "Replace all current training data with this backup? "+
   "This cannot be undone without another backup."
  ))return false;
 
- const replacement=normaliseData(Object.assign(blank(),clone(restored)));
+ const replacement=normaliseData(
+  Object.assign(
+   blank(),
+   clone(restored)
+  )
+ );
+
  try{
-  localStorage.setItem(KEY,JSON.stringify(replacement));
+  localStorage.setItem(
+   KEY,
+   JSON.stringify(replacement)
+  );
+
  }catch(e){
   throw Error(
    "Unable to save restored data. Current data was not replaced."
   );
  }
+
  data=replacement;
+
  activeGame=data.game||null;
- normaliseStraightGame(activeGame);
- undoSnapshot=null;activeStage=null;
- $("assessmentScreen").classList.add("hidden");
- document.body.classList.remove("assessing");
- $("sessionFinished").classList.add("hidden");
+
+ normaliseStraightGame(
+  activeGame
+ );
+
+ normaliseSurvivalGame(
+  activeGame
+ );
+
+ undoSnapshot=null;
+ activeStage=null;
+
+ $("assessmentScreen").classList.add(
+  "hidden"
+ );
+
+ document.body.classList.remove(
+  "assessing"
+ );
+
+ $("sessionFinished").classList.add(
+  "hidden"
+ );
+
  show("home");
  return true;
 }
+
 function restoreFromText(){
  const json=$("restoreText").value.trim();
+
  if(!json){
-  restoreMessage("Paste your JSON backup first.","error");return;
+  restoreMessage(
+   "Paste your JSON backup first.",
+   "error"
+  );
+  return;
  }
+
  try{
-  const restored=validateRestore(json);
+  const restored=validateRestore(
+   json
+  );
+
   if(applyRestoredData(restored)){
    $("restoreText").value="";
-   restoreMessage("Backup restored successfully.","ok");
+
+   restoreMessage(
+    "Backup restored successfully.",
+    "ok"
+   );
   }
+
  }catch(error){
-  restoreMessage("Restore failed: "+error.message,"error");
+  restoreMessage(
+   "Restore failed: "+
+   error.message,
+   "error"
+  );
  }
 }
+
 function importData(e){
  const file=e.target.files[0];
  if(!file)return;
+
  const reader=new FileReader();
+
  reader.onload=()=>{
   try{
-   const restored=validateRestore(String(reader.result));
+   const restored=validateRestore(
+    String(reader.result)
+   );
+
    if(applyRestoredData(restored)){
-    restoreMessage("Backup file restored successfully.","ok");
+    restoreMessage(
+     "Backup file restored successfully.",
+     "ok"
+    );
    }
+
   }catch(error){
-   restoreMessage("Restore failed: "+error.message,"error");
+   restoreMessage(
+    "Restore failed: "+
+    error.message,
+    "error"
+   );
   }
+
   e.target.value="";
  };
+
  reader.onerror=()=>{
-  restoreMessage("Unable to read backup file.","error");
+  restoreMessage(
+   "Unable to read backup file.",
+   "error"
+  );
+
   e.target.value="";
  };
+
  reader.readAsText(file);
 }
 
 /* STARTUP */
+
 function renderAll(){
  renderHome();
  renderSettings();
@@ -2051,24 +4157,49 @@ function renderAll(){
  renderAssessmentMenu();
  renderProgress();
 }
-if(data.activeSession&&!Array.isArray(data.activeSession.plan)){
- data.activeSession=null;data.game=null;
+
+if(
+ data.activeSession&&
+ !Array.isArray(
+  data.activeSession.plan
+ )
+){
+ data.activeSession=null;
+ data.game=null;
 }
+
 if(data.activeSession){
  activeGame=data.game||null;
+
  if(!activeGame){
   const item=currentExercise();
+
   if(item){
    activeGame=buildGame(item.name);
    data.game=activeGame;
   }
  }
- normaliseStraightGame(activeGame);
+
+ normaliseStraightGame(
+  activeGame
+ );
+
+ normaliseSurvivalGame(
+  activeGame
+ );
 }
-$("board").addEventListener("click",boardTap);
+
+$("board").addEventListener(
+ "click",boardTap
+);
+
 performCoachReview();
 checkCompletedBlocks();
-setInterval(trainingTimer,500);
+
+setInterval(
+ trainingTimer,500
+);
+
 show("home");
 save(false);
 
