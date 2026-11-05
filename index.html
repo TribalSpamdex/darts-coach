@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101820"><title>Darts Coach V4.8.5</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101820"><title>Darts Coach V4.8.6</title>
 <style>
 :root{--bg:#101820;--panel:#1d2b39;--panel2:#283b4c;--line:#405365;--green:#67e3a7;--text:#f3f7fa;--muted:#a9bbc9;--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:#102019;padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:#294639;border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -7,7 +7,7 @@ body.trainingActive{overflow:hidden}body.trainingActive>header,body.trainingActi
 @media(max-height:740px){#trainSession:not(.hidden){gap:4px;padding-left:7px;padding-right:7px}#exercisePanel{padding:7px 9px}#exercisePanel .rulePanel{max-height:37px;margin:4px 0}#gameControls button,#scoreInput{min-height:57px}#completeButton{min-height:44px}#gameTarget{font-size:43px}}
 body.assessing{overflow:hidden}#assessmentScreen{position:fixed;inset:0;height:100dvh;z-index:100;background:var(--bg);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}.aHeader{background:#192633;padding:9px;display:flex;justify-content:space-between;align-items:center;gap:6px}.aHeader strong{color:var(--green);font-size:15px}.aHeader button{padding:9px;font-size:12px}.aMetrics{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:7px}.aMetric{text-align:center;background:var(--panel);padding:7px 2px;border-radius:9px}.aMetric small{display:block;font-size:10px;color:var(--muted)}.aMetric strong{font-size:24px;color:var(--green);display:block}.aProgress{padding:3px 11px}.aProgressText{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-bottom:6px}.aBoardZone{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:2px;overflow:hidden}#board{display:block;width:auto;height:auto;max-width:100%;max-height:100%;aspect-ratio:1;touch-action:manipulation;user-select:none}.number{font:bold 17px Arial;fill:white;text-anchor:middle;dominant-baseline:middle;pointer-events:none}.ringline{fill:none;stroke:#dad8c5;stroke-width:1.1;pointer-events:none}.dartMarker{pointer-events:none}.aBottom{background:#192633;padding:8px}.aLast{display:flex;justify-content:space-between;font-size:12px;gap:6px;padding-bottom:7px}.aLast strong{color:var(--green)}.aDarts{display:flex;gap:5px;margin-bottom:7px}.aDart{flex:1;text-align:center;background:var(--panel2);border-radius:7px;padding:8px 2px;color:var(--green);font-size:13px;font-weight:bold}.aDart.empty{color:#8699a9}.aControls{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.aControls button{font-size:12px;padding:11px 2px}.aStatus{text-align:center;color:var(--muted);font-size:11px;padding-top:6px;min-height:20px}
 
-/* V4.8.5: CLEAN COACH DASHBOARD */
+/* V4.8.6: CLEAN COACH DASHBOARD */
 #progress .card{margin:12px;border:1px solid rgba(167,199,216,.08);box-shadow:0 8px 24px rgba(0,0,0,.12)}
 .dashIntro{font-size:13px;color:var(--muted);margin:0 0 13px}
 .dashHeading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:13px}
@@ -39,7 +39,7 @@ body.assessing{overflow:hidden}#assessmentScreen{position:fixed;inset:0;height:1
 #singlesProgress .targetGrid strong{font-size:15px}
 #progress .secondarySub{color:var(--muted);font-size:12px;line-height:1.5}
 
-/* V4.8.5 MONTHLY REPORT AND SAFE RESET */
+/* V4.8.6 MONTHLY REPORT AND SAFE RESET */
 .reportControls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:10px 0}
 .reportControls label{color:var(--muted);font-size:12px}
 .reportControls input[type=month]{background:#263949;color:var(--text);border:1px solid #506778;border-radius:9px;padding:10px;max-width:100%}
@@ -60,13 +60,43 @@ body.assessing{overflow:hidden}#assessmentScreen{position:fixed;inset:0;height:1
 .resetCard .danger{width:100%;background:#ad555d}
 .resetCard p{font-size:13px;color:#e0cbd0}
 #resetMessage{font-size:12px;line-height:1.5;color:var(--muted);margin-top:10px}
+/* V4.8.6 SIMPLE ASSESSMENT */
+nav button{font-size:14px}
+#assessmentScreen{padding-left:0;padding-right:0;overflow:hidden}
+.assessmentBody{flex:1;min-height:0;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.assessmentTarget{background:var(--panel);text-align:center;border-radius:17px;padding:15px 12px}
+.assessmentTarget small{display:block;color:var(--muted);font-size:12px;letter-spacing:1px}
+.assessmentTarget strong{display:block;color:var(--green);font-size:clamp(42px,12vw,66px);line-height:1.3}
+.assessmentTarget p{font-size:14px;line-height:1.35;margin:5px 0;color:#d9e7ee}
+.assessmentActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.assessmentActions button{min-height:66px;font-size:18px;padding:10px 6px}
+.assessmentActions .wide{grid-column:1/-1}
+.assessmentResult{color:var(--muted);text-align:center;font-size:14px;line-height:1.5}
+.assessmentResult input{width:100%;padding:14px;border-radius:10px;font-size:26px;text-align:center}
+.assessmentFooter{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:8px 12px;background:#192633}
+.assessmentFooter button{min-height:48px;font-size:13px}
+#assessmentScreen .aMetrics{grid-template-columns:repeat(2,minmax(0,1fr));padding:0}
+#exercisePanel .rulePanel{max-height:62px}
+#exercisePanel .rule{font-size:12px}
+@media(max-height:690px){.assessmentBody{padding:7px;gap:7px}.assessmentTarget{padding:9px}.assessmentActions button{min-height:55px}}
 </style></head><body>
-<header><h1>🎯 DARTS COACH</h1><small>PERSONALISED TRAINING · V4.8.5</small></header>
-<nav><button id="navHome" onclick="show('home')">Home</button><button id="navTrain" onclick="show('train')">Train</button><button id="navAssess" onclick="show('assess')">Assess</button><button id="navProgress" onclick="show('progress')">Progress</button><button id="navSettings" onclick="show('settings')">Settings</button></nav>
+<header><h1>🎯 DARTS COACH</h1><small>PERSONALISED TRAINING · V4.8.6</small></header>
+<nav><button id="navHome" onclick="show('home')">Home</button><button id="navTrain" onclick="show('train')">Train</button><button id="navProgress" onclick="show('progress')">Progress</button><button id="navSettings" onclick="show('settings')">Settings</button></nav>
 <section id="home"><div class="card hero"><div class="heroIcon">🎯</div><h2 id="homeHeading">Your Training Is Ready</h2><p id="homeMessage">Your coach has prepared today's session.</p><div class="big" id="homeDuration">60 MIN</div><div id="homeAction"></div></div><div class="card"><h2>Your Training Week</h2><div id="homeDays"></div></div><div class="card"><h2>Training Block</h2><p id="blockStatus"></p><div class="progress"><div id="blockBar"></div></div><p class="muted" id="blockInfo"></p></div></section>
 <section id="train" class="hidden"><div id="trainIdle" class="card center"><h2>Ready to Train</h2><p>Your coach has prepared the session.</p><button class="primary" onclick="beginTraining(false)">Start Training</button></div><div id="trainSession" class="hidden"><div class="card"><div class="statLine"><span id="sessionType">Training Session</span><span id="sessionStepLabel">Exercise 1</span></div><div class="big" id="sessionClock">60:00</div><div class="progress"><div id="sessionBar"></div></div></div><div class="card" id="exercisePanel"><h2 id="exerciseName">Warm-up</h2><div class="statLine"><span id="exerciseTimeLabel">Exercise time</span><span id="exerciseClock">10:00</span></div><div class="progress"><div id="exerciseBar"></div></div><div class="rulePanel"><div class="rule" id="exerciseRules"></div></div><div id="playArea"><div class="big" id="gameTarget">Ready</div><p id="gameProgress"></p><div id="straightDisplay" class="hidden"></div><div id="miniMetrics"></div><div id="gameControls"></div><div id="roundFlash"></div></div><div class="row" id="undoRow"><button class="secondary" id="undoButton" onclick="undoGame()">Undo</button></div><button class="primary" id="completeButton" onclick="completeExercise('manual')">Complete Exercise</button></div><div class="card" id="sessionFooter"><button class="secondary" onclick="pauseSession()" id="pauseButton">Pause Session</button><button class="linklike" onclick="finishSessionEarly()">End Session</button></div></div><div id="sessionFinished" class="card hidden"><div class="resultCard"><strong>Training Complete</strong><p>Session recorded.</p></div><p id="finishedText" class="center"></p><button class="primary" onclick="finishView()">Done</button><button class="secondary" style="width:100%;margin-top:8px" onclick="beginTraining(true)">Extra Training Session</button></div></section>
-<section id="assess" class="hidden"><div class="card"><h2>Player Assessment</h2><p class="muted">Your coach uses these results to establish your starting level.</p><div id="assessmentStatus"></div></div><div class="card"><h2>Assessment Stages</h2><div id="assessmentList"></div></div><div class="card"><h2>Reassessment</h2><p class="muted">Previous completed assessments are preserved.</p><button class="secondary" onclick="restartAssessment()">Start New Assessment</button></div></section>
-<div id="assessmentScreen" class="hidden"><div class="aHeader"><strong id="assessmentTitle">Assessment</strong><button class="secondary" onclick="closeAssessment()">Back to Stages</button></div><div class="aMetrics"><div class="aMetric"><small>Target</small><strong id="aTarget">T20</strong></div><div class="aMetric"><small id="aScoreLabel">Score</small><strong id="aScore">0</strong></div><div class="aMetric"><small>Progress</small><strong id="aCount">0/30</strong></div></div><div class="aProgress"><div class="aProgressText"><span id="assessmentProgress">Ready</span><span id="aPercent">0%</span></div><div class="progress"><div id="aBar"></div></div></div><div class="aBoardZone"><svg id="board" viewBox="-215 -215 430 430" xmlns="http://www.w3.org/2000/svg"><g id="segments"></g><g id="rings"></g><g id="numbers"></g><g id="markers"></g></svg></div><div class="aBottom"><div class="aLast"><span>Last dart: <strong id="aLast">-</strong></span><span id="aVisitLabel">Visit 1</span></div><div class="aDarts" id="aVisit"></div><div class="aControls"><button class="secondary" onclick="assessMiss()">Miss Board</button><button class="secondary" onclick="assessUndo()">Undo</button><button onclick="closeAssessment()">Done / Back</button></div><div class="aStatus" id="aStatus"></div></div></div>
+<section id="assess" class="hidden"><div class="card"><h2 id="assessmentHeading">Player Assessment</h2><p class="muted" id="assessmentDescription">Complete the four short tests to set your starting level. You can stop and continue later.</p><div id="assessmentStatus"></div></div><div class="card"><h2>Assessment Stages</h2><div id="assessmentList"></div></div></section>
+<div id="assessmentScreen" class="hidden">
+ <div class="aHeader"><strong id="assessmentTitle">Player Assessment</strong><button class="secondary" onclick="closeAssessment()">Back</button></div>
+ <div class="aProgress"><div class="aProgressText"><span id="assessmentProgress">Assessment</span><span id="aPercent">0%</span></div><div class="progress"><div id="aBar"></div></div></div>
+ <div class="assessmentBody">
+  <div class="assessmentTarget"><small id="assessmentTargetLabel">AIM AT</small><strong id="aTarget">S20</strong><p id="assessmentInstruction"></p></div>
+  <div class="aMetrics"><div class="aMetric"><small id="aScoreLabel">Score</small><strong id="aScore">0</strong></div><div class="aMetric"><small>Progress</small><strong id="aCount">0/10</strong></div></div>
+  <div id="assessmentResult" class="assessmentResult"></div>
+  <div id="assessmentActions" class="assessmentActions"></div>
+  <div id="aStatus" class="aStatus"></div>
+ </div>
+ <div class="assessmentFooter"><button class="secondary" onclick="assessUndo()" id="aUndo">Undo last dart / visit</button><button class="secondary" onclick="closeAssessment()">Save &amp; Back</button></div>
+</div>
 <section id="progress" class="hidden">
 <div class="card">
 <div class="dashHeading"><h2>Training Overview</h2><span class="pill">Your progress</span></div>
@@ -115,21 +145,59 @@ function fmt(s){s=Math.max(0,Math.floor(s));return String(Math.floor(s/60)).padS
 function weekStart(t){const d=new Date(t);d.setHours(0,0,0,0);d.setDate(d.getDate()-(d.getDay()+6)%7);return d.getTime()}
 function addDays(t,n){const d=new Date(t);d.setDate(d.getDate()+n);return d.getTime()}
 function formatDate(t){return new Date(t).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"})}
-function newAssessment(){return{version:2,scoring:[],doubles:[],bull:[],checkout:[],finished:false,completedAt:null,profile:null}}
+function newAssessment(){return{version:3,scoring:[],doubles:[],bull:[],checkout:[],finished:false,completedAt:null,profile:null}}
 function blank(){return{sessions:[],games:[],days:[1,2,3,4,5],bestDouble:0,bestCheckout:0,doublesHit:0,doublesThrown:0,baseline:null,skills:{scoring:{level:7,results:[]},doubles:{level:7,results:[]},checkout:{level:7,results:[]},bull:{level:7,results:[]}},activeSession:null,game:null,assessment:newAssessment(),assessmentHistory:[],legacyCheckoutAttempts:[],bigSingles:[],coach:{version:3,firstStarted:null,reviews:[],lastTierChanges:{},completedBlocks:[],lastReviewedWeek:null,lastUsedEvidence:{},lastEvidenceCount:{},lastChangeEvidence:{}}}}
 function normaliseData(d){
  if(!Array.isArray(d.sessions))d.sessions=[];if(!Array.isArray(d.games))d.games=[];if(!Array.isArray(d.days))d.days=[1,2,3,4,5];if(!Array.isArray(d.bigSingles))d.bigSingles=[];
  if(!d.skills||typeof d.skills!=="object")d.skills={};for(const k of SKILLS){d.skills[k]=Object.assign({level:7,results:[]},d.skills[k]||{});d.skills[k].level=clamp(Math.round(num(d.skills[k].level)||7),1,7);if(!Array.isArray(d.skills[k].results))d.skills[k].results=[]}
  if(!Array.isArray(d.assessmentHistory))d.assessmentHistory=[];if(!Array.isArray(d.legacyCheckoutAttempts))d.legacyCheckoutAttempts=[];
  d.assessment=Object.assign(newAssessment(),d.assessment||{});for(const k of STAGES)if(!Array.isArray(d.assessment[k]))d.assessment[k]=[];
+ if(num(d.assessment.version)<3&&!d.assessment.finished){
+  if(STAGES.some(k=>d.assessment[k].length)){
+   d.assessmentHistory.push(Object.assign({migratedAt:Date.now(),incomplete:true},clone(d.assessment)));
+  }
+  d.assessment=newAssessment();
+ }
  const a=d.assessment.checkout;if(a.some((x,i)=>!x||x.target!==CHECKOUT_TARGETS[i])){d.legacyCheckoutAttempts.push({savedAt:Date.now(),reason:"Previous checkout target sequence",attempts:clone(a)});d.assessment.checkout=[];d.assessment.finished=false;d.assessment.profile=null}
  d.coach=Object.assign(blank().coach,d.coach||{});for(const k of ["reviews","completedBlocks"])if(!Array.isArray(d.coach[k]))d.coach[k]=[];for(const k of ["lastTierChanges","lastUsedEvidence","lastEvidenceCount","lastChangeEvidence"])if(!d.coach[k]||typeof d.coach[k]!=="object")d.coach[k]={};
  if(num(d.coach.version)<2)d.coach.lastReviewedWeek=weekStart(Date.now());d.coach.version=3;return d;
 }
+/* Assessment is mandatory at first use and every 28 days thereafter. */
+function assessmentDue(){
+ const a=data.assessment;
+ if(!a||!a.finished)return true;
+ return !num(a.completedAt)||Date.now()-num(a.completedAt)>=28*DAY_MS;
+}
+function prepareAssessment(){
+ const a=data.assessment;
+ if(a&&a.finished&&assessmentDue()){
+  data.assessmentHistory.push(clone(a));
+  data.assessment=newAssessment();
+  save(false);
+ }
+}
+function sessionBudget(){
+ const s=session();
+ if(!s)return 3600;
+ const current=currentExercise();
+ const extra=current&&current.name==="Big Singles"?exerciseElapsed():0;
+ return 3600+num(s.benchmarkSeconds)+extra;
+}
+function sessionRemaining(){return Math.max(0,sessionBudget()-sessionElapsed())}
 function load(){for(const key of [KEY,...OLD_KEYS]){try{const d=JSON.parse(localStorage.getItem(key));if(d&&typeof d==="object"&&!Array.isArray(d))return normaliseData(Object.assign(blank(),d))}catch(e){}}return normaliseData(blank())}
 let data=load(),activeStage=null,currentTab="home",activeGame=null,undoSnapshot=null,flash="";
 function save(render=true){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){alert("Unable to save. Make a backup.")}if(render)renderAll()}
-function show(id){currentTab=id;for(const t of ["home","train","assess","progress","settings"]){$(t).classList.toggle("hidden",t!==id);$("nav"+t[0].toUpperCase()+t.slice(1)).classList.toggle("selected",t===id)}if(id==="progress")checkCompletedBlocks();renderAll();window.scrollTo(0,0)}
+function show(id){
+ if(id==="assess")id="train";
+ currentTab=id;
+ if(id==="train"&&!session())prepareAssessment();
+ for(const t of ["home","train","progress","settings"]){
+  $(t).classList.toggle("hidden",t!==id);
+  $("nav"+t[0].toUpperCase()+t.slice(1)).classList.toggle("selected",t===id);
+ }
+ if(id==="progress")checkCompletedBlocks();
+ renderAll();window.scrollTo(0,0);
+}
 /* Evidence is aggregated by calendar day: many rounds cannot create many promotion days. */
 function gameTime(g){if(num(g.at)>0)return num(g.at);if(g.day){const t=new Date(g.day+"T12:00:00").getTime();if(Number.isFinite(t))return t}const t=new Date(g.date||"").getTime();return Number.isFinite(t)?t:0}
 function skillSamples(){const result={scoring:[],doubles:[],checkout:[],bull:[]};for(const g of data.games){const time=gameTime(g);if(!time||g.benchmark===false||g.completion==="manual")continue;
@@ -163,8 +231,8 @@ function checkCompletedBlocks(){if(blockStart()===null)return;let changed=false;
 function session(){return data.activeSession}function currentExercise(){const s=session();return s?s.plan[s.index]:null}
 function sessionElapsed(){const s=session();return s?Math.max(0,((s.pausedAt||Date.now())-s.start-num(s.pausedTotal))/1000):0}
 function exerciseElapsed(){const s=session();if(!s)return 0;return Math.max(0,(num(s.activityAccumulated)+(s.activityStarted?(s.pausedAt||Date.now())-s.activityStarted:0))/1000)}
-function beginTraining(extra){if(session()){show("train");return}if(data.days.length!==5){alert("Select five training days in Settings.");show("settings");return}if(!extra&&!data.days.includes(new Date().getDay())){alert("Today is a rest day. Extra training is available.");return}if(!extra&&data.sessions.some(s=>s.date===dateKey()&&!s.extra&&s.completed)){alert("Today's scheduled session is already complete.");return}if(!data.coach.firstStarted)data.coach.firstStarted=Date.now();performCoachReview();data.activeSession={id:Date.now(),start:Date.now(),extra:!!extra,plan:generateSession(extra),index:0,completed:[],pausedAt:null,pausedTotal:0,activityStarted:null,activityAccumulated:0,round:1,roundsCompleted:0,allocated:false};data.game=null;activeGame=null;undoSnapshot=null;$("sessionFinished").classList.add("hidden");startExercise();save();show("train")}
-function allocateRemaining(s){if(s.allocated)return;const remaining=Math.max(0,3600-sessionElapsed()),other=s.plan.slice(s.index),timed=other.filter(e=>e.mode==="timed"&&e.name!=="Review"),review=other.find(e=>e.name==="Review"),reviewSec=Math.min(300,remaining*.15),each=timed.length?Math.max(0,(remaining-reviewSec)/timed.length):0;for(const e of timed)e.seconds=each;if(review)review.seconds=reviewSec;s.allocated=true}
+function beginTraining(extra){if(session()){show("train");return}prepareAssessment();if(assessmentDue()){show("train");return}if(data.days.length!==5){alert("Select five training days in Settings.");show("settings");return}if(!extra&&!data.days.includes(new Date().getDay())){alert("Today is a rest day. Extra training is available.");return}if(!extra&&data.sessions.some(s=>s.date===dateKey()&&!s.extra&&s.completed)){alert("Today's scheduled session is already complete.");return}if(!data.coach.firstStarted)data.coach.firstStarted=Date.now();performCoachReview();data.activeSession={id:Date.now(),start:Date.now(),extra:!!extra,plan:generateSession(extra),index:0,completed:[],pausedAt:null,pausedTotal:0,activityStarted:null,activityAccumulated:0,round:1,roundsCompleted:0,allocated:false,benchmarkSeconds:0};data.game=null;activeGame=null;undoSnapshot=null;$("sessionFinished").classList.add("hidden");startExercise();save();show("train")}
+function allocateRemaining(s){if(s.allocated)return;const remaining=Math.max(0,sessionRemaining()),other=s.plan.slice(s.index),timed=other.filter(e=>e.mode==="timed"&&e.name!=="Review"),review=other.find(e=>e.name==="Review"),reviewSec=Math.min(300,remaining*.15),each=timed.length?Math.max(0,(remaining-reviewSec)/timed.length):0;for(const e of timed)e.seconds=each;if(review)review.seconds=reviewSec;s.allocated=true}
 function startExercise(){const s=session();if(!s)return;if(s.index>=s.plan.length){finishSession(true);return}const item=currentExercise();if(item.name!=="Warm-up"&&item.name!=="Big Singles"&&!s.allocated)allocateRemaining(s);s.activityStarted=Date.now();s.activityAccumulated=0;s.round=1;s.roundsCompleted=0;activeGame=buildGame(item.name);data.game=activeGame;undoSnapshot=null;save(false)}
 function buildGame(name){const g={name,started:Date.now()};if(name==="Big Singles")Object.assign(g,{darts:[],hits:0,day:dateKey()});
  if(name==="Doubles Survival"){const tier=num(data.skills.doubles.level),singles=tier>=6,prior=data.games.filter(x=>x.name===name&&!x.extra).length,reverse=!singles&&prior>0&&prior%8===7,sequence=Array.from({length:20},(_,i)=>reverse?20-i:i+1);Object.assign(g,{variant:singles?"singles":"doubles",sequence,index:0,target:sequence[0],used:0,allowed:singles?9:clamp(tier+2,3,9),hits:0,thrown:0,highest:0,lastHit:0})}
@@ -187,7 +255,7 @@ function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||sess
 function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else g.streak=0;data.game=g;save()}
-function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,completion,benchmark:completion==="natural"||completion==="timed",version:"4.8.3",result:"Activity completed"};
+function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,completion,benchmark:completion==="natural"||completion==="timed",version:"4.8.6",result:"Activity completed"};
  if(g.name==="Doubles Survival"){normaliseSurvivalGame(g);Object.assign(e,{variant:g.variant,sequence:[...g.sequence],hits:g.hits,thrown:g.thrown,allowed:g.allowed,highest:g.highest,lastHit:g.lastHit});e.result=(g.variant==="singles"?"Singles":"Doubles")+" Survival · "+g.hits+"/"+g.thrown+" hits";if(g.variant==="doubles"){data.bestDouble=Math.max(num(data.bestDouble),g.highest);data.doublesHit=num(data.doublesHit)+g.hits;data.doublesThrown=num(data.doublesThrown)+g.thrown}}
  if(g.name==="Scoring Challenge"){Object.assign(e,{points:g.points,visits:g.visits,scores:[...g.scores]});e.benchmark=g.visits>=10;e.result=g.points+" points · "+(g.visits?g.points/g.visits:0).toFixed(1)+" average"}
  if(g.name==="Staying Straight"){normaliseStraightGame(g);Object.assign(e,{points:g.points,targets:[...STRAIGHT_TARGETS],counts:[...g.counts],hits:[...g.hits],misses:[...g.misses],successfulDarts:g.hits.reduce((a,b)=>a+b,0),missedDarts:g.misses.reduce((a,b)=>a+b,0),darts:g.darts,complete:g.index>=5});e.result=g.points+" points · "+STRAIGHT_TARGETS.map((n,i)=>n+"s: "+g.counts[i]).join(", ")}
@@ -201,6 +269,7 @@ function endRound(){const s=session();if(!s||s.pausedAt||!activeGame)return;cons
 function completeExercise(completion="manual"){const s=session();if(!s||s.pausedAt)return;const item=currentExercise();if(!item)return;
  if(item.name==="Warm-up"&&completion!=="timed")return;
  if(item.name==="Big Singles"&&completion!=="natural")return;
+ if(item.name==="Big Singles")s.benchmarkSeconds=num(s.benchmarkSeconds)+exerciseElapsed();
  if(activeGame&&!(["Warm-up","Review","Big Singles"].includes(item.name))){const g=activeGame;const activity=Object.entries(g).some(([key,value])=>["thrown","darts","visits","attempt","hits","fail","success","points"].includes(key)&&((Array.isArray(value)&&value.length>0)||typeof value==="number"&&value>0));if(activity)data.games.push(gameResult(g,completion==="timed"?"partial":"manual"))}
  s.completed.push({name:item.name,at:Date.now(),seconds:Math.round(exerciseElapsed()),rounds:s.roundsCompleted});s.index++;activeGame=null;data.game=null;undoSnapshot=null;flash="";
  if(s.index>=s.plan.length){finishSession(true);return}startExercise();save()}
@@ -209,12 +278,12 @@ function finishSessionEarly(){if(!session())return;if(!confirm("End this trainin
 function pauseSession(){const s=session();if(!s)return;if(s.pausedAt){s.pausedTotal+=Date.now()-s.pausedAt;s.pausedAt=null;s.activityStarted=Date.now()}else{s.pausedAt=Date.now();if(s.activityStarted)s.activityAccumulated+=s.pausedAt-s.activityStarted;s.activityStarted=null}save()}
 function finishView(){$("sessionFinished").classList.add("hidden");show("home")}
 /* TRAINING DISPLAY */
-const RULES={"Warm-up":"Ten full minutes. Throw comfortably, settle your stance and build a consistent rhythm. No skipping.","Big Singles":"Exactly three darts at each number 1–20. Count ONLY the large single section as a hit.","Doubles Survival":"Hit each displayed double within your allowance. After a round ends, start again until time expires.","Scoring Challenge":"Record ten three-dart scores per round. Each completed round restarts automatically.","Staying Straight":"20s, 19s, 18s, 17s, 16s. Single +1, double +2, treble +3. Miss to move on.","Checkout Climb":"Start at 61. Three darts per attempt. Success +5, failure −1. Below 50 ends the round.","Bull Accuracy":"30 darts per round. Count outer bull (25), bullseye (50) and misses separately.","Bull Survival":"Hit your displayed bull target within the allotted darts. Each round restarts until time expires.","Bull Streak":"Build consecutive hits on your bull target. A miss resets the streak; reaching the goal completes a round.","Review":"Relaxed final throws. Keep the rhythm consistent."};
+const RULES={"Warm-up":"Throw comfortably for all 10 minutes. Find a steady stance and rhythm; the timer moves you on.","Big Singles":"Throw 3 darts at each number, 1–20. Tap Hit only for the LARGE single; otherwise Miss.","Doubles Survival":"Aim at the displayed double. Tap Hit or Miss for each dart; rounds repeat until time expires.","Scoring Challenge":"Throw 3 darts and enter the total. Repeat for 10 visits, then begin another round.","Staying Straight":"Aim at 20s, then 19s down to 16s. Score single 1, double 2, treble 3. A miss moves on.","Checkout Climb":"Finish the shown score within 3 darts. Hit: +5 to target; fail: −1. Below 50 ends a round.","Bull Accuracy":"Throw 30 darts at the bull. Record 50, 25 or Miss. Another round starts automatically.","Bull Survival":"Aim at the shown bull area. Hit it within the allowed darts; then repeat the challenge.","Bull Streak":"Hit the shown bull area repeatedly. A miss resets your streak; reach the goal to win the round.","Review":"Finish with relaxed throws. Keep the same easy rhythm until the timer ends."};
 function button(text,code){return '<button onclick="'+code+'">'+text+'</button>'}
-function renderTraining(){const s=session(),visible=!!s&&currentTab==="train";document.body.classList.toggle("trainingActive",visible);$("trainIdle").classList.toggle("hidden",!!s||!$("sessionFinished").classList.contains("hidden"));$("trainSession").classList.toggle("hidden",!s);if(!s)return;const e=currentExercise(),g=activeGame||data.game;if(!e)return;const elapsed=exerciseElapsed(),isBenchmark=e.name==="Big Singles",seconds=e.seconds||0;
- $("sessionType").textContent=s.extra?"Extra Training":"Today's Training";$("sessionStepLabel").textContent="Exercise "+(s.index+1)+"/"+s.plan.length;$("exerciseName").textContent=g&&g.name==="Doubles Survival"&&g.variant==="singles"?"Singles Survival":e.name;
+function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",assessmentMode=!s&&currentTab==="train"&&assessmentDue();$("assess").classList.toggle("hidden",!assessmentMode);document.body.classList.toggle("trainingActive",visible);$("trainIdle").classList.toggle("hidden",assessmentMode||!!s||!$("sessionFinished").classList.contains("hidden"));$("trainSession").classList.toggle("hidden",!s);if(!s)return;const e=currentExercise(),g=activeGame||data.game;if(!e)return;const elapsed=exerciseElapsed(),isBenchmark=e.name==="Big Singles",seconds=e.seconds||0;
+ $("sessionType").textContent=(s.extra?"Extra Training":"Today's Training")+(!s.extra&&(isBenchmark||s.benchmarkSeconds)?" · +"+fmt(s.benchmarkSeconds+(isBenchmark?elapsed:0)):"");$("sessionStepLabel").textContent="Exercise "+(s.index+1)+"/"+s.plan.length;$("exerciseName").textContent=g&&g.name==="Doubles Survival"&&g.variant==="singles"?"Singles Survival":e.name;
  let rule=RULES[e.name]||"";if(g&&g.name==="Doubles Survival"&&g.variant==="singles")rule="Hit the displayed SINGLE (either single section) within nine darts. A completed round restarts.";if(g&&["Bull Survival","Bull Streak"].includes(g.name))rule=(g.target==="CENTRE"?"CENTRE = anywhere INSIDE the inner edge of the treble ring, including the bull. ":g.target==="50"?"Only the red bullseye (50) counts. ":"Either outer bull (25) or bullseye (50) counts. ")+rule;
- $("exerciseRules").textContent=rule;$("exerciseTimeLabel").textContent=isBenchmark?"60-dart benchmark":"Exercise time";$("exerciseClock").textContent=isBenchmark?(g?g.darts.length:0)+"/60":fmt(Math.max(0,seconds-elapsed));$("exerciseBar").style.width=isBenchmark?((g?g.darts.length:0)/60*100)+"%":clamp(100*elapsed/Math.max(1,seconds),0,100)+"%";$("sessionClock").textContent=fmt(Math.max(0,3600-sessionElapsed()));$("sessionBar").style.width=clamp(100*sessionElapsed()/3600,0,100)+"%";$("pauseButton").textContent=s.pausedAt?"Resume Session":"Pause Session";
+ $("exerciseRules").textContent=rule;$("exerciseTimeLabel").textContent=isBenchmark?"60 darts · extra time":"Exercise time";$("exerciseClock").textContent=isBenchmark?(g?g.darts.length:0)+"/60":fmt(Math.max(0,seconds-elapsed));$("exerciseBar").style.width=isBenchmark?((g?g.darts.length:0)/60*100)+"%":clamp(100*elapsed/Math.max(1,seconds),0,100)+"%";$("sessionClock").textContent=fmt(sessionRemaining());$("sessionBar").style.width=clamp(100*sessionElapsed()/sessionBudget(),0,100)+"%";$("pauseButton").textContent=s.pausedAt?"Resume Session":"Pause Session";
  $("completeButton").classList.toggle("hidden",e.name==="Warm-up"||isBenchmark);$("completeButton").disabled=!!s.pausedAt;$("undoButton").disabled=!undoSnapshot||!!s.pausedAt;$("undoRow").classList.toggle("hidden",["Warm-up","Review"].includes(e.name));
  let heading="",detail="",html="",mini="";$("straightDisplay").classList.add("hidden");if(!g)return;
  switch(g.name){
@@ -232,14 +301,14 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train";do
  $("gameTarget").textContent=heading;$("gameProgress").textContent=detail;$("miniMetrics").textContent=mini;$("roundFlash").textContent=flash&&s.roundsCompleted?flash+" · Round "+s.round:"Round "+s.round;
  const controls=$("gameControls");if(g.name!=="Scoring Challenge"||!controls.querySelector("#scoreInput"))controls.innerHTML=html;for(const x of controls.querySelectorAll("button,input"))x.disabled=!!s.pausedAt;
 }
-function trainingTimer(){const s=session();if(!s||s.pausedAt)return;const item=currentExercise();if(!item)return;const elapsed=exerciseElapsed();if(item.name==="Big Singles"){if(currentTab==="train"){const g=activeGame||data.game;$("sessionClock").textContent=fmt(Math.max(0,3600-sessionElapsed()));if(g){$("exerciseClock").textContent=g.darts.length+"/60";$("exerciseBar").style.width=g.darts.length/60*100+"%"}}return}if(elapsed>=num(item.seconds)){completeExercise("timed");return}if(currentTab==="train"){$("exerciseClock").textContent=fmt(Math.max(0,item.seconds-elapsed));$("exerciseBar").style.width=clamp(100*elapsed/Math.max(1,item.seconds),0,100)+"%";$("sessionClock").textContent=fmt(Math.max(0,3600-sessionElapsed()));$("sessionBar").style.width=clamp(100*sessionElapsed()/3600,0,100)+"%"}}
+function trainingTimer(){const s=session();if(!s||s.pausedAt)return;const item=currentExercise();if(!item)return;const elapsed=exerciseElapsed();if(item.name==="Big Singles"){if(currentTab==="train"){const g=activeGame||data.game;$("sessionClock").textContent=fmt(sessionRemaining());if(g){$("exerciseClock").textContent=g.darts.length+"/60";$("exerciseBar").style.width=g.darts.length/60*100+"%"}}return}if(elapsed>=num(item.seconds)){completeExercise("timed");return}if(currentTab==="train"){$("exerciseClock").textContent=fmt(Math.max(0,item.seconds-elapsed));$("exerciseBar").style.width=clamp(100*elapsed/Math.max(1,item.seconds),0,100)+"%";$("sessionClock").textContent=fmt(sessionRemaining());$("sessionBar").style.width=clamp(100*sessionElapsed()/sessionBudget(),0,100)+"%"}}
 /* HOME + PROGRESS */
-function renderHome(){const s=session(),today=new Date().getDay(),scheduled=data.days.includes(today);$("homeHeading").textContent=s?"Training In Progress":scheduled?"Your Training Is Ready":"Today Is a Rest Day";$("homeMessage").textContent=s?"Continue where you left off.":scheduled?"Your coach has prepared today's session.":"Rest and recovery are part of your programme.";$("homeDuration").textContent=s?fmt(Math.max(0,3600-sessionElapsed())):"60 MIN";let actions="";if(s)actions='<button class="primary" onclick="show(\'train\')">Continue Training</button>';else{const done=data.sessions.some(x=>x.date===dateKey()&&!x.extra&&x.completed);if(scheduled&&!done)actions='<button class="primary" onclick="beginTraining(false)">Start Training</button>';else if(scheduled)actions='<div class="info">Scheduled training completed today.</div>';actions+='<button class="secondary" style="width:100%;margin-top:10px" onclick="beginTraining(true)">Extra Training</button>'}$("homeAction").innerHTML=actions;$("homeDays").innerHTML=[...data.days].sort((a,b)=>a-b).map(n=>'<span class="tag" style="margin:3px">'+DAY_NAMES[n]+'</span>').join("");if(!blockStart()){$("blockStatus").textContent="Your first training block begins with your first session.";$("blockBar").style.width="0%";$("blockInfo").textContent="Four weeks per block."}else{const i=currentBlockIndex(),begin=blockBoundary(i),end=blockBoundary(i+1),elapsed=Date.now()-begin;$("blockStatus").textContent="Training Block "+(i+1);$("blockBar").style.width=clamp(100*elapsed/(end-begin),0,100)+"%";$("blockInfo").textContent="Week "+clamp(Math.floor(elapsed/(7*DAY_MS))+1,1,4)+" of 4"}}
+function renderHome(){const s=session(),today=new Date().getDay(),scheduled=data.days.includes(today),needsAssessment=!s&&assessmentDue();$("homeHeading").textContent=needsAssessment?"Start With Your Assessment":s?"Training In Progress":scheduled?"Your Training Is Ready":"Today Is a Rest Day";$("homeMessage").textContent=needsAssessment?"Four short tests establish your starting level. Training unlocks afterwards.":s?"Continue where you left off.":scheduled?"Your coach has prepared today's session.":"Rest and recovery are part of your programme.";$("homeDuration").textContent=s?fmt(sessionRemaining()):needsAssessment?"4 TESTS":scheduled?"60 MIN + SINGLES":"60 MIN";let actions="";if(needsAssessment)actions='<button class="primary" onclick="show(&quot;train&quot;)">Start Assessment</button>';else if(s)actions='<button class="primary" onclick="show(\'train\')">Continue Training</button>';else{const done=data.sessions.some(x=>x.date===dateKey()&&!x.extra&&x.completed);if(scheduled&&!done)actions='<button class="primary" onclick="beginTraining(false)">Start Training</button>';else if(scheduled)actions='<div class="info">Scheduled training completed today.</div>';actions+='<button class="secondary" style="width:100%;margin-top:10px" onclick="beginTraining(true)">Extra Training</button>'}$("homeAction").innerHTML=actions;$("homeDays").innerHTML=[...data.days].sort((a,b)=>a-b).map(n=>'<span class="tag" style="margin:3px">'+DAY_NAMES[n]+'</span>').join("");if(!blockStart()){$("blockStatus").textContent="Your first training block begins with your first session.";$("blockBar").style.width="0%";$("blockInfo").textContent="Four weeks per block."}else{const i=currentBlockIndex(),begin=blockBoundary(i),end=blockBoundary(i+1),elapsed=Date.now()-begin;$("blockStatus").textContent="Training Block "+(i+1);$("blockBar").style.width=clamp(100*elapsed/(end-begin),0,100)+"%";$("blockInfo").textContent="Week "+clamp(Math.floor(elapsed/(7*DAY_MS))+1,1,4)+" of 4"}}
 function renderSettings(){$("days").innerHTML=DAY_NAMES.map((n,i)=>'<label><input type="checkbox" '+(data.days.includes(i)?"checked":"")+' onchange="changeDay('+i+',this.checked)"> '+n.slice(0,3)+'</label>').join("");$("dayStatus").textContent=data.days.length+"/5 days selected";$("coachSystemStatus").innerHTML='<p>Automatic training: <strong>Active</strong></p><p>Independent skills: <strong>Scoring, doubles, checkout, bull</strong></p><p>Progress updates: <strong>Based on evidence across training days</strong></p>'}
 function renderHandPreference(){for(const hand of ["left","right"]){const b=$(hand==="left"?"handLeft":"handRight");if(!b)continue;b.classList.toggle("secondary",data.throwingHand!==hand);b.setAttribute("aria-pressed",String(data.throwingHand===hand))}}
 function changeDay(day,checked){const days=data.days.filter(x=>x!==day);if(checked)days.push(day);if(days.length>5){alert("Select exactly five training days.");renderSettings();return}data.days=days;save()}
 
-/* V4.8.5 dashboard. Renders from saved data, without modifying historical records. */
+/* V4.8.6 dashboard. Renders from saved data, without modifying historical records. */
 let selectedTrend="scoring";
 let historyVisible=false;
 const SKILL_LABELS={scoring:"Scoring",doubles:"Doubles",checkout:"Checkouts",bull:"Bull accuracy",singles:"Big Singles"};
@@ -276,7 +345,7 @@ function renderWeeklyReview(){const now=Date.now(),thisWeek=weekStart(now),lastW
  const el=$("weeklyCoachReview");if(!changes.length){el.innerHTML='<p class="muted">Your coach will offer a short weekly review when there are comparable results from two training weeks. No invented feedback.</p>';return}
  const better=changes.filter(x=>x.diff>=2),needs=changes.filter(x=>x.diff<=-3);let message='Your completed training results are being compared across weeks. ';if(better.length)message+='Good progress in '+better.map(x=>SKILL_LABELS[x.key].toLowerCase()).join(' and ')+'. ';if(needs.length){const key=needs.sort((a,b)=>a.diff-b.diff)[0].key;const tips={scoring:'For your next scoring session, focus on a repeatable setup and a smooth release rather than forcing extra power.',doubles:'On doubles, settle your feet before each visit and keep the same throwing rhythm as your scoring darts.',checkout:'On checkouts, commit to the target before throwing and maintain the same tempo throughout the visit.',bull:'For bull practice, keep your stance consistent and use the same aiming routine for every dart.'};message+=tips[key]}else message+='Keep your practice routine consistent. There is no need to change your technique just because one week varies.';el.innerHTML='<div class="coachNote">'+esc(message)+'</div><p class="secondarySub">Reviewing '+formatDate(lastWeek)+' to '+formatDate(thisWeek-1)+'. Advice is general and does not diagnose throwing mechanics.</p>'}
 
-/* V4.8.5: monthly statistics and shareable image */
+/* V4.8.6: monthly statistics and shareable image */
 let selectedReportMonth="";
 function monthString(t){const d=new Date(t);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")}
 function monthBounds(ym){if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(ym))return null;const [y,m]=ym.split("-").map(Number);const start=new Date(y,m-1,1).getTime(),end=new Date(y,m,1).getTime(),previous=new Date(y,m-2,1).getTime();return{start,end,previous,title:new Date(start).toLocaleDateString("en-GB",{month:"long",year:"numeric"})}}
@@ -309,45 +378,210 @@ function renderProgress(){
  $("gameHistory").innerHTML=data.games.slice(-40).reverse().map(g=>'<div class="entry"><strong>'+esc(g.name==="Doubles Survival"&&g.variant==="singles"?'Singles Survival':g.name||'Game')+'</strong> · '+esc(g.result||'Completed')+(g.completion==='partial'?' (partial)':'')+'</div>').join('')||'<p>No games recorded yet.</p>';
  $("historySection").classList.toggle('hidden',!historyVisible);$("historyToggle").textContent=historyVisible?'Hide Training History':'View Training History';
 }
-/* ASSESSMENT - four original stages, compatible with all existing records */
-function doublesTarget(i){return i<20?{segment:"D"+(i+1),label:"D"+(i+1)}:{segment:"BULL",label:"Bull"}}
-function stageCount(stage){const a=data.assessment[stage];return stage==="checkout"?a.filter(x=>x.ended).length:stage==="doubles"?a.reduce((n,x)=>n+(Array.isArray(x.darts)?x.darts.length:0),0):a.length}
-function stageMax(stage){return stage==="doubles"?63:stage==="checkout"?10:30}
-function stageComplete(stage){const a=data.assessment[stage];return stage==="doubles"?a.length===21&&a.every(x=>x.darts.length===3):stage==="checkout"?a.length===10&&a.every(x=>x.ended):a.length===30}
-function renderAssessmentMenu(){const complete=STAGES.filter(stageComplete).length;$("assessmentStatus").innerHTML='<div class="grid"><div class="metric"><strong>'+complete+'/4</strong><small>Completed</small></div><div class="metric"><strong>'+(data.assessment.finished?"Yes":"No")+'</strong><small>Ready</small></div><div class="metric"><strong>'+data.assessmentHistory.length+'</strong><small>Previous</small></div></div>';$("assessmentList").innerHTML=STAGES.map((stage,i)=>{const count=stageCount(stage),done=stageComplete(stage);return '<div class="entry"><strong>'+(i+1)+'. '+STAGE_NAMES[stage]+'</strong><p>'+count+'/'+stageMax(stage)+(done?' · Completed':'')+'</p><button class="'+(done?'secondary':'')+'" onclick="openAssessment(\''+stage+'\')">'+(done?'View Result':count?'Resume Test':'Start Test')+'</button></div>'}).join("")}
-function openAssessment(stage){if(!STAGES.includes(stage))return;activeStage=stage;$("assessmentScreen").classList.remove("hidden");document.body.classList.add("assessing");drawBoard();renderAssessment()}
-function closeAssessment(){activeStage=null;$("assessmentScreen").classList.add("hidden");document.body.classList.remove("assessing");renderAssessmentMenu()}
-function getAssessmentTarget(){const a=data.assessment;if(activeStage==="scoring")return"T20";if(activeStage==="bull")return"Bull";if(activeStage==="doubles"){const n=a.doubles.filter(x=>x.darts.length===3).length;return n>=21?"Done":doublesTarget(n).label}if(activeStage==="checkout"){const n=a.checkout.filter(x=>x.ended).length;return n>=10?"Done":String((a.checkout.find(x=>!x.ended)||{}).target||CHECKOUT_TARGETS[n])}return"-"}
-function checkoutRemaining(a){return a.target-a.darts.reduce((sum,d)=>sum+d.score,0)}
-function assessmentEntry(d){const stage=activeStage;if(!stage||stageComplete(stage))return;const a=data.assessment[stage],dart={segment:d.segment,number:d.number,multiplier:d.multiplier,score:d.score,x:d.x,y:d.y,at:Date.now()};if(stage==="scoring"||stage==="bull")a.push(dart);
- if(stage==="doubles"){let attempt=a[a.length-1];if(!attempt||attempt.darts.length===3){attempt={target:doublesTarget(a.length).segment,darts:[]};a.push(attempt)}attempt.darts.push(dart)}
- if(stage==="checkout"){let attempt=a[a.length-1];if(!attempt||attempt.ended){attempt={target:CHECKOUT_TARGETS[a.length],darts:[],ended:false,success:false,bust:false};a.push(attempt)}const before=checkoutRemaining(attempt),remaining=before-dart.score;dart.remainingBefore=before;dart.remaining=remaining;attempt.darts.push(dart);if(remaining===0&&dart.multiplier===2){attempt.success=true;attempt.ended=true;dart.outcome="checkout"}else if(remaining<0||remaining===1||(remaining===0&&dart.multiplier!==2)){attempt.bust=true;attempt.ended=true;dart.outcome="bust"}else if(attempt.darts.length>=3){attempt.ended=true;dart.outcome="failed"}else dart.outcome="continue"}
- if(STAGES.every(stageComplete)&&!data.assessment.finished)completeAssessment();save(false);renderAssessment()}
-function assessMiss(){assessmentEntry({segment:"MISS",number:0,multiplier:0,score:0,x:null,y:null})}
-function assessUndo(){if(!activeStage)return;const a=data.assessment[activeStage];if(activeStage==="doubles"||activeStage==="checkout"){const last=a[a.length-1];if(!last)return;last.darts.pop();if(activeStage==="checkout"){last.ended=false;last.success=false;last.bust=false}if(!last.darts.length)a.pop()}else{if(!a.length)return;a.pop()}if(data.assessment.finished){data.assessment.finished=false;data.assessment.completedAt=null;data.assessment.profile=null}save(false);renderAssessment()}
-function completeAssessment(){const a=data.assessment,scoringTotal=a.scoring.reduce((n,d)=>n+d.score,0),scoringAverage=scoringTotal/10,doubleHits=a.doubles.reduce((n,x)=>n+x.darts.filter(d=>d.segment===x.target).length,0),doubleRate=100*doubleHits/63,successes=a.checkout.filter(x=>x.success).length,checkoutRate=10*successes,bullHits=a.bull.filter(d=>d.number===25).length,bull50=a.bull.filter(d=>d.score===50).length,bullRate=100*bullHits/30;const profile={scoring:{level:tierFor(scoringAverage,"scoring"),average:scoringAverage,total:scoringTotal},doubles:{level:tierFor(doubleRate,"doubles"),percentage:doubleRate,hits:doubleHits},checkout:{level:tierFor(checkoutRate,"checkout"),percentage:checkoutRate,successful:successes},bull:{level:tierFor(bullRate,"bull"),percentage:bullRate,hits:bullHits,bullseyes:bull50},provisional:true,createdAt:Date.now()};a.profile=profile;a.finished=true;a.completedAt=Date.now();data.baseline=profile;for(const key of SKILLS)data.skills[key].level=profile[key].level;data.coach.lastReviewedWeek=weekStart(Date.now());data.coach.lastChangeEvidence={};data.coach.lastTierChanges={}}
-function restartAssessment(){if(!confirm("Start a new assessment? Completed assessments will be retained."))return;const a=data.assessment;if(a.finished)data.assessmentHistory.push(clone(a));data.assessment=newAssessment();closeAssessment();save()}
-function renderAssessment(){if(!activeStage)return;const stage=activeStage,a=data.assessment[stage],count=stageCount(stage),max=stageMax(stage),done=stageComplete(stage);$("assessmentTitle").textContent=STAGE_NAMES[stage];$("aCount").textContent=count+"/"+max;$("aTarget").textContent=getAssessmentTarget();$("aBar").style.width=count/max*100+"%";$("aPercent").textContent=Math.round(count/max*100)+"%";let scoreLabel="Score",score="0",last=null,current=[],progress="",visitLabel="Visit 1",status="Tap the board to record a dart.";
- if(stage==="scoring"||stage==="bull"){scoreLabel="Total Score";score=String(a.reduce((n,d)=>n+d.score,0));const visits=Math.floor(a.length/3),index=a.length>0&&a.length%3===0?visits-1:visits;current=a.slice(index*3,index*3+3);last=a[a.length-1];visitLabel="Visit "+Math.min(10,index+1)+"/10";progress="Darts remaining: "+(30-a.length)}
- if(stage==="doubles"){scoreLabel="Target Hits";score=String(a.reduce((n,x)=>n+x.darts.filter(d=>d.segment===x.target).length,0));const attempt=a[a.length-1];if(attempt){current=attempt.darts;last=current[current.length-1];if(current.length===3&&!done)current=[]}const completed=a.filter(x=>x.darts.length===3).length;visitLabel="Target "+Math.min(21,completed+1)+"/21";progress="Darts recorded: "+count+"/63"}
- if(stage==="checkout"){scoreLabel="Remaining";const attempt=a[a.length-1],completed=a.filter(x=>x.ended).length,successes=a.filter(x=>x.success).length;if(attempt&&!attempt.ended){current=attempt.darts;last=current[current.length-1];score=String(checkoutRemaining(attempt));visitLabel="Checkout "+(completed+1)+"/10";status="Darts remaining: "+(3-attempt.darts.length)}else{if(attempt){last=attempt.darts[attempt.darts.length-1];status=attempt.success?"Checkout successful. Next target ready.":attempt.bust?"Bust. Next target ready.":"Attempt finished. Next target ready."}score=done?"Done":String(CHECKOUT_TARGETS[completed]);visitLabel="Checkout "+Math.min(10,completed+1)+"/10"}progress="Successful finishes: "+successes}
- $("aScoreLabel").textContent=scoreLabel;$("aScore").textContent=score;$("assessmentProgress").textContent=done?"Assessment complete":progress;$("aVisitLabel").textContent=visitLabel;$("aLast").textContent=last?last.segment:"-";$("aVisit").innerHTML=[0,1,2].map(i=>'<div class="aDart '+(current[i]?'':'empty')+'">'+(current[i]?esc(current[i].segment):"Dart "+(i+1))+'</div>').join("");$("aStatus").textContent=done?"Stage complete. Return to stages.":status;$("board").style.opacity=done?".65":"1";drawMarkers()}
-/* SVG BOARD */
-function polar(r,a){const rad=a*Math.PI/180;return{x:r*Math.sin(rad),y:-r*Math.cos(rad)}}
-function wedge(inner,outer,start,end){const a=polar(outer,start),b=polar(outer,end),c=polar(inner,end),d=polar(inner,start);return["M",a.x,a.y,"A",outer,outer,0,0,1,b.x,b.y,"L",c.x,c.y,"A",inner,inner,0,0,0,d.x,d.y,"Z"].join(" ")}
-function svgElement(tag,attributes,parent){const el=document.createElementNS("http://www.w3.org/2000/svg",tag);for(const key in attributes)el.setAttribute(key,attributes[key]);parent.appendChild(el);return el}
-function drawBoard(){const segments=$("segments"),rings=$("rings"),numbers=$("numbers");segments.innerHTML="";rings.innerHTML="";numbers.innerHTML="";svgElement("circle",{cx:0,cy:0,r:204,fill:"#101010",stroke:"#777","stroke-width":3},segments);for(let i=0;i<20;i++){const center=i*18,start=center-9,end=center+9,alternate=i%2===0,base=alternate?"#e9dfc3":"#252525",ring=alternate?"#c42b36":"#178d58";for(const [inner,outer,color] of [[R_BULL_OUT,R_TREBLE_IN,base],[R_TREBLE_IN,R_TREBLE_OUT,ring],[R_TREBLE_OUT,R_DOUBLE_IN,base],[R_DOUBLE_IN,R_DOUBLE_OUT,ring]])svgElement("path",{d:wedge(inner,outer,start,end),fill:color},segments);const p=polar(188,center),t=svgElement("text",{x:p.x,y:p.y,class:"number"},numbers);t.textContent=ORDER[i]}
- svgElement("circle",{cx:0,cy:0,r:R_BULL_OUT,fill:"#178d58"},rings);svgElement("circle",{cx:0,cy:0,r:R_BULL_IN,fill:"#c42b36"},rings);for(const r of [R_BULL_IN,R_BULL_OUT,R_TREBLE_IN,R_TREBLE_OUT,R_DOUBLE_IN,R_DOUBLE_OUT])svgElement("circle",{cx:0,cy:0,r,class:"ringline"},rings);for(let i=0;i<20;i++){const angle=i*18+9;for(const range of [[R_BULL_OUT,R_TREBLE_IN],[R_TREBLE_OUT,R_DOUBLE_IN]]){const p1=polar(range[0],angle),p2=polar(range[1],angle);svgElement("line",{x1:p1.x,y1:p1.y,x2:p2.x,y2:p2.y,stroke:"#c7c5b7","stroke-width":1.1},rings)}}svgElement("circle",{cx:0,cy:0,r:R_DOUBLE_OUT,fill:"transparent","pointer-events":"all"},rings);drawMarkers()}
-function identifyDart(x,y){const radius=Math.hypot(x,y);if(radius>R_DOUBLE_OUT)return{segment:"MISS",number:0,multiplier:0,score:0,x,y};if(radius<=R_BULL_IN)return{segment:"BULL",number:25,multiplier:2,score:50,x,y};if(radius<=R_BULL_OUT)return{segment:"25",number:25,multiplier:1,score:25,x,y};let degrees=Math.atan2(x,-y)*180/Math.PI;if(degrees<0)degrees+=360;const number=ORDER[Math.floor((degrees+9)/18)%20];let multiplier=1,prefix="S";if(radius>=R_DOUBLE_IN){multiplier=2;prefix="D"}else if(radius>=R_TREBLE_IN&&radius<=R_TREBLE_OUT){multiplier=3;prefix="T"}return{segment:prefix+number,number,multiplier,score:number*multiplier,x,y}}
-function boardTap(e){if(!activeStage||stageComplete(activeStage))return;const svg=$("board"),matrix=svg.getScreenCTM();if(!matrix)return;const point=svg.createSVGPoint();point.x=e.clientX;point.y=e.clientY;const local=point.matrixTransform(matrix.inverse());assessmentEntry(identifyDart(local.x,local.y))}
-function drawMarkers(){const layer=$("markers");layer.innerHTML="";if(!activeStage)return;let darts=[];const a=data.assessment[activeStage];if(activeStage==="scoring"||activeStage==="bull")darts=a.slice(-3);else if(a.length)darts=a[a.length-1].darts.slice(-3);for(const d of darts){if(!Number.isFinite(d.x)||!Number.isFinite(d.y))continue;svgElement("circle",{cx:d.x,cy:d.y,r:5,fill:"#49b5ff",stroke:"white","stroke-width":1.6,class:"dartMarker"},layer)}}
+/* SIMPLE ASSESSMENT · SCORING, DOUBLES, BULL, CHECKOUT */
+function doublesTarget(i){return{segment:"D"+(i+1),label:"D"+(i+1)}}
+function stageCount(stage){
+ const a=data.assessment[stage];
+ if(stage==="doubles")return a.reduce((sum,r)=>sum+(r.darts||[]).length,0);
+ if(stage==="checkout")return a.filter(r=>r.ended).length;
+ return a.length;
+}
+function stageMax(stage){
+ if(stage==="scoring")return data.assessment.version>=3?10:30;
+ if(stage==="doubles")return data.assessment.version>=3?60:63;
+ return stage==="checkout"?10:30;
+}
+function stageComplete(stage){
+ const a=data.assessment[stage];
+ if(stage==="doubles")return a.length===(data.assessment.version>=3?20:21)&&a.every(r=>(r.darts||[]).length===3);
+ if(stage==="checkout")return a.length===10&&a.every(r=>r.ended);
+ return a.length===stageMax(stage);
+}
+function renderAssessmentMenu(){
+ const complete=STAGES.filter(stageComplete).length;
+ $("assessmentHeading").textContent=data.assessmentHistory.length?"Four-Week Reassessment":"Starting Assessment";
+ $("assessmentDescription").textContent="Complete each simple test. Every result saves automatically. Training unlocks when all four are finished.";
+ $("assessmentStatus").innerHTML='<div class="grid"><div class="metric"><strong>'+complete+'/4</strong><small>Completed</small></div><div class="metric"><strong>'+(data.assessment.finished?'Yes':'Not yet')+'</strong><small>Ready</small></div><div class="metric"><strong>'+data.assessmentHistory.length+'</strong><small>Previous</small></div></div>';
+ const next=STAGES.find(x=>!stageComplete(x));
+ $("assessmentList").innerHTML=STAGES.map((stage,i)=>{
+  const done=stageComplete(stage),count=stageCount(stage),allowed=stage===next;
+  return '<div class="entry"><strong>'+(i+1)+'. '+STAGE_NAMES[stage]+'</strong><p>'+count+'/'+stageMax(stage)+(done?' · Complete':'')+'</p>'+(done?'<span class="tag">Completed</span>':allowed?'<button onclick="openAssessment(\''+stage+'\')">'+(count?'Continue':'Start')+'</button>':'<span class="tag">Up next</span>')+'</div>';
+ }).join('');
+}
+function openAssessment(stage){
+ if(!STAGES.includes(stage)||stageComplete(stage))return;
+ const first=STAGES.find(x=>!stageComplete(x));
+ if(stage!==first)return;
+ activeStage=stage;
+ $("assessmentScreen").classList.remove("hidden");
+ document.body.classList.add("assessing");
+ renderAssessment();
+}
+function closeAssessment(){
+ activeStage=null;
+ $("assessmentScreen").classList.add("hidden");
+ document.body.classList.remove("assessing");
+ show("train");
+}
+function nextAssessmentStage(){
+ const next=STAGES.find(x=>!stageComplete(x));
+ if(next){activeStage=next;renderAssessment()}
+ else closeAssessment();
+}
+function assessmentRecord(stage,record){
+ if(stageComplete(stage))return;
+ data.assessment[stage].push(record);
+ finishAssessmentIfComplete();
+ save(false);renderAssessment();renderAll();
+}
+function assessmentScoreVisit(){
+ if(activeStage!=="scoring")return;
+ const input=$("assessmentScoreInput"),value=Number(input?.value);
+ if(!input||input.value.trim()===""||!Number.isInteger(value)||value<0||value>180){alert("Enter a three-dart score from 0 to 180.");return}
+ assessmentRecord("scoring",{segment:"VISIT",score:value,at:Date.now()});
+}
+function assessmentDouble(hit){
+ if(activeStage!=="doubles"||stageComplete("doubles"))return;
+ const a=data.assessment.doubles;
+ let record=a[a.length-1];
+ if(!record||record.darts.length===3){record={target:doublesTarget(a.length).segment,darts:[]};a.push(record)}
+ record.darts.push({segment:hit?record.target:"MISS",score:hit?2:0,multiplier:hit?2:0,at:Date.now()});
+ finishAssessmentIfComplete();save(false);renderAssessment();renderAll();
+}
+function assessmentBull(value){
+ if(activeStage!=="bull"||stageComplete("bull"))return;
+ assessmentRecord("bull",{segment:value===50?"BULL":value===25?"25":"MISS",number:value?25:0,multiplier:value===50?2:value===25?1:0,score:value,at:Date.now()});
+}
+function checkoutRemaining(a){return a.target-a.darts.reduce((sum,d)=>sum+num(d.score),0)}
+function recommendedCheckout(remaining){
+ if(remaining===50)return{segment:"S10",score:10,multiplier:1,number:10};
+ if(remaining>40){const number=remaining-40;return{segment:"S"+number,score:number,multiplier:1,number}}
+ if(remaining%2===1){return{segment:"S1",score:1,multiplier:1,number:1}}
+ if(remaining>=2&&remaining<=40){return{segment:"D"+(remaining/2),score:remaining,multiplier:2,number:remaining/2}}
+ return null;
+}
+function assessmentCheckout(action){
+ if(activeStage!=="checkout"||stageComplete("checkout"))return;
+ const all=data.assessment.checkout;
+ let a=all[all.length-1];
+ if(!a||a.ended){a={target:CHECKOUT_TARGETS[all.length],darts:[],ended:false,success:false,bust:false};all.push(a)}
+ const before=checkoutRemaining(a),aim=recommendedCheckout(before);
+ if(!aim)return;
+ let score=0,segment="MISS",multiplier=0;
+ if(action==="hit"){score=aim.score;segment=aim.segment;multiplier=aim.multiplier}
+ if(action==="single"&&aim.multiplier===2){score=aim.number;segment="S"+aim.number;multiplier=1}
+ const remaining=before-score;
+ a.darts.push({segment,number:multiplier?aim.number:0,multiplier,score,remainingBefore:before,remaining,at:Date.now()});
+ if(remaining===0&&multiplier===2){a.success=true;a.ended=true}
+ else if(remaining<2){a.bust=true;a.ended=true}
+ else if(a.darts.length>=3)a.ended=true;
+ finishAssessmentIfComplete();save(false);renderAssessment();renderAll();
+}
+function assessUndo(){
+ if(!activeStage)return;
+ const a=data.assessment[activeStage];
+ if(activeStage==="doubles"||activeStage==="checkout"){
+  const last=a[a.length-1];if(!last)return;
+  last.darts.pop();if(activeStage==="checkout"){last.ended=false;last.success=false;last.bust=false}
+  if(!last.darts.length)a.pop();
+ }else if(a.length)a.pop();
+ data.assessment.finished=false;
+ data.assessment.completedAt=null;
+ data.assessment.profile=null;
+ save(false);renderAssessment();renderAll();
+}
+function finishAssessmentIfComplete(){
+ if(STAGES.every(stageComplete)&&!data.assessment.finished)completeAssessment();
+}
+function completeAssessment(){
+ const a=data.assessment;
+ const scoringTotal=a.scoring.reduce((n,r)=>n+num(r.score),0);
+ const scoringAverage=scoringTotal/(a.version>=3?10:10);
+ const hits=a.doubles.reduce((n,r)=>n+r.darts.filter(d=>d.segment===r.target).length,0);
+ const doubleRate=100*hits/(a.version>=3?60:63);
+ const successes=a.checkout.filter(r=>r.success).length;
+ const checkoutRate=successes*10;
+ const bullHits=a.bull.filter(d=>d.score===25||d.score===50).length;
+ const bull50=a.bull.filter(d=>d.score===50).length;
+ const bullRate=100*bullHits/30;
+ const profile={
+  scoring:{level:tierFor(scoringAverage,"scoring"),average:scoringAverage,total:scoringTotal},
+  doubles:{level:tierFor(doubleRate,"doubles"),percentage:doubleRate,hits},
+  checkout:{level:tierFor(checkoutRate,"checkout"),percentage:checkoutRate,successful:successes},
+  bull:{level:tierFor(bullRate,"bull"),percentage:bullRate,hits:bullHits,bullseyes:bull50},
+  provisional:true,createdAt:Date.now()
+ };
+ a.profile=profile;a.finished=true;a.completedAt=Date.now();
+ const isInitial=!data.baseline;
+ if(isInitial){
+  data.baseline=clone(profile);
+  for(const key of SKILLS)data.skills[key].level=profile[key].level;
+ }else{
+  /* Four-week reassessments shift skill levels by at most one, independently. */
+  for(const key of SKILLS){const old=num(data.skills[key].level)||7,target=profile[key].level;data.skills[key].level=clamp(old+Math.sign(target-old),1,7)}
+ }
+ data.coach.lastReviewedWeek=weekStart(Date.now());
+ data.coach.lastChangeEvidence={};
+ data.coach.lastTierChanges={};
+ if(!data.coach.firstStarted)data.coach.firstStarted=Date.now();
+}
+function renderAssessment(){
+ if(!activeStage)return;
+ const stage=activeStage,a=data.assessment[stage],count=stageCount(stage),max=stageMax(stage),done=stageComplete(stage);
+ $("assessmentTitle").textContent=STAGE_NAMES[stage];
+ $("aCount").textContent=count+"/"+max;
+ $("aBar").style.width=clamp(100*count/max,0,100)+"%";
+ $("aPercent").textContent=Math.round(100*count/max)+"%";
+ $("assessmentProgress").textContent=done?"Stage complete":"Progress saved after every entry";
+ $("aUndo").disabled=!a.length;
+ const aim=$("aTarget"),label=$("assessmentTargetLabel"),instruction=$("assessmentInstruction"),result=$("assessmentResult"),actions=$("assessmentActions");
+ let name="",caption="",description="",metricLabel="",metric="",buttons="",info="";
+ const btn=(title,call,cls="")=>'<button'+(cls?' class="'+cls+'"':'')+' onclick="'+call+'">'+title+'</button>';
+ if(done){
+  name="✓";caption="STAGE COMPLETE";description="Result saved. Continue to the next assessment.";
+  metricLabel="Completed";metric=String(max);buttons=btn("Continue","nextAssessmentStage()","wide");
+ }else if(stage==="scoring"){
+  name="20s";caption="SCORING TEST · VISIT "+(count+1)+" OF 10";
+  description="Throw 3 darts aiming at 20s. Enter their total score for this visit.";
+  metricLabel="Total points";metric=String(a.reduce((n,r)=>n+num(r.score),0));
+  result.innerHTML='<input id="assessmentScoreInput" type="number" min="0" max="180" inputmode="numeric" placeholder="Enter 3-dart total">';
+  buttons=btn("Record visit","assessmentScoreVisit()","wide");
+ }else if(stage==="doubles"){
+  const target=Math.floor(count/3)+1;
+  name="D"+target;caption="DOUBLES · "+(count%3+1)+" OF 3";
+  description="Aim at D"+target+". Tap Hit only if the dart lands in that double.";
+  metricLabel="Hits";metric=String(a.reduce((n,r)=>n+r.darts.filter(d=>d.segment===r.target).length,0));
+  buttons=btn("Hit","assessmentDouble(true)")+btn("Miss","assessmentDouble(false)");
+ }else if(stage==="bull"){
+  name="BULL";caption="BULL TEST · DART "+(count+1)+" OF 30";
+  description="Aim at the bull. Record bullseye 50, outer bull 25, or Miss.";
+  metricLabel="Bull hits";metric=String(a.filter(x=>x.score>0).length);
+  buttons=btn("Bullseye 50","assessmentBull(50)")+btn("Outer Bull 25","assessmentBull(25)")+btn("Miss","assessmentBull(0)","wide");
+ }else if(stage==="checkout"){
+  const current=a.find(x=>!x.ended),target=current?current.target:CHECKOUT_TARGETS[count],remaining=current?checkoutRemaining(current):target;
+  const suggested=recommendedCheckout(remaining);
+  name=suggested?.segment||"DONE";
+  caption="CHECKOUT "+(count+1)+" OF 10 · "+remaining+" REMAINING";
+  description="Start on "+target+". Aim "+name+". Tap what actually happened; if you hit the single beside a double, the coach calculates your next double.";
+  metricLabel="Successful";metric=String(a.filter(x=>x.success).length);
+  buttons=btn("Hit "+name,"assessmentCheckout('hit')");
+  if(suggested?.multiplier===2)buttons+=btn("Hit S"+suggested.number,"assessmentCheckout('single')");
+  buttons+=btn("Miss / 0","assessmentCheckout('miss')",suggested?.multiplier===2?"wide":"");
+  info="Max 3 darts per checkout. Target 41–50; finish on a double.";
+ }
+ if(stage!=="scoring"||done)result.innerHTML="";
+ label.textContent=caption;aim.textContent=name;instruction.textContent=description;
+ $("aScoreLabel").textContent=metricLabel;$("aScore").textContent=metric;
+ actions.innerHTML=buttons;$("aStatus").textContent=info;
+}
+
 /* BACKUPS */
 function backupMessage(message,type=""){$("backupStatus").textContent=message;$("backupStatus").className="backupStatus "+type}
 function restoreMessage(message,type=""){$("restoreStatus").textContent=message;$("restoreStatus").className="backupStatus "+type}
 function generateBackup(){try{const saved=localStorage.getItem(KEY),backup=saved?JSON.parse(saved):clone(data);if(!backup||!Array.isArray(backup.games)||!Array.isArray(backup.sessions))throw Error("Saved data could not be verified");const json=JSON.stringify(backup,null,2);$("backupText").value=json;$("backupOutput").classList.remove("hidden");backupMessage("Backup generated: "+(new Blob([json]).size/1024).toFixed(1)+" KB. Save outside the app.","ok")}catch(e){backupMessage("Backup failed: "+e.message,"error")}}
 function selectBackup(){const b=$("backupText");if(!b.value)generateBackup();b.focus();b.select();try{b.setSelectionRange(0,b.value.length)}catch(e){}backupMessage("Selected. Use the iPhone Copy menu.")}
 async function copyBackup(){const b=$("backupText");if(!b.value)generateBackup();if(!b.value)return;try{await navigator.clipboard.writeText(b.value);backupMessage("Copied. Verify by pasting into Notes.","ok")}catch(e){selectBackup();try{document.execCommand("copy")}catch(ex){}}}
-function downloadBackup(){const json=$("backupText").value;if(!json){backupMessage("Generate a backup first.","error");return}try{const blob=new Blob([json],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="darts-coach-v4.8.5-"+dateKey()+".json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);backupMessage("Download requested.")}catch(e){backupMessage("Download unavailable. Use Copy Backup.","error")}}
+function downloadBackup(){const json=$("backupText").value;if(!json){backupMessage("Generate a backup first.","error");return}try{const blob=new Blob([json],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="darts-coach-v4.8.6-"+dateKey()+".json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);backupMessage("Download requested.")}catch(e){backupMessage("Download unavailable. Use Copy Backup.","error")}}
 function validateRestore(json){let restored;try{restored=JSON.parse(json)}catch(e){throw Error("Invalid JSON")}if(!restored||typeof restored!=="object"||Array.isArray(restored)||!Array.isArray(restored.sessions)||!Array.isArray(restored.games)||!restored.assessment||!restored.skills)throw Error("Not a valid Darts Coach backup");return restored}
 function applyRestoredData(restored){if(!confirm("Replace current saved data with this backup?"))return false;const replacement=normaliseData(Object.assign(blank(),clone(restored)));try{localStorage.setItem(KEY,JSON.stringify(replacement))}catch(e){throw Error("Could not save restored data")}data=replacement;activeGame=data.game||null;normaliseSurvivalGame(activeGame);normaliseStraightGame(activeGame);undoSnapshot=null;activeStage=null;$("assessmentScreen").classList.add("hidden");document.body.classList.remove("assessing");$("sessionFinished").classList.add("hidden");show("home");return true}
 function restoreFromText(){const json=$("restoreText").value.trim();if(!json){restoreMessage("Paste backup first.","error");return}try{if(applyRestoredData(validateRestore(json))){$("restoreText").value="";restoreMessage("Backup restored.","ok")}}catch(e){restoreMessage("Restore failed: "+e.message,"error")}}
@@ -356,5 +590,5 @@ function importData(e){const f=e.target.files[0];if(!f)return;const reader=new F
 function renderAll(){renderHome();renderSettings();renderHandPreference();renderTraining();renderAssessmentMenu();renderProgress()}
 if(data.activeSession&&!Array.isArray(data.activeSession.plan)){data.activeSession=null;data.game=null}
 if(data.activeSession){activeGame=data.game||null;if(!activeGame){const e=currentExercise();if(e){activeGame=buildGame(e.name);data.game=activeGame}}normaliseStraightGame(activeGame);normaliseSurvivalGame(activeGame)}
-$("board").addEventListener("click",boardTap);performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);show("home");save(false);
+performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);show("home");save(false);
 </script></body></html>
