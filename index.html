@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101820"><title>Darts Coach V4.8.6.4</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101820"><title>Darts Coach V4.8.6.5</title>
 <style>
 :root{--bg:#101820;--panel:#1d2b39;--panel2:#283b4c;--line:#405365;--green:#67e3a7;--text:#f3f7fa;--muted:#a9bbc9;--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:#102019;padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:#294639;border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -7,7 +7,7 @@ body.trainingActive{overflow:hidden}body.trainingActive>header,body.trainingActi
 @media(max-height:740px){#trainSession:not(.hidden){gap:4px;padding-left:7px;padding-right:7px}#exercisePanel{padding:7px 9px}#exercisePanel .rulePanel{max-height:37px;margin:4px 0}#gameControls button,#scoreInput{min-height:57px}#completeButton{min-height:44px}#gameTarget{font-size:43px}}
 body.assessing{overflow:hidden}#assessmentScreen{position:fixed;inset:0;height:100dvh;z-index:100;background:var(--bg);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}.aHeader{background:#192633;padding:9px;display:flex;justify-content:space-between;align-items:center;gap:6px}.aHeader strong{color:var(--green);font-size:15px}.aHeader button{padding:9px;font-size:12px}.aMetrics{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:7px}.aMetric{text-align:center;background:var(--panel);padding:7px 2px;border-radius:9px}.aMetric small{display:block;font-size:10px;color:var(--muted)}.aMetric strong{font-size:24px;color:var(--green);display:block}.aProgress{padding:3px 11px}.aProgressText{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-bottom:6px}.aBoardZone{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:2px;overflow:hidden}#board{display:block;width:auto;height:auto;max-width:100%;max-height:100%;aspect-ratio:1;touch-action:manipulation;user-select:none}.number{font:bold 17px Arial;fill:white;text-anchor:middle;dominant-baseline:middle;pointer-events:none}.ringline{fill:none;stroke:#dad8c5;stroke-width:1.1;pointer-events:none}.dartMarker{pointer-events:none}.aBottom{background:#192633;padding:8px}.aLast{display:flex;justify-content:space-between;font-size:12px;gap:6px;padding-bottom:7px}.aLast strong{color:var(--green)}.aDarts{display:flex;gap:5px;margin-bottom:7px}.aDart{flex:1;text-align:center;background:var(--panel2);border-radius:7px;padding:8px 2px;color:var(--green);font-size:13px;font-weight:bold}.aDart.empty{color:#8699a9}.aControls{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.aControls button{font-size:12px;padding:11px 2px}.aStatus{text-align:center;color:var(--muted);font-size:11px;padding-top:6px;min-height:20px}
 
-/* V4.8.6.4: CLEAN COACH DASHBOARD */
+/* V4.8.6.5: CLEAN COACH DASHBOARD */
 #progress .card{margin:12px;border:1px solid rgba(167,199,216,.08);box-shadow:0 8px 24px rgba(0,0,0,.12)}
 .dashIntro{font-size:13px;color:var(--muted);margin:0 0 13px}
 .dashHeading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:13px}
@@ -39,7 +39,7 @@ body.assessing{overflow:hidden}#assessmentScreen{position:fixed;inset:0;height:1
 #singlesProgress .targetGrid strong{font-size:15px}
 #progress .secondarySub{color:var(--muted);font-size:12px;line-height:1.5}
 
-/* V4.8.6.4 MONTHLY REPORT AND SAFE RESET */
+/* V4.8.6.5 MONTHLY REPORT AND SAFE RESET */
 .reportControls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:10px 0}
 .reportControls label{color:var(--muted);font-size:12px}
 .reportControls input[type=month]{background:#263949;color:var(--text);border:1px solid #506778;border-radius:9px;padding:10px;max-width:100%}
@@ -60,7 +60,7 @@ body.assessing{overflow:hidden}#assessmentScreen{position:fixed;inset:0;height:1
 .resetCard .danger{width:100%;background:#ad555d}
 .resetCard p{font-size:13px;color:#e0cbd0}
 #resetMessage{font-size:12px;line-height:1.5;color:var(--muted);margin-top:10px}
-/* V4.8.6.4 SIMPLE ASSESSMENT */
+/* V4.8.6.5 SIMPLE ASSESSMENT */
 nav button{font-size:14px}
 #assessmentScreen{padding-left:0;padding-right:0;overflow:hidden}
 .assessmentBody{flex:1;min-height:0;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:12px;justify-content:center}
@@ -80,7 +80,7 @@ nav button{font-size:14px}
 #exercisePanel .rule{font-size:12px}
 @media(max-height:690px){.assessmentBody{padding:7px;gap:7px}.assessmentTarget{padding:9px}.assessmentActions button{min-height:55px}}
 
-/* V4.8.6.4: Deliberate exercise transitions */
+/* V4.8.6.5: Deliberate exercise transitions */
 #exerciseIntro,#exerciseDone{display:flex;flex:1;min-height:0;flex-direction:column;justify-content:center;align-items:stretch;gap:16px;text-align:center;padding:13px 5px}
 #exerciseIntro h3,#exerciseDone h3{font-size:clamp(24px,7vw,32px);color:var(--green);margin:0}
 #exerciseIntro .instruction{font-size:clamp(18px,5vw,22px);font-weight:800;line-height:1.45;color:var(--text);white-space:pre-line}
@@ -93,7 +93,7 @@ nav button{font-size:14px}
 #exercisePanel.phase-playing #exerciseIntro,#exercisePanel.phase-playing #exerciseDone{display:none!important}
 #exercisePanel.phase-rules #exerciseDone,#exercisePanel.phase-complete #exerciseIntro{display:none!important}
 </style></head><body>
-<header><h1>🎯 DARTS COACH</h1><small>PERSONALISED TRAINING · V4.8.6.4</small></header>
+<header><h1>🎯 DARTS COACH</h1><small>PERSONALISED TRAINING · V4.8.6.5</small></header>
 <nav><button id="navHome" onclick="show('home')">Home</button><button id="navTrain" onclick="show('train')">Train</button><button id="navProgress" onclick="show('progress')">Progress</button><button id="navSettings" onclick="show('settings')">Settings</button></nav>
 <section id="home"><div class="card hero"><div class="heroIcon">🎯</div><h2 id="homeHeading">Your Training Is Ready</h2><p id="homeMessage">Your coach has prepared today's session.</p><div class="big" id="homeDuration">60 MIN</div><div id="homeAction"></div></div><div class="card"><h2>Your Training Week</h2><div id="homeDays"></div></div><div class="card"><h2>Training Block</h2><p id="blockStatus"></p><div class="progress"><div id="blockBar"></div></div><p class="muted" id="blockInfo"></p></div></section>
 <section id="train" class="hidden"><div id="trainIdle" class="card center"><h2>Ready to Train</h2><p>Your coach has prepared the session.</p><button class="primary" onclick="beginTraining(false)">Start Training</button></div><div id="trainSession" class="hidden"><div class="card"><div class="statLine"><span id="sessionType">Training Session</span><span id="sessionStepLabel">Exercise 1</span></div><div class="big" id="sessionClock">60:00</div><div class="progress"><div id="sessionBar"></div></div></div><div class="card" id="exercisePanel"><h2 id="exerciseName">Warm-up</h2><div class="statLine"><span id="exerciseTimeLabel">Exercise time</span><span id="exerciseClock">10:00</span></div><div class="progress"><div id="exerciseBar"></div></div><div class="rulePanel"><div class="rule" id="exerciseRules"></div></div><div id="exerciseIntro" class="hidden"><h3>HOW TO PLAY</h3><div id="introTitle" class="instruction"></div><div id="introRules" class="instruction"></div><button onclick="playExercise()">Play</button></div><div id="exerciseDone" class="hidden"><h3>EXERCISE COMPLETE</h3><div id="doneSummary" class="instruction"></div><button id="nextExerciseButton" onclick="nextExercise()">Next Exercise</button></div><div id="playArea"><div class="big" id="gameTarget">Ready</div><p id="gameProgress"></p><div id="straightDisplay" class="hidden"></div><div id="miniMetrics"></div><div id="gameControls"></div><div id="roundFlash"></div></div><div class="row" id="undoRow"><button class="secondary" id="undoButton" onclick="undoGame()">Undo</button></div><button class="primary" id="completeButton" onclick="completeExercise('manual')">Complete Exercise</button></div><div class="card" id="sessionFooter"><button class="secondary" onclick="pauseSession()" id="pauseButton">Pause Session</button><button class="linklike" onclick="finishSessionEarly()">End Session</button></div></div><div id="sessionFinished" class="card hidden"><div class="resultCard"><strong>Training Complete</strong><p>Session recorded.</p></div><p id="finishedText" class="center"></p><button class="primary" onclick="finishView()">Done</button><button class="secondary" style="width:100%;margin-top:8px" onclick="beginTraining(true)">Extra Training Session</button></div></section>
@@ -133,7 +133,7 @@ nav button{font-size:14px}
 <div class="card"><button id="historyToggle" class="historyBtn" onclick="toggleHistory()">View Training History</button>
 <div id="historySection" class="hidden"><h3>Past Sessions</h3><div id="sessionHistory"></div><h3>Past Games</h3><div id="gameHistory"></div></div></div>
 </section>
-<section id="settings" class="hidden"><div class="card"><h2>Weekly Training Days</h2><p class="muted">Select five days. The coach handles the training on those days.</p><div class="dayRow" id="days"></div><p id="dayStatus" class="muted"></p></div><div class="card"><h2>Training Data</h2><p class="muted">Data is stored locally on this device, not in GitHub. Keep an external backup.</p><h3>1. Create Backup</h3><button class="primary" onclick="generateBackup()">Generate Backup</button><div id="backupOutput" class="hidden"><p class="backupHelp">Copy this complete JSON text into Notes.</p><textarea id="backupText" class="backupText" readonly spellcheck="false"></textarea><div class="backupActions"><button onclick="copyBackup()">Copy Backup</button><button class="secondary" onclick="selectBackup()">Select All</button></div><div id="backupStatus" class="backupStatus" aria-live="polite"></div><button class="secondary" style="width:100%" onclick="downloadBackup()">Try Download File</button></div><hr class="backupDivider"><h3>2. Restore Backup</h3><p class="muted">Restoring replaces current data.</p><textarea id="restoreText" class="backupText" placeholder="Paste your JSON backup here" spellcheck="false"></textarea><button class="secondary" style="width:100%" onclick="restoreFromText()">Restore from Pasted Text</button><p class="muted">Or restore a saved JSON file:</p><input type="file" accept=".json,application/json" onchange="importData(event)"><div id="restoreStatus" class="backupStatus" aria-live="polite">No backup restored.</div></div><div class="card"><h2>Player Preferences</h2><p class="muted">Your throwing hand is used to personalise future coaching suggestions.</p>
+<section id="settings" class="hidden"><div class="card"><h2>Weekly Training Days</h2><p class="muted">Select five days. The coach handles the training on those days.</p><div class="dayRow" id="days"></div><p id="dayStatus" class="muted"></p></div><div class="card"><h2>Training Data</h2><p class="muted">Data is stored in this browser or Home Screen app, not on GitHub. Updates at the same address should preserve it. Safari and a Home Screen app may have different saved data. Keep an external backup.</p><h3>1. Create Backup</h3><button class="primary" onclick="generateBackup()">Generate Backup</button><div id="backupOutput" class="hidden"><p class="backupHelp">Copy this complete JSON text into Notes.</p><textarea id="backupText" class="backupText" readonly spellcheck="false"></textarea><div class="backupActions"><button onclick="copyBackup()">Copy Backup</button><button class="secondary" onclick="selectBackup()">Select All</button></div><div id="backupStatus" class="backupStatus" aria-live="polite"></div><button class="secondary" style="width:100%" onclick="downloadBackup()">Try Download File</button></div><hr class="backupDivider"><h3>2. Restore Backup</h3><p class="muted">Restoring replaces current data.</p><textarea id="restoreText" class="backupText" placeholder="Paste your JSON backup here" spellcheck="false"></textarea><button class="secondary" style="width:100%" onclick="restoreFromText()">Restore from Pasted Text</button><p class="muted">Or restore a saved JSON file:</p><input type="file" accept=".json,application/json" onchange="importData(event)"><div id="restoreStatus" class="backupStatus" aria-live="polite">No backup restored.</div></div><div class="card"><h2>Player Preferences</h2><p class="muted">Your throwing hand is used to personalise future coaching suggestions.</p>
 <div class="row"><button id="handLeft" class="secondary" onclick="setHand('left')">Left-handed</button><button id="handRight" class="secondary" onclick="setHand('right')">Right-handed</button></div>
 <h3>Share Darts Coach</h3><p class="muted">Share the app link. Your personal training records are not included.</p>
 <button class="primary" onclick="shareDartsApp()">Share App</button></div>
@@ -165,28 +165,91 @@ function pauseAssessmentWarmup(){const w=assessmentWarmup();if(w.startedAt){w.el
 function resumeAssessmentWarmup(){const w=assessmentWarmup();if(!w.complete&&!w.startedAt){w.startedAt=Date.now();save(false)}}
 function checkAssessmentWarmup(){const w=assessmentWarmup();if(w.complete)return true;if(warmupMs()>=600000){w.complete=true;w.elapsedMs=600000;w.startedAt=null;save(false);if(activeStage==="warmup"){activeStage="scoring";renderAssessment()}return true}return false}
 function blank(){return{sessions:[],games:[],days:[1,2,3,4,5],bestDouble:0,bestCheckout:0,doublesHit:0,doublesThrown:0,baseline:null,skills:{scoring:{level:7,results:[]},doubles:{level:7,results:[]},checkout:{level:7,results:[]},bull:{level:7,results:[]}},activeSession:null,game:null,assessment:newAssessment(),assessmentHistory:[],legacyCheckoutAttempts:[],bigSingles:[],coach:{version:3,firstStarted:null,reviews:[],lastTierChanges:{},completedBlocks:[],lastReviewedWeek:null,lastUsedEvidence:{},lastEvidenceCount:{},lastChangeEvidence:{}}}}
-function normaliseData(d){
- if(!Array.isArray(d.sessions))d.sessions=[];if(!Array.isArray(d.games))d.games=[];if(!Array.isArray(d.days))d.days=[1,2,3,4,5];if(!Array.isArray(d.bigSingles))d.bigSingles=[];
- if(!d.skills||typeof d.skills!=="object")d.skills={};for(const k of SKILLS){d.skills[k]=Object.assign({level:7,results:[]},d.skills[k]||{});d.skills[k].level=clamp(Math.round(num(d.skills[k].level)||7),1,7);if(!Array.isArray(d.skills[k].results))d.skills[k].results=[]}
- if(!Array.isArray(d.assessmentHistory))d.assessmentHistory=[];if(!Array.isArray(d.legacyCheckoutAttempts))d.legacyCheckoutAttempts=[];
- d.assessment=Object.assign(newAssessment(),d.assessment||{});for(const k of STAGES)if(!Array.isArray(d.assessment[k]))d.assessment[k]=[];
- if(num(d.assessment.version)<4){
-  const old=d.assessment;
-  if((old.finished||["scoring","doubles","bull","checkout"].some(k=>Array.isArray(old[k])&&old[k].length))){
-   d.assessmentHistory.push(Object.assign({migratedAt:Date.now(),previousFormat:true},clone(old)));
-  }
-  d.assessment=newAssessment();
- }
- if(!d.assessment.warmup||typeof d.assessment.warmup!=="object")d.assessment.warmup={elapsedMs:0,startedAt:null,complete:false};
- /* Previous checkouts remain only as historical records, never a required stage. */
- d.coach=Object.assign(blank().coach,d.coach||{});for(const k of ["reviews","completedBlocks"])if(!Array.isArray(d.coach[k]))d.coach[k]=[];for(const k of ["lastTierChanges","lastUsedEvidence","lastEvidenceCount","lastChangeEvidence"])if(!d.coach[k]||typeof d.coach[k]!=="object")d.coach[k]={};
- if(num(d.coach.version)<2)d.coach.lastReviewedWeek=weekStart(Date.now());d.coach.version=3;return d;
+/* Backward-compatible assessment migration. Existing completed tests are NEVER
+   invalidated merely because the application version changes. */
+function assessmentDate(a){
+ const candidates=[a&&a.completedAt,a&&a.profile&&a.profile.createdAt];
+ for(const candidate of candidates){const n=num(candidate);if(n>0)return n}
+ return 0;
 }
-/* Assessment is mandatory at first use and every 28 days thereafter. */
+function hasAssessmentProgress(a){
+ return !!a&&["scoring","doubles","bull","singles","checkout"].some(
+  k=>Array.isArray(a[k])&&a[k].length>0
+ );
+}
+function legacyAssessmentIsComplete(a){
+ return !!a&&a.finished===true&&!!a.profile;
+}
+function carryForwardAssessment(a){
+ const previous=clone(a);
+ const migrated=newAssessment();
+ /* Keep the underlying measurements and profile in the preserved archive.
+    New-format test inputs are different; do not fabricate dart results. */
+ migrated.finished=true;
+ migrated.completedAt=assessmentDate(previous)||Date.now();
+ migrated.profile=clone(previous.profile);
+ migrated.carriedForward=true;
+ migrated.previousAssessment=previous;
+ migrated.warmup={elapsedMs:600000,startedAt:null,complete:true};
+ return migrated;
+}
+function normaliseData(d){
+ if(!Array.isArray(d.sessions))d.sessions=[];
+ if(!Array.isArray(d.games))d.games=[];
+ if(!Array.isArray(d.days))d.days=[1,2,3,4,5];
+ if(!Array.isArray(d.bigSingles))d.bigSingles=[];
+ if(!d.skills||typeof d.skills!=="object")d.skills={};
+ for(const k of SKILLS){
+  d.skills[k]=Object.assign({level:7,results:[]},d.skills[k]||{});
+  d.skills[k].level=clamp(Math.round(num(d.skills[k].level)||7),1,7);
+  if(!Array.isArray(d.skills[k].results))d.skills[k].results=[];
+ }
+ if(!Array.isArray(d.assessmentHistory))d.assessmentHistory=[];
+ if(!Array.isArray(d.legacyCheckoutAttempts))d.legacyCheckoutAttempts=[];
+ const old=d.assessment&&typeof d.assessment==="object"?d.assessment:newAssessment();
+ if(num(old.version)<4){
+  if(hasAssessmentProgress(old)||legacyAssessmentIsComplete(old)){
+   /* Keep original assessment once, even after subsequent app launches. */
+   if(!d.assessmentHistory.some(x=>x&&x.migrationSourceVersion===num(old.version)&&x.completedAt===old.completedAt&&x.migrationOriginal===true)){
+    d.assessmentHistory.push(Object.assign({migrationOriginal:true,migrationSourceVersion:num(old.version)},clone(old)));
+   }
+  }
+  d.assessment=legacyAssessmentIsComplete(old)?carryForwardAssessment(old):newAssessment();
+ }else{
+  d.assessment=Object.assign(newAssessment(),old);
+  for(const k of STAGES)if(!Array.isArray(d.assessment[k]))d.assessment[k]=[];
+  if(d.assessment.finished&&(!num(d.assessment.completedAt))){
+   d.assessment.completedAt=assessmentDate(d.assessment)||Date.now();
+  }
+ }
+ /* Recover an assessment that an earlier version needlessly invalidated.
+    Only if there is no new test in progress and the previous completed
+    assessment is still inside its 28-day window. Never undo an explicit reset. */
+ if(!d.assessment.finished&&!hasAssessmentProgress(d.assessment)&&d.baseline){
+  const latest=[...d.assessmentHistory].reverse().find(a=>legacyAssessmentIsComplete(a));
+  const at=assessmentDate(latest);
+  if(latest&&at&&Date.now()-at<28*DAY_MS){
+   d.assessment=carryForwardAssessment(latest);
+  }
+ }
+ if(!d.assessment.warmup||typeof d.assessment.warmup!=="object"){
+  d.assessment.warmup={elapsedMs:0,startedAt:null,complete:false};
+ }
+ d.coach=Object.assign(blank().coach,d.coach||{});
+ for(const k of ["reviews","completedBlocks"])if(!Array.isArray(d.coach[k]))d.coach[k]=[];
+ for(const k of ["lastTierChanges","lastUsedEvidence","lastEvidenceCount","lastChangeEvidence"])
+  if(!d.coach[k]||typeof d.coach[k]!=="object")d.coach[k]={};
+ if(num(d.coach.version)<2)d.coach.lastReviewedWeek=weekStart(Date.now());
+ d.coach.version=3;
+ return d;
+}
+/* First assessment is mandatory, but an app release does not start a new
+   28-day cycle and cannot itself force fresh tests. */
 function assessmentDue(){
  const a=data.assessment;
  if(!a||!a.finished)return true;
- return !num(a.completedAt)||Date.now()-num(a.completedAt)>=28*DAY_MS;
+ const at=assessmentDate(a);
+ return !!at&&Date.now()-at>=28*DAY_MS;
 }
 function prepareAssessment(){
  const a=data.assessment;
@@ -471,7 +534,7 @@ function renderSettings(){$("days").innerHTML=DAY_NAMES.map((n,i)=>'<label><inpu
 function renderHandPreference(){for(const hand of ["left","right"]){const b=$(hand==="left"?"handLeft":"handRight");if(!b)continue;b.classList.toggle("secondary",data.throwingHand!==hand);b.setAttribute("aria-pressed",String(data.throwingHand===hand))}}
 function changeDay(day,checked){const days=data.days.filter(x=>x!==day);if(checked)days.push(day);if(days.length>5){alert("Select exactly five training days.");renderSettings();return}data.days=days;save()}
 
-/* V4.8.6.4 dashboard. Renders from saved data, without modifying historical records. */
+/* V4.8.6.5 dashboard. Renders from saved data, without modifying historical records. */
 let selectedTrend="scoring";
 let historyVisible=false;
 const SKILL_LABELS={scoring:"Scoring",doubles:"Doubles",checkout:"Checkouts",bull:"Bull accuracy",singles:"Big Singles"};
@@ -508,7 +571,7 @@ function renderWeeklyReview(){const now=Date.now(),thisWeek=weekStart(now),lastW
  const el=$("weeklyCoachReview");if(!changes.length){el.innerHTML='<p class="muted">Your coach will offer a short weekly review when there are comparable results from two training weeks. No invented feedback.</p>';return}
  const better=changes.filter(x=>x.diff>=2),needs=changes.filter(x=>x.diff<=-3);let message='Your completed training results are being compared across weeks. ';if(better.length)message+='Good progress in '+better.map(x=>SKILL_LABELS[x.key].toLowerCase()).join(' and ')+'. ';if(needs.length){const key=needs.sort((a,b)=>a.diff-b.diff)[0].key;const tips={scoring:'For your next scoring session, focus on a repeatable setup and a smooth release rather than forcing extra power.',doubles:'On doubles, settle your feet before each visit and keep the same throwing rhythm as your scoring darts.',checkout:'On checkouts, commit to the target before throwing and maintain the same tempo throughout the visit.',bull:'For bull practice, keep your stance consistent and use the same aiming routine for every dart.'};message+=tips[key]}else message+='Keep your practice routine consistent. There is no need to change your technique just because one week varies.';el.innerHTML='<div class="coachNote">'+esc(message)+'</div><p class="secondarySub">Reviewing '+formatDate(lastWeek)+' to '+formatDate(thisWeek-1)+'. Advice is general and does not diagnose throwing mechanics.</p>'}
 
-/* V4.8.6.4: monthly statistics and shareable image */
+/* V4.8.6.5: monthly statistics and shareable image */
 let selectedReportMonth="";
 function monthString(t){const d=new Date(t);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")}
 function monthBounds(ym){if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(ym))return null;const [y,m]=ym.split("-").map(Number);const start=new Date(y,m-1,1).getTime(),end=new Date(y,m,1).getTime(),previous=new Date(y,m-2,1).getTime();return{start,end,previous,title:new Date(start).toLocaleDateString("en-GB",{month:"long",year:"numeric"})}}
@@ -588,6 +651,13 @@ function stageComplete(stage){
  return stage==="doubles"?a.length===20&&a.every(r=>(r.darts||[]).length===3):a.length===stageMax(stage);
 }
 function renderAssessmentMenu(){
+ if(data.assessment.finished&&data.assessment.carriedForward){
+  $("assessmentHeading").textContent="Assessment Complete";
+  $("assessmentDescription").textContent="Your completed assessment was preserved from an earlier app version. You do not need to repeat it until the next scheduled four-week review.";
+  $("assessmentStatus").innerHTML='<div class="info">Previous assessment preserved · '+formatDate(data.assessment.completedAt)+'</div>';
+  $("assessmentList").innerHTML='<p class="muted">Your previous skill levels and results remain saved.</p>';
+  return;
+ }
  const complete=STAGES.filter(stageComplete).length,w=assessmentWarmup();
  $("assessmentHeading").textContent=data.assessmentHistory.length?"Four-Week Reassessment":"Starting Assessment";
  $("assessmentDescription").textContent="Begin with a full 10-minute warm-up. Then complete four easy-to-record tests. Your results save automatically.";
@@ -742,7 +812,7 @@ function restoreMessage(message,type=""){$("restoreStatus").textContent=message;
 function generateBackup(){try{const saved=localStorage.getItem(KEY),backup=saved?JSON.parse(saved):clone(data);if(!backup||!Array.isArray(backup.games)||!Array.isArray(backup.sessions))throw Error("Saved data could not be verified");const json=JSON.stringify(backup,null,2);$("backupText").value=json;$("backupOutput").classList.remove("hidden");backupMessage("Backup generated: "+(new Blob([json]).size/1024).toFixed(1)+" KB. Save outside the app.","ok")}catch(e){backupMessage("Backup failed: "+e.message,"error")}}
 function selectBackup(){const b=$("backupText");if(!b.value)generateBackup();b.focus();b.select();try{b.setSelectionRange(0,b.value.length)}catch(e){}backupMessage("Selected. Use the iPhone Copy menu.")}
 async function copyBackup(){const b=$("backupText");if(!b.value)generateBackup();if(!b.value)return;try{await navigator.clipboard.writeText(b.value);backupMessage("Copied. Verify by pasting into Notes.","ok")}catch(e){selectBackup();try{document.execCommand("copy")}catch(ex){}}}
-function downloadBackup(){const json=$("backupText").value;if(!json){backupMessage("Generate a backup first.","error");return}try{const blob=new Blob([json],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="darts-coach-v4.8.6.2-"+dateKey()+".json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);backupMessage("Download requested.")}catch(e){backupMessage("Download unavailable. Use Copy Backup.","error")}}
+function downloadBackup(){const json=$("backupText").value;if(!json){backupMessage("Generate a backup first.","error");return}try{const blob=new Blob([json],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="darts-coach-v4.8.6.5-"+dateKey()+".json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);backupMessage("Download requested.")}catch(e){backupMessage("Download unavailable. Use Copy Backup.","error")}}
 function validateRestore(json){let restored;try{restored=JSON.parse(json)}catch(e){throw Error("Invalid JSON")}if(!restored||typeof restored!=="object"||Array.isArray(restored)||!Array.isArray(restored.sessions)||!Array.isArray(restored.games)||!restored.assessment||!restored.skills)throw Error("Not a valid Darts Coach backup");return restored}
 function applyRestoredData(restored){if(!confirm("Replace current saved data with this backup?"))return false;const replacement=normaliseData(Object.assign(blank(),clone(restored)));try{localStorage.setItem(KEY,JSON.stringify(replacement))}catch(e){throw Error("Could not save restored data")}data=replacement;activeGame=data.game||null;normaliseSurvivalGame(activeGame);normaliseStraightGame(activeGame);undoSnapshot=null;activeStage=null;$("assessmentScreen").classList.add("hidden");document.body.classList.remove("assessing");$("sessionFinished").classList.add("hidden");show("home");return true}
 function restoreFromText(){const json=$("restoreText").value.trim();if(!json){restoreMessage("Paste backup first.","error");return}try{if(applyRestoredData(validateRestore(json))){$("restoreText").value="";restoreMessage("Backup restored.","ok")}}catch(e){restoreMessage("Restore failed: "+e.message,"error")}}
