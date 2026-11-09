@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101820"><title>Darts Coach V4.8.6.5</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101820"><title>Darts Coach V4.8.6.6</title>
 <style>
 :root{--bg:#101820;--panel:#1d2b39;--panel2:#283b4c;--line:#405365;--green:#67e3a7;--text:#f3f7fa;--muted:#a9bbc9;--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:#102019;padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:#294639;border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -7,7 +7,7 @@ body.trainingActive{overflow:hidden}body.trainingActive>header,body.trainingActi
 @media(max-height:740px){#trainSession:not(.hidden){gap:4px;padding-left:7px;padding-right:7px}#exercisePanel{padding:7px 9px}#exercisePanel .rulePanel{max-height:37px;margin:4px 0}#gameControls button,#scoreInput{min-height:57px}#completeButton{min-height:44px}#gameTarget{font-size:43px}}
 body.assessing{overflow:hidden}#assessmentScreen{position:fixed;inset:0;height:100dvh;z-index:100;background:var(--bg);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}.aHeader{background:#192633;padding:9px;display:flex;justify-content:space-between;align-items:center;gap:6px}.aHeader strong{color:var(--green);font-size:15px}.aHeader button{padding:9px;font-size:12px}.aMetrics{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:7px}.aMetric{text-align:center;background:var(--panel);padding:7px 2px;border-radius:9px}.aMetric small{display:block;font-size:10px;color:var(--muted)}.aMetric strong{font-size:24px;color:var(--green);display:block}.aProgress{padding:3px 11px}.aProgressText{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-bottom:6px}.aBoardZone{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:2px;overflow:hidden}#board{display:block;width:auto;height:auto;max-width:100%;max-height:100%;aspect-ratio:1;touch-action:manipulation;user-select:none}.number{font:bold 17px Arial;fill:white;text-anchor:middle;dominant-baseline:middle;pointer-events:none}.ringline{fill:none;stroke:#dad8c5;stroke-width:1.1;pointer-events:none}.dartMarker{pointer-events:none}.aBottom{background:#192633;padding:8px}.aLast{display:flex;justify-content:space-between;font-size:12px;gap:6px;padding-bottom:7px}.aLast strong{color:var(--green)}.aDarts{display:flex;gap:5px;margin-bottom:7px}.aDart{flex:1;text-align:center;background:var(--panel2);border-radius:7px;padding:8px 2px;color:var(--green);font-size:13px;font-weight:bold}.aDart.empty{color:#8699a9}.aControls{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.aControls button{font-size:12px;padding:11px 2px}.aStatus{text-align:center;color:var(--muted);font-size:11px;padding-top:6px;min-height:20px}
 
-/* V4.8.6.5: CLEAN COACH DASHBOARD */
+/* V4.8.6.6: CLEAN COACH DASHBOARD */
 #progress .card{margin:12px;border:1px solid rgba(167,199,216,.08);box-shadow:0 8px 24px rgba(0,0,0,.12)}
 .dashIntro{font-size:13px;color:var(--muted);margin:0 0 13px}
 .dashHeading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:13px}
@@ -39,7 +39,7 @@ body.assessing{overflow:hidden}#assessmentScreen{position:fixed;inset:0;height:1
 #singlesProgress .targetGrid strong{font-size:15px}
 #progress .secondarySub{color:var(--muted);font-size:12px;line-height:1.5}
 
-/* V4.8.6.5 MONTHLY REPORT AND SAFE RESET */
+/* V4.8.6.6 MONTHLY REPORT AND SAFE RESET */
 .reportControls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:10px 0}
 .reportControls label{color:var(--muted);font-size:12px}
 .reportControls input[type=month]{background:#263949;color:var(--text);border:1px solid #506778;border-radius:9px;padding:10px;max-width:100%}
@@ -60,7 +60,7 @@ body.assessing{overflow:hidden}#assessmentScreen{position:fixed;inset:0;height:1
 .resetCard .danger{width:100%;background:#ad555d}
 .resetCard p{font-size:13px;color:#e0cbd0}
 #resetMessage{font-size:12px;line-height:1.5;color:var(--muted);margin-top:10px}
-/* V4.8.6.5 SIMPLE ASSESSMENT */
+/* V4.8.6.6 SIMPLE ASSESSMENT */
 nav button{font-size:14px}
 #assessmentScreen{padding-left:0;padding-right:0;overflow:hidden}
 .assessmentBody{flex:1;min-height:0;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:12px;justify-content:center}
@@ -80,7 +80,7 @@ nav button{font-size:14px}
 #exercisePanel .rule{font-size:12px}
 @media(max-height:690px){.assessmentBody{padding:7px;gap:7px}.assessmentTarget{padding:9px}.assessmentActions button{min-height:55px}}
 
-/* V4.8.6.5: Deliberate exercise transitions */
+/* V4.8.6.6: Deliberate exercise transitions */
 #exerciseIntro,#exerciseDone{display:flex;flex:1;min-height:0;flex-direction:column;justify-content:center;align-items:stretch;gap:16px;text-align:center;padding:13px 5px}
 #exerciseIntro h3,#exerciseDone h3{font-size:clamp(24px,7vw,32px);color:var(--green);margin:0}
 #exerciseIntro .instruction{font-size:clamp(18px,5vw,22px);font-weight:800;line-height:1.45;color:var(--text);white-space:pre-line}
@@ -93,7 +93,7 @@ nav button{font-size:14px}
 #exercisePanel.phase-playing #exerciseIntro,#exercisePanel.phase-playing #exerciseDone{display:none!important}
 #exercisePanel.phase-rules #exerciseDone,#exercisePanel.phase-complete #exerciseIntro{display:none!important}
 </style></head><body>
-<header><h1>🎯 DARTS COACH</h1><small>PERSONALISED TRAINING · V4.8.6.5</small></header>
+<header><h1>🎯 DARTS COACH</h1><small>PERSONALISED TRAINING · V4.8.6.6</small></header>
 <nav><button id="navHome" onclick="show('home')">Home</button><button id="navTrain" onclick="show('train')">Train</button><button id="navProgress" onclick="show('progress')">Progress</button><button id="navSettings" onclick="show('settings')">Settings</button></nav>
 <section id="home"><div class="card hero"><div class="heroIcon">🎯</div><h2 id="homeHeading">Your Training Is Ready</h2><p id="homeMessage">Your coach has prepared today's session.</p><div class="big" id="homeDuration">60 MIN</div><div id="homeAction"></div></div><div class="card"><h2>Your Training Week</h2><div id="homeDays"></div></div><div class="card"><h2>Training Block</h2><p id="blockStatus"></p><div class="progress"><div id="blockBar"></div></div><p class="muted" id="blockInfo"></p></div></section>
 <section id="train" class="hidden"><div id="trainIdle" class="card center"><h2>Ready to Train</h2><p>Your coach has prepared the session.</p><button class="primary" onclick="beginTraining(false)">Start Training</button></div><div id="trainSession" class="hidden"><div class="card"><div class="statLine"><span id="sessionType">Training Session</span><span id="sessionStepLabel">Exercise 1</span></div><div class="big" id="sessionClock">60:00</div><div class="progress"><div id="sessionBar"></div></div></div><div class="card" id="exercisePanel"><h2 id="exerciseName">Warm-up</h2><div class="statLine"><span id="exerciseTimeLabel">Exercise time</span><span id="exerciseClock">10:00</span></div><div class="progress"><div id="exerciseBar"></div></div><div class="rulePanel"><div class="rule" id="exerciseRules"></div></div><div id="exerciseIntro" class="hidden"><h3>HOW TO PLAY</h3><div id="introTitle" class="instruction"></div><div id="introRules" class="instruction"></div><button onclick="playExercise()">Play</button></div><div id="exerciseDone" class="hidden"><h3>EXERCISE COMPLETE</h3><div id="doneSummary" class="instruction"></div><button id="nextExerciseButton" onclick="nextExercise()">Next Exercise</button></div><div id="playArea"><div class="big" id="gameTarget">Ready</div><p id="gameProgress"></p><div id="straightDisplay" class="hidden"></div><div id="miniMetrics"></div><div id="gameControls"></div><div id="roundFlash"></div></div><div class="row" id="undoRow"><button class="secondary" id="undoButton" onclick="undoGame()">Undo</button></div><button class="primary" id="completeButton" onclick="completeExercise('manual')">Complete Exercise</button></div><div class="card" id="sessionFooter"><button class="secondary" onclick="pauseSession()" id="pauseButton">Pause Session</button><button class="linklike" onclick="finishSessionEarly()">End Session</button></div></div><div id="sessionFinished" class="card hidden"><div class="resultCard"><strong>Training Complete</strong><p>Session recorded.</p></div><p id="finishedText" class="center"></p><button class="primary" onclick="finishView()">Done</button><button class="secondary" style="width:100%;margin-top:8px" onclick="beginTraining(true)">Extra Training Session</button></div></section>
@@ -133,7 +133,15 @@ nav button{font-size:14px}
 <div class="card"><button id="historyToggle" class="historyBtn" onclick="toggleHistory()">View Training History</button>
 <div id="historySection" class="hidden"><h3>Past Sessions</h3><div id="sessionHistory"></div><h3>Past Games</h3><div id="gameHistory"></div></div></div>
 </section>
-<section id="settings" class="hidden"><div class="card"><h2>Weekly Training Days</h2><p class="muted">Select five days. The coach handles the training on those days.</p><div class="dayRow" id="days"></div><p id="dayStatus" class="muted"></p></div><div class="card"><h2>Training Data</h2><p class="muted">Data is stored in this browser or Home Screen app, not on GitHub. Updates at the same address should preserve it. Safari and a Home Screen app may have different saved data. Keep an external backup.</p><h3>1. Create Backup</h3><button class="primary" onclick="generateBackup()">Generate Backup</button><div id="backupOutput" class="hidden"><p class="backupHelp">Copy this complete JSON text into Notes.</p><textarea id="backupText" class="backupText" readonly spellcheck="false"></textarea><div class="backupActions"><button onclick="copyBackup()">Copy Backup</button><button class="secondary" onclick="selectBackup()">Select All</button></div><div id="backupStatus" class="backupStatus" aria-live="polite"></div><button class="secondary" style="width:100%" onclick="downloadBackup()">Try Download File</button></div><hr class="backupDivider"><h3>2. Restore Backup</h3><p class="muted">Restoring replaces current data.</p><textarea id="restoreText" class="backupText" placeholder="Paste your JSON backup here" spellcheck="false"></textarea><button class="secondary" style="width:100%" onclick="restoreFromText()">Restore from Pasted Text</button><p class="muted">Or restore a saved JSON file:</p><input type="file" accept=".json,application/json" onchange="importData(event)"><div id="restoreStatus" class="backupStatus" aria-live="polite">No backup restored.</div></div><div class="card"><h2>Player Preferences</h2><p class="muted">Your throwing hand is used to personalise future coaching suggestions.</p>
+<section id="settings" class="hidden"><div class="card"><h2>Weekly Training Days</h2><p class="muted">Select five days. The coach handles the training on those days.</p><div class="dayRow" id="days"></div><p id="dayStatus" class="muted"></p></div><div class="card"><h2>Training Data</h2><p class="muted">Data is stored in this browser or Home Screen app, not on GitHub. Updates at the same address should preserve it. Safari and a Home Screen app may have different saved data. Keep an external backup.</p><h3>1. Protect Your Training</h3>
+<p class="muted">An extra recovery copy is saved automatically in this browser after each finished assessment or session. This is not a backup in iPhone Files. For protection against browser data loss, save a file as well.</p>
+<div id="autoBackupStatus" class="backupStatus">Checking local recovery copy…</div>
+<button class="primary" onclick="saveBackupFile()">Save Backup to Files</button>
+<p class="backupHelp">On iPhone choose <strong>Save to Files</strong> from the share sheet. This includes assessments, active training and progress. No text copying required.</p>
+<div id="backupStatus" class="backupStatus" aria-live="polite">No file exported yet.</div>
+<button class="secondary" style="width:100%;margin-top:8px" onclick="generateBackup()">Show JSON / Copy Manually</button>
+<div id="backupOutput" class="hidden"><textarea id="backupText" class="backupText" readonly spellcheck="false"></textarea><div class="backupActions"><button onclick="copyBackup()">Copy Backup</button><button class="secondary" onclick="selectBackup()">Select All</button></div></div>
+<hr class="backupDivider"><h3>2. Restore Backup</h3><p class="muted">Restoring replaces current data.</p><textarea id="restoreText" class="backupText" placeholder="Paste your JSON backup here" spellcheck="false"></textarea><button class="secondary" style="width:100%" onclick="restoreFromText()">Restore from Pasted Text</button><p class="muted">Or restore a saved JSON file:</p><input type="file" accept=".json,application/json" onchange="importData(event)"><div id="restoreStatus" class="backupStatus" aria-live="polite">No backup restored.</div></div><div class="card"><h2>Player Preferences</h2><p class="muted">Your throwing hand is used to personalise future coaching suggestions.</p>
 <div class="row"><button id="handLeft" class="secondary" onclick="setHand('left')">Left-handed</button><button id="handRight" class="secondary" onclick="setHand('right')">Right-handed</button></div>
 <h3>Share Darts Coach</h3><p class="muted">Share the app link. Your personal training records are not included.</p>
 <button class="primary" onclick="shareDartsApp()">Share App</button></div>
@@ -145,7 +153,7 @@ nav button{font-size:14px}
 </div></section>
 <script>
 "use strict";
-const KEY="dartsCoachV4",OLD_KEYS=["dartsCoachV3","dartsCoachV2"],$=id=>document.getElementById(id);
+const KEY="dartsCoachV4",CHECKPOINT_KEY="dartsCoachV4Checkpoint",OLD_KEYS=["dartsCoachV3","dartsCoachV2"],$=id=>document.getElementById(id);
 const STAGES=["scoring","doubles","bull","singles"],STAGE_NAMES={scoring:"20s Scoring",doubles:"Doubles Assessment",bull:"Bull Accuracy",singles:"Big Singles Accuracy"};
 const CHECKOUT_TARGETS=[41,42,43,44,45,46,47,48,49,50],STRAIGHT_TARGETS=[20,19,18,17,16];
 const ORDER=[20,1,18,4,13,6,10,15,2,17,3,19,7,16,8,11,14,9,12,5],DAY_NAMES=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -267,7 +275,31 @@ function sessionBudget(){
  return 3600+num(s.benchmarkSeconds)+extra;
 }
 function sessionRemaining(){return Math.max(0,sessionBudget()-sessionElapsed())}
-function load(){for(const key of [KEY,...OLD_KEYS]){try{const d=JSON.parse(localStorage.getItem(key));if(d&&typeof d==="object"&&!Array.isArray(d))return normaliseData(Object.assign(blank(),d))}catch(e){}}return normaliseData(blank())}
+/* The canonical record remains dartsCoachV4 across every release.
+   A milestone checkpoint is a secondary same-origin safety copy, NOT a file or cloud sync. */
+function isValidPlayerData(d){return !!d&&typeof d==="object"&&!Array.isArray(d)&&Array.isArray(d.sessions)&&Array.isArray(d.games)&&d.assessment&&typeof d.assessment==="object"&&d.skills&&typeof d.skills==="object"}
+let recoveryNotice="";
+function load(){
+ for(const key of [KEY,...OLD_KEYS,CHECKPOINT_KEY]){
+  try{
+   const raw=localStorage.getItem(key);
+   if(!raw)continue;
+   const parsed=JSON.parse(raw);
+   const d=key===CHECKPOINT_KEY&&parsed&&parsed.data?parsed.data:parsed;
+   if(isValidPlayerData(d)){
+    if(key===CHECKPOINT_KEY)recoveryNotice="A local recovery copy was loaded because the main record was unavailable. Save a backup file now.";
+    return normaliseData(Object.assign(blank(),d));
+   }
+  }catch(e){}
+ }
+ return normaliseData(blank());
+}
+function checkpointData(){
+ try{localStorage.setItem(CHECKPOINT_KEY,JSON.stringify({savedAt:Date.now(),data:clone(data)}));return true}catch(e){return false}
+}
+function checkpointDate(){
+ try{const c=JSON.parse(localStorage.getItem(CHECKPOINT_KEY));return c&&Number.isFinite(c.savedAt)?c.savedAt:null}catch(e){return null}
+}
 let data=load(),activeStage=null,currentTab="home",activeGame=null,undoSnapshot=null,flash="";
 function save(render=true){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){alert("Unable to save. Make a backup.")}if(render)renderAll()}
 function show(id){
@@ -474,7 +506,7 @@ function completeExercise(completion="manual"){
  s.phase="complete";s.pausedAt=Date.now();undoSnapshot=null;
  save();
 }
-function finishSession(success){const s=session();if(!s)return;const elapsed=Math.round(sessionElapsed()/6)/10;data.sessions.push({start:s.start,date:dateKey(s.start),minutes:elapsed,extra:s.extra,completed:!!success,activities:s.completed,focus:s.plan.map(p=>p.name)});data.activeSession=null;data.game=null;activeGame=null;undoSnapshot=null;performCoachReview();checkCompletedBlocks();save();$("finishedText").textContent=success?"Today's practice is saved.":"Your practice has been saved.";$("sessionFinished").classList.remove("hidden");show("train")}
+function finishSession(success){const s=session();if(!s)return;const elapsed=Math.round(sessionElapsed()/6)/10;data.sessions.push({start:s.start,date:dateKey(s.start),minutes:elapsed,extra:s.extra,completed:!!success,activities:s.completed,focus:s.plan.map(p=>p.name)});data.activeSession=null;data.game=null;activeGame=null;undoSnapshot=null;performCoachReview();checkCompletedBlocks();save();checkpointData();$("finishedText").textContent=success?"Today's practice is saved.":"Your practice has been saved.";$("sessionFinished").classList.remove("hidden");show("train")}
 function finishSessionEarly(){if(!session())return;if(!confirm("End this training session?"))return;finishSession(false)}
 function pauseSession(){const s=session();if(!s||s.phase==="rules"||s.phase==="complete")return;if(s.pausedAt){s.pausedTotal+=Date.now()-s.pausedAt;s.pausedAt=null;s.activityStarted=Date.now()}else{s.pausedAt=Date.now();if(s.activityStarted)s.activityAccumulated+=s.pausedAt-s.activityStarted;s.activityStarted=null}save()}
 function finishView(){$("sessionFinished").classList.add("hidden");show("home")}
@@ -530,11 +562,14 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
 function trainingTimer(){const s=session();if(!s||s.pausedAt||s.phase==="rules"||s.phase==="complete")return;const item=currentExercise();if(!item)return;const elapsed=exerciseElapsed();if(item.name==="Big Singles"){if(currentTab==="train"){const g=activeGame||data.game;$("sessionClock").textContent=fmt(sessionRemaining());if(g){$("exerciseClock").textContent=g.darts.length+"/60";$("exerciseBar").style.width=g.darts.length/60*100+"%"}}return}if(elapsed>=num(item.seconds)){completeExercise("timed");return}if(currentTab==="train"){$("exerciseClock").textContent=fmt(Math.max(0,item.seconds-elapsed));$("exerciseBar").style.width=clamp(100*elapsed/Math.max(1,item.seconds),0,100)+"%";$("sessionClock").textContent=fmt(sessionRemaining());$("sessionBar").style.width=clamp(100*sessionElapsed()/sessionBudget(),0,100)+"%"}}
 /* HOME + PROGRESS */
 function renderHome(){const s=session(),today=new Date().getDay(),scheduled=data.days.includes(today),needsAssessment=!s&&assessmentDue();$("homeHeading").textContent=needsAssessment?"Start With Your Assessment":s?"Training In Progress":scheduled?"Your Training Is Ready":"Today Is a Rest Day";$("homeMessage").textContent=needsAssessment?"Four short tests establish your starting level. Training unlocks afterwards.":s?"Continue where you left off.":scheduled?"Your coach has prepared today's session.":"Rest and recovery are part of your programme.";$("homeDuration").textContent=s?fmt(sessionRemaining()):needsAssessment?"4 TESTS":scheduled?"60 MIN + SINGLES":"60 MIN";let actions="";if(needsAssessment)actions='<button class="primary" onclick="show(&quot;train&quot;)">Start Assessment</button>';else if(s)actions='<button class="primary" onclick="show(\'train\')">Continue Training</button>';else{const done=data.sessions.some(x=>x.date===dateKey()&&!x.extra&&x.completed);if(scheduled&&!done)actions='<button class="primary" onclick="beginTraining(false)">Start Training</button>';else if(scheduled)actions='<div class="info">Scheduled training completed today.</div>';actions+='<button class="secondary" style="width:100%;margin-top:10px" onclick="beginTraining(true)">Extra Training</button>'}$("homeAction").innerHTML=actions;$("homeDays").innerHTML=[...data.days].sort((a,b)=>a-b).map(n=>'<span class="tag" style="margin:3px">'+DAY_NAMES[n]+'</span>').join("");if(!blockStart()){$("blockStatus").textContent="Your first training block begins with your first session.";$("blockBar").style.width="0%";$("blockInfo").textContent="Four weeks per block."}else{const i=currentBlockIndex(),begin=blockBoundary(i),end=blockBoundary(i+1),elapsed=Date.now()-begin;$("blockStatus").textContent="Training Block "+(i+1);$("blockBar").style.width=clamp(100*elapsed/(end-begin),0,100)+"%";$("blockInfo").textContent="Week "+clamp(Math.floor(elapsed/(7*DAY_MS))+1,1,4)+" of 4"}}
-function renderSettings(){$("days").innerHTML=DAY_NAMES.map((n,i)=>'<label><input type="checkbox" '+(data.days.includes(i)?"checked":"")+' onchange="changeDay('+i+',this.checked)"> '+n.slice(0,3)+'</label>').join("");$("dayStatus").textContent=data.days.length+"/5 days selected";$("coachSystemStatus").innerHTML='<p>Automatic training: <strong>Active</strong></p><p>Independent skills: <strong>Scoring, doubles, checkout, bull</strong></p><p>Progress updates: <strong>Based on evidence across training days</strong></p>'}
+function renderSettings(){
+ const status=$("autoBackupStatus");
+ if(status){const t=checkpointDate();status.textContent=t?"Local recovery copy saved: "+formatDate(t)+" at "+new Date(t).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}):"No milestone recovery copy yet. Save a backup file before any update.";}
+$("days").innerHTML=DAY_NAMES.map((n,i)=>'<label><input type="checkbox" '+(data.days.includes(i)?"checked":"")+' onchange="changeDay('+i+',this.checked)"> '+n.slice(0,3)+'</label>').join("");$("dayStatus").textContent=data.days.length+"/5 days selected";$("coachSystemStatus").innerHTML='<p>Automatic training: <strong>Active</strong></p><p>Independent skills: <strong>Scoring, doubles, checkout, bull</strong></p><p>Progress updates: <strong>Based on evidence across training days</strong></p>'}
 function renderHandPreference(){for(const hand of ["left","right"]){const b=$(hand==="left"?"handLeft":"handRight");if(!b)continue;b.classList.toggle("secondary",data.throwingHand!==hand);b.setAttribute("aria-pressed",String(data.throwingHand===hand))}}
 function changeDay(day,checked){const days=data.days.filter(x=>x!==day);if(checked)days.push(day);if(days.length>5){alert("Select exactly five training days.");renderSettings();return}data.days=days;save()}
 
-/* V4.8.6.5 dashboard. Renders from saved data, without modifying historical records. */
+/* V4.8.6.6 dashboard. Renders from saved data, without modifying historical records. */
 let selectedTrend="scoring";
 let historyVisible=false;
 const SKILL_LABELS={scoring:"Scoring",doubles:"Doubles",checkout:"Checkouts",bull:"Bull accuracy",singles:"Big Singles"};
@@ -571,7 +606,7 @@ function renderWeeklyReview(){const now=Date.now(),thisWeek=weekStart(now),lastW
  const el=$("weeklyCoachReview");if(!changes.length){el.innerHTML='<p class="muted">Your coach will offer a short weekly review when there are comparable results from two training weeks. No invented feedback.</p>';return}
  const better=changes.filter(x=>x.diff>=2),needs=changes.filter(x=>x.diff<=-3);let message='Your completed training results are being compared across weeks. ';if(better.length)message+='Good progress in '+better.map(x=>SKILL_LABELS[x.key].toLowerCase()).join(' and ')+'. ';if(needs.length){const key=needs.sort((a,b)=>a.diff-b.diff)[0].key;const tips={scoring:'For your next scoring session, focus on a repeatable setup and a smooth release rather than forcing extra power.',doubles:'On doubles, settle your feet before each visit and keep the same throwing rhythm as your scoring darts.',checkout:'On checkouts, commit to the target before throwing and maintain the same tempo throughout the visit.',bull:'For bull practice, keep your stance consistent and use the same aiming routine for every dart.'};message+=tips[key]}else message+='Keep your practice routine consistent. There is no need to change your technique just because one week varies.';el.innerHTML='<div class="coachNote">'+esc(message)+'</div><p class="secondarySub">Reviewing '+formatDate(lastWeek)+' to '+formatDate(thisWeek-1)+'. Advice is general and does not diagnose throwing mechanics.</p>'}
 
-/* V4.8.6.5: monthly statistics and shareable image */
+/* V4.8.6.6: monthly statistics and shareable image */
 let selectedReportMonth="";
 function monthString(t){const d=new Date(t);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")}
 function monthBounds(ym){if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(ym))return null;const [y,m]=ym.split("-").map(Number);const start=new Date(y,m-1,1).getTime(),end=new Date(y,m,1).getTime(),previous=new Date(y,m-2,1).getTime();return{start,end,previous,title:new Date(start).toLocaleDateString("en-GB",{month:"long",year:"numeric"})}}
@@ -604,6 +639,7 @@ function resetTrainingStatistics(){
  replacement.throwingHand=data.throwingHand;
  try{
   localStorage.setItem(KEY,JSON.stringify(replacement));
+  localStorage.setItem(CHECKPOINT_KEY,JSON.stringify({savedAt:Date.now(),data:replacement}));
  }catch(e){
   alert("Unable to save reset state. Previous data was not replaced.");
   return;
@@ -751,6 +787,7 @@ function completeAssessment(){
  if(!data.bigSingles.some(b=>b.day===dateKey()&&b.complete))data.bigSingles.push({day:dateKey(),at:Date.now(),hits:singlesHits,perNumber:profile.singles.perNumber,complete:true,source:"assessment"});
  data.coach.lastReviewedWeek=weekStart(Date.now());data.coach.lastChangeEvidence={};data.coach.lastTierChanges={};
  if(!data.coach.firstStarted)data.coach.firstStarted=Date.now();
+ checkpointData();
 }
 function renderAssessment(){
  if(!activeStage)return;
@@ -809,17 +846,42 @@ function assessmentTimer(){
 /* BACKUPS */
 function backupMessage(message,type=""){$("backupStatus").textContent=message;$("backupStatus").className="backupStatus "+type}
 function restoreMessage(message,type=""){$("restoreStatus").textContent=message;$("restoreStatus").className="backupStatus "+type}
+async function saveBackupFile(){
+ let json="";
+ try{
+  if(!isValidPlayerData(data))throw Error("Current profile cannot be verified.");
+  /* Save the current state first; the action is explicitly user-initiated. */
+  save(false);
+  json=JSON.stringify(data,null,2);
+  const name="darts-coach-backup-"+dateKey()+".json";
+  const blob=new Blob([json],{type:"application/json"});
+  if(typeof File!=="undefined"&&navigator.share){
+   const file=new File([blob],name,{type:"application/json"});
+   if(!navigator.canShare||navigator.canShare({files:[file]})){
+    try{
+     await navigator.share({files:[file],title:"Darts Coach Backup"});
+     backupMessage("Share sheet opened. Check that the JSON was actually saved in Files.","ok");
+     return;
+    }catch(e){
+     if(e.name==="AbortError"){backupMessage("Save cancelled. No file was saved.");return;}
+    }
+   }
+  }
+  downloadBlob(blob,name);
+  backupMessage("Download requested. Check Files > Downloads for "+name+".","ok");
+ }catch(e){backupMessage("File export failed: "+e.message,"error")}
+}
 function generateBackup(){try{const saved=localStorage.getItem(KEY),backup=saved?JSON.parse(saved):clone(data);if(!backup||!Array.isArray(backup.games)||!Array.isArray(backup.sessions))throw Error("Saved data could not be verified");const json=JSON.stringify(backup,null,2);$("backupText").value=json;$("backupOutput").classList.remove("hidden");backupMessage("Backup generated: "+(new Blob([json]).size/1024).toFixed(1)+" KB. Save outside the app.","ok")}catch(e){backupMessage("Backup failed: "+e.message,"error")}}
 function selectBackup(){const b=$("backupText");if(!b.value)generateBackup();b.focus();b.select();try{b.setSelectionRange(0,b.value.length)}catch(e){}backupMessage("Selected. Use the iPhone Copy menu.")}
 async function copyBackup(){const b=$("backupText");if(!b.value)generateBackup();if(!b.value)return;try{await navigator.clipboard.writeText(b.value);backupMessage("Copied. Verify by pasting into Notes.","ok")}catch(e){selectBackup();try{document.execCommand("copy")}catch(ex){}}}
-function downloadBackup(){const json=$("backupText").value;if(!json){backupMessage("Generate a backup first.","error");return}try{const blob=new Blob([json],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="darts-coach-v4.8.6.5-"+dateKey()+".json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);backupMessage("Download requested.")}catch(e){backupMessage("Download unavailable. Use Copy Backup.","error")}}
+function downloadBackup(){const json=$("backupText").value;if(!json){backupMessage("Generate a backup first.","error");return}try{const blob=new Blob([json],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="darts-coach-v4.8.6.6-"+dateKey()+".json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);backupMessage("Download requested.")}catch(e){backupMessage("Download unavailable. Use Copy Backup.","error")}}
 function validateRestore(json){let restored;try{restored=JSON.parse(json)}catch(e){throw Error("Invalid JSON")}if(!restored||typeof restored!=="object"||Array.isArray(restored)||!Array.isArray(restored.sessions)||!Array.isArray(restored.games)||!restored.assessment||!restored.skills)throw Error("Not a valid Darts Coach backup");return restored}
-function applyRestoredData(restored){if(!confirm("Replace current saved data with this backup?"))return false;const replacement=normaliseData(Object.assign(blank(),clone(restored)));try{localStorage.setItem(KEY,JSON.stringify(replacement))}catch(e){throw Error("Could not save restored data")}data=replacement;activeGame=data.game||null;normaliseSurvivalGame(activeGame);normaliseStraightGame(activeGame);undoSnapshot=null;activeStage=null;$("assessmentScreen").classList.add("hidden");document.body.classList.remove("assessing");$("sessionFinished").classList.add("hidden");show("home");return true}
+function applyRestoredData(restored){if(!confirm("Replace current saved data with this backup?"))return false;const replacement=normaliseData(Object.assign(blank(),clone(restored)));try{localStorage.setItem(KEY,JSON.stringify(replacement))}catch(e){throw Error("Could not save restored data")}data=replacement;checkpointData();activeGame=data.game||null;normaliseSurvivalGame(activeGame);normaliseStraightGame(activeGame);undoSnapshot=null;activeStage=null;$("assessmentScreen").classList.add("hidden");document.body.classList.remove("assessing");$("sessionFinished").classList.add("hidden");show("home");return true}
 function restoreFromText(){const json=$("restoreText").value.trim();if(!json){restoreMessage("Paste backup first.","error");return}try{if(applyRestoredData(validateRestore(json))){$("restoreText").value="";restoreMessage("Backup restored.","ok")}}catch(e){restoreMessage("Restore failed: "+e.message,"error")}}
 function importData(e){const f=e.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{try{if(applyRestoredData(validateRestore(String(reader.result))))restoreMessage("Backup file restored.","ok")}catch(error){restoreMessage("Restore failed: "+error.message,"error")}e.target.value=""};reader.onerror=()=>restoreMessage("Unable to read file.","error");reader.readAsText(f)}
 /* STARTUP */
 function renderAll(){renderHome();renderSettings();renderHandPreference();renderTraining();renderAssessmentMenu();renderProgress()}
 if(data.activeSession&&!Array.isArray(data.activeSession.plan)){data.activeSession=null;data.game=null}
 if(data.activeSession){activeGame=data.game||null;if(!activeGame){const e=currentExercise();if(e){activeGame=buildGame(e.name);data.game=activeGame}}normaliseStraightGame(activeGame);normaliseSurvivalGame(activeGame)}
-performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);setInterval(assessmentTimer,250);show("home");save(false);
+performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);setInterval(assessmentTimer,250);show("home");save(false);if(recoveryNotice){const b=$("backupStatus");if(b)b.textContent=recoveryNotice;}
 </script></body></html>
