@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.1.1</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.1.2</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -411,12 +411,54 @@ button.primary,.primary{box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 4px 12p
 #rhythmTitle{display:flex;align-items:center;gap:9px}
 #rhythmTitle .metronomeIcon{color:var(--green);width:26px;height:26px}
 
-/* V5.1.1: About info in header; no automatic welcome overlay. */
+/* V5.1.2: About info in header; no automatic welcome overlay. */
 #headerInfo{flex:none;width:42px;height:42px;border-radius:13px;padding:0;display:grid;place-items:center;font-size:25px;line-height:1;font-weight:600;color:var(--green);background:linear-gradient(140deg,rgba(36,70,47,.68),rgba(7,19,12,.92));border:1px solid rgba(173,255,201,.23);box-shadow:inset 0 1px 0 rgba(232,255,239,.08)}
 #headerInfo:focus-visible{outline:3px solid var(--green);outline-offset:2px}
 @media(max-width:370px){#headerInfo{width:38px;height:38px;font-size:22px}}
+
+/* V5.1.2: unified compact header controls. Theme accents from the active palette. */
+header{gap:9px;padding:13px 11px;justify-content:flex-start}
+header .brandMark{width:36px;height:36px;min-width:36px;border-radius:11px;font-size:20px}
+header .brandCopy{flex:1 1 auto;min-width:0}
+header .brandCopy h1{font-size:clamp(16px,4.7vw,20px);letter-spacing:-.025em;white-space:nowrap}
+header .brandCopy small{font-size:clamp(7px,2.15vw,9px);white-space:nowrap;letter-spacing:.035em}
+.headerActions{display:flex;align-items:center;justify-content:flex-end;flex:0 0 auto;gap:6px;margin-left:auto}
+header .headerActions>button,
+header #headerRhythm,header #headerInfo,header #headerSettings{
+  box-sizing:border-box;
+  display:grid;place-items:center;
+  flex:0 0 36px;width:36px;height:36px;min-width:36px;
+  padding:0;margin:0;
+  border-radius:11px;
+  font-size:0;
+  color:var(--green);
+  background:linear-gradient(150deg,color-mix(in srgb,var(--green) 17%,#09100c),color-mix(in srgb,var(--green) 5%,#040807));
+  border:1px solid color-mix(in srgb,var(--green) 43%,transparent);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 2px 8px rgba(0,0,0,.28);
+}
+header .headerLineIcon{
+  width:20px;height:20px;display:block;fill:none;stroke:currentColor;
+  stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
+}
+header #headerRhythm .headerLineIcon{width:21px;height:21px}
+header #headerSettings.selected{background:color-mix(in srgb,var(--green) 22%,#07120c);border-color:var(--green)}
+header .headerActions>button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px color-mix(in srgb,var(--green) 22%,transparent)}
+@media(max-width:375px){
+ header{gap:7px;padding-left:9px;padding-right:9px}
+ header .brandMark{width:32px;min-width:32px;height:32px}
+ .headerActions{gap:5px}
+ header .headerActions>button,header #headerRhythm,header #headerInfo,header #headerSettings{width:32px;height:34px;min-width:32px;flex-basis:32px}
+ header .headerLineIcon{width:19px;height:19px}
+}
+@media(min-width:760px){header{justify-content:center}.headerActions{position:static;margin-left:20px}}
+
 </style></head><body>
-<header><div class="brandMark">🎯</div><div class="brandCopy"><h1>DARTS COACH</h1><small>PERSONALISED TRAINING</small></div><button id="headerRhythm" type="button" aria-label="Open Rhythm Coach" title="Rhythm Coach" ><svg class="metronomeIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg></button><button id="headerInfo" type="button" aria-label="About Darts Coach" title="About Darts Coach" onclick="openWelcome()">ⓘ</button><button id="headerSettings" type="button" aria-label="Open Settings" title="Settings" onclick="show('settings')">⚙</button></header>
+<header><div class="brandMark">🎯</div><div class="brandCopy"><h1>DARTS COACH</h1><small>PERSONALISED TRAINING</small></div><div class="headerActions">
+<button id="headerRhythm" type="button" aria-label="Open Rhythm Coach" title="Rhythm Coach"><svg class="headerLineIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg></button>
+<button id="headerInfo" type="button" aria-label="About Darts Coach" title="About Darts Coach" onclick="openWelcome()"><svg class="headerLineIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 10.5v5.5"/><circle cx="12" cy="7.5" r=".85" fill="currentColor" stroke="none"/></svg></button>
+<button id="headerSettings" type="button" aria-label="Open Settings" title="Settings" onclick="show('settings')"><svg class="headerLineIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.7 2.8h4.6l.65 2.25a7.5 7.5 0 0 1 1.6.92l2.28-.55 2.3 4-1.64 1.68a8.6 8.6 0 0 1 0 1.84l1.64 1.68-2.3 4-2.28-.55a7.5 7.5 0 0 1-1.6.92l-.65 2.25H9.7l-.65-2.25a7.5 7.5 0 0 1-1.6-.92l-2.28.55-2.3-4 1.64-1.68a8.6 8.6 0 0 1 0-1.84L2.87 9.4l2.3-4 2.28.55a7.5 7.5 0 0 1 1.6-.92L9.7 2.8Z"/><circle cx="12" cy="12" r="3.1"/></svg></button>
+</div></header>
 <nav aria-label="Main navigation"><button id="navHome" onclick="show('home')"><span class="navIcon">⌂</span><span>Home</span></button><button id="navTrain" onclick="show('train')"><span class="navIcon">◎</span><span>Train</span></button><button id="navQuick" onclick="show('quick')"><span class="navIcon">▷</span><span>Quick Play</span></button><button id="navProgress" onclick="show('progress')"><span class="navIcon">▥</span><span>Progress</span></button><button id="navRecords" onclick="show('records')"><span class="navIcon">☆</span><span>Records</span></button><button id="navTechnique" onclick="show('technique')"><span class="navIcon">✧</span><span>Technique</span></button></nav>
 <section id="home">
 <div class="homeWelcome"><div><span class="eyebrow">YOUR PERSONAL COACH</span><h2>Built for better darts.</h2><p>Purposeful practice. Measurable progress.</p></div><span class="livePulse">● READY</span></div>
@@ -547,7 +589,7 @@ button.primary,.primary{box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 4px 12p
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. You must complete all four assessments again before training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.1.1</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.1.2</p></section>
 <script>
 "use strict";
 
