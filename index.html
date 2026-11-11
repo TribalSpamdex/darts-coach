@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.0.11</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.0.12</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -392,8 +392,9 @@ button.primary,.primary{box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 4px 12p
 .rhythmTip{font-size:11px!important;color:#a7beb0!important;line-height:1.5}
 @media(max-width:370px){#headerRhythm,#headerSettings{width:38px;height:38px}#sessionFooter .rhythmFooter{font-size:11px;padding:7px}#sessionFooter .linklike{font-size:11px;padding:6px}}
 @media(prefers-reduced-motion:reduce){#headerRhythm.rhythmRunning{animation:none}.rhythmBeat{transition:none}}
+.rhythmState{text-align:center;min-height:23px;font-size:12px;font-weight:800;letter-spacing:.09em;color:var(--green);margin:3px 0 6px}
 </style></head><body>
-<header><div class="brandMark">🎯</div><div class="brandCopy"><h1>DARTS COACH</h1><small>PERSONALISED TRAINING</small></div><button id="headerRhythm" type="button" aria-label="Open Rhythm Coach" title="Rhythm Coach" onclick="openRhythm()">♫</button><button id="headerSettings" type="button" aria-label="Open Settings" title="Settings" onclick="show('settings')">⚙</button></header>
+<header><div class="brandMark">🎯</div><div class="brandCopy"><h1>DARTS COACH</h1><small>PERSONALISED TRAINING</small></div><button id="headerRhythm" type="button" aria-label="Open Rhythm Coach" title="Rhythm Coach" >♫</button><button id="headerSettings" type="button" aria-label="Open Settings" title="Settings" onclick="show('settings')">⚙</button></header>
 <nav aria-label="Main navigation"><button id="navHome" onclick="show('home')"><span class="navIcon">⌂</span><span>Home</span></button><button id="navTrain" onclick="show('train')"><span class="navIcon">◎</span><span>Train</span></button><button id="navQuick" onclick="show('quick')"><span class="navIcon">▷</span><span>Quick Play</span></button><button id="navProgress" onclick="show('progress')"><span class="navIcon">▥</span><span>Progress</span></button><button id="navRecords" onclick="show('records')"><span class="navIcon">☆</span><span>Records</span></button><button id="navTechnique" onclick="show('technique')"><span class="navIcon">✧</span><span>Technique</span></button></nav>
 <section id="home">
 <div class="homeWelcome"><div><span class="eyebrow">YOUR PERSONAL COACH</span><h2>Built for better darts.</h2><p>Purposeful practice. Measurable progress.</p></div><span class="livePulse">● READY</span></div>
@@ -401,7 +402,7 @@ button.primary,.primary{box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 4px 12p
 <div class="homeSectionHeading"><h2>At a glance</h2><span>YOUR TRAINING</span></div><div id="homeHighlights" class="homeHighlights"><div class="homeKpi"><strong>—</strong><small>Sessions</small></div></div>
 <div class="card homeWeekCard"><div class="dashHeading"><h2>This week</h2><span class="pill">Recorded practice</span></div><div id="homeWeekBars" class="homeWeekBars"></div></div>
 <div class="card"><div class="dashHeading"><h2>Your Training Week</h2><span class="pill">5-day plan</span></div><div id="homeDays"></div></div><div class="card"><h2>Training Block</h2><p id="blockStatus"></p><div class="progress"><div id="blockBar"></div></div><p class="muted" id="blockInfo"></p></div></section>
-<section id="train" class="hidden"><div id="trainIdle" class="card center"><h2>Ready to Train</h2><p>Your coach has prepared the session.</p><button class="primary" onclick="beginTraining(false)">Start Training</button></div><div id="trainSession" class="hidden"><div class="card"><div class="statLine"><span id="sessionType">Training Session</span><span id="sessionStepLabel">Exercise 1</span></div><div class="big" id="sessionClock">60:00</div><div class="progress"><div id="sessionBar"></div></div></div><div class="card" id="exercisePanel"><h2 id="exerciseName">Warm-up</h2><div class="statLine"><span id="exerciseTimeLabel">Exercise time</span><span id="exerciseClock">10:00</span></div><div class="progress"><div id="exerciseBar"></div></div><div class="rulePanel"><div class="rule" id="exerciseRules"></div></div><div id="exerciseIntro" class="hidden"><h3>HOW TO PLAY</h3><div id="introTitle" class="instruction"></div><div id="introRules" class="instruction"></div><button onclick="playExercise()">Play</button></div><div id="exerciseDone" class="hidden"><h3>EXERCISE COMPLETE</h3><div id="doneSummary" class="instruction"></div><button id="nextExerciseButton" onclick="nextExercise()">Next Exercise</button></div><div id="playArea"><div id="roundFlash">ROUND 1</div><div class="big" id="gameTarget">Ready</div><p id="gameProgress"></p><div id="straightDisplay" class="hidden"></div><div id="miniMetrics"></div><div id="gameControls"></div></div><div class="row" id="undoRow"><button class="secondary" id="undoButton" onclick="undoGame()">Undo</button></div><button class="primary" id="completeButton" onclick="completeExercise('manual')">Complete Exercise</button></div><div class="card" id="sessionFooter"><button class="secondary" onclick="pauseSession()" id="pauseButton">Pause Session</button><button class="secondary rhythmFooter" type="button" onclick="openRhythm()" aria-label="Open Rhythm Coach">♫ Rhythm</button><button class="linklike" onclick="finishSessionEarly()">End Session</button></div></div><div id="roundAnnouncement" class="hidden" aria-live="polite"><div id="roundAnnouncementCard"><div id="roundAnnouncementTitle">ROUND 2</div><div id="roundAnnouncementPrevious"></div></div></div><div id="sessionFinished" class="card hidden"><div class="resultCard"><strong>Training Complete</strong><p>Session recorded.</p></div><p id="finishedText" class="center"></p><div id="sessionCoachReport" class="coachReport"></div><button class="primary" onclick="finishView()">Done</button><button class="secondary" style="width:100%;margin-top:8px" onclick="beginTraining(true)">Extra Training Session</button></div></section>
+<section id="train" class="hidden"><div id="trainIdle" class="card center"><h2>Ready to Train</h2><p>Your coach has prepared the session.</p><button class="primary" onclick="beginTraining(false)">Start Training</button></div><div id="trainSession" class="hidden"><div class="card"><div class="statLine"><span id="sessionType">Training Session</span><span id="sessionStepLabel">Exercise 1</span></div><div class="big" id="sessionClock">60:00</div><div class="progress"><div id="sessionBar"></div></div></div><div class="card" id="exercisePanel"><h2 id="exerciseName">Warm-up</h2><div class="statLine"><span id="exerciseTimeLabel">Exercise time</span><span id="exerciseClock">10:00</span></div><div class="progress"><div id="exerciseBar"></div></div><div class="rulePanel"><div class="rule" id="exerciseRules"></div></div><div id="exerciseIntro" class="hidden"><h3>HOW TO PLAY</h3><div id="introTitle" class="instruction"></div><div id="introRules" class="instruction"></div><button onclick="playExercise()">Play</button></div><div id="exerciseDone" class="hidden"><h3>EXERCISE COMPLETE</h3><div id="doneSummary" class="instruction"></div><button id="nextExerciseButton" onclick="nextExercise()">Next Exercise</button></div><div id="playArea"><div id="roundFlash">ROUND 1</div><div class="big" id="gameTarget">Ready</div><p id="gameProgress"></p><div id="straightDisplay" class="hidden"></div><div id="miniMetrics"></div><div id="gameControls"></div></div><div class="row" id="undoRow"><button class="secondary" id="undoButton" onclick="undoGame()">Undo</button></div><button class="primary" id="completeButton" onclick="completeExercise('manual')">Complete Exercise</button></div><div class="card" id="sessionFooter"><button class="secondary" onclick="pauseSession()" id="pauseButton">Pause Session</button><button class="secondary rhythmFooter" type="button"  aria-label="Open Rhythm Coach">♫ Rhythm</button><button class="linklike" onclick="finishSessionEarly()">End Session</button></div></div><div id="roundAnnouncement" class="hidden" aria-live="polite"><div id="roundAnnouncementCard"><div id="roundAnnouncementTitle">ROUND 2</div><div id="roundAnnouncementPrevious"></div></div></div><div id="sessionFinished" class="card hidden"><div class="resultCard"><strong>Training Complete</strong><p>Session recorded.</p></div><p id="finishedText" class="center"></p><div id="sessionCoachReport" class="coachReport"></div><button class="primary" onclick="finishView()">Done</button><button class="secondary" style="width:100%;margin-top:8px" onclick="beginTraining(true)">Extra Training Session</button></div></section>
 <section id="quick" class="hidden">
  <div class="card"><h2>Quick Play</h2><p class="muted">Choose any challenge and how long you want to play. Your current coaching levels set the difficulty automatically.</p>
  <div id="quickIntro" class="info">Quick Play is separate from scheduled training. Complete the initial assessment to unlock the appropriate difficulty.</div>
@@ -507,7 +508,7 @@ button.primary,.primary{box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 4px 12p
 <button type="button" class="themeChoice" data-theme="orange" onclick="setAccentTheme('orange')" aria-pressed="false"><span class="themeDot" style="--swatch:#ffad5c"></span><span>Orange</span></button>
 <button type="button" class="themeChoice" data-theme="purple" onclick="setAccentTheme('purple')" aria-pressed="false"><span class="themeDot" style="--swatch:#c59aff"></span><span>Purple</span></button>
 </div><p class="themeHelp">Changes are saved automatically on this device.</p></div>
-<div class="card"><h2>About Darts Coach</h2><p class="muted">See what the coach does and how to use scheduled training or Quick Play.</p><button class="secondary" onclick="openWelcome()">About Darts Coach</button><p class="appVersionInfo">App version <strong>V5.0.11</strong></p></div><div class="card"><h2>Weekly Training Days</h2><p class="muted">Select five days. The coach handles the training on those days.</p><div class="dayRow" id="days"></div><p id="dayStatus" class="muted"></p></div><div class="card"><h2>Training Data</h2><p class="muted">Data is stored in this browser or Home Screen app, not on GitHub. Updates at the same address should preserve it. Safari and a Home Screen app may have different saved data. Keep an external backup.</p><h3>1. Protect Your Training</h3>
+<div class="card"><h2>About Darts Coach</h2><p class="muted">See what the coach does and how to use scheduled training or Quick Play.</p><button class="secondary" onclick="openWelcome()">About Darts Coach</button><p class="appVersionInfo">App version <strong>V5.0.12</strong></p></div><div class="card"><h2>Weekly Training Days</h2><p class="muted">Select five days. The coach handles the training on those days.</p><div class="dayRow" id="days"></div><p id="dayStatus" class="muted"></p></div><div class="card"><h2>Training Data</h2><p class="muted">Data is stored in this browser or Home Screen app, not on GitHub. Updates at the same address should preserve it. Safari and a Home Screen app may have different saved data. Keep an external backup.</p><h3>1. Protect Your Training</h3>
 <p class="muted">An extra recovery copy is saved automatically in this browser after each finished assessment or session. This is not a backup in iPhone Files. For protection against browser data loss, save a file as well.</p>
 <div id="autoBackupStatus" class="backupStatus">Checking local recovery copy…</div>
 <button class="primary" onclick="saveBackupFile()">Save Backup to Files</button>
@@ -2178,21 +2179,6 @@ if(data.activeSession&&!Array.isArray(data.activeSession.plan)){data.activeSessi
 if(data.activeSession){activeGame=data.game||null;if(!activeGame){const e=currentExercise();if(e){activeGame=buildGame(e.name);data.game=activeGame}}normaliseStraightGame(activeGame);normaliseSurvivalGame(activeGame)}
 performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);setInterval(assessmentTimer,250);show("home");save(false);try{if(localStorage.getItem("dartsCoachWelcomeHidden")!=="1")openWelcome()}catch(e){openWelcome()}if(recoveryNotice){const b=$("backupStatus");if(b)b.textContent=recoveryNotice;}
 
-/* Independent rhythm coach. Settings are local to the device; no changes to training evidence. */
-const RHYTHM_KEY="dartsCoachRhythm",rhythm={count:3,bpm:75,sound:true,running:false,started:0,elapsed:0,lastBeat:-1,interval:null,audio:null,taps:[]};
-function rhythmPersist(){try{localStorage.setItem(RHYTHM_KEY,JSON.stringify({count:rhythm.count,bpm:rhythm.bpm,sound:rhythm.sound}))}catch(e){}}
-function rhythmInit(){try{const p=JSON.parse(localStorage.getItem(RHYTHM_KEY)||"{}");if([3,4].includes(p.count))rhythm.count=p.count;if(Number.isFinite(p.bpm))rhythm.bpm=Math.max(40,Math.min(140,Math.round(p.bpm)));if(typeof p.sound==="boolean")rhythm.sound=p.sound}catch(e){}$("rhythmCount").value=String(rhythm.count);$("rhythmTempo").value=String(rhythm.bpm);$("rhythmSound").checked=rhythm.sound;rhythmRender()}
-function openRhythm(){$("rhythmOverlay").classList.remove("hidden");rhythmRender()}
-function closeRhythm(){$("rhythmOverlay").classList.add("hidden")}
-function rhythmUpdateSettings(){const count=Number($("rhythmCount").value),bpm=Number($("rhythmTempo").value);rhythm.count=count===4?4:3;rhythm.bpm=Math.max(40,Math.min(140,Math.round(bpm)||75));rhythm.sound=$("rhythmSound").checked;rhythmPersist();if(rhythm.running){const elapsed=Date.now()-rhythm.started;rhythm.started=Date.now()-elapsed;rhythm.lastBeat=Math.floor(elapsed/(60000/rhythm.bpm))-1}rhythmRender()}
-function rhythmRender(){const remain=Math.max(0,180000-(rhythm.running?Date.now()-rhythm.started:rhythm.elapsed));const sec=Math.ceil(remain/1000);$("rhythmTimer").textContent=String(Math.floor(sec/60)).padStart(2,"0")+":"+String(sec%60).padStart(2,"0");$("rhythmTempoText").textContent=rhythm.bpm+" BPM";const n=rhythm.running?Math.floor((Date.now()-rhythm.started)/(60000/rhythm.bpm))%rhythm.count:-1;$("rhythmBeats").innerHTML=Array.from({length:rhythm.count},(_,i)=>'<span class="rhythmBeat'+(i===n?' active':'')+'">'+(i+1)+'</span>').join("");$("rhythmToggle").textContent=rhythm.running?"Pause rhythm":rhythm.elapsed>0?"Resume rhythm":"Start 3-minute practice";$("headerRhythm").classList.toggle("rhythmRunning",rhythm.running)}
-function rhythmTick(){if(!rhythm.running)return;const elapsed=Date.now()-rhythm.started;if(elapsed>=180000){rhythmStop(true);return}const beat=Math.floor(elapsed/(60000/rhythm.bpm));if(beat!==rhythm.lastBeat){rhythm.lastBeat=beat;if(rhythm.sound&&!document.hidden)rhythmBeep(beat%rhythm.count===0)}if(!$("rhythmOverlay").classList.contains("hidden"))rhythmRender()}
-function rhythmBeep(accent){try{const c=rhythm.audio;if(!c||c.state!=="running")return;const o=c.createOscillator(),g=c.createGain(),now=c.currentTime;o.type="sine";o.frequency.value=accent?880:660;g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(.10,now+.009);g.gain.exponentialRampToValueAtTime(.0001,now+.080);o.connect(g);g.connect(c.destination);o.start(now);o.stop(now+.085)}catch(e){}}
-function rhythmTogglePlayback(){if(rhythm.running){rhythm.elapsed=Date.now()-rhythm.started;rhythm.running=false;clearInterval(rhythm.interval);rhythm.interval=null}else{if(rhythm.elapsed>=180000)rhythm.elapsed=0;rhythm.started=Date.now()-rhythm.elapsed;rhythm.running=true;rhythm.lastBeat=-1;try{const AC=window.AudioContext||window.webkitAudioContext;if(!rhythm.audio&&AC)rhythm.audio=new AC();if(rhythm.sound&&rhythm.audio)rhythm.audio.resume()}catch(e){}rhythmTick();rhythm.interval=setInterval(rhythmTick,65)}rhythmRender()}
-function rhythmStop(done){if(rhythm.running){clearInterval(rhythm.interval);rhythm.interval=null}rhythm.running=false;rhythm.elapsed=done?180000:0;rhythm.lastBeat=-1;rhythmRender();if(done)$("rhythmToggle").textContent="Start again"}
-function rhythmReset(){rhythmStop(false);rhythm.taps=[]}
-function rhythmTapTempo(){const now=Date.now();rhythm.taps.push(now);rhythm.taps=rhythm.taps.filter(t=>now-t<=6000).slice(-6);if(rhythm.taps.length>=3){const differences=rhythm.taps.slice(1).map((t,i)=>t-rhythm.taps[i]);const average=differences.reduce((a,b)=>a+b,0)/differences.length;rhythm.bpm=Math.max(40,Math.min(140,Math.round(60000/average)));$("rhythmTempo").value=String(rhythm.bpm);rhythmPersist();rhythmRender()}}
-document.addEventListener("DOMContentLoaded",rhythmInit);
 </script><div id="welcomeOverlay" class="welcomeOverlay hidden" role="dialog" aria-modal="true" aria-labelledby="welcomeHeading">
  <div class="welcomePanel"><div class="welcomeMark">🎯 DARTS COACH</div><h2 id="welcomeHeading">Your personal darts training coach</h2>
  <p>Structured, personalised practice for everyone, from beginners to experienced competitive players.</p>
@@ -2206,14 +2192,90 @@ document.addEventListener("DOMContentLoaded",rhythmInit);
 </div>
 <div id="rhythmOverlay" class="rhythmOverlay hidden" role="dialog" aria-modal="true" aria-labelledby="rhythmTitle">
   <div class="rhythmCard">
-    <div class="rhythmTop"><h2 id="rhythmTitle">♫ Rhythm Coach</h2><button type="button" class="rhythmClose" onclick="closeRhythm()" aria-label="Close Rhythm Coach">✕</button></div>
+    <div class="rhythmTop"><h2 id="rhythmTitle">♫ Rhythm Coach</h2><button type="button" class="rhythmClose" id="rhythmCloseButton" aria-label="Close Rhythm Coach">✕</button></div>
     <p>Find your own relaxed throwing rhythm. This tool is separate from your training timer.</p>
-    <div class="rhythmTimer" id="rhythmTimer">03:00</div>
+    <div class="rhythmTimer" id="rhythmTimer">03:00</div><div id="rhythmState" class="rhythmState" role="status" aria-live="polite">Ready · Select Start</div>
     <div id="rhythmBeats" class="rhythmBeats" aria-label="Beat indicator"></div>
-    <div class="rhythmRow"><label for="rhythmCount">Count</label><select id="rhythmCount" onchange="rhythmUpdateSettings()"><option value="3">1–2–3</option><option value="4">1–2–3–4</option></select></div>
-    <div class="rhythmRow"><label for="rhythmTempo">Tempo</label><input id="rhythmTempo" type="range" min="40" max="140" step="1" value="75" oninput="rhythmUpdateSettings()"><output id="rhythmTempoText">75 BPM</output></div>
-    <div class="rhythmRow"><label for="rhythmSound">Sound</label><input type="checkbox" id="rhythmSound" onchange="rhythmUpdateSettings()" checked><span class="muted">Optional ticks</span></div>
-    <div class="rhythmActions"><button class="primary" id="rhythmToggle" type="button" onclick="rhythmTogglePlayback()">Start 3-minute practice</button><button class="secondary" type="button" onclick="rhythmTapTempo()">Tap tempo</button><button class="secondary" type="button" onclick="rhythmReset()">Reset</button></div>
+    <div class="rhythmRow"><label for="rhythmCount">Count</label><select id="rhythmCount" ><option value="3">1–2–3</option><option value="4">1–2–3–4</option></select></div>
+    <div class="rhythmRow"><label for="rhythmTempo">Tempo</label><input id="rhythmTempo" type="range" min="40" max="140" step="1" value="75" ><output id="rhythmTempoText">75 BPM</output></div>
+    <div class="rhythmRow"><label for="rhythmSound">Sound</label><input type="checkbox" id="rhythmSound"  checked><span class="muted">Optional ticks</span></div>
+    <div class="rhythmActions"><button class="primary" id="rhythmToggle" type="button">Start 3-minute practice</button><button class="secondary" type="button" id="rhythmTapButton">Tap tempo</button><button class="secondary" type="button" id="rhythmResetButton">Reset</button></div>
     <p class="rhythmTip">Tap tempo several times to match your natural cadence. You can close this panel while the three-minute practice continues. Sound may pause if your iPhone locks or the browser goes into the background.</p>
   </div>
-</div></body></html>
+</div><script>
+/* Self-contained rhythm controller. Explicit listeners, no global named handlers. */
+(function(){
+ 'use strict';
+ const key='dartsCoachRhythm';
+ const get=id=>document.getElementById(id);
+ const state={count:3,bpm:75,sound:true,running:false,elapsed:0,started:0,interval:null,lastBeat:-1,audio:null,taps:[]};
+ const duration=180000;
+ function save(){try{localStorage.setItem(key,JSON.stringify({count:state.count,bpm:state.bpm,sound:state.sound}))}catch(_){}}
+ function load(){try{const s=JSON.parse(localStorage.getItem(key)||'{}');if(s.count===3||s.count===4)state.count=s.count;if(Number.isFinite(s.bpm))state.bpm=Math.max(40,Math.min(140,Math.round(s.bpm)));if(typeof s.sound==='boolean')state.sound=s.sound}catch(_){}get('rhythmCount').value=String(state.count);get('rhythmTempo').value=String(state.bpm);get('rhythmSound').checked=state.sound}
+ function elapsed(){return state.running?Date.now()-state.started:state.elapsed}
+ function status(t){get('rhythmState').textContent=t}
+ function render(){
+   const ms=Math.max(0,duration-elapsed()),secs=Math.ceil(ms/1000);
+   get('rhythmTimer').textContent=String(Math.floor(secs/60)).padStart(2,'0')+':'+String(secs%60).padStart(2,'0');
+   get('rhythmTempoText').textContent=state.bpm+' BPM';
+   const beat=state.running?Math.floor(elapsed()/(60000/state.bpm))%state.count:-1;
+   get('rhythmBeats').innerHTML=Array.from({length:state.count},(_,i)=>'<span class="rhythmBeat'+(i===beat?' active':'')+'">'+(i+1)+'</span>').join('');
+   get('rhythmToggle').textContent=state.running?'Pause':state.elapsed>0&&state.elapsed<duration?'Resume':'Start 3-minute practice';
+   get('headerRhythm').classList.toggle('rhythmRunning',state.running);
+   if(state.running) status('PLAYING · '+state.bpm+' BPM');
+ }
+ function audioInit(){
+   if(!state.sound)return;
+   try{const C=window.AudioContext||window.webkitAudioContext;if(!C){status('Visual rhythm only · Audio unavailable');return}if(!state.audio)state.audio=new C();const p=state.audio.resume();if(p&&typeof p.catch==='function')p.catch(()=>{});}catch(e){status('Visual rhythm only · Check iPhone sound settings')}
+ }
+ function beep(accent){
+   if(!state.sound)return;
+   const c=state.audio;
+   if(!c||c.state!=='running')return;
+   try{const o=c.createOscillator(),g=c.createGain(),t=c.currentTime;
+     o.type='sine';o.frequency.value=accent?990:700;
+     g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.22,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+.11);
+     o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+.12);
+   }catch(_){}
+ }
+ function tick(){
+   if(!state.running)return;
+   const ms=elapsed();if(ms>=duration){stop(true);return}
+   const beat=Math.floor(ms/(60000/state.bpm));
+   if(beat!==state.lastBeat){state.lastBeat=beat;if(!document.hidden)beep(beat%state.count===0)}
+   if(!get('rhythmOverlay').classList.contains('hidden'))render();
+ }
+ function startPause(){
+   if(state.running){state.elapsed=elapsed();state.running=false;clearInterval(state.interval);state.interval=null;render();status('PAUSED · Tap Resume');return}
+   if(state.elapsed>=duration)state.elapsed=0;
+   audioInit();state.started=Date.now()-state.elapsed;state.running=true;state.lastBeat=-1;
+   render();tick();clearInterval(state.interval);state.interval=setInterval(tick,80);
+ }
+ function stop(completed){clearInterval(state.interval);state.interval=null;state.running=false;state.elapsed=completed?duration:0;state.lastBeat=-1;render();status(completed?'COMPLETE · Nice work':'Ready · Select Start')}
+ function setting(){
+   state.count=Number(get('rhythmCount').value)===4?4:3;
+   state.bpm=Math.max(40,Math.min(140,Number(get('rhythmTempo').value)||75));
+   state.sound=get('rhythmSound').checked;
+   state.lastBeat=-1;save();render();
+   if(!state.running)status('READY · '+state.bpm+' BPM');
+ }
+ function tap(){const t=Date.now();state.taps.push(t);state.taps=state.taps.filter(x=>t-x<6000).slice(-6);
+  if(state.taps.length>=3){const diffs=state.taps.slice(1).map((x,i)=>x-state.taps[i]);const avg=diffs.reduce((x,y)=>x+y,0)/diffs.length;state.bpm=Math.max(40,Math.min(140,Math.round(60000/avg)));get('rhythmTempo').value=String(state.bpm);state.lastBeat=-1;save();render();status('TAP TEMPO · '+state.bpm+' BPM')}
+  else status('Tap a few more times to set your rhythm');
+ }
+ function open(){get('rhythmOverlay').classList.remove('hidden');render()}
+ function close(){get('rhythmOverlay').classList.add('hidden')}
+ function init(){
+   load();render();status('Ready · Select Start');
+   document.querySelectorAll('#headerRhythm,.rhythmFooter').forEach(el=>el.addEventListener('click',open));
+   get('rhythmCloseButton').addEventListener('click',close);
+   get('rhythmToggle').addEventListener('click',startPause);
+   get('rhythmResetButton').addEventListener('click',()=>{stop(false);state.taps=[]});
+   get('rhythmTapButton').addEventListener('click',tap);
+   get('rhythmTempo').addEventListener('input',setting);
+   get('rhythmCount').addEventListener('change',setting);
+   get('rhythmSound').addEventListener('change',setting);
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+</script></body></html>
