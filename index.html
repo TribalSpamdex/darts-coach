@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.1.2</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.1.3</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -411,12 +411,12 @@ button.primary,.primary{box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 4px 12p
 #rhythmTitle{display:flex;align-items:center;gap:9px}
 #rhythmTitle .metronomeIcon{color:var(--green);width:26px;height:26px}
 
-/* V5.1.2: About info in header; no automatic welcome overlay. */
+/* V5.1.3: About info in header; no automatic welcome overlay. */
 #headerInfo{flex:none;width:42px;height:42px;border-radius:13px;padding:0;display:grid;place-items:center;font-size:25px;line-height:1;font-weight:600;color:var(--green);background:linear-gradient(140deg,rgba(36,70,47,.68),rgba(7,19,12,.92));border:1px solid rgba(173,255,201,.23);box-shadow:inset 0 1px 0 rgba(232,255,239,.08)}
 #headerInfo:focus-visible{outline:3px solid var(--green);outline-offset:2px}
 @media(max-width:370px){#headerInfo{width:38px;height:38px;font-size:22px}}
 
-/* V5.1.2: unified compact header controls. Theme accents from the active palette. */
+/* V5.1.3: unified compact header controls. Theme accents from the active palette. */
 header{gap:9px;padding:13px 11px;justify-content:flex-start}
 header .brandMark{width:36px;height:36px;min-width:36px;border-radius:11px;font-size:20px}
 header .brandCopy{flex:1 1 auto;min-width:0}
@@ -453,6 +453,23 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 }
 @media(min-width:760px){header{justify-content:center}.headerActions{position:static;margin-left:20px}}
 
+
+/* V5.1.3: clear checkout HUD and native-keyboard-free dart-count picker */
+.checkoutHud{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;align-items:center;font-weight:600}
+.checkoutHud .hudChip{padding:5px 8px;border:1px solid color-mix(in srgb,var(--green) 23%,transparent);background:rgba(0,0,0,.2);border-radius:9px;color:#f1f8f4;font-size:12px;white-space:nowrap}
+.checkoutHud .hudChip b{color:var(--green);font-size:14px}
+.checkoutHud .hudGuide{width:100%;font-size:10px;line-height:1.28;font-weight:500;color:var(--muted);margin-top:1px;text-align:center}
+#checkoutDartPicker{position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.8);padding:16px;backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}
+#checkoutDartPicker.hidden{display:none!important}
+#checkoutDartPicker .checkoutPickerCard{width:min(100%,370px);padding:22px 16px 16px;border-radius:22px;background:linear-gradient(155deg,#15231d,#070c09);border:1px solid color-mix(in srgb,var(--green) 58%,transparent);box-shadow:0 18px 66px rgba(0,0,0,.7),0 0 26px color-mix(in srgb,var(--green) 11%,transparent);text-align:center}
+.checkoutPickerCard h2{font-size:25px;margin:0 0 9px;line-height:1.15;color:#fff}
+.checkoutPickerCard p{margin:5px 0 14px;color:#b5c9be;font-size:14px;line-height:1.45}
+.checkoutChoices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:10px 0}
+.checkoutChoices button{height:76px;padding:5px;border-radius:14px;background:linear-gradient(140deg,var(--green),color-mix(in srgb,var(--green) 75%,#28503c));color:#06120c;font-size:29px;font-weight:900}
+.checkoutChoices button:disabled{opacity:.22;filter:grayscale(1)}
+.checkoutPickerCard .checkoutSecondary{width:100%;min-height:46px;margin-top:8px;background:rgba(255,255,255,.05)!important;color:#e2eee7;border:1px solid rgba(255,255,255,.14)}
+.checkoutPickerCard .checkoutNote{font-size:11px;color:#a6bbad;margin:10px 0 0;line-height:1.3}
+@media(max-height:680px){#checkoutDartPicker .checkoutPickerCard{padding:14px}.checkoutChoices button{height:62px}}
 </style></head><body>
 <header><div class="brandMark">🎯</div><div class="brandCopy"><h1>DARTS COACH</h1><small>PERSONALISED TRAINING</small></div><div class="headerActions">
 <button id="headerRhythm" type="button" aria-label="Open Rhythm Coach" title="Rhythm Coach"><svg class="headerLineIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg></button>
@@ -589,8 +606,8 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. You must complete all four assessments again before training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.1.2</p></section>
-<script>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.1.3</p></section>
+<div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
 /* V5.0.8 theme preference. Does not modify training data, backups or stored game results. */
@@ -1131,18 +1148,12 @@ function focusedMiss(){
  data.game=g;save();
 }
 function focusedHit(){
- const g=activeGame;
- if(!g||g.name!=="Focused Checkouts"||session()?.pausedAt)return;
+ const g=activeGame;if(!g||g.name!=="Focused Checkouts"||session()?.pausedAt)return;
  const left=3-g.attempt;
- const answer=prompt("Number of additional darts used to finish (1–"+left+")?","1");
- if(answer===null)return;
- const used=Number(answer);
- if(!Number.isInteger(used)||used<1||used>left){alert("Enter a number from 1 to "+left+".");return}
- snapshot();
- g.dartsUsed+=g.attempt+used;g.success++;g.attempts++;g.attempt=0;
- g.target++;
- if(g.target>g.config.end){g.completed=true;endRound();return}
- data.game=g;save();
+ askCheckoutDarts({score:g.target,maxDarts:left,onFinish:used=>{
+  snapshot();g.dartsUsed+=g.attempt+used;g.success++;g.attempts++;g.attempt=0;g.target++;
+  if(g.target>g.config.end){g.completed=true;endRound();return}data.game=g;save();
+ }});
 }
 
 /* Tier-specific pressure settings: tiers are independent per skill and never shown. */
@@ -1158,12 +1169,77 @@ function padDigit(d){if(session()?.pausedAt||session()?.phase!=="playing")return
 function padClear(){padSet("")}
 function padBack(){padSet(($("scoreInput")?.value||"").slice(0,-1))}
 function padSubmit(fn){const input=$("scoreInput");if(!input||input.value==="")return;fn();padSet("")}
+/* Shared checkout picker. One modal for every confirmed checkout, including assessments. */
+let pendingCheckoutDarts=null;
+const FINISH_DOUBLE_SCORES=[...Array.from({length:20},(_,i)=>(i+1)*2),50];
+function possibleVisitIn(score,darts){
+ if(darts===1)return DART_SCORES.includes(score);
+ if(darts===2)return DART_SCORES.some(a=>DART_SCORES.includes(score-a));
+ return POSSIBLE_VISITS.has(score);
+}
+function possibleCheckoutIn(score,darts){
+ if(darts===1)return FINISH_DOUBLE_SCORES.includes(score);
+ if(darts===2)return FINISH_DOUBLE_SCORES.some(d=>DART_SCORES.includes(score-d));
+ if(darts===3)return FINISH_DOUBLE_SCORES.some(d=>DART_SCORES.some(a=>DART_SCORES.includes(score-d-a)));
+ return false;
+}
+function askCheckoutDarts(config){
+ const allowed=Math.max(1,Math.min(3,Math.floor(config.maxDarts||3)));
+ const possible=[1,2,3].filter(n=>n<=allowed&&(!config.score||possibleCheckoutIn(config.score,n)));
+ if(!possible.length){if(typeof config.onImpossible==='function')config.onImpossible();else alert('This score cannot finish on a double within your dart allowance.');return}
+ pendingCheckoutDarts={...config,possible};
+ const target=config.score?` for ${config.score}`:'';
+ $('checkoutPickerTitle').textContent='How many darts to check out'+target+'?';
+ $('checkoutPickerSubtitle').textContent='Count the darts actually thrown in this visit. The final dart must hit a double or the bullseye.';
+ for(const btn of $('checkoutChoices').querySelectorAll('button'))btn.disabled=!possible.includes(Number(btn.textContent));
+ $('checkoutBustBtn').classList.toggle('hidden',typeof config.onBust!=='function');
+ $('checkoutPickerNote').textContent='Only valid dart counts are selectable. Tap Cancel if you entered the wrong visit score.';
+ $('checkoutDartPicker').classList.remove('hidden');
+}
+function closeCheckoutDartPicker(){pendingCheckoutDarts=null;$('checkoutDartPicker').classList.add('hidden')}
+function chooseCheckoutDarts(n){
+ const pending=pendingCheckoutDarts;if(!pending||!pending.possible.includes(n))return;
+ if(session()?.phase!==undefined&&session()?.phase!=="playing"){closeCheckoutDartPicker();return}
+ closeCheckoutDartPicker();pending.onFinish(n);
+}
+function checkoutDidNotFinish(){const pending=pendingCheckoutDarts;if(!pending||typeof pending.onBust!=='function')return;closeCheckoutDartPicker();pending.onBust()}
+function pressureBust(g,n){
+ snapshot();g.visits++;g.scores.push(0);g.busts++;if(g.name==='301 Pressure')g.lives--;
+ if(g.name==='501 Pressure'){g.dartsUsed+=Math.min(3,Math.max(0,g.maxDarts-g.dartsUsed));if(g.dartsUsed>=g.maxDarts){endRound();return}}
+ else if(g.visits>=g.maxVisits||(g.name==='301 Pressure'&&g.lives<=0)){endRound();return}
+ data.game=g;save();
+}
+function finishPressureVisit(n,darts){
+ const g=activeGame;if(!g||!['301 Pressure','501 Pressure','170 Challenge'].includes(g.name))return;
+ if(g.name==='501 Pressure'&&g.dartsUsed+darts>g.maxDarts){alert('Not enough darts remain for that finish.');return}
+ snapshot();g.visits++;g.points+=n;g.scores.push(n);if(n===180)g.oneEighties=num(g.oneEighties)+1;
+ g.dartsUsed=num(g.dartsUsed)+darts;g.finish=n;g.remaining=0;g.wins++;padSet('');endRound();
+}
+function finishDoubleInVisit(n,darts){
+ const g=activeGame;if(g?.name!=='Double-In 201')return;
+ snapshot();g.visits++;g.points+=n;g.scores.push(n);if(n===180)g.oneEighties=num(g.oneEighties)+1;
+ g.dartsUsed=num(g.dartsUsed)+darts;g.remaining=0;g.wins=1;padSet('');endRound();
+}
+function doubleInBust(n){
+ const g=activeGame;if(g?.name!=='Double-In 201')return;
+ snapshot();g.visits++;g.scores.push(0);g.busts++;padSet('');
+ if(g.visits>=g.maxVisits){endRound();return}
+ data.game=g;save();
+}
 function scoringVisit(){
  const g=activeGame,s=session(),input=$("scoreInput");
  if(!g||!s||s.pausedAt||s.phase!=="playing"||!input)return;
  if(!["Scoring Survival","Scoring Ladder","301 Pressure","501 Pressure","Setup Shot","Risk or Reward","170 Challenge","First Nine Siege"].includes(g.name))return;
  const n=Number(input.value);
  if(input.value===""||!validVisit(n)){alert("Enter a three-dart total that can actually be scored (0–180).");return}
+ if(g.name==="501 Pressure"&&!possibleVisitIn(n,Math.min(3,g.maxDarts-g.dartsUsed))){alert("That score is not possible with the darts left in this 501 leg.");return}
+ if(["301 Pressure","501 Pressure","170 Challenge"].includes(g.name)){
+  if(n>g.remaining||g.remaining-n===1){padSet("");pressureBust(g,n);return}
+  if(n===g.remaining){
+   const dartsLeft=g.name==="501 Pressure"?Math.min(3,g.maxDarts-g.dartsUsed):3;
+   askCheckoutDarts({score:n,maxDarts:dartsLeft,onFinish:d=>finishPressureVisit(n,d),onBust:()=>{padSet('');pressureBust(g,n)},onImpossible:()=>{padSet('');pressureBust(g,n)}});return;
+  }
+ }
  padSet("");snapshot();g.visits++;g.points+=n;g.scores.push(n);if(n===180)g.oneEighties=num(g.oneEighties)+1;
  if(g.name==="Scoring Survival"){
   if(n>=g.target){g.cleared++;g.streak++}else{g.lives--;g.streak=0}
@@ -1174,18 +1250,11 @@ function scoringVisit(){
   if(g.step>=g.targets.length||g.lives<=0){endRound();return}
   g.target=g.targets[g.step];
  }else if(["301 Pressure","501 Pressure","170 Challenge"].includes(g.name)){
-  if(n>g.remaining||g.remaining-n===1){
-   g.points-=n;g.scores[g.scores.length-1]=0;g.busts++;if(g.name==="301 Pressure")g.lives--;
-  }else if(n===g.remaining){
-   if(!confirm("Did your last dart finish on a DOUBLE (or bullseye)?")){
-    g.points-=n;g.scores[g.scores.length-1]=0;g.busts++;if(g.name==="301 Pressure")g.lives--;
-   }else{if(["501 Pressure"].includes(g.name)){const used=prompt("Darts used on your final visit? (1–3)","3");if(used===null)return;const d=Number(used);if(!Number.isInteger(d)||d<1||d>3)return alert("Enter 1, 2 or 3 darts.");g.dartsUsed+=d;if(g.dartsUsed>g.maxDarts||false){endRound();return}}g.finish=n;g.remaining=0;g.wins++;endRound();return}
-  }else{g.remaining-=n}
-  if(["501 Pressure"].includes(g.name)){
-   g.dartsUsed+=3;
-   if(g.remaining===0)g.dartsUsed=Math.max(2,g.dartsUsed-2);
-   if(g.dartsUsed>=g.maxDarts||false){endRound();return}
-  }else if(g.visits>=g.maxVisits||num(g.lives)<=0&&g.name==="301 Pressure"){endRound();return}
+  g.remaining-=n;
+  if(g.name==="501 Pressure"){
+   g.dartsUsed+=Math.min(3,Math.max(0,g.maxDarts-g.dartsUsed));
+   if(g.dartsUsed>=g.maxDarts){endRound();return}
+  }else if(g.visits>=g.maxVisits||(g.name==="301 Pressure"&&g.lives<=0)){endRound();return}
  }else if(g.name==="Setup Shot"){
   g.remaining-=n;g.success=(g.remaining>=2&&g.remaining<=g.goal&&g.remaining!==1)?1:0;
   endRound();return;
@@ -1416,21 +1485,18 @@ function rescueDart(hit){const g=activeGame,s=session();if(!s||s.pausedAt||s.pha
 function setRisk(choice){if(activeGame?.name!=="Risk or Reward"||session()?.pausedAt)return;activeGame.choice=choice;data.game=activeGame;save()}
 function sprintWin(){
  const g=activeGame,s=session();if(!s||s.pausedAt||s.phase!=="playing"||g?.name!=="101 Sprint")return;
- const left=g.allowed-g.used;const answer=prompt("Darts used to finish 101 on a DOUBLE (1–"+left+")?",String(left));if(answer===null)return;
- const n=Number(answer);if(!Number.isInteger(n)||n<2||n>left){alert("101 requires at least two darts and must finish on a double.");return}
- snapshot();g.used+=n;g.hits=1;g.success=1;endRound();
+ askCheckoutDarts({score:101,maxDarts:Math.min(3,g.allowed-g.used),onFinish:n=>{snapshot();g.used+=n;g.hits=1;g.success=1;endRound()}});
 }
 function doubleInVisit(){
  const g=activeGame,s=session(),input=$("scoreInput");if(!g||g.name!=="Double-In 201"||!g.entered||!s||s.pausedAt||s.phase!=="playing"||!input)return;
  const n=Number(input.value);if(input.value===""||!validVisit(n)){alert("Enter a valid three-dart total.");return}
- padSet("");snapshot();g.visits++;g.points+=n;g.scores.push(n);if(n===180)g.oneEighties=num(g.oneEighties)+1;
- if(n>g.remaining||g.remaining-n===1){g.points-=n;g.scores[g.scores.length-1]=0;g.busts++}
- else if(n===g.remaining){if(confirm("Did the last dart finish on a DOUBLE or bullseye?")){g.remaining=0;g.wins=1;endRound();return}else{g.points-=n;g.scores[g.scores.length-1]=0;g.busts++}}
- else g.remaining-=n;
- if(g.visits>=g.maxVisits){endRound();return}
- data.game=g;save();
+ if(n>g.remaining||g.remaining-n===1){doubleInBust(n);return}
+ if(n===g.remaining){
+  askCheckoutDarts({score:n,maxDarts:3,onFinish:d=>finishDoubleInVisit(n,d),onBust:()=>doubleInBust(n),onImpossible:()=>doubleInBust(n)});return;
+ }
+ padSet('');snapshot();g.visits++;g.points+=n;g.scores.push(n);if(n===180)g.oneEighties=num(g.oneEighties)+1;
+ g.remaining-=n;if(g.visits>=g.maxVisits){endRound();return}data.game=g;save();
 }
-
 
 function new40Choice(value){
  const g=activeGame,s=session();if(!g||!s||s.pausedAt||s.phase!=="playing")return;
@@ -1438,7 +1504,7 @@ function new40Choice(value){
  if(g.name==="Double Jackpot"&&[20,16,10,5].includes(value)){g.choice=value;save();return}
  if(g.name==="Checkout Poker"&&g.cards.includes(value)&&!g.cardsUsed?.includes(value)){g.chosen=value;save();return}
 }
-function new40Dart(value){
+function new40Dart(value,checkoutDarts){
  const g=activeGame,s=session();if(!g||!s||s.pausedAt||s.phase!=="playing")return;
  const name=g.name;
  if(!["Last Dart Standing","Pressure Cricket","Bull Blackjack","Neighbour Trap","Double Jackpot","Dartboard Bingo","High-Low","Split the Difference","Checkout Poker","Double Bull Bridge","Double Duel"].includes(name))return;
@@ -1451,6 +1517,9 @@ function new40Dart(value){
  if(name==="Checkout Poker"&&(!g.chosen||!["hit","miss"].includes(value)))return;
  if(name==="Double Bull Bridge"&&!["hit","miss"].includes(value))return;
  if(name==="Double Duel"&&!["hit","miss"].includes(value))return;
+ if(name==="Checkout Poker"&&value==="hit"&&!checkoutDarts){
+  askCheckoutDarts({score:g.chosen,maxDarts:3,onFinish:d=>new40Dart("hit",d)});return;
+ }
  snapshot();
  if(name==="Last Dart Standing"){
   const score=g.scores[g.index],correct=score%2===0?"FINISH":"SETUP";
@@ -1487,7 +1556,7 @@ function new40Dart(value){
   if(g.line||g.thrown>=g.allowed){endRound();return}
  }
  if(name==="Checkout Poker"){
-  g.attempts++;g.thrown+=3;if(value==="hit"){g.wins++;g.cardsUsed??=[];g.cardsUsed.push(g.chosen)}else g.failures++;
+  g.attempts++;g.thrown+=value==="hit"?checkoutDarts:3;if(value==="hit"){g.dartsUsed=num(g.dartsUsed)+checkoutDarts;g.wins++;g.cardsUsed??=[];g.cardsUsed.push(g.chosen)}else g.failures++;
   g.chosen=null;
   if(g.wins>=2||g.attempts>=g.allowed){endRound();return}
  }
@@ -1544,7 +1613,9 @@ function doubleDart(hit){survivalDart(hit)}
 function recordScore(){const input=$("scoreInput");if(!input||input.value==="")return;const n=Number(input.value);if(!validVisit(n)){alert("Enter a valid three-dart total.");return}const g=activeGame;if(!g||g.name!=="Scoring Challenge"||session().pausedAt)return;snapshot();g.points+=n;g.visits++;g.scores.push(n);if(n===180)g.oneEighties=num(g.oneEighties)+1;padSet("");if(g.visits>=10){endRound();return}data.game=g;save()}
 function straightDart(value){const g=activeGame;if(!g||g.name!=="Staying Straight"||session().pausedAt)return;normaliseStraightGame(g);if(g.index>=5)return;snapshot();const i=g.index;g.darts++;if(value){g.points+=value;g.counts[i]+=value;g.hits[i]++;if(g.darts%3===1)g.t20run=0;if(i===0&&value===3){g.t20run=num(g.t20run)+1;if(g.t20run===3){g.oneEighties=num(g.oneEighties)+1;g.t20run=0}}else g.t20run=0}else{g.misses[i]++;g.index++;if(g.index>=5){endRound();return}}data.game=g;save()}
 function checkoutMiss(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||session().pausedAt)return;snapshot();g.attempt++;if(g.attempt>=3){g.dartsUsed+=3;g.fail++;g.target--;g.attempt=0;if(g.target<50){endRound();return}}data.game=g;save()}
-function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||session().pausedAt)return;const remaining=3-g.attempt,answer=prompt("How many more darts to finish? (1–"+remaining+")","1");if(answer===null)return;const darts=Number(answer);if(!Number.isInteger(darts)||darts<1||darts>remaining){alert("Enter a valid number of darts.");return}snapshot();g.dartsUsed+=g.attempt+darts;g.success++;g.highest=Math.max(g.highest,g.target);g.target+=5;g.attempt=0;if(g.target>=100){endRound();return}data.game=g;save()}
+function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||session().pausedAt)return;
+ askCheckoutDarts({score:g.target,maxDarts:3-g.attempt,onFinish:darts=>{snapshot();g.dartsUsed+=g.attempt+darts;g.success++;g.highest=Math.max(g.highest,g.target);g.target+=5;g.attempt=0;if(g.target>=100){endRound();return}data.game=g;save()}});
+}
 function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
@@ -1557,7 +1628,7 @@ function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now()
   e.benchmark=false;
   if(g.name==="Scoring Survival")Object.assign(e,{target:g.target,cleared:g.cleared,lives:g.lives});
   if(g.name==="Scoring Ladder")Object.assign(e,{cleared:g.cleared,failures:g.failures,lives:g.lives,targets:[...g.targets]});
-  if(g.name==="301 Pressure")Object.assign(e,{remaining:g.remaining,maxVisits:g.maxVisits,busts:g.busts,wins:g.wins});
+  if(g.name==="301 Pressure")Object.assign(e,{remaining:g.remaining,maxVisits:g.maxVisits,busts:g.busts,wins:g.wins,win:!!g.wins,loss:!g.wins,dartsUsed:num(g.dartsUsed)});
   e.result=(g.name==="301 Pressure"?(g.wins?"301 finished":"301 left "+g.remaining):g.cleared+" targets cleared")+" · "+g.visits+" visits";
  }
  if(["Treble Hunt","Doubles Streak"].includes(g.name)){
@@ -1747,7 +1818,7 @@ const EXTRA_RULES={
  "Risk or Reward":"Before each visit pick Safe or Risky. Enter your three-dart score. Risk has a higher target and missed risk costs 50 banked points. Reach the bank goal to win.",
  "First Nine Siege":"You have exactly three three-dart visits, nine darts total. Enter each visit score. Beat your tier-specific total to WIN; otherwise LOSE.",
  "170 Challenge":"Start on 170 and finish exactly on a double before the visit budget expires. Bust leaves your score unchanged.",
- "301 Pressure":"Start on 301. Enter each THREE-dart visit score. Finish exactly on a double. Busts cost a life and do not reduce your score. Beat the visit limit."
+ "301 Pressure":"Start on 301. Enter every visit score. You must finish exactly on a double or bullseye. A bust is an invalid finish: your score stays unchanged and you lose one LIFE. You have a limited number of visits. When you finish, tap 1, 2 or 3 to record the actual darts used."
 };
 const RULES={"Warm-up":"Throw comfortably for the full 10 minutes. Find a steady stance and rhythm. When time ends, select Next Exercise.","Big Singles":"Throw exactly 3 darts at each number from 1 to 20. Tap Hit ONLY for the large single section; otherwise tap Miss. After dart 60, select Next Exercise.","Doubles Survival":"Aim at the displayed double. Tap Hit or Miss for each dart; rounds repeat until time expires.","Scoring Challenge":"Throw 3 darts and enter the total. Repeat for 10 visits, then begin another round.","Staying Straight":"Aim at 20s, then 19s down to 16s. Score single 1, double 2, treble 3. A miss moves on.","Checkout Climb":"Finish the shown score within 3 darts. Hit: +5 to target; fail: −1. Below 50 ends a round.","Focused Checkouts":"Clear the selected checkout range in 3 darts per finish. Checkout Hit records a finish; Missed Dart records an unsuccessful dart. Lose all lives and the round restarts.","Bull Accuracy":"Throw 30 darts at the bull. Record 50, 25 or Miss. Another round starts automatically.","Bull Survival":"Aim at the shown bull area. Hit it within the allowed darts; then repeat the challenge.","Bull Streak":"Hit the shown bull area repeatedly. A miss resets your streak and uses a life. Reach the streak goal to WIN, or run out of lives to LOSE.","Review":"Finish with relaxed throws. Keep the same easy rhythm until the timer ends."};
 function button(text,code){return '<button onclick="'+code+'">'+text+'</button>'}
@@ -1798,7 +1869,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   html=button("Hit","doublesStreakDart(true)")+button("Miss","doublesStreakDart(false)");break;
  case "301 Pressure":
   heading=String(g.remaining);detail="Remaining · "+g.visits+"/"+g.maxVisits+" visits";
-  mini="Lives: "+g.lives+" · Busts: "+g.busts+" · Double out";
+  mini="Lives left: "+g.lives+" · Busts: "+g.busts+" · Finish on a double";
   html=padMarkup()+button("Record Visit","scoringVisit()");break;
 
  case "Staying Straight":normaliseStraightGame(g);heading=STRAIGHT_TARGETS[Math.min(4,g.index)]+"s";detail="Mini-game "+(Math.min(4,g.index)+1)+"/5";$("straightDisplay").innerHTML='<div class="targetGrid">'+STRAIGHT_TARGETS.map((n,i)=>'<div class="'+(i===g.index?"active":"")+'">'+n+'s<strong>'+g.counts[i]+'</strong></div>').join("")+'</div>';$("straightDisplay").classList.remove("hidden");mini="Total: "+g.points+" points";html=button("Single +1","straightDart(1)")+button("Double +2","straightDart(2)")+button("Treble +3","straightDart(3)")+button("Miss / Next","straightDart(0)");break;
@@ -1855,7 +1926,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   html=button("Hit","newGameDart('hit')")+button("Miss","newGameDart('miss')");break;
  case "Double-In 201":
   heading=g.entered?String(g.remaining):"DOUBLE IN";detail=g.entered?"201 leg · Visit "+(g.visits+1)+"/"+g.maxVisits:"First hit ANY double · "+(g.entryLimit-g.entryMisses)+" darts left";
-  mini=g.entered?"Busts: "+g.busts+" · Double out":"No scoring until first double";
+  mini=g.entered?"Busts: "+g.busts+" · Finish on a double":"No scoring until first double";
   html=g.entered?padMarkup()+button("Record Visit","doubleInVisit()"):
    button("Double Hit","newGameDart('hit')")+button("Miss","newGameDart('miss')");break;
  case "Switchback":
@@ -1864,7 +1935,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   html=button("Hit","newGameDart('hit')")+button("Miss","newGameDart('miss')");break;
  case "501 Pressure":
   heading=String(g.remaining);detail="501 · Darts used "+g.dartsUsed+"/"+g.maxDarts;
-  mini=("")+"Double out · Busts: "+g.busts;
+  mini="Finish on a double · Busts: "+g.busts;
   html=padMarkup()+button("Enter Score","scoringVisit()");break;
  case "170 Challenge":
   heading=String(g.remaining);detail="170 finish · Visit "+(g.visits+1)+"/"+g.maxVisits;
@@ -1934,7 +2005,12 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  case "Bull Survival":heading=g.target;detail="Darts remaining: "+(g.allowed-g.used);html=button("Hit","bullSurvival(true)")+button("Miss","bullSurvival(false)");break;
  case "Bull Streak":heading=g.target;detail="Streak "+g.streak+"/"+g.goal;mini="Best streak: "+g.best+" · Misses left: "+(num(g.allowedMisses||7)-num(g.misses));html=button("Hit","bullStreak(true)")+button("Miss","bullStreak(false)");break;
  }
- $("gameTarget").textContent=heading;$("gameProgress").textContent=detail;$("miniMetrics").textContent=mini;$("roundFlash").textContent=g.name==="Review"?"":"ROUND "+s.round;$("roundFlash").classList.toggle("hidden",g.name==="Review"||g.name==="Warm-up"||g.name==="Big Singles");
+ $("gameTarget").textContent=heading;$("gameProgress").textContent=detail;
+ if(g.name==="301 Pressure"){
+  $("miniMetrics").innerHTML='<div class="checkoutHud"><span class="hudChip">Lives left <b>'+g.lives+'</b></span><span class="hudChip">Busts <b>'+g.busts+'</b></span><span class="hudChip">Double-out</span><span class="hudGuide">Bust = invalid finish; score stays the same and costs one life. Final dart must hit a double or bullseye.</span></div>';
+ }else if(["501 Pressure","170 Challenge","Double-In 201"].includes(g.name)){
+  $("miniMetrics").innerHTML='<div class="checkoutHud"><span class="hudChip">Busts <b>'+g.busts+'</b></span><span class="hudChip">Double-out</span><span class="hudGuide">Bust = invalid finish; score stays the same. Final dart must hit a double or bullseye.</span></div>';
+ }else $("miniMetrics").textContent=mini;$("roundFlash").textContent=g.name==="Review"?"":"ROUND "+s.round;$("roundFlash").classList.toggle("hidden",g.name==="Review"||g.name==="Warm-up"||g.name==="Big Singles");
  const controls=$("gameControls");if(controls.dataset.game!==g.name||!["Scoring Challenge","Scoring Survival","Scoring Ladder","301 Pressure","501 Pressure","Double-In 201","Risk or Reward","First Nine Siege","170 Challenge","Setup Shot","High-Low","Split the Difference"].includes(g.name)||!controls.querySelector("#scoreInput")){controls.innerHTML=html;controls.dataset.game=g.name}controls.classList.toggle("hasPad",!!controls.querySelector("#scoreInput"));controls.classList.toggle("bingoGrid",g.name==="Dartboard Bingo");for(const x of controls.querySelectorAll("button,input"))x.disabled=!!s.pausedAt;
 }
 function trainingTimer(){const s=session();if(!s||s.pausedAt||s.phase==="rules"||s.phase==="complete")return;const item=currentExercise();if(!item)return;const elapsed=exerciseElapsed();if(item.name==="Big Singles"){if(currentTab==="train"){const g=activeGame||data.game;$("sessionClock").textContent=fmt(sessionRemaining());if(g){$("exerciseClock").textContent=g.darts.length+"/60";$("exerciseBar").style.width=g.darts.length/60*100+"%"}}return}if(elapsed>=num(item.seconds)){completeExercise("timed");return}if(currentTab==="train"){$("exerciseClock").textContent=fmt(Math.max(0,item.seconds-elapsed));$("exerciseBar").style.width=clamp(100*elapsed/Math.max(1,item.seconds),0,100)+"%";$("sessionClock").textContent=fmt(sessionRemaining());$("sessionBar").style.width=clamp(100*sessionElapsed()/sessionBudget(),0,100)+"%"}}
@@ -2193,7 +2269,7 @@ const ASSESS_CHECKOUTS=[41,46,52,60,68,76,81,90,101,110];
 function assessmentCheckout(hit){
  if(activeStage!=="checkout"||stageComplete("checkout"))return;
  const target=ASSESS_CHECKOUTS[data.assessment.checkout.length];
- if(hit){const answer=prompt("How many darts did you use to check out "+target+"? (1–3)","3");if(answer===null)return;const used=Number(answer);if(!Number.isInteger(used)||used<1||used>3)return alert("Enter 1, 2 or 3 darts.");assessmentRecord("checkout",{target,hit:true,darts:used,at:Date.now()})}
+ if(hit){askCheckoutDarts({score:target,maxDarts:3,onFinish:used=>assessmentRecord("checkout",{target,hit:true,darts:used,at:Date.now()})})}
  else assessmentRecord("checkout",{target,hit:false,darts:3,at:Date.now()});
 }
 function assessmentSingle(hit){
