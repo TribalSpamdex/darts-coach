@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.0.15</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.1.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -394,7 +394,7 @@ button.primary,.primary{box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 4px 12p
 @media(prefers-reduced-motion:reduce){#headerRhythm.rhythmRunning{animation:none}.rhythmBeat{transition:none}}
 .rhythmState{text-align:center;min-height:23px;font-size:12px;font-weight:800;letter-spacing:.09em;color:var(--green);margin:3px 0 6px}
 
-/* V5.0.15 Rhythm Coach: large, thumb-friendly one-BPM controls */
+/* V5.1.0 Rhythm Coach: large, thumb-friendly one-BPM controls */
 .rhythmTempoRow{align-items:center;justify-content:space-between;gap:10px}
 .rhythmTempoLabel{font-size:13px;font-weight:750;min-width:80px}
 .rhythmStepControls{flex:1;display:grid;grid-template-columns:minmax(56px,1fr) minmax(88px,1.35fr) minmax(56px,1fr);align-items:center;gap:9px}
@@ -403,7 +403,7 @@ button.primary,.primary{box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 4px 12p
 .rhythmStepControls .rhythmStepButton:disabled{opacity:.32;transform:none}
 .rhythmStepControls #rhythmTempoText{min-width:0;text-align:center;font-size:clamp(16px,4.5vw,22px);font-weight:850;white-space:nowrap;color:var(--green);font-variant-numeric:tabular-nums}
 
-/* V5.0.15: consistent metronome pictogram; no functionality changes */
+/* V5.1.0: consistent metronome pictogram; no functionality changes */
 .metronomeIcon{display:block;width:23px;height:23px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
 #headerRhythm .metronomeIcon{width:25px;height:25px}
 .rhythmFooter{display:flex;align-items:center;justify-content:center;gap:6px}
@@ -525,7 +525,7 @@ button.primary,.primary{box-shadow:inset 0 1px 0 rgba(255,255,255,.42),0 4px 12p
 <button type="button" class="themeChoice" data-theme="orange" onclick="setAccentTheme('orange')" aria-pressed="false"><span class="themeDot" style="--swatch:#ff962f"></span><span>Orange</span></button>
 <button type="button" class="themeChoice" data-theme="purple" onclick="setAccentTheme('purple')" aria-pressed="false"><span class="themeDot" style="--swatch:#b36aff"></span><span>Purple</span></button>
 </div><p class="themeHelp">Changes are saved automatically on this device.</p></div>
-<div class="card"><h2>About Darts Coach</h2><p class="muted">See what the coach does and how to use scheduled training or Quick Play.</p><button class="secondary" onclick="openWelcome()">About Darts Coach</button><p class="appVersionInfo">App version <strong>V5.0.15</strong></p></div><div class="card"><h2>Weekly Training Days</h2><p class="muted">Select five days. The coach handles the training on those days.</p><div class="dayRow" id="days"></div><p id="dayStatus" class="muted"></p></div><div class="card"><h2>Training Data</h2><p class="muted">Data is stored in this browser or Home Screen app, not on GitHub. Updates at the same address should preserve it. Safari and a Home Screen app may have different saved data. Keep an external backup.</p><h3>1. Protect Your Training</h3>
+<div class="card"><h2>About Darts Coach</h2><p class="muted">See what the coach does and how to use scheduled training or Quick Play.</p><button class="secondary" onclick="openWelcome()">About Darts Coach</button><p class="appVersionInfo">App version <strong>V5.1.0</strong></p></div><div class="card"><h2>Weekly Training Days</h2><p class="muted">Select five days. The coach handles the training on those days.</p><div class="dayRow" id="days"></div><p id="dayStatus" class="muted"></p></div><div class="card"><h2>Training Data</h2><p class="muted">Data is stored in this browser or Home Screen app, not on GitHub. Updates at the same address should preserve it. Safari and a Home Screen app may have different saved data. Keep an external backup.</p><h3>1. Protect Your Training</h3>
 <p class="muted">An extra recovery copy is saved automatically in this browser after each finished assessment or session. This is not a backup in iPhone Files. For protection against browser data loss, save a file as well.</p>
 <div id="autoBackupStatus" class="backupStatus">Checking local recovery copy…</div>
 <button class="primary" onclick="saveBackupFile()">Save Backup to Files</button>
@@ -582,7 +582,7 @@ function warmupMs(){const w=assessmentWarmup();return Math.min(600000,num(w.elap
 function pauseAssessmentWarmup(){const w=assessmentWarmup();if(w.startedAt){w.elapsedMs=warmupMs();w.startedAt=null;save(false)}}
 function resumeAssessmentWarmup(){const w=assessmentWarmup();if(!w.complete&&!w.startedAt){w.startedAt=Date.now();save(false)}}
 function checkAssessmentWarmup(){const w=assessmentWarmup();if(w.complete)return true;if(warmupMs()>=600000){w.complete=true;w.elapsedMs=600000;w.startedAt=null;save(false);if(activeStage==="warmup"){activeStage="scoring";renderAssessment()}return true}return false}
-function blank(){return{sessions:[],games:[],days:[1,2,3,4,5],bestDouble:0,bestCheckout:0,doublesHit:0,doublesThrown:0,baseline:null,skills:{scoring:{level:7,results:[]},doubles:{level:7,results:[]},checkout:{level:7,results:[]},bull:{level:7,results:[]}},activeSession:null,game:null,assessment:newAssessment(),assessmentHistory:[],legacyCheckoutAttempts:[],bigSingles:[],coach:{version:3,firstStarted:null,reviews:[],lastTierChanges:{},completedBlocks:[],lastReviewedWeek:null,lastUsedEvidence:{},lastEvidenceCount:{},lastChangeEvidence:{}}}}
+function blank(){return{sessions:[],games:[],days:[1,2,3,4,5],bestDouble:0,bestCheckout:0,doublesHit:0,doublesThrown:0,baseline:null,skills:{scoring:{level:7,results:[]},doubles:{level:7,results:[]},checkout:{level:7,results:[]},bull:{level:7,results:[]}},activeSession:null,game:null,assessment:newAssessment(),assessmentHistory:[],legacyCheckoutAttempts:[],bigSingles:[],coach:{version:4,firstStarted:null,reviews:[],lastTierChanges:{},completedBlocks:[],lastReviewedWeek:null,lastUsedEvidence:{},lastEvidenceCount:{},lastChangeEvidence:{},estimates:{}}}}
 /* Backward-compatible assessment migration. Existing completed tests are NEVER
    invalidated merely because the application version changes. */
 function assessmentDate(a){
@@ -658,7 +658,8 @@ function normaliseData(d){
  for(const k of ["lastTierChanges","lastUsedEvidence","lastEvidenceCount","lastChangeEvidence"])
   if(!d.coach[k]||typeof d.coach[k]!=="object")d.coach[k]={};
  if(num(d.coach.version)<2)d.coach.lastReviewedWeek=weekStart(Date.now());
- d.coach.version=3;
+ d.coach.version=4;
+ if(!d.coach.estimates||typeof d.coach.estimates!=="object")d.coach.estimates={};
  return d;
 }
 /* First assessment is mandatory, but an app release does not start a new
@@ -765,26 +766,126 @@ function dailySamples(rows){const groups=new Map();for(const r of rows){const da
 function valueOf(rows,key){const vol=rows.reduce((a,r)=>a+r.volume,0);if(!vol)return 0;const k=key==="scoring"?"points":"hits";return rows.reduce((a,r)=>a+num(r[k]),0)/vol*(key==="scoring"?1:100)}
 function thresholds(key){return{scoring:[110,90,75,60,45,30],doubles:[60,45,35,27,20,12],checkout:[75,60,50,40,30,20],bull:[70,55,45,33,22,12]}[key]}
 function tierFor(value,key){const th=thresholds(key);for(let i=0;i<th.length;i++)if(value>=th[i])return i+1;return 7}
-function performCoachReview(){const coach=data.coach,ended=addDays(weekStart(Date.now()),-7);if(coach.lastReviewedWeek!==null&&num(coach.lastReviewedWeek)>=ended)return;
- const samples=skillSamples();const changes=[];for(const key of SKILLS){const days=dailySamples(samples[key].filter(r=>r.time<addDays(ended,7)));const recent=days.slice(-5),previous=days.slice(-10,-5);if(recent.length<5)continue;
- const vol=recent.reduce((a,r)=>a+r.volume,0),minimum={scoring:100,doubles:50,checkout:20,bull:100}[key];if(vol<minimum)continue;
- const old=clamp(num(data.skills[key].level),1,7),metric=valueOf(recent,key),target=tierFor(metric,key);let next=old;
- /* Beginners move from singles to doubles only after repeated accurate singles days. */
- if(key==="doubles"&&old>=6){const singles=dailySamples(data.games.filter(g=>g.name==="Doubles Survival"&&g.variant==="singles"&&g.benchmark!==false&&gameTime(g)<addDays(ended,7)).map(g=>({time:gameTime(g),hits:num(g.hits),volume:num(g.thrown)})));const last=singles.slice(-5);const darts=last.reduce((a,r)=>a+r.volume,0);if(last.length>=5&&darts>=80&&valueOf(last,"doubles")>=(old===7?65:80))next=old-1;else continue}
- else if(previous.length>=5){const before=valueOf(previous,key),diff=metric-before;if(target<old&&diff>=3)next=old-1;if(target>old&&diff<=-7)next=old+1}
- if(next===1){/* Elite: high performance, over 14 distinct days, at least 21 days since last change. */const fourteen=days.slice(-14),lastChange=num(coach.lastTierChanges[key]);if(fourteen.length<14||Date.now()-lastChange<21*DAY_MS||valueOf(fourteen,key)<thresholds(key)[0])next=old;if(key==="bull"&&fourteen.reduce((a,r)=>a+r.inner,0)/Math.max(1,fourteen.reduce((a,r)=>a+r.volume,0))<.4)next=old}
- const since=num(coach.lastTierChanges[key]);if(since&&Date.now()-since<14*DAY_MS)next=old;
- if(next!==old){data.skills[key].level=next;coach.lastTierChanges[key]=Date.now();changes.push({key,from:old,to:next})}
- }coach.reviews.push({at:Date.now(),week:ended,version:3,decisions:changes});coach.lastReviewedWeek=ended;save(false)}
-function rapidInitialCalibration(){
- if(!data.assessment.finished||!data.assessment.completedAt||Date.now()-data.assessment.completedAt>14*DAY_MS)return;
- const samples=skillSamples();for(const key of SKILLS){
-  const rows=dailySamples(samples[key].filter(x=>x.time>=data.assessment.completedAt));
-  if(rows.length<2||rows.reduce((a,x)=>a+x.volume,0)<({scoring:50,doubles:20,checkout:8,bull:30}[key]))continue;
-  if(data.coach.lastTierChanges[key])continue;
-  const proposed=tierFor(valueOf(rows.slice(-3),key),key),current=num(data.skills[key].level);
-  if(proposed!==current){data.skills[key].level=clamp(current+Math.sign(proposed-current),1,7);data.coach.lastTierChanges[key]=Date.now()}
+
+/* COACH 2: skill estimates are continuous, but gameplay still uses seven hidden tiers.
+   Every skill is independent. Assessments are priors, not proof of permanent ability.
+   Multiple rounds in one day cannot create multiple practice days. */
+/* DARTS COACH INTELLIGENCE 2.0
+ * Evidence-based, deterministic local skill estimates. No network, no AI claims.
+ * The playing tiers remain exactly seven; estimates are continuous and uncertain.
+ */
+function dc2NormalCdf(z){
+ const x=Math.abs(z),t=1/(1+.2316419*x);
+ const pdf=.3989422804014327*Math.exp(-.5*x*x);
+ const tail=pdf*t*(.319381530+t*(-.356563782+t*(1.781477937+t*(-1.821255978+1.330274429*t))));
+ return z>=0?1-tail:tail;
+}
+function dc2AssessmentPrior(key,assessment){
+ const a=assessment||{},p=a.profile&&a.profile[key];
+ if(!p)return null;
+ const observed=key==='scoring'?Number(p.average):Number(p.percentage);
+ if(!Number.isFinite(observed))return null;
+ const n=key==='scoring'?10:key==='doubles'?60:key==='checkout'?Number(p.attempts)||10:30;
+ return {value:observed,weight:Math.min(key==='scoring'?8:24,Math.max(4,n*.55))};
+}
+function dc2Estimate(key,days,prior,now){
+ const scoring=key==='scoring',binary=!scoring;
+ let effective=0,sum=0,sumHits=0,distinct=0,recentDays=0;
+ const ageOrigin=Number.isFinite(now)?now:Date.now();
+ const maxVol=scoring?30:key==='checkout'?18:50;
+ for(const d of days||[]){
+  const age=Math.max(0,(ageOrigin-d.time)/86400000);
+  if(age>112)continue;
+  const raw=Math.max(0,Number(d.volume)||0);
+  if(raw<=0)continue;
+  const n=Math.min(maxVol,raw)*Math.pow(.5,age/42);
+  if(n<=0)continue;
+  const factor=n/raw;
+  effective+=n;
+  sum+=(Number(d.points)||0)*factor;
+  sumHits+=(Number(d.hits)||0)*factor;
+  distinct++;
+  if(age<=21)recentDays++;
  }
+ const priorVal=prior&&Number.isFinite(Number(prior.value))?Number(prior.value):scoring?42:20;
+ const priorN=prior&&Number.isFinite(Number(prior.weight))?Math.max(0,Number(prior.weight)):0;
+ const denominator=effective+priorN;
+ if(!denominator)return {value:priorVal,sd:scoring?25:18,volume:0,days:0,recentDays:0,confidence:'low'};
+ const numerator=scoring?sum+priorN*priorVal:100*(sumHits+priorN*priorVal/100);
+ const mean=numerator/denominator;
+ const p=Math.max(.001,Math.min(.999,mean/100));
+ const sd=scoring?Math.sqrt(1100/Math.max(1,denominator)+4):100*Math.sqrt(p*(1-p)/(denominator+1)+.00006);
+ const confidence=effective<(scoring?25:40)||distinct<3?'low':effective<(scoring?80:110)||distinct<7?'medium':'high';
+ return {value:mean,sd,volume:effective,days:distinct,recentDays,confidence};
+}
+function dc2Decide(key,estimate,currentTier,thresholds,daysSinceChange,initialWindow){
+ const tier=Math.min(7,Math.max(1,Math.round(currentTier)||7));
+ const minDays=initialWindow?3:5;
+ const minVol=initialWindow?(key==='scoring'?24:key==='checkout'?9:25):(key==='scoring'?45:key==='checkout'?18:40);
+ if(estimate.recentDays<minDays||estimate.volume<minVol)return {next:tier,reason:'insufficient-evidence'};
+ const cooldown=initialWindow?5:14;
+ if(daysSinceChange<cooldown)return {next:tier,reason:'cooldown'};
+ const sd=Math.max(.05,estimate.sd);
+ const promoteBoundary=tier>1?thresholds[tier-2]:Infinity;
+ const demoteBoundary=tier<7?thresholds[tier-1]:-Infinity;
+ const pPromote=1-dc2NormalCdf((promoteBoundary-estimate.value)/sd);
+ const pDemote=dc2NormalCdf((demoteBoundary-estimate.value)/sd);
+ const promoteConfidence=initialWindow?.73:.82;
+ const demoteConfidence=initialWindow?.79:.88;
+ // Elite remains exceptional: long evidence horizon, established accuracy.
+ if(tier===2&&pPromote>=promoteConfidence&&estimate.days<14)return {next:tier,reason:'elite-evidence'};
+ if(tier>1&&pPromote>=promoteConfidence)return {next:tier-1,reason:'sustained-promotion',probability:pPromote};
+ if(tier<7&&pDemote>=demoteConfidence)return {next:tier+1,reason:'sustained-demotion',probability:pDemote};
+ return {next:tier,reason:'stable',probability:Math.max(pPromote,pDemote)};
+}
+
+function dc2UpdateSkills(early=false){
+ const coach=data.coach,now=Date.now();
+ if(!coach.estimates||typeof coach.estimates!=="object")coach.estimates={};
+ const samples=skillSamples();const decisions=[];
+ for(const key of SKILLS){
+  const rows=dailySamples(samples[key]);
+  const a=data.assessment;
+  const prior=dc2AssessmentPrior(key,a);
+  const estimate=dc2Estimate(key,rows,prior,now);
+  const old=clamp(Math.round(num(data.skills[key].level)||7),1,7);
+  const last=num(coach.lastTierChanges[key]);
+  const since=last?(now-last)/DAY_MS:999;
+  const earlyWindow=!!(a&&a.finished&&a.completedAt&&now-a.completedAt<=14*DAY_MS);
+  const proposed=dc2Decide(key,estimate,old,thresholds(key),since,earlyWindow);
+  // No promotion from an easier single-target doubles variant.
+  // The actual initial doubles assessment tests real doubles and remains valid.
+  if(key==='doubles'&&old>=6&&proposed.next<old){
+   const freshReal=rows.filter(d=>d.time>=now-28*DAY_MS);
+   if(freshReal.length<3)proposed.next=old;
+  }
+  // Never change tiers during a session; called only on session completion or weekly review.
+  const next=proposed.next;
+  if(next!==old){
+   data.skills[key].level=next;
+   coach.lastTierChanges[key]=now;
+   decisions.push({key,from:old,to:next,reason:proposed.reason});
+  }
+  coach.estimates[key]={value:Math.round(estimate.value*100)/100,
+   uncertainty:Math.round(estimate.sd*100)/100,confidence:estimate.confidence,
+   effectiveVolume:Math.round(estimate.volume),trainingDays:estimate.days,
+   updatedAt:now,playingTier:data.skills[key].level,decision:proposed.reason};
+ }
+ return decisions;
+}
+function performCoachReview(){
+ const coach=data.coach,ended=addDays(weekStart(Date.now()),-7);
+ if(coach.lastReviewedWeek!==null&&num(coach.lastReviewedWeek)>=ended)return;
+ const changes=dc2UpdateSkills(false);
+ coach.reviews.push({at:Date.now(),week:ended,version:4,decisions:changes});
+ coach.lastReviewedWeek=ended;save(false);
+}
+function rapidInitialCalibration(){
+ // Uses the same statistical estimate as weekly reviews, with faster initial
+ // correction only while the initial assessment remains recent.
+ const a=data.assessment;
+ if(!a||!a.finished||!a.completedAt||Date.now()-a.completedAt>14*DAY_MS)return;
+ dc2UpdateSkills(true);
 }
 function focusForDay(extra){const sorted=[...data.days].sort((a,b)=>a-b),index=sorted.indexOf(new Date().getDay());if(extra)return FOCUS[(Math.max(0,index)+data.sessions.filter(s=>s.date===dateKey()).length+1)%5];return FOCUS[Math.max(0,index)%5]}
 /* Each scheduled session draws three DISTINCT pressure games, favouring its daily
