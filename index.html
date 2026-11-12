@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.2.9</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.3.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -577,7 +577,7 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 <div class="homeSectionHeading"><h2>At a glance</h2><span>YOUR TRAINING</span></div><div id="homeHighlights" class="homeHighlights"><div class="homeKpi"><strong>—</strong><small>Sessions</small></div></div>
 <div class="card homeWeekCard"><div class="dashHeading"><h2>This week</h2><span class="pill">Recorded practice</span></div><div id="homeWeekBars" class="homeWeekBars"></div></div>
 <div class="card"><div class="dashHeading"><h2>Your Training Week</h2><span class="pill">5-day plan</span></div><div id="homeDays"></div></div><div class="card"><h2>Training Block</h2><p id="blockStatus"></p><div class="progress"><div id="blockBar"></div></div><p class="muted" id="blockInfo"></p></div></section>
-<section id="train" class="hidden"><div id="trainIdle" class="card center"><h2>Ready to Train</h2><p>Your coach has prepared the session.</p><button class="primary" onclick="beginTraining(false)">Start Training</button></div><div id="trainSession" class="hidden"><div class="card"><div class="statLine"><span id="sessionType">Training Session</span><span id="sessionStepLabel">Exercise 1</span></div><div class="big" id="sessionClock">60:00</div><div class="progress"><div id="sessionBar"></div></div></div><div class="card" id="exercisePanel"><h2 id="exerciseName">Warm-up</h2><div class="statLine"><span id="exerciseTimeLabel">Exercise time</span><span id="exerciseClock">10:00</span></div><div class="progress"><div id="exerciseBar"></div></div><div class="rulePanel"><div class="rule" id="exerciseRules"></div></div><div id="exerciseIntro" class="hidden"><h3>HOW TO PLAY</h3><div id="introTitle" class="instruction"></div><div id="introRules" class="instruction"></div><button onclick="playExercise()">Play</button></div><div id="exerciseDone" class="hidden"><h3>EXERCISE COMPLETE</h3><div id="doneSummary" class="instruction"></div><button id="nextExerciseButton" onclick="nextExercise()">Next Exercise</button></div><div id="playArea"><div id="roundFlash">ROUND 1</div><div class="big" id="gameTarget">Ready</div><p id="gameProgress"></p><div id="straightDisplay" class="hidden"></div><div id="miniMetrics"></div><div id="gameControls"></div></div><div class="row" id="undoRow"><button class="secondary" id="undoButton" onclick="undoGame()">Undo</button></div><button class="primary" id="completeButton" onclick="completeExercise('manual')">Complete Exercise</button></div><div class="card" id="sessionFooter"><button class="secondary" onclick="pauseSession()" id="pauseButton">Pause Session</button><button class="secondary rhythmFooter" type="button"  aria-label="Open Rhythm Coach"><svg class="metronomeIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg><span>Rhythm</span></button><button class="linklike" onclick="finishSessionEarly()">End Session</button></div></div><div id="roundAnnouncement" class="hidden" aria-live="polite"><div id="roundAnnouncementCard"><div id="roundAnnouncementTitle">ROUND 2</div><div id="roundAnnouncementPrevious"></div></div></div><div id="sessionFinished" class="card hidden"><div class="resultCard"><strong>Training Complete</strong><p>Session recorded.</p></div><p id="finishedText" class="center"></p><div id="sessionCoachReport" class="coachReport"></div><button class="primary" onclick="finishView()">Done</button><button class="secondary" style="width:100%;margin-top:8px" onclick="beginTraining(true)">Extra Training Session</button></div></section>
+<section id="train" class="hidden"><div id="trainIdle" class="card center"><h2>Ready to Train</h2><p>Your coach has prepared the session.</p><div id="reassessmentPrompt" class="info hidden"><strong>Your four-week assessment is ready.</strong><p class="muted" style="font-size:12px">Take it when you are ready, or continue normal training today. Your previous results remain saved.</p><button class="secondary" type="button" onclick="startReassessment()">Start Four-Week Assessment</button></div><button class="primary" onclick="beginTraining(false)">Start Training</button></div><div id="trainSession" class="hidden"><div class="card"><div class="statLine"><span id="sessionType">Training Session</span><span id="sessionStepLabel">Exercise 1</span></div><div class="big" id="sessionClock">60:00</div><div class="progress"><div id="sessionBar"></div></div></div><div class="card" id="exercisePanel"><h2 id="exerciseName">Warm-up</h2><div class="statLine"><span id="exerciseTimeLabel">Exercise time</span><span id="exerciseClock">10:00</span></div><div class="progress"><div id="exerciseBar"></div></div><div class="rulePanel"><div class="rule" id="exerciseRules"></div></div><div id="exerciseIntro" class="hidden"><h3>HOW TO PLAY</h3><div id="introTitle" class="instruction"></div><div id="introRules" class="instruction"></div><button onclick="playExercise()">Play</button></div><div id="exerciseDone" class="hidden"><h3>EXERCISE COMPLETE</h3><div id="doneSummary" class="instruction"></div><button id="nextExerciseButton" onclick="nextExercise()">Next Exercise</button></div><div id="playArea"><div id="roundFlash">ROUND 1</div><div class="big" id="gameTarget">Ready</div><p id="gameProgress"></p><div id="straightDisplay" class="hidden"></div><div id="miniMetrics"></div><div id="gameControls"></div></div><div class="row" id="undoRow"><button class="secondary" id="undoButton" onclick="undoGame()">Undo</button></div><button class="primary" id="completeButton" onclick="completeExercise('manual')">Complete Exercise</button></div><div class="card" id="sessionFooter"><button class="secondary" onclick="pauseSession()" id="pauseButton">Pause Session</button><button class="secondary rhythmFooter" type="button"  aria-label="Open Rhythm Coach"><svg class="metronomeIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg><span>Rhythm</span></button><button class="linklike" onclick="finishSessionEarly()">End Session</button></div></div><div id="roundAnnouncement" class="hidden" aria-live="polite"><div id="roundAnnouncementCard"><div id="roundAnnouncementTitle">ROUND 2</div><div id="roundAnnouncementPrevious"></div></div></div><div id="sessionFinished" class="card hidden"><div class="resultCard"><strong>Training Complete</strong><p>Session recorded.</p></div><p id="finishedText" class="center"></p><div id="sessionCoachReport" class="coachReport"></div><button class="primary" onclick="finishView()">Done</button><button class="secondary" style="width:100%;margin-top:8px" onclick="beginTraining(true)">Extra Training Session</button></div></section>
 <section id="quick" class="hidden">
  <div class="card"><h2>Quick Play</h2><p class="muted">Choose any challenge and how long you want to play. Your current coaching levels set the difficulty automatically.</p>
  <div id="quickIntro" class="info">Quick Play is separate from scheduled training. Complete the full assessment or choose Quick Start to unlock suitable starting difficulty.</div>
@@ -708,7 +708,7 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 </div><p class="themeHelp">Changes are saved automatically on this device.</p></div>
 <div class="card"><h2>Weekly Training Days</h2><p class="muted">Select five days. The coach handles the training on those days.</p><div class="dayRow" id="days"></div><p id="dayStatus" class="muted"></p></div><div class="card"><h2>Training Data</h2><p class="muted">Data is stored in this browser or Home Screen app, not on GitHub. Updates at the same address should preserve it. Safari and a Home Screen app may have different saved data. Keep an external backup.</p><h3>1. Protect Your Training</h3>
 <p class="muted">An extra recovery copy is saved automatically in this browser after each finished assessment or session. This is not a backup in iPhone Files. For protection against browser data loss, save a file as well.</p>
-<div id="autoBackupStatus" class="backupStatus">Checking local recovery copy…</div>
+<div id="autoBackupStatus" class="backupStatus">Checking local recovery copy…</div><div id="storageHealth" class="backupStatus" aria-live="polite">Checking saved-data size…</div>
 <button class="primary" onclick="saveBackupFile()">Save Backup to Files</button>
 <p class="backupHelp">On iPhone choose <strong>Save to Files</strong> from the share sheet. This includes assessments, active training and progress. No text copying required.</p>
 <div id="backupStatus" class="backupStatus" aria-live="polite">No file exported yet.</div>
@@ -718,13 +718,13 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 <div class="row"><button id="handLeft" class="secondary" onclick="setHand('left')">Left-handed</button><button id="handRight" class="secondary" onclick="setHand('right')">Right-handed</button></div>
 <h3>Share Darts Coach</h3><p class="muted">Share the app link. Your personal training records are not included.</p>
 <button class="primary" onclick="shareDartsApp()">Share App</button></div>
-<div class="card hidden" id="quickStartUpgrade"><h2>Improve Your Starting Accuracy</h2><p class="muted">You started using an estimated average. A full assessment can measure scoring, doubles, checkouts and bull more accurately. This is optional.</p><button class="secondary" type="button" style="width:100%" onclick="upgradeQuickStartAssessment()">Take Full Assessment</button></div>
+<div class="card hidden" id="quickStartUpgrade"><h2>Improve Your Starting Accuracy</h2><p class="muted">You started using an estimated average. A full assessment can measure scoring, doubles, checkouts and bull more accurately. This is optional.</p><button class="secondary" type="button" style="width:100%" onclick="upgradeQuickStartAssessment()">Take Full Assessment</button></div><div class="card hidden" id="reassessmentSettings"><h2>Four-Week Assessment</h2><p class="muted">Your reassessment is ready. You can take it now, or keep practising until it suits you. History is preserved.</p><button class="secondary" type="button" style="width:100%" onclick="startReassessment()">Start Assessment</button></div>
 <div class="card"><h2>Coach Status</h2><div id="coachSystemStatus"></div><p class="muted">The four skill tiers are independent and hidden during practice. Adaptation is based on repeated evidence.</p></div>
 <div class="card resetCard"><h2>Reset Everything</h2>
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.2.9</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.3.0</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -853,24 +853,28 @@ function normaliseData(d){
  if(!d.coach.estimates||typeof d.coach.estimates!=="object")d.coach.estimates={};
  return d;
 }
-/* First assessment is mandatory, but an app release does not start a new
-   28-day cycle and cannot itself force fresh tests. */
-function assessmentDue(){
+/* V5.3.0: First calibration remains required. A 28-day reassessment is
+   explicitly offered instead of replacing a finished assessment during an
+   ordinary training-day visit. Quick Start is due after four weeks as well.
+   Existing assessments, history and tiers are never silently discarded. */
+function assessmentDue(){return !data.assessment||data.assessment.finished!==true}
+function reassessmentDue(){
  const a=data.assessment;
- if(!a||!a.finished)return true;
- // Provisional Quick Start remains usable while the coach calibrates from real practice.
- // A full assessment can be elected manually in Settings.
- if(a.quickStart===true)return false;
- const at=assessmentDate(a);
- return !!at&&Date.now()-at>=28*DAY_MS;
+ if(!a||!a.finished||assessmentDue())return false;
+ const since=assessmentDate(a);
+ return !!since&&Date.now()-since>=28*DAY_MS;
 }
 function prepareAssessment(){
- const a=data.assessment;
- if(a&&a.finished&&assessmentDue()){
-  data.assessmentHistory.push(clone(a));
-  data.assessment=newAssessment();
-  save(false);
- }
+ /* Deliberately a no-op for finished assessments: never block scheduled play
+    merely because the calendar reached a new four-week block. */
+}
+function startReassessment(){
+ if(session()||assessmentDue()||!reassessmentDue())return;
+ if(!confirm("Start your four-week assessment now? Your past results and training history stay saved. Once started, finish the assessment before returning to normal training. It saves your progress automatically."))return;
+ data.assessmentHistory.push(clone(data.assessment));
+ data.assessment=newAssessment();
+ selectedFullBaseline=true;
+ save(false);checkpointData();show("train");
 }
 /* V5.2.9: The required 60-dart Big Singles benchmark adds its exact elapsed
    time to the scheduled 60-minute session. No change to Quick Play or extras. */
@@ -887,7 +891,7 @@ function sessionRemaining(){return Math.max(0,sessionBudget()-sessionElapsed())}
 /* The canonical record remains dartsCoachV4 across every release.
    A milestone checkpoint is a secondary same-origin safety copy, NOT a file or cloud sync. */
 function isValidPlayerData(d){return !!d&&typeof d==="object"&&!Array.isArray(d)&&Array.isArray(d.sessions)&&Array.isArray(d.games)&&d.assessment&&typeof d.assessment==="object"&&d.skills&&typeof d.skills==="object"}
-let recoveryNotice="";
+let recoveryNotice="",storageSaveError="";
 function load(){
  for(const key of [KEY,...OLD_KEYS,CHECKPOINT_KEY]){
   try{
@@ -904,7 +908,12 @@ function load(){
  return normaliseData(blank());
 }
 function checkpointData(){
- try{localStorage.setItem(CHECKPOINT_KEY,JSON.stringify({savedAt:Date.now(),data:clone(data)}));return true}catch(e){return false}
+ try{localStorage.setItem(CHECKPOINT_KEY,JSON.stringify({savedAt:Date.now(),data:clone(data)}));return true}
+ catch(e){
+  // Do not delete an older valid recovery checkpoint to make space.
+  storageSaveError='The automatic recovery copy could not be updated. Save a JSON backup to Files.';
+  return false;
+ }
 }
 function checkpointDate(){
  try{const c=JSON.parse(localStorage.getItem(CHECKPOINT_KEY));return c&&Number.isFinite(c.savedAt)?c.savedAt:null}catch(e){return null}
@@ -923,7 +932,11 @@ function announceRound(number,previous=""){
 }
 function hideRoundAnnouncement(){if(roundAnnouncementTimer!==null){clearTimeout(roundAnnouncementTimer);roundAnnouncementTimer=null}const el=$("roundAnnouncement");if(el)el.classList.add("hidden")}
 
-function save(render=true){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){alert("Unable to save. Make a backup.")}if(render)renderAll()}
+function save(render=true){
+ try{localStorage.setItem(KEY,JSON.stringify(data));if(!storageSaveError.includes('recovery'))storageSaveError=''}
+ catch(e){storageSaveError='Storage is full or unavailable. Your latest result may not have been saved. Save a JSON backup before closing the app.';alert(storageSaveError)}
+ if(render)renderAll();
+}
 function show(id){
  if(id==="assess")id="train";
  if(id!=="quick"&&$("quickGameOverlay")&&!$("quickGameOverlay").classList.contains("hidden"))closeQuickGame();
@@ -1217,7 +1230,17 @@ function dc5WalkForward(key,days,prior,assessmentTime,now){
   const residual=actual-forecast.value;
   const noise=key==='scoring'?1100/Math.max(1,row.volume):
    10000*clamp(forecast.value/100,.01,.99)*(1-clamp(forecast.value/100,.01,.99))/Math.max(1,row.volume);
-  const sigma=Math.sqrt(forecast.sd*forecast.sd+noise);
+  let sigma=Math.sqrt(forecast.sd*forecast.sd+noise);
+  // V5.3: Day-to-day variation is not always binomial noise. In particular,
+  // alternating exceptionally good and bad DAYS can make nominal 80% bands
+  // wildly overconfident. Infer a conservative predictive scale using only
+  // earlier days; never include the outcome we are about to forecast.
+  const older=past.slice(-45).map(d=>key==='scoring'?num(d.points)/num(d.volume):100*num(d.hits)/num(d.volume));
+  if(older.length>=8){
+   const center=older.reduce((a,v)=>a+v,0)/older.length;
+   const spread=Math.sqrt(older.reduce((a,v)=>a+(v-center)*(v-center),0)/Math.max(1,older.length-1));
+   sigma=Math.max(sigma,Math.sqrt(spread*spread+forecast.sd*forecast.sd));
+  }
   if(!(sigma>0)||!Number.isFinite(sigma))continue;
   const quantile=dc6PastQuantile(pastErrors);
   if(pastErrors.length>=20)calibratedDays++;
@@ -1236,7 +1259,7 @@ function dc5WalkForward(key,days,prior,assessmentTime,now){
   uncalibratedCoverage80:count?Math.round(1000*coveredUncalibrated/count)/10:null,
   meanIntervalWidth:count?Math.round(width/count*100)/100:null,
   baseIntervalWidth:count?Math.round(baseWidth/count*100)/100:null,
-  calibratedDays,updatedAt:now,method:'prequential-adaptive-80-v2'};
+  calibratedDays,updatedAt:now,method:'prequential-volatility-80-v3'};
 }
 function dc2UpdateSkills(early=false){
  const coach=data.coach,now=Date.now();
@@ -2160,7 +2183,7 @@ function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||sess
 function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.2.9",result:"Activity completed",oneEighties:num(g.oneEighties)};
+function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.3.0",result:"Activity completed",oneEighties:num(g.oneEighties)};
  if(g.name==="Doubles Survival"){normaliseSurvivalGame(g);Object.assign(e,{variant:g.variant,sequence:[...g.sequence],hits:g.hits,thrown:g.thrown,allowed:g.allowed,highest:g.highest,lastHit:g.lastHit});e.result=(g.variant==="singles"?"Singles":"Doubles")+" Survival · "+g.hits+"/"+g.thrown+" hits";if(g.variant==="doubles"){data.bestDouble=Math.max(num(data.bestDouble),g.highest);data.doublesHit=num(data.doublesHit)+g.hits;data.doublesThrown=num(data.doublesThrown)+g.thrown}}
  if(g.name==="Scoring Challenge"){Object.assign(e,{points:g.points,visits:g.visits,scores:[...g.scores]});e.benchmark=g.visits>=10;e.result=g.points+" points · "+(g.visits?g.points/g.visits:0).toFixed(1)+" average"}
  if(["Scoring Survival","Scoring Ladder","301 Pressure"].includes(g.name)){
@@ -2366,7 +2389,7 @@ const EXTRA_RULES={
 };
 const RULES={"Warm-up":"Throw comfortably for the full 10 minutes. Find a steady stance and rhythm. When time ends, select Next Exercise.","Big Singles":"Throw exactly 3 darts at each number from 1 to 20. Tap Hit ONLY for the large single section; otherwise tap Miss. After dart 60, select Next Exercise.","Doubles Survival":"Aim at the displayed double. Tap Hit or Miss for each dart; rounds repeat until time expires.","Scoring Challenge":"Throw 3 darts and enter the total. Repeat for 10 visits, then begin another round.","Staying Straight":"Aim at 20s, then 19s down to 16s. Score single 1, double 2, treble 3. A miss moves on.","Checkout Climb":"Finish the shown score within 3 darts. Hit: +5 to target; fail: −1. Below 50 ends a round.","Focused Checkouts":"Clear the selected checkout range in 3 darts per finish. Checkout Hit records a finish; Missed Dart records an unsuccessful dart. Lose all lives and the round restarts.","Bull Accuracy":"Throw 30 darts at the bull. Record 50, 25 or Miss. Another round starts automatically.","Bull Survival":"Aim at the shown bull area. Hit it within the allowed darts; then repeat the challenge.","Bull Streak":"Hit the shown bull area repeatedly. A miss resets your streak and uses a life. Reach the streak goal to WIN, or run out of lives to LOSE.","Review":"Finish with relaxed throws. Keep the same easy rhythm until the timer ends."};
 function button(text,code){return '<button onclick="'+code+'">'+text+'</button>'}
-function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",assessmentMode=!s&&currentTab==="train"&&assessmentDue();$("assess").classList.toggle("hidden",!assessmentMode);document.body.classList.toggle("trainingActive",visible);$("trainIdle").classList.toggle("hidden",assessmentMode||!!s||!$("sessionFinished").classList.contains("hidden"));$("trainSession").classList.toggle("hidden",!s);if(!s)return;const e=currentExercise(),g=activeGame||data.game;if(!e)return;const elapsed=exerciseElapsed(),isBenchmark=e.name==="Big Singles",seconds=e.seconds||0;
+function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",assessmentMode=!s&&currentTab==="train"&&assessmentDue();$("assess").classList.toggle("hidden",!assessmentMode);document.body.classList.toggle("trainingActive",visible);$("trainIdle").classList.toggle("hidden",assessmentMode||!!s||!$("sessionFinished").classList.contains("hidden"));$("trainSession").classList.toggle("hidden",!s);if(!s){const prompt=$("reassessmentPrompt");if(prompt)prompt.classList.toggle("hidden",!reassessmentDue());return}const e=currentExercise(),g=activeGame||data.game;if(!e)return;const elapsed=exerciseElapsed(),isBenchmark=e.name==="Big Singles",seconds=e.seconds||0;
  $("sessionType").textContent=(s.quick?"Quick Play":s.extra?"Extra Training":"Today's Training")+(!s.extra&&(isBenchmark||s.benchmarkSeconds)?" · +"+fmt(s.benchmarkSeconds+(isBenchmark?elapsed:0)):"");$("sessionStepLabel").textContent="Exercise "+(s.index+1)+"/"+s.plan.length;$("exerciseName").textContent=g&&g.name==="Doubles Survival"&&g.variant==="singles"?"Singles Survival":e.name;
  let rule=EXTRA_RULES[e.name]||RULES[e.name]||"";if(g&&g.name==="Doubles Survival"&&g.variant==="singles")rule="Hit the displayed SINGLE (either single section) within nine darts. A completed round restarts.";if(g&&g.name==="Treble Hunt"&&g.variant==="single")rule="Beginner target: hit the SINGLE shown. A miss costs one life. Clear the hit goal before lives run out.";
  if(g&&g.name==="Doubles Streak"&&g.variant==="singles")rule="Hit the SINGLE shown to build a streak. A miss breaks it and costs a life. Reach the goal before lives run out.";
@@ -2568,7 +2591,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
 }
 function trainingTimer(){const s=session();if(!s||s.pausedAt||s.phase==="rules"||s.phase==="complete")return;const item=currentExercise();if(!item)return;const elapsed=exerciseElapsed();if(item.name==="Big Singles"){if(currentTab==="train"){const g=activeGame||data.game;$("sessionClock").textContent=fmt(sessionRemaining());if(g){$("exerciseClock").textContent=g.darts.length+"/60";$("exerciseBar").style.width=g.darts.length/60*100+"%"}}return}if(elapsed>=num(item.seconds)){completeExercise("timed");return}if(currentTab==="train"){$("exerciseClock").textContent=fmt(Math.max(0,item.seconds-elapsed));$("exerciseBar").style.width=clamp(100*elapsed/Math.max(1,item.seconds),0,100)+"%";$("sessionClock").textContent=fmt(sessionRemaining());$("sessionBar").style.width=clamp(100*sessionElapsed()/sessionBudget(),0,100)+"%"}}
 /* HOME + PROGRESS */
-function renderHome(){const s=session(),today=new Date().getDay(),scheduled=data.days.includes(today),needsAssessment=!s&&assessmentDue();$("homeHeading").textContent=needsAssessment?(eligibleForStartChoice()?"Choose How to Start":"Continue Your Assessment"):s?"Training In Progress":scheduled?"Your Training Is Ready":"Today Is a Rest Day";$("homeMessage").textContent=needsAssessment?(eligibleForStartChoice()?"Take the full assessment or select your usual average to begin immediately.":"Continue your measured assessment to unlock training."):s?"Continue where you left off.":scheduled?"Your coach has prepared today's session.":"Rest and recovery are part of your programme.";$("homeDuration").textContent=s?fmt(sessionRemaining()):needsAssessment?(eligibleForStartChoice()?"2 OPTIONS":"6 TESTS"):scheduled?"60 MIN":"60 MIN";let actions="";if(needsAssessment)actions='<button class="primary" onclick="show(&quot;train&quot;)">Choose Starting Method</button>';else if(s)actions='<button class="primary" onclick="show(\'train\')">Continue Training</button>';else{const done=data.sessions.some(x=>x.date===dateKey()&&!x.extra&&x.completed);if(scheduled&&!done)actions='<button class="primary" onclick="beginTraining(false)">Start Training</button>';else if(scheduled)actions='<div class="info">Scheduled training completed today.</div>';actions+='<button class="secondary" style="width:100%;margin-top:10px" onclick="beginTraining(true)">Extra Training</button>'}$("homeAction").innerHTML=actions;$("homeDays").innerHTML=[...data.days].sort((a,b)=>a-b).map(n=>'<span class="tag" style="margin:3px">'+DAY_NAMES[n]+'</span>').join("");if(!blockStart()){$("blockStatus").textContent="Your first training block begins with your first session.";$("blockBar").style.width="0%";$("blockInfo").textContent="Four weeks per block."}else{const i=currentBlockIndex(),begin=blockBoundary(i),end=blockBoundary(i+1),elapsed=Date.now()-begin;$("blockStatus").textContent="Training Block "+(i+1);$("blockBar").style.width=clamp(100*elapsed/(end-begin),0,100)+"%";$("blockInfo").textContent="Week "+clamp(Math.floor(elapsed/(7*DAY_MS))+1,1,4)+" of 4"};renderHomeHighlights()}
+function renderHome(){const s=session(),today=new Date().getDay(),scheduled=data.days.includes(today),needsAssessment=!s&&assessmentDue();$("homeHeading").textContent=needsAssessment?(eligibleForStartChoice()?"Choose How to Start":"Continue Your Assessment"):s?"Training In Progress":scheduled?"Your Training Is Ready":"Today Is a Rest Day";$("homeMessage").textContent=needsAssessment?(eligibleForStartChoice()?"Take the full assessment or select your usual average to begin immediately.":"Continue your measured assessment to unlock training."):s?"Continue where you left off.":scheduled?"Your coach has prepared today's session.":"Rest and recovery are part of your programme.";$("homeDuration").textContent=s?fmt(sessionRemaining()):needsAssessment?(eligibleForStartChoice()?"2 OPTIONS":"6 TESTS"):scheduled?"60 MIN":"60 MIN";let actions="";if(needsAssessment)actions='<button class="primary" onclick="show(&quot;train&quot;)">Choose Starting Method</button>';else if(s)actions='<button class="primary" onclick="show(\'train\')">Continue Training</button>';else{const done=data.sessions.some(x=>x.date===dateKey()&&!x.extra&&x.completed);if(scheduled&&!done)actions='<button class="primary" onclick="beginTraining(false)">Start Training</button>';else if(scheduled)actions='<div class="info">Scheduled training completed today.</div>';actions+='<button class="secondary" style="width:100%;margin-top:10px" onclick="beginTraining(true)">Extra Training</button>';if(reassessmentDue())actions+='<button class="secondary" style="width:100%;margin-top:10px" onclick="startReassessment()">Four-week Assessment Ready</button>'}$("homeAction").innerHTML=actions;$("homeDays").innerHTML=[...data.days].sort((a,b)=>a-b).map(n=>'<span class="tag" style="margin:3px">'+DAY_NAMES[n]+'</span>').join("");if(!blockStart()){$("blockStatus").textContent="Your first training block begins with your first session.";$("blockBar").style.width="0%";$("blockInfo").textContent="Four weeks per block."}else{const i=currentBlockIndex(),begin=blockBoundary(i),end=blockBoundary(i+1),elapsed=Date.now()-begin;$("blockStatus").textContent="Training Block "+(i+1);$("blockBar").style.width=clamp(100*elapsed/(end-begin),0,100)+"%";$("blockInfo").textContent="Week "+clamp(Math.floor(elapsed/(7*DAY_MS))+1,1,4)+" of 4"};renderHomeHighlights()}
 function renderHomeHighlights(){
  const area=$("homeHighlights"),chart=$("homeWeekBars");if(!area||!chart)return;
  const sessions=Array.isArray(data.sessions)?data.sessions:[],games=Array.isArray(data.games)?data.games:[];
@@ -2582,9 +2605,16 @@ function renderHomeHighlights(){
  chart.innerHTML=values.map((n,i)=>'<div class="homeWeekDay"><div class="homeWeekTrack"><span style="height:'+Math.max(n?7:2,Math.min(100,n/max*100)).toFixed(1)+'%;" class="'+(n?'hasHours':'')+'"></span></div><small>'+days[i]+'</small></div>').join('');
 }
 function renderSettings(){
- const upgrade=$("quickStartUpgrade");if(upgrade)upgrade.classList.toggle("hidden",!(data.assessment&&data.assessment.quickStart));
+ const upgrade=$("quickStartUpgrade");if(upgrade)upgrade.classList.toggle("hidden",!(data.assessment&&data.assessment.quickStart));const again=$("reassessmentSettings");if(again)again.classList.toggle("hidden",!reassessmentDue());
  const status=$("autoBackupStatus");
  if(status){const t=checkpointDate();status.textContent=t?"Local recovery copy saved: "+formatDate(t)+" at "+new Date(t).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}):"No milestone recovery copy yet. Save a backup file before any update.";}
+ const store=$("storageHealth");if(store){
+  let size=0,checkpoint=0;
+  try{size=(localStorage.getItem(KEY)||'').length*2;checkpoint=(localStorage.getItem(CHECKPOINT_KEY)||'').length*2}catch(e){}
+  const mb=(size+checkpoint)/1048576;
+  store.classList.toggle('error',!!storageSaveError);
+  store.textContent=storageSaveError||('Stored training data and local recovery: '+mb.toFixed(1)+' MB (approximate). '+(mb>=6?'Storage is getting large. Save a JSON backup to Files now.':mb>=3?'Regular external backups recommended.':'No history is automatically deleted.'));
+ }
 $("days").innerHTML=DAY_NAMES.map((n,i)=>'<label><input type="checkbox" '+(data.days.includes(i)?"checked":"")+' onchange="changeDay('+i+',this.checked)"> '+n.slice(0,3)+'</label>').join("");$("dayStatus").textContent=data.days.length+"/5 days selected";$("coachSystemStatus").innerHTML='<p>Automatic training: <strong>Active</strong></p><p>Independent skills: <strong>Scoring, doubles, checkout, bull</strong></p><p>Progress updates: <strong>Based on evidence across training days</strong></p>'}
 function renderHandPreference(){for(const hand of ["left","right"]){const b=$(hand==="left"?"handLeft":"handRight");if(!b)continue;b.classList.toggle("secondary",data.throwingHand!==hand);b.setAttribute("aria-pressed",String(data.throwingHand===hand))}}
 function changeDay(day,checked){const days=data.days.filter(x=>x!==day);if(checked)days.push(day);if(days.length>5){alert("Select exactly five training days.");renderSettings();return}data.days=days;save()}
