@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.14.0</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.14.1</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -738,7 +738,7 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.14.0</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.14.1</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -854,6 +854,10 @@ function normaliseData(d){
   if(latest&&at&&Date.now()-at<28*DAY_MS){
    d.assessment=carryForwardAssessment(latest);
   }
+ }
+ // V5.14.1: a stored start timestamp must never accrue unsupervised time after reopening.
+ if(d.assessment.warmup&&d.assessment.warmup.startedAt&&!d.assessment.warmup.complete){
+  d.assessment.warmup.startedAt=null;
  }
  if(!d.assessment.warmup||typeof d.assessment.warmup!=="object"){
   d.assessment.warmup={elapsedMs:0,startedAt:null,complete:false};
@@ -1824,7 +1828,7 @@ function dc21ShadowAudit(sessions=data.sessions,now=Date.now()){
 function dc21ForecastRows(games=data.games,now=Date.now()){
  const byKey=new Map(),cutoff=now-365*DAY_MS;
  for(const e of games||[]){
-  if(!e||e.completion!=='natural'||typeof e.win!=='boolean'||e.quick===true||
+  if(!e||e.completion!=='natural'||typeof e.win!=='boolean'||e.quick===true||e.extra===true||
    e.recovery===true||e.challengeTuning||!Number.isFinite(e.at)||e.at<cutoff||e.at>now+DAY_MS)continue;
   const f=e.prospectiveForecast;
   if(!f||f.version!=='5.13.0'||!Number.isFinite(f.at)||f.at>e.at||
@@ -1885,7 +1889,7 @@ function dc21ResearchHTML(){
    Standard-rule scheduled play only. Existing history remains untouched. */
 function dc20AttachForecast(g){
  const s=session();
- if(!g||!s||s.quick||g.recovery||g.challengeTuning||
+ if(!g||!s||s.quick||s.extra||g.recovery||g.challengeTuning||
     g.name==='Warm-up'||g.name==='Review'||g.name==='Big Singles'||
     DC10_MEASUREMENT_GAMES.has(g.name))return g;
  const p=dc10ChallengeProfile(g.name);
@@ -1899,7 +1903,7 @@ function dc20AttachForecast(g){
 function dc20Audit(games=data.games,now=Date.now()){
  const byDay=new Map(),cutoff=now-365*DAY_MS;
  for(const e of games||[]){
-  if(!e||e.completion!=='natural'||typeof e.win!=='boolean'||e.quick===true||
+  if(!e||e.completion!=='natural'||typeof e.win!=='boolean'||e.quick===true||e.extra===true||
      e.recovery===true||e.challengeTuning||!Number.isFinite(e.at)||
      e.at<cutoff||e.at>now+DAY_MS)continue;
   const f=e.prospectiveForecast;
@@ -2931,7 +2935,7 @@ function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||sess
 function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.14.0",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
+function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.14.1",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
  prospectiveForecast:g.prospectiveForecast&&completion==='natural'&&
  !g.recovery&&!g.challengeTuning&&!session()?.quick?clone(g.prospectiveForecast):null};
  if(completion==="natural"&&!session()?.quick&&!g.recovery){
@@ -3997,6 +4001,13 @@ function importData(e){const f=e.target.files[0];if(!f)return;const reader=new F
 function renderAll(){renderHome();renderSettings();renderHandPreference();renderQuick();renderTraining();renderAssessmentMenu();renderProgress();if(currentTab==="records")renderRecords()}
 if(data.activeSession&&!Array.isArray(data.activeSession.plan)){data.activeSession=null;data.game=null}
 if(data.activeSession){activeGame=data.game||null;if(!activeGame){const e=currentExercise();if(e){activeGame=buildGame(e.name);data.game=activeGame}}normaliseStraightGame(activeGame);normaliseSurvivalGame(activeGame)}
+// Pause the assessment clock when Safari is hidden or a document is unloaded.
+// Resume only when the actual assessment warm-up screen becomes visible again.
+document.addEventListener('visibilitychange',()=>{
+ if(document.hidden){if(activeStage==='warmup')pauseAssessmentWarmup();}
+ else if(activeStage==='warmup')resumeAssessmentWarmup();
+});
+window.addEventListener('pagehide',()=>{if(activeStage==='warmup')pauseAssessmentWarmup()});
 performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);setInterval(assessmentTimer,250);show("home");save(false);if(recoveryNotice){const b=$("backupStatus");if(b)b.textContent=recoveryNotice;}
 
 </script><div id="welcomeOverlay" class="welcomeOverlay hidden" role="dialog" aria-modal="true" aria-labelledby="welcomeHeading">
