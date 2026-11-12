@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.1.4</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.1.9</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -515,6 +515,55 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
  #exercisePanel:has(#gameControls.hasPad).phase-playing .scorePad{margin-top:3px;margin-bottom:3px}
 }
 
+
+/* V5.1.9: Double-In 201 entry keypad, same 3-column mobile layout as score entry. */
+.doubleInPad .scorePadDisplay{align-items:center;min-height:61px}
+.doubleInPad .scorePadDisplay span{font-size:11px;line-height:1.3;letter-spacing:.05em}
+.doubleInPad .scorePadDisplay span small{display:block;margin-top:4px;letter-spacing:0;font-size:10px;font-weight:500;opacity:.85}
+.doubleInPad .scoreKeys button.doubleKey{color:#081711;background:var(--green)!important;border-color:var(--green);font-size:21px;font-weight:900}
+.doubleInPad .entryClear{display:block;width:100%;min-height:37px;margin-top:6px;padding:6px;border-radius:9px;background:var(--dc-t43,#102923);border:1px solid var(--line);color:var(--text);font-size:12px}
+#gameControls.hasPad .doubleInPad .scoreKeys{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+/* Assessment 3.0 keypad - no native phone keyboard; leg and scoring visits. */
+.aLocalPad{display:flex;flex-direction:column;gap:5px;margin:2px 0 7px;grid-column:1/-1}
+.aLocalReadout{background:var(--panel2);border:1px solid var(--line);border-radius:12px;min-height:47px;display:flex;align-items:center;justify-content:space-between;padding:7px 13px;color:var(--muted);font-size:11px;letter-spacing:.08em}
+.aLocalReadout strong{font-size:27px;color:var(--green);font-variant-numeric:tabular-nums}
+.aLocalKeys{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.aLocalKeys button{min-height:41px!important;padding:5px!important;border-radius:9px!important;font-size:18px!important}
+#assessmentScreen .assessmentActions:has(.aLocalPad){display:block;overflow-y:auto;min-height:0}
+#assessmentScreen .assessmentActions:has(.aLocalPad)>button.wide{width:100%;min-height:47px;font-size:15px}
+#assessmentScreen:has(.aLocalPad) .assessmentBody{justify-content:flex-start;gap:7px}
+#assessmentScreen:has(.aLocalPad) .assessmentTarget{padding:7px 10px}
+#assessmentScreen:has(.aLocalPad) .assessmentTarget strong{font-size:clamp(30px,10vw,48px)}
+#assessmentScreen:has(.aLocalPad) .assessmentTarget p{font-size:12px;margin:3px 0}
+@media(max-height:720px){.aLocalKeys button{min-height:36px!important}#assessmentScreen:has(.aLocalPad) .assessmentBody{gap:4px}}
+
+
+/* V5.1.9: alternative onboarding; original dark/glass design retained. */
+.onboardingCard{padding:21px 17px}.onboardingKicker{font-size:11px;font-weight:850;letter-spacing:.14em;color:var(--green)}
+.startOption{background:linear-gradient(145deg,rgba(35,74,51,.30),rgba(7,18,12,.82));border:1px solid color-mix(in srgb,var(--green) 26%,transparent);border-radius:17px;padding:16px;margin:15px 0;box-shadow:inset 0 1px 0 rgba(255,255,255,.055)}
+.startOptionTitle{font-size:17px;font-weight:850;letter-spacing:-.025em;line-height:1.6}.startTag{display:inline-block;vertical-align:middle;font-size:9px;font-weight:850;letter-spacing:.07em;color:var(--green);border:1px solid color-mix(in srgb,var(--green) 33%,transparent);padding:3px 6px;border-radius:20px;margin-left:4px}
+.startOption p{color:var(--muted);font-size:13px;line-height:1.5}.startOption button{width:100%;margin-top:10px;min-height:50px}.startOption label{display:block;font-weight:750;font-size:13px;margin-top:15px;margin-bottom:8px}
+#quickStartAverage{width:100%;color:var(--text);background:#101d16;border:1px solid color-mix(in srgb,var(--green) 42%,transparent);border-radius:12px;padding:14px 12px;font-size:17px;font-weight:800;appearance:auto;color-scheme:dark}
+.startOption .quickStartNote{font-size:11px;line-height:1.5;margin-bottom:0}
+
+/* V5.1.9 Quick Play: immediately accessible game launch sheet */
+.quickGameOverlay{position:fixed;inset:0;z-index:480;display:flex;align-items:center;justify-content:center;padding:calc(env(safe-area-inset-top) + 12px) 14px calc(env(safe-area-inset-bottom) + 12px);background:rgba(0,0,0,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.quickGameOverlay.hidden{display:none!important}
+.quickGameModal{position:relative;max-width:445px;width:100%;max-height:100%;overflow:auto;border-radius:24px;padding:23px 19px 18px;background:linear-gradient(145deg,var(--panel2),var(--panel) 53%,var(--bg));border:1px solid var(--line);box-shadow:0 24px 68px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.09)}
+.quickGameClose{position:absolute;top:13px;right:13px;display:grid;place-items:center;width:36px;height:36px;padding:0;background:var(--panel2);color:var(--text);border:1px solid var(--line);font-size:25px;font-weight:400}
+.quickGameKicker{color:var(--green);font-size:11px;font-weight:900;letter-spacing:.16em}
+.quickGameModal h2{margin:12px 40px 8px 0;font-size:clamp(23px,6vw,29px);line-height:1.1;letter-spacing:-.04em}
+.quickGameDescription{color:var(--muted);font-size:14px;line-height:1.48;margin:0 0 20px}
+.quickGameDurationLabel{display:block;font-size:14px;font-weight:800;margin-bottom:11px}
+.quickDurationOptions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.quickDurationOptions button{min-width:0;min-height:53px;padding:8px 1px;font-size:clamp(11px,2.75vw,13px);border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:11px;box-shadow:none}
+.quickDurationOptions button.selected{background:var(--green);color:#07140c;border-color:var(--green);box-shadow:0 4px 16px color-mix(in srgb,var(--green) 20%,transparent)}
+.quickGameEvidence{font-size:12px;line-height:1.42;color:var(--muted);margin:14px 0}
+.quickGameWarmup{font-size:12px;line-height:1.48;color:var(--muted);padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);margin:0 0 15px}
+.quickGameModal #quickStart{width:100%;min-height:55px;border-radius:13px;font-size:17px}
+.quickGameCancel{display:block;width:100%;margin-top:8px;background:transparent!important;border:0;color:var(--muted);font-size:13px;box-shadow:none!important;padding:10px}
+
 </style></head><body>
 <header><div class="brandMark">🎯</div><div class="brandCopy"><h1>DARTS COACH</h1><small>PERSONALISED TRAINING</small></div><div class="headerActions">
 <button id="headerRhythm" type="button" aria-label="Open Rhythm Coach" title="Rhythm Coach"><svg class="headerLineIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg></button>
@@ -531,17 +580,40 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 <section id="train" class="hidden"><div id="trainIdle" class="card center"><h2>Ready to Train</h2><p>Your coach has prepared the session.</p><button class="primary" onclick="beginTraining(false)">Start Training</button></div><div id="trainSession" class="hidden"><div class="card"><div class="statLine"><span id="sessionType">Training Session</span><span id="sessionStepLabel">Exercise 1</span></div><div class="big" id="sessionClock">60:00</div><div class="progress"><div id="sessionBar"></div></div></div><div class="card" id="exercisePanel"><h2 id="exerciseName">Warm-up</h2><div class="statLine"><span id="exerciseTimeLabel">Exercise time</span><span id="exerciseClock">10:00</span></div><div class="progress"><div id="exerciseBar"></div></div><div class="rulePanel"><div class="rule" id="exerciseRules"></div></div><div id="exerciseIntro" class="hidden"><h3>HOW TO PLAY</h3><div id="introTitle" class="instruction"></div><div id="introRules" class="instruction"></div><button onclick="playExercise()">Play</button></div><div id="exerciseDone" class="hidden"><h3>EXERCISE COMPLETE</h3><div id="doneSummary" class="instruction"></div><button id="nextExerciseButton" onclick="nextExercise()">Next Exercise</button></div><div id="playArea"><div id="roundFlash">ROUND 1</div><div class="big" id="gameTarget">Ready</div><p id="gameProgress"></p><div id="straightDisplay" class="hidden"></div><div id="miniMetrics"></div><div id="gameControls"></div></div><div class="row" id="undoRow"><button class="secondary" id="undoButton" onclick="undoGame()">Undo</button></div><button class="primary" id="completeButton" onclick="completeExercise('manual')">Complete Exercise</button></div><div class="card" id="sessionFooter"><button class="secondary" onclick="pauseSession()" id="pauseButton">Pause Session</button><button class="secondary rhythmFooter" type="button"  aria-label="Open Rhythm Coach"><svg class="metronomeIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg><span>Rhythm</span></button><button class="linklike" onclick="finishSessionEarly()">End Session</button></div></div><div id="roundAnnouncement" class="hidden" aria-live="polite"><div id="roundAnnouncementCard"><div id="roundAnnouncementTitle">ROUND 2</div><div id="roundAnnouncementPrevious"></div></div></div><div id="sessionFinished" class="card hidden"><div class="resultCard"><strong>Training Complete</strong><p>Session recorded.</p></div><p id="finishedText" class="center"></p><div id="sessionCoachReport" class="coachReport"></div><button class="primary" onclick="finishView()">Done</button><button class="secondary" style="width:100%;margin-top:8px" onclick="beginTraining(true)">Extra Training Session</button></div></section>
 <section id="quick" class="hidden">
  <div class="card"><h2>Quick Play</h2><p class="muted">Choose any challenge and how long you want to play. Your current coaching levels set the difficulty automatically.</p>
- <div id="quickIntro" class="info">Quick Play is separate from scheduled training. Complete the initial assessment to unlock the appropriate difficulty.</div>
+ <div id="quickIntro" class="info">Quick Play is separate from scheduled training. Complete the full assessment or choose Quick Start to unlock suitable starting difficulty.</div>
  <div id="quickGames" class="quickGrid"></div>
- <div class="quickChoice"><label for="quickDuration"><strong>Playing time</strong></label>
- <select id="quickDuration" onchange="quickDurationChange()"><option value="300">5 minutes</option><option value="600">10 minutes</option><option value="900">15 minutes</option><option value="1200" selected>20 minutes</option><option value="1800">30 minutes</option></select></div>
- <div id="quickSelected" class="info">Select a game to see its objective.</div>
- <p class="muted" id="quickEvidence">Short games are recorded but don't change your coaching levels. Longer, meaningful practice can contribute gradually.</p>
- <button id="quickStart" class="primary" onclick="startQuickPlay()" disabled>Play Selected Game</button>
+ <p class="muted" style="font-size:12px;margin-bottom:2px">Tap any game to choose your playing time and start.</p>
  </div>
  <div class="card"><h2>Quick Play history</h2><div id="quickHistory"></div></div>
 </section>
-<section id="assess" class="hidden"><div class="card"><h2 id="assessmentHeading">Player Assessment</h2><p class="muted" id="assessmentDescription">Complete the four short tests to set your starting level. You can stop and continue later.</p><div id="assessmentStatus"></div></div><div class="card"><h2>Assessment Stages</h2><div id="assessmentList"></div></div></section>
+<div id="quickGameOverlay" class="quickGameOverlay hidden" role="dialog" aria-modal="true" aria-labelledby="quickGameTitle" onclick="if(event.target===this)closeQuickGame()">
+ <div class="quickGameModal">
+  <button type="button" class="quickGameClose" aria-label="Close Quick Play selection" onclick="closeQuickGame()">×</button>
+  <span class="quickGameKicker">QUICK PLAY</span>
+  <h2 id="quickGameTitle">Choose a game</h2>
+  <p id="quickGameDescription" class="quickGameDescription"></p>
+  <label class="quickGameDurationLabel" for="quickDuration">Playing time</label>
+  <div id="quickDurationOptions" class="quickDurationOptions" role="group" aria-label="Quick Play duration">
+   <button type="button" data-seconds="300" onclick="setQuickDuration(300)">5 min</button>
+   <button type="button" data-seconds="600" onclick="setQuickDuration(600)">10 min</button>
+   <button type="button" data-seconds="900" onclick="setQuickDuration(900)">15 min</button>
+   <button type="button" data-seconds="1200" onclick="setQuickDuration(1200)">20 min</button>
+   <button type="button" data-seconds="1800" onclick="setQuickDuration(1800)">30 min</button>
+  </div>
+  <select id="quickDuration" class="hidden" aria-hidden="true"><option value="300">5</option><option value="600">10</option><option value="900">15</option><option value="1200" selected>20</option><option value="1800">30</option></select>
+  <p id="quickEvidence" class="quickGameEvidence"></p>
+  <p class="quickGameWarmup">For consistent results, we recommend warming up for at least 10 minutes before Quick Play. This is optional.</p>
+  <button id="quickStart" type="button" class="primary" onclick="startQuickPlay()" disabled>Play Game</button>
+  <button type="button" class="quickGameCancel" onclick="closeQuickGame()">Choose another game</button>
+ </div>
+</div>
+<section id="assess" class="hidden"><div id="startingChoice" class="hidden">
+ <div class="card onboardingCard"><span class="onboardingKicker">GET STARTED</span><h2>Choose how to begin</h2><p class="muted">Your coaching difficulty adapts as you play. Choose the most accurate starting point, or get straight to the board.</p>
+ <div class="startOption"><div class="startOptionTitle">Full Player Assessment <span class="startTag">MOST ACCURATE</span></div><p>10-minute warm-up, scoring, doubles, bull, checkouts, two 301 legs and Big Singles. Around 70 minutes at your own pace, with no overall countdown.</p><button class="primary" type="button" onclick="selectStartingMethod('full')">Take Full Assessment</button></div>
+ <div class="startOption"><div class="startOptionTitle">Quick Start <span class="startTag">PLAY NOW</span></div><p>Know your usual three-dart average? Choose a range below to start with provisional skill levels. No test required. Your coach adjusts after meaningful results across several days.</p>
+ <label for="quickStartAverage">Your usual three-dart average</label><select id="quickStartAverage" aria-label="Usual three dart average"><option value="under30">Below 30</option><option value="30">30–39</option><option value="40">40–49</option><option value="50">50–59</option><option value="60">60–69</option><option value="70">70–79</option><option value="80">80–89</option><option value="90">90–99</option><option value="100">100+</option></select>
+ <button class="primary" type="button" onclick="startQuickFromAverage()">Start Playing</button><p class="quickStartNote">Estimates only. The coach has not measured your doubles, checkouts or bull yet, so early levels may be adjusted.</p></div>
+ </div></div><div id="assessmentStandard"><div class="card"><h2 id="assessmentHeading">Player Assessment</h2><p class="muted" id="assessmentDescription">Complete six measured tests to establish your starting ability. You can stop and continue later.</p><div id="assessmentStatus"></div></div><div class="card"><h2>Assessment Stages</h2><div id="assessmentList"></div></div></div></section>
 <div id="assessmentScreen" class="hidden">
  <div class="aHeader"><strong id="assessmentTitle">Player Assessment</strong><button class="secondary" onclick="closeAssessment()">Back</button></div>
  <div class="aProgress"><div class="aProgressText"><span id="assessmentProgress">Assessment</span><span id="aPercent">0%</span></div><div class="progress"><div id="aBar"></div></div></div>
@@ -646,12 +718,13 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 <div class="row"><button id="handLeft" class="secondary" onclick="setHand('left')">Left-handed</button><button id="handRight" class="secondary" onclick="setHand('right')">Right-handed</button></div>
 <h3>Share Darts Coach</h3><p class="muted">Share the app link. Your personal training records are not included.</p>
 <button class="primary" onclick="shareDartsApp()">Share App</button></div>
+<div class="card hidden" id="quickStartUpgrade"><h2>Improve Your Starting Accuracy</h2><p class="muted">You started using an estimated average. A full assessment can measure scoring, doubles, checkouts and bull more accurately. This is optional.</p><button class="secondary" type="button" style="width:100%" onclick="upgradeQuickStartAssessment()">Take Full Assessment</button></div>
 <div class="card"><h2>Coach Status</h2><div id="coachSystemStatus"></div><p class="muted">The four skill tiers are independent and hidden during practice. Adaptation is based on repeated evidence.</p></div>
 <div class="card resetCard"><h2>Reset Everything</h2>
-<p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. You must complete all four assessments again before training.</p>
+<p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.1.4</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.1.9</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -673,7 +746,7 @@ function setAccentTheme(name){
 (function initAccentTheme(){let choice="green";try{choice=localStorage.getItem(DARTS_COLOUR_KEY)||"green"}catch(e){}setAccentTheme(choice)})();
 
 const KEY="dartsCoachV4",CHECKPOINT_KEY="dartsCoachV4Checkpoint",OLD_KEYS=["dartsCoachV3","dartsCoachV2"],$=id=>document.getElementById(id);
-const STAGES=["scoring","doubles","bull","checkout","singles"],STAGE_NAMES={scoring:"20s Scoring",doubles:"Doubles Assessment",bull:"Bull Accuracy",checkout:"Guided Checkout Assessment",singles:"Big Singles Accuracy"};
+const STAGES=["scoring","doubles","bull","checkout","legs","singles"],STAGE_NAMES={scoring:"60-Dart Match Scoring",doubles:"Doubles Assessment",bull:"Bull Accuracy",checkout:"Guided Checkout Assessment",legs:"301 Match Calibration",singles:"Big Singles Accuracy"};
 const CHECKOUT_TARGETS=[41,42,43,44,45,46,47,48,49,50],STRAIGHT_TARGETS=[20,19,18,17,16];
 const ORDER=[20,1,18,4,13,6,10,15,2,17,3,19,7,16,8,11,14,9,12,5],DAY_NAMES=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const SKILLS=["scoring","doubles","checkout","bull"],FOCUS=["scoring","doubles","checkout","accuracy","pressure"],DAY_MS=86400000;
@@ -685,7 +758,7 @@ function fmt(s){s=Math.max(0,Math.floor(s));return String(Math.floor(s/60)).padS
 function weekStart(t){const d=new Date(t);d.setHours(0,0,0,0);d.setDate(d.getDate()-(d.getDay()+6)%7);return d.getTime()}
 function addDays(t,n){const d=new Date(t);d.setDate(d.getDate()+n);return d.getTime()}
 function formatDate(t){return new Date(t).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"})}
-function newAssessment(){return{version:5,scoring:[],doubles:[],bull:[],singles:[],checkout:[],warmup:{elapsedMs:0,startedAt:null,complete:false},finished:false,completedAt:null,profile:null}}
+function newAssessment(){return{version:6,scoring:[],doubles:[],bull:[],singles:[],checkout:[],legs:[],warmup:{elapsedMs:0,startedAt:null,complete:false},finished:false,completedAt:null,profile:null}}
 function assessmentWarmup(){const a=data.assessment;return a.warmup||(a.warmup={elapsedMs:0,startedAt:null,complete:false})}
 function warmupMs(){const w=assessmentWarmup();return Math.min(600000,num(w.elapsedMs)+(w.startedAt?Math.max(0,Date.now()-w.startedAt):0))}
 function pauseAssessmentWarmup(){const w=assessmentWarmup();if(w.startedAt){w.elapsedMs=warmupMs();w.startedAt=null;save(false)}}
@@ -742,8 +815,17 @@ function normaliseData(d){
    }
   }
   d.assessment=legacyAssessmentIsComplete(old)?carryForwardAssessment(old):newAssessment();
+ }else if(num(old.version)<6&&!old.finished&&hasAssessmentProgress(old)){
+  // V5 scored individual 20-segment darts. V6 scores real three-dart visits.
+  // They cannot be mixed; archive the incomplete work before restarting.
+  if(!d.assessmentHistory.some(x=>x&&x.migrationIncompleteV5&&x.migrationSourceTime===assessmentDate(old)))
+   d.assessmentHistory.push(Object.assign({migrationIncompleteV5:true,migrationSourceTime:assessmentDate(old)},clone(old)));
+  d.assessment=newAssessment();
  }else{
   d.assessment=Object.assign(newAssessment(),old);
+  // An old assessment with no measured darts can retain its warm-up, but from
+  // now on it must save as V6 so subsequent reloads cannot reset new visits.
+  if(!d.assessment.finished)d.assessment.version=6;
   for(const k of STAGES)if(!Array.isArray(d.assessment[k]))d.assessment[k]=[];
   if(d.assessment.finished&&(!num(d.assessment.completedAt))){
    d.assessment.completedAt=assessmentDate(d.assessment)||Date.now();
@@ -776,6 +858,9 @@ function normaliseData(d){
 function assessmentDue(){
  const a=data.assessment;
  if(!a||!a.finished)return true;
+ // Provisional Quick Start remains usable while the coach calibrates from real practice.
+ // A full assessment can be elected manually in Settings.
+ if(a.quickStart===true)return false;
  const at=assessmentDate(a);
  return !!at&&Date.now()-at>=28*DAY_MS;
 }
@@ -838,6 +923,7 @@ function hideRoundAnnouncement(){if(roundAnnouncementTimer!==null){clearTimeout(
 function save(render=true){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){alert("Unable to save. Make a backup.")}if(render)renderAll()}
 function show(id){
  if(id==="assess")id="train";
+ if(id!=="quick"&&$("quickGameOverlay")&&!$("quickGameOverlay").classList.contains("hidden"))closeQuickGame();
  currentTab=id;
  if(id==="train"&&!session())prepareAssessment();
  for(const t of ["home","train","quick","progress","records","technique","settings"]){
@@ -892,9 +978,18 @@ function dc2NormalCdf(z){
 function dc2AssessmentPrior(key,assessment){
  const a=assessment||{},p=a.profile&&a.profile[key];
  if(!p)return null;
+ if(a.quickStart===true){
+  const tier=clamp(Math.round(Number(p.level)||7),1,7);
+  // Estimated ability only: effectively two pseudo-observations at most,
+  // NOT measured darts or a fabricated doubles/bull/checkout percentage.
+  const levels=thresholds(key);
+  const fallback=tier===7?levels[5]*.68:tier===1?levels[0]*1.03:(levels[tier-2]+levels[tier-1])/2;
+  const guess=key==='scoring'?Number(p.average):fallback;
+  return {value:Number.isFinite(guess)?guess:fallback,weight:1.5};
+ }
  const observed=key==='scoring'?Number(p.average):Number(p.percentage);
  if(!Number.isFinite(observed))return null;
- const n=key==='scoring'?10:key==='doubles'?60:key==='checkout'?Number(p.attempts)||10:30;
+ const n=key==='scoring'?20:key==='doubles'?60:key==='checkout'?Number(p.attempts)||12:30;
  return {value:observed,weight:Math.min(key==='scoring'?8:24,Math.max(4,n*.55))};
 }
 function dc2Estimate(key,days,prior,now){
@@ -1072,7 +1167,7 @@ const QUICK_DESCRIPTIONS={
  "501 Pressure":"Play 501 with a strict double-out dart allowance based on scoring and checkout ability.",
  "Setup Shot":"Leave a useful checkout from an awkward score in a single three-dart visit.",
  "Last Dart Rescue":"Solve five last-dart situations. Wrong target costs a life.",
- "Risk or Reward":"Choose a safe or risky score target before each visit; bank enough points to win.",
+ "Risk or Reward":"Choose SAFE (normal scoring) or RISK (+35 bonus points if you meet the higher target). Miss a risky target and lose 50 points and a life. Reach the goal to win.",
  "170 Challenge":"Attempt a 170 finish inside your dart allowance; busts and missed attempts cost a life.",
  "First Nine Siege":"Three visits (nine darts) to beat a cumulative scoring target. An exact, finite win/loss challenge.",
  "Last Dart Standing":"Six one-dart situations. Decide whether to finish or set up before throwing. Wrong decisions cost lives.",
@@ -1089,17 +1184,37 @@ const QUICK_DESCRIPTIONS={
 };
 let quickChoice="Scoring Survival";
 function quickDurationChange(){renderQuick()}
-function chooseQuick(name){if(!QUICK_GAMES.includes(name))return;quickChoice=name;renderQuick()}
+let quickGameReturnFocus=null;
+function setQuickDuration(seconds){
+ if(![300,600,900,1200,1800].includes(Number(seconds)))return;
+ $("quickDuration").value=String(seconds);
+ renderQuick();
+}
+function openQuickGame(){
+ const overlay=$("quickGameOverlay");if(!overlay)return;
+ quickGameReturnFocus=document.activeElement;
+ overlay.classList.remove("hidden");
+ renderQuick();
+ const first=overlay.querySelector(".quickGameClose");if(first)first.focus();
+}
+function closeQuickGame(){
+ const overlay=$("quickGameOverlay");if(overlay)overlay.classList.add("hidden");
+ if(quickGameReturnFocus&&typeof quickGameReturnFocus.focus==="function")quickGameReturnFocus.focus();
+ quickGameReturnFocus=null;
+}
+function chooseQuick(name){if(!QUICK_GAMES.includes(name))return;quickChoice=name;renderQuick();openQuickGame()}
 function renderQuick(){
  const area=$("quickGames");if(!area)return;
  area.innerHTML=QUICK_GAMES.map(name=>'<button class="quickTile '+(name===quickChoice?'selected':'')+'" aria-pressed="'+(name===quickChoice)+'" onclick="chooseQuick('+JSON.stringify(name).replace(/"/g,'&quot;')+')">'+esc(name)+'</button>').join('');
  const duration=Number($("quickDuration").value)||1200;
  const needs=assessmentDue();
- $("quickSelected").innerHTML='<strong>'+esc(quickChoice)+'</strong><p>'+esc(QUICK_DESCRIPTIONS[quickChoice])+'</p>';
+ $("quickGameTitle").textContent=quickChoice;
+ $("quickGameDescription").textContent=QUICK_DESCRIPTIONS[quickChoice]||"Choose a duration to start this game.";
+ document.querySelectorAll("#quickDurationOptions button").forEach(b=>{const on=Number(b.dataset.seconds)===duration;b.classList.toggle("selected",on);b.setAttribute("aria-pressed",String(on))});
  $("quickEvidence").textContent=duration<900?'This short game is saved in Quick Play history but excluded from tier decisions.':duration<1800?'Recorded separately. Once there are enough real results across several days, they can contribute modestly to your skill assessment.':'Thirty-minute practice can contribute meaningful evidence over multiple days. It cannot change a tier after one session.';
  $("quickStart").disabled=needs||!!session();
- $("quickStart").textContent=session()?'Session in progress':needs?'Complete assessment first':'Play '+quickChoice;
- $("quickIntro").textContent=needs?'Complete your initial assessment in Train before Quick Play. This ensures the right difficulty.':session()?'A training or Quick Play session is in progress. Finish it before starting another.':'Choose a game. The coach applies your existing independent hidden skill level automatically.';
+ $("quickStart").textContent=session()?'Session in progress':needs?'Complete assessment first':'Play Game';
+ $("quickIntro").textContent=needs?'Complete your assessment or choose Quick Start in Train before playing.':session()?'A training or Quick Play session is in progress. Finish it before starting another.':'Choose a game. The coach applies your existing independent hidden skill level automatically.';
  const rows=data.sessions.filter(x=>x.quick).slice(-8).reverse();
  $("quickHistory").innerHTML=rows.length?rows.map(x=>{const rounds=data.games.filter(g=>g.sessionId===x.id&&g.quick&&g.completion==="natural");const w=rounds.filter(g=>g.win===true).length,l=rounds.filter(g=>g.loss===true).length;return '<div class="entry"><strong>'+esc(x.quickGame||'Quick Play')+'</strong> · '+esc(x.date)+' · '+num(x.minutes).toFixed(1)+' min · '+w+' WIN / '+l+' LOSE</div>'}).join(''):'<p class="muted">No Quick Play sessions yet.</p>';
 }
@@ -1113,6 +1228,7 @@ function startQuickPlay(){
  const t=Date.now();
  data.activeSession={id:t,start:t,extra:true,quick:true,quickGame:quickChoice,quickSeconds:duration,plan:[{name:quickChoice,mode:"timed",seconds:duration}],index:0,completed:[],pausedAt:null,pausedTotal:0,activityStarted:null,activityAccumulated:0,round:1,roundsCompleted:0,allocated:true,benchmarkSeconds:0,phase:"rules"};
  data.game=null;activeGame=null;undoSnapshot=null;
+ closeQuickGame();
  $("sessionFinished").classList.add("hidden");
  startExercise();save();show("train");
 }
@@ -1209,6 +1325,51 @@ const DART_SCORES=[0,25,50,...Array.from({length:20},(_,i)=>i+1),...Array.from({
 const POSSIBLE_VISITS=new Set();for(const a of DART_SCORES)for(const b of DART_SCORES)for(const c of DART_SCORES)POSSIBLE_VISITS.add(a+b+c);
 function validVisit(n){return Number.isInteger(n)&&n>=0&&n<=180&&POSSIBLE_VISITS.has(n)}
 function padMarkup(){return '<div class="scorePad"><div class="scorePadDisplay"><span>ENTER VISIT SCORE</span><strong id="padValue">—</strong></div><input id="scoreInput" type="hidden" value=""><div class="scoreKeys">'+[1,2,3,4,5,6,7,8,9].map(n=>'<button type="button" onclick="padDigit('+n+')">'+n+'</button>').join('')+'<button type="button" onclick="padClear()">CLEAR</button><button type="button" onclick="padDigit(0)">0</button><button type="button" onclick="padBack()">⌫</button></div></div>'}
+/* Double-in 201 uses the same on-screen keypad as every numeric game.
+   D then 1–20 (D25 for bullseye), or 0 for a missed dart. */
+function doubleInPadMarkup(){
+ return '<div class="scorePad doubleInPad"><div class="scorePadDisplay"><span>FIRST DOUBLE · D1–D20 / D25<br><small>Tap D, number, then Record. 0 = MISS.</small></span><strong id="padValue">—</strong></div>'+
+ '<input id="scoreInput" type="hidden" value="">'+
+ '<div class="scoreKeys">'+[1,2,3,4,5,6,7,8,9].map(n=>'<button type="button" onclick="doubleInPadDigit('+n+')">'+n+'</button>').join('')+
+ '<button type="button" class="doubleKey" onclick="doubleInPadDouble()">D</button>'+
+ '<button type="button" onclick="doubleInPadDigit(0)">0</button>'+
+ '<button type="button" onclick="doubleInPadBack()">⌫</button></div>'+
+ '<button type="button" class="entryClear" onclick="padClear()">CLEAR ENTRY</button></div>';
+}
+function doubleInPadDouble(){
+ if(session()?.pausedAt||session()?.phase!=="playing"||activeGame?.name!=="Double-In 201"||activeGame.entered)return;
+ const old=$("scoreInput")?.value||"";padSet("D"+(old==="0"?"":old.replace(/^D/,"")));
+}
+function doubleInPadDigit(d){
+ if(session()?.pausedAt||session()?.phase!=="playing"||activeGame?.name!=="Double-In 201"||activeGame.entered)return;
+ const old=$("scoreInput")?.value||"";
+ // 0 by itself is a miss. D10 / D20 still use the 0 key normally.
+ if(!old){padSet(d===0?"0":String(d));return}
+ if(old==="0"){padSet(d===0?"0":String(d));return}
+ const isDouble=old.startsWith("D"),digits=isDouble?old.slice(1):old;
+ if(digits.length>=2)return;
+ const next=digits+String(d);if(Number(next)>25)return;
+ padSet((isDouble?"D":"")+next);
+}
+function doubleInPadBack(){if(activeGame?.name!=="Double-In 201"||activeGame.entered)return;padSet(($("scoreInput")?.value||"").slice(0,-1))}
+function doubleInEntrySubmit(){
+ const g=activeGame,s=session(),value=$("scoreInput")?.value||"";
+ if(!g||g.name!=="Double-In 201"||g.entered||!s||s.pausedAt||s.phase!=="playing")return;
+ if(value!=="0"&&!/^D(?:[1-9]|1[0-9]|20|25)$/.test(value)){
+  alert('Tap D then a double number from 1 to 20 (D25 for bullseye), or enter 0 for a miss.');return;
+ }
+ snapshot();g.thrown++;g.dartsUsed=num(g.dartsUsed)+1;
+ if(value==="0"){
+  g.entryMisses++;padSet("");
+  if(g.entryMisses>=g.entryLimit){endRound();return}
+ }else{
+  const double=Number(value.slice(1));g.entered=true;g.entryDouble=double;
+  g.remaining-=double*2;g.points+=double*2;
+  g.nextVisitDarts=3-(g.thrown%3)||3;
+  g.entryDarts=g.thrown;padSet("");
+ }
+ data.game=g;save();
+}
 function padSet(value){const input=$("scoreInput");if(!input)return;input.value=value;const display=$("padValue");if(display)display.textContent=value===""?"—":value}
 function padDigit(d){if(session()?.pausedAt||session()?.phase!=="playing")return;const old=$("scoreInput")?.value||"",next=(old==="0"?"":old)+String(d);if(next.length>3||Number(next)>180)return;padSet(next)}
 function padClear(){padSet("")}
@@ -1250,24 +1411,29 @@ function chooseCheckoutDarts(n){
 function checkoutDidNotFinish(){const pending=pendingCheckoutDarts;if(!pending||typeof pending.onBust!=='function')return;closeCheckoutDartPicker();pending.onBust()}
 function pressureBust(g,n){
  snapshot();g.visits++;g.scores.push(0);g.busts++;if(g.name==='301 Pressure')g.lives--;
- if(g.name==='501 Pressure'){g.dartsUsed+=Math.min(3,Math.max(0,g.maxDarts-g.dartsUsed));if(g.dartsUsed>=g.maxDarts){endRound();return}}
+ const used=['301 Pressure','501 Pressure'].includes(g.name)?Math.min(3,Math.max(0,g.maxDarts-num(g.dartsUsed))):3;
+ g.dartsUsed=num(g.dartsUsed)+used;(g.visitDarts??=[]).push(used);
+ if(['301 Pressure','501 Pressure'].includes(g.name)&&g.dartsUsed>=g.maxDarts){endRound();return}
+ if(g.name==='501 Pressure'){data.game=g;save();return}
  else if(g.visits>=g.maxVisits||(g.name==='301 Pressure'&&g.lives<=0)){endRound();return}
  data.game=g;save();
 }
 function finishPressureVisit(n,darts){
  const g=activeGame;if(!g||!['301 Pressure','501 Pressure','170 Challenge'].includes(g.name))return;
- if(g.name==='501 Pressure'&&g.dartsUsed+darts>g.maxDarts){alert('Not enough darts remain for that finish.');return}
+ if(['301 Pressure','501 Pressure'].includes(g.name)&&g.dartsUsed+darts>g.maxDarts){alert('Not enough darts remain for that finish.');return}
  snapshot();g.visits++;g.points+=n;g.scores.push(n);if(n===180)g.oneEighties=num(g.oneEighties)+1;
- g.dartsUsed=num(g.dartsUsed)+darts;g.finish=n;g.remaining=0;g.wins++;padSet('');endRound();
+ g.dartsUsed=num(g.dartsUsed)+darts;(g.visitDarts??=[]).push(darts);g.finish=n;g.remaining=0;g.wins++;padSet('');endRound();
 }
 function finishDoubleInVisit(n,darts){
  const g=activeGame;if(g?.name!=='Double-In 201')return;
  snapshot();g.visits++;g.points+=n;g.scores.push(n);if(n===180)g.oneEighties=num(g.oneEighties)+1;
- g.dartsUsed=num(g.dartsUsed)+darts;g.remaining=0;g.wins=1;padSet('');endRound();
+ g.dartsUsed=num(g.dartsUsed)+darts;g.thrown=num(g.thrown)+darts;g.remaining=0;g.wins=1;padSet('');endRound();
 }
 function doubleInBust(n){
  const g=activeGame;if(g?.name!=='Double-In 201')return;
- snapshot();g.visits++;g.scores.push(0);g.busts++;padSet('');
+ snapshot();g.visits++;g.scores.push(0);g.busts++;
+ const used=clamp(Math.round(num(g.nextVisitDarts)||3),1,3);
+ g.thrown=num(g.thrown)+used;g.dartsUsed=num(g.dartsUsed)+used;g.nextVisitDarts=3;padSet('');
  if(g.visits>=g.maxVisits){endRound();return}
  data.game=g;save();
 }
@@ -1277,11 +1443,11 @@ function scoringVisit(){
  if(!["Scoring Survival","Scoring Ladder","301 Pressure","501 Pressure","Setup Shot","Risk or Reward","170 Challenge","First Nine Siege"].includes(g.name))return;
  const n=Number(input.value);
  if(input.value===""||!validVisit(n)){alert("Enter a three-dart total that can actually be scored (0–180).");return}
- if(g.name==="501 Pressure"&&!possibleVisitIn(n,Math.min(3,g.maxDarts-g.dartsUsed))){alert("That score is not possible with the darts left in this 501 leg.");return}
+ if(["301 Pressure","501 Pressure"].includes(g.name)&&!possibleVisitIn(n,Math.min(3,g.maxDarts-g.dartsUsed))){alert("That score is not possible with your remaining darts.");return}
  if(["301 Pressure","501 Pressure","170 Challenge"].includes(g.name)){
   if(n>g.remaining||g.remaining-n===1){padSet("");pressureBust(g,n);return}
   if(n===g.remaining){
-   const dartsLeft=g.name==="501 Pressure"?Math.min(3,g.maxDarts-g.dartsUsed):3;
+   const dartsLeft=["301 Pressure","501 Pressure"].includes(g.name)?Math.min(3,g.maxDarts-g.dartsUsed):3;
    askCheckoutDarts({score:n,maxDarts:dartsLeft,onFinish:d=>finishPressureVisit(n,d),onBust:()=>{padSet('');pressureBust(g,n)},onImpossible:()=>{padSet('');pressureBust(g,n)}});return;
   }
  }
@@ -1296,18 +1462,21 @@ function scoringVisit(){
   g.target=g.targets[g.step];
  }else if(["301 Pressure","501 Pressure","170 Challenge"].includes(g.name)){
   g.remaining-=n;
-  if(g.name==="501 Pressure"){
-   g.dartsUsed+=Math.min(3,Math.max(0,g.maxDarts-g.dartsUsed));
+  const used=['301 Pressure','501 Pressure'].includes(g.name)?Math.min(3,Math.max(0,g.maxDarts-num(g.dartsUsed))):3;
+  g.dartsUsed=num(g.dartsUsed)+used;(g.visitDarts??=[]).push(used);
+  if(['301 Pressure','501 Pressure'].includes(g.name)){
    if(g.dartsUsed>=g.maxDarts){endRound();return}
-  }else if(g.visits>=g.maxVisits||(g.name==="301 Pressure"&&g.lives<=0)){endRound();return}
+  }else if(g.visits>=g.maxVisits||(g.name==='301 Pressure'&&g.lives<=0)){endRound();return}
  }else if(g.name==="Setup Shot"){
-  g.remaining-=n;g.success=(g.remaining>=2&&g.remaining<=g.goal&&g.remaining!==1)?1:0;
+  if(n>=g.remaining){g.busts=num(g.busts)+1;g.success=0}
+  else{g.remaining-=n;g.success=(g.remaining>=2&&g.remaining<=g.goal)?1:0}
   endRound();return;
  }else if(g.name==="First Nine Siege"){
   if(g.visits>=3){endRound();return}
  }else if(g.name==="Risk or Reward"){
   const threshold=g.choice==="risk"?[140,130,120,110,100,90,80][g.tier-1]:[85,75,65,55,45,35,25][g.tier-1];
   if(n<threshold){g.lives--;g.penalties++;if(g.choice==="risk")g.points=Math.max(0,g.points-50)}
+  else if(g.choice==="risk"){g.points+=35;g.bonusPoints=num(g.bonusPoints)+35}
   if(g.points>=g.goal||g.lives<=0||g.visits>=g.maxVisits){endRound();return}
  }
  data.game=g;save();
@@ -1328,6 +1497,38 @@ function doublesStreakDart(hit){
  if(g.best>=g.goal||g.lives<=0){endRound();return}
  data.game=g;save();
 }
+
+/* Assessment 3: game-specific realistic dart ceilings, independent of arbitrary checkout tier bands.
+   The calculation only uses real recorded data, capped to avoid one freak leg dominating. */
+function dc3MatchAllowance(start){
+ const p=data.assessment?.profile||data.baseline||{};
+ const observed=Number(p.match?.meanWinningDarts);
+ const knownScoring=Number.isFinite(Number(p.scoring?.average))&&(Number(p.scoring?.visits)>0||Number(p.scoring?.total)>0||p.quickStart===true);
+ const scoreAvg=clamp(knownScoring?Number(p.scoring.average):[108,90,75,60,45,32,23][pressureTier("scoring")-1],7,120);
+ const knownDoubles=Number.isFinite(Number(p.doubles?.percentage))&&p.doubles?.hits!==undefined;
+ const doublesRate=clamp(knownDoubles?Number(p.doubles.percentage):[60,45,35,27,20,12,7][pressureTier("doubles")-1],1,85)/100;
+ const knownCheckout=Number.isFinite(Number(p.checkout?.percentage))&&Number(p.checkout?.attempts)>0;
+ const checkoutRate=clamp(knownCheckout?Number(p.checkout.percentage):[75,60,50,40,30,20,10][pressureTier("checkout")-1],1,95)/100;
+ const finishConversion=clamp(.70*doublesRate+.30*checkoutRate,.07,.75);
+ // Project scoring down to a two-dart finishing region, with setup and expected double attempts.
+ const projected=(start-46)*3/scoreAvg+2+1/finishConversion;
+ let center=projected;
+ if(start===301&&Number.isFinite(observed)&&observed>=9&&observed<=75){
+  const count=Math.min(2,Math.max(0,Number(p.match?.wins)||0));
+  const weight=count===2?.46:.27;
+  center=projected*(1-weight)+observed*weight;
+ }
+ // Longer legs extrapolate using measured scoring rate, not a fixed multiplier of the 301 allowance.
+ if(start===501&&Number.isFinite(observed)&&observed>=9&&observed<=75){
+  const observed501=observed+200*3/scoreAvg;
+  center=projected*.70+observed501*.30;
+ }
+ const confidence=Math.min(1,(Number(p.scoring?.visits)||0)/20);
+ const margin=.10+(.045*(1-confidence));
+ const allowed=Math.ceil(center*(1+margin));
+ return clamp(allowed,start===301?12:18,start===301?75:105);
+}
+
 function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name,started:Date.now()};if(name==="Big Singles")Object.assign(g,{darts:[],hits:0,day:dateKey()});
  if(name==="Doubles Survival"){const tier=num(data.skills.doubles.level),singles=tier>=6,prior=data.games.filter(x=>x.name===name&&!x.extra).length,reverse=!singles&&prior>0&&prior%8===7,sequence=Array.from({length:20},(_,i)=>reverse?20-i:i+1);Object.assign(g,{variant:singles?"singles":"doubles",sequence,index:0,target:sequence[0],used:0,allowed:singles?9:clamp(tier+2,3,9),hits:0,thrown:0,highest:0,lastHit:0})}
  if(name==="Scoring Survival"){
@@ -1347,7 +1548,8 @@ function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name
   Object.assign(g,{tier,variant:singles?"singles":"doubles",targets:[20,1,18,4,13,6,10,15,2,17],targetIndex:0,lives:tier<=2?2:4,goal:tier<=2?6:tier<=4?4:3,streak:0,best:0,hits:0,misses:0,thrown:0});
  }
  if(name==="301 Pressure"){
-  const tier=pressureTier("checkout");Object.assign(g,{tier,remaining:301,maxVisits:tier<=2?7:tier<=4?10:15,lives:tier<=2?1:3,visits:0,points:0,scores:[],busts:0,wins:0});
+  const scoring=pressureTier("scoring"),checkout=pressureTier("checkout"),tier=Math.round((scoring+checkout)/2),maxDarts=dc3MatchAllowance(301);
+  Object.assign(g,{tier,scoringTier:scoring,checkoutTier:checkout,remaining:301,maxDarts,maxVisits:Math.ceil(maxDarts/3),lives:tier<=2?1:3,visits:0,points:0,scores:[],visitDarts:[],dartsUsed:0,busts:0,wins:0});
  }
  if(name==="Scoring Challenge")Object.assign(g,{visits:0,points:0,scores:[]});if(name==="Staying Straight")Object.assign(g,{index:0,points:0,counts:[0,0,0,0,0],hits:[0,0,0,0,0],misses:[0,0,0,0,0],darts:0});
  if(name==="Checkout Climb")Object.assign(g,{target:61,attempt:0,highest:61,success:0,fail:0,dartsUsed:0});if(name==="Bull Accuracy")Object.assign(g,{thrown:0,outer:0,inner:0,misses:0});
@@ -1390,15 +1592,15 @@ function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name
   Object.assign(g,{tier,targets,index:0,allowed:[3,4,5,6,7,9,12][tier-1],thrown:0,hits:0});
  }
  if(name==="Double-In 201"){
-  const tier=pressureTier("checkout");Object.assign(g,{tier,remaining:201,entered:false,entryMisses:0,entryLimit:[2,3,4,5,6,8,10][tier-1],visits:0,maxVisits:[6,7,8,9,11,13,16][tier-1],points:0,scores:[],busts:0,wins:0,thrown:0});
+  const tier=pressureTier("checkout");Object.assign(g,{tier,remaining:201,entered:false,entryMisses:0,entryLimit:[2,3,4,5,6,8,10][tier-1],visits:0,maxVisits:[6,7,8,9,11,13,16][tier-1],points:0,scores:[],busts:0,wins:0,thrown:0,dartsUsed:0,nextVisitDarts:3,entryDouble:null});
  }
  if(name==="Switchback"){
   const tier=pressureTier("scoring"),ring=tier<=2?"T":tier<=4?"D":"S";
   Object.assign(g,{tier,ring,sequence:[20,19,20,18,20,17,20],index:0,allowed:[10,12,14,16,19,22,25][tier-1],thrown:0,hits:0,misses:0});
  }
  if(["501 Pressure"].includes(name)){
-  const scoring=pressureTier("scoring"),checkout=pressureTier("checkout"),difficulty=Math.round((scoring+checkout)/2),allowances=[15,18,21,24,30,39,54];
-  Object.assign(g,{tier:difficulty,scoringTier:scoring,checkoutTier:checkout,remaining:501,maxDarts:allowances[difficulty-1],dartsUsed:0,visits:0,points:0,scores:[],busts:0,wins:0});
+  const scoring=pressureTier("scoring"),checkout=pressureTier("checkout"),difficulty=Math.round((scoring+checkout)/2);
+  Object.assign(g,{tier:difficulty,scoringTier:scoring,checkoutTier:checkout,remaining:501,maxDarts:dc3MatchAllowance(501),dartsUsed:0,visits:0,points:0,scores:[],visitDarts:[],busts:0,wins:0});
   
  }
  if(name==="Setup Shot"){
@@ -1409,13 +1611,13 @@ function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name
   const tier=pressureTier("checkout");Object.assign(g,{tier,targets:tier<=3?[40,32,24,16,50]:tier<=5?[40,32,20,16,10]:[40,20,16,8,4],index:0,lives:tier<=2?1:tier<=4?2:3,hits:0,thrown:0,aim:null});
  }
  if(name==="Risk or Reward"){
-  const tier=pressureTier("scoring");Object.assign(g,{tier,visits:0,points:0,scores:[],goal:[480,420,360,310,265,210,165][tier-1],choice:"safe",lives:tier<=2?1:2,maxVisits:6,penalties:0});
+  const tier=pressureTier("scoring");Object.assign(g,{tier,visits:0,points:0,scores:[],goal:[480,420,360,310,265,210,165][tier-1],choice:"safe",lives:tier<=2?1:2,maxVisits:6,penalties:0,bonusPoints:0});
  }
  if(name==="First Nine Siege"){
   const tier=pressureTier("scoring");Object.assign(g,{tier,goal:[360,315,270,225,180,135,100][tier-1],points:0,visits:0,scores:[]});
  }
  if(name==="170 Challenge"){
-  const tier=pressureTier("checkout");Object.assign(g,{tier,remaining:170,visits:0,maxVisits:[1,2,2,3,4,5,6][tier-1],points:0,scores:[],busts:0,wins:0});
+  const tier=pressureTier("checkout");Object.assign(g,{tier,remaining:170,visits:0,maxVisits:[1,2,2,3,4,5,6][tier-1],points:0,scores:[],visitDarts:[],dartsUsed:0,busts:0,wins:0});
  }
 
  if(name==="Last Dart Standing"){
@@ -1486,7 +1688,7 @@ function newGameDart(action){
  if(name==="Halve It"&&(!Number.isInteger(action)||action<0||action>3))return;
  if(name==="Cricket Countdown"&&(!Number.isInteger(action)||action<0||action>3))return;
  if(name==="Outside Doubles"&&!["double","inside","outside"].includes(action))return;
- if(name==="Double-In 201"&&g.entered)return;
+ if(name==="Double-In 201")return;
  snapshot();
  if(name==="Halve It"){
   const label=g.targets[g.index],base=label==="BULL"?25:Number(label.slice(1))*(label[0]==="T"?3:label[0]==="D"?2:1);
@@ -1510,13 +1712,8 @@ function newGameDart(action){
   g.thrown++;if(action==="hit"){g.hits++;g.index++;if(g.index>=2){endRound();return}}
   if(g.thrown>=g.allowed){endRound();return}
  }else if(name==="Double-In 201"){
-  if(action==="hit"){
-   const reply=prompt("Which double did you hit to enter? Enter its NUMBER (1–20, or 25 for bullseye).","20");
-   if(reply===null)return;const number=Number(reply);
-   if(!Number.isInteger(number)||number<1||number>25||number>20&&number!==25){alert("Enter a double from D1 to D20 or 25 for bullseye.");return}
-   g.thrown++;g.entered=true;g.remaining-=number*2;g.points+=number*2;
-  }
-  else{g.thrown++;g.entryMisses++;if(g.entryMisses>=g.entryLimit){endRound();return}}
+  // Entry is handled by doubleInEntrySubmit(), never a native phone prompt.
+  return;
  }else if(name==="Switchback"){
   g.thrown++;if(action==="hit"){g.hits++;g.index++;if(g.index>=g.sequence.length){endRound();return}}
   else{g.misses++;g.index=Math.max(0,g.index-2)}
@@ -1527,27 +1724,31 @@ function newGameDart(action){
 function rescueAim(choice){const g=activeGame;if(g?.name!=="Last Dart Rescue"||session()?.pausedAt)return;const target=g.targets[g.index],correct=target===50?"BULL":"D"+(target/2);snapshot();
  if(choice===correct){g.aim=correct;data.game=g;save()}else{g.aim=null;g.lives--;if(g.lives<=0){endRound();return}data.game=g;save()}}
 function rescueDart(hit){const g=activeGame,s=session();if(!s||s.pausedAt||s.phase!=="playing"||g?.name!=="Last Dart Rescue"||!g.aim)return;snapshot();g.thrown++;if(hit){g.hits++;g.index++}else g.lives--;g.aim=null;if(g.index>=g.targets.length||g.lives<=0){endRound();return}data.game=g;save()}
-function setRisk(choice){if(activeGame?.name!=="Risk or Reward"||session()?.pausedAt)return;activeGame.choice=choice;data.game=activeGame;save()}
+function setRisk(choice){if(activeGame?.name!=="Risk or Reward"||session()?.pausedAt||!["safe","risk"].includes(choice))return;snapshot();activeGame.choice=choice;data.game=activeGame;save()}
 function sprintWin(){
  const g=activeGame,s=session();if(!s||s.pausedAt||s.phase!=="playing"||g?.name!=="101 Sprint")return;
  askCheckoutDarts({score:101,maxDarts:Math.min(3,g.allowed-g.used),onFinish:n=>{snapshot();g.used+=n;g.hits=1;g.success=1;endRound()}});
 }
 function doubleInVisit(){
  const g=activeGame,s=session(),input=$("scoreInput");if(!g||g.name!=="Double-In 201"||!g.entered||!s||s.pausedAt||s.phase!=="playing"||!input)return;
- const n=Number(input.value);if(input.value===""||!validVisit(n)){alert("Enter a valid three-dart total.");return}
+ const darts=clamp(Math.round(num(g.nextVisitDarts)||3),1,3),n=Number(input.value);
+ if(input.value===""||!validVisit(n)||!possibleVisitIn(n,darts)){
+  alert("Enter a score possible with "+darts+" dart"+(darts===1?"":"s")+" (0 is allowed).");return;
+ }
  if(n>g.remaining||g.remaining-n===1){doubleInBust(n);return}
  if(n===g.remaining){
-  askCheckoutDarts({score:n,maxDarts:3,onFinish:d=>finishDoubleInVisit(n,d),onBust:()=>doubleInBust(n),onImpossible:()=>doubleInBust(n)});return;
+  askCheckoutDarts({score:n,maxDarts:darts,onFinish:d=>finishDoubleInVisit(n,d),onBust:()=>doubleInBust(n),onImpossible:()=>doubleInBust(n)});return;
  }
  padSet('');snapshot();g.visits++;g.points+=n;g.scores.push(n);if(n===180)g.oneEighties=num(g.oneEighties)+1;
+ g.thrown=num(g.thrown)+darts;g.dartsUsed=num(g.dartsUsed)+darts;g.nextVisitDarts=3;
  g.remaining-=n;if(g.visits>=g.maxVisits){endRound();return}data.game=g;save();
 }
 
 function new40Choice(value){
  const g=activeGame,s=session();if(!g||!s||s.pausedAt||s.phase!=="playing")return;
- if(g.name==="Last Dart Standing"&&["FINISH","SETUP"].includes(value)){g.choice=value;save();return}
- if(g.name==="Double Jackpot"&&[20,16,10,5].includes(value)){g.choice=value;save();return}
- if(g.name==="Checkout Poker"&&g.cards.includes(value)&&!g.cardsUsed?.includes(value)){g.chosen=value;save();return}
+ if(g.name==="Last Dart Standing"&&["FINISH","SETUP"].includes(value)){snapshot();g.choice=value;save();return}
+ if(g.name==="Double Jackpot"&&[20,16,10,5].includes(value)){snapshot();g.choice=value;save();return}
+ if(g.name==="Checkout Poker"&&g.cards.includes(value)&&!g.cardsUsed?.includes(value)){snapshot();g.chosen=value;save();return}
 }
 function new40Dart(value,checkoutDarts){
  const g=activeGame,s=session();if(!g||!s||s.pausedAt||s.phase!=="playing")return;
@@ -1637,7 +1838,7 @@ function new40Score(){
 }
 
 function normaliseStraightGame(g){if(!g||g.name!=="Staying Straight")return;for(const k of ["counts","hits","misses"]){if(!Array.isArray(g[k]))g[k]=[];for(let i=0;i<5;i++)g[k][i]=num(g[k][i])}g.index=clamp(num(g.index),0,5);g.points=num(g.points);g.darts=num(g.darts)}
-function normaliseSurvivalGame(g){if(!g||g.name!=="Doubles Survival")return;if(!Array.isArray(g.sequence)||!g.sequence.length){g.sequence=Array.from({length:20},(_,i)=>i+1);g.index=clamp(num(g.target)-1,0,19);g.variant="doubles"}g.variant=g.variant==="singles"?"singles":"doubles";g.index=clamp(num(g.index),0,g.sequence.length-1);g.target=g.sequence[g.index];g.lastHit=num(g.lastHit)||num(g.highest)}
+function normaliseSurvivalGame(g){if(!g||g.name!=="Doubles Survival")return;if(!Array.isArray(g.sequence)||!g.sequence.length){g.sequence=Array.from({length:20},(_,i)=>i+1);g.index=clamp(num(g.target)-1,0,19);g.variant="doubles"}g.variant=g.variant==="singles"?"singles":"doubles";g.index=clamp(num(g.index),0,g.sequence.length);g.target=g.sequence[Math.min(g.index,g.sequence.length-1)];g.lastHit=num(g.lastHit)||num(g.highest)}
 function undoGame(){const s=session();if(!s||s.pausedAt||s.phase!=="playing")return;
  if(undoSnapshot){activeGame=clone(undoSnapshot);data.game=activeGame;undoSnapshot=null;save();return}
  const last=s.lastRoundUndo;if(!last)return;
@@ -1664,7 +1865,7 @@ function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||sess
 function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.0.6",result:"Activity completed",oneEighties:num(g.oneEighties)};
+function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.1.6",result:"Activity completed",oneEighties:num(g.oneEighties)};
  if(g.name==="Doubles Survival"){normaliseSurvivalGame(g);Object.assign(e,{variant:g.variant,sequence:[...g.sequence],hits:g.hits,thrown:g.thrown,allowed:g.allowed,highest:g.highest,lastHit:g.lastHit});e.result=(g.variant==="singles"?"Singles":"Doubles")+" Survival · "+g.hits+"/"+g.thrown+" hits";if(g.variant==="doubles"){data.bestDouble=Math.max(num(data.bestDouble),g.highest);data.doublesHit=num(data.doublesHit)+g.hits;data.doublesThrown=num(data.doublesThrown)+g.thrown}}
  if(g.name==="Scoring Challenge"){Object.assign(e,{points:g.points,visits:g.visits,scores:[...g.scores]});e.benchmark=g.visits>=10;e.result=g.points+" points · "+(g.visits?g.points/g.visits:0).toFixed(1)+" average"}
  if(["Scoring Survival","Scoring Ladder","301 Pressure"].includes(g.name)){
@@ -1743,7 +1944,7 @@ function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now()
  if(!["Warm-up","Review","Big Singles"].includes(g.name)&&typeof e.win!=="boolean"){
   const won=g.name==="Doubles Survival"?g.index>=g.sequence.length:
    g.name==="Scoring Survival"?g.cleared>=5:
-   g.name==="Scoring Ladder"?g.cleared>=g.goal:
+   g.name==="Scoring Ladder"?g.step>=g.goal:
    g.name==="Treble Hunt"?g.hits>=g.goal:
    g.name==="Doubles Streak"?g.best>=g.goal:
    g.name==="301 Pressure"?g.wins>0:
@@ -1760,9 +1961,12 @@ function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now()
   if(!["Bull Accuracy","Scoring Challenge"].includes(g.name))e.result=(won?"WIN":"LOSE")+" · "+e.result;
  }
  if(["301 Pressure","501 Pressure"].includes(g.name)){
-  e.threeDartAverage=num(g.visits)?num(g.points)/num(g.visits):0;
-  e.firstNineAverage=g.scores?.length?g.scores.slice(0,3).reduce((a,x)=>a+num(x),0)/Math.min(3,g.scores.length):0;
-  e.highestFinish=num(g.finish);e.dartsUsed=num(g.dartsUsed)||num(g.visits)*3;
+  const played=num(g.dartsUsed)||num(g.visits)*3;
+  e.threeDartAverage=played?num(g.points)*3/played:0;
+  const firstScores=(g.scores||[]).slice(0,3);
+  const firstDarts=(g.visitDarts||[]).slice(0,3).reduce((a,x)=>a+num(x),0)||firstScores.length*3;
+  e.firstNineAverage=firstDarts?firstScores.reduce((a,x)=>a+num(x),0)*3/firstDarts:0;
+  e.highestFinish=num(g.finish);e.dartsUsed=played;
  }
  if(e.tierAtStart===undefined){
   const key=/bull/i.test(g.name)?"bull":/double|golf|outside|jackpot|duel|bridge/i.test(g.name)?"doubles":/checkout|climb|101|201|301|501|rescue|setup|170|sprint|poker|standing/i.test(g.name)?"checkout":"scoring";
@@ -1848,7 +2052,7 @@ const EXTRA_RULES={
  "Golf Five":"Five nominated holes. Each hole means hitting the displayed section. Hit on dart 1, 2 or 3 to score that many strokes; missing all three is four strokes. Finish at or below par to WIN.",
  "Cricket Countdown":"Close each displayed target with THREE marks. Single = 1, double = 2, treble = 3; bull 25 = 1 or 50 = 2. Close every target inside the dart budget to WIN.",
  "Double Double":"Hit the first nominated double, then the second, with your total dart allowance. Hit/Miss per dart. Both doubles = WIN; run out = LOSE.",
- "Double-In 201":"First hit any DOUBLE to start scoring, then play 201 down to exactly zero, finishing on a DOUBLE. Record entry darts, then three-dart visit totals. Entry or visit limit reached = LOSE.",
+ "Double-In 201":"Use the built-in keypad: tap D then 1–20 (D25 for bullseye) and Record Dart; enter 0 when you miss. Scoring starts only after a double. Use the remaining darts in that visit, then normal three-dart visits. Finish exactly on a double. Entry or visit limit reached = LOSE.",
  "Switchback":"Hit each called target in strict sequence, switching numbers each time. A miss knocks you TWO steps backwards. Clear the full route before running out of darts to WIN.",
  "Shanghai Combo":"Complete S, then D, then T on the SAME number, in order. Tap Hit or Miss for each dart. Misses cost lives; complete all three to win the round.",
  "Bull Bank":"Bank bull points: 25 for outer bull, 50 for bullseye, 0 for a miss. Reach the goal before your darts run out.",
@@ -1860,10 +2064,10 @@ const EXTRA_RULES={
  "501 Pressure":"Start on 501. Record three-dart visit totals; finish exactly on a double within your adaptive dart allowance. A bust does not reduce your remaining score.",
  "Setup Shot":"You have one three-dart visit. Enter its total. WIN if it leaves a checkout in the target range without busting; otherwise LOSE.",
  "Last Dart Rescue":"Five one-dart checkout situations. First CHOOSE the correct finishing target; a wrong route costs a life. Then record Hit or Miss for the dart.",
- "Risk or Reward":"Before each visit pick Safe or Risky. Enter your three-dart score. Risk has a higher target and missed risk costs 50 banked points. Reach the bank goal to win.",
+ "Risk or Reward":"Before each three-dart visit choose Safe or Risky. Beat the higher Risk target for a +35 bonus. Miss it and lose 50 banked points and a life. Reach the bank goal to win.",
  "First Nine Siege":"You have exactly three three-dart visits, nine darts total. Enter each visit score. Beat your tier-specific total to WIN; otherwise LOSE.",
  "170 Challenge":"Start on 170 and finish exactly on a double before the visit budget expires. Bust leaves your score unchanged.",
- "301 Pressure":"Start on 301. Enter every visit score. You must finish exactly on a double or bullseye. A bust is an invalid finish: your score stays unchanged and you lose one LIFE. You have a limited number of visits. When you finish, tap 1, 2 or 3 to record the actual darts used."
+ "301 Pressure":"Start on 301. Enter every visit score. You must finish exactly on a double or bullseye. A bust is an invalid finish: your score stays unchanged and you lose one LIFE. Your dart limit comes from your measured scoring, doubles and match play. When you finish, tap 1, 2 or 3 to record the actual darts used."
 };
 const RULES={"Warm-up":"Throw comfortably for the full 10 minutes. Find a steady stance and rhythm. When time ends, select Next Exercise.","Big Singles":"Throw exactly 3 darts at each number from 1 to 20. Tap Hit ONLY for the large single section; otherwise tap Miss. After dart 60, select Next Exercise.","Doubles Survival":"Aim at the displayed double. Tap Hit or Miss for each dart; rounds repeat until time expires.","Scoring Challenge":"Throw 3 darts and enter the total. Repeat for 10 visits, then begin another round.","Staying Straight":"Aim at 20s, then 19s down to 16s. Score single 1, double 2, treble 3. A miss moves on.","Checkout Climb":"Finish the shown score within 3 darts. Hit: +5 to target; fail: −1. Below 50 ends a round.","Focused Checkouts":"Clear the selected checkout range in 3 darts per finish. Checkout Hit records a finish; Missed Dart records an unsuccessful dart. Lose all lives and the round restarts.","Bull Accuracy":"Throw 30 darts at the bull. Record 50, 25 or Miss. Another round starts automatically.","Bull Survival":"Aim at the shown bull area. Hit it within the allowed darts; then repeat the challenge.","Bull Streak":"Hit the shown bull area repeatedly. A miss resets your streak and uses a life. Reach the streak goal to WIN, or run out of lives to LOSE.","Review":"Finish with relaxed throws. Keep the same easy rhythm until the timer ends."};
 function button(text,code){return '<button onclick="'+code+'">'+text+'</button>'}
@@ -1913,7 +2117,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   mini="Lives: "+g.lives+" · Best: "+g.best;
   html=button("Hit","doublesStreakDart(true)")+button("Miss","doublesStreakDart(false)");break;
  case "301 Pressure":
-  heading=String(g.remaining);detail="Remaining · "+g.visits+"/"+g.maxVisits+" visits";
+  heading=String(g.remaining);detail="Darts used: "+g.dartsUsed+" / "+g.maxDarts+" · "+g.visits+" visits";
   mini="Lives left: "+g.lives+" · Busts: "+g.busts+" · Finish on a double";
   html=padMarkup()+button("Record Visit","scoringVisit()");break;
 
@@ -1969,11 +2173,14 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   heading="D"+g.targets[Math.min(g.index,1)];detail="Double "+(g.index+1)+"/2 · Darts left "+(g.allowed-g.thrown);
   mini="Hit both nominated doubles to win";
   html=button("Hit","newGameDart('hit')")+button("Miss","newGameDart('miss')");break;
- case "Double-In 201":
-  heading=g.entered?String(g.remaining):"DOUBLE IN";detail=g.entered?"201 leg · Visit "+(g.visits+1)+"/"+g.maxVisits:"First hit ANY double · "+(g.entryLimit-g.entryMisses)+" darts left";
-  mini=g.entered?"Busts: "+g.busts+" · Finish on a double":"No scoring until first double";
+ case "Double-In 201":{
+  const darts=clamp(Math.round(num(g.nextVisitDarts)||3),1,3);
+  heading=g.entered?String(g.remaining):"DOUBLE IN";
+  detail=g.entered?"201 leg · "+darts+" dart"+(darts===1?"":"s")+" this visit · Visit "+(g.visits+1)+"/"+g.maxVisits:"D1–D20 or D25 · "+(g.entryLimit-g.entryMisses)+" attempts left";
+  mini=g.entered?"Busts: "+g.busts+" · Finish on a double":"D then number = hit · 0 = miss";
   html=g.entered?padMarkup()+button("Record Visit","doubleInVisit()"):
-   button("Double Hit","newGameDart('hit')")+button("Miss","newGameDart('miss')");break;
+   doubleInPadMarkup()+button("Record Dart","doubleInEntrySubmit()");break;
+ }
  case "Switchback":
   heading=g.ring+g.sequence[Math.min(g.index,g.sequence.length-1)];detail="Sequence "+(g.index+1)+"/7";
   mini="Darts left: "+(g.allowed-g.thrown)+" · Miss = back two targets";
@@ -1997,7 +2204,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   mini="Hit the cumulative points target to WIN";html=padMarkup()+button("Enter Score","scoringVisit()");break;
  case "Risk or Reward":
   heading=g.points+" / "+g.goal;detail="Visit "+(g.visits+1)+"/"+g.maxVisits+" · Lives "+g.lives;
-  mini="Chosen approach: "+g.choice.toUpperCase()+" · Risk misses cost 50 points";
+  mini="Approach: "+g.choice.toUpperCase()+" · Risk success +35 bonus, risk failure −50 and 1 life";
   html='<div class="riskButtons">'+button("Safe target","setRisk('safe')")+button("Risky target","setRisk('risk')")+'</div>'+padMarkup()+button("Enter Score","scoringVisit()");break;
 
  case "Last Dart Standing":{
@@ -2056,11 +2263,17 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  }else if(["501 Pressure","170 Challenge","Double-In 201"].includes(g.name)){
   $("miniMetrics").innerHTML='<div class="checkoutHud"><span class="hudChip">Busts <b>'+g.busts+'</b></span><span class="hudChip">Double-out</span><span class="hudGuide">Bust = invalid finish; score stays the same. Final dart must hit a double or bullseye.</span></div>';
  }else $("miniMetrics").textContent=mini;$("roundFlash").textContent=g.name==="Review"?"":"ROUND "+s.round;$("roundFlash").classList.toggle("hidden",g.name==="Review"||g.name==="Warm-up"||g.name==="Big Singles");
- const controls=$("gameControls");if(controls.dataset.game!==g.name||!["Scoring Challenge","Scoring Survival","Scoring Ladder","301 Pressure","501 Pressure","Double-In 201","Risk or Reward","First Nine Siege","170 Challenge","Setup Shot","High-Low","Split the Difference"].includes(g.name)||!controls.querySelector("#scoreInput")){controls.innerHTML=html;controls.dataset.game=g.name}controls.classList.toggle("hasPad",!!controls.querySelector("#scoreInput"));controls.classList.toggle("bingoGrid",g.name==="Dartboard Bingo");for(const x of controls.querySelectorAll("button,input"))x.disabled=!!s.pausedAt;
+ const controls=$("gameControls");
+ const controlMode=g.name==="Double-In 201"?(g.entered?"201-scoring":"201-entry"):"standard";
+ const keepsPad=["Scoring Challenge","Scoring Survival","Scoring Ladder","301 Pressure","501 Pressure","Double-In 201","Risk or Reward","First Nine Siege","170 Challenge","Setup Shot","High-Low","Split the Difference"].includes(g.name);
+ if(controls.dataset.game!==g.name||controls.dataset.mode!==controlMode||!keepsPad||!controls.querySelector("#scoreInput")){
+  controls.innerHTML=html;controls.dataset.game=g.name;controls.dataset.mode=controlMode;
+ }
+ controls.classList.toggle("hasPad",!!controls.querySelector("#scoreInput"));controls.classList.toggle("bingoGrid",g.name==="Dartboard Bingo");for(const x of controls.querySelectorAll("button,input"))x.disabled=!!s.pausedAt;
 }
 function trainingTimer(){const s=session();if(!s||s.pausedAt||s.phase==="rules"||s.phase==="complete")return;const item=currentExercise();if(!item)return;const elapsed=exerciseElapsed();if(item.name==="Big Singles"){if(currentTab==="train"){const g=activeGame||data.game;$("sessionClock").textContent=fmt(sessionRemaining());if(g){$("exerciseClock").textContent=g.darts.length+"/60";$("exerciseBar").style.width=g.darts.length/60*100+"%"}}return}if(elapsed>=num(item.seconds)){completeExercise("timed");return}if(currentTab==="train"){$("exerciseClock").textContent=fmt(Math.max(0,item.seconds-elapsed));$("exerciseBar").style.width=clamp(100*elapsed/Math.max(1,item.seconds),0,100)+"%";$("sessionClock").textContent=fmt(sessionRemaining());$("sessionBar").style.width=clamp(100*sessionElapsed()/sessionBudget(),0,100)+"%"}}
 /* HOME + PROGRESS */
-function renderHome(){const s=session(),today=new Date().getDay(),scheduled=data.days.includes(today),needsAssessment=!s&&assessmentDue();$("homeHeading").textContent=needsAssessment?"Start With Your Assessment":s?"Training In Progress":scheduled?"Your Training Is Ready":"Today Is a Rest Day";$("homeMessage").textContent=needsAssessment?"Five focused tests establish your starting level. Training unlocks afterwards.":s?"Continue where you left off.":scheduled?"Your coach has prepared today's session.":"Rest and recovery are part of your programme.";$("homeDuration").textContent=s?fmt(sessionRemaining()):needsAssessment?"5 TESTS":scheduled?"60 MIN":"60 MIN";let actions="";if(needsAssessment)actions='<button class="primary" onclick="show(&quot;train&quot;)">Start Assessment</button>';else if(s)actions='<button class="primary" onclick="show(\'train\')">Continue Training</button>';else{const done=data.sessions.some(x=>x.date===dateKey()&&!x.extra&&x.completed);if(scheduled&&!done)actions='<button class="primary" onclick="beginTraining(false)">Start Training</button>';else if(scheduled)actions='<div class="info">Scheduled training completed today.</div>';actions+='<button class="secondary" style="width:100%;margin-top:10px" onclick="beginTraining(true)">Extra Training</button>'}$("homeAction").innerHTML=actions;$("homeDays").innerHTML=[...data.days].sort((a,b)=>a-b).map(n=>'<span class="tag" style="margin:3px">'+DAY_NAMES[n]+'</span>').join("");if(!blockStart()){$("blockStatus").textContent="Your first training block begins with your first session.";$("blockBar").style.width="0%";$("blockInfo").textContent="Four weeks per block."}else{const i=currentBlockIndex(),begin=blockBoundary(i),end=blockBoundary(i+1),elapsed=Date.now()-begin;$("blockStatus").textContent="Training Block "+(i+1);$("blockBar").style.width=clamp(100*elapsed/(end-begin),0,100)+"%";$("blockInfo").textContent="Week "+clamp(Math.floor(elapsed/(7*DAY_MS))+1,1,4)+" of 4"};renderHomeHighlights()}
+function renderHome(){const s=session(),today=new Date().getDay(),scheduled=data.days.includes(today),needsAssessment=!s&&assessmentDue();$("homeHeading").textContent=needsAssessment?(eligibleForStartChoice()?"Choose How to Start":"Continue Your Assessment"):s?"Training In Progress":scheduled?"Your Training Is Ready":"Today Is a Rest Day";$("homeMessage").textContent=needsAssessment?(eligibleForStartChoice()?"Take the full assessment or select your usual average to begin immediately.":"Continue your measured assessment to unlock training."):s?"Continue where you left off.":scheduled?"Your coach has prepared today's session.":"Rest and recovery are part of your programme.";$("homeDuration").textContent=s?fmt(sessionRemaining()):needsAssessment?(eligibleForStartChoice()?"2 OPTIONS":"6 TESTS"):scheduled?"60 MIN":"60 MIN";let actions="";if(needsAssessment)actions='<button class="primary" onclick="show(&quot;train&quot;)">Choose Starting Method</button>';else if(s)actions='<button class="primary" onclick="show(\'train\')">Continue Training</button>';else{const done=data.sessions.some(x=>x.date===dateKey()&&!x.extra&&x.completed);if(scheduled&&!done)actions='<button class="primary" onclick="beginTraining(false)">Start Training</button>';else if(scheduled)actions='<div class="info">Scheduled training completed today.</div>';actions+='<button class="secondary" style="width:100%;margin-top:10px" onclick="beginTraining(true)">Extra Training</button>'}$("homeAction").innerHTML=actions;$("homeDays").innerHTML=[...data.days].sort((a,b)=>a-b).map(n=>'<span class="tag" style="margin:3px">'+DAY_NAMES[n]+'</span>').join("");if(!blockStart()){$("blockStatus").textContent="Your first training block begins with your first session.";$("blockBar").style.width="0%";$("blockInfo").textContent="Four weeks per block."}else{const i=currentBlockIndex(),begin=blockBoundary(i),end=blockBoundary(i+1),elapsed=Date.now()-begin;$("blockStatus").textContent="Training Block "+(i+1);$("blockBar").style.width=clamp(100*elapsed/(end-begin),0,100)+"%";$("blockInfo").textContent="Week "+clamp(Math.floor(elapsed/(7*DAY_MS))+1,1,4)+" of 4"};renderHomeHighlights()}
 function renderHomeHighlights(){
  const area=$("homeHighlights"),chart=$("homeWeekBars");if(!area||!chart)return;
  const sessions=Array.isArray(data.sessions)?data.sessions:[],games=Array.isArray(data.games)?data.games:[];
@@ -2074,6 +2287,7 @@ function renderHomeHighlights(){
  chart.innerHTML=values.map((n,i)=>'<div class="homeWeekDay"><div class="homeWeekTrack"><span style="height:'+Math.max(n?7:2,Math.min(100,n/max*100)).toFixed(1)+'%;" class="'+(n?'hasHours':'')+'"></span></div><small>'+days[i]+'</small></div>').join('');
 }
 function renderSettings(){
+ const upgrade=$("quickStartUpgrade");if(upgrade)upgrade.classList.toggle("hidden",!(data.assessment&&data.assessment.quickStart));
  const status=$("autoBackupStatus");
  if(status){const t=checkpointDate();status.textContent=t?"Local recovery copy saved: "+formatDate(t)+" at "+new Date(t).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}):"No milestone recovery copy yet. Save a backup file before any update.";}
 $("days").innerHTML=DAY_NAMES.map((n,i)=>'<label><input type="checkbox" '+(data.days.includes(i)?"checked":"")+' onchange="changeDay('+i+',this.checked)"> '+n.slice(0,3)+'</label>').join("");$("dayStatus").textContent=data.days.length+"/5 days selected";$("coachSystemStatus").innerHTML='<p>Automatic training: <strong>Active</strong></p><p>Independent skills: <strong>Scoring, doubles, checkout, bull</strong></p><p>Progress updates: <strong>Based on evidence across training days</strong></p>'}
@@ -2239,30 +2453,136 @@ function renderProgress(){
  $("gameHistory").innerHTML=data.games.slice(-40).reverse().map(g=>'<div class="entry"><strong>'+esc(g.name==="Doubles Survival"&&g.variant==="singles"?'Singles Survival':g.name||'Game')+'</strong> · '+esc(g.result||'Completed')+(g.completion==='partial'?' (partial)':'')+'</div>').join('')||'<p>No games recorded yet.</p>';
  $("historySection").classList.toggle('hidden',!historyVisible);$("historyToggle").textContent=historyVisible?'Hide Training History':'View Training History';
 }
-/* STREAMLINED ASSESSMENT · 20s, DOUBLES, BULL, BIG SINGLES */
+
+/* Assessment 3: accurate visit totals, two real 301 legs, fixed 60-dart doubles and singles benchmarks. */
+let assessmentKeypadEntry="";
+function assessmentPad(){return '<div class="aLocalPad"><div class="aLocalReadout">VISIT SCORE <strong id="aPadValue">'+(assessmentKeypadEntry||'—')+'</strong></div><div class="aLocalKeys">'+[1,2,3,4,5,6,7,8,9].map(n=>'<button type="button" onclick="assessmentDigit('+n+')">'+n+'</button>').join('')+'<button type="button" class="secondary" onclick="assessmentClear()">CLEAR</button><button type="button" onclick="assessmentDigit(0)">0</button><button type="button" class="secondary" onclick="assessmentBack()">⌫</button></div></div>'}
+function assessmentKeyDisplay(){let el=$("aPadValue");if(el)el.textContent=assessmentKeypadEntry||"—"}
+function assessmentDigit(n){if(!Number.isInteger(n)||n<0||n>9)return;const next=(assessmentKeypadEntry==="0"?"":assessmentKeypadEntry)+n;if(next.length>3||Number(next)>180)return;assessmentKeypadEntry=next;assessmentKeyDisplay()}
+function assessmentClear(){assessmentKeypadEntry="";assessmentKeyDisplay()}
+function assessmentBack(){assessmentKeypadEntry=assessmentKeypadEntry.slice(0,-1);assessmentKeyDisplay()}
+function assessmentScoringVisit(){
+ if(activeStage!=="scoring"||stageComplete("scoring")||assessmentKeypadEntry==="")return;
+ const score=Number(assessmentKeypadEntry);
+ if(!validVisit(score)){alert("That is not a possible three-dart score.");return}
+ assessmentKeypadEntry="";
+ assessmentRecord("scoring",{score,at:Date.now(),darts:3});
+}
+function assessmentLegCurrent(){
+ const a=data.assessment.legs;
+ if(stageComplete("legs"))return null;
+ if(!a.length||a[a.length-1].finished){a.push({remaining:301,visits:[],dartsUsed:0,points:0,finished:false,won:false,busts:0,at:Date.now()})}
+ return a[a.length-1];
+}
+function assessmentLegCommit(score,darts,checkout=false,bust=false){
+ if(activeStage!=="legs"||stageComplete("legs"))return;
+ const g=assessmentLegCurrent();if(!g||g.finished)return;
+ if(!Number.isInteger(darts)||darts<1||darts>3)return;
+ const legal=checkout?score===g.remaining&&possibleCheckoutIn(score,darts):bust||score>=0&&score<g.remaining&&g.remaining-score!==1;
+ if(!legal)return;
+ g.visits.push({score:bust?0:score,darts,bust:!!bust,checkout:!!checkout});
+ g.dartsUsed+=darts;
+ if(bust)g.busts++;
+ else{g.remaining-=score;g.points+=score}
+ if(checkout){g.won=true;g.finished=true}
+ if(g.dartsUsed>=75&&!g.finished)g.finished=true;
+ assessmentKeypadEntry="";afterAssessmentEntry();
+}
+function assessmentLegScore(){
+ if(activeStage!=="legs"||stageComplete("legs")||assessmentKeypadEntry==="")return;
+ const g=assessmentLegCurrent(),score=Number(assessmentKeypadEntry);
+ if(!validVisit(score)){alert("Enter a real three-dart visit total, from 0 to 180.");return}
+ if(score>g.remaining||g.remaining-score===1){assessmentLegCommit(0,3,false,true);return}
+ if(score===g.remaining){
+  askCheckoutDarts({score,maxDarts:3,onFinish:n=>assessmentLegCommit(score,n,true,false),onBust:()=>assessmentLegCommit(0,3,false,true),onImpossible:()=>assessmentLegCommit(0,3,false,true)});
+  return;
+ }
+ assessmentLegCommit(score,3,false,false);
+}
+
+/* ASSESSMENT 3.0 · accurate visit scores, doubles, bull, checkouts, match legs and big singles */
 function doublesTarget(i){return{segment:"D"+(i+1),label:"D"+(i+1)}}
 function stageCount(stage){
- const a=data.assessment[stage];
+ const a=data.assessment[stage]||[];
  if(stage==="doubles")return a.reduce((sum,r)=>sum+(r.darts||[]).length,0);
+ if(stage==="legs")return a.filter(r=>r.finished).length;
  return a.length;
 }
-function stageMax(stage){return stage==="checkout"?10:stage==="scoring"||stage==="bull"?30:60}
+function stageMax(stage){return stage==="checkout"?12:stage==="scoring"?20:stage==="legs"?2:stage==="bull"?30:60}
 function stageComplete(stage){
- const a=data.assessment[stage];
- return stage==="doubles"?a.length===20&&a.every(r=>(r.darts||[]).length===3):a.length===stageMax(stage);
+ const a=data.assessment[stage]||[];
+ if(stage==="doubles")return a.length===20&&a.every(r=>(r.darts||[]).length===3);
+ return stageCount(stage)===stageMax(stage);
+}
+let selectedFullBaseline=false;
+const QUICK_START_BANDS={
+ under30:{average:25,tiers:[7,7,7,7]},
+ "30":{average:35,tiers:[6,7,7,7]},
+ "40":{average:45,tiers:[6,6,6,6]},
+ "50":{average:55,tiers:[5,5,5,5]},
+ "60":{average:65,tiers:[4,5,5,5]},
+ "70":{average:75,tiers:[3,4,4,4]},
+ "80":{average:85,tiers:[3,3,3,3]},
+ "90":{average:95,tiers:[2,3,3,3]},
+ "100":{average:105,tiers:[2,2,2,2]}
+};
+function eligibleForStartChoice(){
+ const a=data.assessment;
+ return !data.baseline&&!a.finished&&!hasAssessmentProgress(a)&&warmupMs()===0;
+}
+function selectStartingMethod(method){
+ if(!eligibleForStartChoice())return;
+ selectedFullBaseline=method==="full";
+ renderAssessmentMenu();
+}
+function startQuickFromAverage(){
+ if(!eligibleForStartChoice())return;
+ const band=QUICK_START_BANDS[$("quickStartAverage").value];
+ if(!band)return;
+ const now=Date.now();
+ const profile={
+  scoring:{level:band.tiers[0],average:band.average,visits:0,selfReported:true},
+  doubles:{level:band.tiers[1],provisional:true},
+  checkout:{level:band.tiers[2],provisional:true},
+  bull:{level:band.tiers[3],provisional:true},
+  singles:{secondary:true},
+  match:{legs:0,wins:0},
+  provisional:true,quickStart:true,selfReportedAverage:band.average,
+  averageBand:$("quickStartAverage").value,createdAt:now
+ };
+ const a=newAssessment();
+ a.finished=true;a.completedAt=now;a.quickStart=true;a.quickBand=$("quickStartAverage").value;
+ a.profile=profile;
+ data.assessment=a;data.baseline=clone(profile);
+ for(let i=0;i<SKILLS.length;i++)data.skills[SKILLS[i]].level=band.tiers[i];
+ data.coach.estimates={};data.coach.lastTierChanges={};
+ save(false);checkpointData();show("home");
+}
+function upgradeQuickStartAssessment(){
+ if(!data.assessment||!data.assessment.quickStart||session())return;
+ if(!confirm("Start the full assessment? Your games, history and current skill levels will be kept. Training and Quick Play will be paused until you finish the assessment. Your measured results will replace the provisional starting tiers."))return;
+ data.assessmentHistory.push(clone(data.assessment));
+ data.assessment=newAssessment();save(false);show("train");
 }
 function renderAssessmentMenu(){
- if(data.assessment.finished&&data.assessment.carriedForward){
+ const showChoice=eligibleForStartChoice()&&!selectedFullBaseline;
+ $("startingChoice").classList.toggle("hidden",!showChoice);
+ $("assessmentStandard").classList.toggle("hidden",showChoice);
+ if(showChoice)return;
+ if(data.assessment.finished&&(data.assessment.carriedForward||num(data.assessment.version)<6)){
   $("assessmentHeading").textContent="Assessment Complete";
-  $("assessmentDescription").textContent="Your completed assessment was preserved from an earlier app version. You do not need to repeat it until the next scheduled four-week review.";
+  $("assessmentDescription").textContent="Your completed assessment is preserved until the next scheduled four-week review. To run the new six-stage baseline now, use Reset Everything in Settings after exporting a backup.";
   $("assessmentStatus").innerHTML='<div class="info">Previous assessment preserved · '+formatDate(data.assessment.completedAt)+'</div>';
   $("assessmentList").innerHTML='<p class="muted">Your previous skill levels and results remain saved.</p>';
   return;
  }
  const complete=STAGES.filter(stageComplete).length,w=assessmentWarmup();
  $("assessmentHeading").textContent=data.assessmentHistory.length?"Four-Week Reassessment":"Starting Assessment";
- $("assessmentDescription").textContent="Begin with a full 10-minute warm-up. Then complete five easy-to-record tests. Your results save automatically.";
- $("assessmentStatus").innerHTML='<div class="grid"><div class="metric"><strong>'+complete+'/5</strong><small>Tests complete</small></div><div class="metric"><strong>'+(w.complete?'Done':'10 min')+'</strong><small>Warm-up</small></div><div class="metric"><strong>'+data.assessmentHistory.length+'</strong><small>Previous</small></div></div>';
+ $("assessmentDescription").textContent="Start with a full 10-minute warm-up, then complete six measured tests at your own pace (usually about 70 minutes total). No overall countdown. Results save automatically.";
+ if(eligibleForStartChoice()&&selectedFullBaseline){
+  $("assessmentDescription").innerHTML+='<br><button type="button" class="linklike" onclick="selectStartingMethod(\'quick\')">← Choose Quick Start instead</button>';
+ }
+ $("assessmentStatus").innerHTML='<div class="grid"><div class="metric"><strong>'+complete+'/6</strong><small>Tests complete</small></div><div class="metric"><strong>'+(w.complete?'Done':'10 min')+'</strong><small>Warm-up</small></div><div class="metric"><strong>'+data.assessmentHistory.length+'</strong><small>Previous</small></div></div>';
  const next=STAGES.find(x=>!stageComplete(x));
  $("assessmentList").innerHTML=STAGES.map((stage,i)=>{
   const done=stageComplete(stage),count=stageCount(stage),allowed=stage===next;
@@ -2289,16 +2609,12 @@ function afterAssessmentEntry(){
  finishAssessmentIfComplete();save(false);
  if(data.assessment.finished){
   activeStage=null;$("assessmentScreen").classList.add("hidden");document.body.classList.remove("assessing");
-  /* The assessment warm-up counts for the FIRST session only. */
-  const hadScheduled=data.sessions.some(x=>x.date===dateKey()&&!x.extra&&x.completed);
-  beginTraining(hadScheduled,true,true);
+  /* Assessment is a full, self-contained baseline. Do not automatically launch another 60-minute session. */
+  show("train");
  }else{renderAssessment();renderAll()}
 }
 function assessmentRecord(stage,record){if(stageComplete(stage))return;data.assessment[stage].push(record);afterAssessmentEntry()}
-function assessment20(value){
- if(activeStage!=="scoring"||stageComplete("scoring")||![0,20,40,60].includes(value))return;
- assessmentRecord("scoring",{segment:value===60?"T20":value===40?"D20":value===20?"S20":"MISS",score:value,at:Date.now()});
-}
+function assessment20(value){/* Legacy function retained for backward compatibility; the new scoring test uses visit totals. */}
 function assessmentDouble(hit){
  if(activeStage!=="doubles"||stageComplete("doubles"))return;
  const a=data.assessment.doubles;let record=a[a.length-1];
@@ -2310,7 +2626,7 @@ function assessmentBull(value){
  if(activeStage!=="bull"||stageComplete("bull"))return;
  assessmentRecord("bull",{segment:value===50?"BULL":value===25?"25":"MISS",number:value?25:0,multiplier:value===50?2:value===25?1:0,score:value,at:Date.now()});
 }
-const ASSESS_CHECKOUTS=[41,46,52,60,68,76,81,90,101,110];
+const ASSESS_CHECKOUTS=[41,46,52,60,68,76,81,90,101,110,120,130];
 function assessmentCheckout(hit){
  if(activeStage!=="checkout"||stageComplete("checkout"))return;
  const target=ASSESS_CHECKOUTS[data.assessment.checkout.length];
@@ -2327,7 +2643,14 @@ function assessUndo(){
  const a=data.assessment[activeStage];
  if(activeStage==="doubles"){
   const last=a[a.length-1];if(!last)return;last.darts.pop();if(!last.darts.length)a.pop();
+ }else if(activeStage==="legs"){
+  const last=a[a.length-1];if(!last)return;
+  if(last.finished){last.finished=false;last.won=false}
+  const visit=last.visits.pop();
+  if(visit){last.dartsUsed=Math.max(0,last.dartsUsed-visit.darts);if(visit.bust)last.busts--;else{last.points-=visit.score;last.remaining+=visit.score}}
+  else a.pop();
  }else if(a.length)a.pop();
+ assessmentKeypadEntry="";
  data.assessment.finished=false;data.assessment.completedAt=null;data.assessment.profile=null;
  save(false);renderAssessment();renderAll();
 }
@@ -2335,7 +2658,7 @@ function finishAssessmentIfComplete(){if(STAGES.every(stageComplete)&&!data.asse
 function completeAssessment(){
  const a=data.assessment;
  const scoringTotal=a.scoring.reduce((n,r)=>n+num(r.score),0);
- const scoringAverage=scoringTotal/10;
+ const scoringAverage=scoringTotal/Math.max(1,a.scoring.length);
  const hits=a.doubles.reduce((n,r)=>n+r.darts.filter(d=>d.segment===r.target).length,0);
  const doubleRate=100*hits/60;
  const bullHits=a.bull.filter(d=>d.score===25||d.score===50).length;
@@ -2344,20 +2667,28 @@ function completeAssessment(){
  const singlesHits=a.singles.filter(d=>d.hit).length;
  const singlesRate=100*singlesHits/60;
  const checkoutHitCount=a.checkout.filter(x=>x.hit).length;
- const checkoutAccuracy=100*checkoutHitCount/Math.max(1,a.checkout.length);
+ // A hard finish is useful evidence, but no single high checkout may determine an entire tier.
+ const checkoutWeights=a.checkout.map(c=>c.target>=101?1.35:c.target>=81?1.2:1);
+ const wt=checkoutWeights.reduce((s,v)=>s+v,0);
+ const weightedCheckout=100*a.checkout.reduce((s,c,i)=>s+(c.hit?checkoutWeights[i]:0),0)/Math.max(1,wt);
+ const legs=(a.legs||[]).filter(l=>l.finished);
+ const wonLegs=legs.filter(l=>l.won);
+ const observedDarts=wonLegs.length?wonLegs.reduce((s,l)=>s+l.dartsUsed,0)/wonLegs.length:null;
+ // A successful double-out during match play offers modest additional checkout evidence.
+ const checkoutAccuracy=clamp(weightedCheckout*.85+100*(wonLegs.length/Math.max(1,legs.length))*.15,0,100);
  const profile={
-  scoring:{level:tierFor(scoringAverage,"scoring"),average:scoringAverage,total:scoringTotal},
-  doubles:{level:tierFor(doubleRate,"doubles"),percentage:doubleRate,hits},
-  checkout:{level:tierFor(checkoutAccuracy,"checkout"),percentage:checkoutAccuracy,hits:checkoutHitCount,attempts:a.checkout.length,provisional:true},
+  scoring:{level:tierFor(scoringAverage,"scoring"),average:scoringAverage,total:scoringTotal,visits:a.scoring.length},
+  doubles:{level:tierFor(doubleRate,"doubles"),percentage:doubleRate,hits,perDouble:a.doubles.map(r=>r.darts.filter(d=>d.segment===r.target).length)},
+  checkout:{level:tierFor(checkoutAccuracy,"checkout"),percentage:checkoutAccuracy,hits:checkoutHitCount,attempts:a.checkout.length,weighted:weightedCheckout,provisional:true},
   bull:{level:tierFor(bullRate,"bull"),percentage:bullRate,hits:bullHits,bullseyes:bull50},
   singles:{hits:singlesHits,percentage:singlesRate,perNumber:Array.from({length:20},(_,i)=>a.singles.slice(i*3,i*3+3).filter(d=>d.hit).length),secondary:true},
+  match:{legs:legs.length,wins:wonLegs.length,meanWinningDarts:observedDarts,allLegs:legs.map(l=>({won:l.won,darts:l.dartsUsed,remaining:l.remaining,busts:l.busts})),average:legs.reduce((s,l)=>s+num(l.points),0)*3/Math.max(1,legs.reduce((s,l)=>s+num(l.dartsUsed),0))},
   provisional:true,createdAt:Date.now()
  };
  a.profile=profile;a.finished=true;a.completedAt=Date.now();
- const isInitial=!data.baseline;
- if(isInitial){data.baseline=clone(profile);for(const key of ["scoring","doubles","bull","checkout"])data.skills[key].level=profile[key].level}
- else for(const key of ["scoring","doubles","bull"]){const old=num(data.skills[key].level)||7,target=profile[key].level;data.skills[key].level=clamp(old+Math.sign(target-old),1,7)}
- /* Big Singles remains a minor indicator: it never causes automatic tier jumps. */
+ const isInitial=!data.baseline||data.baseline.quickStart===true;
+ if(isInitial){data.baseline=clone(profile);for(const key of SKILLS)data.skills[key].level=profile[key].level}
+ else for(const key of SKILLS){const old=num(data.skills[key].level)||7,target=profile[key].level;data.skills[key].level=clamp(old+Math.sign(target-old),1,7)}
  if(!data.bigSingles.some(b=>b.day===dateKey()&&b.complete))data.bigSingles.push({day:dateKey(),at:Date.now(),hits:singlesHits,perNumber:profile.singles.perNumber,complete:true,source:"assessment"});
  data.coach.lastReviewedWeek=weekStart(Date.now());data.coach.lastChangeEvidence={};data.coach.lastTierChanges={};
  if(!data.coach.firstStarted)data.coach.firstStarted=Date.now();
@@ -2384,11 +2715,11 @@ function renderAssessment(){
   name="✓";caption="STAGE COMPLETE";description="Result saved. Continue to the next assessment.";
   metricLabel="Completed";metric=String(max);buttons=btn("Continue","nextAssessmentStage()","wide");
  }else if(stage==="scoring"){
-  name="20s";caption="SCORING · DART "+(count+1)+" OF 30";
-  description="Throw 30 darts at the 20. Tap S20, T20 or D20 for a hit in that segment, or Miss for anything else.";
-  metricLabel="Points";metric=String(a.reduce((n,r)=>n+num(r.score),0));
-  buttons=btn("S20","assessment20(20)")+btn("T20","assessment20(60)")+btn("D20","assessment20(40)")+btn("Miss","assessment20(0)");
-  info="";
+  name="20s";caption="MATCH SCORING · VISIT "+(count+1)+" OF 20";
+  description="Throw three darts aiming at the 20. Enter the ACTUAL TOTAL of all three darts, including any 1s, 5s and misses. Do not count only hits on the 20.";
+  metricLabel="3-dart average";metric=(a.length?a.reduce((n,r)=>n+num(r.score),0)/a.length:0).toFixed(1);
+  buttons=assessmentPad()+btn("Record Visit","assessmentScoringVisit()","wide");
+  info="60 darts in 20 visits. Enter exactly what scored, not just the target you aimed for.";
  }else if(stage==="doubles"){
   const target=Math.floor(count/3)+1;name="D"+target;caption="DOUBLES · DART "+(count%3+1)+" OF 3";
   description="Aim at D"+target+". Tap Hit only if it lands in that double. Three darts per double, then move on.";
@@ -2400,11 +2731,18 @@ function renderAssessment(){
   metricLabel="Bull hits";metric=String(a.filter(x=>x.score>0).length);
   buttons=btn("50","assessmentBull(50)")+btn("25","assessmentBull(25)")+btn("Miss","assessmentBull(0)","wide");
  }else if(stage==="checkout"){
-  const target=ASSESS_CHECKOUTS[count];name=String(target);caption="CHECKOUT · "+(count+1)+" OF 10";
+  const target=ASSESS_CHECKOUTS[count];name=String(target);caption="CHECKOUT · "+(count+1)+" OF 12";
   description="Try to finish "+target+" in THREE darts on a double. Suggested route: "+checkoutRoute(target)+". If you hit a different segment, adjust your remaining score and route; record Hit only if you complete the finish legally.";
   metricLabel="Finishes";metric=String(a.filter(x=>x.hit).length);
   buttons=btn("Checkout Hit","assessmentCheckout(true)")+btn("Not Finished","assessmentCheckout(false)");
-  info="Ten varied checkout scores, including finishes above 100. This establishes a provisional checkout tier.";
+  info="Twelve guided finishes across several difficulty bands. Record the actual finishing darts.";
+ }else if(stage==="legs"){
+  const leg=assessmentLegCurrent(),completed=data.assessment.legs.filter(x=>x.finished).length;
+  name=String(leg.remaining);caption="301 MATCH · LEG "+(completed+1)+" OF 2";
+  description="Play a full 301 leg. Enter each actual three-dart visit score. Finish on a double or bull; select the actual finishing darts. Busts leave your score unchanged. Maximum 75 darts per leg to keep this a practical baseline.";
+  metricLabel="Darts thrown";metric=String(leg.dartsUsed);
+  buttons=assessmentPad()+btn("Record Visit","assessmentLegScore()","wide");
+  info="Leg "+(completed+1)+"/2 · "+leg.visits.length+" visits · "+leg.busts+" bust(s) · No countdown";
  }else if(stage==="singles"){
   const n=Math.floor(count/3)+1;name="S"+n;caption="BIG SINGLES · DART "+(count%3+1)+" OF 3";
   description="Throw 3 darts at each number, 1 to 20. Only the LARGE single of the displayed number is a Hit.";
