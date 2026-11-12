@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.1.9</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.1.10</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -516,7 +516,7 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 }
 
 
-/* V5.1.9: Double-In 201 entry keypad, same 3-column mobile layout as score entry. */
+/* V5.1.10: Double-In 201 entry keypad, same 3-column mobile layout as score entry. */
 .doubleInPad .scorePadDisplay{align-items:center;min-height:61px}
 .doubleInPad .scorePadDisplay span{font-size:11px;line-height:1.3;letter-spacing:.05em}
 .doubleInPad .scorePadDisplay span small{display:block;margin-top:4px;letter-spacing:0;font-size:10px;font-weight:500;opacity:.85}
@@ -539,7 +539,7 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 @media(max-height:720px){.aLocalKeys button{min-height:36px!important}#assessmentScreen:has(.aLocalPad) .assessmentBody{gap:4px}}
 
 
-/* V5.1.9: alternative onboarding; original dark/glass design retained. */
+/* V5.1.10: alternative onboarding; original dark/glass design retained. */
 .onboardingCard{padding:21px 17px}.onboardingKicker{font-size:11px;font-weight:850;letter-spacing:.14em;color:var(--green)}
 .startOption{background:linear-gradient(145deg,rgba(35,74,51,.30),rgba(7,18,12,.82));border:1px solid color-mix(in srgb,var(--green) 26%,transparent);border-radius:17px;padding:16px;margin:15px 0;box-shadow:inset 0 1px 0 rgba(255,255,255,.055)}
 .startOptionTitle{font-size:17px;font-weight:850;letter-spacing:-.025em;line-height:1.6}.startTag{display:inline-block;vertical-align:middle;font-size:9px;font-weight:850;letter-spacing:.07em;color:var(--green);border:1px solid color-mix(in srgb,var(--green) 33%,transparent);padding:3px 6px;border-radius:20px;margin-left:4px}
@@ -547,7 +547,7 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 #quickStartAverage{width:100%;color:var(--text);background:#101d16;border:1px solid color-mix(in srgb,var(--green) 42%,transparent);border-radius:12px;padding:14px 12px;font-size:17px;font-weight:800;appearance:auto;color-scheme:dark}
 .startOption .quickStartNote{font-size:11px;line-height:1.5;margin-bottom:0}
 
-/* V5.1.9 Quick Play: immediately accessible game launch sheet */
+/* V5.1.10 Quick Play: immediately accessible game launch sheet */
 .quickGameOverlay{position:fixed;inset:0;z-index:480;display:flex;align-items:center;justify-content:center;padding:calc(env(safe-area-inset-top) + 12px) 14px calc(env(safe-area-inset-bottom) + 12px);background:rgba(0,0,0,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .quickGameOverlay.hidden{display:none!important}
 .quickGameModal{position:relative;max-width:445px;width:100%;max-height:100%;overflow:auto;border-radius:24px;padding:23px 19px 18px;background:linear-gradient(145deg,var(--panel2),var(--panel) 53%,var(--bg));border:1px solid var(--line);box-shadow:0 24px 68px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.09)}
@@ -724,7 +724,7 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.1.9</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.1.10</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -2352,7 +2352,7 @@ async function saveMonthlyReport(){try{const snap=reportSnapshot(selectedReportM
 async function shareMonthlyReport(){const snap=reportSnapshot(selectedReportMonth||monthString(Date.now()));if(!snap)return;try{const blob=await canvasBlob(createMonthlyCanvas(snap));const filename="darts-coach-report-"+snap.ym+".png";const file=new File([blob],filename,{type:"image/png"});if(navigator.share&&(!navigator.canShare||navigator.canShare({files:[file]}))){try{await navigator.share({files:[file],title:"Darts Coach · "+snap.title,text:"Monthly training report"});return}catch(e){if(e.name==="AbortError")return}}downloadBlob(blob,filename);alert("Report image saved. You can share it from Photos or Files.")}catch(e){alert("Unable to share report: "+e.message)}}
 /* Full fresh start: preserve only non-performance preferences. */
 function resetTrainingStatistics(){
- if(!confirm("RESET EVERYTHING? This permanently deletes sessions, games, Big Singles results, assessments, assessment history, skill levels, coaching reviews and unfinished training. Training will be locked until a fresh five-stage assessment is complete. Your throwing hand and training days will remain. Make a backup first."))return;
+ if(!confirm("RESET EVERYTHING? This permanently deletes sessions, games, Big Singles results, assessments, assessment history, skill levels, coaching reviews and unfinished training. After reset, choose Full Assessment or Quick Start again. Your throwing hand and training days will remain. Make a backup first."))return;
  const typed=prompt("Type RESET to confirm that ALL training and assessment data will be deleted:","");
  if(typed!=="RESET"){
   const message=$("resetMessage");
@@ -2371,6 +2371,8 @@ function resetTrainingStatistics(){
   return;
  }
  data=normaliseData(replacement);
+ // Reset the transient onboarding choice too: this is not stored in player data.
+ selectedFullBaseline=false;
  activeGame=null;
  activeStage=null;
  undoSnapshot=null;
@@ -2385,7 +2387,7 @@ function resetTrainingStatistics(){
  $("restoreText").value="";
  show("train");
  const message=$("resetMessage");
- if(message)message.textContent="Everything reset. Complete the initial assessment before training.";
+ if(message)message.textContent="Everything reset. Choose Full Assessment or Quick Start to begin.";
 }
 const TECHNIQUE_TIPS=[
  ["Stance & balance","Stand comfortably, with your weight stable and your throwing arm free to move. Avoid changing everything based on one session."],
