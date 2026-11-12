@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.12.0</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.13.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -1778,6 +1778,50 @@ function dc19ApplyTuning(g){
  return g;
 }
 
+/* V5.13.0: PROSPECTIVE pressure audit. The prediction MUST be captured before
+   the round starts; never backfill a forecast using its eventual result.
+   Standard-rule scheduled play only. Existing history remains untouched. */
+function dc20AttachForecast(g){
+ const s=session();
+ if(!g||!s||s.quick||g.recovery||g.challengeTuning||
+    g.name==='Warm-up'||g.name==='Review'||g.name==='Big Singles'||
+    DC10_MEASUREMENT_GAMES.has(g.name))return g;
+ const p=dc10ChallengeProfile(g.name);
+ const tier=Number(g.tier)||dc9GameTier(g.name);
+ if(p.evidence<5||p.tier!==tier||!Number.isFinite(p.probability))return g;
+ g.prospectiveForecast={version:'5.13.0',at:Date.now(),probability:clamp(p.probability,.01,.99),
+  lower90:clamp(p.lower90,0,1),upper90:clamp(p.upper90,0,1),
+  evidenceDays:p.evidence,tier};
+ return g;
+}
+function dc20Audit(games=data.games,now=Date.now()){
+ const byDay=new Map(),cutoff=now-365*DAY_MS;
+ for(const e of games||[]){
+  if(!e||e.completion!=='natural'||typeof e.win!=='boolean'||e.quick===true||
+     e.recovery===true||e.challengeTuning||!Number.isFinite(e.at)||
+     e.at<cutoff||e.at>now+DAY_MS)continue;
+  const f=e.prospectiveForecast;
+  if(!f||f.version!=='5.13.0'||!Number.isFinite(f.at)||f.at>e.at||
+   !Number.isFinite(f.probability)||f.probability<.01||f.probability>.99||
+   !Number.isInteger(f.evidenceDays)||f.evidenceDays<5||
+   !Number.isInteger(f.tier)||f.tier!==Number(e.tierAtStart))continue;
+  const key=dateKey(e.at)+'|'+e.name+'|'+f.tier;
+  // Only one eligible round per game/tier/day. Extra sessions never multiply evidence.
+  const old=byDay.get(key);
+  if(!old||e.at<old.at)byDay.set(key,{at:e.at,p:f.probability,y:e.win?1:0});
+ }
+ const rows=[...byDay.values()].sort((a,b)=>a.at-b.at),bins=[{lo:0,hi:.35},{lo:.35,hi:.65},{lo:.65,hi:1.001}];
+ let sum=0,naive=0;
+ for(const x of rows){sum+=(x.p-x.y)**2;naive+=(.5-x.y)**2}
+ const groups=bins.map(b=>{const a=rows.filter(x=>x.p>=b.lo&&x.p<b.hi);
+  return {n:a.length,p:a.length?a.reduce((z,x)=>z+x.p,0)/a.length:null,
+   won:a.length?a.reduce((z,x)=>z+x.y,0)/a.length:null};});
+ const days=new Set(rows.map(x=>dateKey(x.at))).size;
+ return {rounds:rows.length,days,brier:rows.length?sum/rows.length:null,
+  neutral:rows.length?naive/rows.length:null,groups,
+  enough:rows.length>=40&&days>=20};
+}
+
 /* V5.9.0. OBSERVATIONAL training-effectiveness evidence, not causality.
    A Big Singles benchmark completed BEFORE a singles-targeted competitive round
    is compared with a benchmark on a subsequent date. Subtract the simultaneous
@@ -2574,7 +2618,7 @@ function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name
  if(name==="Double Duel"){
   const tier=pressureTier("doubles");Object.assign(g,{tier,target:20,player:0,opponent:0,turn:0,thrown:0,matchDone:false});
  }
- return dc19ApplyTuning(dc12ApplyRecovery(g))}
+ return dc20AttachForecast(dc19ApplyTuning(dc12ApplyRecovery(g)))}
 
 function shanghaiDart(hit){
  const s=session(),g=activeGame;if(!s||s.pausedAt||s.phase!=="playing"||!g||g.name!=="Shanghai Combo")return;
@@ -2785,7 +2829,9 @@ function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||sess
 function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.12.0",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null};
+function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.13.0",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
+ prospectiveForecast:g.prospectiveForecast&&completion==='natural'&&
+ !g.recovery&&!g.challengeTuning&&!session()?.quick?clone(g.prospectiveForecast):null};
  if(completion==="natural"&&!session()?.quick&&!g.recovery){
   const targets=g.name==="Number Lock"&&g.ring==="S"?g.targets:
    g.name==="Treble Hunt"&&g.variant==="single"?g.targets:
@@ -3423,6 +3469,14 @@ function renderProgress(){
   checkoutIntel.map(x=>'<p>'+esc(x.name)+': '+x.hits+'/'+x.attempts+' finishes'+(x.ready?' · measured across '+x.days+' days':' · gathering evidence')+'</p>').join('')+'</div>'+
   '<div class="entry" style="margin-top:14px"><h3>Pressure Consistency · Early Evidence</h3><p class="muted">Compares competitive WIN rates in the same game and hidden difficulty, one vote per day. This is a trend, not proof that a drill caused improvement.</p>'+
   (pressureIntel.filter(x=>x.improving).length?pressureIntel.filter(x=>x.improving).slice(0,4).map(x=>'<p>✓ '+esc(x.name)+' · more consistent across '+x.days+' days</p>').join(''):'<p>Collecting repeated comparable pressure results.</p>')+'</div>';
+ const audit=dc20Audit();
+ $("singlesProgress").innerHTML+='<div class="entry" style="margin-top:14px"><h3>Coach Forecast Audit · Prospective Evidence</h3>'+ 
+  '<p class="muted">Predictions are locked before standard competitive rounds, then compared with actual wins and losses. One result per game and day. Recovery, Quick Play and modified challenges are excluded. This checks forecasting, NOT whether adaptive training causes improvement.</p>'+ 
+  '<p>'+audit.rounds+' matched rounds across '+audit.days+' days'+(audit.enough?' · comparison ready':' · collecting independent evidence')+'</p>'+ 
+  (audit.enough?'<p>Coach prediction error: '+audit.brier.toFixed(3)+' · neutral 50% prediction: '+audit.neutral.toFixed(3)+' (lower is better)</p>':
+   '<p>At least 40 comparable rounds on 20 separate days are needed before showing a prediction-error comparison.</p>')+
+  '<details><summary class="pill">Probability calibration</summary>'+audit.groups.map((x,i)=>'<p>'+
+   ['Below 35%','35–65%','Above 65%'][i]+': '+x.n+' rounds'+(x.n>=10?' · forecast '+(x.p*100).toFixed(0)+'% · actual '+(x.won*100).toFixed(0)+'% wins':' · gathering evidence')+'</p>').join('')+'</details></div>';
  const blocks=[...(data.coach.completedBlocks||[])].reverse();$("blockReport").innerHTML=blocks.length?blocks.map(b=>'<div class="entry"><h3>Training Block '+(num(b.index)+1)+'</h3><p>'+formatDate(b.start)+' to '+formatDate(b.end-1)+'</p>'+(b.highlights&&b.highlights.length?b.highlights.map(h=>'<p>✓ '+esc(h.name)+': improved by '+num(h.improvement).toFixed(1)+esc(h.unit)+'</p>').join(''):'<p>Block completed. Your coach has prepared the next phase.</p>')+'</div>').join(''):'<p class="muted">The first four-week review appears once sufficient training data is available.</p>';
  $("sessionHistory").innerHTML=data.sessions.slice(-30).reverse().map(s=>'<div class="entry"><strong>'+esc(s.date||'Session')+'</strong> · '+num(s.minutes).toFixed(1)+' minutes'+(s.quick?' · Quick Play':s.extra?' · Extra session':'')+(s.coachReport?'<details><summary>Coach’s Report</summary>'+[['Good',s.coachReport.good],['Bad',s.coachReport.bad],['Ugly',s.coachReport.ugly],['Plan',s.coachReport.plan]].map(([name,msg])=>'<p><strong>'+esc(name)+':</strong> '+esc(msg)+'</p>').join('')+'</details>':'')+'</div>').join('')||'<p>No sessions recorded yet.</p>';
  $("gameHistory").innerHTML=data.games.slice(-40).reverse().map(g=>'<div class="entry"><strong>'+esc(g.name==="Doubles Survival"&&g.variant==="singles"?'Singles Survival':g.name||'Game')+'</strong> · '+esc(g.result||'Completed')+(g.completion==='partial'?' (partial)':'')+'</div>').join('')||'<p>No games recorded yet.</p>';
