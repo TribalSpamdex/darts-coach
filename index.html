@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.10.0</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.10.1</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -946,10 +946,22 @@ function announceRound(number,previous=""){
 }
 function hideRoundAnnouncement(){if(roundAnnouncementTimer!==null){clearTimeout(roundAnnouncementTimer);roundAnnouncementTimer=null}const el=$("roundAnnouncement");if(el)el.classList.add("hidden")}
 
+/* V5.10.1: A failed main write must not be reported as success. Keep the
+   in-memory result available for an immediate external JSON export. */
+let dc17SaveFailed=false;
 function save(render=true){
- try{localStorage.setItem(KEY,JSON.stringify(data));if(!storageSaveError.includes('recovery'))storageSaveError=''}
- catch(e){storageSaveError='Storage is full or unavailable. Your latest result may not have been saved. Save a JSON backup before closing the app.';alert(storageSaveError)}
+ let written=false;
+ try{
+  const payload=JSON.stringify(data);
+  localStorage.setItem(KEY,payload);
+  written=true;dc17SaveFailed=false;
+  if(!storageSaveError.includes('recovery'))storageSaveError='';
+ }catch(e){
+  storageSaveError='Device storage could not save the latest result. Export a JSON backup of the CURRENT session before leaving this page.';
+  if(!dc17SaveFailed){dc17SaveFailed=true;alert(storageSaveError)}
+ }
  if(render)renderAll();
+ return written;
 }
 function show(id){
  if(id==="assess")id="train";
@@ -1438,7 +1450,7 @@ function dc7SelectionPenalty(name,audit){return dc9SelectionAdjustment(name,audi
    Each calendar day carries one vote, regardless of how many extra rounds
    were played that day. No single heavy session can dominate the coach. */
 
-/* V5.10.0: evidence-specific Target Intelligence. The coach may personalise SINGLE
+/* V5.10.1: evidence-specific Target Intelligence. The coach may personalise SINGLE
    targets only when large-single measurements exist. Different rings (D/T),
    directional misses, and placement are never inferred from simple HIT/MISS. */
 function dc11TargetEvidence(player=data, now=Date.now()){
@@ -1480,7 +1492,7 @@ function dc11TargetEvidence(player=data, now=Date.now()){
    // Mild shrinkage for small samples; not a claimed personal hit probability.
    estimate:(c.hits+2)/(c.darts+4),sources:[...c.sources],samples:c.samples.sort((a,b)=>a.at-b.at)}));
 }
-/* V5.10.0: Calibration against one million simulated players showed that
+/* V5.10.1: Calibration against one million simulated players showed that
    selecting the smallest raw hit percentage across 20 targets often mistakes
    ordinary sampling noise for a weakness. Compare each measured target with
    the other 19 using uncertainty and a minimum practically relevant gap.
@@ -1575,7 +1587,7 @@ function dc10ChallengeProfile(name,games=data.games,now=Date.now()){
  return {name,tier,probability,reliability,evidence,effectiveDays:weight,state};
 }
 
-/* V5.10.0: Jeopardy recovery is NOT a hidden skill-tier change. Retain the
+/* V5.10.1: Jeopardy recovery is NOT a hidden skill-tier change. Retain the
    player's calibrated tier, but offer a deliberately easier WIN/LOSE round
    after repeated standard-rule defeats. Recovery results are segregated from
    standard-rule results in the pressure estimator and labelled in history.
@@ -1628,7 +1640,7 @@ function dc12ApplyRecovery(g){
   case 'Shanghai Combo':ease('lives',2,1,50);break;
   // No safe rule modification defined for other games yet.
  }
- if(changed){g.recovery=true;g.recoveryVersion='5.10.0';g.recoveryMessage='Recovery challenge: a slightly easier win condition today. Win or lose, each round still counts.';}
+ if(changed){g.recovery=true;g.recoveryVersion='5.10.1';g.recoveryMessage='Recovery challenge: a slightly easier win condition today. Win or lose, each round still counts.';}
  return g;
 }
 
@@ -1704,15 +1716,30 @@ function dc15EffectEvidence(player=data,now=Date.now()){
  return result;
 }
 
-/* V5.10.0: separate, evidence-specific coaching intelligence.
+/* V5.10.1: separate, evidence-specific coaching intelligence.
    Doubles hit/miss refers to the exact attempted DOUBLE. Checkout records
    refer to COMPLETE three-dart attempts, grouped by starting finish band.
    Win/loss pressure trends are within the same game and tier and are never
    presented as a diagnosis or as causal training effectiveness. */
+/* V5.10.1: Never trust an imported evidence row. Invalid observations remain
+   in historical backups, but they cannot turn into recorded misses. */
+function dc17CheckoutHit(value){
+ if(value===true||value===1)return true;
+ if(value===false||value===0)return false;
+ return null;
+}
+function dc17ValidCheckoutAttempt(row){
+ if(!row||typeof row!=='object'||Array.isArray(row))return null;
+ const target=row.target;
+ if(typeof target!=='number'||!Number.isInteger(target)||target<2||target>170)return null;
+ const hit=dc17CheckoutHit(row.hit);
+ return hit===null?null:{target,hit};
+}
 function dc16Benchmarks(player=data,now=Date.now()){
  const cutoff=now-112*DAY_MS,byAt=new Map();
- for(const a of [...(player.assessmentHistory||[]),player.assessment]){
-  if(!a||a.finished!==true||a.quickStart===true||!Number.isFinite(Number(a.completedAt))||a.completedAt<cutoff||a.completedAt>now)continue;
+ const history=Array.isArray(player&&player.assessmentHistory)?player.assessmentHistory:[];
+ for(const a of [...history,player&&player.assessment]){
+  if(!a||typeof a!=='object'||Array.isArray(a)||a.finished!==true||a.quickStart===true||!Number.isFinite(Number(a.completedAt))||a.completedAt<cutoff||a.completedAt>now)continue;
   byAt.set(a.completedAt,a);
  }
  return [...byAt.values()];
@@ -1725,9 +1752,13 @@ function dc16DoubleEvidence(player=data,now=Date.now()){
  }
  for(const a of dc16Benchmarks(player,now)){
   const rows=a.doubles;if(!Array.isArray(rows)||rows.length!==20)continue;
-  for(const r of rows){const target=Number(String(r.target||'').replace(/^D/,''));
-   if(!Array.isArray(r.darts)||r.darts.length!==3)continue;
-   for(const d of r.darts)add(target,d.segment===r.target,Number(a.completedAt),'assessment');
+  for(const r of rows){
+   if(!r||typeof r!=='object'||!/^D(?:[1-9]|1[0-9]|20)$/.test(r.target)||!Array.isArray(r.darts)||r.darts.length!==3)continue;
+   const target=Number(r.target.slice(1));
+   for(const d of r.darts){
+    if(!d||typeof d!=='object'||typeof d.segment!=='string')continue;
+    add(target,d.segment===r.target,Number(a.completedAt),'assessment');
+   }
   }
  }
  const cutoff=now-112*DAY_MS,dayCaps=new Map();
@@ -1769,13 +1800,22 @@ function dc16CheckoutEvidence(player=data,now=Date.now()){
   if(!Number.isInteger(target)||target<2||target>170||typeof hit!=='boolean'||!Number.isFinite(at))return;
   const b=buckets[bin(target)];b.attempts++;if(hit)b.hits++;b.days.add(dateKey(at));b.sources.add(source);
  }
- for(const a of dc16Benchmarks(player,now))for(const x of a.checkout||[])add(x.target,x.hit,Number(a.completedAt),'assessment');
+ for(const a of dc16Benchmarks(player,now)){
+  if(!Array.isArray(a.checkout))continue;
+  for(const x of a.checkout){
+   const valid=dc17ValidCheckoutAttempt(x);
+   if(valid)add(valid.target,valid.hit,Number(a.completedAt),'assessment');
+  }
+ }
  const cutoff=now-112*DAY_MS,caps=new Map();
  for(const g of player.games||[]){
   if(!g||!['Focused Checkouts','Checkout Climb'].includes(g.name)||g.completion!=='natural'||g.quick||g.recovery||!Number.isFinite(g.at)||g.at<cutoff||g.at>now||!Array.isArray(g.attemptLog))continue;
   for(const x of g.attemptLog){
-   const target=Number(x.target),k=dateKey(g.at)+':'+bin(target),count=caps.get(k)||0;
-   if(count>=12)continue;caps.set(k,count+1);add(target, x.hit===true||x.hit===1,g.at,'game');
+   const valid=dc17ValidCheckoutAttempt(x);
+   if(!valid)continue;
+   const target=valid.target,k=dateKey(g.at)+':'+bin(target),count=caps.get(k)||0;
+   if(count>=12)continue;
+   caps.set(k,count+1);add(target,valid.hit,g.at,'game');
   }
  }
  return buckets.map(b=>({name:b.name,hits:b.hits,attempts:b.attempts,days:b.days.size,rate:b.attempts?b.hits/b.attempts:null,ready:b.attempts>=20&&b.days.size>=5}));
@@ -2610,7 +2650,7 @@ function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||sess
 function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.10.0",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery};
+function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.10.1",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery};
  if(completion==="natural"&&!session()?.quick&&!g.recovery){
   const targets=g.name==="Number Lock"&&g.ring==="S"?g.targets:
    g.name==="Treble Hunt"&&g.variant==="single"?g.targets:
@@ -2759,7 +2799,7 @@ function completeExercise(completion="manual"){
  s.phase="complete";s.pausedAt=Date.now();undoSnapshot=null;hideRoundAnnouncement();
  save();
 }
-/* V5.10.0: the coach consumes wins and losses privately. End-of-session
+/* V5.10.1: the coach consumes wins and losses privately. End-of-session
    messages are positive-only; a bad night never becomes a public verdict. */
 function generateSessionReport(sessionData){
  if(sessionData.quick)return null;
@@ -3132,10 +3172,12 @@ function resetTrainingStatistics(){
  replacement.days=[...data.days];
  replacement.throwingHand=data.throwingHand;
  try{
-  localStorage.setItem(KEY,JSON.stringify(replacement));
-  localStorage.setItem(CHECKPOINT_KEY,JSON.stringify({savedAt:Date.now(),data:replacement}));
+  const resetPayload=JSON.stringify(replacement);
+  localStorage.setItem(KEY,resetPayload);
+  try{localStorage.setItem(CHECKPOINT_KEY,JSON.stringify({savedAt:Date.now(),data:replacement}))}
+  catch(e){storageSaveError='Reset saved, but the local recovery checkpoint could not be updated. Export a JSON backup.'}
  }catch(e){
-  alert("Unable to save reset state. Previous data was not replaced.");
+  alert("Unable to save reset state. The reset was not completed. Export a JSON backup before proceeding.");
   return;
  }
  data=normaliseData(replacement);
@@ -3354,7 +3396,7 @@ function startQuickFromAverage(){
  data.coach.estimates={};data.coach.lastTierChanges={};
  save(false);checkpointData();show("home");
 }
-/* V5.10.0: Repeatable calibration available to every existing player.
+/* V5.10.1: Repeatable calibration available to every existing player.
    No training history, Big Singles results or personal records are erased. */
 function startFullCalibration(){
  if(session()){show("train");return}
@@ -3630,11 +3672,31 @@ async function saveBackupFile(){
   backupMessage("Download requested. Check Files > Downloads for "+name+".","ok");
  }catch(e){backupMessage("File export failed: "+e.message,"error")}
 }
-function generateBackup(){try{const saved=localStorage.getItem(KEY),backup=saved?JSON.parse(saved):clone(data);if(!backup||!Array.isArray(backup.games)||!Array.isArray(backup.sessions))throw Error("Saved data could not be verified");const json=JSON.stringify(backup,null,2);$("backupText").value=json;$("backupOutput").classList.remove("hidden");backupMessage("Backup generated: "+(new Blob([json]).size/1024).toFixed(1)+" KB. Save outside the app.","ok")}catch(e){backupMessage("Backup failed: "+e.message,"error")}}
+function generateBackup(){try{
+ /* Always export live memory. A failed localStorage write can leave the disk
+    copy behind the latest dart; exporting disk would silently lose progress. */
+ if(!isValidPlayerData(data))throw Error("Current profile could not be verified");
+ const json=JSON.stringify(data,null,2);
+ $("backupText").value=json;$("backupOutput").classList.remove("hidden");
+ backupMessage("Current live data ready: "+(new Blob([json]).size/1024).toFixed(1)+" KB. Save outside the app.","ok");
+}catch(e){backupMessage("Backup failed: "+e.message,"error")}}
 function selectBackup(){const b=$("backupText");if(!b.value)generateBackup();b.focus();b.select();try{b.setSelectionRange(0,b.value.length)}catch(e){}backupMessage("Selected. Use the iPhone Copy menu.")}
 async function copyBackup(){const b=$("backupText");if(!b.value)generateBackup();if(!b.value)return;try{await navigator.clipboard.writeText(b.value);backupMessage("Copied. Verify by pasting into Notes.","ok")}catch(e){selectBackup();try{document.execCommand("copy")}catch(ex){}}}
 function downloadBackup(){const json=$("backupText").value;if(!json){backupMessage("Generate a backup first.","error");return}try{const blob=new Blob([json],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="darts-coach-v5.0.0-"+dateKey()+".json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);backupMessage("Download requested.")}catch(e){backupMessage("Download unavailable. Use Copy Backup.","error")}}
-function validateRestore(json){let restored;try{restored=JSON.parse(json)}catch(e){throw Error("Invalid JSON")}if(!restored||typeof restored!=="object"||Array.isArray(restored)||!Array.isArray(restored.sessions)||!Array.isArray(restored.games)||!restored.assessment||!restored.skills)throw Error("Not a valid Darts Coach backup");return restored}
+function validateRestore(json){
+ let restored;try{restored=JSON.parse(json)}catch(e){throw Error("Invalid JSON")}
+ if(!isValidPlayerData(restored))throw Error("Not a valid Darts Coach backup");
+ const isRecord=x=>!!x&&typeof x==='object'&&!Array.isArray(x);
+ if(restored.sessions.some(x=>!isRecord(x))||restored.games.some(x=>!isRecord(x))||
+    !isRecord(restored.assessment)||!isRecord(restored.skills)||
+    (restored.assessmentHistory!==undefined&&(!Array.isArray(restored.assessmentHistory)||restored.assessmentHistory.some(x=>!isRecord(x))))||
+    (restored.bigSingles!==undefined&&!Array.isArray(restored.bigSingles))){
+  throw Error("Backup contains invalid record structures. Your existing data was not replaced.");
+ }
+ // Individual legacy game measurements are kept, but invalid entries are
+ // excluded by dc17ValidCheckoutAttempt rather than treated as failed darts.
+ return restored;
+}
 function applyRestoredData(restored){if(!confirm("Replace current saved data with this backup?"))return false;const replacement=normaliseData(Object.assign(blank(),clone(restored)));try{localStorage.setItem(KEY,JSON.stringify(replacement))}catch(e){throw Error("Could not save restored data")}data=replacement;checkpointData();activeGame=data.game||null;normaliseSurvivalGame(activeGame);normaliseStraightGame(activeGame);undoSnapshot=null;activeStage=null;$("assessmentScreen").classList.add("hidden");document.body.classList.remove("assessing");$("sessionFinished").classList.add("hidden");show("home");return true}
 function restoreFromText(){const json=$("restoreText").value.trim();if(!json){restoreMessage("Paste backup first.","error");return}try{if(applyRestoredData(validateRestore(json))){$("restoreText").value="";restoreMessage("Backup restored.","ok")}}catch(e){restoreMessage("Restore failed: "+e.message,"error")}}
 function importData(e){const f=e.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{try{if(applyRestoredData(validateRestore(String(reader.result))))restoreMessage("Backup file restored.","ok")}catch(error){restoreMessage("Restore failed: "+error.message,"error")}e.target.value=""};reader.onerror=()=>restoreMessage("Unable to read file.","error");reader.readAsText(f)}
