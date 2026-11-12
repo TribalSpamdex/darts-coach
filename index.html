@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.11.0</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.12.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -1563,13 +1563,13 @@ function dc11TargetSummary(player=data,now=Date.now()){
 }
 
 const DC10_MEASUREMENT_GAMES=new Set(['Bull Accuracy','Scoring Challenge']);
-/* V5.11.0: A game forecast measures natural STANDARD-rule competitive
+/* V5.12.0: A game forecast measures natural STANDARD-rule competitive
    results only. Quick Play, recovery wins, invalid and unfinished rounds
    cannot establish the win probability of the scheduled normal challenge.
    Each day contributes at most one vote, regardless of extra sessions. */
 function dc18ValidPressureResult(e,cutoff,now){
  return !!e&&e.completion==='natural'&&typeof e.win==='boolean'&&
-  e.quick!==true&&e.recovery!==true&&Number.isFinite(e.at)&&
+  e.quick!==true&&e.recovery!==true&&!e.challengeTuning&&Number.isFinite(e.at)&&
   e.at>=cutoff&&e.at<=now+DAY_MS&&typeof e.name==='string'&&
   Number.isInteger(Number(e.tierAtStart))&&Number(e.tierAtStart)>=1&&
   Number(e.tierAtStart)<=7;
@@ -1676,6 +1676,105 @@ function dc12ApplyRecovery(g){
   // No safe rule modification defined for other games yet.
  }
  if(changed){g.recovery=true;g.recoveryVersion='5.10.1';g.recoveryMessage='Recovery challenge: a slightly easier win condition today. Win or lose, each round still counts.';}
+ return g;
+}
+
+
+/* V5.12.0: within-tier competitive challenge tuning.
+   - Nothing changes in benchmarks, assessments, Quick Play or beginner (tier 6/7) rules.
+   - Only naturally completed, standard-rules results calibrate probabilities.
+   - Modified rounds are recorded separately and do not validate themselves.
+   - Recovery takes priority. Every fourth round remains a STANDARD probe.
+   - The exact adjusted win condition is shown before a round begins.
+   - A change of hidden tier invalidates old game-tier comparison evidence. */
+const DC19_TUNABLE={
+ 'Scoring Survival':{field:'target',step:5,min:5,max:175},
+ 'Scoring Ladder':{field:'targets',step:5,min:5,max:180},
+ 'Treble Hunt':{field:'goal',step:1,min:1,max:12},
+ 'Doubles Streak':{field:'goal',step:1,min:1,max:12},
+ 'Bull Streak':{field:'goal',step:1,min:1,max:12},
+ 'Bull Bank':{field:'goal',step:25,min:25,max:500},
+ 'Number Lock':{field:'allowedMisses',step:-1,min:1,max:30},
+ 'Golf Five':{field:'par',step:-1,min:5,max:30},
+ '101 Sprint':{field:'allowed',step:-1,min:1,max:40},
+ 'Cricket Countdown':{field:'allowed',step:-2,min:4,max:70},
+ 'Double Double':{field:'allowed',step:-1,min:1,max:30},
+ 'Switchback':{field:'allowed',step:-2,min:5,max:60},
+ 'Bull Survival':{field:'allowed',step:-1,min:1,max:40},
+ 'First Nine Siege':{field:'goal',step:15,min:20,max:540},
+ 'Risk or Reward':{field:'goal',step:15,min:20,max:520},
+ 'Shanghai Combo':{field:'lives',step:-1,min:1,max:30}
+};
+function dc19Decision(name,games=data.games,now=Date.now()){
+ const config=DC19_TUNABLE[name];
+ if(!config)return {mode:'standard',reason:'unsupported'};
+ const p=dc10ChallengeProfile(name,games,now);
+ const recent=(games||[]).filter(e=>e&&e.name===name&&
+  e.completion==='natural'&&e.quick!==true&&e.recovery!==true&&
+  Number(e.tierAtStart)===p.tier&&Number.isFinite(e.at)&&
+  e.at>=now-60*DAY_MS&&e.at<=now+DAY_MS&&typeof e.win==='boolean');
+ // Never mistake hundreds of rounds on one day for independent certainty.
+ const days=p.evidence;
+ if(days<12||p.reliability<.62)return {mode:'standard',reason:'insufficient',days,profile:p};
+ // A standard-rule check follows three consecutive modified rounds.
+ // Never use a rolling history-count modulo: as old days expire it can stick.
+ const latestThree=[...recent].sort((a,b)=>b.at-a.at).slice(0,3);
+ const probe=latestThree.length===3&&latestThree.every(e=>!!e.challengeTuning);
+ const harder=p.lower90>.68;
+ const easier=p.upper90<.32;
+ const mode=harder?'stretch':easier?'bridge':'standard';
+ // Adjusted games remain an experiment, never proof of the normal standard.
+ // Three separate days of failed stretches (or trivial stepping stones)
+ // pause that particular adjustment for seven days rather than repeating it.
+ if(mode!=='standard'){
+  const samples=[...recent].filter(e=>e.challengeTuning===mode)
+   .sort((a,b)=>b.at-a.at);
+  const byDay=new Map();
+  for(const e of samples){const day=dateKey(e.at);if(!byDay.has(day))byDay.set(day,e)}
+  const last3=[...byDay.values()].slice(0,3);
+  if(last3.length===3&&now-last3[0].at<7*DAY_MS&&
+   last3.every(e=>mode==='stretch'?e.win===false:e.win===true)){
+   return {mode:'standard',reason:'adjustment-cooldown',days,profile:p};
+  }
+ }
+ if(probe)return {mode:'standard',reason:'probe',days,profile:p};
+ return {mode,reason:'evidence',days,profile:p};
+}
+function dc19ApplyTuning(g){
+ const s=session();
+ if(!g||!s||s.quick||g.recovery)return g;
+ const config=DC19_TUNABLE[g.name];
+ if(!config)return g;
+ const state=dc12RecoveryState(g.name);
+ // Recovery and its scheduled standard probes must not get micro-adjusted.
+ if(state.earned)return g;
+ const decision=dc19Decision(g.name);
+ if(decision.mode==='standard')return g;
+ // Preserve easiest beginner rules; advance those players using measured skill tiers.
+ const tier=Number(g.tier)||dc9GameTier(g.name);
+ if(tier>=6)return g;
+ const sign=decision.mode==='stretch'?1:-1;
+ const step=sign*config.step;
+ const before=g[config.field];
+ let changed=false;
+ if(config.field==='targets'){
+  if(!Array.isArray(before)||!before.every(Number.isFinite))return g;
+  const after=before.map(x=>clamp(x+step,config.min,config.max));
+  changed=after.some((x,i)=>x!==before[i]);
+  if(changed){g.targets=after;g.target=after[g.step||0]}
+ }else if(Number.isFinite(before)){
+  const next=clamp(before+step,config.min,config.max);
+  changed=next!==before;
+  if(changed)g[config.field]=next;
+ }
+ if(!changed)return g;
+ g.challengeTuning=decision.mode;
+ g.challengeTuningVersion='5.12.0';
+ g.challengeBaseField=config.field;
+ g.challengeBaseValue=Array.isArray(before)?[...before]:before;
+ const format=v=>Array.isArray(v)?v.join(', '):String(v);
+ g.challengeMessage=(decision.mode==='stretch'?'Stretch challenge':'Stepping-stone challenge')+
+  ': '+config.field+' '+format(before)+' → '+format(g[config.field])+'. Win and loss rules remain active.';
  return g;
 }
 
@@ -1798,7 +1897,7 @@ function dc16DoubleEvidence(player=data,now=Date.now()){
  }
  const cutoff=now-112*DAY_MS,dayCaps=new Map();
  for(const g of player.games||[]){
-  if(!g||!['Doubles Survival','Doubles Streak'].includes(g.name)||g.completion!=='natural'||g.recovery||g.quick||!Number.isFinite(g.at)||g.at<cutoff||g.at>now||g.variant!=='doubles'||!Array.isArray(g.targetLog))continue;
+  if(!g||!['Doubles Survival','Doubles Streak'].includes(g.name)||g.completion!=='natural'||g.recovery||g.challengeTuning||g.quick||!Number.isFinite(g.at)||g.at<cutoff||g.at>now||g.variant!=='doubles'||!Array.isArray(g.targetLog))continue;
   for(const d of g.targetLog){
    if(!d||d.ring!=='D'||!Number.isInteger(d.target)||typeof d.hit!=='boolean')continue;
    const key=dateKey(g.at)+':'+d.target,cap=dayCaps.get(key)||0;
@@ -1844,7 +1943,7 @@ function dc16CheckoutEvidence(player=data,now=Date.now()){
  }
  const cutoff=now-112*DAY_MS,caps=new Map();
  for(const g of player.games||[]){
-  if(!g||!['Focused Checkouts','Checkout Climb'].includes(g.name)||g.completion!=='natural'||g.quick||g.recovery||!Number.isFinite(g.at)||g.at<cutoff||g.at>now||!Array.isArray(g.attemptLog))continue;
+  if(!g||!['Focused Checkouts','Checkout Climb'].includes(g.name)||g.completion!=='natural'||g.quick||g.recovery||g.challengeTuning||!Number.isFinite(g.at)||g.at<cutoff||g.at>now||!Array.isArray(g.attemptLog))continue;
   for(const x of g.attemptLog){
    const valid=dc17ValidCheckoutAttempt(x);
    if(!valid)continue;
@@ -1858,7 +1957,7 @@ function dc16CheckoutEvidence(player=data,now=Date.now()){
 function dc16PressureEvidence(player=data,now=Date.now()){
  const cutoff=now-56*DAY_MS,groups=new Map();
  for(const g of player.games||[]){
-  if(!g||g.completion!=='natural'||g.quick||g.recovery||typeof g.win!=='boolean'||!Number.isFinite(g.at)||g.at<cutoff||g.at>now||!Number.isInteger(Number(g.tierAtStart)))continue;
+  if(!g||g.completion!=='natural'||g.quick||g.recovery||g.challengeTuning||typeof g.win!=='boolean'||!Number.isFinite(g.at)||g.at<cutoff||g.at>now||!Number.isInteger(Number(g.tierAtStart)))continue;
   const key=g.name+':'+Number(g.tierAtStart),d=dateKey(g.at);
   const row=groups.get(key)||{name:g.name,tier:Number(g.tierAtStart),days:new Map()};
   const day=row.days.get(d)||{at:g.at,w:0,n:0};day.at=Math.max(day.at,g.at);day.w+=g.win?1:0;day.n++;row.days.set(d,day);groups.set(key,row);
@@ -2475,7 +2574,7 @@ function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name
  if(name==="Double Duel"){
   const tier=pressureTier("doubles");Object.assign(g,{tier,target:20,player:0,opponent:0,turn:0,thrown:0,matchDone:false});
  }
- return dc12ApplyRecovery(g)}
+ return dc19ApplyTuning(dc12ApplyRecovery(g))}
 
 function shanghaiDart(hit){
  const s=session(),g=activeGame;if(!s||s.pausedAt||s.phase!=="playing"||!g||g.name!=="Shanghai Combo")return;
@@ -2686,7 +2785,7 @@ function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||sess
 function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.11.0",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery};
+function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.12.0",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null};
  if(completion==="natural"&&!session()?.quick&&!g.recovery){
   const targets=g.name==="Number Lock"&&g.ring==="S"?g.targets:
    g.name==="Treble Hunt"&&g.variant==="single"?g.targets:
@@ -2802,6 +2901,7 @@ function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now()
   e.tierAtStart=num(g.tier)||pressureTier(key);
  }
  if(g.recovery&&completion==="natural")e.result="RECOVERY · "+e.result;
+ if(g.challengeTuning&&completion==="natural")e.result=(g.challengeTuning==="stretch"?"STRETCH":"STEPPING STONE")+" · "+e.result;
  if(completion!=="natural"&&completion!=="timed"){e.win=null;e.loss=null;e.result="INCOMPLETE · "+e.result.replace(/^(WIN|LOSE) · /, "")}
  return e}
 /* Round completion records the result and restarts the SAME game. The exercise clock never resets. */
@@ -2913,6 +3013,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  if(g&&g.name==="Doubles Streak"&&g.variant==="singles")rule="Hit the SINGLE shown to build a streak. A miss breaks it and costs a life. Reach the goal before lives run out.";
  if(g&&["Bull Survival","Bull Streak"].includes(g.name))rule=(g.target==="CENTRE"?"CENTRE = anywhere INSIDE the inner edge of the treble ring, including the bull. ":g.target==="50"?"Only the red bullseye (50) counts. ":"Either outer bull (25) or bullseye (50) counts. ")+rule;
  if(g&&g.recovery)rule+=(rule?"\n\n":"")+g.recoveryMessage;
+ if(g&&g.challengeTuning)rule+=(rule?"\n\n":"")+g.challengeMessage;
  $("exerciseRules").textContent=rule;$("exerciseTimeLabel").textContent=isBenchmark?"60 darts · extra time":"Exercise time";$("exerciseClock").textContent=isBenchmark?(g?g.darts.length:0)+"/60":fmt(Math.max(0,seconds-elapsed));$("exerciseBar").style.width=isBenchmark?((g?g.darts.length:0)/60*100)+"%":clamp(100*elapsed/Math.max(1,seconds),0,100)+"%";$("sessionClock").textContent=fmt(sessionRemaining());$("sessionBar").style.width=clamp(100*sessionElapsed()/sessionBudget(),0,100)+"%";$("pauseButton").textContent=s.pausedAt?"Resume Session":"Pause Session";
  const phase=s.phase||"playing";
  $("exercisePanel").classList.toggle("phase-rules",phase==="rules");
