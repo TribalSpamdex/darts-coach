@@ -3284,7 +3284,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  case "Last Dart Rescue":
   {const needed=g.targets[Math.min(g.index,g.targets.length-1)],correct=needed===50?"BULL":"D"+(needed/2),wrong=needed===50?"D20":"D"+(needed===40?16:needed===32?20:needed===24?10:needed===16?12:20);
   heading=String(needed);detail="Choose the correct one-dart finish · Situation "+(g.index+1)+"/5";mini="Lives left: "+g.lives+" · Wrong route costs a life";
-  html=g.aim?button("Hit " +correct,"rescueDart(true)")+button("Miss","rescueDart(false)"):button(correct,"rescueAim("+JSON.stringify(correct)+")")+button(wrong,"rescueAim("+JSON.stringify(wrong)+")");break;}
+  html=g.aim?button("Hit " +correct,"rescueDart(true)")+button("Miss","rescueDart(false)"):button(correct,"rescueAim('"+correct+"')")+button(wrong,"rescueAim('"+wrong+"')");break;}
  case "First Nine Siege":
   heading=g.points+" / "+g.goal;detail="Nine-dart scoring challenge · Visit "+(g.visits+1)+"/3";
   mini="Hit the cumulative points target to WIN";html=padMarkup()+button("Enter Score","scoringVisit()");break;
