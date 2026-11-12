@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.3.1</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.10.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -738,7 +738,7 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.3.1</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.9.0</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -1431,21 +1431,434 @@ function dc9SelectionAdjustment(name,audit){
  return 0;
 }
 function dc7SelectionPenalty(name,audit){return dc9SelectionAdjustment(name,audit)}
+/* V5.9.0 pressure-first coaching engine. Every scheduled exercise from the
+   library is a genuine win/loss challenge. Warm-up, assessments and Big Singles
+   remain clean measurements, never retroactively called wins or losses.
+   Selection uses ONLY completed natural rounds at a matching starting tier.
+   Each calendar day carries one vote, regardless of how many extra rounds
+   were played that day. No single heavy session can dominate the coach. */
+
+/* V5.10.0: evidence-specific Target Intelligence. The coach may personalise SINGLE
+   targets only when large-single measurements exist. Different rings (D/T),
+   directional misses, and placement are never inferred from simple HIT/MISS. */
+function dc11TargetEvidence(player=data, now=Date.now()){
+ const since=now-56*DAY_MS;
+ const counts=Array.from({length:20},(_,i)=>({target:i+1,hits:0,darts:0,days:new Set(),sources:new Set(),samples:[]}));
+ for(const b of (player.bigSingles||[])){
+  if(!b||b.complete!==true||!Array.isArray(b.perNumber)||b.perNumber.length!==20)continue;
+  const when=Number(b.at)||Date.parse(String(b.day||'')+'T12:00:00');
+  if(!Number.isFinite(when)||when<since||when>now+DAY_MS)continue;
+  const day=dateKey(when);
+  for(let i=0;i<20;i++){
+   const h=b.perNumber[i];if(!Number.isInteger(h)||h<0||h>3)continue;
+   counts[i].hits+=h;counts[i].darts+=3;counts[i].days.add(day);counts[i].sources.add('daily');counts[i].samples.push({at:when,hits:h,darts:3});
+  }
+ }
+ // The full assessment is a separate measurement. Do not double-count old
+ // assessments that were copied into histories during migration.
+ const assessed=[player.assessment,...(player.assessmentHistory||[])];
+ const seen=new Set();
+ for(const a of assessed){
+  if(!a||a.finished!==true||!Array.isArray(a.singles)||a.singles.length!==60)continue;
+  const at=Number(a.completedAt)||0;
+  if(at<since||at>now+DAY_MS||seen.has(at))continue;seen.add(at);
+  const per=Array.from({length:20},()=>({hits:0,darts:0}));let valid=true;
+  for(let i=0;i<60;i++){
+   const r=a.singles[i],target=Number(r?.target);
+   if(target!==Math.floor(i/3)+1||typeof r.hit!=='boolean'){valid=false;break}
+   per[target-1].hits+=r.hit?1:0;per[target-1].darts++;
+  }
+  if(!valid)continue;
+  for(let i=0;i<20;i++){
+   counts[i].hits+=per[i].hits;counts[i].darts+=3;
+   counts[i].days.add('assessment:'+at);counts[i].sources.add('assessment');counts[i].samples.push({at,hits:per[i].hits,darts:3});
+  }
+ }
+ return counts.map(c=>({target:c.target,hits:c.hits,darts:c.darts,
+   days:c.days.size, measured:c.darts>0,
+   reliable:c.days.size>=5&&c.darts>=15,
+   // Mild shrinkage for small samples; not a claimed personal hit probability.
+   estimate:(c.hits+2)/(c.darts+4),sources:[...c.sources],samples:c.samples.sort((a,b)=>a.at-b.at)}));
+}
+/* V5.10.0: Calibration against one million simulated players showed that
+   selecting the smallest raw hit percentage across 20 targets often mistakes
+   ordinary sampling noise for a weakness. Compare each measured target with
+   the other 19 using uncertainty and a minimum practically relevant gap.
+   This is not a claim that darts on one day are independent or proof that a
+   single number causes poor match play. It is only a conservative target-choice
+   safeguard; doubles, trebles and tiers are never inferred from these singles. */
+/* V5.9.0 two-period confirmation. Real target decisions must show repeated
+   evidence, not just one lucky/unlucky cluster. For every tested target,
+   compare paired earlier/later measurements against the other measured
+   numbers from the SAME periods. Never infer doubles/trebles from singles. */
+function dc14PeriodGap(target,known,period){
+ const own=(target.samples||[]).filter(x=>Number.isFinite(x.at)&&x.at>=period[0]&&x.at<period[1]);
+ if(own.length<4)return null;
+ const ownDarts=own.reduce((a,x)=>a+x.darts,0),ownHits=own.reduce((a,x)=>a+x.hits,0);
+ let otherDarts=0,otherHits=0;
+ for(const x of known){
+  if(x.target===target.target)continue;
+  for(const item of x.samples||[]){if(item.at>=period[0]&&item.at<period[1]){
+   otherDarts+=item.darts;otherHits+=item.hits;
+  }}
+ }
+ if(ownDarts<12||otherDarts<60)return null;
+ return (otherHits+2)/(otherDarts+4)-(ownHits+2)/(ownDarts+4);
+}
+function dc13SinglesDiagnosis(evidence){
+ const known=(evidence||[]).filter(x=>x.reliable&&Number.isFinite(x.hits)&&Number.isFinite(x.darts)&&x.darts>0);
+ if(known.length<8)return {ready:false,development:[],reason:'collecting',known:known.length};
+ const allHits=known.reduce((a,x)=>a+x.hits,0),allDarts=known.reduce((a,x)=>a+x.darts,0);
+ const times=[...new Set(known.flatMap(x=>(x.samples||[]).map(p=>p.at)).filter(Number.isFinite))].sort((a,b)=>a-b);
+ // At least eight separate measurement occasions are needed to confirm both
+ // sides. If older migrated data lacks timestamps, remain on baseline routes.
+ if(times.length<8)return {ready:false,development:[],reason:'confirming',known:known.length};
+ const middle=times[Math.floor(times.length/2)],periods=[[-Infinity,middle],[middle,Infinity]];
+ const development=[];
+ for(const x of known){
+  const othersDarts=allDarts-x.darts;if(othersDarts<=0)continue;
+  const own=(x.hits+2)/(x.darts+4),other=(allHits-x.hits+2)/(othersDarts+4);
+  const gap=other-own,uncertainty=Math.sqrt(own*(1-own)/(x.darts+5)+other*(1-other)/(othersDarts+5)+.035*.035);
+  const evidenceScore=uncertainty>0?gap/uncertainty:0;
+  if(gap<.08||evidenceScore<2.5)continue;
+  const first=dc14PeriodGap(x,known,periods[0]),second=dc14PeriodGap(x,known,periods[1]);
+  if(first===null||second===null||first<.08||second<.08)continue;
+  development.push({target:x.target,score:evidenceScore,gap,measuredDarts:x.darts,confirmed:true});
+ }
+ development.sort((a,b)=>b.score-a.score||b.gap-a.gap||a.target-b.target);
+ return {ready:true,development,reason:development.length?'measured':'no-clear-gap',known:known.length};
+}
+function dc11SingleTargetRoute(player=data,now=Date.now(),size=3){
+ const evidence=dc11TargetEvidence(player,now),diagnosis=dc13SinglesDiagnosis(evidence);
+ if(!diagnosis.development.length)return [20,19,18,17,16].slice(0,size);
+ const cycle=Math.floor(now/(7*DAY_MS));
+ // Preserve a clearly measured first weakness; only the other measured
+ // development targets rotate. Keep a reliable standard anchor for continuity.
+ const first=diagnosis.development[0].target;
+ const rest=diagnosis.development.slice(1);
+ const second=rest.length?rest[cycle%Math.min(4,rest.length)].target:null;
+ const anchors=[20,19,18,17,16].filter(n=>n!==first&&n!==second);
+ return [...new Set([first,...(second===null?[]:[second]),...anchors,...evidence.filter(x=>x.reliable).map(x=>x.target)])].slice(0,size);
+}
+function dc11TargetSummary(player=data,now=Date.now()){
+ const evidence=dc11TargetEvidence(player,now),reliable=evidence.filter(x=>x.reliable);
+ const diagnosis=dc13SinglesDiagnosis(evidence);
+ return {measured:evidence.filter(x=>x.measured).length,
+  reliable:reliable.length,personalised:diagnosis.development.length>0,
+  diagnosisReason:diagnosis.reason,development:diagnosis.development,
+  route:dc11SingleTargetRoute(player,now),
+  measuredDarts:evidence.reduce((a,b)=>a+b.darts,0),
+  // Present the measured strengths and the selected practice targets, never
+  // a made-up heatmap based on results from another ring.
+  strongest:[...reliable].sort((a,b)=>b.estimate-a.estimate).slice(0,3).map(x=>x.target),
+  evidence};
+}
+
+const DC10_MEASUREMENT_GAMES=new Set(['Bull Accuracy','Scoring Challenge']);
+function dc10ChallengeProfile(name,games=data.games,now=Date.now()){
+ const tier=dc9GameTier(name),cutoff=now-120*DAY_MS,byDay=new Map();
+ for(const e of games||[]){
+  if(!e||e.name!==name||e.completion!=='natural'||typeof e.win!=='boolean'||
+   Math.round(Number(e.tierAtStart))!==tier||!Number.isFinite(e.at)||e.at<cutoff||e.at>now+DAY_MS||e.recovery===true)continue;
+  const day=dateKey(e.at),d=byDay.get(day)||{wins:0,rounds:0,at:e.at};
+  d.wins+=e.win?1:0;d.rounds++;d.at=Math.max(d.at,e.at);byDay.set(day,d);
+ }
+ let weightedWins=0,weight=0;
+ for(const d of byDay.values()){
+  const age=Math.max(0,(now-d.at)/DAY_MS),w=Math.exp(-Math.LN2*age/45);
+  weightedWins+=w*d.wins/d.rounds;weight+=w;
+ }
+ const probability=(3+weightedWins)/(6+weight);
+ const evidence=byDay.size;
+ const reliability=Math.min(1,weight/10,evidence/8);
+ const state=evidence<5?'exploring':probability<.30?'high-pressure':probability>.75?'low-pressure':'balanced';
+ return {name,tier,probability,reliability,evidence,effectiveDays:weight,state};
+}
+
+/* V5.10.0: Jeopardy recovery is NOT a hidden skill-tier change. Retain the
+   player's calibrated tier, but offer a deliberately easier WIN/LOSE round
+   after repeated standard-rule defeats. Recovery results are segregated from
+   standard-rule results in the pressure estimator and labelled in history.
+   A standard challenge is retried after successful recovery evidence or on
+   every fourth natural round, allowing the coach to detect progress. */
+const DC12_RECOVERY_GAMES=new Set([
+ 'Scoring Survival','Scoring Ladder','Treble Hunt','Doubles Streak',
+ 'Bull Streak','Bull Bank','Number Lock','Golf Five',
+ '301 Pressure','501 Pressure','Cricket Countdown','Double Double',
+ '101 Sprint','Outside Doubles','Double-In 201','Switchback',
+ 'Bull Survival','Shanghai Combo'
+]);
+function dc12RecoveryState(name, games=data.games, now=Date.now()){
+ const p=dc10ChallengeProfile(name,games,now);
+ const supported=DC12_RECOVERY_GAMES.has(name),cutoff=now-45*DAY_MS;
+ const previous=(games||[]).filter(e=>e&&e.name===name&&e.completion==='natural'&&
+   e.recovery===true&&typeof e.win==='boolean'&&Number.isFinite(e.at)&&e.at>=cutoff&&e.at<=now+DAY_MS);
+ const wins=previous.filter(e=>e.win).length;
+ const earned=supported&&p.evidence>=8&&p.effectiveDays>=5&&p.probability<.30&&p.reliability>=.5;
+ // A recovered game must periodically be played at normal rules. If standard
+ // performance improves, the need for a softer round disappears automatically.
+ const attempt=previous.length;
+ const latest=(games||[]).filter(e=>e&&e.name===name&&e.completion==='natural'&&
+  typeof e.win==='boolean'&&Number.isFinite(e.at)&&e.at>=cutoff&&e.at<=now+DAY_MS)
+  .sort((a,b)=>a.at-b.at).at(-1);
+ const trial=!!latest?.recovery&&attempt>0&&(attempt%4===3||wins>=3&&attempt%2===1);
+ return {supported,earned,active:earned&&!trial,trial,rounds:attempt,wins,profile:p};
+}
+function dc12ApplyRecovery(g){
+ const ss=session();
+ if(!g||!ss||g.name==='Warm-up'||g.name==='Review'||g.name==='Big Singles'||ss.quick)return g;
+ const state=dc12RecoveryState(g.name);
+ if(!state.active)return g;
+ let changed=false;
+ const ease=(key,amount,minimum=1,maximum=999)=>{if(Number.isFinite(g[key])){
+  const before=g[key];g[key]=clamp(before+amount,minimum,maximum);changed=changed||g[key]!==before;
+ }};
+ switch(g.name){
+  case 'Scoring Survival':ease('target',-10,5,180);ease('lives',1,1,20);break;
+  case 'Scoring Ladder':g.targets=g.targets.map(x=>Math.max(5,x-10));g.target=g.targets[g.step];ease('lives',1,1,20);changed=true;break;
+  case 'Treble Hunt':case 'Doubles Streak':case 'Bull Streak':ease('lives',1,1,20);ease('goal',-1,1,99);break;
+  case 'Bull Bank':ease('goal',-25,25,999);ease('dartsLeft',3,1,100);break;
+  case 'Number Lock':ease('allowedMisses',2,1,30);break;
+  case 'Golf Five':ease('par',2,1,40);break;
+  case '301 Pressure':case '501 Pressure':ease('maxDarts',6,1,200);if(g.maxVisits!==undefined)g.maxVisits=Math.ceil(g.maxDarts/3);break;
+  case 'Cricket Countdown':case 'Switchback':case 'Double Double':case '101 Sprint':ease('allowed',3,1,120);break;
+  case 'Outside Doubles':ease('allowed',3,1,120);ease('lives',1,1,20);break;
+  case 'Double-In 201':ease('entryLimit',2,1,80);ease('maxVisits',2,1,80);break;
+  case 'Bull Survival':ease('allowed',3,1,100);break;
+  case 'Shanghai Combo':ease('lives',2,1,50);break;
+  // No safe rule modification defined for other games yet.
+ }
+ if(changed){g.recovery=true;g.recoveryVersion='5.10.0';g.recoveryMessage='Recovery challenge: a slightly easier win condition today. Win or lose, each round still counts.';}
+ return g;
+}
+
+/* V5.9.0. OBSERVATIONAL training-effectiveness evidence, not causality.
+   A Big Singles benchmark completed BEFORE a singles-targeted competitive round
+   is compared with a benchmark on a subsequent date. Subtract the simultaneous
+   change on the other nineteen numbers. Collapse multiple extra rounds to one
+   exposure per day, refuse ambiguous legacy targets, and require repeat evidence
+   in both halves of the period. The coach NEVER turns a loss into a negative
+   message or treats recovery rounds as proof of standard performance. */
+const DC15_TARGET_GAMES=new Set(['Number Lock','Treble Hunt','Golf Five']);
+function dc15TrainingTargets(g){
+ if(!g||!DC15_TARGET_GAMES.has(g.name)||g.completion!=='natural'||g.quick||g.recovery)return [];
+ let raw=[];
+ if(g.name==='Number Lock'&&g.ring==='S')raw=g.targets;
+ if(g.name==='Treble Hunt'&&g.variant==='single')raw=g.targets;
+ if(g.name==='Golf Five'&&g.ring==='S')raw=g.holes||g.details?.holes;
+ if(!Array.isArray(raw)||!raw.length)return [];
+ const nums=[...new Set(raw.map(Number))];
+ return nums.every(x=>Number.isInteger(x)&&x>=1&&x<=20)?nums:[];
+}
+function dc15EffectEvidence(player=data,now=Date.now()){
+ const cutoff=now-112*DAY_MS,days=new Map();
+ for(const b of player.bigSingles||[]){
+  if(!b||b.complete!==true||!Array.isArray(b.perNumber)||b.perNumber.length!==20||
+    !b.perNumber.every(x=>Number.isInteger(x)&&x>=0&&x<=3))continue;
+  const at=Number(b.at)||Date.parse(String(b.day||'')+'T12:00:00');
+  if(!Number.isFinite(at)||at<cutoff||at>now)continue;
+  const day=dateKey(at),prior=days.get(day);
+  if(!prior||at<prior.at)days.set(day,{at,day,per:b.perNumber});
+ }
+ const benchmarks=[...days.values()].sort((a,b)=>a.at-b.at);
+ const exposures=new Map();
+ for(const g of player.games||[]){
+  if(!g||!Number.isFinite(g.at)||g.at<cutoff||g.at>now)continue;
+  const targets=dc15TrainingTargets(g);if(!targets.length)continue;
+  const day=dateKey(g.at),before=days.get(day);
+  if(!before||before.at>=g.at)continue;
+  const group=exposures.get(day)||new Map();
+  const byName=group.get(g.name)||new Set();
+  targets.forEach(t=>byName.add(t));group.set(g.name,byName);exposures.set(day,group);
+ }
+ const byGame=new Map();
+ for(const [day,groups] of exposures){
+  const pre=days.get(day),next=benchmarks.find(b=>b.at>pre.at&&b.day!==day&&b.at-pre.at<=7*DAY_MS);
+  if(!next)continue;
+  const otherChange=next.per.reduce((sum,v,i)=>sum+v-pre.per[i],0);
+  for(const [name,targets] of groups){
+   const out=byGame.get(name)||{name,days:new Set(),observations:[],targetCount:0};
+   for(const t of targets){
+    const delta=(next.per[t-1]-pre.per[t-1])/3-(otherChange-(next.per[t-1]-pre.per[t-1]))/57;
+    out.observations.push({at:pre.at,day,delta,target:t});out.targetCount++;
+   }
+   out.days.add(day);byGame.set(name,out);
+  }
+ }
+ const result={};
+ for(const [name,v] of byGame){
+  const grouped=new Map();
+  for(const o of v.observations){const r=grouped.get(o.day)||{at:o.at,sum:0,n:0};r.sum+=o.delta;r.n++;grouped.set(o.day,r)}
+  const rows=[...grouped.values()].map(x=>({at:x.at,value:x.sum/x.n})).sort((a,b)=>a.at-b.at);
+  const n=rows.length,mid=Math.floor(n/2);
+  const mean=a=>a.length?a.reduce((s,x)=>s+x.value,0)/a.length:0;
+  const uplift=mean(rows),early=mean(rows.slice(0,mid)),late=mean(rows.slice(mid));
+  const variance=n>1?rows.reduce((sum,r)=>sum+(r.value-uplift)**2,0)/(n-1):1;
+  // Don't claim precision from 60 darts alone. A conservative noise floor
+  // and minimum gap protect selection from regression-to-the-mean artefacts.
+  const se=Math.sqrt(Math.max(.045,variance)/Math.max(1,n));
+  const span=n>1?(rows[n-1].at-rows[0].at)/DAY_MS:0;
+  const supported=n>=10&&span>=21&&early>.05&&late>.075&&uplift>.09&&uplift/se>2;
+  result[name]={name,pairedDays:n,spanDays:Math.round(span),relativeChange:uplift,early,late,se,supported};
+ }
+ return result;
+}
+
+/* V5.10.0: separate, evidence-specific coaching intelligence.
+   Doubles hit/miss refers to the exact attempted DOUBLE. Checkout records
+   refer to COMPLETE three-dart attempts, grouped by starting finish band.
+   Win/loss pressure trends are within the same game and tier and are never
+   presented as a diagnosis or as causal training effectiveness. */
+function dc16Benchmarks(player=data,now=Date.now()){
+ const cutoff=now-112*DAY_MS,byAt=new Map();
+ for(const a of [...(player.assessmentHistory||[]),player.assessment]){
+  if(!a||a.finished!==true||a.quickStart===true||!Number.isFinite(Number(a.completedAt))||a.completedAt<cutoff||a.completedAt>now)continue;
+  byAt.set(a.completedAt,a);
+ }
+ return [...byAt.values()];
+}
+function dc16DoubleEvidence(player=data,now=Date.now()){
+ const samples=Array.from({length:20},(_,i)=>({target:i+1,hits:0,darts:0,days:new Set(),sources:new Set(),observations:[]}));
+ function add(target,hit,at,source){
+  if(!Number.isInteger(target)||target<1||target>20||typeof hit!=="boolean"||!Number.isFinite(at))return;
+  const v=samples[target-1],day=dateKey(at);v.darts++;if(hit)v.hits++;v.days.add(day);v.sources.add(source);v.observations.push({day,hit});
+ }
+ for(const a of dc16Benchmarks(player,now)){
+  const rows=a.doubles;if(!Array.isArray(rows)||rows.length!==20)continue;
+  for(const r of rows){const target=Number(String(r.target||'').replace(/^D/,''));
+   if(!Array.isArray(r.darts)||r.darts.length!==3)continue;
+   for(const d of r.darts)add(target,d.segment===r.target,Number(a.completedAt),'assessment');
+  }
+ }
+ const cutoff=now-112*DAY_MS,dayCaps=new Map();
+ for(const g of player.games||[]){
+  if(!g||!['Doubles Survival','Doubles Streak'].includes(g.name)||g.completion!=='natural'||g.recovery||g.quick||!Number.isFinite(g.at)||g.at<cutoff||g.at>now||g.variant!=='doubles'||!Array.isArray(g.targetLog))continue;
+  for(const d of g.targetLog){
+   if(!d||d.ring!=='D'||!Number.isInteger(d.target)||typeof d.hit!=='boolean')continue;
+   const key=dateKey(g.at)+':'+d.target,cap=dayCaps.get(key)||0;
+   if(cap>=9)continue;dayCaps.set(key,cap+1);add(d.target,d.hit,g.at,'game');
+  }
+ }
+ const enough=samples.filter(v=>v.darts>=15&&v.days.size>=5);
+ const dates=[...new Set(samples.flatMap(v=>[...v.days]))].sort();
+ const boundary=dates[Math.floor(dates.length/2)]||'9999-12-31';
+ const periods=(v,half)=>v.observations.reduce((r,o)=>{
+  if((o.day<boundary?0:1)===half){r.darts++;if(o.hit)r.hits++;r.days.add(o.day)}return r;
+ },{hits:0,darts:0,days:new Set()});
+ const phaseStats=samples.map(v=>[periods(v,0),periods(v,1)]);
+ const eligible=enough.filter(v=>{
+  const others=enough.filter(o=>o!==v),theirHits=others.reduce((a,o)=>a+o.hits,0),theirDarts=others.reduce((a,o)=>a+o.darts,0);
+  if(others.length<3||theirDarts<60)return false;
+  const p=(v.hits+2)/(v.darts+4),q=(theirHits+2)/(theirDarts+4);
+  const se=Math.sqrt(Math.max(.0001,p*(1-p)/v.darts+q*(1-q)/theirDarts));
+  if(!(q-p>=.13&&(q-p)/se>=3.4))return false;
+  // Independent periods: don't mistake one poor spell for a stable weakness.
+  return [0,1].every(h=>{
+   const t=phaseStats[v.target-1][h],rest=others.map(o=>phaseStats[o.target-1][h]);
+   const rd=rest.reduce((a,o)=>a+o.darts,0),rh=rest.reduce((a,o)=>a+o.hits,0);
+   return t.days.size>=3&&t.darts>=8&&rd>=30&&(rh+2)/(rd+4)-(t.hits+2)/(t.darts+4)>=.09;
+  });
+ }).sort((a,b)=>(a.hits+2)/(a.darts+4)-(b.hits+2)/(b.darts+4));
+ return {samples:samples.map(v=>({target:v.target,hits:v.hits,darts:v.darts,days:v.days.size,ready:v.darts>=15&&v.days.size>=5})),reliable:enough.length,weak:eligible.map(v=>v.target),total:samples.reduce((a,v)=>a+v.darts,0)};
+}
+function dc16CheckoutEvidence(player=data,now=Date.now()){
+ const labels=['2–40','41–60','61–80','81–100','101+'];
+ const buckets=labels.map(name=>({name,hits:0,attempts:0,days:new Set(),sources:new Set()}));
+ const bin=n=>n<=40?0:n<=60?1:n<=80?2:n<=100?3:4;
+ function add(target,hit,at,source){
+  if(!Number.isInteger(target)||target<2||target>170||typeof hit!=='boolean'||!Number.isFinite(at))return;
+  const b=buckets[bin(target)];b.attempts++;if(hit)b.hits++;b.days.add(dateKey(at));b.sources.add(source);
+ }
+ for(const a of dc16Benchmarks(player,now))for(const x of a.checkout||[])add(x.target,x.hit,Number(a.completedAt),'assessment');
+ const cutoff=now-112*DAY_MS,caps=new Map();
+ for(const g of player.games||[]){
+  if(!g||!['Focused Checkouts','Checkout Climb'].includes(g.name)||g.completion!=='natural'||g.quick||g.recovery||!Number.isFinite(g.at)||g.at<cutoff||g.at>now||!Array.isArray(g.attemptLog))continue;
+  for(const x of g.attemptLog){
+   const target=Number(x.target),k=dateKey(g.at)+':'+bin(target),count=caps.get(k)||0;
+   if(count>=12)continue;caps.set(k,count+1);add(target, x.hit===true||x.hit===1,g.at,'game');
+  }
+ }
+ return buckets.map(b=>({name:b.name,hits:b.hits,attempts:b.attempts,days:b.days.size,rate:b.attempts?b.hits/b.attempts:null,ready:b.attempts>=20&&b.days.size>=5}));
+}
+function dc16PressureEvidence(player=data,now=Date.now()){
+ const cutoff=now-56*DAY_MS,groups=new Map();
+ for(const g of player.games||[]){
+  if(!g||g.completion!=='natural'||g.quick||g.recovery||typeof g.win!=='boolean'||!Number.isFinite(g.at)||g.at<cutoff||g.at>now||!Number.isInteger(Number(g.tierAtStart)))continue;
+  const key=g.name+':'+Number(g.tierAtStart),d=dateKey(g.at);
+  const row=groups.get(key)||{name:g.name,tier:Number(g.tierAtStart),days:new Map()};
+  const day=row.days.get(d)||{at:g.at,w:0,n:0};day.at=Math.max(day.at,g.at);day.w+=g.win?1:0;day.n++;row.days.set(d,day);groups.set(key,row);
+ }
+ const outcomes=[];
+ for(const item of groups.values()){
+  const rows=[...item.days.values()].sort((a,b)=>a.at-b.at),half=Math.floor(rows.length/2);
+  if(rows.length<10||rows[rows.length-1].at-rows[0].at<21*DAY_MS)continue;
+  const rate=part=>part.reduce((a,r)=>a+r.w/r.n,0)/part.length;
+  const early=rate(rows.slice(0,half)),late=rate(rows.slice(half));
+  outcomes.push({name:item.name,tier:item.tier,days:rows.length,early,late,change:late-early,improving:late-early>.2&&early<.8});
+ }
+ return outcomes.sort((a,b)=>b.days-a.days);
+}
+function dc16DoublesRoute(current){
+ // A measured weakness changes only doubles targets, never singles/trebles.
+ const evidence=dc16DoubleEvidence();
+ if(evidence.weak.length===0)return current;
+ const preferred=evidence.weak.filter(n=>!current.includes(n)).slice(0,2);
+ if(!preferred.length)return current;
+ const result=[...current];
+ preferred.forEach((n,i)=>{result[result.length-1-i]=n});
+ return result;
+}
+function dc10GameChoiceScore(name,focus,position,primary,recent,alreadyToday,coachProfiles,seed,effects){
+ const p=coachProfiles.get(name);
+ // 50% is a useful pressure centre, not a claim about optimal learning.
+ // Use the expected WIN rate with uncertainty-aware evidence weighting.
+ const deviation=Math.abs(p.probability-.50);
+ // Hard-but-useful challenges remain in rotation when an achievable
+ // recovery version exists. Repeated easy wins are still deprioritised.
+ const pressurePenalty=p.reliability*(Math.max(0,deviation-.18)*28)*
+  (p.probability<.30&&DC12_RECOVERY_GAMES.has(name)?.30:1);
+ const repetition=alreadyToday.has(name)?28:0;
+ const recently=recent.includes(name)?6:0;
+ const theme=primary.includes(name)?0:9;
+ // Keep benchmark-only exercises out of the pressure circuit.
+ const measurement=DC10_MEASUREMENT_GAMES.has(name)?1000:0;
+ // A consistent game across training days is useful for comparing progress.
+ const continuity=recent.includes(name)&&!alreadyToday.has(name)?-2:0;
+ // Small deterministic tie breaker: no opaque random roulette each render.
+ let hash=(seed+position*131)>>>0;
+ for(let i=0;i<name.length;i++)hash=Math.imul(hash^name.charCodeAt(i),16777619)>>>0;
+ const tie=(hash%1009)/1009*7;
+ // A modest preference for a repeatedly promising activity, never a claim
+ // of causation. Keep rotation and daily skill theme dominant.
+ const evidence=effects?.[name];
+ const observedBenefit=evidence?.supported?-Math.min(2.5,1+evidence.pairedDays/20):0;
+ return pressurePenalty+repetition+recently+theme+measurement+continuity+tie+observedBenefit;
+}
 function chooseSessionGames(focus){
  const primary=TRAINING_LIBRARY[focus]||TRAINING_LIBRARY.scoring;
  const recent=(data.sessions||[]).slice(-2).flatMap(x=>Array.isArray(x.focus)?x.focus:[]);
  const alreadyToday=new Set((data.sessions||[]).filter(x=>x.date===dateKey()).flatMap(x=>Array.isArray(x.focus)?x.focus:[]));
- const daySeed=(Math.floor(Date.now()/DAY_MS)+data.sessions.length*3);
- const challengeAudit=dc7ChallengeAudit(data.games);
- const result=[];
- const categoryPools=[primary,TRAINING_LIBRARY[FOCUS[(FOCUS.indexOf(focus)+2)%5]],TRAINING_LIBRARY[FOCUS[(FOCUS.indexOf(focus)+3)%5]]];
+ const seed=Math.floor(Date.now()/DAY_MS)+(data.sessions||[]).length*3;
+ const pools=[primary,TRAINING_LIBRARY[FOCUS[(FOCUS.indexOf(focus)+2)%5]],TRAINING_LIBRARY[FOCUS[(FOCUS.indexOf(focus)+3)%5]]];
+ const candidates=[...new Set(pools.flat().concat(TRAINING_LIBRARY.pressure))].filter(n=>QUICK_GAMES.includes(n)&&!DC10_MEASUREMENT_GAMES.has(n));
+ const profiles=new Map(candidates.map(n=>[n,dc10ChallengeProfile(n)]));
+ const effects=dc15EffectEvidence();
+ const selected=[];
  for(let i=0;i<3;i++){
-  const options=[...new Set(categoryPools[i].concat(primary,TRAINING_LIBRARY.pressure))].filter(n=>!result.includes(n));
-  const ranked=options.map((name,index)=>({name,weight:(alreadyToday.has(name)?60:0)+(recent.includes(name)?25:0)+(primary.includes(name)?0:7)+dc7SelectionPenalty(name,challengeAudit)+((index+daySeed+i*7)%options.length)}));
-  ranked.sort((a,b)=>a.weight-b.weight);
-  result.push(ranked[0].name);
+  const prefer=pools[i].filter(n=>candidates.includes(n)&&!selected.includes(n));
+  // The day's designated skill stays central; other games add purposeful variety.
+  const options=prefer.length?prefer:candidates.filter(n=>!selected.includes(n));
+  const ranked=options.map(name=>({name,score:dc10GameChoiceScore(name,focus,i,primary,recent,alreadyToday,profiles,seed,effects)}));
+  ranked.sort((a,b)=>a.score-b.score||a.name.localeCompare(b.name));
+  if(ranked.length)selected.push(ranked[0].name);
  }
- return result;
+ return selected;
+}
+function dc10PressureSummary(games,sessionId){
+ const completed=(games||[]).filter(g=>g.sessionId===sessionId&&g.completion==='natural'&&typeof g.win==='boolean');
+ const wins=completed.filter(g=>g.win).length;
+ const gamesPlayed=[...new Set(completed.map(g=>g.name))];
+ return {rounds:completed.length,wins,losses:completed.length-wins,gamesPlayed};
 }
 function generateSession(extra=false,skipWarmup=false){
  const focus=focusForDay(extra),chosen=chooseSessionGames(focus);
@@ -1473,7 +1886,7 @@ const QUICK_GAMES=[
 const QUICK_DESCRIPTIONS={
  "Scoring Survival":"Meet your score target every visit. A failure costs a life.",
  "Scoring Ladder":"Climb a sequence of targets. Missing a target knocks you down.",
- "Treble Hunt":"Hit changing trebles within your lives allowance.",
+ "Treble Hunt":"Hit changing trebles within your lives allowance. Beginners aim at singles using measured targets when available.",
  "Doubles Survival":"Clear doubles before your darts run out.",
  "Doubles Streak":"Build consecutive target hits. Misses break your run and cost lives.",
  "Staying Straight":"Keep scoring in each numbered segment. The first miss ends that segment.",
@@ -1485,11 +1898,11 @@ const QUICK_DESCRIPTIONS={
  "Bull Streak":"Build consecutive bull hits without breaking your run.",
  "Shanghai Combo":"Complete single, double, then treble on the same number, in order.",
  "Bull Bank":"Bank enough bull points before running out of darts.",
- "Number Lock":"Close three numbered targets in any order before your misses run out.",
+ "Number Lock":"Close three numbered targets in any order before your misses run out. Beginner singles routes can follow measured target accuracy.",
  "Halve It":"Six targets: blank visits halve your accumulated points. Beat the final target.",
  "Outside Doubles":"Inside the target single is dangerous. Clear doubles without losing your lives.",
  "101 Sprint":"Finish exactly 101 on a double within your tier-specific dart allowance.",
- "Golf Five":"Play five holes; hit the nominated single to finish each in fewer strokes than par.",
+ "Golf Five":"Play five holes; hit the nominated target in fewer strokes than par. Beginner singles routes can adapt to measured accuracy.",
  "Cricket Countdown":"Close the called numbers by earning three marks per target before the dart budget expires.",
  "Double Double":"Hit two specific doubles in sequence before your dart allowance runs out.",
  "Double-In 201":"First hit a double to enter, then finish 201 with a double-out before the visit limit.",
@@ -1600,7 +2013,7 @@ function focusedRound(){
  const c=focusedConfig();
  return {name:"Focused Checkouts",started:Date.now(),config:clone(c),
   target:c.start,index:0,lives:c.lives,success:0,fail:0,
-  attempts:0,attempt:0,dartsUsed:0,completed:false};
+  attempts:0,attempt:0,dartsUsed:0,completed:false,attemptLog:[]};
 }
 /* Suggested routes are hints only: the player may choose a different valid route. */
 const checkoutRouteCache={};
@@ -1626,7 +2039,7 @@ function checkoutRoute(total){
  return checkoutRouteCache[total]="Find a route ending on a double";
 }
 function focusedFailure(g){
- g.fail++;g.attempts++;g.lives--;g.attempt=0;
+ (g.attemptLog||(g.attemptLog=[])).push({target:g.target,hit:false,darts:3});g.fail++;g.attempts++;g.lives--;g.attempt=0;
  if(g.lives<=0){endRound();return true}
  if(g.config.mode==="ladder"&&g.target>g.config.start){g.target--}
  return false;
@@ -1642,7 +2055,7 @@ function focusedHit(){
  const g=activeGame;if(!g||g.name!=="Focused Checkouts"||session()?.pausedAt)return;
  const left=3-g.attempt;
  askCheckoutDarts({score:g.target,maxDarts:left,onFinish:used=>{
-  snapshot();g.dartsUsed+=g.attempt+used;g.success++;g.attempts++;g.attempt=0;g.target++;
+  snapshot();(g.attemptLog||(g.attemptLog=[])).push({target:g.target,hit:true,darts:g.attempt+used});g.dartsUsed+=g.attempt+used;g.success++;g.attempts++;g.attempt=0;g.target++;
   if(g.target>g.config.end){g.completed=true;endRound();return}data.game=g;save();
  }});
 }
@@ -1821,7 +2234,7 @@ function trebleDart(hit){
 }
 function doublesStreakDart(hit){
  const g=activeGame,s=session();if(!g||g.name!=="Doubles Streak"||!s||s.pausedAt||s.phase!=="playing")return;
- snapshot();g.thrown++;
+ snapshot();(g.targetLog||(g.targetLog=[])).push({target:g.targets[g.targetIndex],hit:!!hit,ring:g.variant==="singles"?"S":"D"});g.thrown++;
  if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);g.targetIndex=(g.targetIndex+1)%g.targets.length}
  else{g.misses++;g.streak=0;g.lives--}
  if(g.best>=g.goal||g.lives<=0){endRound();return}
@@ -1863,7 +2276,7 @@ function dc3MatchAllowance(start){
 }
 
 function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name,started:Date.now()};if(name==="Big Singles")Object.assign(g,{darts:[],hits:0,day:dateKey()});
- if(name==="Doubles Survival"){const tier=num(data.skills.doubles.level),singles=tier>=6,prior=data.games.filter(x=>x.name===name&&!x.extra).length,reverse=!singles&&prior>0&&prior%8===7,sequence=Array.from({length:20},(_,i)=>reverse?20-i:i+1);Object.assign(g,{variant:singles?"singles":"doubles",sequence,index:0,target:sequence[0],used:0,allowed:singles?9:clamp(tier+2,3,9),hits:0,thrown:0,highest:0,lastHit:0})}
+ if(name==="Doubles Survival"){const tier=num(data.skills.doubles.level),singles=tier>=6,prior=data.games.filter(x=>x.name===name&&!x.extra).length,reverse=!singles&&prior>0&&prior%8===7,sequence=Array.from({length:20},(_,i)=>reverse?20-i:i+1);Object.assign(g,{variant:singles?"singles":"doubles",sequence,index:0,target:sequence[0],used:0,allowed:singles?9:clamp(tier+2,3,9),hits:0,thrown:0,highest:0,lastHit:0,targetLog:[]})}
  if(name==="Scoring Survival"){
   const tier=pressureTier("scoring");Object.assign(g,{tier,target:SCORE_TARGETS[tier-1],lives:tier<=2?2:tier<=4?3:5,visits:0,points:0,scores:[],cleared:0,streak:0});
  }
@@ -1874,11 +2287,11 @@ function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name
  }
  if(name==="Treble Hunt"){
   const tier=pressureTier("scoring"),beginner=tier>=6;
-  Object.assign(g,{tier,variant:beginner?"single":"treble",targets:beginner?[20,19,18]:tier<=2?[20,19,18,17]:[20,19,18],targetIndex:0,lives:tier<=2?2:5,goal:tier<=2?8:tier<=4?6:4,hits:0,misses:0,streak:0,thrown:0});
+  Object.assign(g,{tier,variant:beginner?"single":"treble",targets:beginner?dc11SingleTargetRoute():tier<=2?[20,19,18,17]:[20,19,18],targetIndex:0,lives:tier<=2?2:5,goal:tier<=2?8:tier<=4?6:4,hits:0,misses:0,streak:0,thrown:0});
  }
  if(name==="Doubles Streak"){
   const tier=pressureTier("doubles"),singles=tier>=6;
-  Object.assign(g,{tier,variant:singles?"singles":"doubles",targets:[20,1,18,4,13,6,10,15,2,17],targetIndex:0,lives:tier<=2?2:4,goal:tier<=2?6:tier<=4?4:3,streak:0,best:0,hits:0,misses:0,thrown:0});
+  Object.assign(g,{tier,variant:singles?"singles":"doubles",targets:singles?[20,1,18,4,13,6,10,15,2,17]:dc16DoublesRoute([20,1,18,4,13,6,10,15,2,17]),targetIndex:0,lives:tier<=2?2:4,goal:tier<=2?6:tier<=4?4:3,streak:0,best:0,hits:0,misses:0,thrown:0,targetLog:[]});
  }
  if(name==="301 Pressure"){
   const scoring=pressureTier("scoring"),checkout=pressureTier("checkout"),tier=Math.round((scoring+checkout)/2),maxDarts=dc3MatchAllowance(301);
@@ -1898,7 +2311,7 @@ function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name
  }
  if(name==="Number Lock"){
   const tier=pressureTier("scoring");
-  const targets=tier<=2?[20,19,18]:tier<=4?[20,19,18]:[20,19,18];
+  const targets=tier>=6?dc11SingleTargetRoute():[20,19,18];
   Object.assign(g,{tier,targets,locked:[],ring:tier<=2?"T":tier<=5?"D":"S",misses:0,allowedMisses:tier<=2?2:tier<=4?4:7,hits:0,thrown:0});
  }
  if(name==="Halve It"){
@@ -1914,7 +2327,7 @@ function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name
  }
  if(name==="Golf Five"){
   const tier=pressureTier("doubles"),ring=tier<=2?"D":tier<=4?"D":"S";
-  Object.assign(g,{tier,ring,holes:[20,1,18,4,13],index:0,shots:0,strokes:0,par:[8,10,11,12,13,14,15][tier-1],hits:0,thrown:0});
+  Object.assign(g,{tier,ring,holes:ring==="S"?dc11SingleTargetRoute(data,Date.now(),5):[20,1,18,4,13],index:0,shots:0,strokes:0,par:[8,10,11,12,13,14,15][tier-1],hits:0,thrown:0});
  }
  if(name==="Cricket Countdown"){
   const tier=pressureTier("scoring"),targets=tier<=2?[20,19,18,17,16,15,25]:tier<=4?[20,19,18,17,16,15]:[20,19,18,17,16];
@@ -1986,7 +2399,7 @@ function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name
  if(name==="Double Duel"){
   const tier=pressureTier("doubles");Object.assign(g,{tier,target:20,player:0,opponent:0,turn:0,thrown:0,matchDone:false});
  }
- return g}
+ return dc12ApplyRecovery(g)}
 
 function shanghaiDart(hit){
  const s=session(),g=activeGame;if(!s||s.pausedAt||s.phase!=="playing"||!g||g.name!=="Shanghai Combo")return;
@@ -2186,7 +2599,7 @@ function undoGame(){const s=session();if(!s||s.pausedAt||s.phase!=="playing")ret
 }
 function snapshot(){undoSnapshot=clone(activeGame);if(session())session().lastRoundUndo=null}
 function recordBig(hit){const g=activeGame,s=session();if(!g||g.name!=="Big Singles"||s.pausedAt||g.darts.length>=60)return;snapshot();g.darts.push(hit?1:0);if(hit)g.hits++;if(g.darts.length===60){data.bigSingles.push({day:dateKey(s.start),at:Date.now(),hits:g.hits,perNumber:Array.from({length:20},(_,i)=>g.darts.slice(i*3,i*3+3).reduce((a,b)=>a+b,0)),complete:true});completeExercise("natural");return}data.game=g;save()}
-function survivalDart(hit){const g=activeGame;if(!g||g.name!=="Doubles Survival"||session().pausedAt)return;normaliseSurvivalGame(g);snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.highest=Math.max(g.highest,g.target);g.lastHit=g.target;g.index++;g.used=0;if(g.index>=g.sequence.length){endRound();return}g.target=g.sequence[g.index]}else if(g.used>=g.allowed){endRound();return}data.game=g;save()}
+function survivalDart(hit){const g=activeGame;if(!g||g.name!=="Doubles Survival"||session().pausedAt)return;normaliseSurvivalGame(g);snapshot();(g.targetLog||(g.targetLog=[])).push({target:g.target,hit:!!hit,ring:g.variant==="singles"?"S":"D"});g.used++;g.thrown++;if(hit){g.hits++;g.highest=Math.max(g.highest,g.target);g.lastHit=g.target;g.index++;g.used=0;if(g.index>=g.sequence.length){endRound();return}g.target=g.sequence[g.index]}else if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function doubleDart(hit){survivalDart(hit)}
 function recordScore(){const input=$("scoreInput");if(!input||input.value==="")return;const n=Number(input.value);if(!validVisit(n)){alert("Enter a valid three-dart total.");return}const g=activeGame;if(!g||g.name!=="Scoring Challenge"||session().pausedAt)return;snapshot();g.points+=n;g.visits++;g.scores.push(n);if(n===180)g.oneEighties=num(g.oneEighties)+1;padSet("");if(g.visits>=10){endRound();return}data.game=g;save()}
 function straightDart(value){const g=activeGame;if(!g||g.name!=="Staying Straight"||session().pausedAt)return;normaliseStraightGame(g);if(g.index>=5)return;snapshot();const i=g.index;g.darts++;if(value){g.points+=value;g.counts[i]+=value;g.hits[i]++;if(g.darts%3===1)g.t20run=0;if(i===0&&value===3){g.t20run=num(g.t20run)+1;if(g.t20run===3){g.oneEighties=num(g.oneEighties)+1;g.t20run=0}}else g.t20run=0}else{g.misses[i]++;g.index++;if(g.index>=5){endRound();return}}data.game=g;save()}
@@ -2197,8 +2610,16 @@ function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||sess
 function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.3.0",result:"Activity completed",oneEighties:num(g.oneEighties)};
- if(g.name==="Doubles Survival"){normaliseSurvivalGame(g);Object.assign(e,{variant:g.variant,sequence:[...g.sequence],hits:g.hits,thrown:g.thrown,allowed:g.allowed,highest:g.highest,lastHit:g.lastHit});e.result=(g.variant==="singles"?"Singles":"Doubles")+" Survival · "+g.hits+"/"+g.thrown+" hits";if(g.variant==="doubles"){data.bestDouble=Math.max(num(data.bestDouble),g.highest);data.doublesHit=num(data.doublesHit)+g.hits;data.doublesThrown=num(data.doublesThrown)+g.thrown}}
+function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.10.0",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery};
+ if(completion==="natural"&&!session()?.quick&&!g.recovery){
+  const targets=g.name==="Number Lock"&&g.ring==="S"?g.targets:
+   g.name==="Treble Hunt"&&g.variant==="single"?g.targets:
+   g.name==="Golf Five"&&g.ring==="S"?g.holes:null;
+  if(Array.isArray(targets)&&targets.length&&targets.every(x=>Number.isInteger(x)&&x>=1&&x<=20)){
+   e.trainingRing="S";e.trainingTargets=[...new Set(targets)];e.ring=g.ring||null;e.variant=g.variant||null;e.targets=[...targets];e.holes=g.name==="Golf Five"?[...targets]:undefined;
+  }
+ }
+ if(g.name==="Doubles Survival"){normaliseSurvivalGame(g);Object.assign(e,{variant:g.variant,sequence:[...g.sequence],hits:g.hits,thrown:g.thrown,allowed:g.allowed,highest:g.highest,lastHit:g.lastHit});e.targetLog=Array.isArray(g.targetLog)?clone(g.targetLog):[];e.result=(g.variant==="singles"?"Singles":"Doubles")+" Survival · "+g.hits+"/"+g.thrown+" hits";if(g.variant==="doubles"){data.bestDouble=Math.max(num(data.bestDouble),g.highest);data.doublesHit=num(data.doublesHit)+g.hits;data.doublesThrown=num(data.doublesThrown)+g.thrown}}
  if(g.name==="Scoring Challenge"){Object.assign(e,{points:g.points,visits:g.visits,scores:[...g.scores]});e.benchmark=g.visits>=10;e.result=g.points+" points · "+(g.visits?g.points/g.visits:0).toFixed(1)+" average"}
  if(["Scoring Survival","Scoring Ladder","301 Pressure"].includes(g.name)){
   Object.assign(e,{points:g.points,visits:g.visits,scores:[...g.scores],tierAtStart:g.tier});
@@ -2212,7 +2633,7 @@ function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now()
  if(["Treble Hunt","Doubles Streak"].includes(g.name)){
   Object.assign(e,{variant:g.variant,targets:[...g.targets],hits:g.hits,misses:g.misses,thrown:g.thrown,goal:g.goal,lives:g.lives,best:g.best||g.streak||0,tierAtStart:g.tier});
   e.benchmark=false;
-  e.result=g.hits+" hits / "+g.thrown+" darts · "+g.lives+" lives remaining";
+  if(g.name==="Doubles Streak")e.targetLog=Array.isArray(g.targetLog)?clone(g.targetLog):[];e.result=g.hits+" hits / "+g.thrown+" darts · "+g.lives+" lives remaining";
  }
 
  if(g.name==="Staying Straight"){normaliseStraightGame(g);Object.assign(e,{points:g.points,targets:[...STRAIGHT_TARGETS],counts:[...g.counts],hits:[...g.hits],misses:[...g.misses],successfulDarts:g.hits.reduce((a,b)=>a+b,0),missedDarts:g.misses.reduce((a,b)=>a+b,0),darts:g.darts,complete:g.index>=5});e.result=g.points+" points · "+STRAIGHT_TARGETS.map((n,i)=>n+"s: "+g.counts[i]).join(", ")}
@@ -2250,7 +2671,7 @@ function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now()
    completed:!!g.completed,checkoutTierAtStart:g.config.tier});
   /* Different ranges aren't equivalent to the fixed checkout benchmark. */
   e.benchmark=false;
-  e.result=g.config.start+"–"+g.config.end+" · "+g.success+
+  e.attemptLog=Array.isArray(g.attemptLog)?clone(g.attemptLog):[];e.result=g.config.start+"–"+g.config.end+" · "+g.success+
    " checkouts · "+(g.completed?"Range cleared":"Round ended");
  }
  if(["501 Pressure","Setup Shot","Last Dart Rescue","Risk or Reward","170 Challenge","First Nine Siege"].includes(g.name)){
@@ -2304,6 +2725,7 @@ function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now()
   const key=/bull/i.test(g.name)?"bull":/double|golf|outside|jackpot|duel|bridge/i.test(g.name)?"doubles":/checkout|climb|101|201|301|501|rescue|setup|170|sprint|poker|standing/i.test(g.name)?"checkout":"scoring";
   e.tierAtStart=num(g.tier)||pressureTier(key);
  }
+ if(g.recovery&&completion==="natural")e.result="RECOVERY · "+e.result;
  if(completion!=="natural"&&completion!=="timed"){e.win=null;e.loss=null;e.result="INCOMPLETE · "+e.result.replace(/^(WIN|LOSE) · /, "")}
  return e}
 /* Round completion records the result and restarts the SAME game. The exercise clock never resets. */
@@ -2337,30 +2759,24 @@ function completeExercise(completion="manual"){
  s.phase="complete";s.pausedAt=Date.now();undoSnapshot=null;hideRoundAnnouncement();
  save();
 }
+/* V5.10.0: the coach consumes wins and losses privately. End-of-session
+   messages are positive-only; a bad night never becomes a public verdict. */
 function generateSessionReport(sessionData){
  if(sessionData.quick)return null;
- const recent=data.games.filter(g=>g.sessionId===sessionData.id&&g.completion==="natural"&&!['Warm-up','Review','Big Singles'].includes(g.name));
- const wins=recent.filter(g=>g.win===true),losses=recent.filter(g=>g.loss===true),total=recent.length;
- const best=recent.reduce((a,g)=>!a||num(g.oneEighties)>num(a.oneEighties)?g:a,null);
- const prior=data.games.filter(g=>g.sessionId!==sessionData.id&&g.completion==="natural"&&!g.quick);
- const matched=recent.map(g=>({g,prior:prior.filter(p=>p.name===g.name&&num(p.tierAtStart)===num(g.tierAtStart))})).filter(x=>x.prior.length>=5);
- const comparison=matched.length>=3?matched[0]:null;
- const reference=comparison?comparison.prior.slice(-12):[];
- const previousRate=reference.length>=5?reference.filter(g=>g.win).length/reference.length:null;
- const currentEquivalent=comparison?recent.filter(g=>g.name===comparison.g.name&&num(g.tierAtStart)===num(comparison.g.tierAtStart)):[];
- const rate=currentEquivalent.length>=3?currentEquivalent.filter(g=>g.win).length/currentEquivalent.length:null;
- const good=!total?"You completed the scheduled practice block. More completed rounds are needed for a performance judgement.":
-   wins.length?"You won "+wins.length+" of "+total+" completed pressure rounds."+(best&&best.oneEighties?" You hit "+recent.reduce((a,x)=>a+num(x.oneEighties),0)+" 180(s).":""):
-   "You completed "+total+" pressure rounds and generated useful practice evidence.";
- const bad=!total?"No completed game rounds were recorded for comparison.":losses.length?"You lost "+losses.length+" pressure rounds. That's where the next comparison will focus.":"No lost rounds were recorded today.";
- const ugly=previousRate!==null&&rate!==null?(rate<previousRate-.15?"Today's pressure win rate was below your recent recorded rounds. One session alone does not establish a decline.":"No clear negative trend stands out from the completed-round results."):"Not enough equivalent earlier rounds at the same difficulty to establish a reliable trend.";
- const byName={};for(const g of recent){const k=g.name;byName[k]??={w:0,l:0};if(g.win)byName[k].w++;else if(g.loss)byName[k].l++}
- const struggling=Object.entries(byName).filter(([k,v])=>v.l>v.w).sort((a,b)=>b[1].l-a[1].l)[0];
- const skill=struggling?(struggling[0].match(/bull/i)?'bull':struggling[0].match(/double|golf|outside/i)?'doubles':struggling[0].match(/checkout|climb|101|301|501|rescue|setup/i)?'checkout':'scoring'):null;
- const plan=skill?"When "+skill+" next appears in your existing training plan, the coach will review the challenge level and use this evidence alongside your previous results. The day sequence will not change.":"Continue your normal programme. The coach will adapt only when consistent evidence justifies it.";
- return {good,bad,ugly,plan,at:Date.now()};
+ const p=dc10PressureSummary(data.games,sessionData.id);
+ const completed=data.games.filter(g=>g.sessionId===sessionData.id&&g.completion==='natural');
+ const oneEighties=completed.reduce((sum,g)=>sum+num(g.oneEighties),0);
+ const good=p.rounds?"You completed "+p.rounds+" competitive rounds and won "+p.wins+"."+(oneEighties?" You also recorded "+oneEighties+" 180(s).":""):
+  "You completed your training block. The coach will use each recorded result as more evidence arrives.";
+ const highlight=p.gamesPlayed.length?"You trained through "+p.gamesPlayed.length+" different competitive challenge"+(p.gamesPlayed.length===1?"":"s")+" today.":
+  "Your consistent training routine is building a useful baseline.";
+ const plan="Your coach keeps the core programme stable, adjusts the pressure using repeated results across days, and continues tracking each skill independently.";
+ return {good,bad:"",ugly:"",highlight,plan,at:Date.now(),pressure:p,version:5};
 }
-function displayCoachReport(report){const box=$("sessionCoachReport");if(!box)return;box.innerHTML=report?'<h3>🎯 Coach’s Report</h3>'+[['The Good',report.good],['The Bad',report.bad],['The Ugly',report.ugly],["Coach’s Plan",report.plan]].map(([head,body])=>'<div class="coachReportItem"><strong>'+esc(head)+'</strong><p>'+esc(body)+'</p></div>').join(''):''}
+function displayCoachReport(report){
+ const box=$("sessionCoachReport");if(!box)return;
+ box.innerHTML=report?'<h3>🎯 Coach’s Report</h3>'+[['Today’s Achievements',report.good],['Training Completed',report.highlight||''],['Coach’s Next Steps',report.plan]].filter(x=>x[1]).map(([head,body])=>'<div class="coachReportItem"><strong>'+esc(head)+'</strong><p>'+esc(body)+'</p></div>').join(''):'';
+}
 function finishSession(success){hideRoundAnnouncement();const s=session();if(!s)return;const elapsed=Math.round(sessionElapsed()/6)/10;const sessionRecord={id:s.id,start:s.start,date:dateKey(s.start),minutes:elapsed,extra:s.extra,quick:!!s.quick,quickGame:s.quickGame||null,completed:!!success,activities:s.completed,focus:s.plan.map(p=>p.name)};sessionRecord.coachReport=generateSessionReport(sessionRecord);data.sessions.push(sessionRecord);displayCoachReport(sessionRecord.coachReport);data.activeSession=null;data.game=null;activeGame=null;undoSnapshot=null;rapidInitialCalibration();performCoachReview();checkCompletedBlocks();data.coach.challengeAudit=dc7ChallengeAudit(data.games);data.coach.challengeForecast=dc8ChallengeForecast(data.games);save();checkpointData();$("finishedText").textContent=success?(s.quick?"Quick Play saved separately.":"Today's practice is saved."):"Your practice has been saved.";$("sessionFinished").classList.remove("hidden");show("train")}
 function finishSessionEarly(){if(!session())return;if(!confirm("End this training session?"))return;finishSession(false)}
 function pauseSession(){const s=session();if(!s||s.phase==="rules"||s.phase==="complete")return;if(s.pausedAt){s.pausedTotal+=Date.now()-s.pausedAt;s.pausedAt=null;s.activityStarted=Date.now()}else{s.pausedAt=Date.now();if(s.activityStarted)s.activityAccumulated+=s.pausedAt-s.activityStarted;s.activityStarted=null}save()}
@@ -2420,6 +2836,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  let rule=EXTRA_RULES[e.name]||RULES[e.name]||"";if(g&&g.name==="Doubles Survival"&&g.variant==="singles")rule="Hit the displayed SINGLE (either single section) within nine darts. A completed round restarts.";if(g&&g.name==="Treble Hunt"&&g.variant==="single")rule="Beginner target: hit the SINGLE shown. A miss costs one life. Clear the hit goal before lives run out.";
  if(g&&g.name==="Doubles Streak"&&g.variant==="singles")rule="Hit the SINGLE shown to build a streak. A miss breaks it and costs a life. Reach the goal before lives run out.";
  if(g&&["Bull Survival","Bull Streak"].includes(g.name))rule=(g.target==="CENTRE"?"CENTRE = anywhere INSIDE the inner edge of the treble ring, including the bull. ":g.target==="50"?"Only the red bullseye (50) counts. ":"Either outer bull (25) or bullseye (50) counts. ")+rule;
+ if(g&&g.recovery)rule+=(rule?"\n\n":"")+g.recoveryMessage;
  $("exerciseRules").textContent=rule;$("exerciseTimeLabel").textContent=isBenchmark?"60 darts · extra time":"Exercise time";$("exerciseClock").textContent=isBenchmark?(g?g.darts.length:0)+"/60":fmt(Math.max(0,seconds-elapsed));$("exerciseBar").style.width=isBenchmark?((g?g.darts.length:0)/60*100)+"%":clamp(100*elapsed/Math.max(1,seconds),0,100)+"%";$("sessionClock").textContent=fmt(sessionRemaining());$("sessionBar").style.width=clamp(100*sessionElapsed()/sessionBudget(),0,100)+"%";$("pauseButton").textContent=s.pausedAt?"Resume Session":"Pause Session";
  const phase=s.phase||"playing";
  $("exercisePanel").classList.toggle("phase-rules",phase==="rules");
@@ -2801,6 +3218,32 @@ function renderProgress(){
  if(big.length){const latest=big[big.length-1],prev=big.length>=2?big[big.length-2]:null;
   $("singlesProgress").innerHTML='<div class="big">'+num(latest.hits)+'/60</div><p class="center">'+(num(latest.hits)/60*100).toFixed(1)+'% large-single accuracy'+(prev?' · Previous '+num(prev.hits)+'/60':'')+'</p><p class="secondarySub">'+esc(latest.day||'')+'</p><details><summary class="pill">View results by number</summary><div class="targetGrid">'+(latest.perNumber||[]).map((n,i)=>'<div>'+(i+1)+'<strong>'+num(n)+'/3</strong></div>').join('')+'</div></details>';
  }else $("singlesProgress").innerHTML='<p class="muted">A daily 60-dart result will appear after your first completed benchmark.</p>';
+ const targetIntel=dc11TargetSummary();
+ const intelligent=targetIntel.personalised;
+ $("singlesProgress").innerHTML+='<div class="entry" style="margin-top:14px"><h3>Target Intelligence · Large Singles</h3>'+
+  '<p class="muted">Measured from the past 56 days only. Other rings and miss direction are not assumed.</p>'+
+  '<p>'+targetIntel.measuredDarts+' measured darts · '+targetIntel.reliable+'/20 targets with enough evidence</p>'+
+  (intelligent?'<p><strong>Current singles practice route: '+targetIntel.route.map(n=>'S'+n).join(' → ')+'</strong></p>':
+  '<p>'+(targetIntel.reliable<8?'Standard route stays in place while your coach gathers enough repeated results.':'Standard route retained: no single number has enough evidence of a meaningful weakness yet.')+'</p>')+
+  (targetIntel.strongest.length?'<p>Established strengths: '+targetIntel.strongest.map(n=>'S'+n).join(', ')+'</p>':'')+
+  '<details><summary class="pill">See measured singles by number</summary><div class="targetGrid">'+
+  targetIntel.evidence.map(x=>'<div>S'+x.target+'<strong>'+x.hits+'/'+x.darts+'</strong><small>'+(x.reliable?'Evidence ready':'Gathering')+'</small></div>').join('')+
+  '</div></details></div>';
+ const effects=dc15EffectEvidence();
+ const promising=Object.values(effects).filter(x=>x.supported).sort((a,b)=>b.pairedDays-a.pairedDays);
+ $("singlesProgress").innerHTML+='<div class="entry" style="margin-top:14px"><h3>Training Effectiveness · Early Evidence</h3><p class="muted">Compares large-single benchmarks before targeted competitive games with subsequent benchmarks (within 7 days), after subtracting changes across the other 19 numbers. This is an observed association, not proof a game caused improvement.</p>'+
+  (promising.length?promising.map(x=>'<p>✓ '+esc(x.name)+' · '+x.pairedDays+' paired days · encouraging repeated evidence</p>').join(''):
+   '<p>Collecting before-and-after measurements. Your coach will not guess which games work.</p>')+
+  '<details><summary class="pill">View evidence counts</summary>'+
+  (Object.values(effects).length?Object.values(effects).map(x=>'<p>'+esc(x.name)+': '+x.pairedDays+' paired days'+(x.supported?' · encouraging':' · collecting evidence')+'</p>').join(''):'<p>No matched practice and measurement days yet.</p>')+'</details></div>';
+ const doublesIntel=dc16DoubleEvidence(),checkoutIntel=dc16CheckoutEvidence(),pressureIntel=dc16PressureEvidence();
+ $("singlesProgress").innerHTML+='<div class="entry" style="margin-top:14px"><h3>Doubles Intelligence · Measured Accuracy</h3><p class="muted">Exact doubles only: complete assessments and recorded dart-by-dart doubles games. Single-ring hits are never counted as doubles. Insufficient evidence does not change game targets.</p><p>'+doublesIntel.total+' measured double darts · '+doublesIntel.reliable+'/20 numbers with repeat evidence</p>'+
+  (doublesIntel.weak.length?'<p>Current development focus: '+doublesIntel.weak.map(n=>'D'+n).join(', ')+'</p>':'<p>Collecting reliable evidence across different days.</p>')+
+  '<details><summary class="pill">Measured double accuracy by number</summary><div class="targetGrid">'+doublesIntel.samples.map(x=>'<div>D'+x.target+'<strong>'+x.hits+'/'+x.darts+'</strong><small>'+(x.ready?'Repeat evidence':'Collecting')+'</small></div>').join('')+'</div></details></div>'+
+  '<div class="entry" style="margin-top:14px"><h3>Checkout Intelligence · Finish Difficulty</h3><p class="muted">Actual completed checkout attempts grouped by starting score. Different finishing ranges are not treated as interchangeable.</p>'+
+  checkoutIntel.map(x=>'<p>'+esc(x.name)+': '+x.hits+'/'+x.attempts+' finishes'+(x.ready?' · measured across '+x.days+' days':' · gathering evidence')+'</p>').join('')+'</div>'+
+  '<div class="entry" style="margin-top:14px"><h3>Pressure Consistency · Early Evidence</h3><p class="muted">Compares competitive WIN rates in the same game and hidden difficulty, one vote per day. This is a trend, not proof that a drill caused improvement.</p>'+
+  (pressureIntel.filter(x=>x.improving).length?pressureIntel.filter(x=>x.improving).slice(0,4).map(x=>'<p>✓ '+esc(x.name)+' · more consistent across '+x.days+' days</p>').join(''):'<p>Collecting repeated comparable pressure results.</p>')+'</div>';
  const blocks=[...(data.coach.completedBlocks||[])].reverse();$("blockReport").innerHTML=blocks.length?blocks.map(b=>'<div class="entry"><h3>Training Block '+(num(b.index)+1)+'</h3><p>'+formatDate(b.start)+' to '+formatDate(b.end-1)+'</p>'+(b.highlights&&b.highlights.length?b.highlights.map(h=>'<p>✓ '+esc(h.name)+': improved by '+num(h.improvement).toFixed(1)+esc(h.unit)+'</p>').join(''):'<p>Block completed. Your coach has prepared the next phase.</p>')+'</div>').join(''):'<p class="muted">The first four-week review appears once sufficient training data is available.</p>';
  $("sessionHistory").innerHTML=data.sessions.slice(-30).reverse().map(s=>'<div class="entry"><strong>'+esc(s.date||'Session')+'</strong> · '+num(s.minutes).toFixed(1)+' minutes'+(s.quick?' · Quick Play':s.extra?' · Extra session':'')+(s.coachReport?'<details><summary>Coach’s Report</summary>'+[['Good',s.coachReport.good],['Bad',s.coachReport.bad],['Ugly',s.coachReport.ugly],['Plan',s.coachReport.plan]].map(([name,msg])=>'<p><strong>'+esc(name)+':</strong> '+esc(msg)+'</p>').join('')+'</details>':'')+'</div>').join('')||'<p>No sessions recorded yet.</p>';
  $("gameHistory").innerHTML=data.games.slice(-40).reverse().map(g=>'<div class="entry"><strong>'+esc(g.name==="Doubles Survival"&&g.variant==="singles"?'Singles Survival':g.name||'Game')+'</strong> · '+esc(g.result||'Completed')+(g.completion==='partial'?' (partial)':'')+'</div>').join('')||'<p>No games recorded yet.</p>';
@@ -2911,7 +3354,7 @@ function startQuickFromAverage(){
  data.coach.estimates={};data.coach.lastTierChanges={};
  save(false);checkpointData();show("home");
 }
-/* V5.3.1: Repeatable calibration available to every existing player.
+/* V5.10.0: Repeatable calibration available to every existing player.
    No training history, Big Singles results or personal records are erased. */
 function startFullCalibration(){
  if(session()){show("train");return}
