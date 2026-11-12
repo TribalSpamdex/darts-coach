@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.13.0</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.14.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -738,7 +738,7 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.9.0</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.14.0</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -1778,6 +1778,108 @@ function dc19ApplyTuning(g){
  return g;
 }
 
+
+/* V5.14.0: prospective, read-only coach research.
+   The fixed programme runs ONLY in shadow. It never assigns exercises, tiers
+   or winning conditions. No causal improvement claim can be made from its
+   unplayed alternatives. Training-day is the independence unit. */
+function dc21FixedProgramme(focus){
+ const index=FOCUS.indexOf(focus),base=index<0?0:index;
+ const themes=[FOCUS[base],FOCUS[(base+2)%5],FOCUS[(base+3)%5]];
+ const selected=[];
+ for(const theme of themes){
+  const pool=TRAINING_LIBRARY[theme]||[];
+  const name=pool.find(n=>QUICK_GAMES.includes(n)&&!DC10_MEASUREMENT_GAMES.has(n)&&!selected.includes(n));
+  if(name)selected.push(name);
+ }
+ return selected;
+}
+function dc21CapturePlan(s){
+ if(!s||s.extra||s.quick)return null;
+ const focus=focusForDay(false),actual=s.plan.filter(p=>p&&QUICK_GAMES.includes(p.name)).map(p=>p.name);
+ const fixed=dc21FixedProgramme(focus),cutoff=s.start-7*DAY_MS;
+ const past=(data.sessions||[]).filter(r=>r&&!r.quick&&Number.isFinite(r.start)&&r.start>=cutoff&&r.start<s.start);
+ const minutes=past.reduce((v,r)=>v+Math.max(0,Math.min(240,num(r.minutes))),0);
+ return {version:'5.14.0',at:s.start,day:dateKey(s.start),focus,
+  adaptive:actual,fixed,sevenDayMinutes:Math.round(minutes),previousSessions:past.length};
+}
+function dc21ShadowAudit(sessions=data.sessions,now=Date.now()){
+ const cutoff=now-180*DAY_MS,byDay=new Map();
+ for(const row of sessions||[]){
+  if(!row||row.extra||row.quick||!Number.isFinite(row.start)||row.start<cutoff||row.start>now+DAY_MS)continue;
+  const p=row.researchPlan;
+  if(!p||p.version!=='5.14.0'||!Array.isArray(p.adaptive)||!Array.isArray(p.fixed)||
+   p.adaptive.length!==3||p.fixed.length!==3||p.day!==dateKey(row.start))continue;
+  const key=p.day;if(!byDay.has(key)||row.start<byDay.get(key).at){
+   const overlap=p.adaptive.filter(n=>p.fixed.includes(n)).length;
+   byDay.set(key,{at:row.start,overlap,minutes:Number.isFinite(p.sevenDayMinutes)?p.sevenDayMinutes:null});
+  }
+ }
+ const rows=[...byDay.values()],matched=rows.reduce((n,x)=>n+x.overlap,0),vol=rows.filter(x=>x.minutes!==null);
+ return {days:rows.length,exactDays:rows.filter(x=>x.overlap===3).length,
+  sharedGames:matched,totalGames:rows.length*3,
+  meanOverlap:rows.length?matched/(rows.length*3):null,
+  lowVolumeDays:vol.filter(x=>x.minutes<180).length,highVolumeDays:vol.filter(x=>x.minutes>=180).length};
+}
+function dc21ForecastRows(games=data.games,now=Date.now()){
+ const byKey=new Map(),cutoff=now-365*DAY_MS;
+ for(const e of games||[]){
+  if(!e||e.completion!=='natural'||typeof e.win!=='boolean'||e.quick===true||
+   e.recovery===true||e.challengeTuning||!Number.isFinite(e.at)||e.at<cutoff||e.at>now+DAY_MS)continue;
+  const f=e.prospectiveForecast;
+  if(!f||f.version!=='5.13.0'||!Number.isFinite(f.at)||f.at>e.at||
+   !Number.isFinite(f.probability)||f.probability<.01||f.probability>.99||
+   !Number.isInteger(f.evidenceDays)||f.evidenceDays<5||
+   !Number.isInteger(f.tier)||f.tier!==Number(e.tierAtStart))continue;
+  const key=dateKey(e.at)+'|'+e.name+'|'+f.tier;
+  const old=byKey.get(key);
+  if(!old||e.at<old.at)byKey.set(key,{at:e.at,day:dateKey(e.at),name:e.name,
+    p:f.probability,y:e.win?1:0,tier:f.tier});
+ }
+ return [...byKey.values()].sort((a,b)=>a.at-b.at);
+}
+function dc21ForecastReliability(games=data.games,now=Date.now()){
+ const rows=dc21ForecastRows(games,now),byDay=new Map();
+ for(const row of rows){
+  const a=byDay.get(row.day)||{n:0,improvement:0,model:0,reference:0};
+  const err=(row.p-row.y)**2,ref=(.5-row.y)**2;
+  a.n++;a.improvement+=ref-err;a.model+=err;a.reference+=ref;byDay.set(row.day,a);
+ }
+ // Equal weight to each day: ten rounds on Tuesday are not ten independent days.
+ const days=[...byDay.values()].map(x=>({gain:x.improvement/x.n,model:x.model/x.n,reference:x.reference/x.n}));
+ const n=days.length,avg=k=>n?days.reduce((z,x)=>z+x[k],0)/n:null;
+ const gain=avg('gain');
+ const variance=n>1?days.reduce((z,x)=>z+(x.gain-gain)**2,0)/(n-1):null;
+ const half=n>=20?1.96*Math.sqrt(variance/n):null;
+ const lo=half===null?null:gain-half,hi=half===null?null:gain+half;
+ return {rounds:rows.length,days:n,model:avg('model'),neutral:avg('reference'),gain,
+  lower95:lo,upper95:hi,ready:n>=20&&rows.length>=40,
+  signal:lo!==null&&rows.length>=40?(lo>0?'better':hi<0?'worse':'uncertain'):'collecting'};
+}
+function dc21ResearchHTML(){
+ const shadow=dc21ShadowAudit(),forecast=dc21ForecastReliability();
+ const escNum=x=>Number.isFinite(x)?x.toFixed(3):'—';
+ let html='<details style="margin-top:16px"><summary class="pill" style="cursor:pointer">Coaching Research · V5.14.0</summary>'+
+  '<p class="muted">Technical audit only. This does not change your training, tiers or results.</p>'+
+  '<h3>Stable Programme Shadow</h3><p>'+shadow.days+' scheduled training days recorded; '+
+  shadow.sharedGames+'/'+shadow.totalGames+' game choices also appear in the fixed programme'+
+  (shadow.totalGames?' ('+(100*shadow.meanOverlap).toFixed(0)+'% overlap)':'')+'.</p>'+
+  '<p class="muted">The fixed comparison is a deterministic, unplayed reference using the same daily theme. ' +
+  'Its outcomes do not exist, so this is a programme-selection comparison, not evidence that one training method is better.</p>'+
+  '<p>Prior-week practice: '+shadow.lowVolumeDays+' days below 180 recorded minutes; '+
+  shadow.highVolumeDays+' days at or above 180 minutes. These are descriptive groups, not proof of fatigue.</p>'+
+  '<h3>Prospective Prediction Reliability</h3><p>'+forecast.rounds+' eligible competitive rounds across '+forecast.days+' independent days.</p>';
+ if(forecast.ready){
+  html+='<p>Day-balanced squared error: coach '+escNum(forecast.model)+' versus neutral 50% '+escNum(forecast.neutral)+'.</p>'+
+   '<p>Estimated error advantage: '+escNum(forecast.gain)+'; approximate day-clustered 95% interval '+
+   escNum(forecast.lower95)+' to '+escNum(forecast.upper95)+'.</p>'+
+   '<p class="muted">'+(forecast.signal==='better'?'Forecasts currently outperform a neutral prediction on this check.':
+    forecast.signal==='worse'?'Forecasts currently underperform a neutral prediction on this check.':
+    'Uncertain: the current observations do not clearly separate the coach from a neutral prediction.')+'</p>';
+ }else html+='<p class="muted">Waiting for at least 40 eligible rounds on 20 separate days. No performance verdict yet.</p>';
+ return html+'<p class="muted">Accuracy of a forecast is not proof that the adaptive programme improves darts performance. Historical V5.13.0 sessions are retained unchanged and are not backfilled.</p></details>';
+}
+
 /* V5.13.0: PROSPECTIVE pressure audit. The prediction MUST be captured before
    the round starts; never backfill a forecast using its eventual result.
    Standard-rule scheduled play only. Existing history remains untouched. */
@@ -2200,7 +2302,7 @@ function closeWelcome(){$("welcomeOverlay").classList.add("hidden")}
 function session(){return data.activeSession}function currentExercise(){const s=session();return s?s.plan[s.index]:null}
 function sessionElapsed(){const s=session();return s?Math.max(0,((s.pausedAt||Date.now())-s.start-num(s.pausedTotal))/1000):0}
 function exerciseElapsed(){const s=session();if(!s)return 0;return Math.max(0,(num(s.activityAccumulated)+(s.activityStarted?(s.pausedAt||Date.now())-s.activityStarted:0))/1000)}
-function beginTraining(extra,skipWarmup=false,fromAssessment=false){if(session()){show("train");return}prepareAssessment();if(assessmentDue()){show("train");return}if(data.days.length!==5){alert("Select five training days in Settings.");show("settings");return}if(!extra&&!fromAssessment&&!data.days.includes(new Date().getDay())){alert("Today is a rest day. Extra training is available.");return}if(!extra&&!fromAssessment&&data.sessions.some(s=>s.date===dateKey()&&!s.extra&&s.completed)){alert("Today's scheduled session is already complete.");return}if(!data.coach.firstStarted)data.coach.firstStarted=Date.now();performCoachReview();data.activeSession={id:Date.now(),start:Date.now(),extra:!!extra,plan:generateSession(extra,skipWarmup),index:0,completed:[],pausedAt:null,pausedTotal:0,activityStarted:null,activityAccumulated:0,round:1,roundsCompleted:0,allocated:false,benchmarkSeconds:0,phase:"rules"};data.game=null;activeGame=null;undoSnapshot=null;$("sessionFinished").classList.add("hidden");startExercise();save();show("train")}
+function beginTraining(extra,skipWarmup=false,fromAssessment=false){if(session()){show("train");return}prepareAssessment();if(assessmentDue()){show("train");return}if(data.days.length!==5){alert("Select five training days in Settings.");show("settings");return}if(!extra&&!fromAssessment&&!data.days.includes(new Date().getDay())){alert("Today is a rest day. Extra training is available.");return}if(!extra&&!fromAssessment&&data.sessions.some(s=>s.date===dateKey()&&!s.extra&&s.completed)){alert("Today's scheduled session is already complete.");return}if(!data.coach.firstStarted)data.coach.firstStarted=Date.now();performCoachReview();data.activeSession={id:Date.now(),start:Date.now(),extra:!!extra,plan:generateSession(extra,skipWarmup),index:0,completed:[],pausedAt:null,pausedTotal:0,activityStarted:null,activityAccumulated:0,round:1,roundsCompleted:0,allocated:false,benchmarkSeconds:0,phase:"rules"};if(!extra)data.activeSession.researchPlan=dc21CapturePlan(data.activeSession);data.game=null;activeGame=null;undoSnapshot=null;$("sessionFinished").classList.add("hidden");startExercise();save();show("train")}
 function allocateRemaining(s){if(s.quick){s.allocated=true;return}if(s.allocated)return;const remaining=Math.max(0,sessionRemaining()),other=s.plan.slice(s.index),timed=other.filter(e=>e.mode==="timed"&&e.name!=="Review"),review=other.find(e=>e.name==="Review"),reviewSec=Math.min(300,remaining*.15),each=timed.length?Math.max(0,(remaining-reviewSec)/timed.length):0;for(const e of timed)e.seconds=each;if(review)review.seconds=reviewSec;s.allocated=true}
 function startExercise(){const s=session();if(!s)return;if(s.index>=s.plan.length){finishSession(true);return}const item=currentExercise();if(item.name!=="Warm-up"&&item.name!=="Big Singles"&&!s.allocated)allocateRemaining(s);s.phase="rules";if(!s.pausedAt)s.pausedAt=Date.now();s.activityStarted=null;s.activityAccumulated=0;s.round=1;s.roundsCompleted=0;s.lastRoundUndo=null;activeGame=buildGame(item.name);data.game=activeGame;undoSnapshot=null;save(false)}
 
@@ -2829,7 +2931,7 @@ function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||sess
 function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.13.0",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
+function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.14.0",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
  prospectiveForecast:g.prospectiveForecast&&completion==='natural'&&
  !g.recovery&&!g.challengeTuning&&!session()?.quick?clone(g.prospectiveForecast):null};
  if(completion==="natural"&&!session()?.quick&&!g.recovery){
@@ -2999,7 +3101,7 @@ function displayCoachReport(report){
  const box=$("sessionCoachReport");if(!box)return;
  box.innerHTML=report?'<h3>🎯 Coach’s Report</h3>'+[['Today’s Achievements',report.good],['Training Completed',report.highlight||''],['Coach’s Next Steps',report.plan]].filter(x=>x[1]).map(([head,body])=>'<div class="coachReportItem"><strong>'+esc(head)+'</strong><p>'+esc(body)+'</p></div>').join(''):'';
 }
-function finishSession(success){hideRoundAnnouncement();const s=session();if(!s)return;const elapsed=Math.round(sessionElapsed()/6)/10;const sessionRecord={id:s.id,start:s.start,date:dateKey(s.start),minutes:elapsed,extra:s.extra,quick:!!s.quick,quickGame:s.quickGame||null,completed:!!success,activities:s.completed,focus:s.plan.map(p=>p.name)};sessionRecord.coachReport=generateSessionReport(sessionRecord);data.sessions.push(sessionRecord);displayCoachReport(sessionRecord.coachReport);data.activeSession=null;data.game=null;activeGame=null;undoSnapshot=null;rapidInitialCalibration();performCoachReview();checkCompletedBlocks();data.coach.challengeAudit=dc7ChallengeAudit(data.games);data.coach.challengeForecast=dc8ChallengeForecast(data.games);save();checkpointData();$("finishedText").textContent=success?(s.quick?"Quick Play saved separately.":"Today's practice is saved."):"Your practice has been saved.";$("sessionFinished").classList.remove("hidden");show("train")}
+function finishSession(success){hideRoundAnnouncement();const s=session();if(!s)return;const elapsed=Math.round(sessionElapsed()/6)/10;const sessionRecord={id:s.id,start:s.start,date:dateKey(s.start),minutes:elapsed,extra:s.extra,quick:!!s.quick,quickGame:s.quickGame||null,completed:!!success,activities:s.completed,focus:s.plan.map(p=>p.name)};if(s.researchPlan&&!s.extra&&!s.quick)sessionRecord.researchPlan=clone(s.researchPlan);sessionRecord.coachReport=generateSessionReport(sessionRecord);data.sessions.push(sessionRecord);displayCoachReport(sessionRecord.coachReport);data.activeSession=null;data.game=null;activeGame=null;undoSnapshot=null;rapidInitialCalibration();performCoachReview();checkCompletedBlocks();data.coach.challengeAudit=dc7ChallengeAudit(data.games);data.coach.challengeForecast=dc8ChallengeForecast(data.games);save();checkpointData();$("finishedText").textContent=success?(s.quick?"Quick Play saved separately.":"Today's practice is saved."):"Your practice has been saved.";$("sessionFinished").classList.remove("hidden");show("train")}
 function finishSessionEarly(){if(!session())return;if(!confirm("End this training session?"))return;finishSession(false)}
 function pauseSession(){const s=session();if(!s||s.phase==="rules"||s.phase==="complete")return;if(s.pausedAt){s.pausedTotal+=Date.now()-s.pausedAt;s.pausedAt=null;s.activityStarted=Date.now()}else{s.pausedAt=Date.now();if(s.activityStarted)s.activityAccumulated+=s.pausedAt-s.activityStarted;s.activityStarted=null}save()}
 function finishView(){const wasQuick=data.sessions.length&&data.sessions[data.sessions.length-1].quick;$("sessionFinished").classList.add("hidden");show(wasQuick?"quick":"home")}
@@ -3281,7 +3383,7 @@ function renderSettings(){
   store.classList.toggle('error',!!storageSaveError);
   store.textContent=storageSaveError||('Stored training data and local recovery: '+mb.toFixed(1)+' MB (approximate). '+(mb>=6?'Storage is getting large. Save a JSON backup to Files now.':mb>=3?'Regular external backups recommended.':'No history is automatically deleted.'));
  }
-$("days").innerHTML=DAY_NAMES.map((n,i)=>'<label><input type="checkbox" '+(data.days.includes(i)?"checked":"")+' onchange="changeDay('+i+',this.checked)"> '+n.slice(0,3)+'</label>').join("");$("dayStatus").textContent=data.days.length+"/5 days selected";$("coachSystemStatus").innerHTML='<p>Automatic training: <strong>Active</strong></p><p>Independent skills: <strong>Scoring, doubles, checkout, bull</strong></p><p>Progress updates: <strong>Based on evidence across training days</strong></p>'}
+$("days").innerHTML=DAY_NAMES.map((n,i)=>'<label><input type="checkbox" '+(data.days.includes(i)?"checked":"")+' onchange="changeDay('+i+',this.checked)"> '+n.slice(0,3)+'</label>').join("");$("dayStatus").textContent=data.days.length+"/5 days selected";$("coachSystemStatus").innerHTML='<p>Automatic training: <strong>Active</strong></p><p>Independent skills: <strong>Scoring, doubles, checkout, bull</strong></p><p>Progress updates: <strong>Based on evidence across training days</strong></p>';$("coachSystemStatus").innerHTML+=dc21ResearchHTML()}
 function renderHandPreference(){for(const hand of ["left","right"]){const b=$(hand==="left"?"handLeft":"handRight");if(!b)continue;b.classList.toggle("secondary",data.throwingHand!==hand);b.setAttribute("aria-pressed",String(data.throwingHand===hand))}}
 function changeDay(day,checked){const days=data.days.filter(x=>x!==day);if(checked)days.push(day);if(days.length>5){alert("Select exactly five training days.");renderSettings();return}data.days=days;save()}
 
