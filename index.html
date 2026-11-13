@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.17.0</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.32.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -753,7 +753,7 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.17.0</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.32.0</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -883,6 +883,8 @@ function normaliseData(d){
  d.coach=Object.assign(blank().coach,d.coach||{});
  for(const k of ["reviews","completedBlocks"])if(!Array.isArray(d.coach[k]))d.coach[k]=[];
  if(!Array.isArray(d.coach.feedbackInterventions))d.coach.feedbackInterventions=[];
+ // Existing observations are retained; new inference is computed from them.
+ d.coach.feedbackInterventions=d.coach.feedbackInterventions.filter(x=>x&&typeof x==='object'&&!Array.isArray(x));
  for(const k of ["lastTierChanges","lastUsedEvidence","lastEvidenceCount","lastChangeEvidence"])
   if(!d.coach[k]||typeof d.coach[k]!=="object")d.coach[k]={};
  if(num(d.coach.version)<2)d.coach.lastReviewedWeek=weekStart(Date.now());
@@ -2346,6 +2348,201 @@ function dc28GameHint(name,plan){
  return balance+learned;
 }
 
+/* V5.20.0: prospective decision audit. A previous session contains the
+   policy selected BEFORE future observations existed. Evaluate only later
+   independent calendar-day measurements; never infer skill outcomes from
+   game scores that cannot measure the category. This is a defensive circuit
+   breaker, not a causal estimate of an intervention. */
+function dc34PolicyAudit(now=Date.now()){
+ const categories=['scoring','doubles','checkout','bull'];
+ const samples=skillSamples(),byCategory={};
+ const summaries=Object.fromEntries(categories.map(k=>[k,{eligible:0,adverse:0,encouraging:0,neutral:0,decisions:[]}]));
+ for(const k of categories){
+  const byDay=new Map();
+  for(const d of dailySamples(samples[k]||[])){
+   if(!d||!Number.isFinite(d.time)||d.time>now||d.time<now-180*DAY_MS||!Number.isFinite(d.volume)||d.volume<3)continue;
+   const v=k==='scoring'?d.points/d.volume:100*d.hits/d.volume;
+   if(!Number.isFinite(v))continue;
+   const day=dateKey(d.time);if(!byDay.has(day))byDay.set(day,{at:d.time,v});
+  }
+  byCategory[k]=[...byDay.values()].sort((a,b)=>a.at-b.at);
+ }
+ const completedExposure=dc28CategoryLedger(now);
+ const sessions=(data.sessions||[]).filter(s=>s?.completed===true&&!s.quick&&!s.extra&&
+  Number.isFinite(s.start)&&s.start<=now-22*DAY_MS&&s.start>=now-168*DAY_MS&&
+  s.wholeSessionAudit?.policy?.categories).sort((a,b)=>a.start-b.start);
+ const lastUsed=Object.fromEntries(categories.map(k=>[k,-Infinity]));
+ for(const s of sessions){
+  for(const k of categories){
+   const p=s.wholeSessionAudit.policy.categories[k];
+   if(!p||!Number.isFinite(p.preference)||p.preference>=-.5||!p.reliable||s.start-lastUsed[k]<43*DAY_MS)continue;
+   // An intended boost is not an intervention. Verify category minutes were
+   // actually completed on that day before allowing follow-up attribution.
+   const exposure=completedExposure.find(d=>d.day===dateKey(s.start));
+   if(!exposure||!Number.isFinite(exposure.minutes?.[k])||exposure.minutes[k]<5)continue;
+   const values=byCategory[k];
+   const before=values.filter(x=>x.at<s.start&&x.at>=s.start-20*DAY_MS).slice(-8);
+   const after=values.filter(x=>x.at>=s.start+5*DAY_MS&&x.at<=s.start+21*DAY_MS).slice(0,8);
+   if(before.length<4||after.length<4)continue;
+   lastUsed[k]=s.start;
+   const mean=a=>a.reduce((v,x)=>v+x.v,0)/a.length;
+   const variance=a=>a.reduce((v,x)=>v+(x.v-mean(a))**2,0)/Math.max(1,a.length-1);
+   const difference=mean(after)-mean(before);
+   const se=Math.sqrt(variance(before)/before.length+variance(after)/after.length+1);
+   const threshold=k==='scoring'?7:9;
+   const adverse=difference< -threshold&&-difference>2*se;
+   const encouraging=difference>threshold&&difference>2*se;
+   const result=adverse?'adverse':encouraging?'encouraging':'neutral';
+   const group=summaries[k];group.eligible++;group[result]++;
+   group.decisions.push({day:dateKey(s.start),result,change:Math.round(difference*10)/10,
+    uncertainty:Math.round(se*10)/10,baselineDays:before.length,followUpDays:after.length});
+  }
+ }
+ for(const k of categories){
+  const z=summaries[k];z.safeguard=z.eligible>=2&&z.adverse>=2&&z.adverse>z.encouraging;
+  z.decisions=z.decisions.slice(-8);
+ }
+ return {version:'5.22.0',categories:summaries,
+  note:'Prospective observational safety audit; not causal proof or calibrated predicted gain'};
+}
+/* V5.21.0: bounded prospective learning. Uses ONLY decisions recorded before
+   follow-up scores and the independent windows in dc34PolicyAudit. Missing
+   outcomes cannot be converted into good outcomes. This is a reliability
+   modifier for observational planning, not an effect-size estimator. */
+function dc36DecisionLearning(audit){
+ const out={};
+ for(const category of ['scoring','doubles','checkout','bull']){
+  const a=audit?.categories?.[category]||{};
+  const eligible=Math.max(0,Math.min(100,Math.floor(Number(a.eligible)||0)));
+  const positive=Math.max(0,Math.min(eligible,Math.floor(Number(a.encouraging)||0)));
+  const adverse=Math.max(0,Math.min(eligible-positive,Math.floor(Number(a.adverse)||0)));
+  // Neutral observations are not successes, and an early favourable run
+  // must not create a high-confidence claim about training benefit.
+  const quality=eligible>=3?(positive-adverse)/(eligible+6):0;
+  const caution=eligible>=2&&adverse>=2&&adverse>=positive;
+  out[category]={independentDecisions:eligible,encouraging:positive,adverse,
+   status:caution?'protect':eligible<3?'uncertain':quality>.12?'tentative-benefit':quality<-.12?'tentative-harm':'uncertain',
+   confidence:Math.round(Math.min(.65,Math.abs(quality))*100)/100,
+   permissionToEscalate:eligible>=4&&positive>=3&&adverse===0&&quality>.15,
+   protect:caution};
+ }
+ return out;
+}
+/* V5.23: prospective forecast calibration. Store predictions BEFORE outcomes.
+   A forecast predicts the next measured performance level, not a causal effect.
+   Distinct calendar days and disjoint evaluation windows prevent high-volume
+   training days being counted as independent players or tests. */
+function dc37Forecast(now=Date.now()){
+ const samples=skillSamples(),out={};
+ for(const k of ['scoring','doubles','checkout','bull']){
+  const rows=dailySamples(samples[k]||[]).filter(x=>Number.isFinite(x.time)&&x.time<=now&&x.time>=now-42*DAY_MS&&x.volume>=3)
+   .map(x=>({day:x.day,v:k==='scoring'?x.points/Math.max(1,x.volume):100*x.hits/Math.max(1,x.volume)})).filter(x=>Number.isFinite(x.v));
+  const unique=new Map();for(const row of rows)unique.set(row.day,row.v);
+  const values=[...unique.values()].slice(-8),n=values.length;
+  if(n<4){out[k]={eligible:false,days:n};continue;}
+  const mean=values.reduce((a,b)=>a+b,0)/n;
+  const sd=Math.sqrt(values.reduce((a,b)=>a+(b-mean)**2,0)/Math.max(1,n-1));
+  // Deliberately wide uncertainty interval: real form can change between sessions.
+  const halfWidth=Math.max(k==='scoring'?12:15,2*sd,Math.abs(mean)*.12);
+  out[k]={eligible:true,days:n,baseline:Math.round(mean*100)/100,
+   lower:Math.round((mean-halfWidth)*100)/100,upper:Math.round((mean+halfWidth)*100)/100,
+   model:'recent-day baseline with conservative uncertainty; not predicted training benefit'};
+ }
+ return {at:now,horizonStartDays:7,horizonEndDays:21,categories:out};
+}
+function dc37Calibration(now=Date.now()){
+ const categories=['scoring','doubles','checkout','bull'];
+ const result=Object.fromEntries(categories.map(k=>[k,{evaluated:0,covered:0,misses:0,quality:'unknown'}]));
+ const candidates=(data.sessions||[]).filter(s=>s?.completed===true&&!s.quick&&!s.extra&&
+  Number.isFinite(s.start)&&s.start<now-22*DAY_MS&&s.start>=now-180*DAY_MS&&s.wholeSessionAudit?.forecast?.categories)
+  .sort((a,b)=>a.start-b.start);
+ const last=Object.fromEntries(categories.map(k=>[k,-Infinity]));
+ const samples=skillSamples();
+ const daily=Object.fromEntries(categories.map(k=>[k,dailySamples(samples[k]||[]).filter(x=>Number.isFinite(x.time)&&x.time<=now&&x.volume>=3)]));
+ for(const s of candidates)for(const k of categories){
+  const f=s.wholeSessionAudit.forecast.categories[k];
+  if(!f?.eligible||!Number.isFinite(f.lower)||!Number.isFinite(f.upper)||f.lower>=f.upper||s.start-last[k]<28*DAY_MS)continue;
+  const after=daily[k].filter(x=>x.time>=s.start+7*DAY_MS&&x.time<=s.start+21*DAY_MS)
+   .map(x=>({day:x.day,v:k==='scoring'?x.points/Math.max(1,x.volume):100*x.hits/Math.max(1,x.volume)}))
+   .filter(x=>Number.isFinite(x.v));
+  const independent=new Map();for(const x of after)independent.set(x.day,x.v);
+  const values=[...independent.values()];if(values.length<3)continue;
+  last[k]=s.start;
+  const observed=values.reduce((a,b)=>a+b,0)/values.length;
+  const r=result[k];r.evaluated++;if(observed>=f.lower&&observed<=f.upper)r.covered++;else r.misses++;
+ }
+ for(const k of categories){const r=result[k];r.quality=r.evaluated<3?'insufficient':r.covered/r.evaluated<.6?'poor-coverage':'cautiously-calibrated';}
+ return {version:'5.24.0',categories:result,
+  note:'Out-of-sample recorded forecasts of performance levels; noncausal and not a measurement of training benefit'};
+}
+/* V5.19.0 whole-session policy: player-specific but intentionally bounded.
+   Uses independent calendar-day comparable skill measurements and recorded
+   completed training minutes. Missing/noisy evidence stays NEUTRAL.
+   These are planning preferences, NOT causal treatment estimates. */
+function dc32WholeSessionPolicy(now=Date.now()){
+ const names=['scoring','doubles','checkout','bull'],samples=skillSamples(),ledger=dc28CategoryLedger(now),matches=dc28CategoryEvidence(now);
+ const past=ledger.filter(d=>d.at>=now-28*DAY_MS&&d.at<=now);
+ const safety=dc34PolicyAudit(now),learning=dc36DecisionLearning(safety),calibration=dc37Calibration(now);
+ const minutes=Object.fromEntries(names.map(k=>[k,past.reduce((a,d)=>a+(Number.isFinite(d.minutes?.[k])?Math.max(0,d.minutes[k]):0),0)]));
+ const total=Object.values(minutes).reduce((a,v)=>a+v,0)+past.reduce((a,d)=>a+Math.max(0,num(d.unknownMinutes)),0);
+ const categories={};
+ for(const key of names){
+  const rows=dailySamples(samples[key]||[]).filter(x=>Number.isFinite(x.time)&&x.time<=now&&x.time>=now-84*DAY_MS&&x.volume>=3)
+   .map(x=>({day:x.day,at:x.time,v:key==='scoring'?x.points/Math.max(1,x.volume):100*x.hits/Math.max(1,x.volume)}))
+   .filter(x=>Number.isFinite(x.v)).sort((a,b)=>a.at-b.at);
+  // Independent days and non-overlapping recent and baseline windows.
+  const old=rows.filter(x=>x.at<now-21*DAY_MS).slice(-8),recent=rows.filter(x=>x.at>=now-21*DAY_MS).slice(-8);
+  const avg=a=>a.reduce((v,x)=>v+x,0)/Math.max(1,a.length);
+  const deviation=a=>a.length>1?Math.sqrt(a.reduce((v,x)=>v+(x-avg(a))**2,0)/(a.length-1)):100;
+  const first=old.map(x=>x.v),last=recent.map(x=>x.v);
+  const change=last.length&&first.length?avg(last)-avg(first):null;
+  const se=first.length>=4&&last.length>=4?Math.sqrt(deviation(first)**2/first.length+deviation(last)**2/last.length+1):null;
+  const reliable=se!==null&&Number.isFinite(se)&&new Set(old.map(x=>x.day)).size>=4&&new Set(recent.map(x=>x.day)).size>=4;
+  const falling=reliable&&change<-(key==='scoring'?7:9)&&-change>2*se;
+  const rising=reliable&&change>(key==='scoring'?7:9)&&change>2*se;
+  const share=total?minutes[key]/total:0;
+  const overexposed=total>=120&&share>.38;
+  const matched=matches[key]||{};
+  // Never force extra attention onto a category just because its accuracy is low.
+  // A decline may receive remedial attention ONLY if independent matched evidence supports it, unless
+  // that same category already consumes too much practice or is unresponsive.
+  let preference=0,reason='balanced core; insufficient independent response evidence';
+  if(overexposed){preference+=2;reason='recent category workload already high';}
+  if(falling&&!overexposed&&matched.supported){preference-=1.5;reason='measured decline with separate matched-practice support';}
+  if(rising){preference+=.7;reason='recent progress; maintain without escalating';}
+  if(matched.supported&&!overexposed){preference-=.7;reason+='; cautious positive matched-window association';}
+  // Repeated later deterioration following prior boosted allocations: return to balance.
+  if((safety.categories[key]?.safeguard||learning[key].protect)&&preference<0){preference=0;reason='safety fallback after separated adverse follow-up windows';}
+  // When historical prospective outcomes repeatedly favour an increased
+  // emphasis, permit only a tiny extra preference. Never overrule overload.
+  if(learning[key].permissionToEscalate&&calibration.categories[key].quality!=='poor-coverage'&&!overexposed&&preference<0){preference=Math.max(-2,preference-.25);reason+='; tentative independent follow-up support';}
+  categories[key]={preference:Math.round(preference*100)/100,reason,days:rows.length,
+   baselineDays:old.length,recentDays:recent.length,reliable,change:reliable?Math.round(change*10)/10:null,
+   uncertainty:reliable?Math.round(se*10)/10:null,share:Math.round(100*share),
+   overexposed,falling,rising,policySafety:safety.categories[key]?.safeguard||learning[key].protect,learning:learning[key],forecastCalibration:calibration.categories[key],policyAuditCount:safety.categories[key]?.eligible||0,matchedWindows:Math.max(0,num(matched.matchedWindows))};
+ }
+ return {version:'5.24.0',at:now,days:past.length,totalCompletedMinutes:Math.round(total),categories,
+  constraints:'balanced core; no invented target data; 5-minute minimum; observational signals only'};
+}
+function dc32GameHint(name,policy){
+ const key=dc28GameCategory(name),c=policy?.categories?.[key];
+ if(!c)return 0;
+ // The established theme preference (~13 points) stays dominant.
+ return c.preference;
+}
+function dc32GameMinutes(name,position,policy,profiles){
+ const category=dc28GameCategory(name),c=policy?.categories?.[category],p=profiles?.get(name);
+ let minutes=position===0?15:10;
+ if(p&&p.reliability>=.6){
+  if(p.probability<.25||p.probability>.80)minutes=5;
+  else if(p.probability>=.35&&p.probability<=.65)minutes=15;
+ }
+ // One bounded five-minute adjustment at most, never purely because of weakness.
+ if(c?.policySafety)minutes=Math.min(minutes,10);
+ if(c?.overexposed&&minutes>5)minutes-=5;
+ else if(c?.falling&&!c.overexposed&&!c.policySafety&&c.matchedWindows>=4&&c.preference<0&&p?.reliability>=.6&&p.probability>=.25&&p.probability<=.8)minutes=Math.min(20,minutes+5);
+ return Math.max(5,Math.min(20,minutes));
+}
 /* V5.15: day-wide unique game selection with stable core and skill variety. */
 function dc22GamesPlayedToday(){
  const today=dateKey(),played=new Set();
@@ -2354,24 +2551,127 @@ function dc22GamesPlayedToday(){
  }
  return played;
 }
-function chooseSessionGames(focus,count=3){
+/* V5.26.0 controlled learning activation.
+   Exploration is deliberately tiny and is NEVER treated as proof of benefit.
+   Compare only eligible near-tie games; no tier/game rule changes. */
+/* Observe completed exploratory sessions, not planned training. Require
+   separated measurement windows before a precautionary method pause. */
+/* V5.27: a trial is a prospectively recorded choice, not a treatment effect.
+   The lifecycle remains inspectable even when evidence is missing or confounded.
+   Only independently measured, separated normal-play days can affect policy. */
+function dc41ExperimentLedger(now=Date.now()){
+ const cats=['scoring','doubles','checkout','bull'];
+ const result=Object.fromEntries(cats.map(c=>[c,{selected:0,completed:0,awaiting:0,missing:0,confounded:0,evaluable:0,
+  encouraging:0,adverse:0,neutral:0,guarded:false,positiveSignal:false,examples:[],reason:'no independent follow-up'}]));
+ const trials=(data.sessions||[]).filter(s=>s&&s.completed===true&&!s.quick&&
+  Number.isFinite(s.start)&&s.start<=now&&s.start>=now-210*DAY_MS&&
+  s.wholeSessionAudit?.unified?.exploration?.selected===true)
+  .sort((a,b)=>a.start-b.start);
+ const sampleRows=skillSamples();const lastAccepted={};
+ for(const sess of trials){
+  const exp=sess.wholeSessionAudit.unified.exploration,cat=exp?.category,game=exp?.game;
+  if(!Object.hasOwn(result,cat)||!game)continue;
+  const r=result[cat];r.selected++;
+  const completed=Array.isArray(sess.activities)&&sess.activities.some(a=>a?.name===game&&
+   Number.isFinite(Number(a.seconds))&&Number(a.seconds)>=300);
+  if(!completed){r.missing++;continue;}
+  r.completed++;
+  if(now<sess.start+10*DAY_MS){r.awaiting++;continue;}
+  // An earlier accepted trial owns its evaluation interval. Two overlapping
+  // windows must never contribute two independent pieces of evidence.
+  if(Number.isFinite(lastAccepted[cat])&&sess.start-lastAccepted[cat]<21*DAY_MS){r.confounded++;continue;}
+  const competitors=trials.some(other=>other!==sess&&other.wholeSessionAudit.unified.exploration.category===cat&&
+   other.start>=sess.start-8*DAY_MS&&other.start<=sess.start+10*DAY_MS);
+  if(competitors){r.confounded++;continue;}
+  const daily=new Map();
+  for(const row of dailySamples(sampleRows[cat]||[])){
+   if(!Number.isFinite(row.time)||row.time>now||row.volume<3)continue;
+   const v=cat==='scoring'?row.points/Math.max(1,row.volume):100*row.hits/Math.max(1,row.volume);
+   if(Number.isFinite(v))daily.set(row.day,{time:row.time,day:row.day,value:v});
+  }
+  const observations=[...daily.values()].sort((a,b)=>a.time-b.time);
+  const prior=observations.filter(x=>x.time>=sess.start-10*DAY_MS&&x.time<sess.start).slice(-5);
+  const later=observations.filter(x=>x.time>=sess.start+DAY_MS&&x.time<=sess.start+10*DAY_MS).slice(0,5);
+  if(prior.length<3||later.length<3){r.missing++;continue;}
+  const mean=a=>a.reduce((sum,x)=>sum+x.value,0)/a.length;
+  const sd=a=>Math.sqrt(a.reduce((sum,x)=>sum+(x.value-mean(a))**2,0)/Math.max(1,a.length-1));
+  const delta=mean(later)-mean(prior);
+  const se=Math.sqrt(sd(prior)**2/prior.length+sd(later)**2/later.length);
+  // Demand practical and statistical separation. Significance does NOT imply
+  // causation because this is an observational, non-randomised comparison.
+  const threshold=cat==='scoring'?7:8;
+  const signal=delta>threshold&&delta>2*se?'encouraging':delta< -threshold&&-delta>2*se?'adverse':'neutral';
+  r.evaluable++;r[signal]++;lastAccepted[cat]=sess.start;
+  if(r.examples.length<8)r.examples.push({day:dateKey(sess.start),delta:Math.round(delta*10)/10,signal,
+   priorDays:prior.length,laterDays:later.length});
+ }
+ for(const cat of cats){const r=result[cat];
+  // Even after three independent follow-ups, outcomes are just tentative
+  // signals: they may constrain exploration but never override core practice.
+  r.guarded=r.evaluable>=3&&r.adverse>=3;
+  r.positiveSignal=r.evaluable>=3&&r.encouraging>=3&&r.adverse===0;
+  r.reason=r.guarded?'three separated adverse observations: suspend exploratory emphasis':
+   r.positiveSignal?'three separated encouraging observations: eligible for near-tie exploration only':
+   r.evaluable?'mixed or insufficient independent observations':'no reliable independent outcome yet';
+ }
+ return {version:'5.27.0',at:now,categories:result,
+  note:'observational; no synthetic data; no causal attribution; no impact on standard balanced core'};
+}
+function dc40ExplorationOutcomes(now=Date.now()){
+ const ledger=dc41ExperimentLedger(now).categories;
+ return Object.fromEntries(Object.entries(ledger).map(([k,v])=>[k,{completed:v.completed,evaluable:v.evaluable,
+  adverse:v.adverse,guarded:v.guarded,encouraging:v.encouraging,confounded:v.confounded,
+  awaiting:v.awaiting,missing:v.missing,positiveSignal:v.positiveSignal,examples:v.examples,reason:v.reason}]));
+}
+function dc40ExplorationEligibility(now=Date.now(),policy=null){
+ const sessions=(data.sessions||[]).filter(s=>s&&s.completed===true&&!s.quick&&Number.isFinite(s.start)&&s.start<=now&&s.start>=now-35*DAY_MS);
+ const dates=new Set(sessions.map(s=>dateKey(s.start)));
+ const previous=sessions.filter(s=>s.wholeSessionAudit?.unified?.exploration?.selected===true||s.unifiedAudit?.exploration?.selected===true||s.wholeSessionAudit?.exploration?.selected===true);
+ const last=previous.length?Math.max(...previous.map(s=>s.start)):-Infinity;
+ const cats=['scoring','doubles','checkout','bull'];const categoryRows=policy?.categories||{};
+ const feedback=dc41ExperimentLedger(now).categories;
+ const eligible=cats.filter(k=>!categoryRows[k]?.policySafety&&!categoryRows[k]?.overexposed&&!feedback[k]?.guarded);
+ const exposure=dc28CategoryLedger(now).filter(d=>d.at>=now-21*DAY_MS&&d.at<=now);
+ const totals=Object.fromEntries(cats.map(k=>[k,exposure.reduce((a,d)=>a+Math.max(0,Number(d.minutes?.[k])||0),0)]));
+ // Learning affects exploration ONLY on an effectively tied choice. Unknown
+ // outcomes use the old low-exposure rotation; repeated encouraging results
+ // get a tiny tie-breaker, not extra session minutes or forced training.
+ eligible.sort((a,b)=>Number(feedback[b].positiveSignal)-Number(feedback[a].positiveSignal)||totals[a]-totals[b]||a.localeCompare(b));
+ const allowed=sessions.length>=6&&dates.size>=4&&now-last>=7*DAY_MS&&eligible.length>=2;
+ return {allowed,focusCategory:allowed?eligible[0]:null,sessionCount:sessions.length,independentDays:dates.size,
+  daysSinceLast:Number.isFinite(last)?Math.floor((now-last)/DAY_MS):null,
+  evidence:allowed?{evaluable:feedback[eligible[0]].evaluable,signal:feedback[eligible[0]].positiveSignal?'encouraging':'unknown'}:null,
+  reason:allowed?'bounded near-tie experiment; observational outcomes only':'insufficient history, recent experiment or category safety limit'};
+}
+function chooseSessionGames(focus,count=3,sessionPolicy=null){
  const primary=TRAINING_LIBRARY[focus]||TRAINING_LIBRARY.scoring;
  const recent=(data.sessions||[]).slice(-3).flatMap(x=>Array.isArray(x?.focus)?x.focus:[]);
  const alreadyToday=dc22GamesPlayedToday();
  if(data.activeSession&&!data.activeSession.quick){for(const e of data.activeSession.plan||[])if(QUICK_GAMES.includes(e.name))alreadyToday.add(e.name)}
  const seed=(Math.floor(Date.now()/DAY_MS)*1103515245+(data.sessions||[]).filter(x=>x?.date===dateKey()).length*7919)>>>0;
  const all=[...new Set(Object.values(TRAINING_LIBRARY).flat().concat(QUICK_GAMES))].filter(n=>QUICK_GAMES.includes(n)&&!DC10_MEASUREMENT_GAMES.has(n)&&n!=='Target Mastery');
- const profiles=dc18ChallengeProfiles(all),effects=dc15EffectEvidence(),categoryPlan=dc28CategoryPlanning(),selected=[];
+ const profiles=dc18ChallengeProfiles(all),effects=dc15EffectEvidence(),categoryPlan=dc28CategoryPlanning(),selected=[],policy=sessionPolicy||dc32WholeSessionPolicy();
+ const exploration=dc40ExplorationEligibility(Date.now(),policy);let explored=false,exploredGame=null;
  const theme=[primary,TRAINING_LIBRARY[FOCUS[(FOCUS.indexOf(focus)+2)%5]],TRAINING_LIBRARY[FOCUS[(FOCUS.indexOf(focus)+3)%5]]];
  for(let i=0;i<count;i++){
   const pool=theme[i%theme.length]||primary;
   const fresh=all.filter(n=>!alreadyToday.has(n)&&!selected.includes(n));
   const candidates=fresh.length?fresh:all.filter(n=>!selected.includes(n));
   if(!candidates.length)break; // Repeat only after exhausting the full eligible library.
-  const ranked=candidates.map(name=>({name,score:dc10GameChoiceScore(name,focus,i,primary,recent,alreadyToday,profiles,seed,effects)+(pool.includes(name)?-13:0)+dc28GameHint(name,categoryPlan)}));
+  const ranked=candidates.map(name=>({name,score:dc10GameChoiceScore(name,focus,i,primary,recent,alreadyToday,profiles,seed,effects)+(pool.includes(name)?-13:0)+dc28GameHint(name,categoryPlan)+dc32GameHint(name,policy)}));
   ranked.sort((a,b)=>a.score-b.score||a.name.localeCompare(b.name));
-  selected.push(ranked[0].name);
+  let choice=ranked[0];
+  // At most one small comparison in a session, only if the ordinary planner
+  // already regards both eligible options as effectively equivalent.
+  if(!explored&&exploration.allowed){
+   const alternative=ranked.find(r=>dc28GameCategory(r.name)===exploration.focusCategory&&r.score-choice.score<=2.5);
+   if(alternative&&alternative.name!==choice.name){choice=alternative;explored=true;exploredGame=alternative.name;}
+  }
+  selected.push(choice.name);
  }
+ selected.exploration={version:'5.27.0',selected:explored,eligible:exploration.allowed,
+  category:explored?exploration.focusCategory:null,game:exploredGame,reason:exploration.reason,
+  maxScoreSacrifice:2.5,notCausal:true,decisionEvidence:exploration.evidence||null};
  return selected;
 }
 /* Mastery is only automatically assigned to statistically supported targets. */
@@ -2551,52 +2851,85 @@ function dc25MasteryTransfer(ring,target,now=Date.now()){
  return {...base,status,relativeGain:gain,uncertainty:se,sourceDays:pre.days+post.days,
   note:'Observational day-level comparison against other targets; cannot establish causality'};
 }
-/* V5.17.0: feedback controller. A weakness is NOT evidence that increasing
-   its practice dose works. Separate calendar-day exposures, later normal-game
-   outcomes, collateral checks and logged decisions determine dose. */
-function dc30Feedback(candidate,now=Date.now()){
- const ring=candidate?.ring,target=candidate?.target,cat=ring==='D'?'doubles':ring==='S'||ring==='T'?'scoring':
+/* V5.18.0: cautious, personalised learning from later COMPARABLE observations.
+   The model is a policy preference, not a claim of causal attribution. A weak
+   target alone never warrants extra dose. Every comparison is grouped by day. */
+function dc31TargetHistory(candidate,now=Date.now()){
+ const cat=candidate?.ring==='D'?'doubles':candidate?.ring==='S'||candidate?.ring==='T'?'scoring':
   candidate?.mode==='bull'?'bull':candidate?.mode==='checkout'||candidate?.mode==='setup'?'checkout':null;
- const exposures=(data.coach?.feedbackInterventions||[]).filter(x=>x?.kind==='mastery'&&x.category===cat&&
-  (ring?x.ring===ring&&x.target===target:x.mode===candidate?.mode)&&Number.isFinite(x.at)&&x.at<=now&&x.at>=now-56*DAY_MS&&x.completedSeconds>=300);
- const days=new Set(exposures.map(x=>dateKey(x.at))).size;
- const minutes=exposures.reduce((a,x)=>a+x.completedSeconds/60,0);
- const transfer=ring&&Number.isInteger(target)?dc25MasteryTransfer(ring,target,now):{status:'unmeasured'};
- const methods=ring&&Number.isInteger(target)?dc27MethodFeedback(candidate,now):{};
- const supported=Object.values(methods).filter(x=>x.ready&&Number.isFinite(x.observedGain)&&x.observedGain>=.08&&x.followUps>=3);
- const recent=dc28CategoryLedger(now).filter(x=>x.at>=now-21*DAY_MS);
- const categoryMinutes=cat?recent.reduce((a,x)=>a+(x.minutes[cat]||0),0):0;
- const totalMinutes=recent.reduce((a,x)=>a+Object.values(x.minutes).reduce((b,v)=>b+v,0)+(x.unknownMinutes||0),0);
- // Collateral measurement uses comparable day aggregates, not individual games.
- const samples=skillSamples();const collateral=[];
- if(cat&&days>=3&&totalMinutes>=120){
-  for(const other of SKILLS.filter(x=>x!==cat)){
-   const daily=dailySamples(samples[other]).filter(x=>x.time<=now&&x.time>=now-56*DAY_MS&&x.volume>=3);
-   const earlier=daily.filter(x=>x.time<now-21*DAY_MS),later=daily.filter(x=>x.time>=now-21*DAY_MS);
-   if(earlier.length<5||later.length<5)continue;
-   const values=xs=>xs.map(x=>other==='scoring'?x.points/Math.max(1,x.volume):100*x.hits/Math.max(1,x.volume));
-   const avg=xs=>xs.reduce((a,b)=>a+b,0)/xs.length;
-   const b=values(earlier),a=values(later),change=avg(a)-avg(b),threshold=other==='scoring'?8:10;
-   const v=xs=>xs.reduce((n,x)=>n+(x-avg(xs))**2,0)/Math.max(1,xs.length-1);
-   const se=Math.sqrt(v(a)/a.length+v(b)/b.length);
-   if(change<=-threshold&&-change>2*se)collateral.push({skill:other,change:Math.round(change*10)/10,days:[b.length,a.length]});
-  }
+ const rows=(data.coach?.feedbackInterventions||[]).filter(x=>x?.kind==='mastery'&&x.category===cat&&
+  (candidate?.ring?x.ring===candidate.ring&&x.target===candidate.target:x.mode===candidate?.mode)&&
+  Number.isFinite(x.at)&&x.at<=now&&x.at>=now-112*DAY_MS&&x.completedSeconds>=300);
+ const daily=new Map();
+ for(const x of rows){const day=dateKey(x.at),r=daily.get(day)||{day,at:x.at,minutes:0,methods:new Set(),observations:[]};
+  r.minutes+=x.completedSeconds/60;r.methods.add(x.mode);
+  const f=x.followUpEvidence;
+  if(f?.status==='observed'&&Number.isFinite(f.relativeChange)&&Number.isFinite(f.uncertainty)&&
+   f.beforeDays>=3&&f.afterDays>=3)r.observations.push({gain:f.relativeChange,se:Math.max(.035,f.uncertainty),mode:x.mode});
+  daily.set(day,r);
  }
- const caution=transfer.status==='not-observed'||collateral.length>0;
- const unproven=days>=6&&transfer.status!=='promising'&&supported.length===0;
- const lastAt=exposures.length?Math.max(...exposures.map(x=>x.at)):0;
- const defer=days>=8&&unproven&&lastAt>now-10*DAY_MS;
- // Repeated non-response or collateral concern reduces the concentration.
- // An encouraging association does not license 60 minutes of isolated practice.
- let minutesNext=5,reason='conservative initial exposure';
- if(caution)reason='return towards balanced practice: uncertain or adverse observation';
- else if(unproven)reason='no reliable retained benefit after repeated exposures';
- else if(supported.length&&days>=4&&categoryMinutes/Math.max(1,totalMinutes)<.23){minutesNext=10;reason='bounded increase supported by separated later observations'}
- else if(days>=4)reason='hold conservative dose pending retained evidence';
- if(categoryMinutes/Math.max(1,totalMinutes)>.33){minutesNext=5;reason='protect balanced category workload'}
- return {minutes:minutesNext,reason,status:caution?'caution':supported.length?'encouraging':unproven?'stalled':'uncertain',
-  days,defer,lastAt,completedMinutes:Math.round(minutes),categoryShare:totalMinutes?Math.round(categoryMinutes/totalMinutes*100):null,
-  transfer:transfer.status,methodFollowUps:supported.length,collateral,category:cat};
+ return {cat,rows,days:[...daily.values()].sort((a,b)=>a.at-b.at)};
+}
+function dc31Response(candidate,now=Date.now()){
+ const history=dc31TargetHistory(candidate,now),all=history.days;
+ const useful=all.filter(d=>d.observations.length===1).map(d=>({...d,observation:d.observations[0]}));
+ // Prevent correlation across densely packed interventions from creating fake certainty.
+ const independent=[];
+ for(const d of useful)if(!independent.length||d.at-independent[independent.length-1].at>=12*DAY_MS)independent.push(d);
+ const avg=xs=>xs.reduce((a,v)=>a+v,0)/Math.max(1,xs.length);
+ const gains=independent.map(d=>d.observation.gain);
+ const mean=avg(gains),dispersion=gains.length>1?
+  Math.sqrt(gains.reduce((a,g)=>a+(g-mean)**2,0)/(gains.length-1)):0;
+ const measurement=gains.length?Math.sqrt(independent.reduce((a,d)=>a+d.observation.se**2,0))/gains.length:1;
+ const uncertainty=Math.sqrt((dispersion**2)/Math.max(1,gains.length)+measurement**2+.035**2);
+ const supported=gains.length>=3&&Math.abs(mean)>=.08&&Math.abs(mean)>2*uncertainty;
+ const status=!gains.length?'unmeasured':gains.length<3?'insufficient':supported?(mean>0?'encouraging':'adverse'):'uncertain';
+ return {status,mean,uncertainty,samples:gains.length,trainingDays:all.length,
+  minutes:Math.round(all.reduce((a,d)=>a+d.minutes,0)),history};
+}
+function dc31Collateral(category,now=Date.now()){
+ const out=[];if(!category)return out;
+ const samples=skillSamples();
+ for(const other of SKILLS.filter(x=>x!==category)){
+  const daily=dailySamples(samples[other]).filter(x=>x.time<=now&&x.time>=now-56*DAY_MS&&x.volume>=3);
+  const before=daily.filter(x=>x.time<now-21*DAY_MS),after=daily.filter(x=>x.time>=now-21*DAY_MS);
+  if(before.length<5||after.length<5)continue;
+  const values=xs=>xs.map(x=>other==='scoring'?x.points/Math.max(1,x.volume):100*x.hits/Math.max(1,x.volume));
+  const b=values(before),a=values(after),avg=xs=>xs.reduce((v,n)=>v+n,0)/xs.length;
+  const variance=xs=>xs.reduce((v,n)=>v+(n-avg(xs))**2,0)/Math.max(1,xs.length-1);
+  const change=avg(a)-avg(b),se=Math.sqrt(variance(a)/a.length+variance(b)/b.length);
+  const limit=other==='scoring'?8:10;
+  if(change<=-limit&&-change>2*se)out.push({skill:other,change:Math.round(change*10)/10,days:[b.length,a.length]});
+ }
+ return out;
+}
+function dc30Feedback(candidate,now=Date.now()){
+ const response=dc31Response(candidate,now),h=response.history,cat=h.cat;
+ const recent=dc28CategoryLedger(now).filter(x=>x.at>=now-21*DAY_MS&&x.at<=now);
+ const catMinutes=cat?recent.reduce((a,x)=>a+(x.minutes[cat]||0),0):0;
+ const total=recent.reduce((a,x)=>a+Object.values(x.minutes).reduce((b,v)=>b+v,0)+(x.unknownMinutes||0),0);
+ const share=total?catMinutes/total:0;
+ const collateral=response.trainingDays>=3&&total>=120?dc31Collateral(cat,now):[];
+ const transfer=candidate?.ring&&Number.isInteger(candidate.target)?dc25MasteryTransfer(candidate.ring,candidate.target,now):{status:'unmeasured'};
+ const lastAt=h.days.length?h.days[h.days.length-1].at:0;
+ let minutes=5,reason='conservative starting dose';
+ const adverse=response.status==='adverse'||transfer.status==='not-observed'||collateral.length>0;
+ const stalled=response.trainingDays>=6&&response.status!=='encouraging'&&transfer.status!=='promising';
+ const defer=adverse&&lastAt>now-14*DAY_MS||stalled&&response.trainingDays>=9&&lastAt>now-10*DAY_MS;
+ if(adverse)reason='return to balanced allocation after adverse or collateral evidence';
+ else if(share>.33)reason='protect other skill categories from excessive focus';
+ else if(stalled)reason='limit repetition without convincing retained benefit';
+ else if(response.status==='encouraging'&&response.samples>=3&&share<.22){minutes=10;reason='cautious increase after separated later observations'}
+ // Only strong converging evidence permits 15 minutes; sparse evidence cannot.
+ if(minutes===10&&response.samples>=5&&response.mean>Math.max(.12,2.5*response.uncertainty)&&
+  transfer.status==='promising'&&share<.17) {minutes=15;reason='bounded increase with converging independent transfer evidence'}
+ if(adverse||share>.33||stalled)minutes=5;
+ return {minutes,reason,status:adverse?'caution':response.status==='encouraging'?'encouraging':stalled?'stalled':'uncertain',
+  days:response.trainingDays,defer:!!defer,lastAt,completedMinutes:response.minutes,
+  categoryShare:total?Math.round(share*100):null,transfer:transfer.status,
+  independentFollowUps:response.samples,estimatedResponse:response.samples?Math.round(response.mean*1000)/1000:null,
+  uncertainty:response.samples?Math.round(response.uncertainty*1000)/1000:null,
+  collateral,category:cat,policy:'5.18.0'};
 }
 function dc26MasteryMinutes(candidate,now=Date.now()){return dc30Feedback(candidate,now).minutes}
 /* Keep an auditable compact rationale; no skill tiers or negative diagnoses are
@@ -2625,63 +2958,83 @@ function dc27NormalTargetDays(ring,target,start,end){
  return [...days.values()].filter(r=>r.focus.length>=3&&r.peer.length>=4)
    .map(r=>r.focus.reduce((a,b)=>a+b,0)/r.focus.length-r.peer.reduce((a,b)=>a+b,0)/r.peer.length);
 }
+/* V5.24: evidence-aware, stable method trials. Normal-game target-vs-peer
+   observations are the only outcome measure. Distinct interventions must be
+   separated by at least 25 days before contributing independent evidence.
+   Never compare in-drill scores or infer that observational gain is causal. */
 function dc27MethodFeedback(candidate,now=Date.now()){
  const allowed=dc27MasteryMethods(candidate),out={};
  if(!allowed.length)return out;
- const cutoff=now-140*DAY_MS;
- const exposures=(data.games||[]).filter(g=>g?.name==='Target Mastery'&&g.completion==='natural'&&!g.quick&&!g.recovery&&
-  Number.isFinite(g.at)&&g.at>=cutoff&&g.at<=now&&allowed.includes(g.masteryMode)&&
+ const cutoff=now-180*DAY_MS;
+ const all=(data.games||[]).filter(g=>g?.name==='Target Mastery'&&g.completion==='natural'&&!g.quick&&
+  Number.isFinite(g.at)&&g.at>=cutoff&&g.at<=now&&
   g.details?.ring===candidate.ring&&g.details?.target===candidate.target).sort((a,b)=>a.at-b.at);
- const allFocus=(data.games||[]).filter(g=>g?.name==='Target Mastery'&&g.completion==='natural'&&!g.quick&&
-  Number.isFinite(g.at)&&g.at>=cutoff&&g.at<=now&&g.details?.ring===candidate.ring&&g.details?.target===candidate.target).sort((a,b)=>a.at-b.at);
  for(const mode of allowed){
-  const history=exposures.filter(g=>g.masteryMode===mode),days=new Set(history.map(g=>dateKey(g.at)));
-  const changes=[];
-  // A follow-up window is usable only if no OTHER Mastery session for this target
-  // occurs nearby, even if it used the same method. Avoid overlapping periods.
+  const history=all.filter(g=>!g.recovery&&g.masteryMode===mode),days=new Set(history.map(g=>dateKey(g.at)));
+  const eligible=[];
   for(const g of history){
    if(g.at+11*DAY_MS>now)continue;
-   if(allFocus.some(x=>x!==g&&x.at>=g.at-14*DAY_MS&&x.at<=g.at+11*DAY_MS))continue;
+   // Competing practice anywhere in the before/after comparison invalidates attribution.
+   if(all.some(x=>x!==g&&x.at>=g.at-14*DAY_MS&&x.at<=g.at+11*DAY_MS))continue;
    const before=dc27NormalTargetDays(candidate.ring,candidate.target,g.at-14*DAY_MS,g.at);
    const after=dc27NormalTargetDays(candidate.ring,candidate.target,g.at+DAY_MS,g.at+11*DAY_MS);
    if(before.length<3||after.length<3)continue;
-   const mean=a=>a.reduce((v,x)=>v+x,0)/a.length;
-   changes.push({day:dateKey(g.at),delta:mean(after)-mean(before)});
+   const avg=values=>values.reduce((a,v)=>a+v,0)/values.length;
+   eligible.push({at:g.at,day:dateKey(g.at),delta:avg(after)-avg(before)});
   }
-  const unique=new Map(changes.map(c=>[c.day,c.delta]));
-  const deltas=[...unique.values()],avg=deltas.length?deltas.reduce((a,b)=>a+b,0)/deltas.length:null;
-  out[mode]={exposures:history.length,days:days.size,followUps:deltas.length,
-   observedGain:avg,ready:deltas.length>=3&&days.size>=3,source:'later normal-game target-vs-peer change; observational'};
+  const independent=[];
+  for(const item of eligible)if(!independent.length||item.at-independent[independent.length-1].at>=25*DAY_MS)independent.push(item);
+  const changes=independent.map(x=>x.delta),n=changes.length;
+  const mean=n?changes.reduce((a,v)=>a+v,0)/n:null;
+  const variance=n>1?changes.reduce((a,v)=>a+(v-mean)**2,0)/(n-1):null;
+  const uncertainty=n>=3?Math.sqrt(Math.max(0,variance)/n+.035**2):null;
+  const supported=n>=4&&Math.abs(mean)>=.08&&Math.abs(mean)>2*uncertainty;
+  out[mode]={exposures:history.length,days:days.size,followUps:n,
+   observedGain:mean,uncertainty,ready:supported,
+   signal:supported?(mean>0?'encouraging':'adverse'):'uncertain',
+   source:'separated normal-game target-vs-peer changes; observational, not causal'};
  }
  return out;
 }
 function dc27ChooseMasteryMethod(candidate,now=Date.now()){
  const allowed=dc27MasteryMethods(candidate);
  if(!allowed.length)return {mode:candidate?.mode||'segment',reason:'specialist drill',evidence:null};
- const evidence=dc27MethodFeedback(candidate,now);
- // Use mild bounded preferences only with several independent follow-ups; otherwise
- // systematically try less-used methods. Never treat an untested method as inferior.
- const candidates=allowed.map(mode=>{
-  const e=evidence[mode]||{days:0,followUps:0,ready:false};
-  const gain=e.ready?Math.max(-.15,Math.min(.15,e.observedGain)):0;
-  const exploration=1/Math.sqrt(1+e.days);
-  return {mode,e,score:gain*.8+exploration*.20};
- });
- candidates.sort((a,b)=>b.score-a.score||a.e.days-b.e.days||allowed.indexOf(a.mode)-allowed.indexOf(b.mode));
- const selected=candidates[0];
- return {mode:selected.mode,reason:selected.e.ready?'observed follow-up and balanced exploration':'balanced method exploration',
-  evidence:{days:selected.e.days,followUps:selected.e.followUps,ready:selected.e.ready,
-   observedGain:selected.e.ready?selected.e.observedGain:null}};
+ const evidence=dc27MethodFeedback(candidate,now),history=dc31TargetHistory(candidate,now);
+ const recent=history.days.filter(x=>x.at<=now&&x.at>now-84*DAY_MS);
+ const last=recent.at(-1);
+ // Maintain the previous method for seven days; a poor single visit is not a reason to switch.
+ if(last&&now-last.at<7*DAY_MS){
+  const previous=allowed.find(m=>last.methods.has(m));
+  if(previous)return {mode:previous,reason:'stable short training block',evidence:{
+   days:recent.filter(d=>d.methods.has(previous)).length,followUps:evidence[previous]?.followUps||0,
+   ready:!!evidence[previous]?.ready,observedGain:evidence[previous]?.ready?evidence[previous].observedGain:null,
+   signal:evidence[previous]?.signal||'uncertain'}};
+ }
+ const scores=allowed.map((mode,i)=>{
+  const e=evidence[mode]||{signal:'uncertain',followUps:0};
+  const exposures=recent.filter(d=>d.methods.has(mode)).length;
+  // Only strong independent later observations change method preference.
+  // Unproven methods get modest exploration; adverse signals are penalised.
+  const preference=e.signal==='encouraging'?.16:e.signal==='adverse'?-.22:0;
+  const exploration=.09/Math.sqrt(1+exposures);
+  const cooldown=last?.methods.has(mode)&&now-last.at<14*DAY_MS?.035:0;
+  return {mode,e,exposures,index:i,score:preference+exploration-cooldown};
+ }).sort((a,b)=>b.score-a.score||a.exposures-b.exposures||a.index-b.index);
+ const best=scores[0];
+ return {mode:best.mode,reason:best.e.signal==='encouraging'?'cautious preference from separated follow-up evidence':
+  best.e.signal==='adverse'?'exploration with adverse-method safeguards':'limited, stable exploration of eligible methods',
+  evidence:{days:best.exposures,followUps:best.e.followUps||0,ready:!!best.e.ready,
+   observedGain:best.e.ready?best.e.observedGain:null,signal:best.e.signal||'uncertain'}};
 }
 function dc26MasteryDecision(candidate){
  if(!candidate)return null;
- const method=dc27ChooseMasteryMethod(candidate);
- return {policy:'5.17.0',type:candidate.basis||'measured target evidence',mode:method.mode,
+ const method=dc27ChooseMasteryMethod(candidate),feedback=dc30Feedback(candidate);
+ return {policy:'5.18.0',type:candidate.basis||'measured target evidence',mode:method.mode,
   detectedMode:candidate.mode||'segment',methodReason:method.reason,methodEvidence:method.evidence,
   ring:candidate.ring||null,target:candidate.target||null,band:candidate.band||null,
   transfer:candidate.transferEvidence?.status||'unmeasured',
   evidenceDays:Number.isFinite(candidate.days)?candidate.days:null,
-  minutes:dc26MasteryMinutes(candidate),feedback:dc30Feedback(candidate)};
+  minutes:feedback.minutes,feedback};
 }
 function dc22MasteryCandidate(){
  try{
@@ -2703,7 +3056,7 @@ function dc22MasteryCandidate(){
   // Do not schedule the same exact segment every day when there are other
   // measured needs. Leave at least two calendar days between repeats.
   const cooldown=new Set((data.games||[]).filter(g=>g?.name==='Target Mastery'&&g.completion==='natural'&&
-    Number.isFinite(g.at)&&g.at<=Date.now()&&Date.now()-g.at<2*DAY_MS&&g.masteryMode==='segment')
+    Number.isFinite(g.at)&&g.at<=Date.now()&&Date.now()-g.at<3*DAY_MS)
     .map(g=>g.details?.ring+String(g.details?.target)));
   for(let i=candidates.length-1;i>=0;i--)if(candidates[i].ring&&cooldown.has(candidates[i].ring+String(candidates[i].target)))candidates.splice(i,1);
   if(candidates.length){
@@ -2717,14 +3070,8 @@ function dc22MasteryCandidate(){
     return candidate;
    }
   }
-  // Practice variety is not a diagnosis: use the cross-skill maintenance
-  // circuit only with at least eight recorded independent training days.
-  const days=new Set((data.sessions||[]).filter(x=>x?.completed&&!x.quick&&x.start<=Date.now()).map(x=>x.date));
-  if(days.size>=8){
-   const modes=['straight','switch','setup','scoring','pressure','bull','checkout'];
-   const uniqueDay=Math.floor(Date.now()/DAY_MS);
-   return {mode:modes[uniqueDay%modes.length],priority:1,basis:'maintenance rotation, not a diagnosed weakness'};
-  }
+  // V5.32: no invented maintenance weakness. Balanced games provide variety;
+  // Mastery is an intervention, never a mandatory daily ornament.
   return null;
  }catch(e){return null}
 }
@@ -2734,30 +3081,114 @@ function dc10PressureSummary(games,sessionId){
  const gamesPlayed=[...new Set(completed.map(g=>g.name))];
  return {rounds:completed.length,wins,losses:completed.length-wins,gamesPlayed};
 }
+/* V5.26.0: single bounded decision pipeline for scheduled training.
+   All inputs are observed at prescription time, never fitted against future
+   scores. Mastery, category policy, workload and game variety share a common
+   session decision. This is not a causal or human-learning model. */
+/* V5.32.0 Balanced-first coaching contract.
+   Balanced practice is a successful prescription. Focus is temporary, bounded,
+   earned from independent player measurements, and never enabled by synthetic
+   examples or uncompleted prescriptions. */
+function dc44FocusGate(candidate,category,policy,extra=false,now=Date.now()){
+ const base={version:'5.32.0',eligible:false,minutes:0,reason:'balanced programme',category:category||null,
+  completedFocusMinutes7d:0,independentDays:0};
+ if(extra)return {...base,reason:'complementary extra training uses balanced variety'};
+ if(!candidate||!category)return {...base,reason:'no measured, actionable weakness'};
+ if(candidate.basis==='maintenance rotation, not a diagnosed weakness'||Number(candidate.priority)<1.25)
+  return {...base,reason:'maintenance or weak signal is not a diagnosed need'};
+ const days=new Set((data.sessions||[]).filter(s=>s?.completed===true&&!s.quick&&Number.isFinite(s.start)&&s.start<=now)
+  .map(s=>dateKey(s.start)));
+ base.independentDays=days.size;
+ if(days.size<8)return {...base,reason:'fewer than eight independent recorded training days'};
+ const p=policy?.categories?.[category]||{};
+ if(p.overexposed||p.policySafety||p.learning?.protect)return {...base,reason:'category workload or safety protection'};
+ // One short focused intervention per seven-day period initially. Count
+ // actual finished focus, not the planned future exposure.
+ let spent=0;
+ for(const sess of data.sessions||[]){
+  if(!sess||sess.completed!==true||!Number.isFinite(sess.start)||sess.start>now||sess.start<now-7*DAY_MS||!Array.isArray(sess.activities))continue;
+  for(const a of sess.activities){
+   if(a?.name==='Target Mastery'&&Number(a.seconds)>=300)spent+=Math.min(60,Number(a.seconds)/60);
+  }
+ }
+ base.completedFocusMinutes7d=spent;
+ if(spent>=10)return {...base,reason:'weekly focused-practice budget reached'};
+ // The detailed target diagnosis remains responsible for validity. The
+ // category can be uncertain without inventing target precision.
+ return {...base,eligible:true,minutes:5,reason:'documented weakness; cautious time-limited intervention'};
+}
+function dc44BalancedAudit(decision,plan){
+ const focused=plan.filter(x=>x?.name==='Target Mastery');
+ return {version:'5.32.0',default:'balanced',focusSelected:focused.length>0,
+  focusGate:decision.focusGate||null,
+  focusMinutes:focused.reduce((a,x)=>a+Number(x.seconds||0)/60,0),
+  notes:'Focused time requires recorded evidence; balance is a valid final decision'};
+}
+function dc39UnifiedDecision(extra=false,now=Date.now()){
+ const policy=dc32WholeSessionPolicy(now);
+ const categories=['scoring','doubles','checkout','bull'];
+ const ledger=dc28CategoryLedger(now).filter(d=>d.at>=now-7*DAY_MS&&d.at<=now);
+ const recent=Object.fromEntries(categories.map(k=>[k,Math.round(ledger.reduce((a,d)=>a+Math.max(0,Number(d.minutes?.[k])||0),0))]));
+ const decisions={};
+ for(const cat of categories){
+  const row=policy.categories?.[cat]||{};
+  const reliability=!!row.reliable,protectedSkill=!!row.policySafety;
+  // Benefit cannot be asserted from performance weakness or forecast coverage.
+  const supported=Number(row.matchedWindows)>=4&&Number(row.preference)<0&&!protectedSkill&&!row.overexposed;
+  const state=protectedSkill?'protect':row.overexposed?'balance-workload':supported?'tentative-support':reliability?'observe':'unknown';
+  decisions[cat]={state,reliability,completedMinutes7d:recent[cat],preference:Math.max(-2,Math.min(2,Number(row.preference)||0)),reason:String(row.reason||'balanced training').slice(0,180),
+   matchedWindows:Math.max(0,Number(row.matchedWindows)||0),calibration:row.forecastCalibration?.quality||'unknown'};
+ }
+ const mastery=dc22MasteryCandidate();
+ let masteryDecision=null,masteryReason='balanced training: no eligible measured target',focusGate=null;
+ if(mastery){
+  const raw=dc26MasteryDecision(mastery),cat=mastery.ring==='D'?'doubles':mastery.ring==='B'?'bull':mastery.ring==='T'||mastery.ring==='S'?'scoring':mastery.mode==='bull'?'bull':mastery.mode==='checkout'||mastery.mode==='setup'?'checkout':mastery.mode==='pressure'?'doubles':mastery.mode==='scoring'?'scoring':null;
+  const control=cat?decisions[cat]:null;
+  focusGate=dc44FocusGate(mastery,cat,policy,extra,now);
+  if(focusGate.eligible){
+   const minutes=focusGate.minutes;
+   masteryDecision={...raw,minutes,version:'5.32.0',category:cat,
+    unifiedConstraint:'balanced-first time-limited intervention',evidenceState:control?.state||'unclassified'};
+  }
+  masteryReason=focusGate.reason;
+ }
+ return {version:'5.32.0',at:now,extra:!!extra,policy,categories:decisions,mastery,masteryDecision,masteryReason,focusGate,
+  guardrails:{minimumMinutes:5,maxFocusedMinutes:5,balancedCore:true,weeklyFocusBudgetMinutes:10,syntheticEvidenceExcluded:true}};
+}
+function dc39FinalizeDecision(decision,plan){
+ const result={version:'5.25.0',at:decision.at,extra:decision.extra,categories:decision.categories,guardrails:decision.guardrails,
+  mastery:decision.masteryDecision?{category:decision.masteryDecision.category,mode:decision.masteryDecision.mode,
+    minutes:decision.masteryDecision.minutes,reason:decision.masteryReason,evidenceState:decision.masteryDecision.evidenceState}:null,
+  choices:plan.filter(x=>x.wholeCoach).map(x=>({game:x.name,minutes:x.seconds/60,category:x.wholeCoach.category})),
+  focusGate:decision.focusGate||null,balancedFirst:true,rationale:'balanced programme by default; short measured interventions only when warranted'};
+ return result;
+}
 function generateSession(extra=false,skipWarmup=false){
  const focus=focusForDay(extra),sessionsToday=(data.sessions||[]).filter(x=>x?.date===dateKey()&&!x.quick).length;
  const count=sessionsToday>=2?3:4;
- const chosen=chooseSessionGames(focus,count);
+ const unified=dc39UnifiedDecision(extra),wholePolicy=unified.policy;
+ const chosen=chooseSessionGames(focus,count,wholePolicy);
  const plan=skipWarmup?[]:[{name:'Warm-up',seconds:600,mode:'timed'}];
  if(!extra&&!data.bigSingles.some(b=>b?.day===dateKey()&&b.complete))plan.push({name:'Big Singles',mode:'benchmark'});
- // A confirmed single-target gap may earn one five-minute block; never from a guessed treble weakness.
- const mastery=dc22MasteryCandidate();
- if(mastery&&chosen.length>=2){
-  const brain=dc26MasteryDecision(mastery);
-  plan.push({name:'Target Mastery',mode:'timed',seconds:brain.minutes*60,mastery:{...mastery,mode:brain.mode},coachDecision:brain});
+ if(unified.masteryDecision&&chosen.length>=2){
+  plan.push({name:'Target Mastery',mode:'timed',seconds:unified.masteryDecision.minutes*60,
+   mastery:{...unified.mastery,mode:unified.masteryDecision.mode},coachDecision:unified.masteryDecision});
  }
- // Longer doses for well-calibrated, useful pressure; avoid amplifying very easy/hard games.
  const profiles=dc18ChallengeProfiles(chosen);
- const lengths=chosen.map((name,i)=>{
-  const p=profiles.get(name);let minutes=i===0?15:10;
-  if(p&&p.reliability>=.6){
-   if(p.probability<.25||p.probability>.80)minutes=5;
-   else if(p.probability>=.35&&p.probability<=.65)minutes=15;
-  }
-  return minutes;
- });
- chosen.forEach((name,i)=>plan.push({name,mode:'timed',seconds:lengths[i]*60}));
+ const lengths=chosen.map((name,i)=>dc32GameMinutes(name,i,wholePolicy,profiles));
+ chosen.forEach((name,i)=>plan.push({name,mode:'timed',seconds:lengths[i]*60,
+  wholeCoach:{version:'5.25.0',category:dc28GameCategory(name),plannedMinutes:lengths[i],
+   reason:wholePolicy.categories[dc28GameCategory(name)]?.reason||'balanced programme'}}));
  plan.push({name:'Review',mode:'timed',seconds:300});
+ // This record is stored with the active session at its creation, before
+ // future outcomes exist. It has no effect on any player-history measurements.
+ plan.unifiedAudit=dc39FinalizeDecision(unified,plan);
+ plan.unifiedAudit.balancedFirst=dc44BalancedAudit(unified,plan);
+ plan.unifiedAudit.exploration=chosen.exploration||{selected:false,reason:'not evaluated'};
+ plan.unifiedAudit.evidenceActivation={version:'5.26.0',
+  categories:Object.fromEntries(Object.entries(unified.categories).map(([k,v])=>[k,{state:v.state,reliability:v.reliability,
+   matchedWindows:v.matchedWindows,preference:v.preference}])),
+  note:'Prospective diagnostics only; no synthetic scores enter saved live data'};
  return plan;
 }
 function blockStart(){return data.coach.firstStarted?weekStart(data.coach.firstStarted):null}
@@ -2891,36 +3322,81 @@ function closeWelcome(){$("welcomeOverlay").classList.add("hidden")}
 function session(){return data.activeSession}function currentExercise(){const s=session();return s?s.plan[s.index]:null}
 function sessionElapsed(){const s=session();return s?Math.max(0,((s.pausedAt||Date.now())-s.start-num(s.pausedTotal))/1000):0}
 function exerciseElapsed(){const s=session();if(!s)return 0;return Math.max(0,(num(s.activityAccumulated)+(s.activityStarted?(s.pausedAt||Date.now())-s.activityStarted:0))/1000)}
-function beginTraining(extra,skipWarmup=false,fromAssessment=false){if(session()){show("train");return}prepareAssessment();if(assessmentDue()){show("train");return}if(data.days.length!==5){alert("Select five training days in Settings.");show("settings");return}if(!extra&&!fromAssessment&&!data.days.includes(new Date().getDay())){alert("Today is a rest day. Extra training is available.");return}if(!extra&&!fromAssessment&&data.sessions.some(s=>s.date===dateKey()&&!s.extra&&s.completed)){alert("Today's scheduled session is already complete.");return}if(!data.coach.firstStarted)data.coach.firstStarted=Date.now();dc30RefreshFollowUps();performCoachReview();data.activeSession={id:Date.now(),start:Date.now(),extra:!!extra,plan:generateSession(extra,skipWarmup),index:0,completed:[],pausedAt:null,pausedTotal:0,activityStarted:null,activityAccumulated:0,round:1,roundsCompleted:0,allocated:false,benchmarkSeconds:0,phase:"rules"};data.activeSession.coachPlanAudit=data.activeSession.plan.filter(e=>e.coachDecision).map(e=>({...e.coachDecision,at:data.activeSession.start}));data.activeSession.categoryPlanAudit=dc28CategoryPlanning(data.activeSession.start);if(!extra)data.activeSession.researchPlan=dc21CapturePlan(data.activeSession);data.game=null;activeGame=null;undoSnapshot=null;$("sessionFinished").classList.add("hidden");startExercise();save();show("train")}
+function beginTraining(extra,skipWarmup=false,fromAssessment=false){if(session()){show("train");return}prepareAssessment();if(assessmentDue()){show("train");return}if(data.days.length!==5){alert("Select five training days in Settings.");show("settings");return}if(!extra&&!fromAssessment&&!data.days.includes(new Date().getDay())){alert("Today is a rest day. Extra training is available.");return}if(!extra&&!fromAssessment&&data.sessions.some(s=>s.date===dateKey()&&!s.extra&&s.completed)){alert("Today's scheduled session is already complete.");return}if(!data.coach.firstStarted)data.coach.firstStarted=Date.now();dc30RefreshFollowUps();performCoachReview();data.activeSession={id:Date.now(),start:Date.now(),extra:!!extra,plan:generateSession(extra,skipWarmup),index:0,completed:[],pausedAt:null,pausedTotal:0,activityStarted:null,activityAccumulated:0,round:1,roundsCompleted:0,allocated:false,benchmarkSeconds:0,phase:"rules"};data.activeSession.unifiedAudit=data.activeSession.plan.unifiedAudit||null;data.activeSession.coachPlanAudit=data.activeSession.plan.filter(e=>e.coachDecision).map(e=>({...e.coachDecision,at:data.activeSession.start}));data.activeSession.categoryPlanAudit=dc28CategoryPlanning(data.activeSession.start);data.activeSession.wholeSessionAudit={version:'5.25.0',at:data.activeSession.start,unified:data.activeSession.unifiedAudit,forecast:dc37Forecast(data.activeSession.start),policy:dc32WholeSessionPolicy(data.activeSession.start),choices:data.activeSession.plan.filter(e=>e.wholeCoach).map(e=>({game:e.name,...e.wholeCoach}))};if(!extra)data.activeSession.researchPlan=dc21CapturePlan(data.activeSession);data.game=null;activeGame=null;undoSnapshot=null;$("sessionFinished").classList.add("hidden");startExercise();save();show("train")}
 /* Rebalance scheduled work to the actual clock without creating short drills.
    Whole-minute allocation prevents fractional leftovers; remainder is absorbed
    by an existing exercise. A review is a genuine five-minute practice block. */
+/* V5.30.0: Evidence-gated duration transfer AFTER clock reallocation.
+   A negative category preference alone is not enough: independent matched
+   comparisons, prospective permission, calibration and workload protection
+   are all required. Never creates additional practice minutes. */
+function dc43LearningTransfer(s,queue){
+ const audit=s?.wholeSessionAudit?.unified||s?.unifiedAudit;
+ const policy=s?.wholeSessionAudit?.policy;
+ const entries=queue.filter(e=>e&&e.wholeCoach&&e.name!=='Target Mastery'&&e.seconds>=300);
+ const result={version:'5.30.0',status:'no-transfer',reason:'no sufficiently supported learning allocation',
+  before:entries.map(e=>({game:e.name,category:e.wholeCoach.category,minutes:e.seconds/60})),after:[],transfer:null};
+ const categories=policy?.categories||{};
+ // Category work remains balanced; transfers still require prospective support.
+ const eligible=entries.filter(e=>{
+  const c=categories[e.wholeCoach.category],d=audit?.categories?.[e.wholeCoach.category];
+  return c&&d&&c.matchedWindows>=4&&c.reliable===true&&c.preference<0&&
+   !c.policySafety&&!c.overexposed&&c.forecastCalibration?.quality!=='poor-coverage'&&
+   c.learning?.permissionToEscalate===true&&d.state==='tentative-support'&&e.seconds<=900;
+ });
+ // One transfer at most, and no experiment when there is only one category.
+ const receiver=eligible.sort((a,b)=>categories[a.wholeCoach.category].preference-categories[b.wholeCoach.category].preference)[0];
+ if(receiver){
+  const donors=entries.filter(e=>e!==receiver&&e.wholeCoach.category!==receiver.wholeCoach.category&&e.seconds>=600&&
+   !categories[e.wholeCoach.category]?.policySafety&&
+   !(categories[e.wholeCoach.category]?.learning?.permissionToEscalate));
+  donors.sort((a,b)=>(b.seconds-a.seconds)||a.name.localeCompare(b.name));
+  const donor=donors[0];
+  if(donor){
+   receiver.seconds+=300;donor.seconds-=300;
+   result.status='transferred';result.reason='independent matched response and prospective audit support';
+   result.transfer={to:receiver.name,from:donor.name,category:receiver.wholeCoach.category,minutes:5,
+    matchedWindows:categories[receiver.wholeCoach.category].matchedWindows,
+    preference:categories[receiver.wholeCoach.category].preference};
+  }else result.reason='no safe five-minute donor available';
+ }
+ result.after=entries.map(e=>({game:e.name,category:e.wholeCoach.category,minutes:e.seconds/60}));
+ if(audit)audit.durationTransfer=result;
+ if(s.wholeSessionAudit){s.wholeSessionAudit.durationTransfer=result;
+  s.wholeSessionAudit.actualScheduledChoices=result.after;}
+ return result;
+}
 function allocateRemaining(s){
  if(s.quick||s.allocated){if(s.quick)s.allocated=true;return}
  const remaining=Math.max(0,Math.floor(sessionRemaining()));
- const queue=s.plan.slice(s.index).filter(e=>e.mode==='timed');
- if(!queue.length){s.allocated=true;return}
- // The planned clock can be short when a player resumes late. Never start a
- // one-minute game: remove excess games from the remaining itinerary.
  const available=Math.floor(remaining/60)*60;
+ let queue=s.plan.slice(s.index).filter(e=>e.mode==='timed');
+ if(!queue.length){s.allocated=true;return}
  while(queue.length>1&&queue.length*300>available){
-  const remove=queue.findLast(e=>e.name!=='Review'&&e.name!=='Target Mastery')||queue.findLast(e=>e.name!=='Review')||queue[queue.length-1];
+  const remove=queue.findLast(e=>e.name!=='Review'&&e.name!=='Target Mastery')||
+   queue.findLast(e=>e.name!=='Review')||queue[queue.length-1];
   const pos=s.plan.indexOf(remove);if(pos>=s.index)s.plan.splice(pos,1);
-  queue.splice(queue.indexOf(remove),1);
+  queue=queue.filter(e=>e!==remove);
  }
- if(available<300){
-  // Exceptional interrupted/expired session: finish it rather than schedule a
-  // pretend sub-five-minute exercise. Never extend the 60-minute allowance.
-  s.plan.splice(s.index,s.plan.length-s.index);s.allocated=true;return;
- }
- const blocks=Math.floor(available/60);
- const base=queue.length*5;
- let surplus=blocks-base;
- const weights=queue.map(e=>Math.max(1,num(e.seconds)/60-5));
- const total=weights.reduce((a,b)=>a+b,0);
- queue.forEach((e,i)=>{const add=i===queue.length-1?surplus:Math.min(surplus,Math.floor((blocks-base)*weights[i]/Math.max(1,total)));e.seconds=(5+add)*60;surplus-=add});
- // Any seconds under a whole minute are appended to the final block.
- queue[queue.length-1].seconds+=remaining-available;
+ if(available<300){s.plan.splice(s.index,s.plan.length-s.index);s.allocated=true;return}
+ // Fix the exact completed allocation of the controller's chosen Mastery dose
+ // where time permits. Other games absorb the scheduling surplus.
+ const mastery=queue.find(e=>e.name==='Target Mastery');
+ const ordinary=queue.filter(e=>e.name!=='Target Mastery');
+ let keep=mastery?Math.max(300,Math.floor(num(mastery.seconds)/60)*60):0;
+ keep=Math.min(keep,available-ordinary.length*300);
+ if(mastery)mastery.seconds=Math.max(300,keep);
+ const ordinarySeconds=available-(mastery?mastery.seconds:0);
+ if(ordinary.length){
+  const surplus=ordinarySeconds-ordinary.length*300;
+  const weights=ordinary.map(e=>Math.max(1,num(e.seconds)/60-5));
+  const sum=weights.reduce((a,b)=>a+b,0);let spent=0;
+  ordinary.forEach((e,i)=>{const add=i===ordinary.length-1?surplus-spent:Math.floor(surplus*weights[i]/sum/60)*60;
+   e.seconds=300+add;spent+=add});
+  ordinary[ordinary.length-1].seconds+=remaining-available;
+ }else if(mastery)mastery.seconds+=remaining-available;
+ // Calculate actual final minutes, after the scheduler has met the clock budget.
+ dc43LearningTransfer(s,queue);
  s.allocated=true;
 }
 function startExercise(){const s=session();if(!s)return;if(s.index>=s.plan.length){finishSession(true);return}let item=currentExercise();if(item.name!=="Warm-up"&&item.name!=="Big Singles"&&!s.allocated)allocateRemaining(s);item=currentExercise();if(!item){finishSession(true);return}s.phase="rules";if(!s.pausedAt)s.pausedAt=Date.now();s.activityStarted=null;s.activityAccumulated=0;s.round=1;s.roundsCompleted=0;s.lastRoundUndo=null;activeGame=buildGame(item.name);data.game=activeGame;undoSnapshot=null;save(false)}
@@ -3807,23 +4283,30 @@ function dc30RefreshFollowUps(now=Date.now()){
  const log=data.coach?.feedbackInterventions;
  if(!Array.isArray(log))return;
  for(const x of log){
-  if(x?.kind!=='mastery'||x.followUpEvidence||!Number.isFinite(x.at)||x.at+11*DAY_MS>now)continue;
+  if(x?.kind!=='mastery'||!Number.isFinite(x.at)||x.at>now||x.at+11*DAY_MS>now)continue;
+  // Keep observations updated when comparable data arrives later, but bound the
+  // evaluation window so one old intervention never claims endless improvement.
+  if(x.followUpEvidence?.status==='observed'||x.followUpEvidence?.status==='overlapping'||
+   x.followUpEvidence?.status==='not-measurable')continue;
   const valid=['S','D','T'].includes(x.ring)&&Number.isInteger(x.target)&&x.target>=1&&x.target<=20;
-  if(!valid){x.followUpEvidence={status:'not-measurable',reason:'no comparable exact target observations'};continue}
-  const others=(data.games||[]).some(g=>g?.name==='Target Mastery'&&g.completion==='natural'&&!g.quick&&
+  if(!valid){x.followUpEvidence={status:'not-measurable',reason:'no comparable exact-target observations'};continue}
+  const early=dc27NormalTargetDays(x.ring,x.target,x.at+DAY_MS,x.at+11*DAY_MS+1);
+  const horizon=early.length>=3?x.at+11*DAY_MS:Math.min(now,x.at+35*DAY_MS);
+  const overlap=(data.games||[]).some(g=>g?.name==='Target Mastery'&&g.completion==='natural'&&!g.quick&&
    g.details?.ring===x.ring&&g.details?.target===x.target&&Number.isFinite(g.at)&&
-   g.sessionId!==x.sessionId&&g.at>=x.at-14*DAY_MS&&g.at<=x.at+11*DAY_MS);
-  if(others){x.followUpEvidence={status:'overlapping',reason:'other Mastery exposure in evaluation window'};continue}
+   g.sessionId!==x.sessionId&&g.at>=x.at-14*DAY_MS&&g.at<=horizon);
+  if(overlap){x.followUpEvidence={status:'overlapping',reason:'intervening Mastery exposures prevent attribution'};continue}
   const prior=dc27NormalTargetDays(x.ring,x.target,x.at-14*DAY_MS,x.at);
-  const later=dc27NormalTargetDays(x.ring,x.target,x.at+DAY_MS,x.at+11*DAY_MS);
-  if(prior.length<3||later.length<3){x.followUpEvidence={status:'insufficient',beforeDays:prior.length,afterDays:later.length};continue}
+  const later=dc27NormalTargetDays(x.ring,x.target,x.at+DAY_MS,horizon+1);
+  if(prior.length<3||later.length<3){x.followUpEvidence={status:now>=x.at+35*DAY_MS?'insufficient-final':'pending',
+   beforeDays:prior.length,afterDays:later.length,checkedAt:now};continue}
   const avg=a=>a.reduce((v,n)=>v+n,0)/a.length;
-  const delta=avg(later)-avg(prior);
   const variance=a=>a.reduce((v,n)=>v+(n-avg(a))**2,0)/Math.max(1,a.length-1);
-  const uncertainty=Math.sqrt(variance(prior)/prior.length+variance(later)/later.length);
+  const delta=avg(later)-avg(prior);
+  const uncertainty=Math.sqrt(variance(prior)/prior.length+variance(later)/later.length+.035**2);
   x.followUpEvidence={status:'observed',relativeChange:Math.round(delta*1000)/1000,
    uncertainty:Math.round(uncertainty*1000)/1000,beforeDays:prior.length,afterDays:later.length,
-   note:'Target-versus-peer normal-game observation. Not causal and not a standalone method ranking.'};
+   checkedAt:now,note:'Target-versus-peer independent day observations. Association, not causation.'};
  }
 }
 function dc30LogCompletedInterventions(s){
@@ -3844,10 +4327,10 @@ function dc30LogCompletedInterventions(s){
    baseline:decision?{transfer:decision.transfer,evidenceDays:decision.evidenceDays}:null,
    rationale:decision?.feedback?.reason||'balanced scheduled practice',
    uncertainty:decision?.feedback?.status||'unmeasured',overlappingGames:overlap,
-   followUp:'computed from later comparable games, not assumed at completion',policy:'5.17.0'});
+   followUp:'computed from later comparable games, not assumed at completion',policy:'5.18.0'});
  }
 }
-function finishSession(success){hideRoundAnnouncement();const s=session();if(!s)return;const elapsed=Math.round(sessionElapsed()/6)/10;const sessionRecord={id:s.id,start:s.start,date:dateKey(s.start),minutes:elapsed,extra:s.extra,quick:!!s.quick,quickGame:s.quickGame||null,completed:!!success,activities:s.completed,focus:s.plan.map(p=>p.name)};if(Array.isArray(s.coachPlanAudit))sessionRecord.coachPlanAudit=clone(s.coachPlanAudit);if(s.categoryPlanAudit)sessionRecord.categoryPlanAudit=clone(s.categoryPlanAudit);if(s.researchPlan&&!s.extra&&!s.quick)sessionRecord.researchPlan=clone(s.researchPlan);sessionRecord.coachReport=generateSessionReport(sessionRecord);dc30LogCompletedInterventions(s);dc30RefreshFollowUps();data.sessions.push(sessionRecord);displayCoachReport(sessionRecord.coachReport);data.activeSession=null;data.game=null;activeGame=null;undoSnapshot=null;rapidInitialCalibration();performCoachReview();checkCompletedBlocks();data.coach.challengeAudit=dc7ChallengeAudit(data.games);data.coach.challengeForecast=dc8ChallengeForecast(data.games);save();checkpointData();$("finishedText").textContent=success?(s.quick?"Quick Play saved separately.":"Today's practice is saved."):"Your practice has been saved.";$("sessionFinished").classList.remove("hidden");show("train")}
+function finishSession(success){hideRoundAnnouncement();const s=session();if(!s)return;const elapsed=Math.round(sessionElapsed()/6)/10;const sessionRecord={id:s.id,start:s.start,date:dateKey(s.start),minutes:elapsed,extra:s.extra,quick:!!s.quick,quickGame:s.quickGame||null,completed:!!success,activities:s.completed,focus:s.plan.map(p=>p.name)};if(Array.isArray(s.coachPlanAudit))sessionRecord.coachPlanAudit=clone(s.coachPlanAudit);if(s.categoryPlanAudit)sessionRecord.categoryPlanAudit=clone(s.categoryPlanAudit);if(s.wholeSessionAudit)sessionRecord.wholeSessionAudit=clone(s.wholeSessionAudit);if(s.researchPlan&&!s.extra&&!s.quick)sessionRecord.researchPlan=clone(s.researchPlan);sessionRecord.coachReport=generateSessionReport(sessionRecord);dc30LogCompletedInterventions(s);dc30RefreshFollowUps();data.sessions.push(sessionRecord);displayCoachReport(sessionRecord.coachReport);data.activeSession=null;data.game=null;activeGame=null;undoSnapshot=null;rapidInitialCalibration();performCoachReview();checkCompletedBlocks();data.coach.challengeAudit=dc7ChallengeAudit(data.games);data.coach.challengeForecast=dc8ChallengeForecast(data.games);save();checkpointData();$("finishedText").textContent=success?(s.quick?"Quick Play saved separately.":"Today's practice is saved."):"Your practice has been saved.";$("sessionFinished").classList.remove("hidden");show("train")}
 function finishSessionEarly(){if(!session())return;if(!confirm("End this training session?"))return;finishSession(false)}
 function pauseSession(){const s=session();if(!s||s.phase==="rules"||s.phase==="complete")return;if(s.pausedAt){s.pausedTotal+=Date.now()-s.pausedAt;s.pausedAt=null;s.activityStarted=Date.now()}else{s.pausedAt=Date.now();if(s.activityStarted)s.activityAccumulated+=s.pausedAt-s.activityStarted;s.activityStarted=null}save()}
 function finishView(){const wasQuick=data.sessions.length&&data.sessions[data.sessions.length-1].quick;$("sessionFinished").classList.add("hidden");show(wasQuick?"quick":"home")}
