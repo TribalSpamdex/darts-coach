@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.15.2</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.17.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -753,7 +753,7 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.15.2</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.17.0</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -882,6 +882,7 @@ function normaliseData(d){
  }
  d.coach=Object.assign(blank().coach,d.coach||{});
  for(const k of ["reviews","completedBlocks"])if(!Array.isArray(d.coach[k]))d.coach[k]=[];
+ if(!Array.isArray(d.coach.feedbackInterventions))d.coach.feedbackInterventions=[];
  for(const k of ["lastTierChanges","lastUsedEvidence","lastEvidenceCount","lastChangeEvidence"])
   if(!d.coach[k]||typeof d.coach[k]!=="object")d.coach[k]={};
  if(num(d.coach.version)<2)d.coach.lastReviewedWeek=weekStart(Date.now());
@@ -2218,6 +2219,133 @@ function dc10GameChoiceScore(name,focus,position,primary,recent,alreadyToday,coa
  const observedBenefit=evidence?.supported?-Math.min(2.5,1+evidence.pairedDays/20):0;
  return pressurePenalty+repetition+recently+theme+measurement+continuity+tie+observedBenefit;
 }
+/* V5.16.2 cross-category coach. Observational, offline, read-only history.
+   Game labels are assigned one main training emphasis for bookkeeping, not a
+   claim that a game exercises only one skill. Never use exercise hit rates as
+   transfer evidence. Calendar days, not sessions, are the units of evidence. */
+const DC28_CATEGORY_SKILL={scoring:'scoring',doubles:'doubles',checkout:'checkout',bull:'bull'};
+function dc28GameCategory(name){
+ if(typeof name!=='string')return null;
+ if(/Bull|Blackjack/i.test(name))return 'bull';
+ if(/Checkout|301|501|101|170|Setup Shot|Last Dart Rescue|Double-In|Poker/i.test(name))return 'checkout';
+ if(/Double|Doubles|Bingo/i.test(name))return 'doubles';
+ if(/Scoring|Treble|Cricket|Shanghai|Halve It|Number Lock|High-Low|Split the Difference|Switchback|Risk or Reward|First Nine|Neighbour Trap|Staying Straight|Golf Five/i.test(name))return 'scoring';
+ return null;
+}
+/* V5.16.3: exposure attribution audit. The recorded minutes, not the
+   proposed programme, are the exposure. All intervention windows are kept
+   independent. Mixed-category practice is useful but NOT isolated evidence. */
+function dc29MasteryCategory(s,activity){
+ // For Target Mastery only, use a genuinely recorded game round from this
+ // same session and activity. Missing mode/target data means unknown exposure.
+ const games=(data.games||[]).filter(g=>g?.name==='Target Mastery'&&g.sessionId===s.id&&
+  Number.isFinite(g.at)&&Number.isFinite(activity.at)&&
+  g.at<=activity.at+120000&&g.at>=activity.at-Math.min(3600000,Number(activity.seconds)*1000)-120000&&
+  ['natural','partial'].includes(g.completion));
+ if(!games.length)return null;
+ const categories=new Set();
+ for(const g of games){
+  const mode=g.masteryMode,ring=g.details?.ring;
+  let cat=null;
+  if(mode==='bull')cat='bull';
+  else if(mode==='checkout'||mode==='setup')cat='checkout';
+  else if(mode==='scoring')cat='scoring';
+  else if(['segment','straight','pressure'].includes(mode))cat=ring==='D'?'doubles':['S','T'].includes(ring)?'scoring':null;
+  // A mixed target switching exercise has no single defensible category.
+  if(cat)categories.add(cat);else return null;
+ }
+ return categories.size===1?[...categories][0]:null;
+}
+function dc28CategoryLedger(now=Date.now()){
+ const start=now-168*DAY_MS,byDay=new Map();
+ for(const s of data.sessions||[]){
+  if(!s||s.quick||s.completed!==true||!Number.isFinite(s.start)||s.start<start||s.start>now||!Array.isArray(s.activities))continue;
+  const day=dateKey(s.start),item=byDay.get(day)||{day,at:s.start,counts:{scoring:0,doubles:0,checkout:0,bull:0},minutes:{scoring:0,doubles:0,checkout:0,bull:0},unknownMinutes:0,sessions:0};
+  item.sessions++;item.at=Math.min(item.at,s.start);
+  for(const activity of s.activities){
+   if(!activity||!Number.isFinite(Number(activity.seconds))||Number(activity.seconds)<300)continue;
+   const c=activity.name==='Target Mastery'?dc29MasteryCategory(s,activity):dc28GameCategory(activity.name);
+   const minutes=Math.min(60,Number(activity.seconds)/60);
+   if(!c){item.unknownMinutes+=minutes;continue;}
+   item.counts[c]++;item.minutes[c]+=minutes;
+  }
+  byDay.set(day,item);
+ }
+ return [...byDay.values()].sort((a,b)=>a.at-b.at);
+}
+/* Diagnostic only: these are associations with later comparable performances,
+   never proof of effect. Windows are 7 days prior and 7 days later, with a
+   strict 16-day separation between interventions to prevent double counting. */
+/* V5.17.0: guarded matched-window category evidence.
+   An untrained comparison must resemble the exposure in baseline performance
+   AND total recorded practice, not just be an arbitrary no-category day.
+   Strictly separated windows, independent dates and limited outcome influence.
+   This is still observational, never a causal effect estimate. */
+function dc28CategoryEvidence(now=Date.now()){
+ const ledger=dc28CategoryLedger(now),samples=skillSamples(),out={};
+ const mean=a=>a.reduce((n,x)=>n+x,0)/Math.max(1,a.length);
+ const median=a=>{const b=[...a].sort((x,y)=>x-y);return b.length?b[Math.floor(b.length/2)]:0};
+ for(const [cat,skill] of Object.entries(DC28_CATEGORY_SKILL)){
+  const daily=dailySamples(samples[skill]).filter(r=>r.time<=now&&r.volume>=3)
+   .map(r=>({at:r.time,day:r.day,value:skill==='scoring'?r.points/Math.max(1,r.volume):100*r.hits/Math.max(1,r.volume)}));
+  const candidates=[];
+  for(const d of ledger){
+   const total=Object.values(d.minutes).reduce((x,y)=>x+y,0)+(d.unknownMinutes||0),own=d.minutes[cat];
+   if(total<15)continue;
+   const dominant=own>=10&&own/total>=.75,control=own===0&&total>=15;
+   if(!dominant&&!control)continue;
+   // Calendar dates are comparable units, not raw darts or three sessions.
+   const prior=daily.filter(x=>x.at<d.at&&x.at>=d.at-8*DAY_MS).slice(-3);
+   const later=daily.filter(x=>x.at>=d.at+DAY_MS&&x.at<=d.at+8*DAY_MS).slice(0,3);
+   if(new Set(prior.map(x=>x.day)).size<2||new Set(later.map(x=>x.day)).size<2)continue;
+   const baseline=mean(prior.map(x=>x.value));
+   const change=Math.max(-20,Math.min(20,mean(later.map(x=>x.value))-baseline));
+   candidates.push({at:d.at,day:d.day,change,baseline,total,type:dominant?'exposed':'control'});
+  }
+  // A candidate's prior/later measurement intervals must not overlap with
+  // another included candidate's interval, irrespective of treatment type.
+  const clean=[],sorted=candidates.sort((a,b)=>a.at-b.at);
+  for(const row of sorted){if(!clean.length||row.at-clean[clean.length-1].at>=17*DAY_MS)clean.push(row)}
+  const exposed=clean.filter(x=>x.type==='exposed');
+  const controls=clean.filter(x=>x.type==='control');
+  const used=new Set(),pairs=[],baselineTolerance=skill==='scoring'?8:10;
+  for(const e of exposed){
+   const eligible=controls.map((c,i)=>({c,i})).filter(({c,i})=>!used.has(i)&&
+    Math.abs(c.baseline-e.baseline)<=baselineTolerance&&
+    c.total>=e.total*.5&&c.total<=e.total*2);
+   eligible.sort((a,b)=>Math.abs(a.c.baseline-e.baseline)-Math.abs(b.c.baseline-e.baseline)||
+    Math.abs(a.c.total-e.total)-Math.abs(b.c.total-e.total));
+   if(!eligible.length)continue;
+   const {c,i}=eligible[0];used.add(i);
+   pairs.push({difference:e.change-c.change,exposureChange:e.change});
+  }
+  const effects=pairs.map(p=>p.difference),positive=effects.filter(x=>x>0).length;
+  const ready=pairs.length>=4;
+  // Small sample positive association is not sufficient. Robust median and
+  // 75% of independent matched windows must both support the same direction.
+  const robustGain=ready?median(effects):null;
+  const supported=ready&&robustGain>=5&&positive>=Math.ceil(.75*pairs.length);
+  out[cat]={exposureDays:exposed.length,comparisonDays:controls.length,matchedWindows:pairs.length,
+   observedDifference:robustGain,supported,consistentDays:positive,windowDays:8,
+   note:'Matched separated day-level associations (baseline and workload). Not causal. Insufficient matches remain neutral.'};
+ }
+ return out;
+}
+function dc28CategoryPlanning(now=Date.now()){
+ const ledger=dc28CategoryLedger(now),recent=ledger.filter(d=>d.at>=now-21*DAY_MS),counts={scoring:0,doubles:0,checkout:0,bull:0};
+ for(const d of recent)for(const c of Object.keys(counts))counts[c]+=Math.min(1,d.counts[c]);
+ const evidence=dc28CategoryEvidence(now);
+ return {version:'5.17.0',counts,evidence,days:recent.length,policy:'matched independent comparisons; neutral without adequate controls'};
+}
+function dc28GameHint(name,plan){
+ if(!plan)return 0;const cat=dc28GameCategory(name);if(!cat)return 0;
+ const counts=plan.counts||{},vals=Object.values(counts),max=Math.max(0,...vals),min=Math.min(...vals);
+ // A small exposure bonus, unable to override today's focus or a game repeat.
+ const balance=max>min?(max-(counts[cat]||0))/Math.max(1,max)*-1.5:0;
+ const learned=plan.evidence?.[cat]?.supported?-.75:0;
+ return balance+learned;
+}
+
 /* V5.15: day-wide unique game selection with stable core and skill variety. */
 function dc22GamesPlayedToday(){
  const today=dateKey(),played=new Set();
@@ -2230,16 +2358,17 @@ function chooseSessionGames(focus,count=3){
  const primary=TRAINING_LIBRARY[focus]||TRAINING_LIBRARY.scoring;
  const recent=(data.sessions||[]).slice(-3).flatMap(x=>Array.isArray(x?.focus)?x.focus:[]);
  const alreadyToday=dc22GamesPlayedToday();
+ if(data.activeSession&&!data.activeSession.quick){for(const e of data.activeSession.plan||[])if(QUICK_GAMES.includes(e.name))alreadyToday.add(e.name)}
  const seed=(Math.floor(Date.now()/DAY_MS)*1103515245+(data.sessions||[]).filter(x=>x?.date===dateKey()).length*7919)>>>0;
  const all=[...new Set(Object.values(TRAINING_LIBRARY).flat().concat(QUICK_GAMES))].filter(n=>QUICK_GAMES.includes(n)&&!DC10_MEASUREMENT_GAMES.has(n)&&n!=='Target Mastery');
- const profiles=dc18ChallengeProfiles(all),effects=dc15EffectEvidence(),selected=[];
+ const profiles=dc18ChallengeProfiles(all),effects=dc15EffectEvidence(),categoryPlan=dc28CategoryPlanning(),selected=[];
  const theme=[primary,TRAINING_LIBRARY[FOCUS[(FOCUS.indexOf(focus)+2)%5]],TRAINING_LIBRARY[FOCUS[(FOCUS.indexOf(focus)+3)%5]]];
  for(let i=0;i<count;i++){
   const pool=theme[i%theme.length]||primary;
   const fresh=all.filter(n=>!alreadyToday.has(n)&&!selected.includes(n));
   const candidates=fresh.length?fresh:all.filter(n=>!selected.includes(n));
   if(!candidates.length)break; // Repeat only after exhausting the full eligible library.
-  const ranked=candidates.map(name=>({name,score:dc10GameChoiceScore(name,focus,i,primary,recent,alreadyToday,profiles,seed,effects)+(pool.includes(name)?-13:0)}));
+  const ranked=candidates.map(name=>({name,score:dc10GameChoiceScore(name,focus,i,primary,recent,alreadyToday,profiles,seed,effects)+(pool.includes(name)?-13:0)+dc28GameHint(name,categoryPlan)}));
   ranked.sort((a,b)=>a.score-b.score||a.name.localeCompare(b.name));
   selected.push(ranked[0].name);
  }
@@ -2281,7 +2410,7 @@ function dc22TrebleEvidence(now=Date.now()){
  }
  return winner;
 }
-/* V5.15.2: mastery is a family of practices, not an alleged omniscient segment detector.
+/* V5.15.4: mastery is a family of practices, not an alleged omniscient segment detector.
    General performance is only used for its own measured skill, never to invent a dart location. */
 const DC23_MASTERY_MODES=['segment','bull','checkout','straight','switch','setup','pressure','scoring'];
 function dc23BroadMasteryEvidence(now=Date.now()){
@@ -2317,18 +2446,277 @@ function dc23MasteryDescriptor(g){
  if(g.mode==='scoring')return 'Scoring '+(g.route?.[0]?.ring==='S'?'singles':'trebles');
  return g.ring+g.target;
 }
+/* A Mastery weakness requires repeated independent days and a meaningful
+   within-mode comparator. Avoid selecting the noisiest observed target merely
+   because it had a few misses. The score is deliberately conservative. */
+/* V5.15.4: whole-board evidence safeguard. Search across all observed targets,
+   so use a multiplicity-aware confidence boundary, per-day caps, independent
+   dates and split-period replication. A failed diagnosis is not a negative mark. */
+function dc25Mean(records){return records.length?records.reduce((a,x)=>a+Number(x.hit),0)/records.length:0}
+function dc25MasteryDiagnoses(){
+ const all=dc24MasteryEvidence().filter(g=>g.days>=8&&g.tries>=40&&
+  ['segment','straight','switch','setup','pressure','scoring'].includes(g.kind)&&
+  /^(segment|straight|switch|setup|pressure|scoring) [SDT](?:[1-9]|1\d|20)$/.test(g.key));
+ const capped=g=>{const byDay=new Map();for(const r of g.records||[]){if(!r||typeof r.day!=='string'||!Number.isFinite(r.hit)||![0,1].includes(r.hit))continue;
+  const a=byDay.get(r.day)||[];if(a.length<9)a.push(r);byDay.set(r.day,a)}
+  return [...byDay.entries()].sort((a,b)=>a[0].localeCompare(b[0])).flatMap(x=>x[1])};
+ const groups=all.map(g=>({...g,capped:capped(g)})).filter(g=>new Set(g.capped.map(r=>r.day)).size>=8&&g.capped.length>=40);
+ // At most 120 comparisons (20 targets x S/D/T x several contexts). A 3.6
+ // standard-error boundary is intentionally conservative for exploration.
+ const z=Math.max(3.6,Math.sqrt(2*Math.log(Math.max(3,groups.length)*40)));
+ const winners=[];
+ for(const g of groups){
+  const [mode,ringTarget]=g.key.split(' '),ring=ringTarget[0],target=Number(ringTarget.slice(1));
+  const peers=groups.filter(x=>x!==g&&x.key.startsWith(mode+' '+ring));
+  if(peers.length<2)continue;
+  const mine=g.capped,other=peers.flatMap(p=>p.capped);
+  if(mine.length<40||other.length<60)continue;
+  const days=[...new Set(mine.map(r=>r.day))].sort(),split=days[Math.floor(days.length/2)];
+  const gap=dc25Mean(other)-dc25Mean(mine);
+  if(gap<.15)continue;
+  const p=dc25Mean(mine),q=dc25Mean(other);
+  // Inflate uncertainty to account for clustering of throws within one day.
+  const effMine=Math.min(mine.length,days.length*5),peerDays=new Set(other.map(r=>r.day)).size;
+  const effPeer=Math.min(other.length,peerDays*9);
+  const se=Math.sqrt((p*(1-p)+.015)/effMine+(q*(1-q)+.015)/effPeer+.025**2);
+  if(gap<z*se)continue;
+  const gaps=[];
+  for(const late of [false,true]){
+   const a=mine.filter(r=>(r.day>=split)===late),b=other.filter(r=>(r.day>=split)===late);
+   if(a.length<15||b.length<30){gaps.length=0;break}
+   gaps.push(dc25Mean(b)-dc25Mean(a));
+  }
+  if(gaps.length!==2||gaps.some(v=>v<.10))continue;
+  // Recent recovery override: an old deficit should not dominate if the
+  // most recent five measured days no longer show the problem.
+  const recentDays=new Set(days.slice(-5));
+  const recentMine=mine.filter(r=>recentDays.has(r.day));
+  const recentOthers=other.filter(r=>recentDays.has(r.day));
+  if(recentMine.length<20||recentOthers.length<40||dc25Mean(recentOthers)-dc25Mean(recentMine)<.18)continue;
+  // At least six days must show this target worse than measured peers that day.
+  const eachDay=days.map(day=>{
+   const a=mine.filter(r=>r.day===day),b=other.filter(r=>r.day===day);
+   return b.length>=3?dc25Mean(b)-dc25Mean(a):null;
+  }).filter(x=>x!==null);
+  if(eachDay.length<8||eachDay.filter(x=>x>.03).length<Math.ceil(eachDay.length*.70))continue;
+  winners.push({mode,ring,target,priority:Math.min(3.9,1+gap*5+Math.min(days.length,12)/12),gap,days:days.length,
+   basis:'persistent target deficit, confirmed across independent days with whole-board safeguards'});
+ }
+ return winners.sort((a,b)=>b.priority-a.priority||b.gap-a.gap||a.target-b.target);
+}
+function dc24MasteryWeakness(){return dc25MasteryDiagnoses()[0]||null}
+/* Retention/transfer is observational: compare exact-target throws in other
+   games before and after Mastery. Never use Mastery itself as the outcome. */
+/* V5.16.0: transfer evidence is independent of the mastery exercise itself.
+   Aggregate by training DAY, not by dart, and avoid treating overlapping
+   practice/match observations as independent causal evidence. */
+function dc25MasteryTransfer(ring,target,now=Date.now()){
+ const exposures=(data.games||[]).filter(g=>g?.name==='Target Mastery'&&g.masteryMode==='segment'&&g.completion==='natural'&&
+  !g.quick&&!g.recovery&&Number.isFinite(g.at)&&g.at<=now&&g.at>=now-112*DAY_MS&&
+  Array.isArray(g.targetLog)&&g.targetLog.some(r=>r?.ring===ring&&r?.target===target));
+ if(!exposures.length)return {status:'unmeasured'};
+ const first=Math.min(...exposures.map(g=>g.at)),last=Math.max(...exposures.map(g=>g.at));
+ const rows=new Map();
+ for(const g of data.games||[]){
+  if(!g||g.name==='Target Mastery'||g.completion!=='natural'||g.quick||g.recovery||g.challengeTuning||
+   !Number.isFinite(g.at)||g.at>now||!Array.isArray(g.targetLog))continue;
+  const phase=g.at<first&&g.at>=first-35*DAY_MS?'before':g.at>last+DAY_MS&&g.at<=last+35*DAY_MS?'after':null;
+  if(!phase)continue;
+  const key=phase+'|'+dateKey(g.at),row=rows.get(key)||{phase,day:dateKey(g.at),focus:[],peer:[]};
+  for(const d of g.targetLog){
+   if(!d||d.ring!==ring||!Number.isInteger(d.target)||d.target<1||d.target>20||typeof d.hit!=='boolean')continue;
+   const arr=d.target===target?row.focus:row.peer;
+   if(arr.length<18)arr.push(Number(d.hit)); // one session/day cannot manufacture certainty
+  }
+  rows.set(key,row);
+ }
+ const usable=phase=>[...rows.values()].filter(r=>r.phase===phase&&r.focus.length>=3&&r.peer.length>=6);
+ const before=usable('before'),after=usable('after');
+ const summary=rs=>{
+  const targetHits=rs.reduce((a,r)=>a+r.focus.reduce((x,y)=>x+y,0),0),targetN=rs.reduce((a,r)=>a+r.focus.length,0);
+  const peerHits=rs.reduce((a,r)=>a+r.peer.reduce((x,y)=>x+y,0),0),peerN=rs.reduce((a,r)=>a+r.peer.length,0);
+  const dayDeltas=rs.map(r=>r.focus.reduce((a,b)=>a+b,0)/r.focus.length-r.peer.reduce((a,b)=>a+b,0)/r.peer.length);
+  return {days:rs.length,n:targetN,rate:targetN?targetHits/targetN:null,relative:targetN&&peerN?targetHits/targetN-peerHits/peerN:null,dayDeltas};
+ };
+ const pre=summary(before),post=summary(after);
+ const base={before:{days:pre.days,n:pre.n,rate:pre.rate,relative:pre.relative},after:{days:post.days,n:post.n,rate:post.rate,relative:post.relative}};
+ if(pre.days<5||post.days<5||pre.n<24||post.n<24)return {...base,status:'insufficient'};
+ const avg=xs=>xs.reduce((a,b)=>a+b,0)/xs.length;
+ const variance=xs=>xs.length>1?xs.reduce((a,x)=>a+(x-avg(xs))**2,0)/(xs.length-1):1;
+ const gain=avg(post.dayDeltas)-avg(pre.dayDeltas);
+ const se=Math.sqrt(variance(pre.dayDeltas)/pre.days+variance(post.dayDeltas)/post.days+.015**2);
+ // Confidence refers to an observational comparison; never to causality.
+ const supported=Math.abs(gain)>=.10&&Math.abs(gain)>1.96*se;
+ const status=supported?(gain>0?'promising':'not-observed'):'uncertain';
+ return {...base,status,relativeGain:gain,uncertainty:se,sourceDays:pre.days+post.days,
+  note:'Observational day-level comparison against other targets; cannot establish causality'};
+}
+/* V5.17.0: feedback controller. A weakness is NOT evidence that increasing
+   its practice dose works. Separate calendar-day exposures, later normal-game
+   outcomes, collateral checks and logged decisions determine dose. */
+function dc30Feedback(candidate,now=Date.now()){
+ const ring=candidate?.ring,target=candidate?.target,cat=ring==='D'?'doubles':ring==='S'||ring==='T'?'scoring':
+  candidate?.mode==='bull'?'bull':candidate?.mode==='checkout'||candidate?.mode==='setup'?'checkout':null;
+ const exposures=(data.coach?.feedbackInterventions||[]).filter(x=>x?.kind==='mastery'&&x.category===cat&&
+  (ring?x.ring===ring&&x.target===target:x.mode===candidate?.mode)&&Number.isFinite(x.at)&&x.at<=now&&x.at>=now-56*DAY_MS&&x.completedSeconds>=300);
+ const days=new Set(exposures.map(x=>dateKey(x.at))).size;
+ const minutes=exposures.reduce((a,x)=>a+x.completedSeconds/60,0);
+ const transfer=ring&&Number.isInteger(target)?dc25MasteryTransfer(ring,target,now):{status:'unmeasured'};
+ const methods=ring&&Number.isInteger(target)?dc27MethodFeedback(candidate,now):{};
+ const supported=Object.values(methods).filter(x=>x.ready&&Number.isFinite(x.observedGain)&&x.observedGain>=.08&&x.followUps>=3);
+ const recent=dc28CategoryLedger(now).filter(x=>x.at>=now-21*DAY_MS);
+ const categoryMinutes=cat?recent.reduce((a,x)=>a+(x.minutes[cat]||0),0):0;
+ const totalMinutes=recent.reduce((a,x)=>a+Object.values(x.minutes).reduce((b,v)=>b+v,0)+(x.unknownMinutes||0),0);
+ // Collateral measurement uses comparable day aggregates, not individual games.
+ const samples=skillSamples();const collateral=[];
+ if(cat&&days>=3&&totalMinutes>=120){
+  for(const other of SKILLS.filter(x=>x!==cat)){
+   const daily=dailySamples(samples[other]).filter(x=>x.time<=now&&x.time>=now-56*DAY_MS&&x.volume>=3);
+   const earlier=daily.filter(x=>x.time<now-21*DAY_MS),later=daily.filter(x=>x.time>=now-21*DAY_MS);
+   if(earlier.length<5||later.length<5)continue;
+   const values=xs=>xs.map(x=>other==='scoring'?x.points/Math.max(1,x.volume):100*x.hits/Math.max(1,x.volume));
+   const avg=xs=>xs.reduce((a,b)=>a+b,0)/xs.length;
+   const b=values(earlier),a=values(later),change=avg(a)-avg(b),threshold=other==='scoring'?8:10;
+   const v=xs=>xs.reduce((n,x)=>n+(x-avg(xs))**2,0)/Math.max(1,xs.length-1);
+   const se=Math.sqrt(v(a)/a.length+v(b)/b.length);
+   if(change<=-threshold&&-change>2*se)collateral.push({skill:other,change:Math.round(change*10)/10,days:[b.length,a.length]});
+  }
+ }
+ const caution=transfer.status==='not-observed'||collateral.length>0;
+ const unproven=days>=6&&transfer.status!=='promising'&&supported.length===0;
+ const lastAt=exposures.length?Math.max(...exposures.map(x=>x.at)):0;
+ const defer=days>=8&&unproven&&lastAt>now-10*DAY_MS;
+ // Repeated non-response or collateral concern reduces the concentration.
+ // An encouraging association does not license 60 minutes of isolated practice.
+ let minutesNext=5,reason='conservative initial exposure';
+ if(caution)reason='return towards balanced practice: uncertain or adverse observation';
+ else if(unproven)reason='no reliable retained benefit after repeated exposures';
+ else if(supported.length&&days>=4&&categoryMinutes/Math.max(1,totalMinutes)<.23){minutesNext=10;reason='bounded increase supported by separated later observations'}
+ else if(days>=4)reason='hold conservative dose pending retained evidence';
+ if(categoryMinutes/Math.max(1,totalMinutes)>.33){minutesNext=5;reason='protect balanced category workload'}
+ return {minutes:minutesNext,reason,status:caution?'caution':supported.length?'encouraging':unproven?'stalled':'uncertain',
+  days,defer,lastAt,completedMinutes:Math.round(minutes),categoryShare:totalMinutes?Math.round(categoryMinutes/totalMinutes*100):null,
+  transfer:transfer.status,methodFollowUps:supported.length,collateral,category:cat};
+}
+function dc26MasteryMinutes(candidate,now=Date.now()){return dc30Feedback(candidate,now).minutes}
+/* Keep an auditable compact rationale; no skill tiers or negative diagnoses are
+   shown mid-session. The old history remains readable without these fields. */
+/* V5.16.1: method learning is target-specific and conservative.
+   Only normal-game observations can measure later transfer. Different Mastery
+   drills must never be ranked by their in-drill hit rates, since pressure and
+   streak formats are not interchangeable. No causal claim is made. */
+function dc27MasteryMethods(candidate){
+ if(!candidate?.ring||!Number.isInteger(candidate.target)||candidate.target<1||candidate.target>20)return [];
+ return candidate.ring==='T'?['segment','straight']:['segment','straight','pressure'];
+}
+function dc27NormalTargetDays(ring,target,start,end){
+ const days=new Map();
+ for(const g of data.games||[]){
+  if(!g||g.name==='Target Mastery'||g.completion!=='natural'||g.quick||g.recovery||g.challengeTuning||
+   !Number.isFinite(g.at)||g.at<start||g.at>=end||!Array.isArray(g.targetLog))continue;
+  const day=dateKey(g.at),r=days.get(day)||{focus:[],peer:[]};
+  for(const x of g.targetLog){
+   if(!x||x.ring!==ring||!Number.isInteger(x.target)||x.target<1||x.target>20||typeof x.hit!=='boolean')continue;
+   const arr=x.target===target?r.focus:r.peer;
+   if(arr.length<12)arr.push(Number(x.hit));
+  }
+  days.set(day,r);
+ }
+ return [...days.values()].filter(r=>r.focus.length>=3&&r.peer.length>=4)
+   .map(r=>r.focus.reduce((a,b)=>a+b,0)/r.focus.length-r.peer.reduce((a,b)=>a+b,0)/r.peer.length);
+}
+function dc27MethodFeedback(candidate,now=Date.now()){
+ const allowed=dc27MasteryMethods(candidate),out={};
+ if(!allowed.length)return out;
+ const cutoff=now-140*DAY_MS;
+ const exposures=(data.games||[]).filter(g=>g?.name==='Target Mastery'&&g.completion==='natural'&&!g.quick&&!g.recovery&&
+  Number.isFinite(g.at)&&g.at>=cutoff&&g.at<=now&&allowed.includes(g.masteryMode)&&
+  g.details?.ring===candidate.ring&&g.details?.target===candidate.target).sort((a,b)=>a.at-b.at);
+ const allFocus=(data.games||[]).filter(g=>g?.name==='Target Mastery'&&g.completion==='natural'&&!g.quick&&
+  Number.isFinite(g.at)&&g.at>=cutoff&&g.at<=now&&g.details?.ring===candidate.ring&&g.details?.target===candidate.target).sort((a,b)=>a.at-b.at);
+ for(const mode of allowed){
+  const history=exposures.filter(g=>g.masteryMode===mode),days=new Set(history.map(g=>dateKey(g.at)));
+  const changes=[];
+  // A follow-up window is usable only if no OTHER Mastery session for this target
+  // occurs nearby, even if it used the same method. Avoid overlapping periods.
+  for(const g of history){
+   if(g.at+11*DAY_MS>now)continue;
+   if(allFocus.some(x=>x!==g&&x.at>=g.at-14*DAY_MS&&x.at<=g.at+11*DAY_MS))continue;
+   const before=dc27NormalTargetDays(candidate.ring,candidate.target,g.at-14*DAY_MS,g.at);
+   const after=dc27NormalTargetDays(candidate.ring,candidate.target,g.at+DAY_MS,g.at+11*DAY_MS);
+   if(before.length<3||after.length<3)continue;
+   const mean=a=>a.reduce((v,x)=>v+x,0)/a.length;
+   changes.push({day:dateKey(g.at),delta:mean(after)-mean(before)});
+  }
+  const unique=new Map(changes.map(c=>[c.day,c.delta]));
+  const deltas=[...unique.values()],avg=deltas.length?deltas.reduce((a,b)=>a+b,0)/deltas.length:null;
+  out[mode]={exposures:history.length,days:days.size,followUps:deltas.length,
+   observedGain:avg,ready:deltas.length>=3&&days.size>=3,source:'later normal-game target-vs-peer change; observational'};
+ }
+ return out;
+}
+function dc27ChooseMasteryMethod(candidate,now=Date.now()){
+ const allowed=dc27MasteryMethods(candidate);
+ if(!allowed.length)return {mode:candidate?.mode||'segment',reason:'specialist drill',evidence:null};
+ const evidence=dc27MethodFeedback(candidate,now);
+ // Use mild bounded preferences only with several independent follow-ups; otherwise
+ // systematically try less-used methods. Never treat an untested method as inferior.
+ const candidates=allowed.map(mode=>{
+  const e=evidence[mode]||{days:0,followUps:0,ready:false};
+  const gain=e.ready?Math.max(-.15,Math.min(.15,e.observedGain)):0;
+  const exploration=1/Math.sqrt(1+e.days);
+  return {mode,e,score:gain*.8+exploration*.20};
+ });
+ candidates.sort((a,b)=>b.score-a.score||a.e.days-b.e.days||allowed.indexOf(a.mode)-allowed.indexOf(b.mode));
+ const selected=candidates[0];
+ return {mode:selected.mode,reason:selected.e.ready?'observed follow-up and balanced exploration':'balanced method exploration',
+  evidence:{days:selected.e.days,followUps:selected.e.followUps,ready:selected.e.ready,
+   observedGain:selected.e.ready?selected.e.observedGain:null}};
+}
+function dc26MasteryDecision(candidate){
+ if(!candidate)return null;
+ const method=dc27ChooseMasteryMethod(candidate);
+ return {policy:'5.17.0',type:candidate.basis||'measured target evidence',mode:method.mode,
+  detectedMode:candidate.mode||'segment',methodReason:method.reason,methodEvidence:method.evidence,
+  ring:candidate.ring||null,target:candidate.target||null,band:candidate.band||null,
+  transfer:candidate.transferEvidence?.status||'unmeasured',
+  evidenceDays:Number.isFinite(candidate.days)?candidate.days:null,
+  minutes:dc26MasteryMinutes(candidate),feedback:dc30Feedback(candidate)};
+}
 function dc22MasteryCandidate(){
  try{
   const singles=dc13SinglesDiagnosis(dc11TargetEvidence());
   const doubles=dc16DoubleEvidence();
   const candidates=dc23BroadMasteryEvidence();
+  const measured=dc24MasteryWeakness();if(measured){
+   const transfer=dc25MasteryTransfer(measured.ring,measured.target);
+   // A promising retained response means the coach can shift its emphasis.
+   // A poor transfer result should NOT trigger longer repetition automatically.
+   if(transfer.status!=='promising'){measured.transferEvidence=transfer;candidates.push(measured)}
+  }
   const treble=dc22TrebleEvidence();
   if(treble!==null)candidates.push({ring:"T",target:treble.target,priority:treble.score});
   if(singles.development.length)candidates.push({ring:'S',target:singles.development[0].target,priority:singles.development[0].score});
   if(doubles.weak.length)candidates.push({ring:'D',target:doubles.weak[0],priority:3.5});
   const today=(data.sessions||[]).filter(x=>x?.date===dateKey());
   if(today.some(x=>(x.focus||[]).includes('Target Mastery')))return null;
-  if(candidates.length)return candidates.sort((a,b)=>b.priority-a.priority)[0];
+  // Do not schedule the same exact segment every day when there are other
+  // measured needs. Leave at least two calendar days between repeats.
+  const cooldown=new Set((data.games||[]).filter(g=>g?.name==='Target Mastery'&&g.completion==='natural'&&
+    Number.isFinite(g.at)&&g.at<=Date.now()&&Date.now()-g.at<2*DAY_MS&&g.masteryMode==='segment')
+    .map(g=>g.details?.ring+String(g.details?.target)));
+  for(let i=candidates.length-1;i>=0;i--)if(candidates[i].ring&&cooldown.has(candidates[i].ring+String(candidates[i].target)))candidates.splice(i,1);
+  if(candidates.length){
+   candidates.sort((a,b)=>b.priority-a.priority);
+   const seen=new Set();
+   for(const candidate of candidates){
+    const key=(candidate.ring||candidate.mode||'other')+':'+(candidate.target??'all');
+    if(seen.has(key))continue;seen.add(key);
+    const feedback=dc30Feedback(candidate);
+    if(feedback.transfer==='promising'||feedback.defer)continue;
+    return candidate;
+   }
+  }
   // Practice variety is not a diagnosis: use the cross-skill maintenance
   // circuit only with at least eight recorded independent training days.
   const days=new Set((data.sessions||[]).filter(x=>x?.completed&&!x.quick&&x.start<=Date.now()).map(x=>x.date));
@@ -2354,7 +2742,10 @@ function generateSession(extra=false,skipWarmup=false){
  if(!extra&&!data.bigSingles.some(b=>b?.day===dateKey()&&b.complete))plan.push({name:'Big Singles',mode:'benchmark'});
  // A confirmed single-target gap may earn one five-minute block; never from a guessed treble weakness.
  const mastery=dc22MasteryCandidate();
- if(mastery&&chosen.length>=2)plan.push({name:'Target Mastery',mode:'timed',seconds:(mastery.priority>=3.5?600:mastery.priority>=2.5?480:300),mastery});
+ if(mastery&&chosen.length>=2){
+  const brain=dc26MasteryDecision(mastery);
+  plan.push({name:'Target Mastery',mode:'timed',seconds:brain.minutes*60,mastery:{...mastery,mode:brain.mode},coachDecision:brain});
+ }
  // Longer doses for well-calibrated, useful pressure; avoid amplifying very easy/hard games.
  const profiles=dc18ChallengeProfiles(chosen);
  const lengths=chosen.map((name,i)=>{
@@ -2500,7 +2891,7 @@ function closeWelcome(){$("welcomeOverlay").classList.add("hidden")}
 function session(){return data.activeSession}function currentExercise(){const s=session();return s?s.plan[s.index]:null}
 function sessionElapsed(){const s=session();return s?Math.max(0,((s.pausedAt||Date.now())-s.start-num(s.pausedTotal))/1000):0}
 function exerciseElapsed(){const s=session();if(!s)return 0;return Math.max(0,(num(s.activityAccumulated)+(s.activityStarted?(s.pausedAt||Date.now())-s.activityStarted:0))/1000)}
-function beginTraining(extra,skipWarmup=false,fromAssessment=false){if(session()){show("train");return}prepareAssessment();if(assessmentDue()){show("train");return}if(data.days.length!==5){alert("Select five training days in Settings.");show("settings");return}if(!extra&&!fromAssessment&&!data.days.includes(new Date().getDay())){alert("Today is a rest day. Extra training is available.");return}if(!extra&&!fromAssessment&&data.sessions.some(s=>s.date===dateKey()&&!s.extra&&s.completed)){alert("Today's scheduled session is already complete.");return}if(!data.coach.firstStarted)data.coach.firstStarted=Date.now();performCoachReview();data.activeSession={id:Date.now(),start:Date.now(),extra:!!extra,plan:generateSession(extra,skipWarmup),index:0,completed:[],pausedAt:null,pausedTotal:0,activityStarted:null,activityAccumulated:0,round:1,roundsCompleted:0,allocated:false,benchmarkSeconds:0,phase:"rules"};if(!extra)data.activeSession.researchPlan=dc21CapturePlan(data.activeSession);data.game=null;activeGame=null;undoSnapshot=null;$("sessionFinished").classList.add("hidden");startExercise();save();show("train")}
+function beginTraining(extra,skipWarmup=false,fromAssessment=false){if(session()){show("train");return}prepareAssessment();if(assessmentDue()){show("train");return}if(data.days.length!==5){alert("Select five training days in Settings.");show("settings");return}if(!extra&&!fromAssessment&&!data.days.includes(new Date().getDay())){alert("Today is a rest day. Extra training is available.");return}if(!extra&&!fromAssessment&&data.sessions.some(s=>s.date===dateKey()&&!s.extra&&s.completed)){alert("Today's scheduled session is already complete.");return}if(!data.coach.firstStarted)data.coach.firstStarted=Date.now();dc30RefreshFollowUps();performCoachReview();data.activeSession={id:Date.now(),start:Date.now(),extra:!!extra,plan:generateSession(extra,skipWarmup),index:0,completed:[],pausedAt:null,pausedTotal:0,activityStarted:null,activityAccumulated:0,round:1,roundsCompleted:0,allocated:false,benchmarkSeconds:0,phase:"rules"};data.activeSession.coachPlanAudit=data.activeSession.plan.filter(e=>e.coachDecision).map(e=>({...e.coachDecision,at:data.activeSession.start}));data.activeSession.categoryPlanAudit=dc28CategoryPlanning(data.activeSession.start);if(!extra)data.activeSession.researchPlan=dc21CapturePlan(data.activeSession);data.game=null;activeGame=null;undoSnapshot=null;$("sessionFinished").classList.add("hidden");startExercise();save();show("train")}
 /* Rebalance scheduled work to the actual clock without creating short drills.
    Whole-minute allocation prevents fractional leftovers; remainder is absorbed
    by an existing exercise. A review is a genuine five-minute practice block. */
@@ -2845,7 +3236,7 @@ function dc23MasteryInput(value){
  if(!s||s.pausedAt||s.phase!=='playing'||g?.name!=='Target Mastery')return;
  const mode=g.mode;
  if(mode==='bull'&&!['25','50','miss'].includes(value))return;
- if(mode==='checkout'&&!['finish','miss'].includes(value))return;
+ if(mode==='checkout'&&!['finish','finish1','finish2','finish3','miss'].includes(value))return;
  if(!['bull','checkout'].includes(mode)&&!['hit','miss'].includes(value))return;
  snapshot();
  let correct=false,ring=g.ring,target=g.target;
@@ -2855,8 +3246,10 @@ function dc23MasteryInput(value){
   g.targetLog.push({ring:'B',target:value==='miss'?null:Number(value),hit:correct});
   g.thrown++;
  }else if(mode==='checkout'){
-  correct=value==='finish';g.attempts++;
-  g.attemptLog.push({range:g.band,success:correct,allowance:3,dartsUsed:null});
+  correct=value==='finish'||/^finish[123]$/.test(value);g.attempts++;
+  const dartsUsed=/^finish[123]$/.test(value)?Number(value.slice(-1)):null;
+  // Failure outcomes do not prove three darts were thrown. Legacy 'finish' remains valid but unknown.
+  g.attemptLog.push({range:g.band,finish:g.checkoutExample,success:correct,allowance:3,dartsUsed});
  }else{
   correct=value==='hit';g.thrown++;
   g.targetLog.push({ring,target,hit:correct});
@@ -2989,8 +3382,8 @@ function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name
   const checkoutBands={'2–40':[24,32,40],'41–60':[42,52,60],'61–80':[64,72,80],'81–100':[81,92,100],'101+':[101,121,138]};
   const band=fromPlan.band||['2–40','41–60','61–80','81–100','101+'][clamp(7-pressureTier('checkout'),0,4)];
   if(item&&!item.mastery)item.mastery={mode,ring,target,band};
-  Object.assign(g,{mode,ring:route.length?route[0].ring:mode==='pressure'?(pressureTier('doubles')>=6?'S':'D'):ring,
-   target:route.length?route[0].target:mode==='pressure'?16:target,band,
+  Object.assign(g,{mode,ring:route.length?route[0].ring:mode==='pressure'?ring:ring,
+   target:route.length?route[0].target:target,band,
    route,step:0,hits:0,thrown:0,targetLog:[],attemptLog:[],goal:mode==='checkout'?5:15,
    attempts:0,outer:0,inner:0,streak:0,best:0,visitDarts:0,
    checkoutExample:(checkoutBands[band]||checkoutBands['41–60'])[(Math.floor(Date.now()/DAY_MS)+(session()?.round||1))%3]});
@@ -3236,7 +3629,7 @@ function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||sess
 function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.15.1",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
+function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.16.1",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
  prospectiveForecast:g.prospectiveForecast&&completion==='natural'&&
  !g.recovery&&!g.challengeTuning&&!session()?.quick?clone(g.prospectiveForecast):null};
  if(completion==="natural"&&!session()?.quick&&!g.recovery){
@@ -3410,7 +3803,51 @@ function displayCoachReport(report){
  const box=$("sessionCoachReport");if(!box)return;
  box.innerHTML=report?'<h3>🎯 Coach’s Report</h3>'+[['Today’s Achievements',report.good],['Training Completed',report.highlight||''],['Coach’s Next Steps',report.plan]].filter(x=>x[1]).map(([head,body])=>'<div class="coachReportItem"><strong>'+esc(head)+'</strong><p>'+esc(body)+'</p></div>').join(''):'';
 }
-function finishSession(success){hideRoundAnnouncement();const s=session();if(!s)return;const elapsed=Math.round(sessionElapsed()/6)/10;const sessionRecord={id:s.id,start:s.start,date:dateKey(s.start),minutes:elapsed,extra:s.extra,quick:!!s.quick,quickGame:s.quickGame||null,completed:!!success,activities:s.completed,focus:s.plan.map(p=>p.name)};if(s.researchPlan&&!s.extra&&!s.quick)sessionRecord.researchPlan=clone(s.researchPlan);sessionRecord.coachReport=generateSessionReport(sessionRecord);data.sessions.push(sessionRecord);displayCoachReport(sessionRecord.coachReport);data.activeSession=null;data.game=null;activeGame=null;undoSnapshot=null;rapidInitialCalibration();performCoachReview();checkCompletedBlocks();data.coach.challengeAudit=dc7ChallengeAudit(data.games);data.coach.challengeForecast=dc8ChallengeForecast(data.games);save();checkpointData();$("finishedText").textContent=success?(s.quick?"Quick Play saved separately.":"Today's practice is saved."):"Your practice has been saved.";$("sessionFinished").classList.remove("hidden");show("train")}
+function dc30RefreshFollowUps(now=Date.now()){
+ const log=data.coach?.feedbackInterventions;
+ if(!Array.isArray(log))return;
+ for(const x of log){
+  if(x?.kind!=='mastery'||x.followUpEvidence||!Number.isFinite(x.at)||x.at+11*DAY_MS>now)continue;
+  const valid=['S','D','T'].includes(x.ring)&&Number.isInteger(x.target)&&x.target>=1&&x.target<=20;
+  if(!valid){x.followUpEvidence={status:'not-measurable',reason:'no comparable exact target observations'};continue}
+  const others=(data.games||[]).some(g=>g?.name==='Target Mastery'&&g.completion==='natural'&&!g.quick&&
+   g.details?.ring===x.ring&&g.details?.target===x.target&&Number.isFinite(g.at)&&
+   g.sessionId!==x.sessionId&&g.at>=x.at-14*DAY_MS&&g.at<=x.at+11*DAY_MS);
+  if(others){x.followUpEvidence={status:'overlapping',reason:'other Mastery exposure in evaluation window'};continue}
+  const prior=dc27NormalTargetDays(x.ring,x.target,x.at-14*DAY_MS,x.at);
+  const later=dc27NormalTargetDays(x.ring,x.target,x.at+DAY_MS,x.at+11*DAY_MS);
+  if(prior.length<3||later.length<3){x.followUpEvidence={status:'insufficient',beforeDays:prior.length,afterDays:later.length};continue}
+  const avg=a=>a.reduce((v,n)=>v+n,0)/a.length;
+  const delta=avg(later)-avg(prior);
+  const variance=a=>a.reduce((v,n)=>v+(n-avg(a))**2,0)/Math.max(1,a.length-1);
+  const uncertainty=Math.sqrt(variance(prior)/prior.length+variance(later)/later.length);
+  x.followUpEvidence={status:'observed',relativeChange:Math.round(delta*1000)/1000,
+   uncertainty:Math.round(uncertainty*1000)/1000,beforeDays:prior.length,afterDays:later.length,
+   note:'Target-versus-peer normal-game observation. Not causal and not a standalone method ranking.'};
+ }
+}
+function dc30LogCompletedInterventions(s){
+ if(!s||s.quick||!Array.isArray(s.completed))return;
+ const log=data.coach.feedbackInterventions||(data.coach.feedbackInterventions=[]);
+ for(const activity of s.completed){
+  if(!activity||!Number.isFinite(activity.at)||activity.seconds<300||
+   ['Warm-up','Review','Big Singles'].includes(activity.name))continue;
+  const plan=(s.plan||[]).find(x=>x.name===activity.name);
+  if(!plan||log.some(x=>x.sessionId===s.id&&x.at===activity.at))continue;
+  const decision=plan.coachDecision||null;
+  const category=activity.name==='Target Mastery'?decision?.feedback?.category||null:dc28GameCategory(activity.name);
+  const overlap=s.completed.filter(x=>x!==activity&&x.name!=='Warm-up'&&x.name!=='Review'&&x.name!=='Big Singles').map(x=>x.name);
+  log.push({kind:decision?'mastery':'exercise',sessionId:s.id,at:activity.at,category,
+   name:activity.name,ring:decision?.ring||null,target:decision?.target??null,
+   mode:decision?.mode||'standard',plannedSeconds:Number(plan.seconds)||null,
+   completedSeconds:Math.round(activity.seconds),
+   baseline:decision?{transfer:decision.transfer,evidenceDays:decision.evidenceDays}:null,
+   rationale:decision?.feedback?.reason||'balanced scheduled practice',
+   uncertainty:decision?.feedback?.status||'unmeasured',overlappingGames:overlap,
+   followUp:'computed from later comparable games, not assumed at completion',policy:'5.17.0'});
+ }
+}
+function finishSession(success){hideRoundAnnouncement();const s=session();if(!s)return;const elapsed=Math.round(sessionElapsed()/6)/10;const sessionRecord={id:s.id,start:s.start,date:dateKey(s.start),minutes:elapsed,extra:s.extra,quick:!!s.quick,quickGame:s.quickGame||null,completed:!!success,activities:s.completed,focus:s.plan.map(p=>p.name)};if(Array.isArray(s.coachPlanAudit))sessionRecord.coachPlanAudit=clone(s.coachPlanAudit);if(s.categoryPlanAudit)sessionRecord.categoryPlanAudit=clone(s.categoryPlanAudit);if(s.researchPlan&&!s.extra&&!s.quick)sessionRecord.researchPlan=clone(s.researchPlan);sessionRecord.coachReport=generateSessionReport(sessionRecord);dc30LogCompletedInterventions(s);dc30RefreshFollowUps();data.sessions.push(sessionRecord);displayCoachReport(sessionRecord.coachReport);data.activeSession=null;data.game=null;activeGame=null;undoSnapshot=null;rapidInitialCalibration();performCoachReview();checkCompletedBlocks();data.coach.challengeAudit=dc7ChallengeAudit(data.games);data.coach.challengeForecast=dc8ChallengeForecast(data.games);save();checkpointData();$("finishedText").textContent=success?(s.quick?"Quick Play saved separately.":"Today's practice is saved."):"Your practice has been saved.";$("sessionFinished").classList.remove("hidden");show("train")}
 function finishSessionEarly(){if(!session())return;if(!confirm("End this training session?"))return;finishSession(false)}
 function pauseSession(){const s=session();if(!s||s.phase==="rules"||s.phase==="complete")return;if(s.pausedAt){s.pausedTotal+=Date.now()-s.pausedAt;s.pausedAt=null;s.activityStarted=Date.now()}else{s.pausedAt=Date.now();if(s.activityStarted)s.activityAccumulated+=s.pausedAt-s.activityStarted;s.activityStarted=null}save()}
 function finishView(){const wasQuick=data.sessions.length&&data.sessions[data.sessions.length-1].quick;$("sessionFinished").classList.add("hidden");show(wasQuick?"quick":"home")}
@@ -3470,7 +3907,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  let rule=EXTRA_RULES[e.name]||RULES[e.name]||"";if(g&&g.name==="Doubles Survival"&&g.variant==="singles")rule="Hit the displayed SINGLE (either single section) within nine darts. A completed round restarts.";if(g&&g.name==="Treble Hunt"&&g.variant==="single")rule="Beginner target: hit the SINGLE shown. A miss costs one life. Clear the hit goal before lives run out.";
  if(g&&g.name==="Doubles Streak"&&g.variant==="singles")rule="Hit the SINGLE shown to build a streak. A miss breaks it and costs a life. Reach the goal before lives run out.";
  if(g&&["Bull Survival","Bull Streak"].includes(g.name))rule=(g.target==="CENTRE"?"CENTRE = anywhere INSIDE the inner edge of the treble ring, including the bull. ":g.target==="50"?"Only the red bullseye (50) counts. ":"Either outer bull (25) or bullseye (50) counts. ")+rule;
- if(g&&g.name==='Target Mastery')rule=dc23MasteryDescriptor(g)+': '+(g.mode==='bull'?'Aim at the bull and record 25, 50 or Miss for every dart.':g.mode==='checkout'?'Attempt the displayed finish within three darts, ending on a double. Record Finished or Not finished; this does not pretend to know your individual dart locations.':g.mode==='straight'?'Aim at the same exact segment and build a streak. Record every dart.':g.mode==='switch'?'Switch to each displayed target after every dart, recording Hit or Miss.':g.mode==='setup'?'Hit each nominated single to practise controlled setup targets.':g.mode==='pressure'?'Hit the nominated '+(g.ring==='S'?'single':'double')+' with three darts per visit. Record each dart.':g.mode==='scoring'?'Rotate through nominated scoring '+(g.ring==='S'?'singles':'trebles')+', recording each dart.':'Hit the nominated exact segment. Record every dart.');
+ if(g&&g.name==='Target Mastery')rule=dc23MasteryDescriptor(g)+': '+(g.mode==='bull'?'Aim at the bull and record 25, 50 or Miss for every dart.':g.mode==='checkout'?'Attempt the displayed finish within three darts, ending on a double. Record the actual number thrown on success, or Not finished. No dart locations are inferred.':g.mode==='straight'?'Aim at the same exact segment and build a streak. Record every dart.':g.mode==='switch'?'Switch to each displayed target after every dart, recording Hit or Miss.':g.mode==='setup'?'Hit each nominated single to practise controlled setup targets.':g.mode==='pressure'?'Hit the nominated '+(g.ring==='S'?'single':'double')+' with three darts per visit. Record each dart.':g.mode==='scoring'?'Rotate through nominated scoring '+(g.ring==='S'?'singles':'trebles')+', recording each dart.':'Hit the nominated exact segment. Record every dart.');
  if(g&&g.recovery)rule+=(rule?"\n\n":"")+g.recoveryMessage;
  if(g&&g.challengeTuning)rule+=(rule?"\n\n":"")+g.challengeMessage;
  $("exerciseRules").textContent=rule;$("exerciseTimeLabel").textContent=isBenchmark?"60 darts · extra time":"Exercise time";$("exerciseClock").textContent=isBenchmark?(g?g.darts.length:0)+"/60":fmt(Math.max(0,seconds-elapsed));$("exerciseBar").style.width=isBenchmark?((g?g.darts.length:0)/60*100)+"%":clamp(100*elapsed/Math.max(1,seconds),0,100)+"%";$("sessionClock").textContent=fmt(sessionRemaining());$("sessionBar").style.width=clamp(100*sessionElapsed()/sessionBudget(),0,100)+"%";$("pauseButton").textContent=s.pausedAt?"Resume Session":"Pause Session";
@@ -3646,7 +4083,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
    g.mode==='straight'?'Streak '+g.streak+' · Best '+g.best:
    'Hits '+g.hits+'/'+g.thrown)+' · '+(g.goal-(g.mode==='checkout'?g.attempts:g.thrown))+(g.mode==='checkout'?' attempts remaining':' darts remaining');
   html=g.mode==='bull'?button('25','dc23MasteryInput(\'25\')')+button('50','dc23MasteryInput(\'50\')')+button('Miss','dc23MasteryInput(\'miss\')'):
-   g.mode==='checkout'?button('Checkout finished','dc23MasteryInput(\'finish\')')+button('Not finished','dc23MasteryInput(\'miss\')'):
+   g.mode==='checkout'?button('Finished · 1 dart',"dc23MasteryInput('finish1')")+button('Finished · 2 darts',"dc23MasteryInput('finish2')")+button('Finished · 3 darts',"dc23MasteryInput('finish3')")+button('Not finished',"dc23MasteryInput('miss')"):
    button('Hit','dc23MasteryInput(\'hit\')')+button('Miss','dc23MasteryInput(\'miss\')');break;
  case "High-Low":
   heading=g.index%2===0?"HIGHER":"LOWER";detail="Previous visit "+g.previous+" · Gap "+g.diff;
@@ -3899,20 +4336,52 @@ function renderRecords(){
   return '<details class="recordSection"><summary>'+esc(name)+' <span>'+wins+'W / '+losses+'L</span></summary>'+(metrics||'<p class="muted">No completed rounds yet.</p>')+'</details>';
  });out.innerHTML=sections.join('');
 }
+/* V5.15.4: comparable Mastery performance, not pooled percentages that hide targets. */
+function dc24Wilson(h,n,z=1.96){
+ if(!(n>0))return {low:0,high:1};
+ const p=h/n,z2=z*z,den=1+z2/n;
+ return {low:Math.max(0,(p+z2/(2*n)-z*Math.sqrt(p*(1-p)/n+z2/(4*n*n)))/den),high:Math.min(1,(p+z2/(2*n)+z*Math.sqrt(p*(1-p)/n+z2/(4*n*n)))/den)};
+}
+function dc24MasteryRows(now=Date.now()){
+ const cutoff=now-112*DAY_MS,out=[];
+ for(const g of (data.games||[])){
+  if(!g||g.name!=='Target Mastery'||g.completion!=='natural'||!Number.isFinite(g.at)||g.at>now||g.at<cutoff||g.challengeTuning||g.recovery||g.quick)continue;
+  const day=dateKey(g.at),log=Array.isArray(g.targetLog)?g.targetLog:[];
+  if(g.masteryMode==='checkout'){
+   for(const a of (Array.isArray(g.attemptLog)?g.attemptLog:[]))if(a&&typeof a.success==='boolean'&&typeof a.range==='string')out.push({kind:'checkout',key:'Checkout '+a.range,day,hit:Number(a.success),darts:a.dartsUsed??null});
+  }else if(g.masteryMode==='bull'){
+   for(const d of log)if(d&&d.ring==='B'&&[25,50,null].includes(d.target))out.push({kind:'bull',key:'Bull outcomes',day,hit:Number(d.hit),outcome:d.target});
+  }else{
+   for(const d of log)if(d&&['S','D','T'].includes(d.ring)&&Number.isInteger(d.target)&&d.target>=1&&d.target<=20&&typeof d.hit==='boolean')out.push({kind:g.masteryMode,key:g.masteryMode+' '+d.ring+d.target,day,hit:Number(d.hit)});
+  }
+ }
+ return out;
+}
+function dc24MasteryEvidence(){
+ const rows=dc24MasteryRows(),groups=new Map();
+ for(const r of rows){const g=groups.get(r.key)||{key:r.key,kind:r.kind,hits:0,tries:0,days:new Set(),records:[],darts:[]};g.hits+=r.hit;g.tries++;g.days.add(r.day);g.records.push(r);if(r.kind==='checkout'&&r.hit&&[1,2,3].includes(r.darts))g.darts.push(r.darts);groups.set(r.key,g)}
+ return [...groups.values()].map(g=>({...g,days:g.days.size,rate:g.hits/Math.max(1,g.tries),interval:dc24Wilson(g.hits,g.tries),ready:g.days.size>=5&&g.tries>=30}));
+}
+function dc24Metric(label,value,sub){return '<div class="recordMetric"><span>'+esc(label)+'<small style="display:block;color:var(--muted)">'+esc(sub)+'</small></span><strong>'+esc(String(value))+'</strong></div>'}
 function dc23RenderMasteryProgress(){
  const box=$('dc23MasteryProgress');if(!box)return;
- const rows=(data.games||[]).filter(g=>g?.name==='Target Mastery'&&g.completion==='natural'&&g.masteryMode&&Number.isFinite(g.at)&&g.at<=Date.now());
- if(!rows.length){box.innerHTML='<p class="muted">Your focused Mastery results will appear as you complete exercises. These are not mixed with assessment scores.</p>';return}
- const labels={segment:'Exact segments',bull:'Bull accuracy',checkout:'Checkout finishing',straight:'Staying straight',switch:'Target switching',setup:'Setup singles',pressure:'Pressure targets',scoring:'Scoring targets'};
- const parts=[];
- for(const mode of DC23_MASTERY_MODES){
-  const group=rows.filter(g=>g.masteryMode===mode);if(!group.length)continue;
-  const good=group.reduce((n,g)=>n+num(g.hits),0),total=group.reduce((n,g)=>n+(mode==='checkout'?num(g.attempts):num(g.thrown)),0);
-  const days=new Set(group.map(g=>dateKey(g.at))).size;
-  parts.push('<div class="recordMetric"><span>'+esc(labels[mode]||mode)+'<small style="display:block;color:var(--muted)">'+days+' day'+(days===1?'':'s')+' · '+total+(mode==='checkout'?' attempts':' darts')+'</small></span><strong>'+ (total?(100*good/total).toFixed(1)+'%':'—')+'</strong></div>');
+ const evidence=dc24MasteryEvidence();
+ if(!evidence.length){box.innerHTML='<p class="muted">Your focused Mastery results will appear as comparable exercises are completed. Quick Play is excluded from coach diagnosis.</p>';return}
+ const rows=dc24MasteryRows(),bull=rows.filter(r=>r.kind==='bull'),out=[];
+ if(bull.length){const outer=bull.filter(r=>r.outcome===25).length,inner=bull.filter(r=>r.outcome===50).length,days=new Set(bull.map(r=>r.day)).size;
+  out.push('<h3>Bull outcomes</h3>');out.push(dc24Metric('Outer bull (25)',(100*outer/bull.length).toFixed(1)+'%',outer+' / '+bull.length+' darts · '+days+' days'));
+  out.push(dc24Metric('Bullseye (50)',(100*inner/bull.length).toFixed(1)+'%',inner+' / '+bull.length+' darts · same attempts'));
+  out.push(dc24Metric('Either bull',(100*(outer+inner)/bull.length).toFixed(1)+'%',(outer+inner)+' / '+bull.length+' darts'));
  }
- box.innerHTML='<p class="muted">'+rows.length+' completed focused rounds. Every accuracy rate is calculated only from that Mastery exercise’s recorded inputs, not invented dart locations.</p>'+parts.join('');
+ const separate=evidence.filter(g=>g.kind!=='bull').sort((a,b)=>b.tries-a.tries).slice(0,35);
+ if(separate.length)out.push('<h3>Comparable targets and finishes</h3>');
+ for(const g of separate){const interval=g.ready?(' · estimated 95% range '+(100*g.interval.low).toFixed(0)+'–'+(100*g.interval.high).toFixed(0)+'%'):' · collecting evidence';
+  const darts=g.kind==='checkout'&&g.darts.length?' · '+(g.darts.reduce((a,b)=>a+b,0)/g.darts.length).toFixed(2)+' darts per measured finish':'';
+  out.push(dc24Metric(g.key,(100*g.rate).toFixed(1)+'%',g.hits+' / '+g.tries+' · '+g.days+' days'+interval+darts));
+ }
+ box.innerHTML='<p class="muted">Separate targets and checkout ranges are never pooled for accuracy. Confidence ranges are descriptive, not proof of skill improvement. Dart counts include only reported successful checkouts.</p>'+out.join('');
 }
+
 function renderProgress(){
  const minutes=data.sessions.reduce((a,s)=>a+num(s.minutes),0);
  $("progressSummary").innerHTML='<div class="kpiGrid"><div class="kpi"><strong>'+data.sessions.length+'</strong><small>Sessions</small></div><div class="kpi"><strong>'+data.games.length+'</strong><small>Games</small></div><div class="kpi"><strong>'+Math.round(minutes)+'</strong><small>Minutes</small></div></div>';
