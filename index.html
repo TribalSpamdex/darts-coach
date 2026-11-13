@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.14.1</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.14.3</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -738,7 +738,7 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.14.1</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.14.3</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -810,6 +810,9 @@ function carryForwardAssessment(a){
 function normaliseData(d){
  if(!Array.isArray(d.sessions))d.sessions=[];
  if(!Array.isArray(d.games))d.games=[];
+ // V5.14.3: tolerate malformed legacy/import arrays without losing valid records.
+ d.sessions=d.sessions.filter(x=>x!==null&&typeof x==="object"&&!Array.isArray(x));
+ d.games=d.games.filter(x=>x!==null&&typeof x==="object"&&!Array.isArray(x));
  if(!Array.isArray(d.days))d.days=[1,2,3,4,5];
  if(!Array.isArray(d.bigSingles))d.bigSingles=[];
  if(!d.skills||typeof d.skills!=="object")d.skills={};
@@ -855,7 +858,7 @@ function normaliseData(d){
    d.assessment=carryForwardAssessment(latest);
   }
  }
- // V5.14.1: a stored start timestamp must never accrue unsupervised time after reopening.
+ // V5.14.3: a stored start timestamp must never accrue unsupervised time after reopening.
  if(d.assessment.warmup&&d.assessment.warmup.startedAt&&!d.assessment.warmup.complete){
   d.assessment.warmup.startedAt=null;
  }
@@ -1567,14 +1570,15 @@ function dc11TargetSummary(player=data,now=Date.now()){
 }
 
 const DC10_MEASUREMENT_GAMES=new Set(['Bull Accuracy','Scoring Challenge']);
-/* V5.12.0: A game forecast measures natural STANDARD-rule competitive
+/* V5.14.3: eligibility excludes extra training and future-dated outcomes, matching the prospective audit.
+   V5.12.0: A game forecast measures natural STANDARD-rule competitive
    results only. Quick Play, recovery wins, invalid and unfinished rounds
    cannot establish the win probability of the scheduled normal challenge.
    Each day contributes at most one vote, regardless of extra sessions. */
 function dc18ValidPressureResult(e,cutoff,now){
  return !!e&&e.completion==='natural'&&typeof e.win==='boolean'&&
-  e.quick!==true&&e.recovery!==true&&!e.challengeTuning&&Number.isFinite(e.at)&&
-  e.at>=cutoff&&e.at<=now+DAY_MS&&typeof e.name==='string'&&
+  e.quick!==true&&e.extra!==true&&e.recovery!==true&&!e.challengeTuning&&Number.isFinite(e.at)&&
+  e.at>=cutoff&&e.at<=now&&typeof e.name==='string'&&
   Number.isInteger(Number(e.tierAtStart))&&Number(e.tierAtStart)>=1&&
   Number(e.tierAtStart)<=7;
 }
@@ -1810,7 +1814,7 @@ function dc21CapturePlan(s){
 function dc21ShadowAudit(sessions=data.sessions,now=Date.now()){
  const cutoff=now-180*DAY_MS,byDay=new Map();
  for(const row of sessions||[]){
-  if(!row||row.extra||row.quick||!Number.isFinite(row.start)||row.start<cutoff||row.start>now+DAY_MS)continue;
+  if(!row||row.extra||row.quick||row.completed!==true||!Number.isFinite(row.start)||row.start<cutoff||row.start>now)continue;
   const p=row.researchPlan;
   if(!p||p.version!=='5.14.0'||!Array.isArray(p.adaptive)||!Array.isArray(p.fixed)||
    p.adaptive.length!==3||p.fixed.length!==3||p.day!==dateKey(row.start))continue;
@@ -1829,7 +1833,7 @@ function dc21ForecastRows(games=data.games,now=Date.now()){
  const byKey=new Map(),cutoff=now-365*DAY_MS;
  for(const e of games||[]){
   if(!e||e.completion!=='natural'||typeof e.win!=='boolean'||e.quick===true||e.extra===true||
-   e.recovery===true||e.challengeTuning||!Number.isFinite(e.at)||e.at<cutoff||e.at>now+DAY_MS)continue;
+   e.recovery===true||e.challengeTuning||!Number.isFinite(e.at)||e.at<cutoff||e.at>now)continue;
   const f=e.prospectiveForecast;
   if(!f||f.version!=='5.13.0'||!Number.isFinite(f.at)||f.at>e.at||
    !Number.isFinite(f.probability)||f.probability<.01||f.probability>.99||
@@ -1860,15 +1864,45 @@ function dc21ForecastReliability(games=data.games,now=Date.now()){
   lower95:lo,upper95:hi,ready:n>=20&&rows.length>=40,
   signal:lo!==null&&rows.length>=40?(lo>0?'better':hi<0?'worse':'uncertain'):'collecting'};
 }
+/* V5.14.3: prequential (forward-only) game/tier base-rate comparator.
+   A reference prediction may use ONLY earlier eligible forecast days.
+   Same-day outcomes cannot leak into that day's predictions. The comparator
+   is descriptive; this does not prescribe any training change. */
+function dc22HistoricalBaselineAudit(games=data.games,now=Date.now()){
+ const rows=dc21ForecastRows(games,now);
+ const history=new Map(),byDay=new Map();
+ let considered=0;
+ for(const r of rows){
+  const key=r.name+'|'+r.tier,prior=history.get(key)||[];
+  if(prior.length>=8){
+   const reference=(3+prior.reduce((n,x)=>n+x,0))/(6+prior.length);
+   const gain=(reference-r.y)**2-(r.p-r.y)**2;
+   const day=byDay.get(r.day)||{gain:0,n:0,model:0,reference:0};
+   day.gain+=gain;day.n++;day.model+=(r.p-r.y)**2;day.reference+=(reference-r.y)**2;
+   byDay.set(r.day,day);considered++;
+  }
+  // dc21ForecastRows permits at most one outcome per game/tier/day.
+  prior.push(r.y);history.set(key,prior);
+ }
+ const a=[...byDay.values()].map(x=>({gain:x.gain/x.n,model:x.model/x.n,reference:x.reference/x.n}));
+ const n=a.length,mean=k=>n?a.reduce((z,x)=>z+x[k],0)/n:null;
+ const gain=mean('gain');
+ const variance=n>1?a.reduce((z,x)=>z+(x.gain-gain)**2,0)/(n-1):null;
+ const half=n>=20?1.96*Math.sqrt(Math.max(0,variance)/n):null;
+ const ready=n>=20&&considered>=40;
+ return {rounds:considered,days:n,model:mean('model'),historical:mean('reference'),gain,
+  lower95:half===null?null:gain-half,upper95:half===null?null:gain+half,
+  ready,signal:!ready?'collecting':gain-half>0?'better':gain+half<0?'worse':'uncertain'};
+}
 function dc21ResearchHTML(){
- const shadow=dc21ShadowAudit(),forecast=dc21ForecastReliability();
+ const shadow=dc21ShadowAudit(),forecast=dc21ForecastReliability(),historical=dc22HistoricalBaselineAudit();
  const escNum=x=>Number.isFinite(x)?x.toFixed(3):'—';
- let html='<details style="margin-top:16px"><summary class="pill" style="cursor:pointer">Coaching Research · V5.14.0</summary>'+
+ let html='<details style="margin-top:16px"><summary class="pill" style="cursor:pointer">Coaching Research · V5.14.3</summary>'+
   '<p class="muted">Technical audit only. This does not change your training, tiers or results.</p>'+
   '<h3>Stable Programme Shadow</h3><p>'+shadow.days+' scheduled training days recorded; '+
   shadow.sharedGames+'/'+shadow.totalGames+' game choices also appear in the fixed programme'+
   (shadow.totalGames?' ('+(100*shadow.meanOverlap).toFixed(0)+'% overlap)':'')+'.</p>'+
-  '<p class="muted">The fixed comparison is a deterministic, unplayed reference using the same daily theme. ' +
+  '<p class="muted">Only completed scheduled sessions count. The fixed comparison is a deterministic, unplayed reference using the same daily theme. ' +
   'Its outcomes do not exist, so this is a programme-selection comparison, not evidence that one training method is better.</p>'+
   '<p>Prior-week practice: '+shadow.lowVolumeDays+' days below 180 recorded minutes; '+
   shadow.highVolumeDays+' days at or above 180 minutes. These are descriptive groups, not proof of fatigue.</p>'+
@@ -1881,7 +1915,15 @@ function dc21ResearchHTML(){
     forecast.signal==='worse'?'Forecasts currently underperform a neutral prediction on this check.':
     'Uncertain: the current observations do not clearly separate the coach from a neutral prediction.')+'</p>';
  }else html+='<p class="muted">Waiting for at least 40 eligible rounds on 20 separate days. No performance verdict yet.</p>';
- return html+'<p class="muted">Accuracy of a forecast is not proof that the adaptive programme improves darts performance. Historical V5.13.0 sessions are retained unchanged and are not backfilled.</p></details>';
+ html+='<h3>Historical-Rate Comparison</h3><p>'+historical.rounds+' eligible forecasts on '+historical.days+' days, each against a win rate estimated from at least eight previous recorded days for that exact game and tier.</p>';
+ if(historical.ready){
+  html+='<p>Day-balanced squared error: coach '+escNum(historical.model)+' versus earlier-results reference '+escNum(historical.historical)+'.</p>'+
+   '<p>Estimated advantage: '+escNum(historical.gain)+'; approximate 95% day-cluster interval '+escNum(historical.lower95)+' to '+escNum(historical.upper95)+'.</p>'+
+   '<p class="muted">'+(historical.signal==='better'?'On this sample, the coach forecast outperforms the earlier-results reference.':
+    historical.signal==='worse'?'On this sample, the earlier-results reference predicts better.':
+    'No reliable difference detected in this sample.')+'</p>';
+ }else html+='<p class="muted">Waiting for 40 eligible forecasts on 20 days with sufficient preceding game-specific evidence. No verdict yet.</p>';
+ return html+'<p class="muted">These repeated statistical checks are exploratory, and intervals are approximate. They do not prove that adaptive training improves performance. Historical sessions remain unchanged; no predictions are backfilled.</p></details>';
 }
 
 /* V5.13.0: PROSPECTIVE pressure audit. The prediction MUST be captured before
@@ -1905,7 +1947,7 @@ function dc20Audit(games=data.games,now=Date.now()){
  for(const e of games||[]){
   if(!e||e.completion!=='natural'||typeof e.win!=='boolean'||e.quick===true||e.extra===true||
      e.recovery===true||e.challengeTuning||!Number.isFinite(e.at)||
-     e.at<cutoff||e.at>now+DAY_MS)continue;
+     e.at<cutoff||e.at>now)continue;
   const f=e.prospectiveForecast;
   if(!f||f.version!=='5.13.0'||!Number.isFinite(f.at)||f.at>e.at||
    !Number.isFinite(f.probability)||f.probability<.01||f.probability>.99||
@@ -2935,7 +2977,7 @@ function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||sess
 function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.14.1",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
+function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.14.3",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
  prospectiveForecast:g.prospectiveForecast&&completion==='natural'&&
  !g.recovery&&!g.challengeTuning&&!session()?.quick?clone(g.prospectiveForecast):null};
  if(completion==="natural"&&!session()?.quick&&!g.recovery){
@@ -3423,11 +3465,15 @@ function lineChart(values,percent){const W=340,H=190,L=38,R=12,T=18,B=34,innerW=
  for(let i=0;i<=4;i++){const v=low+(high-low)*i/4,yy=y(v);svg+='<line x1="'+L+'" y1="'+yy+'" x2="'+(W-R)+'" y2="'+yy+'" stroke="#3b5363" stroke-width="1"/><text class="axisText" x="'+(L-7)+'" y="'+(yy+4)+'" text-anchor="end">'+Math.round(v)+'</text>'}
  const pts=values.map((d,i)=>x(i).toFixed(1)+','+y(d.value).toFixed(1)).join(' ');svg+='<polyline points="'+pts+'" fill="none" stroke="#67e3a7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>';
  values.forEach((d,i)=>{svg+='<circle cx="'+x(i)+'" cy="'+y(d.value)+'" r="4.3" fill="#67e3a7" stroke="#142330" stroke-width="2"/>';if(values.length<=7||i===0||i===values.length-1){const dt=new Date(d.time);svg+='<text class="axisText" x="'+x(i)+'" y="'+(H-10)+'" text-anchor="middle">'+(dt.getMonth()+1)+'/'+String(dt.getDate()).padStart(2,'0')+'</text>'}});return svg+'</svg>'}
-function renderTrend(){const keys=["scoring","doubles","checkout","bull","singles"];$("trendPicker").innerHTML=keys.map(k=>'<button class="'+(selectedTrend===k?'on':'')+'" onclick="setTrend(\''+k+'\')">'+SKILL_LABELS[k]+'</button>').join('');const rows=groupedTrend(selectedTrend).slice(-8),area=$("trendChart");if(rows.length<2){area.innerHTML='<p class="muted">At least two separate training weeks are needed to show a meaningful trend.</p>';return}const first=rows[0].value,last=rows[rows.length-1].value,diff=last-first,unit=selectedTrend==="scoring"?' points':' percentage points',verb=diff>1?'Improving':diff< -1?'Below earlier level':'Stable';area.innerHTML='<div class="trendSummary"><strong>'+verb+'</strong> · '+(diff>0?'+':'')+diff.toFixed(1)+unit+' across '+rows.length+' recorded weeks</div>'+lineChart(rows,selectedTrend!=="scoring")+'<p class="secondarySub">Weekly values are weighted by darts or attempts. A chart reflects recorded accuracy, not proof of what caused a change.</p>'}
+function renderTrend(){const keys=["scoring","doubles","checkout","bull","singles"];$("trendPicker").innerHTML=keys.map(k=>'<button class="'+(selectedTrend===k?'on':'')+'" onclick="setTrend(\''+k+'\')">'+SKILL_LABELS[k]+'</button>').join('');const rows=groupedTrend(selectedTrend).slice(-8),area=$("trendChart");if(rows.length<2){area.innerHTML='<p class="muted">At least two separate training weeks are needed to show a meaningful trend.</p>';return}const first=rows[0].value,last=rows[rows.length-1].value,diff=last-first,unit=selectedTrend==="scoring"?' points':' percentage points',verb=diff>1?'Improving':diff< -1?'Variation recorded':'Stable';area.innerHTML='<div class="trendSummary"><strong>'+verb+'</strong> · '+(diff>0?'+':'')+diff.toFixed(1)+unit+' across '+rows.length+' recorded weeks</div>'+lineChart(rows,selectedTrend!=="scoring")+'<p class="secondarySub">Weekly values are weighted by darts or attempts. A chart reflects recorded accuracy, not proof of what caused a change.</p>'}
 function weeklyEvidence(k,start,end){const rows=completedRows(k).filter(r=>r.time>=start&&r.time<end);const v=rows.reduce((a,r)=>a+r.volume,0);return v?{value:rows.reduce((a,r)=>a+(k==="scoring"?r.value*r.volume:r.hits),0)/v*(k==="scoring"?1:100),count:rows.length}:null}
 function renderWeeklyReview(){const now=Date.now(),thisWeek=weekStart(now),lastWeek=addDays(thisWeek,-7),prior=addDays(lastWeek,-7);const names=["scoring","doubles","checkout","bull"],changes=[];for(const k of names){const a=weeklyEvidence(k,prior,lastWeek),b=weeklyEvidence(k,lastWeek,thisWeek);if(a&&b&&a.count>=1&&b.count>=1)changes.push({key:k,diff:b.value-a.value})}
  const el=$("weeklyCoachReview");if(!changes.length){el.innerHTML='<p class="muted">Your coach will offer a short weekly review when there are comparable results from two training weeks. No invented feedback.</p>';return}
- const better=changes.filter(x=>x.diff>=2),needs=changes.filter(x=>x.diff<=-3);let message='Your completed training results are being compared across weeks. ';if(better.length)message+='Good progress in '+better.map(x=>SKILL_LABELS[x.key].toLowerCase()).join(' and ')+'. ';if(needs.length){const key=needs.sort((a,b)=>a.diff-b.diff)[0].key;const tips={scoring:'For your next scoring session, focus on a repeatable setup and a smooth release rather than forcing extra power.',doubles:'On doubles, settle your feet before each visit and keep the same throwing rhythm as your scoring darts.',checkout:'On checkouts, commit to the target before throwing and maintain the same tempo throughout the visit.',bull:'For bull practice, keep your stance consistent and use the same aiming routine for every dart.'};message+=tips[key]}else message+='Keep your practice routine consistent. There is no need to change your technique just because one week varies.';el.innerHTML='<div class="coachNote">'+esc(message)+'</div><p class="secondarySub">Reviewing '+formatDate(lastWeek)+' to '+formatDate(thisWeek-1)+'. Advice is general and does not diagnose throwing mechanics.</p>'}
+ const better=changes.filter(x=>x.diff>=2);
+ let message=better.length?'Recorded improvement in '+better.map(x=>SKILL_LABELS[x.key].toLowerCase()).join(' and ')+'. ':'Your coach is collecting comparable results across weeks. ';
+ message+='Keep practising with a repeatable routine. The coach adjusts practice selection silently using the full history.';
+ el.innerHTML='<div class="coachNote">'+esc(message)+'</div><p class="secondarySub">Comparing '+formatDate(lastWeek)+' to '+formatDate(thisWeek-1)+'. Short-term changes are not a diagnosis of throwing mechanics.</p>';
+}
 
 /* V5.0: monthly statistics and shareable image */
 let selectedReportMonth="";
