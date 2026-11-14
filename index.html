@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.36.0</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.43.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -770,7 +770,7 @@ button:focus-visible,.quickTile:focus-visible{outline:3px solid var(--green);out
 <div id="progressSummary"></div>
 </div>
 <div class="card"><h2>Skill Performance</h2><div id="skillOverview"></div></div><div class="card"><h2>Early Practice Evidence</h2><div id="earlyPracticeSummary"></div></div><div class="card"><h2>Recorded Skill Measurements</h2><p class="dashIntro">What the games actually measured. These are practice observations, not independent coaching benchmarks.</p><div id="dc35EvidenceLedger"></div></div>
-<div class="card"><h2>Improvement Trends</h2><p class="dashIntro">Compare equivalent completed exercises over time.</p>
+<div class="card"><h2>Coach Evidence Readiness</h2><p class="dashIntro">Read-only audit of measurements actually recorded. The coach does not start experiments or add focus time from this panel.</p><div id="dc43Readiness"></div></div><div class="card"><h2>Improvement Trends</h2><p class="dashIntro">Compare equivalent completed exercises over time.</p>
 <div id="trendPicker" class="chartToolbar"></div>
 <div id="trendChart"></div></div>
 <div class="card"><h2>Darts Mastery</h2><p class="dashIntro">Your focused practice across every major darts skill, measured separately from standard benchmarks.</p><div id="dc23MasteryProgress"></div></div><div class="card"><h2>Daily Big Singles</h2><div id="singlesProgress"></div></div>
@@ -861,7 +861,7 @@ button:focus-visible,.quickTile:focus-visible{outline:3px solid var(--green);out
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.36.0</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.43.0</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutConfirm primary" id="checkoutConfirmBtn" onclick="confirmCheckoutDarts()" disabled>Confirm Checkout</button><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -4876,6 +4876,89 @@ function dc34RenderPracticeSnapshot(){
  '<p class="secondarySub">The skill-performance cards above continue to require comparable completed benchmarks. Early practice is visible here without changing hidden coaching decisions.</p>';
 }
 
+/* V5.43: independent readiness shadow. NEVER writes to data, chooses a game,
+   or treats historical sessions as randomised A/B trials. Source game results
+   are only comparable inside matching rule, variant, tier and difficulty cohorts. */
+function dc43EvidenceReadiness(player=data,now=Date.now()){
+ const skills=['scoring','doubles','checkout','bull'];
+ const output=Object.fromEntries(skills.map(k=>[k,{days:0,volume:0,observations:0,cohorts:0,largest:null,status:'missing',reason:'No directly comparable completed measurements'}]));
+ const cohort=Object.fromEntries(skills.map(k=>[k,new Map()]));
+ const partial={count:0},invalid={count:0},missing={count:0};
+ const cutoff=now-112*DAY_MS;
+ const add=(skill,key,at,n)=>{
+  if(!Number.isFinite(at)||at<cutoff||at>now||!Number.isFinite(n)||n<=0)return;
+  const day=dateKey(at),group=cohort[skill],c=group.get(key)||{key,days:new Map(),observations:0,volume:0};
+  c.days.set(day,(c.days.get(day)||0)+n);c.observations++;c.volume+=n;group.set(key,c);
+ };
+ for(const g of player?.games||[]){
+  if(!g||!Number.isFinite(g.at)||g.at<cutoff||g.at>now)continue;
+  if(g.completion!=='natural'){if(['manual','partial','timed'].includes(g.completion))partial.count++;continue}
+  if(g.quick||g.recovery||g.challengeTuning){invalid.count++;continue}
+  const tier=Number.isInteger(g.tierAtStart)&&g.tierAtStart>=1&&g.tierAtStart<=7?g.tierAtStart:null;
+  let supported=false;
+  // Only a fixed completed ten-visit Scoring Challenge is a standard scoring measure.
+  if(g.name==='Scoring Challenge'&&g.visits===10&&Array.isArray(g.scores)&&g.scores.length===10&&g.scores.every(n=>Number.isInteger(n)&&n>=0&&n<=180)){
+   add('scoring','Scoring Challenge|standard',g.at,10);supported=true;
+  }
+  // True exact double hit/miss only. Multiple rounds on one day remain one day.
+  if(tier!==null&&['Doubles Survival','Doubles Streak','Dartboard Bingo'].includes(g.name)&&Array.isArray(g.targetLog)&& (g.name==='Dartboard Bingo'||g.variant==='doubles')){
+   const rows=g.targetLog.filter(x=>x&&x.ring==='D'&&Number.isInteger(x.target)&&x.target>=1&&x.target<=20&&typeof x.hit==='boolean');
+   if(rows.length){add('doubles',g.name+'|'+(g.variant||'fixed')+'|tier'+tier,g.at,rows.length);supported=true}
+  }
+  if(tier!==null&&g.name==='Checkout Climb'&&Array.isArray(g.attemptLog)){
+   const rows=g.attemptLog.filter(x=>x&&Number.isInteger(x.target)&&x.target>=2&&x.target<=170&&(x.hit===0||x.hit===1));
+   // Log each contiguous checkout difficulty band separately.
+   for(const r of rows)add('checkout','Checkout Climb|tier'+tier+'|'+Math.floor(r.target/20)*20+'s',g.at,1);
+   if(rows.length)supported=true;
+  }
+  if(g.name==='Bull Accuracy'&&Number(g.thrown)===30&&Number.isInteger(g.outer)&&Number.isInteger(g.inner)&&g.outer>=0&&g.inner>=0&&g.outer+g.inner<=30){
+   add('bull','Bull Accuracy|30 dart|25+50 separate',g.at,30);supported=true;
+  }
+  if(!supported)missing.count++;
+ }
+ for(const skill of skills){
+  const groups=[...cohort[skill].values()].sort((a,b)=>b.days.size-a.days.size||b.volume-a.volume);
+  const out=output[skill];out.cohorts=groups.length;
+  out.days=new Set(groups.flatMap(c=>[...c.days.keys()])).size;
+  out.volume=groups.reduce((a,c)=>a+c.volume,0);out.observations=groups.reduce((a,c)=>a+c.observations,0);
+  if(!groups.length)continue;
+  const lead=groups[0],dates=[...lead.days.keys()].sort();
+  out.largest={key:lead.key,days:dates.length,volume:lead.volume};
+  const minimum={scoring:40,doubles:36,checkout:16,bull:120}[skill];
+  if(dates.length<4||lead.volume<minimum){out.status='collecting';out.reason='Comparable '+lead.days.size+' training days and '+lead.volume+' observations in the leading matching group; need 4 days and '+minimum+' observations';continue}
+  const split=Math.floor(dates.length/2),a=dates.slice(0,split),b=dates.slice(split);
+  const aVolume=a.reduce((s,d)=>s+lead.days.get(d),0),bVolume=b.reduce((s,d)=>s+lead.days.get(d),0);
+  if(a.length<2||b.length<2||aVolume<minimum/4||bVolume<minimum/4){out.status='collecting';out.reason='Insufficient independently repeated measurements in both periods';continue}
+  out.status='descriptive';out.reason='Two comparable periods exist for descriptive tracking only; not evidence of a training effect';
+ }
+ // Mandatory Big Singles is a separate fixed 60-dart standard benchmark.
+ // Never pool its large-single hit rate with three-dart scoring visit totals.
+ const benchmarkDays=new Map();
+ for(const row of player?.bigSingles||[]){
+  if(!row||row.complete!==true||!Number.isInteger(row.hits)||row.hits<0||row.hits>60||!Array.isArray(row.perNumber)||row.perNumber.length!==20||
+   row.perNumber.some(n=>!Number.isInteger(n)||n<0||n>3)||row.perNumber.reduce((a,b)=>a+b,0)!==row.hits||
+   !Number.isFinite(row.at)||row.at<cutoff||row.at>now)continue;
+  const day=dateKey(row.at);if(!benchmarkDays.has(day))benchmarkDays.set(day,row.hits);
+ }
+ const bigSingles={days:benchmarkDays.size,darts:benchmarkDays.size*60,comparable:benchmarkDays.size>=4,source:'Fixed 60-dart large-single benchmark; distinct from scoring average and checkout accuracy'};
+ // No prospective randomised crossover treatment assignments or valid paired
+ // benchmark records are currently emitted by the actual app. Never infer any.
+ return {skills:output,bigSingles,coverage:{excludedPartial:partial.count,excludedModified:invalid.count,outcomeOnly:missing.count},causal:{eligible:false,reason:'No prospectively assigned balanced-versus-focus blocks with matched outcome pairs. Existing training history is not a randomised trial.'}};
+}
+function dc43RenderReadiness(){
+ const host=$('dc43Readiness');if(!host)return;
+ const result=dc43EvidenceReadiness(),labels={scoring:'Scoring',doubles:'Exact doubles',checkout:'Checkout attempts',bull:'Bull accuracy'};
+ let html='';
+ for(const [skill,r] of Object.entries(result.skills)){
+  const badge=r.status==='descriptive'?'Comparable history':r.status==='collecting'?'Building evidence':'Not yet measured';
+  html+='<div class="entry"><div class="statLine"><strong>'+labels[skill]+'</strong><span>'+badge+'</span></div><p class="secondarySub">'+r.days+' distinct days · '+r.volume+' measured units · '+r.cohorts+' separate rule/difficulty groups</p><p class="secondarySub">'+esc(r.reason)+'</p></div>';
+ }
+ html+='<div class="entry"><div class="statLine"><strong>Big Singles benchmark</strong><span>'+result.bigSingles.days+' days</span></div><p class="secondarySub">'+result.bigSingles.darts+' measured large-single darts, fixed rules. '+(result.bigSingles.comparable?'Repeated benchmark history available for descriptive trends.':'Gathering independent days.')+' Not interchangeable with scoring visits.</p></div>';
+ html+='<p class="secondarySub">'+result.coverage.excludedPartial+' incomplete rounds excluded · '+result.coverage.excludedModified+' Quick Play, recovery or modified rounds excluded · '+result.coverage.outcomeOnly+' completed rounds without a matching measurement format.</p>';
+ html+='<div class="info"><strong>Learning experiment: not eligible</strong><p class="secondarySub">'+esc(result.causal.reason)+'</p><p class="secondarySub">These read-only checks do not change hidden skill tiers, game choice, session duration or your saved results.</p></div>';
+ host.innerHTML=html;
+}
+
 /* V5.35: provenance-preserving 41-game evidence audit.
    No inference of dart-level hits from aggregate visits. No use as adaptive policy input.
    Only natural completed rounds appear here; incomplete exercise snapshots are separate. */
@@ -5104,7 +5187,7 @@ function dc23RenderMasteryProgress(){
 function renderProgress(){
  const minutes=data.sessions.reduce((a,s)=>a+num(s.minutes),0);
  $("progressSummary").innerHTML='<div class="kpiGrid"><div class="kpi"><strong>'+data.sessions.length+'</strong><small>Sessions</small></div><div class="kpi"><strong>'+data.games.length+'</strong><small>Games</small></div><div class="kpi"><strong>'+Math.round(minutes)+'</strong><small>Minutes</small></div></div>';
- renderSkillOverview();dc34RenderPracticeSnapshot();dc35RenderEvidenceLedger();renderTrend();renderWeeklyReview();renderMonthlyReport();dc23RenderMasteryProgress();
+ renderSkillOverview();dc34RenderPracticeSnapshot();dc35RenderEvidenceLedger();dc43RenderReadiness();renderTrend();renderWeeklyReview();renderMonthlyReport();dc23RenderMasteryProgress();
  const big=(data.bigSingles||[]).filter(x=>x.complete);
  if(big.length){const latest=big[big.length-1],prev=big.length>=2?big[big.length-2]:null;
   $("singlesProgress").innerHTML='<div class="big">'+num(latest.hits)+'/60</div><p class="center">'+(num(latest.hits)/60*100).toFixed(1)+'% large-single accuracy'+(prev?' · Previous '+num(prev.hits)+'/60':'')+'</p><p class="secondarySub">'+esc(latest.day||'')+'</p><details><summary class="pill">View results by number</summary><div class="targetGrid">'+(latest.perNumber||[]).map((n,i)=>'<div>'+(i+1)+'<strong>'+num(n)+'/3</strong></div>').join('')+'</div></details>';
@@ -5572,7 +5655,7 @@ performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);setIn
 
 </script><div id="welcomeOverlay" class="welcomeOverlay hidden" role="dialog" aria-modal="true" aria-labelledby="welcomeHeading">
  <div class="welcomePanel dc36InfoPanel">
-  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V5.36</span></div>
+  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V5.43</span></div>
   <h2 id="welcomeHeading">Your game.<br><span>Your next level.</span></h2>
   <p class="dc36InfoLead">Darts Coach combines structured practice, measurable results and an adaptive training planner. It gives you a purposeful session, then learns cautiously from what you actually complete.</p>
   <div class="dc36InfoStats"><div><strong>41</strong><small>Training games</small></div><div><strong>7</strong><small>Hidden skill levels</small></div><div><strong>60</strong><small>Minute core session</small></div></div>
