@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.32.0</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.33.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -579,6 +579,42 @@ header #headerRhythm.rhythmRunning{border-color:var(--green);box-shadow:0 0 13px
 #exercisePanel:has(.dc22BingoCard) #playArea{justify-content:flex-start;overflow:visible;flex:0 0 auto}
 @media(min-width:760px){body.trainingActive #train{max-width:850px;left:50%;transform:translateX(-50%);border-left:1px solid var(--line);border-right:1px solid var(--line)}#trainSession:not(.hidden){padding-left:26px;padding-right:26px}#gameControls{max-width:660px;margin-left:auto;margin-right:auto}.dc22BingoCard{max-width:520px;margin-left:auto;margin-right:auto}}
 @media(max-height:730px){.dc22BingoCard span{padding:4px 1px}.dc22Danger{padding:5px}.dc22Danger strong{font-size:25px}}
+
+/* V5.33 compact score entry: the submission button is part of the keypad surface. */
+#exercisePanel.phase-playing:has(#gameControls.hasPad){overflow:hidden!important}
+#exercisePanel.phase-playing:has(#gameControls.hasPad) #playArea{flex:1 1 auto;min-height:0;overflow:hidden;justify-content:flex-start;padding:0}
+#exercisePanel.phase-playing:has(#gameControls.hasPad) #gameControls{flex:1 1 auto;min-height:0;max-height:100%;overflow:hidden;justify-content:center;gap:2px;margin:2px auto;max-width:410px}
+#exercisePanel.phase-playing:has(#gameControls.hasPad) #gameTarget{font-size:clamp(28px,7vw,39px);margin:0}
+#exercisePanel.phase-playing:has(#gameControls.hasPad) #gameProgress{font-size:12px;margin:1px 0 2px}
+#exercisePanel.phase-playing:has(#gameControls.hasPad) #roundFlash{font-size:18px;line-height:1;padding:0}
+#exercisePanel.phase-playing:has(#gameControls.hasPad) #miniMetrics{font-size:11px;padding:1px}
+#exercisePanel.phase-playing:has(#gameControls.hasPad) #dc22Danger{padding:3px;margin:0 0 3px;gap:8px}
+#exercisePanel.phase-playing:has(#gameControls.hasPad) #dc22Danger strong{font-size:20px}
+#exercisePanel.phase-playing:has(#gameControls.hasPad) .checkoutHud .hudGuide{display:none}
+#exercisePanel.phase-playing:has(#gameControls.hasPad) #undoRow{margin:2px 0;padding:0;flex-shrink:0}
+#exercisePanel.phase-playing:has(#gameControls.hasPad) #undoButton{min-height:34px;padding:4px;font-size:13px}
+#gameControls.hasPad .scorePad{width:100%;max-width:410px;margin:0 auto;min-height:0;flex:0 1 auto}
+#gameControls.hasPad .scorePadDisplay{padding:3px 9px;min-height:38px}
+#gameControls.hasPad .scorePadDisplay strong{font-size:25px}
+#gameControls.hasPad .scoreKeys{gap:3px;margin-top:3px;grid-template-rows:repeat(4,minmax(0,1fr))}
+#gameControls.hasPad .scoreKeys button{min-height:0;height:clamp(27px,4.8dvh,43px);padding:2px;font-size:19px}
+#gameControls.hasPad > button{min-height:40px;padding:5px;margin-top:2px;font-size:16px;flex:0 0 auto}
+#gameControls .dc33EntryGrid{display:grid;grid-column:1/-1;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;width:100%}
+#gameControls .dc33EntryGrid button{min-height:0;height:clamp(26px,3.9dvh,38px);padding:2px;font-size:13px}
+#gameControls .dc33EntryGrid .dc33Miss{grid-column:span 3;background:#3a4e55;color:#fff}
+#gameControls .dc33EntryGrid .dc33Bull{grid-column:span 2}
+#exercisePanel.phase-playing:has(#gameControls.dc33EntryMode){overflow:hidden!important}
+#exercisePanel.phase-playing:has(#gameControls.dc33EntryMode) #playArea{justify-content:flex-start;min-height:0;overflow:hidden}
+#exercisePanel.phase-playing:has(#gameControls.dc33EntryMode) #gameTarget{font-size:clamp(27px,7vw,39px);margin:0}
+#exercisePanel.phase-playing:has(#gameControls.dc33EntryMode) #roundFlash{display:none}
+#exercisePanel.phase-playing:has(#gameControls.dc33EntryMode) #gameProgress{margin:2px}
+#gameControls.dc33EntryMode{display:block!important;max-width:410px;margin:3px auto!important;align-self:stretch}
+#gameControls.hasPad .dc33TailStatus{text-align:center;font-size:12px;color:var(--green);font-weight:800;margin:2px}
+#gameControls:not(.hasPad) .dc33JackGrid{display:grid;grid-column:1/-1;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+#gameControls:not(.hasPad) .dc33JackGrid button{min-width:0;min-height:52px;padding:4px;font-size:16px}
+#gameControls .dc33JackGrid button.used{opacity:.28;text-decoration:line-through}
+#gameControls .dc33JackGrid button.selected{outline:2px solid var(--green)}
+@media(max-height:700px){#trainSession:not(.hidden){gap:2px;padding-top:calc(env(safe-area-inset-top) + 2px);padding-bottom:calc(env(safe-area-inset-bottom) + 2px)}#trainSession>.card:first-child{padding:4px 9px}#sessionClock{font-size:22px;margin:1px 0}#exercisePanel{padding:4px 8px}#exerciseName{margin:0;font-size:17px}#exercisePanel>.statLine{padding:2px 0}#sessionFooter{padding:2px 6px}#exercisePanel.phase-playing:has(#gameControls.hasPad) #roundFlash{display:none}#gameControls.hasPad .scoreKeys button{height:clamp(25px,4.7dvh,37px)}}
 </style></head><body>
 <header><div class="brandMark">🎯</div><div class="brandCopy"><h1>DARTS COACH</h1><small>PERSONALISED TRAINING</small></div><div class="headerActions">
 <button id="headerRhythm" type="button" aria-label="Open Rhythm Coach" title="Rhythm Coach"><svg class="headerLineIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg></button>
@@ -3240,7 +3276,7 @@ const QUICK_DESCRIPTIONS={
  "Pressure Cricket":"Close 20, 19 and 18 and beat a simulated opponent\u2019s scoring pace.",
  "Bull Blackjack":"Reach exactly 150 bull points before your darts run out. Over 150 is an instant loss.",
  "Neighbour Trap":"Aim at S20. Hits on neighbouring 1 and 5 undo your progress.",
- "Double Jackpot":"Choose your double for each dart. Bank an exact points total without going bust.",
+ "Double Jackpot":"Use each nominated double at most once. Reach an achievable exact target without busting.",
  "Dartboard Bingo":"Coach calls random doubles. Hit five in a row for Bingo or all twenty for Full House.",
  "High-Low":"Beat alternating HIGHER and LOWER visit targets compared with your previous score.",
  "Split the Difference":"Match pairs of three-dart visit scores within your tier\u2019s tolerance.",
@@ -3487,13 +3523,34 @@ function padMarkup(){return '<div class="scorePad"><div class="scorePadDisplay">
 /* Double-in 201 uses the same on-screen keypad as every numeric game.
    D then 1–20 (D25 for bullseye), or 0 for a missed dart. */
 function doubleInPadMarkup(){
- return '<div class="scorePad doubleInPad"><div class="scorePadDisplay"><span>FIRST DOUBLE · D1–D20 / D25<br><small>Tap D, number, then Record. 0 = MISS.</small></span><strong id="padValue">—</strong></div>'+
- '<input id="scoreInput" type="hidden" value="">'+
- '<div class="scoreKeys">'+[1,2,3,4,5,6,7,8,9].map(n=>'<button type="button" onclick="doubleInPadDigit('+n+')">'+n+'</button>').join('')+
- '<button type="button" class="doubleKey" onclick="doubleInPadDouble()">D</button>'+
- '<button type="button" onclick="doubleInPadDigit(0)">0</button>'+
- '<button type="button" onclick="doubleInPadBack()">⌫</button></div>'+
- '<button type="button" class="entryClear" onclick="padClear()">CLEAR ENTRY</button></div>';
+ return '<div class="dc33EntryGrid" role="group" aria-label="Choose the double you hit">'+
+  Array.from({length:20},(_,i)=>'<button type="button" onclick="dc33SelectEntry('+(i+1)+')">D'+(i+1)+'</button>').join('')+
+  '<button type="button" class="dc33Bull" onclick="dc33SelectEntry(25)">Bull 50</button>'+
+  '<button type="button" class="dc33Miss" onclick="dc33SelectEntry(0)">Miss</button></div>';
+}
+function dc33SelectEntry(double){
+ const g=activeGame,s=session();if(!g||g.name!=='Double-In 201'||g.entered||!s||s.pausedAt||s.phase!=='playing'||!Number.isInteger(double)||double<0||(double>20&&double!==25))return;
+ const old=$('scoreInput');
+ // Keep the original result-recording engine, including undo and entry counters.
+ if(!old){const controls=$('gameControls');controls.insertAdjacentHTML('beforeend','<input id="scoreInput" type="hidden">')}
+ padSet(double===0?'0':'D'+double);
+ doubleInEntrySubmit();
+}
+function dc33TailPadMarkup(){
+ const g=activeGame;return '<div class="dc33TailStatus">DART '+(num(g.entryTailUsed)+1)+' / '+g.nextVisitDarts+' · First visit after double · Total '+num(g.entryTailScore)+'</div>'+padMarkup()+button('Record Dart','dc33TailSubmit()');
+}
+function dc33TailSubmit(){
+ const g=activeGame,s=session(),input=$('scoreInput');
+ if(!g||g.name!=='Double-In 201'||!g.entered||!g.entryTailActive||!s||s.pausedAt||s.phase!=='playing'||!input||input.value==='')return;
+ const n=Number(input.value);
+ if(!Number.isInteger(n)||!DART_SCORES.includes(n)){alert('Enter one dart score (0, 1–20, a double, treble or bull).');return}
+ const beforeDart=clone(g);snapshot();g.entryTailScore=num(g.entryTailScore)+n;g.entryTailUsed=num(g.entryTailUsed)+1;
+ const all=g.entryTailUsed>=g.nextVisitDarts;
+ padSet('');
+ if(all){
+  const total=g.entryTailScore;g.entryTailActive=false;g.entryTailScore=0;g.entryTailUsed=0;
+  padSet(String(total));doubleInVisit();if(activeGame===g)undoSnapshot=beforeDart;
+ }else{data.game=g;save()}
 }
 function doubleInPadDouble(){
  if(session()?.pausedAt||session()?.phase!=="playing"||activeGame?.name!=="Double-In 201"||activeGame.entered)return;
@@ -3525,7 +3582,7 @@ function doubleInEntrySubmit(){
   const double=Number(value.slice(1));g.entered=true;g.entryDouble=double;
   g.remaining-=double*2;g.points+=double*2;
   g.nextVisitDarts=3-(g.thrown%3)||3;
-  g.entryDarts=g.thrown;padSet("");
+  g.entryDarts=g.thrown;g.entryTailActive=g.nextVisitDarts<3;g.entryTailScore=0;g.entryTailUsed=0;padSet("");
  }
  data.game=g;save();
 }
@@ -3688,6 +3745,18 @@ function dc3MatchAllowance(start){
  const confidence=Math.min(1,(Number(p.scoring?.visits)||0)/20);
  const margin=.10+(.045*(1-confidence));
  const allowed=Math.ceil(center*(1+margin));
+ // A self-reported average is not a measured checkout conversion rate.
+ // Give a sensible provisional 501 ceiling, then yield to completed independent training evidence.
+ if(start===501&&p.quickStart===true){
+  const completedDays=new Set((Array.isArray(data.games)?data.games:[]).filter(g=>
+   g&&['501 Pressure','301 Pressure','Scoring Challenge','Scoring Survival','Scoring Ladder'].includes(g.name)&&
+   (g.completion==='natural'||g.completion==='partial')&&Number.isFinite(g.at)).map(g=>dateKey(g.at)));
+  if(completedDays.size<4){
+   const band=String(p.averageBand||'');
+   const provisional={under30:69,'30':51,'40':41,'50':34,'60':28,'70':25,'80':22,'90':20,'100':19};
+   if(Object.prototype.hasOwnProperty.call(provisional,band))return provisional[band];
+  }
+ }
  return clamp(allowed,start===301?12:18,start===301?75:105);
 }
 
@@ -3845,7 +3914,7 @@ function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name
   const tier=pressureTier("scoring");Object.assign(g,{tier,goal:[8,7,6,5,4,3,2][tier-1],progress:0,thrown:0,allowed:[10,11,12,13,15,16,18][tier-1],hits:0,neighbours:0});
  }
  if(name==="Double Jackpot"){
-  const tier=pressureTier("doubles");Object.assign(g,{tier,points:0,goal:tier<=3?100:tier<=5?80:60,thrown:0,allowed:[5,6,7,8,10,12,15][tier-1],hits:0,bust:false,choice:20,ring:tier>=6?"S":"D"});
+  const tier=pressureTier("doubles");Object.assign(g,{tier,points:0,goal:[102,92,82,72,60,36,26][tier-1],thrown:0,allowed:[5,6,7,8,10,12,15][tier-1],hits:0,bust:false,choice:20,usedTargets:[],ring:tier>=6?"S":"D"});
  }
  if(name==='Target Mastery'){
   const item=currentExercise(),fromPlan=item?.mastery||{};
@@ -3984,7 +4053,7 @@ function doubleInVisit(){
 function new40Choice(value){
  const g=activeGame,s=session();if(!g||!s||s.pausedAt||s.phase!=="playing")return;
  if(g.name==="Last Dart Standing"&&["FINISH","SETUP"].includes(value)){snapshot();g.choice=value;save();return}
- if(g.name==="Double Jackpot"&&[20,16,10,5].includes(value)){snapshot();g.choice=value;save();return}
+ if(g.name==="Double Jackpot"&&[20,16,10,5].includes(value)&&!(g.usedTargets||[]).includes(value)){snapshot();g.choice=value;save();return}
  if(g.name==="Checkout Poker"&&g.cards.includes(value)&&!g.cardsUsed?.includes(value)){snapshot();g.chosen=value;save();return}
 }
 function new40Dart(value,checkoutDarts){
@@ -3995,7 +4064,7 @@ function new40Dart(value,checkoutDarts){
  if(name==="Pressure Cricket"&&![0,1,2,3].includes(value))return;
  if(name==="Bull Blackjack"&&![0,25,50].includes(value))return;
  if(name==="Neighbour Trap"&&!["20","1","5","miss"].includes(value))return;
- if(name==="Double Jackpot"&&!["hit","miss"].includes(value))return;
+ if(name==="Double Jackpot"&&(!["hit","miss"].includes(value)||![20,16,10,5].includes(g.choice)||(g.usedTargets||[]).includes(g.choice)))return;
  if(name==="Dartboard Bingo"&&!["hit","miss"].includes(value))return;
  if(name==="Checkout Poker"&&(!g.chosen||!["hit","miss"].includes(value)))return;
  if(name==="Double Bull Bridge"&&!["hit","miss"].includes(value))return;
@@ -4028,7 +4097,7 @@ function new40Dart(value,checkoutDarts){
  }
  if(name==="Double Jackpot"){
   g.thrown++;
-  if(value==="hit"){g.hits++;g.points+=g.choice*(g.ring==="D"?2:1)}
+  if(value==="hit"){g.hits++;g.points+=g.choice*(g.ring==="D"?2:1);(g.usedTargets||(g.usedTargets=[])).push(g.choice);g.choice=null}
   if(g.points>g.goal)g.bust=true;
   if(g.points>=g.goal||g.thrown>=g.allowed){endRound();return}
  }
@@ -4340,7 +4409,7 @@ const EXTRA_RULES={
  "Pressure Cricket":"Close 20, 19 and 18 with three marks each. Single = 1 mark, double = 2, treble = 3. A closed number earns twice its value. A fixed simulated rival scores after every three darts. Close all three AND finish ahead to WIN.",
  "Bull Blackjack":"Bank 25 for outer bull or 50 for bullseye. Reach the EXACT displayed target before your darts expire. Go over and you LOSE immediately.",
  "Neighbour Trap":"Aim at the large S20. S20 adds one progress. Hitting neighbouring S1 or S5 removes one progress; a different miss uses a dart without progress. Reach the target before darts run out to WIN.",
- "Double Jackpot":"Choose which of the listed doubles (or beginner singles) to aim for each dart. A successful hit banks its segment value. Reach the EXACT target without going over to WIN; over is a bust and instant LOSE.",
+ "Double Jackpot":"Choose from the four displayed doubles (or beginner singles). Each target can score ONCE per round. After a hit you must choose a different unused target. Bank the exact goal without going over. A bust loses the round.",
  "Dartboard Bingo":"The coach calls one random double at a time. Record each dart as Hit or Miss. You get a skill-adjusted dart allowance per call. Hit doubles disappear; missed doubles return later. Any horizontal line of FIVE is BINGO; all 20 is FULL HOUSE. A fresh random card follows each completed round.",
  "Target Mastery":"Coach-selected practice across singles, doubles, trebles, bull, checkouts, straight darts, target switching, setup, scoring and pressure. Each drill measures only what you actually record.",
  "High-Low":"Enter five three-dart visit totals. Starting from 90, each visit must alternate HIGHER then LOWER than the previous visit by at least the displayed gap. Four correct comparisons to WIN; run out of lives or visits to LOSE.",
@@ -4354,7 +4423,7 @@ const EXTRA_RULES={
  "Golf Five":"Five nominated holes. Each hole means hitting the displayed section. Hit on dart 1, 2 or 3 to score that many strokes; missing all three is four strokes. Finish at or below par to WIN.",
  "Cricket Countdown":"Close each displayed target with THREE marks. Single = 1, double = 2, treble = 3; bull 25 = 1 or 50 = 2. Close every target inside the dart budget to WIN.",
  "Double Double":"Hit the first nominated double, then the second, with your total dart allowance. Hit/Miss per dart. Both doubles = WIN; run out = LOSE.",
- "Double-In 201":"Use the built-in keypad: tap D then 1–20 (D25 for bullseye) and Record Dart; enter 0 when you miss. Scoring starts only after a double. Use the remaining darts in that visit, then normal three-dart visits. Finish exactly on a double. Entry or visit limit reached = LOSE.",
+ "Double-In 201":"Tap the double you hit or Miss. After entering, record any remaining darts individually: the app adds them for you. Later visits use a three-dart total. Finish exactly on a double; bust leaves your score unchanged.",
  "Switchback":"Hit each called target in strict sequence, switching numbers each time. A miss knocks you TWO steps backwards. Clear the full route before running out of darts to WIN.",
  "Shanghai Combo":"Complete S, then D, then T on the SAME number, in order. Tap Hit or Miss for each dart. Misses cost lives; complete all three to win the round.",
  "Bull Bank":"Bank bull points: 25 for outer bull, 50 for bullseye, 0 for a miss. Reach the goal before your darts run out.",
@@ -4494,9 +4563,9 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   const darts=clamp(Math.round(num(g.nextVisitDarts)||3),1,3);
   heading=g.entered?String(g.remaining):"DOUBLE IN";
   detail=g.entered?"201 leg · "+darts+" dart"+(darts===1?"":"s")+" this visit · Visit "+(g.visits+1)+"/"+g.maxVisits:"D1–D20 or D25 · "+(g.entryLimit-g.entryMisses)+" attempts left";
-  mini=g.entered?"Busts: "+g.busts+" · Finish on a double":"D then number = hit · 0 = miss";
-  html=g.entered?padMarkup()+button("Record Visit","doubleInVisit()"):
-   doubleInPadMarkup()+button("Record Dart","doubleInEntrySubmit()");break;
+  mini=g.entered?"Busts: "+g.busts+" · Finish on a double":"Tap your double once, or Miss";
+  html=g.entered?(g.entryTailActive?dc33TailPadMarkup():padMarkup()+button("Record Visit","doubleInVisit()")):
+   doubleInPadMarkup();break;
  }
  case "Switchback":
   heading=g.ring+g.sequence[Math.min(g.index,g.sequence.length-1)];detail="Sequence "+(g.index+1)+"/7";
@@ -4544,8 +4613,8 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   html=button("S20","new40Dart('20')")+button("S1","new40Dart('1')")+button("S5","new40Dart('5')")+button("Other miss","new40Dart('miss')");break;
  case "Double Jackpot":
   heading=g.points+" / "+g.goal;detail="Hit EXACT points without going over";
-  mini="Target "+g.ring+g.choice+" · Darts left "+(g.allowed-g.thrown);
-  html=[20,16,10,5].map(n=>button(g.ring+n,"new40Choice("+n+")")).join("")+button("Hit target","new40Dart('hit')")+button("Miss","new40Dart('miss')");break;
+  mini="Used: "+((g.usedTargets||[]).map(n=>g.ring+n).join(', ')||'none')+" · Darts left "+(g.allowed-g.thrown);
+  html='<div class="dc33JackGrid">'+[20,16,10,5].map(n=>'<button type="button" class="'+((g.usedTargets||[]).includes(n)?'used':g.choice===n?'selected':'')+'" '+((g.usedTargets||[]).includes(n)?'disabled':'')+' onclick="new40Choice('+n+')">'+g.ring+n+'</button>').join('')+'</div>'+(g.choice?button('Hit '+g.ring+g.choice,"new40Dart('hit')")+button('Miss',"new40Dart('miss')"):'<div class="dc33TailStatus">Choose another unused target</div>');break;
  case 'Dartboard Bingo':
   heading='D'+g.called;detail='Caller controls the doubles · 5 in a horizontal line = BINGO';
   mini='Darts left '+(g.allowed-g.used)+' · Lines '+g.lines+'/4 · '+g.marked.length+'/20 doubles';
@@ -4628,7 +4697,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   $("miniMetrics").innerHTML='<div class="checkoutHud"><span class="hudChip">Busts <b>'+g.busts+'</b></span><span class="hudChip">Double-out</span><span class="hudGuide">Bust = invalid finish; score stays the same. Final dart must hit a double or bullseye.</span></div>';
  }else $("miniMetrics").textContent=mini;$("roundFlash").textContent=g.name==="Review"?"":"ROUND "+s.round;$("roundFlash").classList.toggle("hidden",g.name==="Review"||g.name==="Warm-up"||g.name==="Big Singles");
  const controls=$("gameControls");
- const controlMode=g.name==="Double-In 201"?(g.entered?"201-scoring":"201-entry"):"standard";
+ const controlMode=g.name==="Double-In 201"?(g.entered?(g.entryTailActive?"201-tail":"201-scoring"):"201-entry"):"standard";
  const keepsPad=["Scoring Challenge","Scoring Survival","Scoring Ladder","301 Pressure","501 Pressure","Double-In 201","Risk or Reward","First Nine Siege","170 Challenge","Setup Shot","High-Low","Split the Difference"].includes(g.name);
  if(controls.dataset.game!==g.name||controls.dataset.mode!==controlMode||!keepsPad||!controls.querySelector("#scoreInput")){
   controls.innerHTML=html;controls.dataset.game=g.name;controls.dataset.mode=controlMode;
