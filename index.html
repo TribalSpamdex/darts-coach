@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.49.0</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.61.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -770,7 +770,7 @@ button:focus-visible,.quickTile:focus-visible{outline:3px solid var(--green);out
 <div id="progressSummary"></div>
 </div>
 <div class="card"><h2>Skill Performance</h2><div id="skillOverview"></div></div><div class="card"><h2>Early Practice Evidence</h2><div id="earlyPracticeSummary"></div></div><div class="card"><h2>Recorded Skill Measurements</h2><p class="dashIntro">What the games actually measured. These are practice observations, not independent coaching benchmarks.</p><div id="dc35EvidenceLedger"></div></div>
-<div class="card"><h2>Training → Results Trace</h2><p class="dashIntro">What was selected, what was actually completed, and whether comparable results exist afterwards. Observational only: never a claim that the training caused a change.</p><div id="dc44TrainingTrace"></div><h3>Exercise Provenance</h3><div id="dc45EpisodeAudit"></div><h3>Comparable Follow-up Evidence</h3><div id="dc46FollowupEvidence"></div><h3>Coach Learning Trials</h3><div id="dc47TrialAudit"></div><h3>Trial Outcome Readiness</h3><div id="dc48OutcomeReadiness"></div><h3>Controlled Arm Comparisons</h3><div id="dc49ArmComparisons"></div></div><div class="card"><h2>Coach Evidence Readiness</h2><p class="dashIntro">Read-only audit of measurements actually recorded. The coach does not start experiments or add focus time from this panel.</p><div id="dc43Readiness"></div></div><div class="card"><h2>Improvement Trends</h2><p class="dashIntro">Compare equivalent completed exercises over time.</p>
+<div class="card"><h2>Training → Results Trace</h2><p class="dashIntro">What was selected, what was actually completed, and whether comparable results exist afterwards. Observational only: never a claim that the training caused a change.</p><div id="dc44TrainingTrace"></div><h3>Exercise Provenance</h3><div id="dc45EpisodeAudit"></div><h3>Comparable Follow-up Evidence</h3><div id="dc46FollowupEvidence"></div><h3>Coach Learning Trials</h3><div id="dc47TrialAudit"></div><h3>Trial Outcome Readiness</h3><div id="dc48OutcomeReadiness"></div><h3>Controlled Arm Comparisons</h3><div id="dc49ArmComparisons"></div><h3>Comparison Quality &amp; Interference</h3><div id="dc52QualityAudit"></div><h3>Reliability &amp; Cross-Skill Watch</h3><div id="dc53ReliabilityWatch"></div><h3>Two-Speed Coaching</h3><div id="dc55TwoSpeedCoach"></div></div><div class="card"><h2>Coach Evidence Readiness</h2><p class="dashIntro">Read-only audit of measurements actually recorded. The coach does not start experiments or add focus time from this panel.</p><div id="dc43Readiness"></div></div><div class="card"><h2>Improvement Trends</h2><p class="dashIntro">Compare equivalent completed exercises over time.</p>
 <div id="trendPicker" class="chartToolbar"></div>
 <div id="trendChart"></div></div>
 <div class="card"><h2>Darts Mastery</h2><p class="dashIntro">Your focused practice across every major darts skill, measured separately from standard benchmarks.</p><div id="dc23MasteryProgress"></div></div><div class="card"><h2>Daily Big Singles</h2><div id="singlesProgress"></div></div>
@@ -1161,19 +1161,19 @@ function dc5CheckoutEvidence(g){
 function skillSamples(){const result={scoring:[],doubles:[],checkout:[],bull:[]};for(const g of data.games){const time=gameTime(g);if(!time||g.completion==="manual")continue;
   if(!quickEvidenceEligible(g))continue;
 if(g.benchmark===false&&!(["Scoring Survival","Scoring Ladder","Outside Doubles","Double Double"].includes(g.name)&&g.completion==="natural"))continue;
- if(g.name==="Scoring Challenge"&&num(g.visits)>=10)result.scoring.push({time,points:num(g.points),volume:num(g.visits),id:time,quick:!!g.quick,weight:quickWeight(g)});
- if(["Scoring Survival","Scoring Ladder"].includes(g.name)&&num(g.visits)>=3&&g.completion==="natural")result.scoring.push({time,points:num(g.points),volume:num(g.visits),id:time,quick:!!g.quick,weight:quickWeight(g)});
- if(g.name==="Doubles Survival"&&g.variant!=="singles"&&num(g.thrown)>0)result.doubles.push({time,hits:num(g.hits),volume:num(g.thrown),id:time,quick:!!g.quick,weight:quickWeight(g)});
- if(["Outside Doubles","Double Double"].includes(g.name)&&num(g.thrown)>0&&g.completion==="natural")result.doubles.push({time,hits:num(g.hits),volume:num(g.thrown),id:time,quick:!!g.quick,weight:quickWeight(g)});
- if(g.name==="Checkout Climb"&&num(g.success)+num(g.fail)>0){
+ if(g.name==="Scoring Challenge"&&num(g.visits)>=10&&num(g.points)>=0&&num(g.points)<=180*num(g.visits))result.scoring.push({time,points:num(g.points),volume:num(g.visits),id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
+ if(["Scoring Survival","Scoring Ladder"].includes(g.name)&&num(g.visits)>=3&&g.completion==="natural"&&num(g.points)>=0&&num(g.points)<=180*num(g.visits))result.scoring.push({time,points:num(g.points),volume:num(g.visits),id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
+ if(g.name==="Doubles Survival"&&g.variant!=="singles"&&num(g.thrown)>0&&num(g.hits)>=0&&num(g.hits)<=num(g.thrown))result.doubles.push({time,hits:num(g.hits),volume:num(g.thrown),id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
+ if(["Outside Doubles","Double Double"].includes(g.name)&&num(g.thrown)>0&&g.completion==="natural"&&num(g.hits)>=0&&num(g.hits)<=num(g.thrown))result.doubles.push({time,hits:num(g.hits),volume:num(g.thrown),id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
+ if(g.name==="Checkout Climb"&&num(g.success)>=0&&num(g.fail)>=0&&num(g.success)+num(g.fail)>0){
   const volume=num(g.success)+num(g.fail), adjusted=dc5CheckoutEvidence(g);
   // Older sessions have no difficulty log. Retain their original evidence
   // rather than inventing the targets they attempted or changing their weight.
   const quality=1;
   result.checkout.push({time,hits:(adjusted?.logged?adjusted.rate*volume:num(g.success))*quality,
-   volume:volume*quality,id:time,quick:!!g.quick,weight:quickWeight(g)});
+   volume:volume*quality,id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
  }
- if(g.name==="Bull Accuracy"&&num(g.thrown)>=30)result.bull.push({time,hits:num(g.outer)+num(g.inner),inner:num(g.inner),volume:num(g.thrown),id:time,quick:!!g.quick,weight:quickWeight(g)});
+ if(g.name==="Bull Accuracy"&&num(g.thrown)>=30&&num(g.outer)>=0&&num(g.inner)>=0&&num(g.outer)+num(g.inner)<=num(g.thrown))result.bull.push({time,hits:num(g.outer)+num(g.inner),inner:num(g.inner),volume:num(g.thrown),id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
  }return result}
 function quickWeight(g){if(!g.quick)return 1;const row=data.sessions.find(x=>x.quick&&x.id===g.sessionId&&x.completed);const m=row?num(row.minutes):0;return m>=30?.75:m>=20?.55:m>=15?.4:0}
 function dailySamples(rows){const groups=new Map();for(const r of rows){const day=dateKey(r.time);if(!groups.has(day))groups.set(day,{day,time:r.time,hits:0,inner:0,points:0,volume:0,quickVolume:0});const d=groups.get(day);let weight=r.quick?num(r.weight):1;if(r.quick){const remaining=Math.max(0,35-d.quickVolume);const take=Math.min(remaining,num(r.volume));d.quickVolume+=take;weight*=num(r.volume)?take/num(r.volume):0}d.hits+=num(r.hits)*weight;d.inner+=num(r.inner)*weight;d.points+=num(r.points)*weight;d.volume+=r.volume*weight;d.time=Math.max(d.time,r.time)}return[...groups.values()].sort((a,b)=>a.time-b.time)}
@@ -2583,6 +2583,78 @@ function dc37Calibration(now=Date.now()){
  return {version:'5.24.0',categories:result,
   note:'Out-of-sample recorded forecasts of performance levels; noncausal and not a measurement of training benefit'};
 }
+/* V5.58: independent measurement-source continuity. A change in the mix of
+   benchmark/game types can mimic a change in player ability. Require a single
+   source with enough independent days in both periods, accounting for most
+   recorded measurement volume in each. Old records retain their game names;
+   unknown source metadata never qualifies for an automatic preference. */
+function dc58ProtocolContinuity(sampleRows,key,now=Date.now()){
+ const valid=(sampleRows||[]).filter(r=>Number.isFinite(r?.time)&&r.time<=now&&r.time>=now-84*DAY_MS&&
+   Number.isFinite(r.volume)&&r.volume>0&&typeof r.source==='string'&&r.source.length>0);
+ const groups=new Map();
+ for(const r of valid){
+  const half=r.time<now-21*DAY_MS?'baseline':'recent';
+  const group=groups.get(r.source)||{source:r.source,baseline:[],recent:[]};
+  group[half].push(r);groups.set(r.source,group);
+ }
+ const totals={baseline:0,recent:0};
+ for(const r of valid)totals[r.time<now-21*DAY_MS?'baseline':'recent']+=r.volume;
+ const options=[];
+ for(const g of groups.values()){
+  const baseline=dailySamples(g.baseline).filter(x=>x.volume>=3).slice(-8);
+  const recent=dailySamples(g.recent).filter(x=>x.volume>=3).slice(-8);
+  const baselineVolume=g.baseline.reduce((v,x)=>v+x.volume,0);
+  const recentVolume=g.recent.reduce((v,x)=>v+x.volume,0);
+  const baselineShare=totals.baseline?baselineVolume/totals.baseline:0;
+  const recentShare=totals.recent?recentVolume/totals.recent:0;
+  options.push({source:g.source,baselineDays:baseline.length,recentDays:recent.length,
+   baselineShare,recentShare,eligible:baseline.length>=6&&recent.length>=6&&
+    baselineShare>=.8&&recentShare>=.8&&Math.abs(baselineShare-recentShare)<=.15});
+ }
+ options.sort((a,b)=>(Number(b.eligible)-Number(a.eligible))||
+  (b.baselineDays+b.recentDays-a.baselineDays-a.recentDays));
+ const best=options[0];
+ return {eligible:!!best?.eligible,source:best?.source||null,
+  baselineDays:best?.baselineDays||0,recentDays:best?.recentDays||0,
+  baselineShare:Math.round((best?.baselineShare||0)*100),recentShare:Math.round((best?.recentShare||0)*100),
+  reason:best?.eligible?'Same predominant measurement source in both periods':
+   'Insufficient comparable independent days or changing measurement sources'};
+}
+/* V5.59: a corroboration audit; different exercise results are never pooled as
+   interchangeable performance levels. A second protocol can only VETO a tiny
+   preference when its own independent pre/post direction clearly contradicts it.
+   Missing corroboration remains unknown, never proof of decline or improvement. */
+function dc59IndependentCheck(sampleRows,key,primary,now=Date.now()){
+ const threshold=key==='scoring'?7:9;
+ const grouped=new Map();
+ for(const r of sampleRows||[]){
+  if(!r||typeof r.source!=='string'||!r.source||r.source===primary||
+     !Number.isFinite(r.time)||r.time>now||r.time<now-84*DAY_MS||
+     !Number.isFinite(r.volume)||r.volume<=0)continue;
+  const arr=grouped.get(r.source)||[];arr.push(r);grouped.set(r.source,arr);
+ }
+ const checks=[];
+ for(const [source,rows] of grouped){
+  const daily=dailySamples(rows).filter(x=>x.volume>=3);
+  const old=daily.filter(x=>x.time<now-21*DAY_MS).slice(-8);
+  const recent=daily.filter(x=>x.time>=now-21*DAY_MS).slice(-8);
+  if(old.length<3||recent.length<3)continue;
+  const metric=r=>key==='scoring'?r.points/Math.max(1,r.volume):100*r.hits/Math.max(1,r.volume);
+  const average=a=>a.reduce((sum,r)=>sum+metric(r),0)/a.length;
+  const delta=average(recent)-average(old);
+  const spread=a=>a.length<2?Infinity:Math.sqrt(a.reduce((sum,r)=>sum+(metric(r)-average(a))**2,0)/(a.length-1));
+  const uncertainty=Math.sqrt(spread(old)**2/old.length+spread(recent)**2/recent.length);
+  // A strong contrary change must clear both a practical magnitude and a
+  // conservative uncertainty boundary. Never equate a flat series to recovery.
+  const contrary=delta>=threshold&&Number.isFinite(uncertainty)&&delta>2*uncertainty;
+  checks.push({source,baselineDays:old.length,recentDays:recent.length,
+   change:Math.round(delta*100)/100,uncertainty:Math.round(uncertainty*100)/100,contrary});
+ }
+ const contradicting=checks.filter(x=>x.contrary);
+ return {status:contradicting.length?'contradiction':checks.length?'no-confirmed-contradiction':'unknown',
+  blocked:contradicting.length>0,checkedSources:checks.length,checks:checks.slice(0,8),
+  note:'Other game protocols are independently compared, never mixed into the primary metric. Unknown is not confirmation.'};
+}
 /* V5.19.0 whole-session policy: player-specific but intentionally bounded.
    Uses independent calendar-day comparable skill measurements and recorded
    completed training minutes. Missing/noisy evidence stays NEUTRAL.
@@ -2608,6 +2680,31 @@ function dc32WholeSessionPolicy(now=Date.now()){
   const reliable=se!==null&&Number.isFinite(se)&&new Set(old.map(x=>x.day)).size>=4&&new Set(recent.map(x=>x.day)).size>=4;
   const falling=reliable&&change<-(key==='scoring'?7:9)&&-change>2*se;
   const rising=reliable&&change>(key==='scoring'?7:9)&&change>2*se;
+  // V5.57: protect the everyday game tie-breaker against isolated noisy observations.
+  // Split independent-day observations into two ordered halves; each recent half
+  // must disagree with the baseline in the same direction. This detects unstable
+  // trends, NOT an unobserved change in how the benchmark was recorded.
+  const measureThreshold=key==='scoring'?7:9;
+  const sampleMean=a=>a.reduce((sum,v)=>sum+v,0)/Math.max(1,a.length);
+  const stableHalves=(values,limit)=>values.length>=6&&
+   Math.abs(sampleMean(values.slice(0,Math.floor(values.length/2)))-
+            sampleMean(values.slice(Math.floor(values.length/2))))<=limit;
+  const thresholdConsistency=first.length>=6&&last.length>=6&&
+   stableHalves(first,measureThreshold*.75)&&stableHalves(last,measureThreshold*.75)&&
+   sampleMean(last.slice(0,Math.floor(last.length/2)))<sampleMean(first)-measureThreshold&&
+   sampleMean(last.slice(Math.floor(last.length/2)))<sampleMean(first)-measureThreshold;
+  const protocolContinuity=dc58ProtocolContinuity(samples[key]||[],key,now);
+  const independentCheck=dc59IndependentCheck(samples[key]||[],key,protocolContinuity.source,now);
+  const everydaySignalQuality={eligible:!!(falling&&thresholdConsistency&&se!==null&&se<=measureThreshold*.65&&protocolContinuity.eligible&&!independentCheck.blocked),
+   independentCheck,
+   protocolContinuity,
+   stableBaseline:stableHalves(first,measureThreshold*.75),
+   stableRecent:stableHalves(last,measureThreshold*.75),
+   recentHalvesAgree:thresholdConsistency,
+   reason:first.length<6||last.length<6?'Fewer than six separate baseline and recent measurement days':
+    !thresholdConsistency?'Measurement pattern is unstable or decline is not repeated':
+    !protocolContinuity.eligible?'Measurement source changed or lacks enough matching days':
+    independentCheck.blocked?'Independent same-skill measurement contradicts decline':'Consistent same-source decline; independent corroboration '+independentCheck.status};
   const share=total?minutes[key]/total:0;
   const overexposed=total>=120&&share>.38;
   const matched=matches[key]||{};
@@ -2627,16 +2724,59 @@ function dc32WholeSessionPolicy(now=Date.now()){
   categories[key]={preference:Math.round(preference*100)/100,reason,days:rows.length,
    baselineDays:old.length,recentDays:recent.length,reliable,change:reliable?Math.round(change*10)/10:null,
    uncertainty:reliable?Math.round(se*10)/10:null,share:Math.round(100*share),
-   overexposed,falling,rising,policySafety:safety.categories[key]?.safeguard||learning[key].protect,learning:learning[key],forecastCalibration:calibration.categories[key],policyAuditCount:safety.categories[key]?.eligible||0,matchedWindows:Math.max(0,num(matched.matchedWindows))};
+   overexposed,falling,rising,everydaySignalQuality,policySafety:safety.categories[key]?.safeguard||learning[key].protect,learning:learning[key],forecastCalibration:calibration.categories[key],policyAuditCount:safety.categories[key]?.eligible||0,matchedWindows:Math.max(0,num(matched.matchedWindows))};
  }
  return {version:'5.24.0',at:now,days:past.length,totalCompletedMinutes:Math.round(total),categories,
   constraints:'balanced core; no invented target data; 5-minute minimum; observational signals only'};
+}
+/* V5.57: quality-gated two-speed coaching. Daily performance trends are NOT evidence that
+   one game causes improvement. Only a small reversible same-category game
+   tie-breaker is permitted, never an extra drill or an extra minute. Long-term
+   controlled game comparisons remain read-only and separate. */
+function dc55EverydayCoach(policy){
+ const keys=['scoring','doubles','checkout','bull'],states={};
+ for(const key of keys){
+  const row=policy?.categories?.[key]||{};
+  const before=Number(row.baselineDays)||0,after=Number(row.recentDays)||0;
+  const observed=!!row.reliable&&before>=4&&after>=4&&Number.isFinite(row.change)&&Number.isFinite(row.uncertainty);
+  const blocked=!!row.policySafety||!!row.overexposed;
+  const decline=observed&&row.falling===true&&row.change<0&&Math.abs(row.change)>2*row.uncertainty;
+  // Older audit records and synthetic policy objects without the signal-quality
+  // evidence fail closed. Never infer stable readings merely from a falling flag.
+  const quality=!!row.everydaySignalQuality?.eligible;
+  const responsive=decline&&!blocked&&quality;
+  states[key]={status:blocked?'protected':!observed?'building-evidence':responsive?'modest-support':row.rising?'improving':'balanced',
+   comparisonDays:before+after,baselineDays:before,recentDays:after,signalQuality:quality?'consistent':'unconfirmed',
+   protocol:row.everydaySignalQuality?.protocolContinuity?.source||null,
+   protocolConsistent:!!row.everydaySignalQuality?.protocolContinuity?.eligible,
+   change:observed?row.change:null,uncertainty:observed?row.uncertainty:null,
+   tieBreaker:responsive?-0.85:0,
+   reason:blocked?'Workload or safety protection':!observed?'Need four independent baseline and recent measurement days':
+    responsive?'Consistent multi-day decline: small reversible selection preference only':
+    decline&&!quality?'Decline observed but independent-day signal quality not confirmed':
+    row.rising?'Improvement observed; balanced plan retained':'No reliable decline; balanced plan retained'};
+ }
+ return {version:'5.59.0',track:'everyday trends',categories:states,
+  constraints:{trainingMinutesAdded:0,automaticMastery:false,gamePreferenceAbsoluteMaximum:0.85,
+   researchTrialsCannotOverride:true,unchangedSkillTiers:true},
+  note:'Observed skill trend, not proof that a particular exercise works. No added practice time.'};
+}
+function dc55RenderTwoSpeed(){
+ const host=$('dc55TwoSpeedCoach');if(!host)return;
+ const fast=dc55EverydayCoach(dc32WholeSessionPolicy());
+ const labels={scoring:'Scoring',doubles:'Doubles',checkout:'Checkouts',bull:'Bull'};
+ const rows=Object.entries(fast.categories).map(([key,v])=>'<div class="entry"><strong>'+labels[key]+'</strong><p class="secondarySub">'+
+  esc(v.status==='modest-support'?'Small everyday game preference':v.status==='protected'?'Protection active':v.status==='building-evidence'?'Building measurement history':v.status==='improving'?'Improving, balanced training':'Balanced training')+
+  ' · '+v.baselineDays+' baseline / '+v.recentDays+' recent days · signal '+esc(v.signalQuality)+
+  (v.protocol?' · source: '+esc(v.protocol)+(v.protocolConsistent?' (matched)':' (not verified)'):'')+'</p><p class="secondarySub">'+esc(v.reason)+'</p></div>').join('');
+ host.innerHTML='<p class="dashIntro"><strong>Everyday coaching</strong> can cautiously choose between already suitable games when measurements show a sustained decline. It cannot add training time or change skill tiers. This is not evidence that a specific game caused improvement.</p>'+rows+
+ '<p class="dashIntro"><strong>Long-term exercise research</strong> remains separate. The more demanding controlled-trial and cross-skill evaluations are observational and cannot automatically declare a winning exercise. Unknown fatigue and unmeasured practice remain unknown.</p>';
 }
 function dc32GameHint(name,policy){
  const key=dc28GameCategory(name),c=policy?.categories?.[key];
  if(!c)return 0;
  // The established theme preference (~13 points) stays dominant.
- return c.preference;
+ return c.preference+(dc55EverydayCoach(policy).categories[key]?.tieBreaker||0);
 }
 function dc32GameMinutes(name,position,policy,profiles){
  const category=dc28GameCategory(name),c=policy?.categories?.[category],p=profiles?.get(name);
@@ -3303,6 +3443,7 @@ function generateSession(extra=false,skipWarmup=false){
  // future outcomes exist. It has no effect on any player-history measurements.
  plan.unifiedAudit=dc39FinalizeDecision(unified,plan);
  plan.unifiedAudit.balancedFirst=dc44BalancedAudit(unified,plan);
+ plan.unifiedAudit.everydayCoach=dc55EverydayCoach(wholePolicy);
  plan.unifiedAudit.exploration=chosen.exploration||{selected:false,reason:'not evaluated'};
  if(chosen.exploration?.trial){
   const t=chosen.exploration.trial;
@@ -5170,7 +5311,7 @@ function dc47TrialAudit(player=data,now=Date.now()){
    the exact SAME metric (game, tier, target) on distinct pre/post days.
    No score between different games is compared. No causal claim is made. */
 function dc48OutcomeReadiness(player=data,now=Date.now()){
- const DAY=86400000, windowDays=28, cutoff=now-420*DAY;
+ const DAY=86400000, windowDays=28, cutoff=now-630*DAY;
  const out={trials:0,validCompleted:0,ready:0,pending:0,withoutBaseline:0,withoutFollowup:0,invalid:0,
   bothArmsByPair:0,pairedGroups:[],records:[],causalEligible:false,trainingChanges:0};
  const sessions=(player?.sessions||[]).filter(s=>s&&Number.isFinite(s.start)&&s.start>=cutoff&&s.start<=now);
@@ -5237,7 +5378,7 @@ function dc48OutcomeReadiness(player=data,now=Date.now()){
   const avg=xs=>xs.reduce((sum,x)=>sum+x.rate*x.weight,0)/xs.reduce((sum,x)=>sum+x.weight,0);
   const delta=avg(best.a)-avg(best.b);
   const pairKey=[t.category,...[t.normalGame,t.alternativeGame].sort()].join('|');
-  const row={arm:t.arm,day:dateKey(s.start),category:t.category,game:chosen,metric:best.key,beforeDays:best.pre,afterDays:best.post,
+  const row={trialId:t.id,sessionId:s.id,exerciseId:plans[0].id,arm:t.arm,day:dateKey(s.start),category:t.category,game:chosen,metric:best.key,beforeDays:best.pre,afterDays:best.post,
    // This is descriptive only. It is NOT a treatment-effect estimate.
    observedChange:delta};
   out.records.push(row);out.ready++;
@@ -5259,27 +5400,36 @@ function dc48OutcomeReadiness(player=data,now=Date.now()){
 function dc49ArmComparisons(player=data,now=Date.now()){
  const DAY=86400000, source=dc48OutcomeReadiness(player,now);
  const out={trials:source.trials,covered:source.ready,groups:[],candidateGroups:0,qualifiedGroups:0,
-  excluded:{noExactMetric:0,immature:0,overlap:0,oneArm:0,tooFew:0,temporal:0},
+  excluded:{noExactMetric:0,immature:0,overlap:0,oneArm:0,tooFew:0,temporal:0,ambiguousIdentity:0,unlinkedIdentity:0,identityMismatch:0},
   causalEligible:false,trainingChanges:0,autoGamePreference:false};
+ // V5.51: exact prospective trial-ID and session-ID linkage, rather than
+ // reconstructing identity from date + arm + game. Never guess historical IDs.
+ // Any duplicate trial ID in saved sessions is ambiguous and excluded on BOTH sides.
  const sessions=(player?.sessions||[]).filter(s=>s&&Number.isFinite(s.start));
- const assignments=new Map();
+ const assignments=new Map(),duplicates=new Set();
  for(const s of sessions){
   const t=s.wholeSessionAudit?.unified?.exploration?.trial;
-  if(t&&typeof t.id==='string'){
-   const key=dateKey(s.start)+'|'+t.arm+'|'+t.category+'|'+(t.arm==='balanced'?t.normalGame:t.alternativeGame);
-   // The V5.48 summary omits the trial ID: ambiguous same-day matches
-   // cannot safely be attributed to either assignment.
-   if(assignments.has(key))assignments.set(key,null);else assignments.set(key,{s,t});
-  }
+  if(!t||typeof t.id!=='string'||!t.id)continue;
+  if(assignments.has(t.id)){duplicates.add(t.id);continue}
+  assignments.set(t.id,{s,t});
  }
  const mapped=[];
  for(const row of source.records){
-  const match=assignments.get(row.day+'|'+row.arm+'|'+row.category+'|'+row.game);
-  if(!match)continue;
+  if(typeof row.trialId!=='string'||duplicates.has(row.trialId)){
+   out.excluded.ambiguousIdentity=(out.excluded.ambiguousIdentity||0)+1;continue;
+  }
+  const match=assignments.get(row.trialId);
+  if(!match){out.excluded.unlinkedIdentity=(out.excluded.unlinkedIdentity||0)+1;continue}
   const {s,t}=match;
+  const chosen=t.arm==='balanced'?t.normalGame:t.alternativeGame;
+  if(s.id!==row.sessionId||dateKey(s.start)!==row.day||t.arm!==row.arm||t.category!==row.category||chosen!==row.game||
+    !Array.isArray(s.provenanceLocked?.exercises)||
+    s.provenanceLocked.exercises.filter(x=>x?.id===row.exerciseId&&x.dc47TrialId===row.trialId&&x.name===chosen).length!==1){
+   out.excluded.identityMismatch=(out.excluded.identityMismatch||0)+1;continue;
+  }
   if(now-s.start<28*DAY){out.excluded.immature++;continue}
   const pair=[t.normalGame,t.alternativeGame].sort();
-  mapped.push({...row,at:s.start,pairKey:row.category+'|'+pair.join('|'),normalGame:t.normalGame,alternativeGame:t.alternativeGame,trialId:t.id});
+  mapped.push({...row,at:s.start,pairKey:row.category+'|'+pair.join('|'),normalGame:t.normalGame,alternativeGame:t.alternativeGame});
  }
  const groups=new Map();
  for(const r of mapped){const key=r.pairKey+'||'+r.metric;
@@ -5323,6 +5473,194 @@ function dc49ArmComparisons(player=data,now=Date.now()){
  out.excluded.noExactMetric=Math.max(0,mapped.length-[...groups.values()].reduce((s,items)=>s+items.length,0));
  return out;
 }
+/* V5.52: Read-only adversarial quality audit. Exposes recorded reasons why
+   an apparently qualified V5.49 comparison may be confounded. This is NOT
+   a fatigue detector or causal estimator, and never changes coaching. */
+function dc52QualityAudit(player=data,now=Date.now()){
+ const DAY=86400000, base=dc49ArmComparisons(player,now), source=dc48OutcomeReadiness(player,now);
+ const out={qualifiedGroups:base.qualifiedGroups,covered:base.covered,reviewed:0,cleanObserved:0,flagged:0,
+  flags:{competingTrial:0,extraSession:0,unequalWorkload:0,incompleteWorkload:0,missingWorkload:0,otherTraining:0},
+  trials:[],autoPreference:false,trainingChanges:0,causalEligible:false,
+  unknown:['Fatigue, sleep, stress and illness are not directly measured by this audit.',
+    'Benchmark conditions and unrecorded practice cannot be verified.',
+    'Observational performance differences cannot be attributed to a single exercise.']};
+ const sessions=(player?.sessions||[]).filter(s=>s&&Number.isFinite(s.start)&&s.start<=now);
+ const trials=new Map(),ambiguous=new Set();
+ for(const s of sessions){const t=s.wholeSessionAudit?.unified?.exploration?.trial;
+  if(!t||typeof t.id!=='string'||!t.id)continue;
+  if(trials.has(t.id))ambiguous.add(t.id);else trials.set(t.id,{s,t});
+ }
+ const qualified=new Set(base.groups.filter(g=>g.qualified).map(g=>g.category+'|'+[g.normalGame,g.alternativeGame].sort().join('|')+'||'+g.metric));
+ const considered=source.records.filter(r=>{
+  const entry=trials.get(r.trialId);if(!entry||ambiguous.has(r.trialId))return false;
+  const t=entry.t;return qualified.has(r.category+'|'+[t.normalGame,t.alternativeGame].sort().join('|')+'||'+r.metric);
+ });
+ for(const r of considered){
+  const {s,t}=trials.get(r.trialId),local=[];
+  const episode=(s.activities||[]).filter(a=>a?.exerciseId===r.exerciseId&&a?.name===r.game);
+  const allocation=(s.provenanceLocked?.exercises||[]).find(x=>x?.id===r.exerciseId&&x.dc47TrialId===r.trialId);
+  const planned=Number(allocation?.seconds),actual=Number(episode[0]?.seconds);
+  if(!Number.isFinite(planned)||planned<300||!Number.isFinite(actual)||actual<300||episode.length!==1)local.push('missingWorkload');
+  else if(Math.abs(actual-planned)>Math.max(60,planned*.15))local.push('incompleteWorkload');
+  // Another prospective assignment in the +/- 28 day observation span
+  // prevents interpreting the result as isolated exposure to this choice.
+  const nearby=sessions.filter(z=>z.id!==s.id&&Math.abs(z.start-s.start)<=28*DAY);
+  if(nearby.some(z=>z.wholeSessionAudit?.unified?.exploration?.trial))local.push('competingTrial');
+  if(nearby.some(z=>z.extra===true&&z.completed===true))local.push('extraSession');
+  // Other training in the same period is expected. It means isolation is
+  // impossible, not that balanced practice is wrong.
+  const extraMinutes=nearby.reduce((n,z)=>n+(z.activities||[]).reduce((m,a)=>m+(Number.isFinite(a.seconds)&&a.seconds>0?a.seconds:0),0),0)/60;
+  if(extraMinutes>0)local.push('otherTraining');
+  const row={trialId:r.trialId,arm:r.arm,day:r.day,metric:r.metric,plannedSeconds:Number.isFinite(planned)?planned:null,
+   actualSeconds:Number.isFinite(actual)?actual:null,otherRecordedMinutes:Math.round(extraMinutes),flags:local};
+  out.trials.push(row);out.reviewed++;
+  if(local.some(f=>f!=='otherTraining'))out.flagged++;else out.cleanObserved++;
+  for(const f of local)out.flags[f]++;
+ }
+ // Compare actual duration of the chosen training arm, without pretending
+ // similarly named games automatically impose equivalent workload.
+ const byPair=new Map();
+ for(const r of out.trials){const p=trials.get(r.trialId),t=p?.t;if(!t)continue;
+  const key=t.category+'|'+[t.normalGame,t.alternativeGame].sort().join('|')+'||'+r.metric;
+  const g=byPair.get(key)||{balanced:[],alternative:[]};
+  if(Number.isFinite(r.actualSeconds))g[r.arm].push(r.actualSeconds);
+  byPair.set(key,g);
+ }
+ for(const g of byPair.values()){
+  if(!g.balanced.length||!g.alternative.length)continue;
+  const avg=a=>a.reduce((x,y)=>x+y,0)/a.length;
+  const a=avg(g.balanced),b=avg(g.alternative);
+  if(Math.abs(a-b)>Math.max(60,.15*((a+b)/2)))out.flags.unequalWorkload++;
+ }
+ out.flaggedReasons=Object.entries(out.flags).filter(([k,v])=>v>0);
+ // All cases remain observational, even when no recorded red flags exist.
+ return out;
+}
+/* V5.53: READ-ONLY reliability and secondary-skill protection audit.
+   Does not infer causation or create an automatic game preference. */
+function dc53ReliabilityWatch(player=data,now=Date.now()){
+ const DAY=86400000,arm=dc49ArmComparisons(player,now),quality=dc52QualityAudit(player,now);
+ const out={groups:[],qualified:0,fragile:0,consistent:0,insufficient:0,secondaryMeasured:0,
+  secondaryUnknown:0,trainingChanges:0,autoPreference:false,causalEligible:false};
+ const sess=(player?.sessions||[]).filter(s=>s&&Number.isFinite(s.id)&&Number.isFinite(s.start)&&s.start<=now);
+ const sessionIds=new Map();const episodeIds=new Map();
+ for(const s of sess){if(sessionIds.has(s.id))sessionIds.set(s.id,null);else sessionIds.set(s.id,s);
+  for(const x of s.provenanceLocked?.exercises||[]){if(!x?.id)continue;
+   if(episodeIds.has(x.id)){episodeIds.set(x.id,null);continue}
+   const match=(s.activities||[]).filter(a=>a?.exerciseId===x.id&&a.name===x.name&&Number.isFinite(a.seconds)&&a.seconds>=300);
+   episodeIds.set(x.id,{s,x,valid:s.completed===true&&match.length===1});
+  }
+ }
+ // Build separately verified daily measures. Do not assume a scoring visit
+ // identifies a target hit; do not combine unrelated targets or difficulties.
+ const measured=[];
+ const add=(key,skill,g,n,d)=>{if(Number.isFinite(n)&&Number.isFinite(d)&&d>0&&n>=0&&n<=d)
+  measured.push({key,skill,day:dateKey(g.at),at:g.at,rate:n/d,weight:d});};
+ for(const g of player?.games||[]){
+  if(!g||g.completion!=='natural'||g.quick||g.recovery||g.challengeTuning||!Number.isFinite(g.at)||g.at>now||g.at<now-630*DAY||!g.exerciseId)continue;
+  const ep=episodeIds.get(String(g.exerciseId));
+  if(!ep?.valid||ep.s!==sessionIds.get(g.sessionId)||ep.x.name!==g.name||g.at<ep.s.start)continue;
+  const tier=Number.isInteger(g.tierAtStart)&&g.tierAtStart>=1&&g.tierAtStart<=7?g.tierAtStart:null;
+  if(g.name==='Scoring Challenge'&&g.visits===10&&Array.isArray(g.scores)&&g.scores.length===10&&g.scores.every(n=>Number.isInteger(n)&&n>=0&&n<=180))
+   add('scoring|Scoring Challenge|10 visits','scoring',g,g.scores.reduce((a,b)=>a+b,0),1800);
+  else if(g.name==='Bull Accuracy'&&g.thrown===30&&Number.isInteger(g.outer)&&Number.isInteger(g.inner)&&g.outer>=0&&g.inner>=0&&g.outer+g.inner<=30)
+   add('bull|Bull Accuracy|30 darts','bull',g,g.outer+g.inner,30);
+  else if(tier!==null&&g.name==='Checkout Climb'&&Array.isArray(g.attemptLog)){
+   const bins=new Map();for(const r of g.attemptLog){if(!r||!Number.isInteger(r.target)||r.target<2||r.target>170||(r.hit!==0&&r.hit!==1))continue;
+    const k='checkout|Checkout Climb|tier '+tier+'|target '+r.target;const v=bins.get(k)||{n:0,d:0};v.n+=r.hit;v.d++;bins.set(k,v)}
+   for(const [k,v] of bins)add(k,'checkout',g,v.n,v.d);
+  }else if(tier!==null&&['Doubles Survival','Doubles Streak','Dartboard Bingo'].includes(g.name)&&Array.isArray(g.targetLog)&&(g.name==='Dartboard Bingo'||g.variant==='doubles')){
+   const bins=new Map();for(const r of g.targetLog){if(!r||r.ring!=='D'||!Number.isInteger(r.target)||r.target<1||r.target>20||typeof r.hit!=='boolean')continue;
+    const k='doubles|'+g.name+'|'+(g.variant||'fixed')+'|tier '+tier+'|D'+r.target;const v=bins.get(k)||{n:0,d:0};v.n+=Number(r.hit);v.d++;bins.set(k,v)}
+   for(const [k,v] of bins)add(k,'doubles',g,v.n,v.d);
+  }
+ }
+ const allMetrics=[...new Set(measured.map(m=>m.key))];
+ for(const g of arm.groups.filter(x=>x.qualified)){
+  out.qualified++;
+  // The qualified V5.49 aggregate is observational. Its two-arm means are
+  // NOT treated as independently validated advantages.
+  const assignments=new Map(sess.filter(s=>s.wholeSessionAudit?.unified?.exploration?.trial).map(s=>[s.wholeSessionAudit.unified.exploration.trial.id,s]));
+  const source=dc48OutcomeReadiness(player,now).records.filter(r=>{
+   const trial=assignments.get(r.trialId)?.wholeSessionAudit?.unified?.exploration?.trial;
+   return r.metric===g.metric&&r.category===g.category&&trial&&
+    [trial.normalGame,trial.alternativeGame].sort().join('|')===[g.normalGame,g.alternativeGame].sort().join('|')&&
+    r.game===(r.arm==='balanced'?g.normalGame:g.alternativeGame);
+  }).sort((x,y)=>x.day.localeCompare(y.day));
+  const pick=[];for(const r of source){const day=Date.parse(r.day+'T12:00:00Z');
+   if(!pick.length||day-Date.parse(pick[pick.length-1].day+'T12:00:00Z')>=56*DAY)pick.push(r);
+  }
+  const b=pick.filter(r=>r.arm==='balanced').sort((a,c)=>a.day.localeCompare(c.day));
+  const a=pick.filter(r=>r.arm==='alternative').sort((x,y)=>x.day.localeCompare(y.day));
+  // New check is conservative: four observations per arm are required before
+  // leave-one-out checks, even if the older descriptive audit qualifies.
+  const enough=b.length>=4&&a.length>=4;
+  let robust=false,range=null;
+  if(enough){
+   const avg=v=>v.reduce((s,x)=>s+x.observedChange,0)/v.length;
+   const diffs=[avg(a)-avg(b)];
+   for(let i=0;i<a.length;i++)diffs.push(avg(a.filter((_,j)=>j!==i))-avg(b));
+   for(let i=0;i<b.length;i++)diffs.push(avg(a)-avg(b.filter((_,j)=>j!==i)));
+   range=[Math.min(...diffs),Math.max(...diffs)];
+   robust=range[0]>0||range[1]<0;
+  }
+  if(!enough)out.insufficient++;else if(robust)out.consistent++;else out.fragile++;
+  // Secondary-skill guard: compare equivalent measurements on distinct pre
+  // and post days, WITHOUT claiming the trial caused the change. If one
+  // secondary skill lacks valid measurements, protection remains UNKNOWN.
+  const anchor=pick.map(r=>sess.find(s=>s.id===r.sessionId)?.start).filter(Number.isFinite);
+  const secondary={};
+  for(const skill of ['scoring','doubles','checkout','bull'].filter(x=>x!==g.category)){
+   let best=null;
+   for(const key of allMetrics.filter(k=>k.startsWith(skill+'|'))){
+    const pre=new Map(),post=new Map();
+    for(const t of anchor)for(const m of measured){if(m.key!==key)continue;
+     if(m.at>=t-28*DAY&&m.at<t-DAY){const v=pre.get(m.day)||{num:0,den:0};v.num+=m.rate*m.weight;v.den+=m.weight;pre.set(m.day,v)}
+     if(m.at>t+DAY&&m.at<=t+28*DAY){const v=post.get(m.day)||{num:0,den:0};v.num+=m.rate*m.weight;v.den+=m.weight;post.set(m.day,v)}
+    }
+    if(pre.size<2||post.size<2)continue;
+    const daily=map=>[...map.values()].map(v=>v.num/v.den);
+    const x=daily(pre),y=daily(post),mean=z=>z.reduce((q,v)=>q+v,0)/z.length;
+    const candidate={metric:key,beforeDays:pre.size,afterDays:post.size,observedChange:mean(y)-mean(x)};
+    if(!best||Math.min(candidate.beforeDays,candidate.afterDays)>Math.min(best.beforeDays,best.afterDays))best=candidate;
+   }
+   secondary[skill]=best||{status:'unknown'};
+   if(best)out.secondaryMeasured++;else out.secondaryUnknown++;
+  }
+  out.groups.push({category:g.category,normalGame:g.normalGame,alternativeGame:g.alternativeGame,metric:g.metric,
+   normalN:b.length,alternativeN:a.length,reliableSample:enough,leaveOneOutStable:robust,leaveOneOutRange:range,
+   secondary,warning:'Secondary observations are not controlled effects; fatigue and benchmark conditions remain unmeasured.'});
+ }
+ return out;
+}
+function dc53RenderReliability(){
+ const host=$('dc53ReliabilityWatch');if(!host)return;
+ const r=dc53ReliabilityWatch();
+ const rows=r.groups.slice(0,5).map(g=>{
+  const status=!g.reliableSample?'Too few trials for stability checks':g.leaveOneOutStable?'Direction survives leave-one-out (not proof)':'Direction changes when one trial is removed';
+  const other=Object.entries(g.secondary).map(([skill,v])=>skill+': '+(v.status==='unknown'?'not enough equivalent before/after measurements':
+   'observed '+(v.observedChange>=0?'+':'')+(v.observedChange*100).toFixed(1)+' percentage points, not attributable')).join(' · ');
+  return '<div class="entry"><strong>'+esc(g.category)+' · '+esc(g.normalGame)+' / '+esc(g.alternativeGame)+'</strong><p class="secondarySub">'+esc(status)+' · '+g.normalN+' normal / '+g.alternativeN+' alternative observations</p><p class="secondarySub">Other skills: '+esc(other)+'</p></div>';
+ }).join('');
+ host.innerHTML='<div class="kpiGrid"><div class="kpi"><strong>'+r.qualified+'</strong><small>Previously qualified descriptive pairs</small></div><div class="kpi"><strong>'+r.consistent+'</strong><small>Direction survives one-out removal</small></div><div class="kpi"><strong>'+r.secondaryUnknown+'</strong><small>Missing secondary skill checks</small></div></div>'+
+ (rows||'<p class="muted">Not enough independent controlled trials yet. Normal balanced coaching continues.</p>')+
+ '<p class="secondarySub">Requires at least four observations per arm for a basic stability check; repeated overlapping measurements are not independent. Other-skill trends are descriptive only. Neither a stable direction nor the absence of a recorded decline proves a benefit or safety. No exercise preferences or training durations change.</p>';
+}
+function dc52RenderQualityAudit(){
+ const el=$('dc52QualityAudit');if(!el)return;
+ const r=dc52QualityAudit();
+ const labels={competingTrial:'Another prospective trial within 28 days',extraSession:'Extra recorded training in the observation window',
+  unequalWorkload:'Different recorded durations between trial arms',incompleteWorkload:'Completed duration differs from allocation',
+  missingWorkload:'Missing or invalid planned/completed time',otherTraining:'Other recorded practice in the observation window'};
+ let reasons=r.flaggedReasons.filter(([k,v])=>k!=='otherTraining').map(([k,v])=>'<div class="statLine"><span>'+esc(labels[k]||k)+'</span><strong>'+v+'</strong></div>').join('');
+ el.innerHTML='<div class="kpiGrid"><div class="kpi"><strong>'+r.qualifiedGroups+'</strong><small>Earlier descriptive comparisons</small></div>'+
+  '<div class="kpi"><strong>'+r.reviewed+'</strong><small>Trial observations reviewed</small></div>'+
+  '<div class="kpi"><strong>'+r.flagged+'</strong><small>With recorded caution flags</small></div></div>'+
+  (reasons?'<div class="entry">'+reasons+'</div>':'<p class="muted">No specific recorded risk flags found. This is not proof of absence of bias.</p>')+
+  '<p class="secondarySub">Other recorded training in follow-up windows: '+r.flags.otherTraining+' observations (normal for balanced training, not automatically a warning).</p>'+
+  '<div class="info"><strong>Unknowns remain unknown</strong><p class="secondarySub">'+r.unknown.map(esc).join(' ')+'</p></div>'+
+  '<p class="secondarySub">Checks rely on saved sessions and durations only. Counts can overlap. Ordinary balanced practice is not a defect. No game is declared better and no training decision is changed.</p>';
+}
 function dc49RenderArmComparisons(){
  const host=$('dc49ArmComparisons');if(!host)return;
  const r=dc49ArmComparisons();
@@ -5336,7 +5674,7 @@ function dc49RenderArmComparisons(){
   '<div class="kpi"><strong>'+r.excluded.overlap+'</strong><small>Overlapping trial windows excluded</small></div></div>'+
   '<p class="secondarySub">Only completed prospective assignments with the exact same benchmark are eligible. The audit excludes trials younger than 28 days, overlapping 56-day observation spans, and comparisons without repeated assignments to both choices.</p>'+
   (tiles?'<div class="skillGrid">'+tiles+'</div>':'<p class="muted">Not enough repeated independent normal/alternative assignments yet. Balanced coaching continues as usual.</p>')+
-  '<p class="secondarySub">Trials awaiting a complete follow-up window: '+r.excluded.immature+'. Missing an independent arm: '+r.excluded.oneArm+'. Too few observations: '+r.excluded.tooFew+'. Chronologically unbalanced: '+r.excluded.temporal+'.</p>'+
+  '<p class="secondarySub">Trials awaiting a complete follow-up window: '+r.excluded.immature+'. Missing an independent arm: '+r.excluded.oneArm+'. Too few observations: '+r.excluded.tooFew+'. Chronologically unbalanced: '+r.excluded.temporal+'. Ambiguous trial identities: '+r.excluded.ambiguousIdentity+'. Identity mismatches: '+r.excluded.identityMismatch+'.</p>'+
   '<div class="info"><strong>No game winner or automatic training change</strong><p class="secondarySub">Even repeated apparent differences may reflect overlapping practice, selection effects, fatigue and natural improvement. This comparison remains observational. It does not change schedules, tiers, focus minutes or game selection.</p></div>';
 }
 function dc48RenderOutcomeReadiness(){
@@ -5709,7 +6047,7 @@ function dc23RenderMasteryProgress(){
 function renderProgress(){
  const minutes=data.sessions.reduce((a,s)=>a+num(s.minutes),0);
  $("progressSummary").innerHTML='<div class="kpiGrid"><div class="kpi"><strong>'+data.sessions.length+'</strong><small>Sessions</small></div><div class="kpi"><strong>'+data.games.length+'</strong><small>Games</small></div><div class="kpi"><strong>'+Math.round(minutes)+'</strong><small>Minutes</small></div></div>';
- renderSkillOverview();dc34RenderPracticeSnapshot();dc35RenderEvidenceLedger();dc43RenderReadiness();dc44RenderTrainingTrace();dc45RenderEpisodeAudit();dc46RenderFollowups();dc47RenderTrialAudit();dc48RenderOutcomeReadiness();dc49RenderArmComparisons();renderTrend();renderWeeklyReview();renderMonthlyReport();dc23RenderMasteryProgress();
+ renderSkillOverview();dc34RenderPracticeSnapshot();dc35RenderEvidenceLedger();dc43RenderReadiness();dc44RenderTrainingTrace();dc45RenderEpisodeAudit();dc46RenderFollowups();dc47RenderTrialAudit();dc48RenderOutcomeReadiness();dc49RenderArmComparisons();dc52RenderQualityAudit();dc53RenderReliability();dc55RenderTwoSpeed();renderTrend();renderWeeklyReview();renderMonthlyReport();dc23RenderMasteryProgress();
  const big=(data.bigSingles||[]).filter(x=>x.complete);
  if(big.length){const latest=big[big.length-1],prev=big.length>=2?big[big.length-2]:null;
   $("singlesProgress").innerHTML='<div class="big">'+num(latest.hits)+'/60</div><p class="center">'+(num(latest.hits)/60*100).toFixed(1)+'% large-single accuracy'+(prev?' · Previous '+num(prev.hits)+'/60':'')+'</p><p class="secondarySub">'+esc(latest.day||'')+'</p><details><summary class="pill">View results by number</summary><div class="targetGrid">'+(latest.perNumber||[]).map((n,i)=>'<div>'+(i+1)+'<strong>'+num(n)+'/3</strong></div>').join('')+'</div></details>';
