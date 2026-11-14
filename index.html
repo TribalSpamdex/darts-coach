@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.61.0</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.65.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -714,7 +714,7 @@ button:focus-visible,.quickTile:focus-visible{outline:3px solid var(--green);out
   <p class="muted" style="font-size:12px">This gives an immediate approximate starting level. Doubles, checkouts and bull are estimates, not measured results. Training evidence refines each separately.</p>
   <button type="button" class="primary" style="width:100%" onclick="applyQuickRecalibration()">Apply Starting Average</button>
  </div>
-</div><div id="trainSession" class="hidden"><div class="card"><div class="statLine"><span id="sessionType">Training Session</span><span id="sessionStepLabel">Exercise 1</span></div><div class="big" id="sessionClock">60:00</div><div class="progress"><div id="sessionBar"></div></div></div><div class="card" id="exercisePanel"><h2 id="exerciseName">Warm-up</h2><div class="statLine"><span id="exerciseTimeLabel">Exercise time</span><span id="exerciseClock">10:00</span></div><div class="progress"><div id="exerciseBar"></div></div><div class="rulePanel"><div class="rule" id="exerciseRules"></div></div><div id="exerciseIntro" class="hidden"><h3>HOW TO PLAY</h3><div id="introTitle" class="instruction"></div><div id="introRules" class="instruction"></div><button onclick="playExercise()">Play</button></div><div id="exerciseDone" class="hidden"><h3>EXERCISE COMPLETE</h3><div id="doneSummary" class="instruction"></div><button id="nextExerciseButton" onclick="nextExercise()">Next Exercise</button></div><div id="playArea"><div id="roundFlash">ROUND 1</div><div class="big" id="gameTarget">Ready</div><div id="dc22Danger" class="dc22Danger hidden" role="status" aria-live="off"><div class="dc36PressureCount"><strong>0</strong><small>REMAINING</small></div><div class="dc36PressureCopy"><span>DARTS LEFT</span><em id="dc36PressureMessage">STAY SHARP</em></div><div class="dc36PressureTrack" aria-hidden="true"><i id="dc36PressureFill"></i></div></div><p id="gameProgress"></p><div id="straightDisplay" class="hidden"></div><div id="miniMetrics"></div><div id="gameControls"></div></div><div class="row" id="undoRow"><button class="secondary" id="undoButton" onclick="undoGame()">Undo</button></div><button class="primary" id="completeButton" onclick="completeExercise('manual')">Complete Exercise</button></div><div class="card" id="sessionFooter"><button class="secondary" onclick="pauseSession()" id="pauseButton">Pause Session</button><button class="secondary rhythmFooter" type="button"  aria-label="Open Rhythm Coach"><svg class="metronomeIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg><span>Rhythm</span></button><button class="linklike" onclick="finishSessionEarly()">End Session</button></div></div><div id="roundAnnouncement" class="hidden" aria-live="polite"><div id="roundAnnouncementCard"><div id="roundAnnouncementTitle">ROUND 2</div><div id="roundAnnouncementPrevious"></div></div></div><div id="sessionFinished" class="card hidden"><div class="resultCard"><strong>Training Complete</strong><p>Session recorded.</p></div><p id="finishedText" class="center"></p><div id="sessionCoachReport" class="coachReport"></div><button class="primary" onclick="finishView()">Done</button><button class="secondary" style="width:100%;margin-top:8px" onclick="beginTraining(true)">Extra Training Session</button></div></section>
+</div><div id="trainSession" class="hidden"><div class="card"><div class="statLine"><span id="sessionType">Training Session</span><span id="sessionStepLabel">Exercise 1</span></div><div class="big" id="sessionClock">60:00</div><div class="progress"><div id="sessionBar"></div></div></div><div class="card" id="exercisePanel"><h2 id="exerciseName">Warm-up</h2><div class="statLine"><span id="exerciseTimeLabel">Exercise time</span><span id="exerciseClock">10:00</span></div><div class="progress"><div id="exerciseBar"></div></div><div class="rulePanel"><div class="rule" id="exerciseRules"></div></div><div id="exerciseIntro" class="hidden"><h3>HOW TO PLAY</h3><div id="introTitle" class="instruction"></div><div id="introRules" class="instruction"></div><button onclick="playExercise()">Play</button></div><div id="exerciseDone" class="hidden"><h3>EXERCISE COMPLETE</h3><div id="doneSummary" class="instruction"></div><button id="dc65FixBenchmark" class="secondary hidden" type="button" onclick="dc65CorrectFinalSinglesDart()">Correct final dart</button><button id="nextExerciseButton" onclick="nextExercise()">Next Exercise</button></div><div id="playArea"><div id="roundFlash">ROUND 1</div><div class="big" id="gameTarget">Ready</div><div id="dc22Danger" class="dc22Danger hidden" role="status" aria-live="off"><div class="dc36PressureCount"><strong>0</strong><small>REMAINING</small></div><div class="dc36PressureCopy"><span>DARTS LEFT</span><em id="dc36PressureMessage">STAY SHARP</em></div><div class="dc36PressureTrack" aria-hidden="true"><i id="dc36PressureFill"></i></div></div><p id="gameProgress"></p><div id="straightDisplay" class="hidden"></div><div id="miniMetrics"></div><div id="gameControls"></div></div><div class="row" id="undoRow"><button class="secondary" id="undoButton" onclick="undoGame()">Undo</button></div><button class="primary" id="completeButton" onclick="completeExercise('manual')">Complete Exercise</button></div><div class="card" id="sessionFooter"><button class="secondary" onclick="pauseSession()" id="pauseButton">Pause Session</button><button class="secondary rhythmFooter" type="button"  aria-label="Open Rhythm Coach"><svg class="metronomeIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg><span>Rhythm</span></button><button class="linklike" onclick="finishSessionEarly()">End Session</button></div></div><div id="roundAnnouncement" class="hidden" aria-live="polite"><div id="roundAnnouncementCard"><div id="roundAnnouncementTitle">ROUND 2</div><div id="roundAnnouncementPrevious"></div></div></div><div id="sessionFinished" class="card hidden"><div class="resultCard"><strong>Training Complete</strong><p>Session recorded.</p></div><p id="finishedText" class="center"></p><div id="sessionCoachReport" class="coachReport"></div><button class="primary" onclick="finishView()">Done</button><button class="secondary" style="width:100%;margin-top:8px" onclick="beginTraining(true)">Extra Training Session</button></div></section>
 <section id="quick" class="hidden">
  <div class="card"><h2>Quick Play</h2><p class="muted">Choose any challenge and how long you want to play. Your current coaching levels set the difficulty automatically.</p>
  <div id="quickIntro" class="info">Quick Play is separate from scheduled training. Complete the full assessment or choose Quick Start to unlock suitable starting difficulty.</div>
@@ -770,7 +770,7 @@ button:focus-visible,.quickTile:focus-visible{outline:3px solid var(--green);out
 <div id="progressSummary"></div>
 </div>
 <div class="card"><h2>Skill Performance</h2><div id="skillOverview"></div></div><div class="card"><h2>Early Practice Evidence</h2><div id="earlyPracticeSummary"></div></div><div class="card"><h2>Recorded Skill Measurements</h2><p class="dashIntro">What the games actually measured. These are practice observations, not independent coaching benchmarks.</p><div id="dc35EvidenceLedger"></div></div>
-<div class="card"><h2>Training → Results Trace</h2><p class="dashIntro">What was selected, what was actually completed, and whether comparable results exist afterwards. Observational only: never a claim that the training caused a change.</p><div id="dc44TrainingTrace"></div><h3>Exercise Provenance</h3><div id="dc45EpisodeAudit"></div><h3>Comparable Follow-up Evidence</h3><div id="dc46FollowupEvidence"></div><h3>Coach Learning Trials</h3><div id="dc47TrialAudit"></div><h3>Trial Outcome Readiness</h3><div id="dc48OutcomeReadiness"></div><h3>Controlled Arm Comparisons</h3><div id="dc49ArmComparisons"></div><h3>Comparison Quality &amp; Interference</h3><div id="dc52QualityAudit"></div><h3>Reliability &amp; Cross-Skill Watch</h3><div id="dc53ReliabilityWatch"></div><h3>Two-Speed Coaching</h3><div id="dc55TwoSpeedCoach"></div></div><div class="card"><h2>Coach Evidence Readiness</h2><p class="dashIntro">Read-only audit of measurements actually recorded. The coach does not start experiments or add focus time from this panel.</p><div id="dc43Readiness"></div></div><div class="card"><h2>Improvement Trends</h2><p class="dashIntro">Compare equivalent completed exercises over time.</p>
+<div class="card"><h2>Secondary Evidence Map</h2><p class="dashIntro">Extra recorded observations from existing games, separated by the exact target and rules. This is a research audit, not a second benchmark or a reason to change training.</p><div id="dc63EvidenceMap"></div></div><div class="card"><h2>Training → Results Trace</h2><p class="dashIntro">What was selected, what was actually completed, and whether comparable results exist afterwards. Observational only: never a claim that the training caused a change.</p><div id="dc44TrainingTrace"></div><h3>Exercise Provenance</h3><div id="dc45EpisodeAudit"></div><h3>Comparable Follow-up Evidence</h3><div id="dc46FollowupEvidence"></div><h3>Coach Learning Trials</h3><div id="dc47TrialAudit"></div><h3>Trial Outcome Readiness</h3><div id="dc48OutcomeReadiness"></div><h3>Controlled Arm Comparisons</h3><div id="dc49ArmComparisons"></div><h3>Comparison Quality &amp; Interference</h3><div id="dc52QualityAudit"></div><h3>Reliability &amp; Cross-Skill Watch</h3><div id="dc53ReliabilityWatch"></div><h3>Two-Speed Coaching</h3><div id="dc55TwoSpeedCoach"></div></div><div class="card"><h2>Coach Evidence Readiness</h2><p class="dashIntro">Read-only audit of measurements actually recorded. The coach does not start experiments or add focus time from this panel.</p><div id="dc43Readiness"></div></div><div class="card"><h2>Improvement Trends</h2><p class="dashIntro">Compare equivalent completed exercises over time.</p>
 <div id="trendPicker" class="chartToolbar"></div>
 <div id="trendChart"></div></div>
 <div class="card"><h2>Darts Mastery</h2><p class="dashIntro">Your focused practice across every major darts skill, measured separately from standard benchmarks.</p><div id="dc23MasteryProgress"></div></div><div class="card"><h2>Daily Big Singles</h2><div id="singlesProgress"></div></div>
@@ -1161,11 +1161,11 @@ function dc5CheckoutEvidence(g){
 function skillSamples(){const result={scoring:[],doubles:[],checkout:[],bull:[]};for(const g of data.games){const time=gameTime(g);if(!time||g.completion==="manual")continue;
   if(!quickEvidenceEligible(g))continue;
 if(g.benchmark===false&&!(["Scoring Survival","Scoring Ladder","Outside Doubles","Double Double"].includes(g.name)&&g.completion==="natural"))continue;
- if(g.name==="Scoring Challenge"&&num(g.visits)>=10&&num(g.points)>=0&&num(g.points)<=180*num(g.visits))result.scoring.push({time,points:num(g.points),volume:num(g.visits),id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
+ if(g.name==="Scoring Challenge"&&Number.isInteger(g.visits)&&g.visits===10&&Number.isInteger(g.points)&&g.points>=0&&g.points<=1800)result.scoring.push({time,points:num(g.points),volume:num(g.visits),id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
  if(["Scoring Survival","Scoring Ladder"].includes(g.name)&&num(g.visits)>=3&&g.completion==="natural"&&num(g.points)>=0&&num(g.points)<=180*num(g.visits))result.scoring.push({time,points:num(g.points),volume:num(g.visits),id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
  if(g.name==="Doubles Survival"&&g.variant!=="singles"&&num(g.thrown)>0&&num(g.hits)>=0&&num(g.hits)<=num(g.thrown))result.doubles.push({time,hits:num(g.hits),volume:num(g.thrown),id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
  if(["Outside Doubles","Double Double"].includes(g.name)&&num(g.thrown)>0&&g.completion==="natural"&&num(g.hits)>=0&&num(g.hits)<=num(g.thrown))result.doubles.push({time,hits:num(g.hits),volume:num(g.thrown),id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
- if(g.name==="Checkout Climb"&&num(g.success)>=0&&num(g.fail)>=0&&num(g.success)+num(g.fail)>0){
+ if(g.name==="Checkout Climb"&&Number.isInteger(g.success)&&Number.isInteger(g.fail)&&g.success>=0&&g.fail>=0&&g.success+g.fail>0&&(!Array.isArray(g.attemptLog)||g.attemptLog.length===0||g.attemptLog.length===g.success+g.fail)){
   const volume=num(g.success)+num(g.fail), adjusted=dc5CheckoutEvidence(g);
   // Older sessions have no difficulty log. Retain their original evidence
   // rather than inventing the targets they attempted or changing their weight.
@@ -1173,7 +1173,7 @@ if(g.benchmark===false&&!(["Scoring Survival","Scoring Ladder","Outside Doubles"
   result.checkout.push({time,hits:(adjusted?.logged?adjusted.rate*volume:num(g.success))*quality,
    volume:volume*quality,id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
  }
- if(g.name==="Bull Accuracy"&&num(g.thrown)>=30&&num(g.outer)>=0&&num(g.inner)>=0&&num(g.outer)+num(g.inner)<=num(g.thrown))result.bull.push({time,hits:num(g.outer)+num(g.inner),inner:num(g.inner),volume:num(g.thrown),id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
+ if(g.name==="Bull Accuracy"&&Number.isInteger(g.thrown)&&g.thrown===30&&Number.isInteger(g.outer)&&Number.isInteger(g.inner)&&g.outer>=0&&g.inner>=0&&g.outer+g.inner<=30&&(!Object.prototype.hasOwnProperty.call(g,"misses")||(Number.isInteger(g.misses)&&g.misses>=0&&g.misses+g.outer+g.inner===30)))result.bull.push({time,hits:num(g.outer)+num(g.inner),inner:num(g.inner),volume:num(g.thrown),id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
  }return result}
 function quickWeight(g){if(!g.quick)return 1;const row=data.sessions.find(x=>x.quick&&x.id===g.sessionId&&x.completed);const m=row?num(row.minutes):0;return m>=30?.75:m>=20?.55:m>=15?.4:0}
 function dailySamples(rows){const groups=new Map();for(const r of rows){const day=dateKey(r.time);if(!groups.has(day))groups.set(day,{day,time:r.time,hits:0,inner:0,points:0,volume:0,quickVolume:0});const d=groups.get(day);let weight=r.quick?num(r.weight):1;if(r.quick){const remaining=Math.max(0,35-d.quickVolume);const take=Math.min(remaining,num(r.volume));d.quickVolume+=take;weight*=num(r.volume)?take/num(r.volume):0}d.hits+=num(r.hits)*weight;d.inner+=num(r.inner)*weight;d.points+=num(r.points)*weight;d.volume+=r.volume*weight;d.time=Math.max(d.time,r.time)}return[...groups.values()].sort((a,b)=>a.time-b.time)}
@@ -4427,6 +4427,32 @@ function undoGame(){const s=session();if(!s||s.pausedAt||s.phase!=="playing")ret
 }
 function snapshot(){undoSnapshot=clone(activeGame);if(session())session().lastRoundUndo=null}
 function recordBig(hit){const g=activeGame,s=session();if(!g||g.name!=="Big Singles"||s.pausedAt||g.darts.length>=60)return;snapshot();g.darts.push(hit?1:0);if(hit)g.hits++;if(g.darts.length===60){data.bigSingles.push({day:dateKey(s.start),at:Date.now(),hits:g.hits,sessionId:s.id,exerciseId:currentExercise()?.provenanceId||null,perNumber:Array.from({length:20},(_,i)=>g.darts.slice(i*3,i*3+3).reduce((a,b)=>a+b,0)),complete:true});completeExercise("natural");return}data.game=g;save()}
+/* V5.65: A wrong 60th Big Singles tap must be correctable before moving on.
+   Reverse exactly this exercise's saved daily benchmark, completion and extra clock
+   before resuming at dart 60. No other game record or prior benchmark is touched. */
+function dc65CorrectFinalSinglesDart(){
+ const s=session(),g=activeGame||data.game,item=currentExercise();
+ if(!s||s.phase!=="complete"||item?.name!=="Big Singles"||g?.name!=="Big Singles"||
+    !Array.isArray(g.darts)||g.darts.length!==60||!Array.isArray(s.completed))return;
+ const complete=s.completed[s.completed.length-1];
+ if(!complete||complete.name!=="Big Singles"||complete.exerciseId!==(item.provenanceId||null))return;
+ const ix=(data.bigSingles||[]).findLastIndex(x=>x.sessionId===s.id&&
+   x.exerciseId===(item.provenanceId||null)&&x.complete===true);
+ if(ix<0)return;
+ const last=g.darts.pop();
+ if(last===1)g.hits=Math.max(0,num(g.hits)-1);
+ data.bigSingles.splice(ix,1);
+ s.completed.pop();
+ s.benchmarkSeconds=Math.max(0,num(s.benchmarkSeconds)-num(complete.benchmarkElapsedExact??complete.seconds));
+ if(s.pausedAt){s.pausedTotal+=Math.max(0,Date.now()-s.pausedAt)}
+ s.pausedAt=null;
+ s.phase="playing";
+ s.activityAccumulated=num(complete.seconds)*1000;
+ s.activityStarted=Date.now();
+ s.lastRoundUndo=null;
+ activeGame=g;data.game=g;undoSnapshot=null;
+ save();
+}
 function survivalDart(hit){const g=activeGame;if(!g||g.name!=="Doubles Survival"||session().pausedAt)return;normaliseSurvivalGame(g);snapshot();(g.targetLog||(g.targetLog=[])).push({target:g.target,hit:!!hit,ring:g.variant==="singles"?"S":"D"});g.used++;g.thrown++;if(hit){g.hits++;g.highest=Math.max(g.highest,g.target);g.lastHit=g.target;g.index++;g.used=0;if(g.index>=g.sequence.length){endRound();return}g.target=g.sequence[g.index]}else if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function doubleDart(hit){survivalDart(hit)}
 function recordScore(){const input=$("scoreInput");if(!input||input.value==="")return;const n=Number(input.value);if(!validVisit(n)){alert("Enter a valid three-dart total.");return}const g=activeGame;if(!g||g.name!=="Scoring Challenge"||session().pausedAt)return;snapshot();g.points+=n;g.visits++;g.scores.push(n);if(n===180)g.oneEighties=num(g.oneEighties)+1;padSet("");if(g.visits>=10){endRound();return}data.game=g;save()}
@@ -4589,7 +4615,7 @@ function completeExercise(completion="manual"){
   const activity=Object.entries(g).some(([key,value])=>["thrown","darts","visits","attempt","attempts","hits","fail","success","points","used","shots","entryMisses"].includes(key)&&((Array.isArray(value)&&value.length>0)||typeof value==="number"&&value>0));
   if(activity)data.games.push(gameResult(g,completion==="timed"?"partial":"manual"));
  }
- s.completed.push({name:item.name,exerciseId:item.provenanceId||null,exerciseIndex:s.index,at:Date.now(),seconds:Math.round(elapsed),rounds:s.roundsCompleted,plannedSeconds:s.provenanceLocked?.exercises?.find(x=>x.id===item.provenanceId)?.plannedSeconds??null});
+ s.completed.push({name:item.name,exerciseId:item.provenanceId||null,exerciseIndex:s.index,at:Date.now(),seconds:Math.round(elapsed),...(item.name==="Big Singles"?{benchmarkElapsedExact:elapsed}:{}),rounds:s.roundsCompleted,plannedSeconds:s.provenanceLocked?.exercises?.find(x=>x.id===item.provenanceId)?.plannedSeconds??null});
  s.activityAccumulated=elapsed*1000;s.activityStarted=null;
  s.phase="complete";s.pausedAt=Date.now();undoSnapshot=null;hideRoundAnnouncement();
  save();
@@ -4734,6 +4760,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  $("exerciseIntro").classList.toggle("hidden",phase!=="rules");
  $("exerciseDone").classList.toggle("hidden",phase!=="complete");
  $("sessionFooter").classList.toggle("hidden",phase!=="playing");
+ if(phase!=="complete")$("dc65FixBenchmark").classList.add("hidden");
  const displayTitle=g&&g.name==="Doubles Survival"&&g.variant==="singles"?"Singles Survival":e.name;
  if(phase==="rules"){
   $("introTitle").textContent=displayTitle;
@@ -4741,6 +4768,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  }else if(phase==="complete"){
   $("doneSummary").textContent=e.name==="Warm-up"?"Ten-minute warm-up complete.":e.name==="Big Singles"?"All 60 darts recorded. Your accuracy result is saved.":e.name==="Review"?"Training complete. Your session is ready to save.":s.roundsCompleted?displayTitle+" complete. "+s.roundsCompleted+" round"+(s.roundsCompleted===1?"":"s")+" saved.":displayTitle+" complete. Your exercise result has been saved.";
   $("nextExerciseButton").textContent=s.index===s.plan.length-1?"Finish Session":"Next Exercise";
+  $("dc65FixBenchmark").classList.toggle("hidden",!(e.name==="Big Singles"&&g?.darts?.length===60));
  }
  $("completeButton").classList.toggle("hidden",true);$("completeButton").disabled=!!s.pausedAt;$("undoButton").disabled=(!undoSnapshot&&!s.lastRoundUndo)||!!s.pausedAt;$("undoRow").classList.toggle("hidden",["Warm-up","Review"].includes(e.name));
  let heading="",detail="",html="",mini="";$("straightDisplay").classList.add("hidden");if(!g){$("dc22Danger").classList.add("hidden");return}
@@ -6044,10 +6072,66 @@ function dc23RenderMasteryProgress(){
  box.innerHTML='<p class="muted">Separate targets and checkout ranges are never pooled for accuracy. Confidence ranges are descriptive, not proof of skill improvement. Dart counts include only reported successful checkouts.</p>'+out.join('');
 }
 
+/* V5.63 read-only protocol evidence map. Distinguishes differing bull target rules
+   and checkout ranges. Never feeds the everyday preference or tiers. */
+function dc63SecondaryEvidence(player=data,now=Date.now()){
+ const out={bull:{red50:{rounds:0,darts:0,hits:0,days:new Set()},eitherBull:{rounds:0,darts:0,hits:0,days:new Set()},centreOnly:{rounds:0,darts:0,hits:0,days:new Set()},invalid:0},checkout:{ranges:new Map(),invalid:0},baselineBull:{rounds:0,darts:0,inner:0,outer:0,days:new Set()}};
+ for(const g of player.games||[]){
+  if(!g||g.completion!=='natural'||g.recovery||g.challengeTuning||g.quick||!Number.isFinite(g.at)||g.at>now||g.at<now-112*DAY_MS)continue;
+  const day=dateKey(g.at);
+  if(g.name==='Bull Accuracy'){
+   if(Number.isInteger(g.thrown)&&g.thrown===30&&Number.isInteger(g.inner)&&Number.isInteger(g.outer)&&g.inner>=0&&g.outer>=0&&g.inner+g.outer<=30&&(!Object.prototype.hasOwnProperty.call(g,'misses')||(Number.isInteger(g.misses)&&g.misses>=0&&g.misses+g.inner+g.outer===30))){
+    const b=out.baselineBull;b.rounds++;b.darts+=30;b.inner+=g.inner;b.outer+=g.outer;b.days.add(day);
+   }else out.bull.invalid++;
+   continue;
+  }
+  if(g.name==='Bull Streak'||g.name==='Bull Survival'){
+   const field=g.target==='50'?'red50':g.target==='25/50'?'eitherBull':g.target==='CENTRE'?'centreOnly':null;
+   if(!field||!Number.isInteger(g.thrown)||g.thrown<1||!Number.isInteger(g.hits)||g.hits<0||g.hits>g.thrown||g.thrown>1000){out.bull.invalid++;continue;}
+   const b=out.bull[field];b.rounds++;b.darts+=g.thrown;b.hits+=g.hits;b.days.add(day);continue;
+  }
+  if(g.name==='Focused Checkouts'||g.name==='Checkout Climb'){
+   if(!Array.isArray(g.attemptLog)||!g.attemptLog.length)continue;
+   if((Number.isInteger(g.attempts)&&g.attemptLog.length!==g.attempts)||
+      (Number.isInteger(g.success)&&Number.isInteger(g.fail)&&g.attemptLog.length!==g.success+g.fail)){
+      out.checkout.invalid++;continue;
+   }
+   for(const row of g.attemptLog){
+    const v=dc17ValidCheckoutAttempt(row);if(!v){out.checkout.invalid++;continue;}
+    const bucket=v.target<=40?'2–40':v.target<=60?'41–60':v.target<=80?'61–80':v.target<=100?'81–100':'101–170';
+    const key=g.name+' · '+bucket;
+    const b=out.checkout.ranges.get(key)||{source:g.name,bucket,attempts:0,hits:0,days:new Set()};
+    b.attempts++;b.hits+=v.hit?1:0;b.days.add(day);out.checkout.ranges.set(key,b);
+   }
+  }
+ }
+ const summarise=x=>({rounds:x.rounds,darts:x.darts,hits:x.hits,days:x.days.size});
+ return {bull:{red50:summarise(out.bull.red50),eitherBull:summarise(out.bull.eitherBull),centreOnly:summarise(out.bull.centreOnly),invalid:out.bull.invalid},
+  benchmark:{rounds:out.baselineBull.rounds,darts:out.baselineBull.darts,inner:out.baselineBull.inner,outer:out.baselineBull.outer,days:out.baselineBull.days.size},
+  checkout:{ranges:[...out.checkout.ranges.values()].map(x=>({source:x.source,bucket:x.bucket,attempts:x.attempts,hits:x.hits,days:x.days.size})).sort((a,b)=>a.source.localeCompare(b.source)||a.bucket.localeCompare(b.bucket)),invalid:out.checkout.invalid},
+  note:'No causal conclusions. Survival/streak optional stopping and target differences prevent direct percentage comparison with fixed benchmarks.'};
+}
+function dc63RenderEvidenceMap(){
+ const host=$('dc63EvidenceMap');if(!host)return;
+ const x=dc63SecondaryEvidence();
+ const cells=[['Fixed Bull Accuracy · 30 darts',x.benchmark.darts,x.benchmark.rounds,x.benchmark.days],
+ ['Bull survival/streak · red 50 only',x.bull.red50.darts,x.bull.red50.rounds,x.bull.red50.days],
+ ['Bull survival/streak · 25 or 50',x.bull.eitherBull.darts,x.bull.eitherBull.rounds,x.bull.eitherBull.days],
+ ['Bull survival/streak · whole centre',x.bull.centreOnly.darts,x.bull.centreOnly.rounds,x.bull.centreOnly.days]];
+ let html='<h3>Bull target definitions</h3>'+
+  cells.map(c=>'<div class="statLine"><strong>'+esc(c[0])+'</strong><span>'+c[1]+' darts · '+c[2]+' rounds · '+c[3]+' days</span></div>').join('')+
+  '<p class="secondarySub">Only the fixed 30-dart test is the standard bull benchmark. 50-only, either-bull and whole-centre targets are not interchangeable. Survival and streak rounds have different stopping rules.</p>'+
+  '<h3>Recorded checkout ranges</h3>';
+ if(!x.checkout.ranges.length)html+='<p class="muted">No valid individual checkout attempts yet. Continue normal practice.</p>';
+ else html+=x.checkout.ranges.map(c=>'<div class="statLine"><strong>'+esc(c.source+' · '+c.bucket)+'</strong><span>'+c.hits+'/'+c.attempts+' · '+c.days+' days</span></div>').join('');
+ html+='<p class="secondarySub">These are observational attempts, separated by game and target band. Different pressure settings, starting scores and stopping rules remain potential differences. Invalid or inconsistent records excluded from this map: '+(x.bull.invalid+x.checkout.invalid)+'. No game choice, training duration or hidden tier changes.</p>';
+ host.innerHTML=html;
+}
+
 function renderProgress(){
  const minutes=data.sessions.reduce((a,s)=>a+num(s.minutes),0);
  $("progressSummary").innerHTML='<div class="kpiGrid"><div class="kpi"><strong>'+data.sessions.length+'</strong><small>Sessions</small></div><div class="kpi"><strong>'+data.games.length+'</strong><small>Games</small></div><div class="kpi"><strong>'+Math.round(minutes)+'</strong><small>Minutes</small></div></div>';
- renderSkillOverview();dc34RenderPracticeSnapshot();dc35RenderEvidenceLedger();dc43RenderReadiness();dc44RenderTrainingTrace();dc45RenderEpisodeAudit();dc46RenderFollowups();dc47RenderTrialAudit();dc48RenderOutcomeReadiness();dc49RenderArmComparisons();dc52RenderQualityAudit();dc53RenderReliability();dc55RenderTwoSpeed();renderTrend();renderWeeklyReview();renderMonthlyReport();dc23RenderMasteryProgress();
+ renderSkillOverview();dc34RenderPracticeSnapshot();dc63RenderEvidenceMap();dc35RenderEvidenceLedger();dc43RenderReadiness();dc44RenderTrainingTrace();dc45RenderEpisodeAudit();dc46RenderFollowups();dc47RenderTrialAudit();dc48RenderOutcomeReadiness();dc49RenderArmComparisons();dc52RenderQualityAudit();dc53RenderReliability();dc55RenderTwoSpeed();renderTrend();renderWeeklyReview();renderMonthlyReport();dc23RenderMasteryProgress();
  const big=(data.bigSingles||[]).filter(x=>x.complete);
  if(big.length){const latest=big[big.length-1],prev=big.length>=2?big[big.length-2]:null;
   $("singlesProgress").innerHTML='<div class="big">'+num(latest.hits)+'/60</div><p class="center">'+(num(latest.hits)/60*100).toFixed(1)+'% large-single accuracy'+(prev?' · Previous '+num(prev.hits)+'/60':'')+'</p><p class="secondarySub">'+esc(latest.day||'')+'</p><details><summary class="pill">View results by number</summary><div class="targetGrid">'+(latest.perNumber||[]).map((n,i)=>'<div>'+(i+1)+'<strong>'+num(n)+'/3</strong></div>').join('')+'</div></details>';
