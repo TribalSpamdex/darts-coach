@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.79.0</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.80.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -747,6 +747,25 @@ button.primary:not(:disabled),.hero button.primary:not(:disabled){background:lin
 #checkoutDartPicker .checkoutPickerCard,.quickGameModal{background:linear-gradient(145deg,var(--dc79-surface),var(--dc79-ink))!important;border-color:var(--dc79-edge)!important;box-shadow:0 24px 70px #0009!important;border-radius:24px}
 @media(max-width:375px){.homeWelcome h2{font-size:27px}.homeWelcome{gap:6px}header .brandCopy h1{font-size:15px}header .brandCopy small{font-size:7px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}nav button,.quickTile{transition:none!important}}
+
+/* V5.80: objective first, explicit opportunities, safe compact-screen overflow. */
+#dc80Objective{flex:0 0 auto;text-align:center;padding:7px 8px;margin:3px 0;border:1px solid var(--dc79-edge);border-radius:12px;background:var(--dc79-surface);display:grid;gap:3px}
+#dc80Goal{font-size:clamp(19px,5.3vw,30px);line-height:1.12;color:var(--green);font-weight:900;letter-spacing:-.025em}
+#dc80Condition{font-size:clamp(12px,3.4vw,16px);line-height:1.22;color:var(--text);font-weight:700}
+#dc80BlockLabel:not(:empty){font-size:12px;font-weight:850;color:var(--muted);letter-spacing:.07em}
+#exercisePanel.phase-playing{overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain;justify-content:flex-start}
+#exercisePanel.phase-playing #playArea{flex:1 0 auto!important;min-height:min-content!important;overflow:visible!important;justify-content:center}
+#exercisePanel.phase-playing #gameControls{flex:0 0 auto!important;overflow:visible!important;max-height:none!important}
+#exercisePanel.phase-playing #gameProgress{font-size:clamp(14px,3.8vw,19px)!important;font-weight:750;margin:4px 0!important}
+#exercisePanel.phase-playing #miniMetrics{font-size:clamp(13px,3.6vw,18px)!important;line-height:1.25}
+#exercisePanel.phase-playing .checkoutHud .hudChip{font-size:14px}.checkoutHud .hudChip b{font-size:19px}
+#exercisePanel.phase-playing #dc22Danger .dc36PressureCount strong{font-size:clamp(38px,10vw,60px)!important}
+#exercisePanel.phase-playing #dc22Danger .dc36PressureCopy span{font-size:clamp(13px,3.5vw,18px)!important}
+#exercisePanel.phase-playing #dc22Danger .dc36PressureCopy em{font-size:12px!important}
+#exercisePanel.phase-playing #roundFlash{font-size:clamp(14px,4vw,21px)!important}
+#exercisePanel.phase-playing:has(#dc80Objective:not(.hidden)) .rulePanel{display:none!important}
+#exercisePanel.phase-playing #undoRow{margin-top:6px!important}
+@media(max-height:740px){#dc80Objective{padding:4px;gap:2px}#dc80Goal{font-size:19px}#dc80Condition{font-size:12px}#exercisePanel.phase-playing #gameControls button{min-height:42px}#exercisePanel.phase-playing #gameControls.hasPad .scoreKeys button{min-height:31px}}
 </style></head><body>
 <header><div class="brandMark" aria-hidden="true"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none"><circle cx="15" cy="17" r="12" stroke="currentColor" stroke-width="1.4" opacity=".55"/><circle cx="15" cy="17" r="7" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="17" r="2.4" fill="currentColor"/><path d="M15 17L28 4M23 4h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="brandCopy"><h1>DARTS COACH</h1><small>PERSONALISED TRAINING</small></div><div class="headerActions">
 <button id="headerRhythm" type="button" aria-label="Open Rhythm Coach" title="Rhythm Coach"><svg class="headerLineIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg></button>
@@ -774,7 +793,7 @@ button.primary:not(:disabled),.hero button.primary:not(:disabled){background:lin
   <p class="muted" style="font-size:12px">This gives an immediate approximate starting level. Doubles, checkouts and bull are estimates, not measured results. Training evidence refines each separately.</p>
   <button type="button" class="primary" style="width:100%" onclick="applyQuickRecalibration()">Apply Starting Average</button>
  </div>
-</div><div id="trainSession" class="hidden"><div class="card"><div class="statLine"><span id="sessionType">Training Session</span><span id="sessionStepLabel">Exercise 1</span></div><div class="big" id="sessionClock">60:00</div><div class="progress"><div id="sessionBar"></div></div></div><div class="card" id="exercisePanel"><h2 id="exerciseName">Warm-up</h2><div class="statLine"><span id="exerciseTimeLabel">Exercise time</span><span id="exerciseClock">10:00</span></div><div class="progress"><div id="exerciseBar"></div></div><div class="rulePanel"><div class="rule" id="exerciseRules"></div></div><div id="exerciseIntro" class="hidden"><h3>HOW TO PLAY</h3><div id="introTitle" class="instruction"></div><div id="introRules" class="instruction"></div><button onclick="playExercise()">Play</button></div><div id="exerciseDone" class="hidden"><h3>EXERCISE COMPLETE</h3><div id="doneSummary" class="instruction"></div><button id="dc65FixBenchmark" class="secondary hidden" type="button" onclick="dc65CorrectFinalSinglesDart()">Correct final dart</button><button id="nextExerciseButton" onclick="nextExercise()">Next Exercise</button></div><div id="playArea"><div id="roundFlash">ROUND 1</div><div class="big" id="gameTarget">Ready</div><div id="dc22Danger" class="dc22Danger hidden" role="status" aria-live="off"><div class="dc36PressureCount"><strong>0</strong><small>REMAINING</small></div><div class="dc36PressureCopy"><span>DARTS LEFT</span><em id="dc36PressureMessage">STAY SHARP</em></div><div class="dc36PressureTrack" aria-hidden="true"><i id="dc36PressureFill"></i></div></div><p id="gameProgress"></p><div id="straightDisplay" class="hidden"></div><div id="miniMetrics"></div><div id="gameControls"></div></div><div class="row" id="undoRow"><button class="secondary" id="undoButton" onclick="undoGame()">Undo</button></div><button class="primary" id="completeButton" onclick="completeExercise('manual')">Complete Exercise</button></div><div class="card" id="sessionFooter"><button class="secondary" onclick="pauseSession()" id="pauseButton">Pause Session</button><button class="secondary rhythmFooter" type="button"  aria-label="Open Rhythm Coach"><svg class="metronomeIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg><span>Rhythm</span></button><button class="linklike" onclick="finishSessionEarly()">End Session</button></div></div><div id="roundAnnouncement" class="hidden" aria-live="polite"><div id="roundAnnouncementCard"><div id="roundAnnouncementTitle">ROUND 2</div><div id="roundAnnouncementPrevious"></div></div></div><div id="sessionFinished" class="card hidden"><div class="resultCard"><strong>Training Complete</strong><p>Session recorded.</p></div><p id="finishedText" class="center"></p><div id="sessionCoachReport" class="coachReport"></div><button class="primary" onclick="finishView()">Done</button><button class="secondary" style="width:100%;margin-top:8px" onclick="beginTraining(true)">Extra Training Session</button></div></section>
+</div><div id="trainSession" class="hidden"><div class="card"><div class="statLine"><span id="sessionType">Training Session</span><span id="sessionStepLabel">Exercise 1</span></div><div class="big" id="sessionClock">60:00</div><div class="progress"><div id="sessionBar"></div></div></div><div class="card" id="exercisePanel"><h2 id="exerciseName">Warm-up</h2><div class="statLine"><span id="exerciseTimeLabel">Exercise time</span><span id="exerciseClock">10:00</span></div><div class="progress"><div id="exerciseBar"></div></div><div class="rulePanel"><div class="rule" id="exerciseRules"></div></div><div id="exerciseIntro" class="hidden"><h3>HOW TO PLAY</h3><div id="introTitle" class="instruction"></div><div id="introRules" class="instruction"></div><button onclick="playExercise()">Play</button></div><div id="exerciseDone" class="hidden"><h3>EXERCISE COMPLETE</h3><div id="doneSummary" class="instruction"></div><button id="dc65FixBenchmark" class="secondary hidden" type="button" onclick="dc65CorrectFinalSinglesDart()">Correct final dart</button><button id="nextExerciseButton" onclick="nextExercise()">Next Exercise</button></div><div id="playArea"><div id="roundFlash">ROUND 1</div><div class="big" id="gameTarget">Ready</div><div id="dc22Danger" class="dc22Danger hidden" role="status" aria-live="off"><div class="dc36PressureCount"><strong>0</strong><small>REMAINING</small></div><div class="dc36PressureCopy"><span>DARTS LEFT</span><em id="dc36PressureMessage">STAY SHARP</em></div><div class="dc36PressureTrack" aria-hidden="true"><i id="dc36PressureFill"></i></div></div><div id="dc80Objective" class="hidden"><div id="dc80BlockLabel"></div><strong id="dc80Goal"></strong><span id="dc80Condition"></span></div><p id="gameProgress"></p><div id="straightDisplay" class="hidden"></div><div id="miniMetrics"></div><div id="gameControls"></div></div><div class="row" id="undoRow"><button class="secondary" id="undoButton" onclick="undoGame()">Undo</button></div><button class="primary" id="completeButton" onclick="completeExercise('manual')">Complete Exercise</button></div><div class="card" id="sessionFooter"><button class="secondary" onclick="pauseSession()" id="pauseButton">Pause Session</button><button class="secondary rhythmFooter" type="button"  aria-label="Open Rhythm Coach"><svg class="metronomeIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg><span>Rhythm</span></button><button class="linklike" onclick="finishSessionEarly()">End Session</button></div></div><div id="roundAnnouncement" class="hidden" aria-live="polite"><div id="roundAnnouncementCard"><div id="roundAnnouncementTitle">ROUND 2</div><div id="roundAnnouncementPrevious"></div></div></div><div id="sessionFinished" class="card hidden"><div class="resultCard"><strong>Training Complete</strong><p>Session recorded.</p></div><p id="finishedText" class="center"></p><div id="sessionCoachReport" class="coachReport"></div><button class="primary" onclick="finishView()">Done</button><button class="secondary" style="width:100%;margin-top:8px" onclick="beginTraining(true)">Extra Training Session</button></div></section>
 <section id="quick" class="hidden">
  <div class="card"><h2>Quick Play</h2><p class="muted">Choose any challenge and how long you want to play. Your current coaching levels set the difficulty automatically.</p>
  <div id="quickIntro" class="info">Quick Play is separate from scheduled training. Complete the full assessment or choose Quick Start to unlock suitable starting difficulty.</div>
@@ -922,7 +941,7 @@ button.primary:not(:disabled),.hero button.primary:not(:disabled){background:lin
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.44.0</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.80.0</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutConfirm primary" id="checkoutConfirmBtn" onclick="confirmCheckoutDarts()" disabled>Confirm Checkout</button><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -4020,8 +4039,10 @@ function scoringVisit(){
    if(g.dartsUsed>=g.maxDarts){endRound();return}
   }else if(g.visits>=g.maxVisits||(g.name==='301 Pressure'&&g.lives<=0)){endRound();return}
  }else if(g.name==="Setup Shot"){
-  if(n>=g.remaining){g.busts=num(g.busts)+1;g.success=0}
-  else{g.remaining-=n;g.success=(g.remaining>=2&&g.remaining<=g.goal)?1:0}
+  const left=g.remaining-n;
+  g.setupLeave=left;g.setupOutcome=left===0?'finish-not-allowed':left<0||left===1?'bust':left<=g.goal?'win':'outside-range';
+  g.success=Number(g.setupOutcome==='win');
+  if(g.setupOutcome==='bust')g.busts=num(g.busts)+1;else g.remaining=left;
   endRound();return;
  }else if(g.name==="First Nine Siege"){
   if(g.visits>=3){endRound();return}
@@ -4146,7 +4167,35 @@ function dc23MasteryInput(value){
  data.game=g;save();
 }
 function dc22MasteryDart(hit){dc23MasteryInput(hit?'hit':'miss')}
-function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name,started:Date.now()};if(name==="Big Singles")Object.assign(g,{darts:[],hits:0,day:dateKey()});
+/* V5.80: practice blocks preserve state in existing game/undo/checkpoint records. */
+function dc80Block(g,previous){
+ const name=g.name,tier=g.tier||0;
+ // Preserve named scores, benchmarks, adaptive mastery and intentionally fixed sequences.
+ const makers={
+  'Setup Shot':()=>({remaining:clamp(g.remaining+[-24,-16,-8,0,8,16,24][Math.floor(Math.random()*7)],70,200)}),
+  'Shanghai Combo':()=>({target:dc22Shuffle(tier<=3?[20,19,18,17]:[20,19,18,17,16])[0]}),
+  'Double Double':()=>({targets:dc22Shuffle([20,16,10,8,4,12]).slice(0,2)}),
+  'Double Bull Bridge':()=>({stages:['D'+dc22Shuffle([20,16,10,8])[0],'BULL','D'+dc22Shuffle([20,16,10,8])[0]]}),
+  'Golf Five':()=>({holes:dc22Shuffle(g.holes)}),
+  'Last Dart Rescue':()=>({targets:dc22Shuffle(g.targets)}),
+  'Last Dart Standing':()=>({scores:dc22Shuffle(g.scores)}),
+  'Checkout Poker':()=>({cards:dc22Shuffle(tier<=3?[64,68,72,76,80]:tier<=5?[44,48,52,56,60]:[24,28,32,36,40]).slice(0,3)}),
+  'Switchback':()=>{const a=dc22Shuffle([19,18,17,16]).slice(0,3);return {sequence:[20,a[0],20,a[1],20,a[2],20]}},
+  'Number Lock':()=>({targets:dc22Shuffle(g.targets)}),
+  'Treble Hunt':()=>({targets:dc22Shuffle(g.targets)}),
+  'Doubles Streak':()=>({targets:dc22Shuffle(g.targets)}),
+  'High-Low':()=>({previous:dc22Shuffle([75,80,85,90,95,100,105])[0]})
+ };
+ const make=makers[name];if(!make)return g;
+ // A fresh challenge on a changed tier or exercise. A recovered legacy round starts a fresh block.
+ const prior=previous?.name===name&&previous.tier===g.tier?previous.practiceBlock:null;
+ let config,attempt=1;
+ if(prior&&prior.attempt<5){config=clone(prior.config);attempt=prior.attempt+1}
+ else{config=make();for(let i=0;prior&&JSON.stringify(config)===JSON.stringify(prior.config)&&i<32;i++)config=make()}
+ Object.assign(g,clone(config));g.practiceBlock={version:1,attempt,config:clone(config)};
+ return g;
+}
+function buildGame(name,previous=null){const g=name==="Focused Checkouts"?focusedRound():{name,started:Date.now()};if(name==="Big Singles")Object.assign(g,{darts:[],hits:0,day:dateKey()});
  if(name==="Doubles Survival"){const tier=num(data.skills.doubles.level),singles=tier>=6,prior=data.games.filter(x=>x.name===name&&!x.extra).length,reverse=!singles&&prior>0&&prior%8===7,sequence=Array.from({length:20},(_,i)=>reverse?20-i:i+1);Object.assign(g,{variant:singles?"singles":"doubles",sequence,index:0,target:sequence[0],used:0,allowed:singles?9:clamp(tier+2,3,9),hits:0,thrown:0,highest:0,lastHit:0,targetLog:[]})}
  if(name==="Scoring Survival"){
   const tier=pressureTier("scoring");Object.assign(g,{tier,target:SCORE_TARGETS[tier-1],lives:tier<=2?2:tier<=4?3:5,visits:0,points:0,scores:[],cleared:0,streak:0});
@@ -4295,7 +4344,7 @@ function buildGame(name){const g=name==="Focused Checkouts"?focusedRound():{name
  if(name==="Double Duel"){
   const tier=pressureTier("doubles");Object.assign(g,{tier,target:20,player:0,opponent:0,turn:0,thrown:0,matchDone:false});
  }
- return dc20AttachForecast(dc19ApplyTuning(dc12ApplyRecovery(g)))}
+ return dc20AttachForecast(dc80Block(dc19ApplyTuning(dc12ApplyRecovery(g)),previous))}
 
 function shanghaiDart(hit){
  const s=session(),g=activeGame;if(!s||s.pausedAt||s.phase!=="playing"||!g||g.name!=="Shanghai Combo")return;
@@ -4537,7 +4586,7 @@ function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||sess
 function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,exerciseId:currentExercise()?.provenanceId||null,exerciseIndex:Number.isInteger(session()?.index)?session().index:null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.35.0",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
+function gameResult(g,completion){const e={practiceBlock:g.practiceBlock?clone(g.practiceBlock):undefined,name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,exerciseId:currentExercise()?.provenanceId||null,exerciseIndex:Number.isInteger(session()?.index)?session().index:null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.35.0",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
  prospectiveForecast:g.prospectiveForecast&&completion==='natural'&&
  !g.recovery&&!g.challengeTuning&&!session()?.quick?clone(g.prospectiveForecast):null};
  if(completion==="natural"&&!session()?.quick&&!g.recovery){
@@ -4607,7 +4656,7 @@ function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now()
  if(["501 Pressure","Setup Shot","Last Dart Rescue","Risk or Reward","170 Challenge","First Nine Siege"].includes(g.name)){
   const won=g.name==="First Nine Siege"?g.points>=g.goal:g.name==="Setup Shot"?!!g.success:g.name==="Last Dart Rescue"?g.index>=g.targets.length:g.name==="Risk or Reward"?g.points>=g.goal:!!g.wins;
   Object.assign(e,{win:won,loss:!won,tierAtStart:g.tier,details:clone(g),points:num(g.points),visits:num(g.visits),scores:g.scores?[...g.scores]:[],remaining:g.remaining,success:num(g.success),dartsUsed:num(g.dartsUsed),thrown:num(g.thrown),hits:num(g.hits)});
-  e.benchmark=false;e.result=(won?"WIN":"LOSE")+" · "+g.name+(g.remaining!==undefined?" · "+g.remaining+" remaining":"");
+  e.benchmark=false;e.result=(won?"WIN":"LOSE")+" · "+g.name+(g.name==="Setup Shot"&&g.setupOutcome?" · "+g.setupOutcome+" · "+g.setupLeave+" left":g.remaining!==undefined?" · "+g.remaining+" remaining":"");
  }
 
  if(["Last Dart Standing","Pressure Cricket","Bull Blackjack","Neighbour Trap","Double Jackpot","Dartboard Bingo","High-Low","Split the Difference","Checkout Poker","Double Bull Bridge","Double Duel"].includes(g.name)){
@@ -4664,7 +4713,7 @@ function gameResult(g,completion){const e={name:g.name,mode:g.name,at:Date.now()
  if(completion!=="natural"&&completion!=="timed"){e.win=null;e.loss=null;e.result="INCOMPLETE · "+e.result.replace(/^(WIN|LOSE) · /, "")}
  return e}
 /* Round completion records the result and restarts the SAME game. The exercise clock never resets. */
-function endRound(){const s=session();if(!s||s.pausedAt||!activeGame)return;const item=currentExercise(),previousGame=clone(undoSnapshot||activeGame),result=gameResult(activeGame,"natural");s.lastRoundUndo={previousGame,resultAt:result.at,name:result.name};data.games.push(result);s.roundsCompleted++;s.round++;flash=(result.win===true?"WIN":result.win===false?"LOSE":"Round ended")+" · Round "+s.roundsCompleted+" saved";activeGame=buildGame(item.name);data.game=activeGame;undoSnapshot=null;save();announceRound(s.round,(result.win===true?"WIN":result.win===false?"LOSE":"ROUND COMPLETE")+" · Previous round")}
+function endRound(){const s=session();if(!s||s.pausedAt||!activeGame)return;const item=currentExercise(),previousGame=clone(undoSnapshot||activeGame),result=gameResult(activeGame,"natural");s.lastRoundUndo={previousGame,resultAt:result.at,name:result.name};data.games.push(result);s.roundsCompleted++;s.round++;flash=(result.win===true?"WIN":result.win===false?"LOSE":"Round ended")+" · Round "+s.roundsCompleted+" saved";activeGame=buildGame(item.name,activeGame);data.game=activeGame;undoSnapshot=null;save();announceRound(s.round,(result.win===true?"WIN":result.win===false?"LOSE":"ROUND COMPLETE")+" · Previous round"+(result.name==="Setup Shot"&&result.details?.setupOutcome?" · "+result.details.setupOutcome.replaceAll("-"," "):""))}
 function playExercise(){
  const s=session();if(!s||s.phase!=="rules")return;
  if(s.pausedAt){s.pausedTotal+=Math.max(0,Date.now()-s.pausedAt);s.pausedAt=null}
@@ -4827,7 +4876,7 @@ const EXTRA_RULES={
  "Treble Hunt":"Hit the displayed target with each dart. A miss costs a life. Clear the hit goal before your lives run out; then repeat.",
  "Doubles Streak":"Hit the displayed target to build a streak. A miss breaks it and costs a life. Reach the target streak before lives run out.",
  "501 Pressure":"Start on 501. Record three-dart visit totals; finish exactly on a double within your adaptive dart allowance. A bust does not reduce your remaining score.",
- "Setup Shot":"You have one three-dart visit. Enter its total. WIN if it leaves a checkout in the target range without busting; otherwise LOSE.",
+ "Setup Shot":"Five attempts at each starting score, then a new random score. Each attempt is one three-dart visit. WIN by leaving the displayed range. Finishing (zero), leaving one, going below zero or outside the range LOSES. Do not check out.",
  "Last Dart Rescue":"Five one-dart checkout situations. First CHOOSE the correct finishing target; a wrong route costs a life. Then record Hit or Miss for the dart.",
  "Risk or Reward":"Before each three-dart visit choose Safe or Risky. Beat the higher Risk target for a +35 bonus. Miss it and lose 50 banked points and a life. Reach the bank goal to win.",
  "First Nine Siege":"You have exactly three three-dart visits, nine darts total. Enter each visit score. Beat your tier-specific total to WIN; otherwise LOSE.",
@@ -4976,8 +5025,8 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   heading=String(g.remaining);detail="170 finish · Visit "+(g.visits+1)+"/"+g.maxVisits;
   mini="Must finish on a double";html=padMarkup()+button("Enter Score","scoringVisit()");break;
  case "Setup Shot":
-  heading=String(g.remaining);detail="ONE three-dart visit · Leave a useful finish";
-  mini="Win by leaving 2–"+g.goal+" without busting";html=padMarkup()+button("Enter Score","scoringVisit()");break;
+  heading=String(g.remaining);detail="LEAVE 2–"+g.goal+" · DO NOT CHECK OUT";
+  mini="Zero, one, overshoot or outside range = LOSS";html=padMarkup()+button("Enter Score","scoringVisit()");break;
  case "Last Dart Rescue":
   {const needed=g.targets[Math.min(g.index,g.targets.length-1)],correct=needed===50?"BULL":"D"+(needed/2),wrong=needed===50?"D20":"D"+(needed===40?16:needed===32?20:needed===24?10:needed===16?12:20);
   heading=String(needed);detail="Choose the correct one-dart finish · Situation "+(g.index+1)+"/5";mini="Lives left: "+g.lives+" · Wrong route costs a life";
@@ -5059,10 +5108,62 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  case "Bull Streak":heading=g.target;detail="Streak "+g.streak+"/"+g.goal;mini="Best streak: "+g.best+" · Misses left: "+(num(g.allowedMisses||7)-num(g.misses));html=button("Hit","bullStreak(true)")+button("Miss","bullStreak(false)");break;
  }
  $("gameTarget").textContent=heading;$("gameProgress").textContent=detail;
+ const objective=$('dc80Objective');
+ const goals={
+ 'Big Singles':['HIT LARGE SINGLE ONLY','Other segments = miss · 3 darts per number'],
+ 'Doubles Survival':['HIT '+heading,'Miss all allowed darts = round ends'],
+ 'Scoring Challenge':['MAXIMISE YOUR 10 VISITS','3 darts per visit · no pass/fail target'],
+ 'Staying Straight':['KEEP HITTING '+heading,'First miss ends this number · maximise points'],
+ 'Checkout Climb':['FINISH '+heading,'Double-out · success +5 · failure −1 · below 50 ends'],
+ 'Focused Checkouts':['FINISH '+heading,'Double-out · clear range before lives expire'],
+ 'Scoring Survival':['SCORE '+g.target+' OR MORE','5 successful visits wins · low score costs a life'],
+ 'Scoring Ladder':['SCORE '+g.target+' OR MORE','Clear 4 steps · failure costs a life and a step'],
+ 'Treble Hunt':['REACH '+g.goal+' HITS','Miss costs a life · no lives = loss'],
+ 'Doubles Streak':['BUILD '+g.goal+' CONSECUTIVE HITS','Miss breaks streak and costs a life'],
+ '301 Pressure':['CHECK OUT '+heading,'Double-out · bust costs a life · darts or lives exhausted = loss'],
+ '501 Pressure':['CHECK OUT '+heading,'Double-out · bust restores score · darts exhausted = loss'],
+ '170 Challenge':['CHECK OUT '+heading,'Double-out · bust restores score · visits exhausted = loss'],
+ 'Setup Shot':['LEAVE 2–'+g.goal,'DO NOT CHECK OUT · zero, one, overshoot or outside range = loss'],
+ 'Bull Accuracy':['RECORD ALL 30 DARTS','25 / 50 / miss · no pass/fail target'],
+ 'Bull Survival':['HIT '+heading,'Miss all allowed darts = loss'],
+ 'Bull Streak':['BUILD '+g.goal+' CONSECUTIVE HITS','Miss resets streak · no misses left = loss'],
+ 'Shanghai Combo':['COMPLETE SINGLE → DOUBLE → TREBLE','Same number · miss costs a life'],
+ 'Bull Bank':['REACH '+g.goal+' POINTS','25 / 50 · run out of darts below goal = loss'],
+ 'Number Lock':['CLOSE EVERY SHOWN NUMBER','Miss allowance exhausted = loss'],
+ 'Halve It':['BANK AT LEAST '+g.goal,'6 visits · zero hits halves your score'],
+ 'Outside Doubles':['CLEAR ALL CALLED DOUBLES','Inside single costs a life · no lives or darts = loss'],
+ '101 Sprint':['FINISH 101 ON A DOUBLE','Within total dart allowance'],
+ 'Golf Five':['FINISH AT OR BELOW '+g.par+' STROKES','3 misses on a hole = 4 strokes'],
+ 'Cricket Countdown':['CLOSE ALL TARGETS','3 marks each · finish before darts run out'],
+ 'Double Double':['HIT BOTH DOUBLES IN ORDER','Darts exhausted = loss'],
+ 'Double-In 201':[g.entered?'CHECK OUT '+heading:'HIT ANY DOUBLE',g.entered?'Double-out · bust restores score · visit limit applies':'Entry allowance exhausted = loss'],
+ 'Switchback':['CLEAR THE SEQUENCE','Miss sends you back 2 steps · darts exhausted = loss'],
+ 'Last Dart Rescue':['SOLVE ALL FIVE FINISHES','One dart per try · wrong route or miss costs life'],
+ 'First Nine Siege':['SCORE '+g.goal+' IN 9 DARTS','3 visits · below goal = loss'],
+ 'Risk or Reward':['BANK '+g.goal+' POINTS','Safe / risky thresholds apply · no lives or visits = loss'],
+ 'Last Dart Standing':['SOLVE ALL SIX SITUATIONS','One dart · wrong route or miss costs life'],
+ 'Pressure Cricket':['CLOSE ALL THREE AND BEAT RIVAL','3 marks each · darts exhausted or behind = loss'],
+ 'Bull Blackjack':['EXACTLY '+g.goal+' POINTS','Go over or run out below goal = loss'],
+ 'Neighbour Trap':['REACH '+g.goal+' PROGRESS','S1/S5 remove progress · darts exhausted = loss'],
+ 'Double Jackpot':['EXACTLY '+g.goal+' POINTS','Each target once · overshoot or darts exhausted = loss'],
+ 'Dartboard Bingo':['COMPLETE A LINE OF FIVE','Full house = all 20 · call limit applies'],
+ 'Target Mastery':['PRACTISE '+heading,'Record actual results · no fabricated pass/fail'],
+ 'High-Low':[g.index%2===0?'SCORE AT LEAST '+(g.previous+g.diff):'SCORE AT MOST '+(g.previous-g.diff),'4 correct comparisons · no lives or visits = loss'],
+ 'Split the Difference':[g.previous===null?'SET YOUR SCORE':'MATCH WITHIN ±'+g.tolerance,'Match 2 of 3 pairs · 2 failed pairs = loss'],
+ 'Checkout Poker':['FINISH TWO DIFFERENT CARDS','3 darts per attempt · attempt limit applies'],
+ 'Double Bull Bridge':['DOUBLE → BULL → DOUBLE','Hit all 3 before darts run out'],
+ 'Double Duel':['FIRST TO 4 POINTS','Beat rival within 12 turns']
+ };
+ const goal=goals[g.name];objective.classList.toggle('hidden',!goal);
+ if(goal){$('dc80Goal').textContent=goal[0];$('dc80Condition').textContent=goal[1];$('dc80BlockLabel').textContent=g.practiceBlock?'CHALLENGE '+g.practiceBlock.attempt+'/5 · '+(g.name==='Setup Shot'?'ATTEMPT':'ROUND'):'';}
+
  const danger=$('dc22Danger');
  if(danger){
   let remaining=null,label='';
-  if(g.name==='Dartboard Bingo'){remaining=g.allowed-g.used;label='DARTS LEFT FOR D'+g.called}
+  if(g.name==='Setup Shot'){remaining=1;label='VISIT LEFT · 3 DARTS'}
+  else if(g.name==='Focused Checkouts'){remaining=3-g.attempt;label='DARTS LEFT FOR FINISH'}
+  else if(g.name==='301 Pressure'||g.name==='501 Pressure'){remaining=g.maxDarts-g.dartsUsed;label='DARTS LEFT'}
+  else if(g.name==='Dartboard Bingo'){remaining=g.allowed-g.used;label='DARTS LEFT FOR D'+g.called}
   else if(g.name==='Target Mastery'){remaining=g.goal-(g.mode==='checkout'?g.attempts:g.thrown);label=g.mode==='checkout'?'ATTEMPTS LEFT':'DARTS LEFT'}
   else if(g.name==='Checkout Poker'){remaining=g.allowed-g.attempts;label='ATTEMPTS LEFT'}
   else if(g.name==='Checkout Climb'){remaining=3-g.attempt;label='DARTS LEFT FOR FINISH'}
@@ -5093,7 +5194,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
    danger.classList.toggle('last',critical);
    danger.classList.toggle('near',near&&!critical);
    const survival=/(LIVES|MISSES|ENTRY DARTS|DARTS LEFT FOR|ATTEMPTS)/.test(label)||['501 Pressure','301 Pressure','Scoring Survival','Doubles Survival','Bull Survival','Dartboard Bingo','Switchback'].includes(g.name);
-   const message=left===0?'NO CHANCES LEFT':critical?(survival?'FINAL CHANCE':'LAST ONE'):near?'PRESSURE IS ON':'STAY IN CONTROL';
+   const message=g.name==='Setup Shot'?'ONE VISIT · NO CHECKOUT':g.name==='Staying Straight'?'FIRST MISS MOVES ON':left===0?'NO CHANCES LEFT':critical?(survival?'FINAL CHANCE':'LAST ONE'):near?'PRESSURE IS ON':'STAY IN CONTROL';
    const note=$('dc36PressureMessage');if(note)note.textContent=message;
    const fill=$('dc36PressureFill');if(fill){const initial=Number.isFinite(g.entryLimit)&&label==='ENTRY DARTS LEFT'?g.entryLimit:Number.isFinite(g.maxDarts)&&label==='DARTS LEFT'?g.maxDarts:Number.isFinite(g.lives)&&label==='LIVES LEFT'?Math.max(3,g.lives):Number.isFinite(g.allowed)&&g.allowed>0?g.allowed:Math.max(6,left);fill.style.width=(100*Math.min(1,left/Math.max(1,initial)))+'%'}
   }
@@ -6739,7 +6840,7 @@ performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);setIn
 
 </script><div id="welcomeOverlay" class="welcomeOverlay hidden" role="dialog" aria-modal="true" aria-labelledby="welcomeHeading">
  <div class="welcomePanel dc36InfoPanel">
-  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V5.79.0</span></div>
+  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V5.80.0</span></div>
   <h2 id="welcomeHeading">Your game.<br><span>Your next level.</span></h2>
   <p class="dc36InfoLead">Darts Coach combines structured practice, measurable results and an adaptive training planner. It gives you a purposeful session, then learns cautiously from what you actually complete.</p>
   <div class="dc36InfoStats"><div><strong>41</strong><small>Training games</small></div><div><strong>7</strong><small>Hidden skill levels</small></div><div><strong>60</strong><small>Minute core session</small></div></div>
