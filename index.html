@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.91.0</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.95.0</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -973,7 +973,7 @@ html[data-appearance=light] body nav[aria-label="Main navigation"]:not(#dc590a):
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.91.0</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.95.0</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutConfirm primary" id="checkoutConfirmBtn" onclick="confirmCheckoutDarts()" disabled>Confirm Checkout</button><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -3306,6 +3306,10 @@ function dc30Feedback(candidate,now=Date.now()){
  // Only strong converging evidence permits 15 minutes; sparse evidence cannot.
  if(minutes===10&&response.samples>=5&&response.mean>Math.max(.12,2.5*response.uncertainty)&&
   transfer.status==='promising'&&share<.17) {minutes=15;reason='bounded increase with converging independent transfer evidence'}
+ if(!adverse&&!stalled&&share<.33&&response.status==='encouraging'&&response.samples>=3){
+ const signal=Math.max(0,response.mean- Math.max(0,response.uncertainty)*2);
+ minutes=Math.round(5+Math.min(15,signal*40+Math.min(5,response.samples-3))*(1-share/.33));
+ }
  if(adverse||share>.33||stalled)minutes=5;
  return {minutes,reason,status:adverse?'caution':response.status==='encouraging'?'encouraging':stalled?'stalled':'uncertain',
   days:response.trainingDays,defer:!!defer,lastAt,completedMinutes:response.minutes,
@@ -3475,7 +3479,7 @@ function dc10PressureSummary(games,sessionId){
 function dc44FocusGate(candidate,category,policy,extra=false,now=Date.now()){
  const base={version:'5.32.0',eligible:false,minutes:0,reason:'balanced programme',category:category||null,
   completedFocusMinutes7d:0,independentDays:0};
- if(extra)return {...base,reason:'complementary extra training uses balanced variety'};
+ if(extra&&(data.sessions||[]).some(s=>dateKey(s.start)===dateKey(now)&&((s.activities||[]).some(a=>a.name==='Target Mastery'&&num(a.seconds)>0)||s.interruptedExercise?.name==='Target Mastery')))return {...base,reason:'focused practice already completed today'};
  if(!candidate||!category)return {...base,reason:'no measured, actionable weakness'};
  if(candidate.basis==='maintenance rotation, not a diagnosed weakness'||Number(candidate.priority)<1.25)
   return {...base,reason:'maintenance or weak signal is not a diagnosed need'};
@@ -3495,10 +3499,13 @@ function dc44FocusGate(candidate,category,policy,extra=false,now=Date.now()){
   }
  }
  base.completedFocusMinutes7d=spent;
- if(spent>=10)return {...base,reason:'weekly focused-practice budget reached'};
+ const feedback=dc30Feedback(candidate,now);
+ if(feedback.defer||feedback.status==='caution')return {...base,reason:'response protection'};
+ const budget=feedback.status==='encouraging'?30:15;
+ if(budget-spent<5)return {...base,reason:'weekly focused-practice budget reached'};
  // The detailed target diagnosis remains responsible for validity. The
  // category can be uncertain without inventing target precision.
- return {...base,eligible:true,minutes:5,reason:'documented weakness; cautious time-limited intervention'};
+ return {...base,eligible:true,minutes:Math.min(budget-spent,Math.max(5,Math.round(feedback.minutes))),reason:'documented weakness; response-bounded intervention'};
 }
 function dc44BalancedAudit(decision,plan){
  const focused=plan.filter(x=>x?.name==='Target Mastery');
@@ -3536,7 +3543,7 @@ function dc39UnifiedDecision(extra=false,now=Date.now()){
   masteryReason=focusGate.reason;
  }
  return {version:'5.32.0',at:now,extra:!!extra,policy,categories:decisions,mastery,masteryDecision,masteryReason,focusGate,
-  guardrails:{minimumMinutes:5,maxFocusedMinutes:5,balancedCore:true,weeklyFocusBudgetMinutes:10,syntheticEvidenceExcluded:true}};
+  guardrails:{minimumMinutes:5,maxFocusedMinutes:15,balancedCore:true,weeklyFocusBudgetMinutes:30,syntheticEvidenceExcluded:true}};
 }
 function dc39FinalizeDecision(decision,plan){
  const result={version:'5.25.0',at:decision.at,extra:decision.extra,categories:decision.categories,guardrails:decision.guardrails,
@@ -3547,7 +3554,6 @@ function dc39FinalizeDecision(decision,plan){
  return result;
 }
 function dc91DevelopmentNeed(policy,extra=false,now=Date.now()){
- if(extra)return null;
  const samples=skillSamples(), estimates=[];
  for(const key of SKILLS){
   const rows=dailySamples(samples[key].filter(r=>!r.quick&&r.time<=now&&r.time>=now-56*DAY_MS)).filter(r=>r.volume>0);
@@ -3555,10 +3561,15 @@ function dc91DevelopmentNeed(policy,extra=false,now=Date.now()){
   const mid=Math.floor(rows.length/2), early=tierFor(valueOf(rows.slice(0,mid),key),key), late=tierFor(valueOf(rows.slice(mid),key),key);
   estimates.push({key,tier:Math.min(early,late)});
  }
- if(estimates.length<4)return null;
- const sorted=estimates.map(x=>x.tier).sort((a,b)=>a-b), median=(sorted[1]+sorted[2])/2;
+ if(estimates.length<2)return null;
+ const sorted=estimates.map(x=>x.tier).sort((a,b)=>a-b), median=(sorted[Math.floor((sorted.length-1)/2)]+sorted[Math.floor(sorted.length/2)])/2;
  const needs=estimates.filter(x=>x.tier-median>=2&&!policy.categories?.[x.key]?.overexposed&&!policy.categories?.[x.key]?.policySafety&&!policy.categories?.[x.key]?.learning?.protect).sort((a,b)=>b.tier-a.tier);
- return needs[0]||null;
+ const ledger=dc28CategoryLedger(now).filter(d=>d.at>=now-7*DAY_MS);
+ const minutes=k=>ledger.reduce((a,d)=>a+(d.minutes[k]||0),0);
+ const total=SKILLS.reduce((a,k)=>a+minutes(k),0);
+ const eligible=needs.filter(x=>total<60||minutes(x.key)/total<.40);
+ eligible.sort((a,b)=>(b.tier-median)*2-(a.tier-median)*2+(minutes(a.key)-minutes(b.key))/15);
+ return eligible[0]||null;
 }
 function generateSession(extra=false,skipWarmup=false){
  const focus=focusForDay(extra),sessionsToday=(data.sessions||[]).filter(x=>x?.date===dateKey()&&!x.quick).length;
@@ -3571,7 +3582,12 @@ function generateSession(extra=false,skipWarmup=false){
   const pool=QUICK_GAMES.filter(n=>dc28GameCategory(n)===need.key&&!DC10_MEASUREMENT_GAMES.has(n)&&!chosen.includes(n)&&!recent.has(n));
   const counts=chosen.map(n=>dc28GameCategory(n));
   const donor=counts.findLastIndex(k=>counts.filter(x=>x===k).length>1);
-  if(pool.length&&donor>=0)chosen[donor]=pool[Math.abs(Math.floor(Date.now()/DAY_MS))%pool.length];
+  if(pool.length&&donor>=0){
+   const recentGames=(data.sessions||[]).filter(s=>s.completed&&s.start>=Date.now()-7*DAY_MS).flatMap(s=>s.activities||[]);
+   const exposure=n=>recentGames.filter(a=>a.name===n).reduce((v,a)=>v+num(a.seconds),0);
+   pool.sort((a,b)=>exposure(a)-exposure(b)||a.localeCompare(b));
+   chosen[donor]=pool[0];
+  }
  }
  const plan=skipWarmup?[]:[{name:'Warm-up',seconds:600,mode:'timed'}];
  if(!extra&&!data.bigSingles.some(b=>b?.day===dateKey()&&b.complete))plan.push({name:'Big Singles',mode:'benchmark'});
@@ -3839,6 +3855,25 @@ function allocateRemaining(s){
  else if(review)review.seconds=300;
  // Calculate actual final minutes, after the scheduler has met the clock budget.
  dc43LearningTransfer(s,queue);
+ if(!s.unifiedAudit?.exploration?.trial&&!queue.some(e=>e.dc47TrialId)){
+  // Split long practice into complementary games while preserving category time.
+  const recent=dc22GamesPlayedToday();
+  const exposure=n=>(data.sessions||[]).filter(x=>x.completed&&!x.quick&&x.start>=Date.now()-14*DAY_MS&&x.start<=Date.now()).flatMap(x=>x.activities||[]).filter(a=>a.name===n).reduce((v,a)=>v+num(a.seconds),0);
+  for(const entry of ordinary){
+   const cat=entry.wholeCoach?.category;
+   if(!cat||entry.seconds<1500)continue;
+   while(entry.seconds>=1500){
+    const pool=QUICK_GAMES.filter(n=>dc28GameCategory(n)===cat&&!DC10_MEASUREMENT_GAMES.has(n)&&!s.plan.some(e=>e.name===n)&&!recent.has(n));
+    if(!pool.length)break;
+    pool.sort((a,b)=>exposure(a)-exposure(b)||a.localeCompare(b));
+    const move=Math.min(1200,entry.seconds-1200),name=pool[0];
+    entry.seconds-=move;
+    s.plan.splice(s.plan.indexOf(entry)+1,0,{name,mode:'timed',seconds:move,wholeCoach:{...entry.wholeCoach,plannedMinutes:move/60,reason:'complementary game variety'}});
+   }
+  }
+  for(const e of s.plan.slice(s.index))if(e.wholeCoach)e.wholeCoach.plannedMinutes=e.seconds/60;
+  if(s.wholeSessionAudit)s.wholeSessionAudit.actualScheduledChoices=s.plan.slice(s.index).filter(e=>e.wholeCoach).map(e=>({game:e.name,category:e.wholeCoach.category,minutes:e.seconds/60}));
+ }
  s.allocated=true;dc45LockAllocation(s);
 }
 function startExercise(){const s=session();if(!s)return;if(s.index>=s.plan.length){finishSession(true);return}let item=currentExercise();if(item.name!=="Warm-up"&&item.name!=="Big Singles"&&!s.allocated)allocateRemaining(s);item=currentExercise();if(!item){finishSession(true);return}s.phase="rules";if(!s.pausedAt)s.pausedAt=Date.now();s.activityStarted=null;s.activityAccumulated=0;s.round=1;s.roundsCompleted=0;s.lastRoundUndo=null;dc45EnsureProvenance(s);activeGame=buildGame(item.name);data.game=activeGame;undoSnapshot=null;save(false)}
@@ -6931,7 +6966,7 @@ performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);setIn
 
 </script><div id="welcomeOverlay" class="welcomeOverlay hidden" role="dialog" aria-modal="true" aria-labelledby="welcomeHeading">
  <div class="welcomePanel dc36InfoPanel">
-  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V5.91.0</span></div>
+  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V5.95.0</span></div>
   <h2 id="welcomeHeading">Your game.<br><span>Your next level.</span></h2>
   <p class="dc36InfoLead">Darts Coach combines structured practice, measurable results and an adaptive training planner. It gives you a purposeful session, then learns cautiously from what you actually complete.</p>
   <div class="dc36InfoStats"><div><strong>41</strong><small>Training games</small></div><div><strong>7</strong><small>Hidden skill levels</small></div><div><strong>60</strong><small>Minute core session</small></div></div>
