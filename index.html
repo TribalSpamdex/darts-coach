@@ -836,7 +836,7 @@ html[data-appearance=light] body nav[aria-label="Main navigation"]:not(#dc590a):
 <section id="quick" class="hidden">
  <div class="card"><h2>Quick Play</h2><p class="muted">Choose any challenge and how long you want to play. Your current coaching levels set the difficulty automatically.</p>
  <div id="quickIntro" class="info">Quick Play is separate from scheduled training. Complete the full assessment or choose Quick Start to unlock suitable starting difficulty.</div>
- <button class="primary" id="randomQuickButton" type="button" style="width:100%;margin:10px 0" onclick="randomQuickPlay()">🎲 Random Game · Play Now</button><div id="quickGames" class="quickGrid"></div>
+ <button class="primary" id="randomQuickButton" type="button" style="width:100%;margin:10px 0" onclick="randomQuickPlay()">🎲 Random Game · Choose Time</button><div id="quickGames" class="quickGrid"></div>
  <p class="muted" style="font-size:12px;margin-bottom:2px">Tap any game to choose your playing time and start.</p>
  </div>
  <div class="card"><h2>Quick Play history</h2><div id="quickHistory"></div></div>
@@ -3714,6 +3714,7 @@ const QUICK_DESCRIPTIONS={
  "Target Mastery":"Focused darts practice across segments, bull, checkouts, straight darts, switching, setup, scoring and pressure."
 };
 let quickChoice="Scoring Survival";
+let randomQuickPending=false;
 let dc23QuickMode="segment";
 function quickDurationChange(){renderQuick()}
 let quickGameReturnFocus=null;
@@ -3733,35 +3734,37 @@ function closeQuickGame(){
  const overlay=$("quickGameOverlay");if(overlay)overlay.classList.add("hidden");
  if(quickGameReturnFocus&&typeof quickGameReturnFocus.focus==="function")quickGameReturnFocus.focus();
  quickGameReturnFocus=null;
+ randomQuickPending=false;
 }
-function chooseQuick(name){if(!QUICK_GAMES.includes(name))return;quickChoice=name;renderQuick();openQuickGame()}
+function chooseQuick(name){if(!QUICK_GAMES.includes(name))return;randomQuickPending=false;quickChoice=name;renderQuick();openQuickGame()}
 let dc22LastRandomGame=null;
 function randomQuickPlay(){
  if(session()||assessmentDue()){show('train');return}
- const eligible=QUICK_GAMES.filter(n=>n!==dc22LastRandomGame);
- if(!eligible.length)return;
+ randomQuickPending=true;openQuickGame();
+}
+function selectRandomQuickGame(){
+ const last=dc22LastRandomGame||(data.sessions||[]).filter(x=>x?.quick&&QUICK_GAMES.includes(x.quickGame)).at(-1)?.quickGame;
+ const eligible=QUICK_GAMES.filter(n=>n!==last);
  const recent=(data.sessions||[]).filter(x=>x?.quick).slice(-QUICK_GAMES.length).map(x=>x.quickGame);
  const fresh=eligible.filter(n=>!recent.includes(n));
  const pool=fresh.length?fresh:eligible;
- let idx=0;try{const bytes=new Uint32Array(1);crypto.getRandomValues(bytes);idx=bytes[0]%pool.length}catch(e){idx=Math.floor(Math.random()*pool.length)}
- quickChoice=pool[idx];dc22LastRandomGame=quickChoice;
- if(quickChoice==='Target Mastery')dc23QuickMode=DC23_MASTERY_MODES[Math.floor(Math.random()*DC23_MASTERY_MODES.length)];
- $('quickDuration').value='600'; // sensible 10-minute default, no extra confirmation
- startQuickPlay();
+ if(!pool.length)return null;
+ let idx;try{const bytes=new Uint32Array(1);crypto.getRandomValues(bytes);idx=bytes[0]%pool.length}catch(e){idx=Math.floor(Math.random()*pool.length)}
+ return pool[idx];
 }
 function renderQuick(){
  const area=$("quickGames");if(!area)return;
  area.innerHTML=QUICK_GAMES.map(name=>'<button class="quickTile '+(name===quickChoice?'selected':'')+'" aria-pressed="'+(name===quickChoice)+'" onclick="chooseQuick('+JSON.stringify(name).replace(/"/g,'&quot;')+')">'+esc(name)+'</button>').join('');
  const duration=Number($("quickDuration").value)||1200;
  const needs=assessmentDue();
- $("quickGameTitle").textContent=quickChoice;
- $("quickGameDescription").textContent=QUICK_DESCRIPTIONS[quickChoice]||"Choose a duration to start this game.";
- $("dc23MasteryOptions").classList.toggle("hidden",quickChoice!=="Target Mastery");
+ $("quickGameTitle").textContent=randomQuickPending?"Random Game":quickChoice;
+ $("quickGameDescription").textContent=randomQuickPending?"Choose your playing time. A random eligible game will be selected when you confirm.":QUICK_DESCRIPTIONS[quickChoice]||"Choose a duration to start this game.";
+ $("dc23MasteryOptions").classList.toggle("hidden",randomQuickPending||quickChoice!=="Target Mastery");
  $("dc23MasterySelect").value=dc23QuickMode;
  document.querySelectorAll("#quickDurationOptions button").forEach(b=>{const on=Number(b.dataset.seconds)===duration;b.classList.toggle("selected",on);b.setAttribute("aria-pressed",String(on))});
  $("quickEvidence").textContent=duration<900?'This short game is saved in Quick Play history but excluded from tier decisions.':duration<1800?'Recorded separately. Once there are enough real results across several days, they can contribute modestly to your skill assessment.':'Thirty-minute practice can contribute meaningful evidence over multiple days. It cannot change a tier after one session.';
  $("quickStart").disabled=needs||!!session();
- $("quickStart").textContent=session()?'Session in progress':needs?'Complete assessment first':'Play Game';
+ $("quickStart").textContent=session()?'Session in progress':needs?'Complete assessment first':randomQuickPending?'Play Random Game':'Play Game';
  $("quickIntro").textContent=needs?'Complete your assessment or choose Quick Start in Train before playing.':session()?'A training or Quick Play session is in progress. Finish it before starting another.':'Choose a game. The coach applies your existing independent hidden skill level automatically.';
  const rows=data.sessions.filter(x=>x.quick).slice(-8).reverse();
  $("quickHistory").innerHTML=rows.length?rows.map(x=>{const rounds=data.games.filter(g=>g.sessionId===x.id&&g.quick&&g.completion==="natural");const w=rounds.filter(g=>g.win===true).length,l=rounds.filter(g=>g.loss===true).length;return '<div class="entry"><strong>'+esc(x.quickGame||'Quick Play')+'</strong> · '+esc(x.date)+' · '+num(x.minutes).toFixed(1)+' min · '+w+' WIN / '+l+' LOSE</div>'}).join(''):'<p class="muted">No Quick Play sessions yet.</p>';
@@ -3769,9 +3772,14 @@ function renderQuick(){
 function startQuickPlay(){
  if(session()){show("train");return}
  if(assessmentDue()){show("train");return}
- if(!QUICK_GAMES.includes(quickChoice))return;
  const duration=Number($("quickDuration").value);
  if(![300,600,900,1200,1800].includes(duration))return;
+ if(randomQuickPending){
+  const picked=selectRandomQuickGame();if(!picked)return;
+  quickChoice=picked;dc22LastRandomGame=picked;
+  if(picked==='Target Mastery')dc23QuickMode=DC23_MASTERY_MODES[Math.floor(Math.random()*DC23_MASTERY_MODES.length)];
+ }
+ if(!QUICK_GAMES.includes(quickChoice))return;
  performCoachReview();
  const t=Date.now();
  data.activeSession={id:t,start:t,extra:true,quick:true,quickGame:quickChoice,quickSeconds:duration,plan:[{name:quickChoice,mode:"timed",seconds:duration,...(quickChoice==="Target Mastery"?{mastery:{mode:dc23QuickMode}}:{})}],index:0,completed:[],pausedAt:null,pausedTotal:0,activityStarted:null,activityAccumulated:0,round:1,roundsCompleted:0,allocated:true,benchmarkSeconds:0,phase:"rules"};
