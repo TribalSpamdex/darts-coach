@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V6.0 RC1</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V6.0 RC2 development</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -952,9 +952,6 @@ html[data-appearance=light] body nav[aria-label="Main navigation"]:not(#dc590a):
 <details class="techTopic"><summary><span class="techTopicIcon">◷</span><span><strong>Rhythm & match pressure</strong><small>Maintain the same routine under jeopardy</small></span></summary><div class="techContent"><div class="rhythmDiagram"><span>Settle</span><b>›</b><span>Focus</span><b>›</b><span>Throw</span><b>›</b><span>Reset</span></div><p>Pressure changes attention. Keep your routine short and repeatable: settle your feet, pick the target, throw at your normal pace, then reset for the next dart.</p><p>A failed visit doesn't mean the routine was wrong. Judge changes over many sessions, especially when pressure differs.</p><div class="techExercise"><b>Try it:</b> Give yourself three darts at a double for five rounds. Use the exact same pre-throw routine whether the previous round was a win or a loss.</div></div></details>
 </div></div></section>
 <section id="settings" class="hidden">
-<div class="card themeSettings"><h2>Appearance</h2>
-<p class="muted">Choose Precision Black or Precision White. Both retain the same training controls and layout.</p>
-<div class="themeSwatches" role="group" aria-label="Choose appearance"><button type="button" class="themeChoice" data-theme="green" onclick="setAccentTheme('green')" aria-pressed="true"><span class="themeDot" style="--swatch:#101817"></span><span>Precision Black</span></button><button type="button" class="themeChoice" data-theme="light" onclick="setAccentTheme('light')" aria-pressed="false"><span class="themeDot" style="--swatch:#f5f6f3"></span><span>Precision White</span></button></div><p class="themeHelp">Changes are saved automatically on this device.</p></div>
 <div class="card"><h2>Weekly Training Days</h2><p class="muted">Select five days. The coach handles the training on those days.</p><div class="dayRow" id="days"></div><p id="dayStatus" class="muted"></p></div><div class="card"><h2>Training Data</h2><p class="muted">Data is stored in this browser or Home Screen app, not on GitHub. Updates at the same address should preserve it. Safari and a Home Screen app may have different saved data. Keep an external backup.</p><h3>1. Protect Your Training</h3>
 <p class="muted">An extra recovery copy is saved automatically in this browser after each finished assessment or session. This is not a backup in iPhone Files. For protection against browser data loss, save a file as well.</p>
 <div id="autoBackupStatus" class="backupStatus">Checking local recovery copy…</div><div id="storageHealth" class="backupStatus" aria-live="polite">Checking saved-data size…</div>
@@ -973,7 +970,7 @@ html[data-appearance=light] body nav[aria-label="Main navigation"]:not(#dc590a):
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V6.0 RC1</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V6.0 RC2 development</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutConfirm primary" id="checkoutConfirmBtn" onclick="confirmCheckoutDarts()" disabled>Confirm Checkout</button><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -993,7 +990,7 @@ function setAccentTheme(name){
  document.querySelectorAll(".themeChoice").forEach(button=>button.setAttribute("aria-pressed",button.dataset.theme===name?"true":"false"));
  try{localStorage.setItem(DARTS_COLOUR_KEY,name)}catch(e){}
 }
-(function initAccentTheme(){let choice="green";try{choice=localStorage.getItem(DARTS_COLOUR_KEY)||"green"}catch(e){}setAccentTheme(choice)})();
+setAccentTheme("green");
 
 const KEY="dartsCoachV4",CHECKPOINT_KEY="dartsCoachV4Checkpoint",OLD_KEYS=["dartsCoachV3","dartsCoachV2"],$=id=>document.getElementById(id);
 const STAGES=["scoring","doubles","bull","checkout","legs","singles"],STAGE_NAMES={scoring:"60-Dart Match Scoring",doubles:"Doubles Assessment",bull:"Bull Accuracy",checkout:"Guided Checkout Assessment",legs:"301 Match Calibration",singles:"Big Singles Accuracy"};
@@ -3694,7 +3691,7 @@ const QUICK_DESCRIPTIONS={
  "101 Sprint":"Finish exactly 101 on a double within your tier-specific dart allowance.",
  "Golf Five":"Play five holes; hit the nominated target in fewer strokes than par. Beginner singles routes can adapt to measured accuracy.",
  "Cricket Countdown":"Close the called numbers by earning three marks per target before the dart budget expires.",
- "Double Double":"Hit two specific doubles in sequence before your dart allowance runs out.",
+ "Double Double":"Hit four specific doubles in sequence before your dart allowance runs out.",
  "Double-In 201":"First hit a double to enter, then finish 201 with a double-out before the visit limit.",
  "Switchback":"Follow a changing target route; misses send you backwards through the sequence.",
  "501 Pressure":"Play 501 with a strict double-out dart allowance based on scoring and checkout ability.",
@@ -3706,7 +3703,7 @@ const QUICK_DESCRIPTIONS={
  "Last Dart Standing":"Six one-dart situations. Decide whether to finish or set up before throwing. Wrong decisions cost lives.",
  "Pressure Cricket":"Close 20, 19 and 18 and beat a simulated opponent\u2019s scoring pace.",
  "Bull Blackjack":"Reach exactly 150 bull points before your darts run out. Over 150 is an instant loss.",
- "Neighbour Trap":"Aim at S20. Hits on neighbouring 1 and 5 undo your progress.",
+ "Neighbour Trap":"Aim at the displayed single. Hits on its neighbours undo progress.",
  "Double Jackpot":"Use each nominated double at most once. Reach an achievable exact target without busting.",
  "Dartboard Bingo":"Coach calls random doubles. Hit five in a row for Bingo or all twenty for Full House.",
  "High-Low":"Beat alternating HIGHER and LOWER visit targets compared with your previous score.",
@@ -4324,13 +4321,14 @@ function dc23MasteryInput(value){
 }
 function dc22MasteryDart(hit){dc23MasteryInput(hit?'hit':'miss')}
 /* V5.80: practice blocks preserve state in existing game/undo/checkpoint records. */
+function dcRC2Trebles(count){const pool=Array.from({length:20},(_,i)=>i+1),out=[];while(out.length<count&&pool.length){const weights=pool.map(n=>n>=16?14:n>=7?25/9:5/6);let r=Math.random()*weights.reduce((a,b)=>a+b,0),i=0;while(i<pool.length-1&&(r-=weights[i])>=0)i++;out.push(pool.splice(i,1)[0]);}return out}
 function dc80Block(g,previous){
  const name=g.name,tier=g.tier||0;
  // Preserve named scores, benchmarks, adaptive mastery and intentionally fixed sequences.
  const makers={
   'Setup Shot':()=>({remaining:clamp(g.remaining+[-24,-16,-8,0,8,16,24][Math.floor(Math.random()*7)],70,200)}),
   'Shanghai Combo':()=>({target:dc22Shuffle(tier<=3?[20,19,18,17]:[20,19,18,17,16])[0]}),
-  'Double Double':()=>({targets:dc22Shuffle([20,16,10,8,4,12]).slice(0,2)}),
+  'Double Double':()=>({targets:dc22Shuffle([20,16,10,8,4,12,18,6,14,2]).slice(0,4)}),
   'Double Bull Bridge':()=>({stages:['D'+dc22Shuffle([20,16,10,8])[0],'BULL','D'+dc22Shuffle([20,16,10,8])[0]]}),
   'Golf Five':()=>({holes:dc22Shuffle(g.holes)}),
   'Last Dart Rescue':()=>({targets:dc22Shuffle(g.targets)}),
@@ -4338,17 +4336,23 @@ function dc80Block(g,previous){
   'Checkout Poker':()=>({cards:dc22Shuffle(tier<=3?[64,68,72,76,80]:tier<=5?[44,48,52,56,60]:[24,28,32,36,40]).slice(0,3)}),
   'Switchback':()=>{const a=dc22Shuffle([19,18,17,16]).slice(0,3);return {sequence:[20,a[0],20,a[1],20,a[2],20]}},
   'Number Lock':()=>({targets:dc22Shuffle(g.targets)}),
-  'Treble Hunt':()=>({targets:dc22Shuffle(g.targets)}),
+  'Treble Hunt':()=>({targets:g.variant==='single'?dc22Shuffle(g.targets):dcRC2Trebles(g.targets.length)}),
   'Doubles Streak':()=>({targets:dc22Shuffle(g.targets)}),
+  'Neighbour Trap':()=>({target:dc22Shuffle([20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1])[0]}),
+  'Double Duel':()=>({sequence:dc22Shuffle([20,16,8,10,12,6,18,4,14,2]).slice(0,6)}),
+  'Halve It':()=>({targets:dc22Shuffle(g.targets)}),
+  'Cricket Countdown':()=>({targets:dc22Shuffle(g.targets)}),
+  'Pressure Cricket':()=>({targets:dc22Shuffle([20,19,18,17,16,15]).slice(0,3)}),
   'High-Low':()=>({previous:dc22Shuffle([75,80,85,90,95,100,105])[0]})
  };
  const make=makers[name];if(!make)return g;
  // A fresh challenge on a changed tier or exercise. A recovered legacy round starts a fresh block.
  const prior=previous?.name===name&&previous.tier===g.tier?previous.practiceBlock:null;
  let config,attempt=1;
- if(prior&&prior.attempt<5){config=clone(prior.config);attempt=prior.attempt+1}
- else{config=make();for(let i=0;prior&&JSON.stringify(config)===JSON.stringify(prior.config)&&i<32;i++)config=make()}
- Object.assign(g,clone(config));g.practiceBlock={version:1,attempt,config:clone(config)};
+ const history=data.games.filter(x=>x.name===name&&x.practiceBlock?.config).slice(-4).map(x=>JSON.stringify(x.practiceBlock.config));
+ if(prior)history.push(JSON.stringify(prior.config));
+ config=make();for(let i=0;i<32&&history.includes(JSON.stringify(config));i++)config=make();
+ Object.assign(g,clone(config));if(name==="Double Duel")g.target=g.sequence[0];g.practiceBlock={version:1,attempt,config:clone(config)};
  return g;
 }
 function buildGame(name,previous=null){const g=name==="Focused Checkouts"?focusedRound():{name,started:Date.now()};if(name==="Big Singles")Object.assign(g,{darts:[],hits:0,day:dateKey()});
@@ -4362,8 +4366,8 @@ function buildGame(name,previous=null){const g=name==="Focused Checkouts"?focuse
   Object.assign(g,{tier,targets,step:0,target:targets[0],goal:4,lives:tier<=2?2:4,visits:0,points:0,scores:[],cleared:0,failures:0});
  }
  if(name==="Treble Hunt"){
-  const tier=pressureTier("scoring"),beginner=tier>=6;
-  Object.assign(g,{tier,variant:beginner?"single":"treble",targets:beginner?dc11SingleTargetRoute():tier<=2?[20,19,18,17]:[20,19,18],targetIndex:0,lives:tier<=2?2:5,goal:tier<=2?8:tier<=4?6:4,hits:0,misses:0,streak:0,thrown:0,targetLog:[]});
+  const manualBeginner=data.assessment?.quickStart&&["30","under30"].includes(data.assessment.quickBand);const tier=manualBeginner?Math.max(6,pressureTier("scoring")):pressureTier("scoring"),beginner=tier>=6;
+  Object.assign(g,{tier,variant:beginner?"single":"treble",targets:beginner?dc11SingleTargetRoute():tier<=2?[20,19,18,17]:[20,19,18],targetIndex:0,lives:manualBeginner?12:tier<=2?2:5,goal:tier<=2?8:tier<=4?6:4,hits:0,misses:0,streak:0,thrown:0,targetLog:[]});
  }
  if(name==="Doubles Streak"){
   const tier=pressureTier("doubles"),singles=tier>=6;
@@ -4412,7 +4416,7 @@ function buildGame(name,previous=null){const g=name==="Focused Checkouts"?focuse
  }
  if(name==="Double Double"){
   const tier=pressureTier("doubles"),targets=tier<=2?[20,20]:tier<=4?[16,8]:[20,10];
-  Object.assign(g,{tier,targets,index:0,allowed:[3,4,5,6,7,9,12][tier-1],thrown:0,hits:0});
+  Object.assign(g,{tier,targets,index:0,allowed:[6,8,10,12,14,18,24][tier-1],thrown:0,hits:0});
  }
  if(name==="Double-In 201"){
   const tier=pressureTier("checkout");Object.assign(g,{tier,remaining:201,entered:false,entryMisses:0,entryLimit:[2,3,4,5,6,8,10][tier-1],visits:0,maxVisits:[6,7,8,9,11,13,16][tier-1],points:0,scores:[],busts:0,wins:0,thrown:0,dartsUsed:0,nextVisitDarts:3,entryDouble:null});
@@ -4559,7 +4563,7 @@ function newGameDart(action){
   g.thrown++;g.hits+=action?1:0;g.marks[g.index]=Math.min(3,g.marks[g.index]+action);
   if(g.marks[g.index]>=3)g.index++;if(g.index>=g.targets.length||g.thrown>=g.allowed){endRound();return}
  }else if(name==="Double Double"){
-  g.thrown++;if(action==="hit"){g.hits++;g.index++;if(g.index>=2){endRound();return}}
+  g.thrown++;if(action==="hit"){g.hits++;g.index++;if(g.index>=g.targets.length){endRound();return}}
   if(g.thrown>=g.allowed){endRound();return}
  }else if(name==="Double-In 201"){
   // Entry is handled by doubleInEntrySubmit(), never a native phone prompt.
@@ -4600,6 +4604,7 @@ function new40Choice(value){
  if(g.name==="Double Jackpot"&&[20,16,10,5].includes(value)&&!(g.usedTargets||[]).includes(value)){snapshot();g.choice=value;save();return}
  if(g.name==="Checkout Poker"&&g.cards.includes(value)&&!g.cardsUsed?.includes(value)){snapshot();g.chosen=value;save();return}
 }
+function dcRC2Neighbours(n){const board=[20,1,18,4,13,6,10,15,2,17,3,19,7,16,8,11,14,9,12,5],i=board.indexOf(n);return [board[(i+19)%20],board[(i+1)%20]]}
 function new40Dart(value,checkoutDarts){
  const g=activeGame,s=session();if(!g||!s||s.pausedAt||s.phase!=="playing")return;
  const name=g.name;
@@ -4607,7 +4612,7 @@ function new40Dart(value,checkoutDarts){
  if(name==="Last Dart Standing"&&(!g.choice||!["hit","miss"].includes(value)))return;
  if(name==="Pressure Cricket"&&![0,1,2,3].includes(value))return;
  if(name==="Bull Blackjack"&&![0,25,50].includes(value))return;
- if(name==="Neighbour Trap"&&!["20","1","5","miss"].includes(value))return;
+ if(name==="Neighbour Trap"&&![String(g.target||20),...dcRC2Neighbours(g.target||20).map(String),"miss"].includes(value))return;
  if(name==="Double Jackpot"&&(!["hit","miss"].includes(value)||![20,16,10,5].includes(g.choice)||(g.usedTargets||[]).includes(g.choice)))return;
  if(name==="Dartboard Bingo"&&!["hit","miss"].includes(value))return;
  if(name==="Checkout Poker"&&(!g.chosen||!["hit","miss"].includes(value)))return;
@@ -4637,7 +4642,7 @@ function new40Dart(value,checkoutDarts){
   if(g.points>=g.goal||g.thrown>=g.allowed){endRound();return}
  }
  if(name==="Neighbour Trap"){
-  g.thrown++;if(value==="20"){g.progress++;g.hits++}else if(value==="1"||value==="5"){g.progress=Math.max(0,g.progress-1);g.neighbours++}
+  g.thrown++;if(value===String(g.target||20)){g.progress++;g.hits++}else if(dcRC2Neighbours(g.target||20).map(String).includes(value)){g.progress=Math.max(0,g.progress-1);g.neighbours++}
   if(g.progress>=g.goal||g.thrown>=g.allowed){endRound();return}
  }
  if(name==="Double Jackpot"){
@@ -4669,7 +4674,7 @@ function new40Dart(value,checkoutDarts){
   g.turn++;g.thrown++;if(value==="hit")g.player++;
   // The opponent is a fixed published rule, not a random or secretly adjusted outcome.
   if(g.turn%([2,2,3,3,4,5,6][g.tier-1])===0)g.opponent++;
-  g.target=[20,16,8,10,12,6][g.turn%6];
+  const route=g.sequence||[20,16,8,10,12,6];g.target=route[g.turn%route.length];
   if(g.player>=4||g.opponent>=4||g.turn>=12){g.matchDone=true;endRound();return}
  }data.game=g;save();
 }
@@ -4797,7 +4802,7 @@ function gameResult(g,completion){const e={practiceBlock:g.practiceBlock?clone(g
    g.name==="101 Sprint"?!!g.success:
    g.name==="Golf Five"?g.index>=g.holes.length&&g.strokes<=g.par:
    g.name==="Cricket Countdown"?g.index>=g.targets.length:
-   g.name==="Double Double"?g.index>=2:
+   g.name==="Double Double"?g.index>=g.targets.length:
    g.name==="Double-In 201"?!!g.wins:g.index>=g.sequence.length;
   Object.assign(e,{win:won,loss:!won,tierAtStart:g.tier,thrown:num(g.thrown),hits:num(g.hits),points:num(g.points),remaining:g.remaining,success:num(g.success),score:g.strokes,goal:g.goal,par:g.par,visits:g.visits,details:clone(g)});
   if(g.name==="Double-In 201")Object.assign(e,{dartsUsed:num(g.dartsUsed),highestFinish:num(g.finish)});
@@ -5012,7 +5017,7 @@ const EXTRA_RULES={
  "Last Dart Standing":"Six one-dart situations. For an even remainder choose a finishing double; for an odd remainder choose a setup single. Then record whether your dart hit its chosen target. Wrong route or miss costs a life. Solve all six to WIN.",
  "Pressure Cricket":"Close 20, 19 and 18 with three marks each. Single = 1 mark, double = 2, treble = 3. A closed number earns twice its value. A fixed simulated rival scores after every three darts. Close all three AND finish ahead to WIN.",
  "Bull Blackjack":"Bank 25 for outer bull or 50 for bullseye. Reach the EXACT displayed target before your darts expire. Go over and you LOSE immediately.",
- "Neighbour Trap":"Aim at the large S20. S20 adds one progress. Hitting neighbouring S1 or S5 removes one progress; a different miss uses a dart without progress. Reach the target before darts run out to WIN.",
+ "Neighbour Trap":"Aim at the displayed large single. A hit adds one progress. Hitting either neighbouring single removes one progress; a different miss uses a dart without progress. Reach the target before darts run out to WIN.",
  "Double Jackpot":"Choose from the four displayed doubles (or beginner singles). Each target can score ONCE per round. After a hit you must choose a different unused target. Bank the exact goal without going over. A bust loses the round.",
  "Dartboard Bingo":"The coach calls one random double at a time. Record each dart as Hit or Miss. You get a skill-adjusted dart allowance per call. Hit doubles disappear; missed doubles return later. Any horizontal line of FIVE is BINGO; all 20 is FULL HOUSE. A fresh random card follows each completed round.",
  "Target Mastery":"Coach-selected practice across singles, doubles, trebles, bull, checkouts, straight darts, target switching, setup, scoring and pressure. Each drill measures only what you actually record.",
@@ -5026,7 +5031,7 @@ const EXTRA_RULES={
  "101 Sprint":"Checkout 101, finishing on a double. You have a tier-dependent TOTAL dart allowance. Tap Miss for each failed dart; tap Checkout Hit and enter the darts actually used to finish. Finish within the allowance to WIN.",
  "Golf Five":"Five nominated holes. Each hole means hitting the displayed section. Hit on dart 1, 2 or 3 to score that many strokes; missing all three is four strokes. Finish at or below par to WIN.",
  "Cricket Countdown":"Close each displayed target with THREE marks. Single = 1, double = 2, treble = 3; bull 25 = 1 or 50 = 2. Close every target inside the dart budget to WIN.",
- "Double Double":"Hit the first nominated double, then the second, with your total dart allowance. Hit/Miss per dart. Both doubles = WIN; run out = LOSE.",
+ "Double Double":"Hit each nominated double in order, with your total dart allowance. Hit/Miss per dart. All doubles = WIN; run out = LOSE.",
  "Double-In 201":"Enter the visit total, counting only the opening double and subsequent darts. Enter 0 if no double was hit. Confirm the opening double and which dart hit it. Later visits use a three-dart total. Finish exactly on a double; bust leaves your score unchanged.",
  "Switchback":"Hit each called target in strict sequence, switching numbers each time. A miss knocks you TWO steps backwards. Clear the full route before running out of darts to WIN.",
  "Shanghai Combo":"Complete S, then D, then T on the SAME number, in order. Tap Hit or Miss for each dart. Misses cost lives; complete all three to win the round.",
@@ -5050,7 +5055,7 @@ let dc88Resume=null;
 function dc88Open(){const s=session(),d=$('dc88Dialog');if(!s||s.phase!=="playing"||d.open)return;dc88Resume=null;$('dc88RulesTitle').textContent=$('exerciseName').textContent+' · Rules';$('dc88RulesText').textContent=[$('exerciseRules').textContent,$('dc80Goal').dataset.full||$('dc80Goal').textContent,$('dc80Condition').textContent].filter(Boolean).join('\n\n');if(!s.pausedAt){pauseSession();dc88Resume={id:s.id,index:s.index,at:s.pausedAt}}d.onclose=()=>{const p=dc88Resume;dc88Resume=null;const now=session();if(p&&now&&now.id===p.id&&now.index===p.index&&now.pausedAt===p.at&&now.phase==='playing'&&!document.hidden)pauseSession()};d.showModal()}
 function dc88Compact(g,heading,detail,mini,label){
  const split=t=>t.split(' · ').filter(Boolean);let d=split(detail),m=split(mini);const redundant=t=>((label==='LIVES LEFT'&&/^Lives(?: left)?[: ]/i.test(t))||(/DARTS LEFT/.test(label)&&/^Darts (?:left|remaining)[: ]/i.test(t))||(/MISSES LEFT/.test(label)&&/^Misses left[: ]/i.test(t))||(/VISITS LEFT/.test(label)&&/^Visits left[: ]/i.test(t)));d=d.filter(t=>!redundant(t));m=m.filter(t=>!redundant(t)&&! /^(Miss =|Miss costs|Wrong route costs|Finish on a double|Must finish on a double|Hit both nominated|Hit the cumulative|Zero, one|Record actual darts|Decide before|25 = outer|50 = bullseye|Failure costs|Failure steps)/i.test(t));
- const clean={"Scoring Survival":["",g.cleared+"/5 successful visits"],"Scoring Ladder":["Step "+(g.step+1)+"/4","Cleared: "+g.cleared],"Setup Shot":["Do not check out",""],"Checkout Climb":["",""],"Doubles Survival":["",""],"Bull Survival":["",""],"Bull Bank":["",""],"Number Lock":["",m.join(' · ')],"Double Double":["Double "+(g.index+1)+"/2",""],"Switchback":[d.join(' · '),""],"Bull Blackjack":["",""],"Double Jackpot":["",m.join(' · ')],"Pressure Cricket":["",m.join(' · ')],"Dartboard Bingo":["",m.join(' · ')],"First Nine Siege":["", ""],"Cricket Countdown":[d.join(' · '),""],"Double Bull Bridge":["Stage "+(g.index+1)+"/3",m.filter(t=>!/^Stage /.test(t)).join(' · ')]};
+ const clean={"Scoring Survival":["",g.cleared+"/5 successful visits"],"Scoring Ladder":["Step "+(g.step+1)+"/4","Cleared: "+g.cleared],"Setup Shot":["Do not check out",""],"Checkout Climb":["",""],"Doubles Survival":["",""],"Bull Survival":["",""],"Bull Bank":["",""],"Number Lock":["",m.join(' · ')],"Double Double":["Double "+(g.index+1)+"/"+g.targets.length,""],"Switchback":[d.join(' · '),""],"Bull Blackjack":["",""],"Double Jackpot":["",m.join(' · ')],"Pressure Cricket":["",m.join(' · ')],"Dartboard Bingo":["",m.join(' · ')],"First Nine Siege":["", ""],"Cricket Countdown":[d.join(' · '),""],"Double Bull Bridge":["Stage "+(g.index+1)+"/3",m.filter(t=>!/^Stage /.test(t)).join(' · ')]};
  let v=clean[g.name]||[d.join(' · '),m.join(' · ')];$('gameProgress').textContent=v[0];if(!['301 Pressure','501 Pressure','170 Challenge','Double-In 201'].includes(g.name))$('miniMetrics').textContent=v[1];else {for(const x of $('miniMetrics').querySelectorAll('.hudChip'))if(x.textContent==='Double-out'||(label==='LIVES LEFT'&&x.textContent.startsWith('Lives left')))x.remove()}
  const goal=$('dc80Goal'),b=$('dc80BlockLabel');goal.dataset.full=goal.textContent;if(['Scoring Survival','Scoring Ladder','Doubles Survival','Checkout Climb','Focused Checkouts','Bull Survival','Bull Accuracy','Staying Straight','301 Pressure','501 Pressure','170 Challenge','Target Mastery','Double Jackpot','Bull Blackjack','First Nine Siege','Risk or Reward','Bull Bank'].includes(g.name))goal.textContent='';$('dc80Objective').classList.toggle('dc88Empty',!goal.textContent&&!b.textContent);const note=$('dc36PressureMessage');if(!['FINAL CHANCE','LAST ONE','NO CHANCES LEFT'].includes(note.textContent))note.textContent='';
 }
@@ -5171,8 +5176,8 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   html=button(n===25?"Outer 25 (+1)":"Single (+1)","newGameDart(1)")+button(n===25?"Bullseye (+2)":"Double (+2)","newGameDart(2)")+(n===25?"":button("Treble (+3)","newGameDart(3)"))+button("Miss","newGameDart(0)");break;
  }
  case "Double Double":
-  heading="D"+g.targets[Math.min(g.index,1)];detail="Double "+(g.index+1)+"/2 · Darts left "+(g.allowed-g.thrown);
-  mini="Hit both nominated doubles to win";
+  heading="D"+g.targets[Math.min(g.index,g.targets.length-1)];detail="Double "+(g.index+1)+"/"+g.targets.length+" · Darts left "+(g.allowed-g.thrown);
+  mini="Hit all nominated doubles to win";
   html=button("Hit","newGameDart('hit')")+button("Miss","newGameDart('miss')");break;
  case "Double-In 201":{
   const darts=clamp(Math.round(num(g.nextVisitDarts)||3),1,3);
@@ -5223,9 +5228,9 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   mini="Darts left "+(g.allowed-g.thrown);
   html=button("Bull 50","new40Dart(50)")+button("Outer 25","new40Dart(25)")+button("Miss","new40Dart(0)");break;
  case "Neighbour Trap":
-  heading="S20";detail="S20 helps · S1 and S5 set you back";
+  heading="S"+(g.target||20);detail=heading+" helps · "+dcRC2Neighbours(g.target||20).map(n=>"S"+n).join(" and ")+" set you back";
   mini="Progress "+g.progress+"/"+g.goal+" · Darts left "+(g.allowed-g.thrown);
-  html=button("S20","new40Dart('20')")+button("S1","new40Dart('1')")+button("S5","new40Dart('5')")+button("Other miss","new40Dart('miss')");break;
+  html=[g.target||20,...dcRC2Neighbours(g.target||20)].map(n=>button("S"+n,"new40Dart('"+n+"')")).join("")+button("Other miss","new40Dart('miss')");break;
  case "Double Jackpot":
   heading=g.points+" / "+g.goal;detail="Hit EXACT points without going over";
   mini="Used: "+((g.usedTargets||[]).map(n=>g.ring+n).join(', ')||'none')+" · Darts left "+(g.allowed-g.thrown);
@@ -5304,7 +5309,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  '101 Sprint':['FINISH 101 ON A DOUBLE','Within total dart allowance'],
  'Golf Five':['FINISH AT OR BELOW '+g.par+' STROKES','3 misses on a hole = 4 strokes'],
  'Cricket Countdown':['CLOSE ALL TARGETS','3 marks each · finish before darts run out'],
- 'Double Double':['HIT BOTH DOUBLES IN ORDER','Darts exhausted = loss'],
+ 'Double Double':['HIT ALL DOUBLES IN ORDER','Darts exhausted = loss'],
  'Double-In 201':[g.entered?'CHECK OUT '+heading:'HIT ANY DOUBLE',g.entered?'Double-out · bust restores score · visit limit applies':'Entry allowance exhausted = loss'],
  'Switchback':['CLEAR THE SEQUENCE','Miss sends you back 2 steps · darts exhausted = loss'],
  'Last Dart Rescue':['SOLVE ALL FIVE FINISHES','One dart per try · wrong route or miss costs life'],
@@ -5313,7 +5318,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  'Last Dart Standing':['SOLVE ALL SIX SITUATIONS','One dart · wrong route or miss costs life'],
  'Pressure Cricket':['CLOSE ALL THREE AND BEAT RIVAL','3 marks each · darts exhausted or behind = loss'],
  'Bull Blackjack':['EXACTLY '+g.goal+' POINTS','Go over or run out below goal = loss'],
- 'Neighbour Trap':['REACH '+g.goal+' PROGRESS','S1/S5 remove progress · darts exhausted = loss'],
+ 'Neighbour Trap':['REACH '+g.goal+' PROGRESS','Neighbours remove progress · darts exhausted = loss'],
  'Double Jackpot':['EXACTLY '+g.goal+' POINTS','Each target once · overshoot or darts exhausted = loss'],
  'Dartboard Bingo':['COMPLETE A LINE OF FIVE','Full house = all 20 · call limit applies'],
  'Target Mastery':['PRACTISE '+heading,'Record actual results · no fabricated pass/fail'],
@@ -5324,7 +5329,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  'Double Duel':['FIRST TO 4 POINTS','Beat rival within 12 turns']
  };
  const goal=goals[g.name];objective.classList.toggle('hidden',!goal);
- if(goal){$('dc80Goal').textContent=goal[0];$('dc80Condition').textContent=goal[1];$('dc80BlockLabel').textContent=g.practiceBlock?(g.name==='Setup Shot'?'ATTEMPT ':'ROUND ')+g.practiceBlock.attempt+'/5':'';}
+ if(goal){$('dc80Goal').textContent=goal[0];$('dc80Condition').textContent=goal[1];$('dc80BlockLabel').textContent=g.practiceBlock?"":'';}
 
  const danger=$('dc22Danger');
  if(danger){
@@ -6312,14 +6317,7 @@ async function saveMonthlyReport(){try{const snap=reportSnapshot(selectedReportM
 async function shareMonthlyReport(){const snap=reportSnapshot(selectedReportMonth||monthString(Date.now()));if(!snap)return;try{const blob=await canvasBlob(createMonthlyCanvas(snap));const filename="darts-coach-report-"+snap.ym+".png";const file=new File([blob],filename,{type:"image/png"});if(navigator.share&&(!navigator.canShare||navigator.canShare({files:[file]}))){try{await navigator.share({files:[file],title:"Darts Coach · "+snap.title,text:"Monthly training report"});return}catch(e){if(e.name==="AbortError")return}}downloadBlob(blob,filename);alert("Report image saved. You can share it from Photos or Files.")}catch(e){alert("Unable to share report: "+e.message)}}
 /* Full fresh start: preserve only non-performance preferences. */
 function resetTrainingStatistics(){
- if(!confirm("RESET EVERYTHING? This permanently deletes sessions, games, Big Singles results, assessments, assessment history, skill levels, coaching reviews and unfinished training. After reset, choose Full Assessment or Quick Start again. Your throwing hand and training days will remain. Make a backup first."))return;
- const typed=prompt("Type RESET to confirm that ALL training and assessment data will be deleted:","");
- if(typed!=="RESET"){
-  const message=$("resetMessage");
-  if(message)message.textContent="Reset cancelled. Nothing was deleted.";
-  return;
- }
- if(!confirm("FINAL CONFIRMATION: Delete all training and assessment data now? This cannot be undone without a backup."))return;
+ if(!confirm("Delete all your training data, statistics and progress? This cannot be undone without a backup."))return;
  const replacement=blank();
  replacement.days=[...data.days];
  replacement.throwingHand=data.throwingHand;
@@ -6360,7 +6358,7 @@ function recordMetrics(g){
  if(g.name==="Last Dart Standing")return [{label:"Situations solved",value:num(g.details?.index),higher:true}];
  if(g.name==="Pressure Cricket")return [{label:"Marks closed",value:num(g.details?.index),higher:true},{label:"Points lead",value:num(g.details?.points)-num(g.details?.opponent),higher:true}];
  if(g.name==="Bull Blackjack")return [{label:"Closest to goal",value:num(g.points),higher:true}];
- if(g.name==="Neighbour Trap")return [{label:"Clean 20s",value:num(g.hits),higher:true}];
+ if(g.name==="Neighbour Trap")return [{label:"Clean singles",value:num(g.hits),higher:true}];
  if(g.name==="Double Jackpot")return [{label:"Points banked",value:num(g.points),higher:true}];
  if(g.name==="Dartboard Bingo")return [{label:"Squares closed",value:(g.details?.marked||[]).length,higher:true}];
  if(g.name==="High-Low")return [{label:"Successful comparisons",value:num(g.details?.won),higher:true}];
@@ -7007,7 +7005,7 @@ performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);setIn
 
 </script><div id="welcomeOverlay" class="welcomeOverlay hidden" role="dialog" aria-modal="true" aria-labelledby="welcomeHeading">
  <div class="welcomePanel dc36InfoPanel">
-  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V6.0 RC1</span></div>
+  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V6.0 RC2 development</span></div>
   <h2 id="welcomeHeading">Your game.<br><span>Your next level.</span></h2>
   <p class="dc36InfoLead">Darts Coach combines structured practice, measurable results and an adaptive training planner. It gives you a purposeful session, then learns cautiously from what you actually complete.</p>
   <div class="dc36InfoStats"><div><strong>41</strong><small>Training games</small></div><div><strong>7</strong><small>Hidden skill levels</small></div><div><strong>60</strong><small>Minute core session</small></div></div>
