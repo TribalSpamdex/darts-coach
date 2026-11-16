@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V5.96.0</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V6.0 RC1</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -973,7 +973,7 @@ html[data-appearance=light] body nav[aria-label="Main navigation"]:not(#dc590a):
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V5.96.0</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V6.0 RC1</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutConfirm primary" id="checkoutConfirmBtn" onclick="confirmCheckoutDarts()" disabled>Confirm Checkout</button><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
 "use strict";
 
@@ -1152,13 +1152,36 @@ function sessionRemaining(){return Math.max(0,sessionBudget()-sessionElapsed())}
    A milestone checkpoint is a secondary same-origin safety copy, NOT a file or cloud sync. */
 function isValidPlayerData(d){return !!d&&typeof d==="object"&&!Array.isArray(d)&&Array.isArray(d.sessions)&&Array.isArray(d.games)&&d.assessment&&typeof d.assessment==="object"&&d.skills&&typeof d.skills==="object"}
 let recoveryNotice="",storageSaveError="";
+/* Lossless compact recovery only; canonical data and exported JSON remain unchanged. */
+function dc998Pack(text){
+ const bytes=new TextEncoder().encode(text),keys=new Int32Array(65536),values=new Uint16Array(65536),out=new Uint16Array(bytes.length);let next=256,w=-1,n=0;
+ for(let i=0;i<bytes.length;i++){const b=bytes[i];if(w<0){w=b;continue}const key=w*256+b+1;let slot=Math.imul(key,0x9e3779b1)>>>16;while(keys[slot]!==0&&keys[slot]!==key)slot=(slot+1)&65535;if(keys[slot]===key){w=values[slot];continue}out[n++]=w+32;if(next<32700){keys[slot]=key;values[slot]=next++}w=b}
+ if(w>=0)out[n++]=w+32;const parts=[];for(let i=0;i<n;i+=8192)parts.push(String.fromCharCode(...out.subarray(i,Math.min(n,i+8192))));return parts.join('');
+}
+function dc998Unpack(packed,length){
+ if(!Number.isSafeInteger(length)||length<0||length>50000000)throw Error('Invalid recovery length');
+ const dict=[],bytes=new Uint8Array(length);let pos=0,next=256,prev=null;
+ for(let i=0;i<256;i++)dict[i]=[i];
+ for(let i=0;i<packed.length;i++){const code=packed.charCodeAt(i)-32;let entry=dict[code];if(!entry&&code===next&&prev&&next<32700)entry=prev.concat(prev[0]);if(!entry||pos+entry.length>length)throw Error('Invalid recovery code');bytes.set(entry,pos);pos+=entry.length;if(prev&&next<32700)dict[next++]=prev.concat(entry[0]);prev=entry}
+ if(pos!==length)throw Error('Truncated recovery');return new TextDecoder('utf-8',{fatal:true}).decode(bytes);
+}
+function dc998CheckpointPayload(value){
+ const savedAt=Date.now(),raw=JSON.stringify(value),plain=JSON.stringify({savedAt,data:value});
+ if(raw.length<100000)return plain;
+ try{const packed=dc998Pack(raw),compact=JSON.stringify({savedAt,format:'dc-lzw1',length:new TextEncoder().encode(raw).length,packed});return compact.length<plain.length?compact:plain}catch(e){return plain}
+}
+function dc999PrimaryPayload(value){
+ const raw=JSON.stringify(value);
+ if(raw.length<100000)return raw;
+ try{const bytes=new TextEncoder().encode(raw),packed=dc998Pack(raw),compact=JSON.stringify({format:'dc-lzw1-primary',length:bytes.length,packed});return compact.length<raw.length?compact:raw}catch(e){return raw}
+}
 function load(){
  for(const key of [KEY,CHECKPOINT_KEY,...OLD_KEYS]){
   try{
    const raw=localStorage.getItem(key);
    if(!raw)continue;
    const parsed=JSON.parse(raw);
-   const d=key===CHECKPOINT_KEY&&parsed&&parsed.data?parsed.data:parsed;
+   const d=key===KEY&&parsed?.format==='dc-lzw1-primary'?JSON.parse(dc998Unpack(parsed.packed,parsed.length)):key===CHECKPOINT_KEY&&parsed?.format==='dc-lzw1'?JSON.parse(dc998Unpack(parsed.packed,parsed.length)):key===CHECKPOINT_KEY&&parsed&&parsed.data?parsed.data:parsed;
    if(isValidPlayerData(d)){
     if(key===CHECKPOINT_KEY)recoveryNotice="A local recovery copy was loaded because the main record was unavailable. Save a backup file now.";
     return normaliseData(Object.assign(blank(),d));
@@ -1167,11 +1190,22 @@ function load(){
  }
  return normaliseData(blank());
 }
+function dc99ReplaceStoredData(replacement){
+ const payload=dc999PrimaryPayload(replacement);
+ localStorage.setItem(KEY,payload); // commit first; never erase on a failed primary write
+ dc17SaveFailed=false;storageSaveError='';
+ for(const key of [CHECKPOINT_KEY,...OLD_KEYS]){
+  try{localStorage.removeItem(key)}catch(e){storageSaveError='An old recovery record could not be removed. Export a JSON backup.'}
+ }
+ try{localStorage.setItem(CHECKPOINT_KEY,dc998CheckpointPayload(replacement))}
+ catch(e){storageSaveError='The automatic recovery copy could not be updated. Save a JSON backup to Files.'}
+}
 function checkpointData(){
- try{localStorage.setItem(CHECKPOINT_KEY,JSON.stringify({savedAt:Date.now(),data:clone(data)}));return true}
+ if(dc17SaveFailed)return false;
+ try{localStorage.setItem(CHECKPOINT_KEY,dc998CheckpointPayload(data));if(storageSaveError.includes("recovery"))storageSaveError="";return true}
  catch(e){
   // Do not delete an older valid recovery checkpoint to make space.
-  storageSaveError='The automatic recovery copy could not be updated. Save a JSON backup to Files.';
+  if(!dc17SaveFailed)storageSaveError='The automatic recovery copy could not be updated. Save a JSON backup to Files.';
   return false;
  }
 }
@@ -1209,7 +1243,7 @@ function save(render=true){
  }
  let written=false;
  try{
-  const payload=JSON.stringify(data);
+  const payload=dc999PrimaryPayload(data);
   localStorage.setItem(KEY,payload);
   written=true;dc17SaveFailed=false;
   if(!storageSaveError.includes('recovery'))storageSaveError='';
@@ -3308,7 +3342,7 @@ function dc30Feedback(candidate,now=Date.now()){
   transfer.status==='promising'&&share<.17) {minutes=15;reason='bounded increase with converging independent transfer evidence'}
  if(!adverse&&!stalled&&share<.33&&response.status==='encouraging'&&response.samples>=3){
  const signal=Math.max(0,response.mean- Math.max(0,response.uncertainty)*2);
- minutes=Math.round(5+Math.min(15,signal*40+Math.min(5,response.samples-3))*(1-share/.33));
+ minutes=Math.min(15,Math.round(5+Math.min(10,signal*40+Math.min(5,response.samples-3))*(1-share/.33)));
  }
  if(adverse||share>.33||stalled)minutes=5;
  return {minutes,reason,status:adverse?'caution':response.status==='encouraging'?'encouraging':stalled?'stalled':'uncertain',
@@ -3439,6 +3473,7 @@ function dc22MasteryCandidate(){
   if(singles.development.length)candidates.push({ring:'S',target:singles.development[0].target,priority:singles.development[0].score});
   if(doubles.weak.length)candidates.push({ring:'D',target:doubles.weak[0],priority:3.5});
   const today=(data.sessions||[]).filter(x=>x?.date===dateKey());
+  if((data.games||[]).some(g=>g?.name==='Target Mastery'&&!g.quick&&Number.isFinite(g.at)&&g.at<=Date.now()&&dateKey(g.at)===dateKey()&&['natural','partial','timed'].includes(g.completion)))return null;
   if(today.some(x=>(x.focus||[]).includes('Target Mastery')))return null;
   // Do not schedule the same exact segment every day when there are other
   // measured needs. Leave at least two calendar days between repeats.
@@ -3866,9 +3901,13 @@ function allocateRemaining(s){
     const pool=QUICK_GAMES.filter(n=>dc28GameCategory(n)===cat&&!DC10_MEASUREMENT_GAMES.has(n)&&!s.plan.some(e=>e.name===n)&&!recent.has(n));
     if(!pool.length)break;
     pool.sort((a,b)=>exposure(a)-exposure(b)||a.localeCompare(b));
-    const move=Math.min(1200,entry.seconds-1200),name=pool[0];
-    entry.seconds-=move;
-    s.plan.splice(s.plan.indexOf(entry)+1,0,{name,mode:'timed',seconds:move,wholeCoach:{...entry.wholeCoach,plannedMinutes:move/60,reason:'complementary game variety'}});
+    const total=entry.seconds;
+    const count=Math.min(pool.length+1,Math.ceil(total/1200),Math.floor(total/300));
+    const share=Math.floor(total/count/60)*60;
+    entry.seconds=total-share*(count-1);
+    const additions=pool.slice(0,count-1).map(name=>({name,mode:'timed',seconds:share,wholeCoach:{...entry.wholeCoach,plannedMinutes:share/60,reason:'complementary game variety'}}));
+    s.plan.splice(s.plan.indexOf(entry)+1,0,...additions);
+    break;
    }
   }
   for(const e of s.plan.slice(s.index))if(e.wholeCoach)e.wholeCoach.plannedMinutes=e.seconds/60;
@@ -3939,13 +3978,13 @@ function focusedFailure(g){
 }
 function focusedMiss(){
  const g=activeGame;
- if(!g||g.name!=="Focused Checkouts"||session()?.pausedAt)return;
+ if(!g||g.name!=="Focused Checkouts"||session()?.phase!=="playing"||session()?.pausedAt)return;
  snapshot();g.attempt++;
  if(g.attempt>=3){g.dartsUsed+=3;if(focusedFailure(g))return}
  data.game=g;save();
 }
 function focusedHit(){
- const g=activeGame;if(!g||g.name!=="Focused Checkouts"||session()?.pausedAt)return;
+ const g=activeGame;if(!g||g.name!=="Focused Checkouts"||session()?.phase!=="playing"||session()?.pausedAt)return;
  const left=3-g.attempt;
  askCheckoutDarts({score:g.target,maxDarts:left,onFinish:used=>{
   snapshot();(g.attemptLog||(g.attemptLog=[])).push({target:g.target,hit:true,darts:g.attempt+used});g.dartsUsed+=g.attempt+used;g.success++;g.attempts++;g.attempt=0;g.target++;
@@ -4171,7 +4210,7 @@ function scoringVisit(){
  }
  data.game=g;save();
 }
-function trebleDart(hit){
+function trebleDart(hit){if(typeof hit!=="boolean")return;
  const g=activeGame,s=session();if(!g||g.name!=="Treble Hunt"||!s||s.pausedAt||s.phase!=="playing")return;
  snapshot();(g.targetLog||(g.targetLog=[])).push({target:g.targets[g.targetIndex],ring:g.variant==="single"?"S":"T",hit:!!hit});g.thrown++;
  if(hit){g.hits++;g.streak++;g.targetIndex=(g.targetIndex+1)%g.targets.length}
@@ -4179,7 +4218,7 @@ function trebleDart(hit){
  if(g.hits>=g.goal||g.lives<=0){endRound();return}
  data.game=g;save();
 }
-function doublesStreakDart(hit){
+function doublesStreakDart(hit){if(typeof hit!=="boolean")return;
  const g=activeGame,s=session();if(!g||g.name!=="Doubles Streak"||!s||s.pausedAt||s.phase!=="playing")return;
  snapshot();(g.targetLog||(g.targetLog=[])).push({target:g.targets[g.targetIndex],hit:!!hit,ring:g.variant==="singles"?"S":"D"});g.thrown++;
  if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);g.targetIndex=(g.targetIndex+1)%g.targets.length}
@@ -4335,7 +4374,7 @@ function buildGame(name,previous=null){const g=name==="Focused Checkouts"?focuse
   Object.assign(g,{tier,scoringTier:scoring,checkoutTier:checkout,remaining:301,maxDarts,maxVisits:Math.ceil(maxDarts/3),lives:tier<=2?1:3,visits:0,points:0,scores:[],visitDarts:[],dartsUsed:0,busts:0,wins:0});
  }
  if(name==="Scoring Challenge")Object.assign(g,{visits:0,points:0,scores:[]});if(name==="Staying Straight")Object.assign(g,{index:0,points:0,counts:[0,0,0,0,0],hits:[0,0,0,0,0],misses:[0,0,0,0,0],darts:0});
- if(name==="Checkout Climb")Object.assign(g,{target:61,attempt:0,highest:61,success:0,fail:0,dartsUsed:0,attemptLog:[]});if(name==="Bull Accuracy")Object.assign(g,{thrown:0,outer:0,inner:0,misses:0});
+ if(name==="Checkout Climb")Object.assign(g,{target:61,attempt:0,highest:0,success:0,fail:0,dartsUsed:0,attemptLog:[]});if(name==="Bull Accuracy")Object.assign(g,{thrown:0,outer:0,inner:0,misses:0});
  if(name==="Bull Survival"){const tier=num(data.skills.bull.level),central=tier>=6,inner=tier<=2;Object.assign(g,{target:central?"CENTRE":inner?"50":"25/50",allowed:tier===1?1:tier===2?3:tier===3?3:tier===4?6:tier===5?9:tier===6?7:9,used:0,hits:0,thrown:0,wins:0})}
  if(name==="Bull Streak"){const tier=num(data.skills.bull.level),central=tier>=6,inner=tier<=2;Object.assign(g,{target:central?"CENTRE":inner?"50":"25/50",goal:[3,2,4,3,2,3,2][tier-1],streak:0,best:0,thrown:0,hits:0})}
  if(name==="Shanghai Combo"){
@@ -4357,6 +4396,7 @@ function buildGame(name,previous=null){const g=name==="Focused Checkouts"?focuse
  }
  if(name==="Outside Doubles"){
   const tier=pressureTier("doubles"),targets=tier<=2?[20,16,8,4,2]:tier<=4?[20,16,8,4]:tier===5?[20,16,8]:tier===6?[20,16]:[20];
+  if(tier<=5&&targets.length>1)targets.splice(0,targets.length,...dc16DoublesRoute(targets));
   Object.assign(g,{tier,targets,index:0,lives:tier<=3?1:tier<=5?2:3,allowed:tier<=2?12:tier<=4?15:18,thrown:0,hits:0,inside:0,outside:0});
  }
  if(name==="101 Sprint"){
@@ -4364,7 +4404,7 @@ function buildGame(name,previous=null){const g=name==="Focused Checkouts"?focuse
  }
  if(name==="Golf Five"){
   const tier=pressureTier("doubles"),ring=tier<=2?"D":tier<=4?"D":"S";
-  Object.assign(g,{tier,ring,holes:ring==="S"?dc11SingleTargetRoute(data,Date.now(),5):[20,1,18,4,13],index:0,shots:0,strokes:0,par:[8,10,11,12,13,14,15][tier-1],hits:0,thrown:0});
+  Object.assign(g,{tier,ring,holes:ring==="S"?dc11SingleTargetRoute(data,Date.now(),5):dc16DoublesRoute([20,1,18,4,13]),index:0,shots:0,strokes:0,par:[8,10,11,12,13,14,15][tier-1],hits:0,thrown:0});
  }
  if(name==="Cricket Countdown"){
   const tier=pressureTier("scoring"),targets=tier<=2?[20,19,18,17,16,15,25]:tier<=4?[20,19,18,17,16,15]:[20,19,18,17,16];
@@ -4463,7 +4503,7 @@ function buildGame(name,previous=null){const g=name==="Focused Checkouts"?focuse
  }
  return dc20AttachForecast(dc80Block(dc19ApplyTuning(dc12ApplyRecovery(g)),previous))}
 
-function shanghaiDart(hit){
+function shanghaiDart(hit){if(typeof hit!=="boolean")return;
  const s=session(),g=activeGame;if(!s||s.pausedAt||s.phase!=="playing"||!g||g.name!=="Shanghai Combo")return;
  snapshot();g.thrown++;
  if(hit){g.hits++;g.stage++;if(g.stage>=3){g.combinations++;endRound();return}}
@@ -4497,6 +4537,8 @@ function newGameDart(action){
  if(name==="Cricket Countdown"&&(!Number.isInteger(action)||action<0||action>3))return;
  if(name==="Outside Doubles"&&!["double","inside","outside"].includes(action))return;
  if(name==="Double-In 201")return;
+ if(["Golf Five","Double Double","Switchback"].includes(name)&&!["hit","miss"].includes(action))return;
+ if(name==="101 Sprint"&&action!=="miss")return;
  snapshot();
  if(name==="Halve It"){
   const label=g.targets[g.index],base=label==="BULL"?25:Number(label.slice(1))*(label[0]==="T"?3:label[0]==="D"?2:1);
@@ -4529,10 +4571,10 @@ function newGameDart(action){
  }
  data.game=g;save();
 }
-function rescueAim(choice){const g=activeGame;if(g?.name!=="Last Dart Rescue"||session()?.pausedAt)return;const target=g.targets[g.index],correct=target===50?"BULL":"D"+(target/2);snapshot();
+function rescueAim(choice){const g=activeGame;if(g?.name!=="Last Dart Rescue"||session()?.phase!=="playing"||session()?.pausedAt||g.aim||!/^D(?:[1-9]|1[0-9]|20)$|^BULL$/.test(choice))return;const target=g.targets[g.index],correct=target===50?"BULL":"D"+(target/2);snapshot();
  if(choice===correct){g.aim=correct;data.game=g;save()}else{g.aim=null;g.lives--;if(g.lives<=0){endRound();return}data.game=g;save()}}
-function rescueDart(hit){const g=activeGame,s=session();if(!s||s.pausedAt||s.phase!=="playing"||g?.name!=="Last Dart Rescue"||!g.aim)return;snapshot();g.thrown++;if(hit){g.hits++;g.index++}else g.lives--;g.aim=null;if(g.index>=g.targets.length||g.lives<=0){endRound();return}data.game=g;save()}
-function setRisk(choice){if(activeGame?.name!=="Risk or Reward"||session()?.pausedAt||!["safe","risk"].includes(choice))return;snapshot();activeGame.choice=choice;data.game=activeGame;save()}
+function rescueDart(hit){if(typeof hit!=="boolean")return;const g=activeGame,s=session();if(!s||s.pausedAt||s.phase!=="playing"||g?.name!=="Last Dart Rescue"||!g.aim)return;snapshot();g.thrown++;if(hit){g.hits++;g.index++}else g.lives--;g.aim=null;if(g.index>=g.targets.length||g.lives<=0){endRound();return}data.game=g;save()}
+function setRisk(choice){if(activeGame?.name!=="Risk or Reward"||session()?.phase!=="playing"||session()?.pausedAt||!["safe","risk"].includes(choice))return;snapshot();activeGame.choice=choice;data.game=activeGame;save()}
 function sprintWin(){
  const g=activeGame,s=session();if(!s||s.pausedAt||s.phase!=="playing"||g?.name!=="101 Sprint")return;
  askCheckoutDarts({score:101,maxDarts:Math.min(3,g.allowed-g.used),onFinish:n=>{snapshot();g.used+=n;g.hits=1;g.success=1;endRound()}});
@@ -4571,6 +4613,7 @@ function new40Dart(value,checkoutDarts){
  if(name==="Checkout Poker"&&(!g.chosen||!["hit","miss"].includes(value)))return;
  if(name==="Double Bull Bridge"&&!["hit","miss"].includes(value))return;
  if(name==="Double Duel"&&!["hit","miss"].includes(value))return;
+ if(name==="Checkout Poker"&&value==="hit"&&checkoutDarts!==undefined&&(!Number.isInteger(checkoutDarts)||!possibleCheckoutIn(g.chosen,checkoutDarts)))return;
  if(name==="Checkout Poker"&&value==="hit"&&!checkoutDarts){
   askCheckoutDarts({score:g.chosen,maxDarts:3,onFinish:d=>new40Dart("hit",d)});return;
  }
@@ -4610,7 +4653,7 @@ function new40Dart(value,checkoutDarts){
   if(hit){g.marked.push(g.called);g.hits++}
   g.lines=dc22BingoLines(g);g.line=g.lines>0;
   g.fullHouse=g.marked.length===20;
-  if(g.fullHouse||g.calls>=g.maxCalls&&g.used>=g.allowed){endRound();return}
+  if(g.fullHouse||g.calls>=g.maxCalls&&(hit||g.used>=g.allowed)){endRound();return}
   if(hit||g.used>=g.allowed)dc22NextBingoCall(g);
  }
  if(name==="Checkout Poker"){
@@ -4660,11 +4703,11 @@ function undoGame(){const s=session();if(!s||s.pausedAt||s.phase!=="playing")ret
  data.bestDouble=0;data.bestCheckout=0;data.doublesHit=0;data.doublesThrown=0;
  for(const g of data.games){if(g.completion!=="natural")continue;
   if(g.name==="Doubles Survival"&&g.variant==="doubles"){data.bestDouble=Math.max(data.bestDouble,num(g.highest));data.doublesHit+=num(g.hits);data.doublesThrown+=num(g.thrown)}
-  if(g.name==="Checkout Climb")data.bestCheckout=Math.max(data.bestCheckout,num(g.highest));
+  if(g.name==="Checkout Climb"&&g.success>0)data.bestCheckout=Math.max(data.bestCheckout,num(g.highest));
  }
  hideRoundAnnouncement();save();
 }
-function snapshot(){undoSnapshot=clone(activeGame);if(session())session().lastRoundUndo=null}
+function snapshot(){undoSnapshot=clone(activeGame);if(activeGame)activeGame.dc598Action=true;if(session())session().lastRoundUndo=null}
 function recordBig(hit){const g=activeGame,s=session();if(!g||g.name!=="Big Singles"||s.pausedAt||g.darts.length>=60)return;snapshot();g.darts.push(hit?1:0);if(hit)g.hits++;if(g.darts.length===60){data.bigSingles.push({day:dateKey(s.start),at:Date.now(),hits:g.hits,sessionId:s.id,exerciseId:currentExercise()?.provenanceId||null,perNumber:Array.from({length:20},(_,i)=>g.darts.slice(i*3,i*3+3).reduce((a,b)=>a+b,0)),complete:true});completeExercise("natural");return}data.game=g;save()}
 /* V5.65: A wrong 60th Big Singles tap must be correctable before moving on.
    Reverse exactly this exercise's saved daily benchmark, completion and extra clock
@@ -4692,18 +4735,18 @@ function dc65CorrectFinalSinglesDart(){
  activeGame=g;data.game=g;undoSnapshot=null;
  save();
 }
-function survivalDart(hit){const g=activeGame;if(!g||g.name!=="Doubles Survival"||session().pausedAt)return;normaliseSurvivalGame(g);snapshot();(g.targetLog||(g.targetLog=[])).push({target:g.target,hit:!!hit,ring:g.variant==="singles"?"S":"D"});g.used++;g.thrown++;if(hit){g.hits++;g.highest=Math.max(g.highest,g.target);g.lastHit=g.target;g.index++;g.used=0;if(g.index>=g.sequence.length){endRound();return}g.target=g.sequence[g.index]}else if(g.used>=g.allowed){endRound();return}data.game=g;save()}
+function survivalDart(hit){if(typeof hit!=="boolean"||session()?.phase!=="playing")return;const g=activeGame;if(!g||g.name!=="Doubles Survival"||session().pausedAt)return;normaliseSurvivalGame(g);snapshot();(g.targetLog||(g.targetLog=[])).push({target:g.target,hit:!!hit,ring:g.variant==="singles"?"S":"D"});g.used++;g.thrown++;if(hit){g.hits++;g.highest=Math.max(g.highest,g.target);g.lastHit=g.target;g.index++;g.used=0;if(g.index>=g.sequence.length){endRound();return}g.target=g.sequence[g.index]}else if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function doubleDart(hit){survivalDart(hit)}
-function recordScore(){const input=$("scoreInput");if(!input||input.value==="")return;const n=Number(input.value);if(!validVisit(n)){alert("Enter a valid three-dart total.");return}const g=activeGame;if(!g||g.name!=="Scoring Challenge"||session().pausedAt)return;snapshot();g.points+=n;g.visits++;g.scores.push(n);if(n===180)g.oneEighties=num(g.oneEighties)+1;padSet("");if(g.visits>=10){endRound();return}data.game=g;save()}
-function straightDart(value){const g=activeGame;if(!g||g.name!=="Staying Straight"||session().pausedAt)return;normaliseStraightGame(g);if(g.index>=5)return;snapshot();const i=g.index;g.darts++;if(value){g.points+=value;g.counts[i]+=value;g.hits[i]++;if(g.darts%3===1)g.t20run=0;if(i===0&&value===3){g.t20run=num(g.t20run)+1;if(g.t20run===3){g.oneEighties=num(g.oneEighties)+1;g.t20run=0}}else g.t20run=0}else{g.misses[i]++;g.index++;if(g.index>=5){endRound();return}}data.game=g;save()}
-function checkoutMiss(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||session().pausedAt)return;snapshot();g.attempt++;if(g.attempt>=3){g.dartsUsed+=3;g.fail++;(g.attemptLog||(g.attemptLog=[])).push({target:g.target,hit:0});g.target--;g.attempt=0;if(g.target<50){endRound();return}}data.game=g;save()}
-function checkoutHit(){const g=activeGame;if(!g||g.name!=="Checkout Climb"||session().pausedAt)return;
+function recordScore(){if(session()?.phase!=="playing")return;const input=$("scoreInput");if(!input||input.value==="")return;const n=Number(input.value);if(!validVisit(n)){alert("Enter a valid three-dart total.");return}const g=activeGame;if(!g||g.name!=="Scoring Challenge"||session().pausedAt)return;snapshot();g.points+=n;g.visits++;g.scores.push(n);if(n===180)g.oneEighties=num(g.oneEighties)+1;padSet("");if(g.visits>=10){endRound();return}data.game=g;save()}
+function straightDart(value){if(![0,1,2,3].includes(value)||session()?.phase!=="playing")return;const g=activeGame;if(!g||g.name!=="Staying Straight"||session().pausedAt)return;normaliseStraightGame(g);if(g.index>=5)return;snapshot();const i=g.index;g.darts++;if(value){g.points+=value;g.counts[i]+=value;g.hits[i]++;if(g.darts%3===1)g.t20run=0;if(i===0&&value===3){g.t20run=num(g.t20run)+1;if(g.t20run===3){g.oneEighties=num(g.oneEighties)+1;g.t20run=0}}else g.t20run=0}else{g.misses[i]++;g.index++;if(g.index>=5){endRound();return}}data.game=g;save()}
+function checkoutMiss(){if(session()?.phase!=="playing")return;const g=activeGame;if(!g||g.name!=="Checkout Climb"||session().pausedAt)return;snapshot();g.attempt++;if(g.attempt>=3){g.dartsUsed+=3;g.fail++;(g.attemptLog||(g.attemptLog=[])).push({target:g.target,hit:0});g.target--;g.attempt=0;if(g.target<50){endRound();return}}data.game=g;save()}
+function checkoutHit(){if(session()?.phase!=="playing")return;const g=activeGame;if(!g||g.name!=="Checkout Climb"||session().pausedAt)return;
  askCheckoutDarts({score:g.target,maxDarts:3-g.attempt,onFinish:darts=>{snapshot();g.dartsUsed+=g.attempt+darts;g.success++;(g.attemptLog||(g.attemptLog=[])).push({target:g.target,hit:1});g.highest=Math.max(g.highest,g.target);g.target+=5;g.attempt=0;if(g.target>=100){endRound();return}data.game=g;save()}});
 }
-function bullDart(value){const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
-function bullSurvival(hit){const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
-function bullStreak(hit){const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={practiceBlock:g.practiceBlock?clone(g.practiceBlock):undefined,name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,exerciseId:currentExercise()?.provenanceId||null,exerciseIndex:Number.isInteger(session()?.index)?session().index:null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.35.0",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
+function bullDart(value){if(![0,25,50].includes(value)||session()?.phase!=="playing")return;const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
+function bullSurvival(hit){if(typeof hit!=="boolean"||session()?.phase!=="playing")return;const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
+function bullStreak(hit){if(typeof hit!=="boolean"||session()?.phase!=="playing")return;const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
+function gameResult(g,completion){const e={practiceBlock:g.practiceBlock?clone(g.practiceBlock):undefined,name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,exerciseId:currentExercise()?.provenanceId||null,exerciseIndex:Number.isInteger(session()?.index)?session().index:null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.99.10",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
  prospectiveForecast:g.prospectiveForecast&&completion==='natural'&&
  !g.recovery&&!g.challengeTuning&&!session()?.quick?clone(g.prospectiveForecast):null};
  if(completion==="natural"&&!session()?.quick&&!g.recovery){
@@ -4732,7 +4775,7 @@ function gameResult(g,completion){const e={practiceBlock:g.practiceBlock?clone(g
  }
 
  if(g.name==="Staying Straight"){normaliseStraightGame(g);Object.assign(e,{points:g.points,targets:[...STRAIGHT_TARGETS],counts:[...g.counts],hits:[...g.hits],misses:[...g.misses],successfulDarts:g.hits.reduce((a,b)=>a+b,0),missedDarts:g.misses.reduce((a,b)=>a+b,0),darts:g.darts,complete:g.index>=5});e.result=g.points+" points · "+STRAIGHT_TARGETS.map((n,i)=>n+"s: "+g.counts[i]).join(", ")}
- if(g.name==="Checkout Climb"){Object.assign(e,{success:g.success,fail:g.fail,attempts:g.success+g.fail,dartsUsed:g.dartsUsed,highest:g.highest,attemptLog:[...(g.attemptLog||[])]});e.result=g.success+" successful checkouts";if(completion==="natural")data.bestCheckout=Math.max(num(data.bestCheckout),g.highest)}
+ if(g.name==="Checkout Climb"){Object.assign(e,{success:g.success,fail:g.fail,attempts:g.success+g.fail,dartsUsed:g.dartsUsed,highest:g.highest,attemptLog:[...(g.attemptLog||[])]});e.result=g.success+" successful checkouts";if(completion==="natural"&&g.success>0)data.bestCheckout=Math.max(num(data.bestCheckout),g.highest)}
  if(g.name==="Bull Accuracy"){Object.assign(e,{thrown:g.thrown,outer:g.outer,inner:g.inner,misses:g.misses});e.benchmark=g.thrown>=30;e.result=(g.outer+g.inner)+"/"+g.thrown+" bull hits · "+g.inner+" bullseyes"}
  if(g.name==="Bull Survival"){Object.assign(e,{target:g.target,allowed:g.allowed,hits:g.hits,thrown:g.thrown,wins:g.wins});e.result=(g.hits?"Success":"Round ended")+" · "+g.thrown+" dart(s)"}
  if(g.name==="Bull Streak"){Object.assign(e,{target:g.target,goal:g.goal,hits:g.hits,thrown:g.thrown,best:g.best});e.result="Best streak "+g.best+"/"+g.goal}
@@ -4825,12 +4868,13 @@ function gameResult(g,completion){const e={practiceBlock:g.practiceBlock?clone(g
   const key=/bull/i.test(g.name)?"bull":/double|golf|outside|jackpot|duel|bridge/i.test(g.name)?"doubles":/checkout|climb|101|201|301|501|rescue|setup|170|sprint|poker|standing/i.test(g.name)?"checkout":"scoring";
   e.tierAtStart=num(g.tier)||pressureTier(key);
  }
+ if(g.name==="Scoring Challenge"){e.win=null;e.loss=null;}
  if(g.recovery&&completion==="natural")e.result="RECOVERY · "+e.result;
  if(g.challengeTuning&&completion==="natural")e.result=(g.challengeTuning==="stretch"?"STRETCH":"STEPPING STONE")+" · "+e.result;
- if(completion!=="natural"&&completion!=="timed"){e.win=null;e.loss=null;e.result="INCOMPLETE · "+e.result.replace(/^(WIN|LOSE) · /, "")}
+ if(completion!=="natural"){e.win=null;e.loss=null;e.benchmark=false;e.result="INCOMPLETE · "+e.result.replace(/^(WIN|LOSE) · /, "")}
  return e}
 /* Round completion records the result and restarts the SAME game. The exercise clock never resets. */
-function endRound(){const s=session();if(!s||s.pausedAt||!activeGame)return;const item=currentExercise(),previousGame=clone(undoSnapshot||activeGame),result=gameResult(activeGame,"natural");s.lastRoundUndo={previousGame,resultAt:result.at,name:result.name};data.games.push(result);s.roundsCompleted++;s.round++;flash=(result.win===true?"WIN":result.win===false?"LOSE":"Round ended")+" · Round "+s.roundsCompleted+" saved";activeGame=buildGame(item.name,activeGame);data.game=activeGame;undoSnapshot=null;save();announceRound(s.round,(result.win===true?"WIN":result.win===false?"LOSE":"ROUND COMPLETE")+" · Previous round"+(result.name==="Setup Shot"&&result.details?.setupOutcome?" · "+result.details.setupOutcome.replaceAll("-"," "):""))}
+function endRound(){const s=session();if(!s||s.phase!=="playing"||s.pausedAt||!activeGame)return;const item=currentExercise(),previousGame=clone(undoSnapshot||activeGame),result=gameResult(activeGame,"natural");s.lastRoundUndo={previousGame,resultAt:result.at,name:result.name};data.games.push(result);s.roundsCompleted++;s.round++;flash=(result.win===true?"WIN":result.win===false?"LOSE":"Round ended")+" · Round "+s.roundsCompleted+" saved";activeGame=buildGame(item.name,activeGame);data.game=activeGame;undoSnapshot=null;save();announceRound(s.round,(result.win===true?"WIN":result.win===false?"LOSE":"ROUND COMPLETE")+" · Previous round"+(result.name==="Setup Shot"&&result.details?.setupOutcome?" · "+result.details.setupOutcome.replaceAll("-"," "):""))}
 function playExercise(){
  const s=session();if(!s||s.phase!=="rules")return;
  if(s.pausedAt){s.pausedTotal+=Math.max(0,Date.now()-s.pausedAt);s.pausedAt=null}
@@ -4855,7 +4899,7 @@ function completeExercise(completion="manual"){
  if(item.name==="Big Singles")s.benchmarkSeconds=num(s.benchmarkSeconds)+elapsed;
  if(activeGame&&!["Warm-up","Review","Big Singles"].includes(item.name)){
   const g=activeGame;
-  const activity=Object.entries(g).some(([key,value])=>["thrown","darts","visits","attempt","attempts","hits","fail","success","points","used","shots","entryMisses"].includes(key)&&((Array.isArray(value)&&value.length>0)||typeof value==="number"&&value>0));
+  const activity=g.dc598Action===true||Object.entries(g).some(([key,value])=>["thrown","darts","visits","attempt","attempts","hits","fail","success","used","shots","entryMisses","dartsUsed","misses","strokes"].includes(key)&&((Array.isArray(value)&&value.length>0)||typeof value==="number"&&value>0));
   if(activity)data.games.push(gameResult(g,completion==="timed"?"partial":"manual"));
  }
  s.completed.push({name:item.name,exerciseId:item.provenanceId||null,exerciseIndex:s.index,at:Date.now(),seconds:Math.round(elapsed),...(item.name==="Big Singles"?{benchmarkElapsedExact:elapsed}:{}),rounds:s.roundsCompleted,plannedSeconds:s.provenanceLocked?.exercises?.find(x=>x.id===item.provenanceId)?.plannedSeconds??null});
@@ -4943,8 +4987,8 @@ function dc66CaptureUnfinishedSessionExercise(s){
   exerciseIndex:s.index,seconds:Math.round(elapsed),interrupted:true,
   roundsCompleted:num(s.roundsCompleted)};
  if(!g||["Warm-up","Review","Big Singles"].includes(item.name))return record;
- const progress=Object.entries(g).some(([key,value])=>
-  ["thrown","darts","visits","attempt","attempts","hits","fail","success","points","used","shots","entryMisses"].includes(key)&&
+ const progress=g.dc598Action===true||Object.entries(g).some(([key,value])=>
+  ["thrown","darts","visits","attempt","attempts","hits","fail","success","used","shots","entryMisses","dartsUsed","misses","strokes"].includes(key)&&
   ((Array.isArray(value)&&value.length>0)||(typeof value==="number"&&value>0)));
  if(progress){
   const result=gameResult(g,"manual");
@@ -6280,10 +6324,7 @@ function resetTrainingStatistics(){
  replacement.days=[...data.days];
  replacement.throwingHand=data.throwingHand;
  try{
-  const resetPayload=JSON.stringify(replacement);
-  localStorage.setItem(KEY,resetPayload);
-  try{localStorage.setItem(CHECKPOINT_KEY,JSON.stringify({savedAt:Date.now(),data:replacement}))}
-  catch(e){storageSaveError='Reset saved, but the local recovery checkpoint could not be updated. Export a JSON backup.'}
+  dc99ReplaceStoredData(replacement);
  }catch(e){
   alert("Unable to save reset state. The reset was not completed. Export a JSON backup before proceeding.");
   return;
@@ -6331,7 +6372,7 @@ function recordMetrics(g){
  if(g.name==="Staying Straight")return [{label:"Overall points",value:num(g.points),higher:true},...(g.counts||[]).map((v,i)=>({label:[20,19,18,17,16][i]+"s",value:num(v),higher:true}))];
  if(g.name==="Golf Five")return [{label:"Fewest strokes",value:num(g.score),higher:false}];
  if(g.name==="Bull Streak"||g.name==="Doubles Streak")return [{label:"Longest streak",value:num(g.best),higher:true}];
- if(g.name==="Checkout Climb")return [{label:"Highest checkout target",value:num(g.highest),higher:true}];
+ if(g.name==="Checkout Climb")return [{label:"Highest checkout finished",value:num(g.success)>0?num(g.highest):0,higher:true}];
  if(g.name==="Doubles Survival")return [{label:"Highest double",value:num(g.highest),higher:true}];
  if(g.name==="101 Sprint"&&g.win)return [{label:"Fewest darts",value:num(g.details?.used),higher:false}];
  if(["301 Pressure","501 Pressure","Double-In 201"].includes(g.name)&&g.win)return [{label:"Fewest darts",value:num(g.dartsUsed||g.details?.thrown||num(g.visits)*3),higher:false},{label:"Highest finish",value:num(g.highestFinish||g.details?.finish),higher:true}];
@@ -6920,7 +6961,7 @@ function validateRestore(json){
  // excluded by dc17ValidCheckoutAttempt rather than treated as failed darts.
  return restored;
 }
-function applyRestoredData(restored){if(!confirm("Replace current saved data with this backup?"))return false;const replacement=normaliseData(Object.assign(blank(),clone(restored)));dc75RecoverPausedSession(replacement.activeSession);try{localStorage.setItem(KEY,JSON.stringify(replacement))}catch(e){throw Error("Could not save restored data")}closeCheckoutDartPicker();hideRoundAnnouncement();data=replacement;checkpointData();activeGame=data.game||null;normaliseSurvivalGame(activeGame);normaliseStraightGame(activeGame);undoSnapshot=dc75RecoverUndo(data.activeSession,activeGame);activeStage=null;$("assessmentScreen").classList.add("hidden");document.body.classList.remove("assessing");$("sessionFinished").classList.add("hidden");show("home");return true}
+function applyRestoredData(restored){if(!confirm("Replace current saved data with this backup?"))return false;const replacement=normaliseData(Object.assign(blank(),clone(restored)));dc75RecoverPausedSession(replacement.activeSession);try{dc99ReplaceStoredData(replacement)}catch(e){throw Error("Could not save restored data")}closeCheckoutDartPicker();hideRoundAnnouncement();data=replacement;activeGame=data.game||null;normaliseSurvivalGame(activeGame);normaliseStraightGame(activeGame);undoSnapshot=dc75RecoverUndo(data.activeSession,activeGame);activeStage=null;$("assessmentScreen").classList.add("hidden");document.body.classList.remove("assessing");$("sessionFinished").classList.add("hidden");show("home");return true}
 function restoreFromText(){const json=$("restoreText").value.trim();if(!json){restoreMessage("Paste backup first.","error");return}try{if(applyRestoredData(validateRestore(json))){$("restoreText").value="";restoreMessage("Backup restored.","ok")}}catch(e){restoreMessage("Restore failed: "+e.message,"error")}}
 function importData(e){const f=e.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{try{if(applyRestoredData(validateRestore(String(reader.result))))restoreMessage("Backup file restored.","ok")}catch(error){restoreMessage("Restore failed: "+error.message,"error")}e.target.value=""};reader.onerror=()=>restoreMessage("Unable to read file.","error");reader.readAsText(f)}
 /* V5.75: apply the same recovery rules to imported and locally loaded sessions. */
@@ -6966,7 +7007,7 @@ performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);setIn
 
 </script><div id="welcomeOverlay" class="welcomeOverlay hidden" role="dialog" aria-modal="true" aria-labelledby="welcomeHeading">
  <div class="welcomePanel dc36InfoPanel">
-  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V5.96.0</span></div>
+  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V6.0 RC1</span></div>
   <h2 id="welcomeHeading">Your game.<br><span>Your next level.</span></h2>
   <p class="dc36InfoLead">Darts Coach combines structured practice, measurable results and an adaptive training planner. It gives you a purposeful session, then learns cautiously from what you actually complete.</p>
   <div class="dc36InfoStats"><div><strong>41</strong><small>Training games</small></div><div><strong>7</strong><small>Hidden skill levels</small></div><div><strong>60</strong><small>Minute core session</small></div></div>
