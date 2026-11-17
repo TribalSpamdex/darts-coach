@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V6.0 RC2 development</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V6.1 RC1</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -817,7 +817,7 @@ html[data-appearance=light] body nav[aria-label="Main navigation"]:not(#dc590a):
 <div class="card hero"><div class="heroArtwork" aria-hidden="true"><svg viewBox="0 0 320 320" fill="none" aria-hidden="true"><defs><radialGradient id="dc79Metal"><stop stop-color="#444b4a"/><stop offset="1" stop-color="#111517"/></radialGradient></defs><circle cx="160" cy="160" r="153" fill="url(#dc79Metal)" stroke="#adb7b6" stroke-opacity=".4"/><circle cx="160" cy="160" r="137" stroke="#acb7b5" stroke-opacity=".25"/><path d="M148.27,85.92 A75,75 0 0 1 171.73,85.92 L160.00,160.00 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M146.70,76.05 A85,85 0 0 1 173.30,76.05 L171.73,85.92 A75,75 0 0 0 148.27,85.92 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M141.54,43.45 A118,118 0 0 1 178.46,43.45 L173.30,76.05 A85,85 0 0 0 146.70,76.05 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M139.82,32.59 A129,129 0 0 1 180.18,32.59 L178.46,43.45 A118,118 0 0 0 141.54,43.45 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="160.00" y="18.00" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">20</text><path d="M171.73,85.92 A75,75 0 0 1 194.05,93.17 L160.00,160.00 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M173.30,76.05 A85,85 0 0 1 198.59,84.26 L194.05,93.17 A75,75 0 0 0 171.73,85.92 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M178.46,43.45 A118,118 0 0 1 213.57,54.86 L198.59,84.26 A85,85 0 0 0 173.30,76.05 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M180.18,32.59 A129,129 0 0 1 218.56,45.06 L213.57,54.86 A118,118 0 0 0 178.46,43.45 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="203.88" y="24.95" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">1</text><path d="M194.05,93.17 A75,75 0 0 1 213.03,106.97 L160.00,160.00 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M198.59,84.26 A85,85 0 0 1 220.10,99.90 L213.03,106.97 A75,75 0 0 0 194.05,93.17 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M213.57,54.86 A118,118 0 0 1 243.44,76.56 L220.10,99.90 A85,85 0 0 0 198.59,84.26 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M218.56,45.06 A129,129 0 0 1 251.22,68.78 L243.44,76.56 A118,118 0 0 0 213.57,54.86 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="243.47" y="45.12" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">18</text><path d="M213.03,106.97 A75,75 0 0 1 226.83,125.95 L160.00,160.00 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M220.10,99.90 A85,85 0 0 1 235.74,121.41 L226.83,125.95 A75,75 0 0 0 213.03,106.97 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M243.44,76.56 A118,118 0 0 1 265.14,106.43 L235.74,121.41 A85,85 0 0 0 220.10,99.90 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M251.22,68.78 A129,129 0 0 1 274.94,101.44 L265.14,106.43 A118,118 0 0 0 243.44,76.56 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="274.88" y="76.53" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">4</text><path d="M226.83,125.95 A75,75 0 0 1 234.08,148.27 L160.00,160.00 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M235.74,121.41 A85,85 0 0 1 243.95,146.70 L234.08,148.27 A75,75 0 0 0 226.83,125.95 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M265.14,106.43 A118,118 0 0 1 276.55,141.54 L243.95,146.70 A85,85 0 0 0 235.74,121.41 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M274.94,101.44 A129,129 0 0 1 287.41,139.82 L276.55,141.54 A118,118 0 0 0 265.14,106.43 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="295.05" y="116.12" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">13</text><path d="M234.08,148.27 A75,75 0 0 1 234.08,171.73 L160.00,160.00 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M243.95,146.70 A85,85 0 0 1 243.95,173.30 L234.08,171.73 A75,75 0 0 0 234.08,148.27 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M276.55,141.54 A118,118 0 0 1 276.55,178.46 L243.95,173.30 A85,85 0 0 0 243.95,146.70 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M287.41,139.82 A129,129 0 0 1 287.41,180.18 L276.55,178.46 A118,118 0 0 0 276.55,141.54 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="302.00" y="160.00" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">6</text><path d="M234.08,171.73 A75,75 0 0 1 226.83,194.05 L160.00,160.00 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M243.95,173.30 A85,85 0 0 1 235.74,198.59 L226.83,194.05 A75,75 0 0 0 234.08,171.73 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M276.55,178.46 A118,118 0 0 1 265.14,213.57 L235.74,198.59 A85,85 0 0 0 243.95,173.30 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M287.41,180.18 A129,129 0 0 1 274.94,218.56 L265.14,213.57 A118,118 0 0 0 276.55,178.46 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="295.05" y="203.88" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">10</text><path d="M226.83,194.05 A75,75 0 0 1 213.03,213.03 L160.00,160.00 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M235.74,198.59 A85,85 0 0 1 220.10,220.10 L213.03,213.03 A75,75 0 0 0 226.83,194.05 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M265.14,213.57 A118,118 0 0 1 243.44,243.44 L220.10,220.10 A85,85 0 0 0 235.74,198.59 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M274.94,218.56 A129,129 0 0 1 251.22,251.22 L243.44,243.44 A118,118 0 0 0 265.14,213.57 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="274.88" y="243.47" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">15</text><path d="M213.03,213.03 A75,75 0 0 1 194.05,226.83 L160.00,160.00 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M220.10,220.10 A85,85 0 0 1 198.59,235.74 L194.05,226.83 A75,75 0 0 0 213.03,213.03 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M243.44,243.44 A118,118 0 0 1 213.57,265.14 L198.59,235.74 A85,85 0 0 0 220.10,220.10 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M251.22,251.22 A129,129 0 0 1 218.56,274.94 L213.57,265.14 A118,118 0 0 0 243.44,243.44 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="243.47" y="274.88" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">2</text><path d="M194.05,226.83 A75,75 0 0 1 171.73,234.08 L160.00,160.00 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M198.59,235.74 A85,85 0 0 1 173.30,243.95 L171.73,234.08 A75,75 0 0 0 194.05,226.83 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M213.57,265.14 A118,118 0 0 1 178.46,276.55 L173.30,243.95 A85,85 0 0 0 198.59,235.74 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M218.56,274.94 A129,129 0 0 1 180.18,287.41 L178.46,276.55 A118,118 0 0 0 213.57,265.14 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="203.88" y="295.05" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">17</text><path d="M171.73,234.08 A75,75 0 0 1 148.27,234.08 L160.00,160.00 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M173.30,243.95 A85,85 0 0 1 146.70,243.95 L148.27,234.08 A75,75 0 0 0 171.73,234.08 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M178.46,276.55 A118,118 0 0 1 141.54,276.55 L146.70,243.95 A85,85 0 0 0 173.30,243.95 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M180.18,287.41 A129,129 0 0 1 139.82,287.41 L141.54,276.55 A118,118 0 0 0 178.46,276.55 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="160.00" y="302.00" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">3</text><path d="M148.27,234.08 A75,75 0 0 1 125.95,226.83 L160.00,160.00 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M146.70,243.95 A85,85 0 0 1 121.41,235.74 L125.95,226.83 A75,75 0 0 0 148.27,234.08 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M141.54,276.55 A118,118 0 0 1 106.43,265.14 L121.41,235.74 A85,85 0 0 0 146.70,243.95 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M139.82,287.41 A129,129 0 0 1 101.44,274.94 L106.43,265.14 A118,118 0 0 0 141.54,276.55 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="116.12" y="295.05" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">19</text><path d="M125.95,226.83 A75,75 0 0 1 106.97,213.03 L160.00,160.00 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M121.41,235.74 A85,85 0 0 1 99.90,220.10 L106.97,213.03 A75,75 0 0 0 125.95,226.83 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M106.43,265.14 A118,118 0 0 1 76.56,243.44 L99.90,220.10 A85,85 0 0 0 121.41,235.74 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M101.44,274.94 A129,129 0 0 1 68.78,251.22 L76.56,243.44 A118,118 0 0 0 106.43,265.14 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="76.53" y="274.88" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">7</text><path d="M106.97,213.03 A75,75 0 0 1 93.17,194.05 L160.00,160.00 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M99.90,220.10 A85,85 0 0 1 84.26,198.59 L93.17,194.05 A75,75 0 0 0 106.97,213.03 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M76.56,243.44 A118,118 0 0 1 54.86,213.57 L84.26,198.59 A85,85 0 0 0 99.90,220.10 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M68.78,251.22 A129,129 0 0 1 45.06,218.56 L54.86,213.57 A118,118 0 0 0 76.56,243.44 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="45.12" y="243.47" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">16</text><path d="M93.17,194.05 A75,75 0 0 1 85.92,171.73 L160.00,160.00 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M84.26,198.59 A85,85 0 0 1 76.05,173.30 L85.92,171.73 A75,75 0 0 0 93.17,194.05 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M54.86,213.57 A118,118 0 0 1 43.45,178.46 L76.05,173.30 A85,85 0 0 0 84.26,198.59 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M45.06,218.56 A129,129 0 0 1 32.59,180.18 L43.45,178.46 A118,118 0 0 0 54.86,213.57 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="24.95" y="203.88" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">8</text><path d="M85.92,171.73 A75,75 0 0 1 85.92,148.27 L160.00,160.00 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M76.05,173.30 A85,85 0 0 1 76.05,146.70 L85.92,148.27 A75,75 0 0 0 85.92,171.73 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M43.45,178.46 A118,118 0 0 1 43.45,141.54 L76.05,146.70 A85,85 0 0 0 76.05,173.30 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M32.59,180.18 A129,129 0 0 1 32.59,139.82 L43.45,141.54 A118,118 0 0 0 43.45,178.46 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="18.00" y="160.00" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">11</text><path d="M85.92,148.27 A75,75 0 0 1 93.17,125.95 L160.00,160.00 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M76.05,146.70 A85,85 0 0 1 84.26,121.41 L93.17,125.95 A75,75 0 0 0 85.92,148.27 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M43.45,141.54 A118,118 0 0 1 54.86,106.43 L84.26,121.41 A85,85 0 0 0 76.05,146.70 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M32.59,139.82 A129,129 0 0 1 45.06,101.44 L54.86,106.43 A118,118 0 0 0 43.45,141.54 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="24.95" y="116.12" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">14</text><path d="M93.17,125.95 A75,75 0 0 1 106.97,106.97 L160.00,160.00 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M84.26,121.41 A85,85 0 0 1 99.90,99.90 L106.97,106.97 A75,75 0 0 0 93.17,125.95 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M54.86,106.43 A118,118 0 0 1 76.56,76.56 L99.90,99.90 A85,85 0 0 0 84.26,121.41 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M45.06,101.44 A129,129 0 0 1 68.78,68.78 L76.56,76.56 A118,118 0 0 0 54.86,106.43 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="45.12" y="76.53" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">9</text><path d="M106.97,106.97 A75,75 0 0 1 125.95,93.17 L160.00,160.00 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M99.90,99.90 A85,85 0 0 1 121.41,84.26 L125.95,93.17 A75,75 0 0 0 106.97,106.97 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M76.56,76.56 A118,118 0 0 1 106.43,54.86 L121.41,84.26 A85,85 0 0 0 99.90,99.90 Z" fill="#26302f" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M68.78,68.78 A129,129 0 0 1 101.44,45.06 L106.43,54.86 A118,118 0 0 0 76.56,76.56 Z" fill="var(--green)" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="76.53" y="45.12" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">12</text><path d="M125.95,93.17 A75,75 0 0 1 148.27,85.92 L160.00,160.00 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M121.41,84.26 A85,85 0 0 1 146.70,76.05 L148.27,85.92 A75,75 0 0 0 125.95,93.17 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M106.43,54.86 A118,118 0 0 1 141.54,43.45 L146.70,76.05 A85,85 0 0 0 121.41,84.26 Z" fill="#a0aaa1" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><path d="M101.44,45.06 A129,129 0 0 1 139.82,32.59 L141.54,43.45 A118,118 0 0 0 106.43,54.86 Z" fill="#597b6e" fill-opacity=".65" stroke="#c1ccc4" stroke-opacity=".38" stroke-width=".65"/><text x="116.12" y="24.95" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#c8d1cd">5</text><circle cx="160" cy="160" r="13" fill="#567469" stroke="#d0ddd6" stroke-width=".7"/><circle cx="160" cy="160" r="5" fill="var(--green)"/><path d="M160 160 252 68" stroke="#edf3ed" stroke-width="2"/><path d="m248 72 4-23 20 2-2 20Z" fill="var(--green)" opacity=".8"/></svg></div><span class="heroEyebrow">● TODAY'S PLAN</span><h2 id="homeHeading">Your Training Is Ready</h2><p id="homeMessage">Your coach has prepared today's session.</p><div class="heroDurationRow"><span class="heroClock">◷</span><div class="big" id="homeDuration">60 MIN</div></div><div id="homeAction"></div></div>
 <div class="homeSectionHeading"><h2>At a glance</h2><span>YOUR TRAINING</span></div><div id="homeHighlights" class="homeHighlights"><div class="homeKpi"><strong>—</strong><small>Sessions</small></div></div>
 <div class="card homeWeekCard"><div class="dashHeading"><h2>This week</h2><span class="pill">Recorded practice</span></div><div id="homeWeekBars" class="homeWeekBars"></div></div>
-<div class="card"><div class="dashHeading"><h2>Your Training Week</h2><span class="pill">5-day plan</span></div><div id="homeDays"></div></div><div class="card"><h2>Training Block</h2><p id="blockStatus"></p><div class="progress"><div id="blockBar"></div></div><p class="muted" id="blockInfo"></p></div></section>
+<div class="card hidden" id="coach61Briefing" aria-live="polite"></div><div class="card"><div class="dashHeading"><h2>Your Training Week</h2><span class="pill">5-day plan</span></div><div id="homeDays"></div></div><div class="card"><h2>Training Block</h2><p id="blockStatus"></p><div class="progress"><div id="blockBar"></div></div><p class="muted" id="blockInfo"></p></div></section>
 <section id="train" class="hidden"><div id="trainIdle" class="card center"><h2>Ready to Train</h2><p>Your coach has prepared the session.</p><div id="reassessmentPrompt" class="info hidden"><strong>Your four-week assessment is ready.</strong><p class="muted" style="font-size:12px">Take it when you are ready, or continue normal training today. Your previous results remain saved.</p><button class="secondary" type="button" onclick="startReassessment()">Start Four-Week Assessment</button></div><button class="primary" onclick="beginTraining(false)">Start Training</button></div><div id="calibrationHub" class="card hidden">
  <h2>Player Calibration</h2>
  <p class="muted">Your coach uses separate hidden levels for scoring, doubles, checkouts and bull. Measure them with a full assessment or choose a provisional starting average. Previous sessions and records are kept.</p>
@@ -968,10 +968,12 @@ html[data-appearance=light] body nav[aria-label="Main navigation"]:not(#dc590a):
 <div class="card"><h2>Coach Status</h2><div id="coachSystemStatus"></div><p class="muted">The four skill tiers are independent and hidden during practice. Adaptation is based on repeated evidence.</p></div>
 <div class="card resetCard"><h2>Reset Everything</h2>
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
-<p><strong>Permanent action.</strong> Make a JSON backup first. Reset requires typing RESET and a final confirmation.</p>
+<p><strong>Permanent action.</strong> Make a JSON backup first. Reset asks for one confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V6.0 RC2 development</p></section>
-<div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutConfirm primary" id="checkoutConfirmBtn" onclick="confirmCheckoutDarts()" disabled>Confirm Checkout</button><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><script>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V6.1 RC1</p></section>
+<div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutConfirm primary" id="checkoutConfirmBtn" onclick="confirmCheckoutDarts()" disabled>Confirm Checkout</button><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><dialog id="dcRC2Reset" aria-labelledby="dcRC2ResetTitle" style="color:var(--text);background:#080c0a;border:1px solid #29463b;border-radius:18px;padding:24px;max-width:calc(100% - 32px);width:400px">
+<h2 id="dcRC2ResetTitle">Reset all data?</h2><p>Are you sure you want to delete all your training data, statistics and progress?</p><p>This action cannot be undone.</p><div class="row"><button id="dcRC2ResetNo" type="button" onclick="document.getElementById('dcRC2Reset').close()">No</button><button class="danger" type="button" onclick="dcRC2ConfirmReset()">Yes, delete</button></div></dialog>
+<script>
 "use strict";
 
 /* V5.0.8 theme preference. Does not modify training data, backups or stored game results. */
@@ -981,7 +983,7 @@ const DARTS_THEME_KEYS=["--dc-t0","--dc-t1","--dc-t2","--dc-t3","--dc-t4","--dc-
 const DARTS_THEME_VALUES={"blue":["#010204","#080c12","#0d121b","#1a2636","#4ba8ff","#9fa9b7","#091019","#1a2636","#17202e","#142236","#345079","#c0c9d6","#64a6ef","rgba(24,62,122,0.2)","#0b1323","rgba(100,166,239,0.18)","rgba(100,166,239,0.07)","rgba(100,166,239,0.025)","rgba(100,166,239,0.022)","rgba(100,166,239,0.12)","rgba(128,159,213,0.15)","rgba(153,181,231,0.11)","rgba(100,166,239,0.26)","rgba(222,236,255,0.06)","rgba(100,166,239,0.04)","rgba(100,166,239,0.11)","rgba(100,166,239,0.19)","rgba(100,166,239,0.13)","#6caaf2","#5195e3","#050f1e","rgba(1,78,183,0.15)","rgba(166,182,210,0.1)","rgba(126,158,216,0.09)","rgba(148,177,231,0.09)","rgba(170,186,215,0.14)","#3077d2","#7ebafb","rgba(147,176,229,0.15)","#14233b","rgba(100,166,239,0.24)","rgba(152,180,230,0.14)","rgba(129,162,222,0.13)","#081020","rgba(100,166,239,0.4)","#0f1c32","#05090f","#090f16","#142134","rgba(0,117,255,0.18)","rgba(5,52,107,0.16)","#060a11","#020408","rgba(108,178,255,0.12)","#0c1827","#23456d","rgba(42,140,255,0.18)","#a2b1c4","#6bb2fb","rgba(1,3,7,0.96)","rgba(106,178,251,0.22)","#9da7b5","rgba(33,136,255,0.18)","rgba(33,136,255,0.04)","rgba(82,165,255,0.14)","rgba(0,118,255,0.08)","rgba(10,15,22,0.96)","rgba(3,6,11,0.995)","rgba(132,187,241,0.14)","rgba(210,234,255,0.04)","#82bbf5","#6c98c8","rgba(23,136,255,0.1)","rgba(76,162,255,0.24)","rgba(33,136,255,0.26)","rgba(12,58,110,0.24)","#0b1a2d","#040c16","#030508","rgba(97,173,246,0.38)","rgba(147,199,255,0.14)","rgba(0,118,255,0.06)","rgba(0,118,255,0.24)","#81bcfb","rgba(21,130,255,0.16)","#7697bc","#0c1522","#060b12","rgba(120,180,237,0.16)","rgba(202,230,255,0.04)","#74b4f6","#a0aebf","rgba(82,165,255,0.08)","#162335","#0050ab","#77b8ff","rgba(70,165,255,0.28)","#9dabbb","#97cbff","#288bf2","rgba(35,133,247,0.28)","#131d2b","rgba(99,171,248,0.12)","#0e1724","#090f18","rgba(138,190,239,0.14)","#132843","#08111d","#0d1726","#070e16","rgba(119,173,228,0.13)","#82bfff","rgba(121,177,229,0.12)","rgba(0,118,255,0.18)","#0a131e","#04080e","rgba(124,183,237,0.14)","rgba(21,130,255,0.24)","#a1d0ff","#98cbff","#e7f3ff","rgba(9,21,34,0.78)","rgba(125,183,237,0.18)","rgba(0,122,255,0.18)","#070e16","rgba(99,171,248,0.36)","rgba(200,229,255,0.09)","#a8d4ff","rgba(29,137,254,0.28)","#0e1a28","#081019","rgba(145,188,230,0.18)","rgba(216,238,255,0.05)","#112339","#0b1b2f","#050c16","#75b7ff","rgba(26,133,241,0.18)","#050a10","#09111a","#56a7ff","#1e2f45","rgba(0,109,238,0.2)","rgba(0,43,97,0.09)","rgba(8,18,31,0.85)","rgba(1,3,7,0.93)","rgba(16,32,48,0.49)","rgba(5,11,18,0.76)","rgba(2,6,10,0.91)","rgba(131,192,255,0.19)","rgba(231,244,255,0.1)","rgba(210,232,255,0.025)","rgba(23,131,255,0.29)","rgba(5,41,82,0.75)","rgba(3,11,22,0.91)","rgba(1,4,8,0.96)","rgba(130,192,255,0.42)","rgba(14,118,232,0.05)","rgba(10,129,255,0.08)","rgba(18,38,61,0.43)","rgba(4,10,18,0.77)","rgba(134,196,255,0.17)","rgba(228,242,255,0.075)","#91c7ff","rgba(2,5,10,0.88)","rgba(147,202,255,0.25)","rgba(66,156,255,0.2)","rgba(36,120,209,0.045)","#73b6ff","rgba(123,188,255,0.15)","rgba(21,138,255,0.09)","#9dcdff","#62adff","#2a8bf6","#000c1a","rgba(5,125,255,0.26)","rgba(23,42,62,0.77)","rgba(7,18,29,0.88)","rgba(18,34,50,0.64)","rgba(2,9,15,0.93)","rgba(130,193,255,0.19)","rgba(0,123,255,0.16)","rgba(0,8,15,0.92)","rgba(129,193,255,0.4)","rgba(24,53,81,0.64)","rgba(5,14,24,0.91)","rgba(151,205,255,0.21)","rgba(120,187,251,0.15)","#04090f","#020305","rgba(10,16,22,0.97)","rgba(3,5,9,0.99)","rgba(220,238,255,0.08)","#0a1d34","#040e1c","#03080e","rgba(226,241,255,0.15)","#0a1520","#040b12","rgba(225,240,255,0.07)","rgba(1,4,8,0.97)","rgba(123,188,255,0.16)","#09131d","#04080d","#050f19","#c6d8e9","#0d1a2a","#040a0f","rgba(139,198,255,0.23)","#66b0ff","#4da8ff","#0c1f35","#7fb9ff","rgba(128,194,255,0.18)","rgba(125,191,255,0.19)","#091622","#040c13","#87c1ff","#b6c1cb","rgba(125,191,255,0.15)","rgba(125,191,255,0.13)","#96caff","#a9b5c1","#0c1b2d","#030c13","#020508","rgba(101,177,255,0.36)","#7abbff","rgba(135,197,255,0.18)","#afbdc9","rgba(129,193,255,0.2)","#0b1623","#040a0f","#75baff","#122335","#81bdff","#a7b5c2","rgba(129,193,255,0.12)","rgba(131,192,255,0.16)","#57a8ff","#06111c","#e1edf8","#83c0ff","rgba(135,197,255,0.22)","#05101b","#a9bcce","#82bcff","#c6d4e0","#0a1c2f","#cbe4ff","#81bfff"],"red":["#040101","#120a08","#1b0e0d","#361e1a","#ff5564","#b7a39f","#190b09","#361d1a","#2e1c17","#361a14","#793e34","#d6c4c0","#ef7064","rgba(122,39,24,0.2)","#230f0b","rgba(239,112,100,0.18)","rgba(239,112,100,0.07)","rgba(239,112,100,0.025)","rgba(239,112,100,0.022)","rgba(239,112,100,0.12)","rgba(213,145,128,0.15)","rgba(231,168,153,0.11)","rgba(239,112,100,0.26)","rgba(255,226,222,0.06)","rgba(239,112,100,0.04)","rgba(239,112,100,0.11)","rgba(239,112,100,0.19)","rgba(239,112,100,0.13)","#f2786c","#e35c51","#1e0805","rgba(183,24,1,0.15)","rgba(210,175,166,0.1)","rgba(216,144,126,0.09)","rgba(231,163,148,0.09)","rgba(215,179,170,0.14)","#d24230","#fb877e","rgba(229,162,147,0.15)","#3b1a14","rgba(239,112,100,0.24)","rgba(230,166,152,0.14)","rgba(222,147,129,0.13)","#200d08","rgba(239,112,100,0.4)","#32150f","#0f0705","#160b09","#341814","rgba(255,23,0,0.18)","rgba(107,15,5,0.16)","#110706","#080302","rgba(255,119,108,0.12)","#270f0c","#6d2b23","rgba(255,60,42,0.18)","#c4a6a2","#fb746b","rgba(7,2,1,0.96)","rgba(251,115,106,0.22)","#b5a09d","rgba(255,53,33,0.18)","rgba(255,53,33,0.04)","rgba(255,96,82,0.14)","rgba(255,22,0,0.08)","rgba(22,12,10,0.96)","rgba(11,4,3,0.995)","rgba(241,138,132,0.14)","rgba(255,211,210,0.04)","#f58782","#c8736c","rgba(255,38,23,0.1)","rgba(255,88,76,0.24)","rgba(255,53,33,0.26)","rgba(110,20,12,0.24)","#2d100b","#160704","#080403","rgba(246,103,97,0.38)","rgba(255,155,147,0.14)","rgba(255,22,0,0.06)","rgba(255,22,0,0.24)","#fb8881","rgba(255,40,21,0.16)","#bc7c76","#220f0c","#120806","rgba(237,125,120,0.16)","rgba(255,203,202,0.04)","#f67c74","#bfa3a0","rgba(255,96,82,0.08)","#351916","#ab0e00","#ff8177","rgba(255,77,70,0.28)","#bba09d","#ff9b97","#f23528","rgba(247,53,35,0.28)","#2b1713","rgba(248,109,99,0.12)","#24110e","#180b09","rgba(239,141,138,0.14)","#431713","#1d0b08","#26100d","#160907","rgba(228,123,119,0.13)","#ff8b82","rgba(229,126,121,0.12)","rgba(255,23,0,0.18)","#1e0d0a","#0e0604","rgba(237,128,124,0.14)","rgba(255,40,21,0.24)","#ffa5a1","#ff9e98","#ffe8e7","rgba(34,11,9,0.78)","rgba(237,130,125,0.18)","rgba(255,18,0,0.18)","#160907","rgba(248,109,99,0.36)","rgba(255,202,200,0.09)","#ffada8","rgba(254,44,29,0.28)","#28110e","#190a08","rgba(230,150,145,0.18)","rgba(255,216,216,0.05)","#391511","#2f0f0b","#160705","#ff7e75","rgba(241,39,26,0.18)","#100605","#1a0b09","#ff6256","#45221e","rgba(238,22,0,0.2)","rgba(97,10,0,0.09)","rgba(31,11,8,0.85)","rgba(7,2,1,0.93)","rgba(48,19,16,0.49)","rgba(18,6,5,0.76)","rgba(10,3,2,0.91)","rgba(255,138,131,0.19)","rgba(255,231,231,0.1)","rgba(255,213,210,0.025)","rgba(255,43,23,0.29)","rgba(82,12,5,0.75)","rgba(22,5,3,0.91)","rgba(8,2,1,0.96)","rgba(255,137,130,0.42)","rgba(232,30,14,0.05)","rgba(255,26,10,0.08)","rgba(61,21,18,0.43)","rgba(18,4,4,0.77)","rgba(255,138,134,0.17)","rgba(255,229,228,0.075)","#ff9791","rgba(10,2,2,0.88)","rgba(255,153,147,0.25)","rgba(255,81,66,0.2)","rgba(209,47,36,0.045)","#ff7d73","rgba(255,130,123,0.15)","rgba(255,32,21,0.09)","#ffa39d","#ff6d62","#f6392a","#1a0300","rgba(255,23,5,0.26)","rgba(62,26,23,0.77)","rgba(29,9,7,0.88)","rgba(50,20,18,0.64)","rgba(15,3,2,0.93)","rgba(255,136,130,0.19)","rgba(255,16,0,0.16)","rgba(15,1,0,0.92)","rgba(255,133,129,0.4)","rgba(81,27,24,0.64)","rgba(24,6,5,0.91)","rgba(255,155,151,0.21)","rgba(251,124,120,0.15)","#0f0504","#050202","rgba(22,11,10,0.97)","rgba(9,3,3,0.99)","rgba(255,221,220,0.08)","#340e0a","#1c0704","#0e0403","rgba(255,227,226,0.15)","#200c0a","#120504","rgba(255,227,225,0.07)","rgba(8,1,1,0.97)","rgba(255,130,123,0.16)","#1d0a09","#0d0504","#190605","#e9c7c6","#2a100d","#0f0504","rgba(255,143,139,0.23)","#ff7066","#ff554d","#350e0c","#ff8a7f","rgba(255,133,128,0.18)","rgba(255,131,125,0.19)","#220a09","#130504","#ff9087","#cbb7b6","rgba(255,131,125,0.15)","rgba(255,131,125,0.13)","#ff9c96","#c1aaa9","#2d0e0c","#130403","#080202","rgba(255,109,101,0.36)","#ff827a","rgba(255,139,135,0.18)","#c9afaf","rgba(255,135,129,0.2)","#230d0b","#0f0404","#ff7a75","#351412","#ff8b81","#c2a8a7","rgba(255,135,129,0.12)","rgba(255,138,131,0.16)","#ff6257","#1c0706","#f8e2e1","#ff8a83","rgba(255,138,135,0.22)","#1b0605","#ceaba9","#ff8d82","#e0c6c6","#2f0d0a","#ffcfcb","#ff8981"],"yellow":["#030301","#121208","#1b1a0d","#36341a","#ffe239","#b7b69f","#191709","#36331a","#2e2d17","#363414","#797434","#d6d5c0","#efdd64","rgba(122,116,24,0.2)","#23220b","rgba(239,221,100,0.18)","rgba(239,221,100,0.07)","rgba(239,221,100,0.025)","rgba(239,221,100,0.022)","rgba(239,221,100,0.12)","rgba(213,212,128,0.15)","rgba(231,229,153,0.11)","rgba(239,221,100,0.26)","rgba(255,252,222,0.06)","rgba(239,221,100,0.04)","rgba(239,221,100,0.11)","rgba(239,221,100,0.19)","rgba(239,221,100,0.13)","#f2e16c","#e3cf51","#1e1c05","rgba(183,166,1,0.15)","rgba(210,209,166,0.1)","rgba(216,215,126,0.09)","rgba(231,229,148,0.09)","rgba(215,214,170,0.14)","#d2c130","#fbe87e","rgba(229,227,147,0.15)","#3b3914","rgba(239,221,100,0.24)","rgba(230,228,152,0.14)","rgba(222,220,129,0.13)","#201f08","rgba(239,221,100,0.4)","#32300f","#0f0e05","#161509","#343114","rgba(255,223,0,0.18)","rgba(107,94,5,0.16)","#111006","#080802","rgba(255,234,108,0.12)","#27240c","#6d6323","rgba(255,227,42,0.18)","#c4c0a2","#fbe56b","rgba(7,7,1,0.96)","rgba(251,228,106,0.22)","#b5b39d","rgba(255,226,33,0.18)","rgba(255,226,33,0.04)","rgba(255,231,82,0.14)","rgba(255,222,0,0.08)","rgba(22,21,10,0.96)","rgba(11,10,3,0.995)","rgba(241,224,132,0.14)","rgba(255,246,210,0.04)","#f5e182","#c8ba6c","rgba(255,218,23,0.1)","rgba(255,228,76,0.24)","rgba(255,226,33,0.26)","rgba(110,97,12,0.24)","#2d2b0b","#161504","#080803","rgba(246,218,97,0.38)","rgba(255,239,147,0.14)","rgba(255,222,0,0.06)","rgba(255,222,0,0.24)","#fbe881","rgba(255,225,21,0.16)","#bcb376","#22200c","#121106","rgba(237,215,120,0.16)","rgba(255,245,202,0.04)","#f6e074","#bfbba0","rgba(255,231,82,0.08)","#353216","#ab9400","#ffec77","rgba(255,222,70,0.28)","#bbb79d","#ffee97","#f2d428","rgba(247,219,35,0.28)","#2b2913","rgba(248,226,99,0.12)","#24220e","#181709","rgba(239,220,138,0.14)","#433d13","#1d1b08","#26250d","#161507","rgba(228,209,119,0.13)","#ffed82","rgba(229,210,121,0.12)","rgba(255,222,0,0.18)","#1e1c0a","#0e0d04","rgba(237,217,124,0.14)","rgba(255,225,21,0.24)","#ffefa1","#ffee98","#fffbe7","rgba(34,31,9,0.78)","rgba(237,217,125,0.18)","rgba(255,217,0,0.18)","#161407","rgba(248,226,99,0.36)","rgba(255,245,200,0.09)","#fff2a8","rgba(254,221,29,0.28)","#28250e","#191708","rgba(230,216,145,0.18)","rgba(255,246,216,0.05)","#393411","#2f2a0b","#161405","#ffea75","rgba(241,207,26,0.18)","#100f05","#1a1809","#ffe756","#45401e","rgba(238,208,0,0.2)","rgba(97,86,0,0.09)","rgba(31,28,8,0.85)","rgba(7,7,1,0.93)","rgba(48,43,16,0.49)","rgba(18,17,5,0.76)","rgba(10,9,2,0.91)","rgba(255,235,131,0.19)","rgba(255,250,231,0.1)","rgba(255,248,210,0.025)","rgba(255,225,23,0.29)","rgba(82,72,5,0.75)","rgba(22,20,3,0.91)","rgba(8,8,1,0.96)","rgba(255,234,130,0.42)","rgba(232,200,14,0.05)","rgba(255,218,10,0.08)","rgba(61,55,18,0.43)","rgba(18,16,4,0.77)","rgba(255,234,134,0.17)","rgba(255,250,228,0.075)","#ffee91","rgba(10,9,2,0.88)","rgba(255,236,147,0.25)","rgba(255,228,66,0.2)","rgba(209,183,36,0.045)","#ffea73","rgba(255,233,123,0.15)","rgba(255,216,21,0.09)","#ffef9d","#ffe862","#f6d82a","#1a1700","rgba(255,220,5,0.26)","rgba(62,57,23,0.77)","rgba(29,26,7,0.88)","rgba(50,44,18,0.64)","rgba(15,14,2,0.93)","rgba(255,234,130,0.19)","rgba(255,217,0,0.16)","rgba(15,14,0,0.92)","rgba(255,233,129,0.4)","rgba(81,71,24,0.64)","rgba(24,21,5,0.91)","rgba(255,236,151,0.21)","rgba(251,228,120,0.15)","#0f0e04","#050502","rgba(22,20,10,0.97)","rgba(9,8,3,0.99)","rgba(255,249,220,0.08)","#34300a","#1c1a04","#0e0d03","rgba(255,250,226,0.15)","#201d0a","#121004","rgba(255,250,225,0.07)","rgba(8,7,1,0.97)","rgba(255,233,123,0.16)","#1d1a09","#0d0b04","#191705","#e9e3c6","#2a270d","#0f0e04","rgba(255,235,139,0.23)","#ffe866","#ffe04d","#352f0c","#fff07f","rgba(255,232,128,0.18)","rgba(255,233,125,0.19)","#221e09","#131104","#ffed87","#cbc7b6","rgba(255,233,125,0.15)","rgba(255,233,125,0.13)","#ffee96","#c1bda9","#2d280c","#131003","#080802","rgba(255,230,101,0.36)","#ffea7a","rgba(255,233,135,0.18)","#c9c4af","rgba(255,233,129,0.2)","#231f0b","#0f0e04","#ffe775","#352f12","#ffed81","#c2bda7","rgba(255,233,129,0.12)","rgba(255,235,131,0.16)","#ffe657","#1c1906","#f8f4e1","#ffeb83","rgba(255,232,135,0.22)","#1b1705","#cec8a9","#ffee82","#e0dac6","#2f290a","#fff7cb","#ffeb81"],"orange":["#040201","#120e08","#1b140d","#36281a","#ff962f","#b7ac9f","#191109","#36271a","#2e2517","#362714","#795734","#d6ccc0","#efa564","rgba(122,77,24,0.2)","#23190b","rgba(239,165,100,0.18)","rgba(239,165,100,0.07)","rgba(239,165,100,0.025)","rgba(239,165,100,0.022)","rgba(239,165,100,0.12)","rgba(213,177,128,0.15)","rgba(231,198,153,0.11)","rgba(239,165,100,0.26)","rgba(255,238,222,0.06)","rgba(239,165,100,0.04)","rgba(239,165,100,0.11)","rgba(239,165,100,0.19)","rgba(239,165,100,0.13)","#f2aa6c","#e39551","#1e1205","rgba(183,94,1,0.15)","rgba(210,191,166,0.1)","rgba(216,179,126,0.09)","rgba(231,195,148,0.09)","rgba(215,196,170,0.14)","#d28130","#fbb67e","rgba(229,195,147,0.15)","#3b2914","rgba(239,165,100,0.24)","rgba(230,197,152,0.14)","rgba(222,183,129,0.13)","#201508","rgba(239,165,100,0.4)","#32220f","#0f0a05","#161009","#342414","rgba(255,120,0,0.18)","rgba(107,55,5,0.16)","#110b06","#080502","rgba(255,175,108,0.12)","#27190c","#6d4623","rgba(255,142,42,0.18)","#c4b3a2","#fbac6b","rgba(7,4,1,0.96)","rgba(251,170,106,0.22)","#b5a99d","rgba(255,137,33,0.18)","rgba(255,137,33,0.04)","rgba(255,162,82,0.14)","rgba(255,118,0,0.08)","rgba(22,17,10,0.96)","rgba(11,7,3,0.995)","rgba(241,179,132,0.14)","rgba(255,228,210,0.04)","#f5b482","#c8956c","rgba(255,126,23,0.1)","rgba(255,157,76,0.24)","rgba(255,137,33,0.26)","rgba(110,58,12,0.24)","#2d1d0b","#160e04","#080603","rgba(246,160,97,0.38)","rgba(255,196,147,0.14)","rgba(255,118,0,0.06)","rgba(255,118,0,0.24)","#fbb781","rgba(255,131,21,0.16)","#bc9676","#22170c","#120c06","rgba(237,168,120,0.16)","rgba(255,224,202,0.04)","#f6ad74","#bfafa0","rgba(255,162,82,0.08)","#352516","#ab5000","#ffb677","rgba(255,148,70,0.28)","#bbab9d","#ffc497","#f28228","rgba(247,135,35,0.28)","#2b2013","rgba(248,166,99,0.12)","#241a0e","#181009","rgba(239,179,138,0.14)","#432913","#1d1308","#261a0d","#160f07","rgba(228,166,119,0.13)","#ffba82","rgba(229,167,121,0.12)","rgba(255,120,0,0.18)","#1e150a","#0e0904","rgba(237,171,124,0.14)","rgba(255,131,21,0.24)","#ffcaa1","#ffc598","#fff1e7","rgba(34,21,9,0.78)","rgba(237,172,125,0.18)","rgba(255,116,0,0.18)","#160f07","rgba(248,166,99,0.36)","rgba(255,223,200,0.09)","#ffcea8","rgba(254,131,29,0.28)","#281b0e","#191008","rgba(230,182,145,0.18)","rgba(255,231,216,0.05)","#392411","#2f1c0b","#160e05","#ffb375","rgba(241,121,26,0.18)","#100a05","#1a1209","#ffa356","#45301e","rgba(238,113,0,0.2)","rgba(97,48,0,0.09)","rgba(31,19,8,0.85)","rgba(7,4,1,0.93)","rgba(48,31,16,0.49)","rgba(18,11,5,0.76)","rgba(10,6,2,0.91)","rgba(255,186,131,0.19)","rgba(255,240,231,0.1)","rgba(255,230,210,0.025)","rgba(255,131,23,0.29)","rgba(82,42,5,0.75)","rgba(22,13,3,0.91)","rgba(8,5,1,0.96)","rgba(255,185,130,0.42)","rgba(232,114,14,0.05)","rgba(255,120,10,0.08)","rgba(61,38,18,0.43)","rgba(18,10,4,0.77)","rgba(255,185,134,0.17)","rgba(255,239,228,0.075)","#ffc291","rgba(10,5,2,0.88)","rgba(255,193,147,0.25)","rgba(255,153,66,0.2)","rgba(209,113,36,0.045)","#ffb373","rgba(255,180,123,0.15)","rgba(255,122,21,0.09)","#ffc89d","#ffa962","#f6872a","#1a0c00","rgba(255,119,5,0.26)","rgba(62,40,23,0.77)","rgba(29,17,7,0.88)","rgba(50,32,18,0.64)","rgba(15,8,2,0.93)","rgba(255,184,130,0.19)","rgba(255,114,0,0.16)","rgba(15,7,0,0.92)","rgba(255,182,129,0.4)","rgba(81,48,24,0.64)","rgba(24,13,5,0.91)","rgba(255,196,151,0.21)","rgba(251,175,120,0.15)","#0f0904","#050302","rgba(22,16,10,0.97)","rgba(9,5,3,0.99)","rgba(255,235,220,0.08)","#341f0a","#1c1004","#0e0803","rgba(255,238,226,0.15)","#20150a","#120a04","rgba(255,238,225,0.07)","rgba(8,4,1,0.97)","rgba(255,180,123,0.16)","#1d1309","#0d0704","#190e05","#e9d5c6","#2a1b0d","#0f0904","rgba(255,188,139,0.23)","#ffaa66","#ff9a4d","#351e0c","#ffbc7f","rgba(255,181,128,0.18)","rgba(255,181,125,0.19)","#221409","#130b04","#ffbd87","#cbbfb6","rgba(255,181,125,0.15)","rgba(255,181,125,0.13)","#ffc496","#c1b3a9","#2d1b0c","#130a03","#080502","rgba(255,168,101,0.36)","#ffb57a","rgba(255,184,135,0.18)","#c9b9af","rgba(255,182,129,0.2)","#23150b","#0f0904","#ffaf75","#352112","#ffba81","#c2b2a7","rgba(255,182,129,0.12)","rgba(255,186,131,0.16)","#ffa357","#1c0f06","#f8eae1","#ffba83","rgba(255,185,135,0.22)","#1b0f05","#ceb9a9","#ffbd82","#e0d0c6","#2f1a0a","#ffe3cb","#ffb981"],"purple":["#030104","#0f0812","#150d1b","#2c1a36","#b36aff","#af9fb7","#130919","#2b1a36","#27172e","#2a1436","#603479","#cfc0d6","#b564ef","rgba(89,24,122,0.2)","#1c0b23","rgba(181,100,239,0.18)","rgba(181,100,239,0.07)","rgba(181,100,239,0.025)","rgba(181,100,239,0.022)","rgba(181,100,239,0.12)","rgba(187,128,213,0.15)","rgba(208,153,231,0.11)","rgba(181,100,239,0.26)","rgba(242,222,255,0.06)","rgba(181,100,239,0.04)","rgba(181,100,239,0.11)","rgba(181,100,239,0.19)","rgba(181,100,239,0.13)","#ba6cf2","#a651e3","#15051e","rgba(114,1,183,0.15)","rgba(197,166,210,0.1)","rgba(189,126,216,0.09)","rgba(205,148,231,0.09)","rgba(201,170,215,0.14)","#9330d2","#c57efb","rgba(204,147,229,0.15)","#2d143b","rgba(181,100,239,0.24)","rgba(205,152,230,0.14)","rgba(193,129,222,0.13)","#180820","rgba(181,100,239,0.4)","#270f32","#0c050f","#120916","#281434","rgba(151,0,255,0.18)","rgba(66,5,107,0.16)","#0d0611","#060208","rgba(192,108,255,0.12)","#1d0c27","#4f236d","rgba(168,42,255,0.18)","#b7a2c4","#bc6bfb","rgba(5,1,7,0.96)","rgba(188,106,251,0.22)","#ac9db5","rgba(164,33,255,0.18)","rgba(164,33,255,0.04)","rgba(182,82,255,0.14)","rgba(149,0,255,0.08)","rgba(18,10,22,0.96)","rgba(8,3,11,0.995)","rgba(193,132,241,0.14)","rgba(233,210,255,0.04)","#c182f5","#a16cc8","rgba(154,23,255,0.1)","rgba(177,76,255,0.24)","rgba(164,33,255,0.26)","rgba(69,12,110,0.24)","#210b2d","#100416","#070308","rgba(177,97,246,0.38)","rgba(209,147,255,0.14)","rgba(149,0,255,0.06)","rgba(149,0,255,0.24)","#c681fb","rgba(158,21,255,0.16)","#9f76bc","#1a0c22","#0e0612","rgba(183,120,237,0.16)","rgba(230,202,255,0.04)","#bc74f6","#b3a0bf","rgba(182,82,255,0.08)","#291635","#6500ab","#c577ff","rgba(170,70,255,0.28)","#af9dbb","#cf97ff","#9a28f2","rgba(160,35,247,0.28)","#22132b","rgba(183,99,248,0.12)","#1d0e24","#120918","rgba(191,138,239,0.14)","#2f1343","#16081d","#1d0d26","#110716","rgba(178,119,228,0.13)","#c882ff","rgba(179,121,229,0.12)","rgba(151,0,255,0.18)","#160a1e","#0b040e","rgba(184,124,237,0.14)","rgba(158,21,255,0.24)","#d4a1ff","#d198ff","#f4e7ff","rgba(23,9,34,0.78)","rgba(186,125,237,0.18)","rgba(146,0,255,0.18)","#110716","rgba(183,99,248,0.36)","rgba(229,200,255,0.09)","#d8a8ff","rgba(157,29,254,0.28)","#1e0e28","#120819","rgba(191,145,230,0.18)","rgba(235,216,255,0.05)","#291139","#210b2f","#100516","#c475ff","rgba(146,26,241,0.18)","#0c0510","#14091a","#b756ff","#351e45","rgba(142,0,238,0.2)","rgba(59,0,97,0.09)","rgba(22,8,31,0.85)","rgba(5,1,7,0.93)","rgba(34,16,48,0.49)","rgba(13,5,18,0.76)","rgba(7,2,10,0.91)","rgba(200,131,255,0.19)","rgba(243,231,255,0.1)","rgba(236,210,255,0.025)","rgba(159,23,255,0.29)","rgba(51,5,82,0.75)","rgba(15,3,22,0.91)","rgba(6,1,8,0.96)","rgba(199,130,255,0.42)","rgba(139,14,232,0.05)","rgba(148,10,255,0.08)","rgba(43,18,61,0.43)","rgba(12,4,18,0.77)","rgba(199,134,255,0.17)","rgba(243,228,255,0.075)","#ce91ff","rgba(7,2,10,0.88)","rgba(206,147,255,0.25)","rgba(175,66,255,0.2)","rgba(133,36,209,0.045)","#c473ff","rgba(197,123,255,0.15)","rgba(149,21,255,0.09)","#d39dff","#bc62ff","#a02af6","#10001a","rgba(148,5,255,0.26)","rgba(45,23,62,0.77)","rgba(20,7,29,0.88)","rgba(36,18,50,0.64)","rgba(10,2,15,0.93)","rgba(199,130,255,0.19)","rgba(145,0,255,0.16)","rgba(9,0,15,0.92)","rgba(196,129,255,0.4)","rgba(56,24,81,0.64)","rgba(15,5,24,0.91)","rgba(207,151,255,0.21)","rgba(190,120,251,0.15)","#0b040f","#030205","rgba(18,10,22,0.97)","rgba(6,3,9,0.99)","rgba(239,220,255,0.08)","#230a34","#13041c","#0a030e","rgba(242,226,255,0.15)","#180a20","#0c0412","rgba(242,225,255,0.07)","rgba(5,1,8,0.97)","rgba(197,123,255,0.16)","#15091d","#09040d","#100519","#d9c6e9","#1f0d2a","#0b040f","rgba(201,139,255,0.23)","#bc66ff","#ae4dff","#230c35","#ca7fff","rgba(195,128,255,0.18)","rgba(195,125,255,0.19)","#170922","#0d0413","#cb87ff","#c1b6cb","rgba(195,125,255,0.15)","rgba(195,125,255,0.13)","#cf96ff","#b6a9c1","#1e0c2d","#0c0313","#060208","rgba(186,101,255,0.36)","#c57aff","rgba(199,135,255,0.18)","#bcafc9","rgba(197,129,255,0.2)","#180b23","#0a040f","#c075ff","#251235","#ca81ff","#b5a7c2","rgba(197,129,255,0.12)","rgba(200,131,255,0.16)","#b657ff","#12061c","#ede1f8","#c883ff","rgba(199,135,255,0.22)","#12051b","#bda9ce","#cb82ff","#d3c6e0","#1f0a2f","#e9cbff","#c881ff"]};
 const DARTS_THEME_ROTATIONS={green:0,blue:67,red:-139,yellow:-94,orange:-117,purple:129};
 function setAccentTheme(name){
- if(!DARTS_COLOUR_NAMES.includes(name))name="green";
+ name="green";
  const root=document.documentElement.style;
  const colors=undefined;
  document.documentElement.dataset.appearance=name;
@@ -1084,7 +1086,7 @@ function normaliseData(d){
  /* Recover an assessment that an earlier version needlessly invalidated.
     Only if there is no new test in progress and the previous completed
     assessment is still inside its 28-day window. Never undo an explicit reset. */
- if(!d.assessment.finished&&!hasAssessmentProgress(d.assessment)&&d.baseline){
+ if(!d.assessment.finished&&!d.assessment.requestedAt&&!hasAssessmentProgress(d.assessment)&&d.baseline){
   const latest=[...d.assessmentHistory].reverse().find(a=>legacyAssessmentIsComplete(a));
   const at=assessmentDate(latest);
   if(latest&&at&&Date.now()-at<28*DAY_MS){
@@ -1129,7 +1131,7 @@ function startReassessment(){
  if(session()||assessmentDue()||!reassessmentDue())return;
  if(!confirm("Start your four-week assessment now? Your past results and training history stay saved. Once started, finish the assessment before returning to normal training. It saves your progress automatically."))return;
  data.assessmentHistory.push(clone(data.assessment));
- data.assessment=newAssessment();
+ data.assessment=newAssessment();data.assessment.requestedAt=Date.now();
  selectedFullBaseline=true;
  save(false);checkpointData();show("train");
 }
@@ -1313,7 +1315,7 @@ function dc5CheckoutEvidence(g){
  const adjusted=1/(1+Math.exp(-theta));
  return {logged:true,rate:raw*(1-strength)+adjusted*strength};
 }
-function skillSamples(){const result={scoring:[],doubles:[],checkout:[],bull:[]};for(const g of data.games){const time=gameTime(g);if(!time||g.completion==="manual")continue;
+function skillSamples(){const result={scoring:[],doubles:[],checkout:[],bull:[]};for(const g of data.games){const time=gameTime(g);if(!time||time>Date.now()||g.completion==="manual")continue;
   if(!quickEvidenceEligible(g))continue;
 if(g.benchmark===false&&!(["Scoring Survival","Scoring Ladder","Outside Doubles","Double Double"].includes(g.name)&&g.completion==="natural"))continue;
  if(g.name==="Scoring Challenge"&&Number.isInteger(g.visits)&&g.visits===10&&Number.isInteger(g.points)&&g.points>=0&&g.points<=1800)result.scoring.push({time,points:num(g.points),volume:num(g.visits),id:time,source:g.name+(Number.isFinite(g.tier)?':tier'+g.tier:'')+(typeof g.variant==='string'?':'+g.variant:''),quick:!!g.quick,weight:quickWeight(g)});
@@ -1372,6 +1374,7 @@ function dc2Estimate(key,days,prior,now,decisionMode=false){
  const ageOrigin=Number.isFinite(now)?now:Date.now();
  const maxVol=scoring?30:key==='checkout'?18:50;
  for(const d of days||[]){
+  if(!d||!Number.isFinite(d.time)||d.time>ageOrigin)continue;
   const age=Math.max(0,(ageOrigin-d.time)/86400000);
   if(age>112)continue;
   const raw=Math.max(0,Number(d.volume)||0);
@@ -1576,11 +1579,12 @@ function dc5WalkForward(key,days,prior,assessmentTime,now){
   calibratedDays,updatedAt:now,method:'prequential-volatility-80-v3'};
 }
 function dc2UpdateSkills(early=false){
+ if(session())return [];
  const coach=data.coach,now=Date.now();
  if(!coach.estimates||typeof coach.estimates!=="object")coach.estimates={};
  const samples=skillSamples();const decisions=[];
  for(const key of SKILLS){
-  const rows=dailySamples(samples[key]);
+  const rows=dailySamples(samples[key].filter(r=>!data.assessment?.quickStart||r.time>=num(data.assessment.completedAt)));
   const a=data.assessment;
   const prior=dc2AssessmentPrior(key,a);
   const estimate=dc2Estimate(key,rows,prior,now);
@@ -1737,44 +1741,42 @@ function dc7SelectionPenalty(name,audit){return dc9SelectionAdjustment(name,audi
 /* V5.10.1: evidence-specific Target Intelligence. The coach may personalise SINGLE
    targets only when large-single measurements exist. Different rings (D/T),
    directional misses, and placement are never inferred from simple HIT/MISS. */
-function dc11TargetEvidence(player=data, now=Date.now()){
- const since=now-56*DAY_MS;
- const counts=Array.from({length:20},(_,i)=>({target:i+1,hits:0,darts:0,days:new Set(),sources:new Set(),samples:[]}));
- for(const b of (player.bigSingles||[])){
-  if(!b||b.complete!==true||!Array.isArray(b.perNumber)||b.perNumber.length!==20)continue;
-  const when=Number(b.at)||Date.parse(String(b.day||'')+'T12:00:00');
-  if(!Number.isFinite(when)||when<since||when>now+DAY_MS)continue;
-  const day=dateKey(when);
-  for(let i=0;i<20;i++){
-   const h=b.perNumber[i];if(!Number.isInteger(h)||h<0||h>3)continue;
-   counts[i].hits+=h;counts[i].darts+=3;counts[i].days.add(day);counts[i].sources.add('daily');counts[i].samples.push({at:when,hits:h,darts:3});
-  }
+function dc11TargetEvidence(player=data,now=Date.now()){
+ const since=now-56*DAY_MS,daily=new Map(),assessed=new Map();
+ const valid=b=>b?.complete===true&&Number.isFinite(b.at)&&b.at>=since&&b.at<=now&&
+  Array.isArray(b.perNumber)&&b.perNumber.length===20&&b.perNumber.every(h=>Number.isInteger(h)&&h>=0&&h<=3)&&
+  (b.hits===undefined||b.hits===b.perNumber.reduce((s,h)=>s+h,0));
+ for(const original of player.bigSingles||[]){
+  if(!original)continue;
+  const at=Number(original.at)||Date.parse(String(original.day||'')+'T00:00:00');
+  const b={...original,at};if(!valid(b))continue;
+  const day=dateKey(at),previous=daily.get(day);
+  // Corrections and duplicated imports describe the same once-daily benchmark.
+  if(!previous||b.at>=previous.at)daily.set(day,b);
  }
- // The full assessment is a separate measurement. Do not double-count old
- // assessments that were copied into histories during migration.
- const assessed=[player.assessment,...(player.assessmentHistory||[])];
- const seen=new Set();
- for(const a of assessed){
-  if(!a||a.finished!==true||!Array.isArray(a.singles)||a.singles.length!==60)continue;
-  const at=Number(a.completedAt)||0;
-  if(at<since||at>now+DAY_MS||seen.has(at))continue;seen.add(at);
-  const per=Array.from({length:20},()=>({hits:0,darts:0}));let valid=true;
+ for(const a of [player.assessment,...(player.assessmentHistory||[])]){
+  if(a?.finished!==true||!Number.isFinite(a.completedAt)||a.completedAt<since||a.completedAt>now||
+   !Array.isArray(a.singles)||a.singles.length!==60)continue;
+  const perNumber=Array(20).fill(0);let correct=true;
   for(let i=0;i<60;i++){
-   const r=a.singles[i],target=Number(r?.target);
-   if(target!==Math.floor(i/3)+1||typeof r.hit!=='boolean'){valid=false;break}
-   per[target-1].hits+=r.hit?1:0;per[target-1].darts++;
+   const dart=a.singles[i];
+   if(Number(dart?.target)!==Math.floor(i/3)+1||typeof dart.hit!=='boolean'){correct=false;break}
+   perNumber[Math.floor(i/3)]+=Number(dart.hit);
   }
-  if(!valid)continue;
-  for(let i=0;i<20;i++){
-   counts[i].hits+=per[i].hits;counts[i].darts+=3;
-   counts[i].days.add('assessment:'+at);counts[i].sources.add('assessment');counts[i].samples.push({at,hits:per[i].hits,darts:3});
-  }
+  if(!correct)continue;
+  const day=dateKey(a.completedAt),previous=assessed.get(day);
+  if(!previous||a.completedAt>=previous.at)assessed.set(day,{at:a.completedAt,perNumber});
  }
- return counts.map(c=>({target:c.target,hits:c.hits,darts:c.darts,
-   days:c.days.size, measured:c.darts>0,
-   reliable:c.days.size>=5&&c.darts>=15,
-   // Mild shrinkage for small samples; not a claimed personal hit probability.
-   estimate:(c.hits+2)/(c.darts+4),sources:[...c.sources],samples:c.samples.sort((a,b)=>a.at-b.at)}));
+ return Array.from({length:20},(_,i)=>{
+  const samples=new Map(),sources=new Set();
+  for(const [source,collection] of [['daily',daily],['assessment',assessed]])for(const [day,b] of collection){
+   const row=samples.get(day)||{at:b.at,hits:0,darts:0};
+   row.at=Math.max(row.at,b.at);row.hits+=b.perNumber[i];row.darts+=3;samples.set(day,row);sources.add(source);
+  }
+  const rows=[...samples.values()].sort((a,b)=>a.at-b.at),hits=rows.reduce((s,r)=>s+r.hits,0),darts=rows.reduce((s,r)=>s+r.darts,0);
+  return {target:i+1,hits,darts,days:rows.length,measured:darts>0,reliable:rows.length>=5&&darts>=15,
+   estimate:(hits+2)/(darts+4),sources:[...sources],samples:rows};
+ });
 }
 /* V5.10.1: Calibration against one million simulated players showed that
    selecting the smallest raw hit percentage across 20 targets often mistakes
@@ -1861,7 +1863,7 @@ function dc18ValidPressureResult(e,cutoff,now){
   e.quick!==true&&e.extra!==true&&e.recovery!==true&&!e.challengeTuning&&Number.isFinite(e.at)&&
   e.at>=cutoff&&e.at<=now&&typeof e.name==='string'&&
   (e.name!=='Dartboard Bingo'||Array.isArray(e.details?.targets)&&e.details.targets.length===20)&&
-  e.name!=='Target Mastery'&&
+  e.name!=='Target Mastery'&&(e.ruleVersion||null)===dcRC2ExpectedRules(e.name,Number(e.tierAtStart))&&
   Number.isInteger(Number(e.tierAtStart))&&Number(e.tierAtStart)>=1&&
   Number(e.tierAtStart)<=7;
 }
@@ -2374,7 +2376,7 @@ function dc16DoubleEvidence(player=data,now=Date.now()){
  for(const g of player.games||[]){
   if(!g||!['Doubles Survival','Doubles Streak','Dartboard Bingo'].includes(g.name)||g.completion!=='natural'||g.recovery||g.challengeTuning||g.quick||!Number.isFinite(g.at)||g.at<cutoff||g.at>now||(g.name!=='Dartboard Bingo'&&g.variant!=='doubles')||!Array.isArray(g.targetLog))continue;
   for(const d of g.targetLog){
-   if(!d||d.ring!=='D'||!Number.isInteger(d.target)||typeof d.hit!=='boolean')continue;
+   if(!d||d.ring!=='D'||!Number.isInteger(d.target)||d.target<1||d.target>20||typeof d.hit!=='boolean')continue;
    const key=dateKey(g.at)+':'+d.target,cap=dayCaps.get(key)||0;
    if(cap>=9)continue;dayCaps.set(key,cap+1);add(d.target,d.hit,g.at,'game');
   }
@@ -3586,22 +3588,7 @@ function dc39FinalizeDecision(decision,plan){
  return result;
 }
 function dc91DevelopmentNeed(policy,extra=false,now=Date.now()){
- const samples=skillSamples(), estimates=[];
- for(const key of SKILLS){
-  const rows=dailySamples(samples[key].filter(r=>!r.quick&&r.time<=now&&r.time>=now-56*DAY_MS)).filter(r=>r.volume>0);
-  if(rows.length<8||rows.reduce((a,r)=>a+r.volume,0)<({scoring:80,doubles:120,checkout:80,bull:120}[key]))continue;
-  const mid=Math.floor(rows.length/2), early=tierFor(valueOf(rows.slice(0,mid),key),key), late=tierFor(valueOf(rows.slice(mid),key),key);
-  estimates.push({key,tier:Math.min(early,late)});
- }
- if(estimates.length<2)return null;
- const sorted=estimates.map(x=>x.tier).sort((a,b)=>a-b), median=(sorted[Math.floor((sorted.length-1)/2)]+sorted[Math.floor(sorted.length/2)])/2;
- const needs=estimates.filter(x=>x.tier-median>=2&&!policy.categories?.[x.key]?.overexposed&&!policy.categories?.[x.key]?.policySafety&&!policy.categories?.[x.key]?.learning?.protect).sort((a,b)=>b.tier-a.tier);
- const ledger=dc28CategoryLedger(now).filter(d=>d.at>=now-7*DAY_MS);
- const minutes=k=>ledger.reduce((a,d)=>a+(d.minutes[k]||0),0);
- const total=SKILLS.reduce((a,k)=>a+minutes(k),0);
- const eligible=needs.filter(x=>total<60||minutes(x.key)/total<.40);
- eligible.sort((a,b)=>(b.tier-median)*2-(a.tier-median)*2+(minutes(a.key)-minutes(b.key))/15);
- return eligible[0]||null;
+ return coach61PracticeNeed(coach61Evidence(now),policy,now);
 }
 function generateSession(extra=false,skipWarmup=false){
  const focus=focusForDay(extra),sessionsToday=(data.sessions||[]).filter(x=>x?.date===dateKey()&&!x.quick).length;
@@ -3659,7 +3646,15 @@ function blockStart(){return data.coach.firstStarted?weekStart(data.coach.firstS
 function currentBlockIndex(){const t=blockStart();if(t===null)return 0;let i=0;while(addDays(t,(i+1)*28)<=Date.now()&&i<1000)i++;return i}
 function blockBoundary(i){const t=blockStart();return t===null?null:addDays(t,i*28)}
 function blockPerformance(start,end){const r=skillSamples(),out={};for(const key of SKILLS){const rows=r[key].filter(x=>x.time>=start&&x.time<end);out[key]={value:rows.length?valueOf(rows,key):null,volume:rows.reduce((a,x)=>a+x.volume,0)}}return out}
-function checkCompletedBlocks(){if(blockStart()===null)return;let changed=false;for(let i=0;i<currentBlockIndex();i++){if(data.coach.completedBlocks.some(b=>b.index===i))continue;const start=blockBoundary(i),mid=addDays(start,14),end=blockBoundary(i+1),a=blockPerformance(start,mid),b=blockPerformance(mid,end),highlights=[];for(const key of SKILLS){if(a[key].value===null||b[key].value===null||a[key].volume<10||b[key].volume<10)continue;const improvement=b[key].value-a[key].value;if(improvement>=2)highlights.push({name:({scoring:"Scoring average",doubles:"Doubles accuracy",checkout:"Checkout success",bull:"Bull accuracy"})[key],improvement,unit:key==="scoring"?" points":" percentage points"})}data.coach.completedBlocks.push({index:i,start,end,highlights,createdAt:Date.now()});changed=true}if(changed)save(false)}
+function checkCompletedBlocks(){
+ if(blockStart()===null)return;
+ const samples=skillSamples();let changed=false;
+ for(let i=0;i<currentBlockIndex();i++){
+  if(data.coach.completedBlocks.some(b=>b.index===i))continue;
+  data.coach.completedBlocks.push(coach61BlockReview(i,samples));changed=true;
+ }
+ if(changed)save(false);
+}
 
 /* QUICK PLAY: one game for chosen duration, same underlying rules and hidden tiers. */
 const QUICK_GAMES=[
@@ -3714,9 +3709,9 @@ const QUICK_DESCRIPTIONS={
  "Target Mastery":"Focused darts practice across segments, bull, checkouts, straight darts, switching, setup, scoring and pressure."
 };
 let quickChoice="Scoring Survival";
-let randomQuickPending=false;
 let dc23QuickMode="segment";
 function quickDurationChange(){renderQuick()}
+let randomQuickPending=false;
 let quickGameReturnFocus=null;
 function setQuickDuration(seconds){
  if(![300,600,900,1200,1800].includes(Number(seconds)))return;
@@ -3942,7 +3937,7 @@ function focusedConfig(){
  const start=low+((Math.floor(seed/10)*7+seed)%Math.max(1,high-low-length+2));
  const mode=tier<=2?"survival":seed%3===0?"ladder":"survival";
  const lives=[1,2,3,4,4,5,6][tier-1];
- const config={start,end:start+length-1,lives,mode,tier};
+ const novice=tier===7;const noviceStart=17+Math.floor(Math.random()*20);const config=novice?{start:noviceStart,end:noviceStart+2,lives:24,mode:'survival',tier}:{start,end:start+length-1,lives,mode,tier};
  if(item)item.focusedConfig=config;
  return config;
 }
@@ -4208,7 +4203,7 @@ function scoringVisit(){
  }else if(g.name==="First Nine Siege"){
   if(g.visits>=3){endRound();return}
  }else if(g.name==="Risk or Reward"){
-  const threshold=g.choice==="risk"?[140,130,120,110,100,90,80][g.tier-1]:[85,75,65,55,45,35,25][g.tier-1];
+  const threshold=riskTarget(g);
   if(n<threshold){g.lives--;g.penalties++;if(g.choice==="risk")g.points=Math.max(0,g.points-50)}
   else if(g.choice==="risk"){g.points+=35;g.bonusPoints=num(g.bonusPoints)+35}
   if(g.points>=g.goal||g.lives<=0||g.visits>=g.maxVisits){endRound();return}
@@ -4329,38 +4324,187 @@ function dc23MasteryInput(value){
 }
 function dc22MasteryDart(hit){dc23MasteryInput(hit?'hit':'miss')}
 /* V5.80: practice blocks preserve state in existing game/undo/checkpoint records. */
-function dcRC2Trebles(count){const pool=Array.from({length:20},(_,i)=>i+1),out=[];while(out.length<count&&pool.length){const weights=pool.map(n=>n>=16?14:n>=7?25/9:5/6);let r=Math.random()*weights.reduce((a,b)=>a+b,0),i=0;while(i<pool.length-1&&(r-=weights[i])>=0)i++;out.push(pool.splice(i,1)[0]);}return out}
+/* RC2 variation: state belongs to the player record, never the clock or render.
+   Benchmarks, named-score games and deliberate mastery keep their protocols. */
+function dcRC2Memory(){
+ const m=data.targetVariation;
+ if(!m||m.version!==2||typeof m.history!=='object'||!m.history||Array.isArray(m.history)||typeof m.exposure!=='object'||!m.exposure||Array.isArray(m.exposure))data.targetVariation={version:2,history:{},exposure:{S:[],D:[],T:[]}};
+ for(const r of ['S','D','T'])if(!Array.isArray(data.targetVariation.exposure[r]))data.targetVariation.exposure[r]=[];
+ return data.targetVariation;
+}
+let dcRC2EvidenceCache=null;
+function dcRC2WeakTargets(ring){
+ const now=Date.now(),stamp=[data.games.length,data.games.at(-1)?.at,data.bigSingles?.length,data.bigSingles?.at(-1)?.at,data.bigSingles?.at(-1)?.hits,data.assessment?.completedAt,dateKey(now)].join(':');
+ if(!dcRC2EvidenceCache||dcRC2EvidenceCache.player!==data||dcRC2EvidenceCache.games!==data.games||dcRC2EvidenceCache.stamp!==stamp){
+  const weak={S:[],D:[],T:[]};
+  weak.S=dc13SinglesDiagnosis(dc11TargetEvidence(data,now)).development.map(x=>x.target);
+  weak.D=dc16DoubleEvidence(data,now).weak;
+  // Only exact, observed Treble Hunt targets support general treble diagnosis.
+  // Cap each target/day, require repeated days, peers and a conservative gap.
+  const bins=Array.from({length:20},(_,i)=>({target:i+1,h:0,n:0,days:new Set(),obs:[]})),caps=new Map();
+  for(const g of data.games){
+   if(g.name!=='Treble Hunt'||g.variant==='single'||g.quick||g.recovery||g.challengeTuning||g.completion!=='natural'||!Number.isFinite(g.at)||g.at>now||g.at<now-112*DAY_MS)continue;
+   for(const d of Array.isArray(g.targetLog)?g.targetLog:[]){
+    if(d?.ring!=='T'||!Number.isInteger(d.target)||d.target<1||d.target>20||typeof d.hit!=='boolean')continue;
+    const day=dateKey(g.at),key=day+':'+d.target,n=caps.get(key)||0;if(n>=9)continue;caps.set(key,n+1);
+    const b=bins[d.target-1];b.h+=Number(d.hit);b.n++;b.days.add(day);b.obs.push({day,h:Number(d.hit)});
+   }
+  }
+  const known=bins.filter(b=>b.n>=30&&b.days.size>=5);
+  for(const b of known){
+   const peers=known.filter(x=>x!==b),n=peers.reduce((a,x)=>a+x.n,0),h=peers.reduce((a,x)=>a+x.h,0);
+   if(peers.length<3||n<90)continue;
+   const p=(b.h+2)/(b.n+4),q=(h+2)/(n+4),se=Math.sqrt(p*(1-p)/(b.n+5)+q*(1-q)/(n+5)+.02*.02);
+   const dates=[...new Set(known.flatMap(x=>[...x.days]))].sort(),mid=dates[Math.floor(dates.length/2)];
+   const repeated=[0,1].every(half=>{
+    const own=b.obs.filter(x=>Number(x.day>=mid)===half),other=peers.flatMap(x=>x.obs).filter(x=>Number(x.day>=mid)===half);
+    return new Set(own.map(x=>x.day)).size>=2&&own.length>=12&&other.length>=36&&
+     (other.reduce((a,x)=>a+x.h,0)+2)/(other.length+4)-(own.reduce((a,x)=>a+x.h,0)+2)/(own.length+4)>.08;
+   });
+   if(q-p>.10&&(q-p)/se>=2.58&&repeated)weak.T.push(b.target);
+  }
+  dcRC2EvidenceCache={player:data,games:data.games,stamp,weak};
+ }
+ return dcRC2EvidenceCache.weak[ring]||[];
+}
+function dcRC2Pick(pool,weight){
+ const w=pool.map(x=>Math.max(.0001,weight(x))),total=w.reduce((a,b)=>a+b,0);let r=Math.random()*total;
+ for(let i=0;i<pool.length;i++){r-=w[i];if(r<0)return pool[i]}return pool.at(-1);
+}
+function dcRC2Targets(ring,count,options={}){
+ const m=dcRC2Memory(),recent=m.exposure[ring]||[],weak=dcRC2WeakTargets(ring);
+ let pool=[...new Set(options.pool||Array.from({length:20},(_,i)=>i+1))],out=[];
+ const relevance=n=>ring==='D'?([20,16,10,8,4,12,18,6,2].includes(n)?2.5:1):1;
+ const weight=n=>{
+  const exposure=recent.reduce((a,x,i)=>a+(x===n?Math.pow(.96,recent.length-1-i):0),0);
+  return relevance(n)*(weak.includes(n)?1.65:1)/(1+.22*exposure);
+ };
+ while(pool.length&&out.length<count){
+  let candidates=pool;
+  if(ring==='T'&&!options.pool){
+   const groups=[pool.filter(n=>n>=16),pool.filter(n=>n>=7&&n<=15),pool.filter(n=>n<=6)];
+   const available=[0,1,2].filter(i=>groups[i].length);
+   const group=dcRC2Pick(available,i=>[70,25,5][i]);candidates=groups[group];
+  }
+  const n=dcRC2Pick(candidates,weight);out.push(n);pool=pool.filter(x=>x!==n);
+ }
+ return out;
+}
+function dcRC2Trebles(count){return dcRC2Targets('T',count)}
+function dcRC2ExpectedRules(name,tier){
+ if(name==='Double Double')return 'rc2-four-doubles';
+ const novice=tier===7||tier===6&&data.assessment?.quickStart&&['30','under30'].includes(data.assessment.quickBand);
+ const changed=['Treble Hunt','Doubles Streak','Number Lock','Shanghai Combo','Bull Streak','Bull Survival','Bull Bank','Bull Blackjack','Outside Doubles','Double Bull Bridge','101 Sprint','Double-In 201','Last Dart Rescue','Last Dart Standing','Checkout Poker','Cricket Countdown','Pressure Cricket','Switchback','Dartboard Bingo','Risk or Reward','Scoring Survival','Scoring Ladder','First Nine Siege','Focused Checkouts','High-Low'];
+ if(novice&&name==='Staying Straight')return 'rc2.1-straight-foundation';
+ return novice&&changed.includes(name)?'rc2-novice-foundations':null;
+}
+function dcRC2Beginner(g){
+ const tier=Number(g.tier)||dc9GameTier(g.name);
+ const manualNovice=data.assessment?.quickStart&&['30','under30'].includes(data.assessment.quickBand);
+ if(tier<7&&!(tier===6&&manualNovice))return g;
+ g.beginner=true;const protocol=dcRC2ExpectedRules(g.name,tier);if(protocol)g.ruleVersion=protocol;
+ // Both beginner levels use the same generous foundations. Progression occurs
+ // through measured promotion, not by tightening the novice version.
+ switch(g.name){
+  case 'Staying Straight':g.roundPointGoal=3;break;
+  case 'Treble Hunt':g.variant='single';g.lives=12;g.goal=3;break;
+  case 'Doubles Streak':g.variant='singles';g.lives=12;g.goal=2;break;
+  case 'Number Lock':g.ring='S';g.allowedMisses=18;break;
+  case 'Shanghai Combo':g.variant='singles';g.lives=15;break;
+  case 'Bull Streak':g.goal=2;g.allowedMisses=15;break;
+  case 'Bull Survival':g.allowed=15;break;
+  case 'Bull Bank':g.goal=50;g.dartsLeft=60;break;
+  case 'Bull Blackjack':g.goal=50;g.allowed=40;break;
+  case 'Outside Doubles':g.targets=[20,16];g.allowed=48;g.lives=18;break;
+  case 'Double Double':g.allowed=72;break;
+  case 'Double Bull Bridge':g.allowed=84;break;
+  case '101 Sprint':g.allowed=36;break;
+  case 'Double-In 201':g.entryLimit=30;g.maxVisits=30;break;
+  case 'Last Dart Rescue':case 'Last Dart Standing':g.lives=60;break;
+  case 'Checkout Poker':g.allowed=24;break;
+  case 'Cricket Countdown':g.allowed=75;break;
+  case 'Pressure Cricket':g.allowed=60;break;
+  case 'Switchback':g.ring='S';g.allowed=60;break;
+  case 'Dartboard Bingo':g.ring='S';g.allowed=12;g.maxCalls=60;break;
+  case 'Risk or Reward':g.lives=6;g.goal=120;break;
+  case 'Scoring Survival':g.target=15;g.lives=8;break;
+  case 'Scoring Ladder':g.targets=[15,20,25,30];g.target=15;g.lives=12;break;
+  case 'First Nine Siege':g.goal=75;break;
+ }
+ if(g.name==='Double Double')g.ruleVersion='rc2-four-doubles';
+ return g;
+}
+function firstClimbCheckout(g){
+ if(g?.name!=='Checkout Climb'||g.priorFirstCheckout===undefined)return 0;
+ return g.priorFirstCheckout||(Array.isArray(g.attemptLog)?g.attemptLog.find(x=>x.hit===1)?.target:0)||0;
+}
 function dc80Block(g,previous){
- const name=g.name,tier=g.tier||0;
- // Preserve named scores, benchmarks, adaptive mastery and intentionally fixed sequences.
+ if(g.name==='Checkout Climb'){
+  if(previous?.name==='Checkout Climb'){
+   if(previous.priorFirstCheckout!==undefined)g.priorFirstCheckout=firstClimbCheckout(previous);
+  }else if(g.beginner)g.priorFirstCheckout=0;
+ }
+ const name=g.name,tier=g.tier||dc9GameTier(name),all=Array.from({length:20},(_,i)=>i+1);
+ const ring=g.variant==='single'||g.variant==='singles'?'S':'D';
+ const targets=(r,n,pool)=>dcRC2Targets(r,n,pool?{pool}:{});
  const makers={
-  'Setup Shot':()=>({remaining:clamp(g.remaining+[-24,-16,-8,0,8,16,24][Math.floor(Math.random()*7)],70,200)}),
-  'Shanghai Combo':()=>({target:dc22Shuffle(tier<=3?[20,19,18,17]:[20,19,18,17,16])[0]}),
-  'Double Double':()=>({targets:dc22Shuffle([20,16,10,8,4,12,18,6,14,2]).slice(0,4)}),
-  'Double Bull Bridge':()=>({stages:['D'+dc22Shuffle([20,16,10,8])[0],'BULL','D'+dc22Shuffle([20,16,10,8])[0]]}),
-  'Golf Five':()=>({holes:dc22Shuffle(g.holes)}),
-  'Last Dart Rescue':()=>({targets:dc22Shuffle(g.targets)}),
+  'Setup Shot':()=>({remaining:dcRC2Pick(tier>=6?[110,114,118,122,126,130]:Array.from({length:7},(_,i)=>clamp([189,181,172,164,159][Math.min(4,tier-1)]+(i-3)*4,70,200)),()=>1)}),
+  'Shanghai Combo':()=>({target:targets(g.variant==='singles'?'S':'T',1,g.variant==='singles'?all:[20,19,18,17,16])[0]}),
+  'Double Double':()=>({targets:targets('D',4),ruleVersion:'rc2-four-doubles'}),
+  'Double Bull Bridge':()=>{const d=targets('D',2);return {stages:['D'+d[0],'BULL','D'+d[1]]}},
+  'Golf Five':()=>({holes:targets(g.ring,5)}),
+  'Last Dart Rescue':()=>({targets:targets('D',5,tier<=3?[20,16,12,8,25]:tier<=5?[20,16,10,8,5]:[20,10,8,4,2]).map(n=>n*2)}),
   'Last Dart Standing':()=>({scores:dc22Shuffle(g.scores)}),
   'Checkout Poker':()=>({cards:dc22Shuffle(tier<=3?[64,68,72,76,80]:tier<=5?[44,48,52,56,60]:[24,28,32,36,40]).slice(0,3)}),
-  'Switchback':()=>{const a=dc22Shuffle([19,18,17,16]).slice(0,3);return {sequence:[20,a[0],20,a[1],20,a[2],20]}},
-  'Number Lock':()=>({targets:dc22Shuffle(g.targets)}),
-  'Treble Hunt':()=>({targets:g.variant==='single'?dc22Shuffle(g.targets):dcRC2Trebles(g.targets.length)}),
-  'Doubles Streak':()=>({targets:dc22Shuffle(g.targets)}),
-  'Neighbour Trap':()=>({target:dc22Shuffle([20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1])[0]}),
-  'Double Duel':()=>({sequence:dc22Shuffle([20,16,8,10,12,6,18,4,14,2]).slice(0,6)}),
+  'Switchback':()=>{const a=targets(g.ring,3,[19,18,17,16]);return {sequence:[20,a[0],20,a[1],20,a[2],20]}},
+  'Number Lock':()=>({targets:targets(g.ring,3)}),
+  'Treble Hunt':()=>({targets:targets(g.variant==='single'?'S':'T',g.targets.length)}),
+  'Doubles Streak':()=>({targets:targets(ring,g.targets.length)}),
+  'Neighbour Trap':()=>({target:targets('S',1)[0]}),
+  'Double Duel':()=>({sequence:targets(tier>=6?'S':'D',6)}),
   'Halve It':()=>({targets:dc22Shuffle(g.targets)}),
   'Cricket Countdown':()=>({targets:dc22Shuffle(g.targets)}),
   'Pressure Cricket':()=>({targets:dc22Shuffle([20,19,18,17,16,15]).slice(0,3)}),
-  'High-Low':()=>({previous:dc22Shuffle([75,80,85,90,95,100,105])[0]})
+  'High-Low':()=>({previous:dc22Shuffle(tier>=6?[25,30,35]:[75,80,85,90,95,100,105])[0]}),
+  'Outside Doubles':()=>({targets:targets('D',g.targets.length)}),
+  'Dartboard Bingo':()=>({targets:dc22Shuffle(all)})
  };
  const make=makers[name];if(!make)return g;
- // A fresh challenge on a changed tier or exercise. A recovered legacy round starts a fresh block.
- const prior=previous?.name===name&&previous.tier===g.tier?previous.practiceBlock:null;
- let config,attempt=1;
- const history=data.games.filter(x=>x.name===name&&x.practiceBlock?.config).slice(-4).map(x=>JSON.stringify(x.practiceBlock.config));
- if(prior)history.push(JSON.stringify(prior.config));
- config=make();for(let i=0;i<32&&history.includes(JSON.stringify(config));i++)config=make();
- Object.assign(g,clone(config));if(name==="Double Duel")g.target=g.sequence[0];g.practiceBlock={version:1,attempt,config:clone(config)};
+ // Setup Shot trains repeated attempts from the identical starting position.
+ if(name==='Setup Shot'&&previous?.name===name&&previous.tier===g.tier){
+  const block=previous.practiceBlock;
+  if(Number.isInteger(block?.attempt)&&block.attempt>=1&&block.attempt<5&&Number.isInteger(block.config?.remaining)){
+   g.remaining=block.config.remaining;
+   g.practiceBlock={version:2,attempt:block.attempt+1,config:{remaining:g.remaining}};
+   return g;
+  }
+ }
+ const m=dcRC2Memory(),key=name+':'+tier,prior=Array.isArray(m.history[key])?m.history[key].filter(x=>typeof x==='string').slice(-8):[];
+ const history=[...prior,...(previous?.name===name&&previous.practiceBlock?[JSON.stringify(previous.practiceBlock.config)]:[])];
+ let config=make(),signature=JSON.stringify(config),best=config,bestCost=Infinity;
+ for(let i=0;i<32;i++){
+  const cost=history.reduce((a,x,j)=>a+(x===signature?j+1:0),0);
+  if(cost<bestCost){best=config;bestCost=cost}if(!cost)break;
+  config=make();signature=JSON.stringify(config);
+ }
+ config=best;Object.assign(g,clone(config));
+ if(name==='Double Duel')g.target=g.sequence[0];
+ if(name==='Dartboard Bingo'){g.called=null;g.callBag=[];g.calls=0;dc22NextBingoCall(g)}
+ if(name==='Doubles Survival')g.target=g.sequence[0];
+ g.practiceBlock={version:2,attempt:1,config:clone(config)};
+ m.history[key]=[...prior,JSON.stringify(config)].slice(-8);
+ // Bound the complete registry, including migrated or unexpected entries.
+ const keys=Object.keys(m.history);for(const k of keys.slice(0,Math.max(0,keys.length-180)))delete m.history[k];
+ const expose=(r,ns)=>{m.exposure[r]=[...m.exposure[r],...ns.filter(n=>Number.isInteger(n)&&n>=1&&n<=20)].slice(-120)};
+ if(name==='Treble Hunt')expose(g.variant==='single'?'S':'T',g.targets);
+ else if(name==='Doubles Streak'||name==='Doubles Survival')expose(ring,g.targets||g.sequence);
+ else if(name==='Number Lock')expose(g.ring,g.targets);
+ else if(name==='Golf Five')expose(g.ring,g.holes);
+ else if(name==='Neighbour Trap')expose('S',[g.target]);
+ else if(name==='Double Duel')expose(tier>=6?'S':'D',g.sequence);
+ else if(name==='Double Double'||name==='Outside Doubles')expose('D',g.targets);
+ else if(name==='Double Bull Bridge')expose('D',g.stages.filter(x=>x[0]==='D').map(x=>Number(x.slice(1))));
+ else if(name==='Shanghai Combo')expose(g.variant==='singles'?'S':'T',[g.target]);
  return g;
 }
 function buildGame(name,previous=null){const g=name==="Focused Checkouts"?focusedRound():{name,started:Date.now()};if(name==="Big Singles")Object.assign(g,{darts:[],hits:0,day:dateKey()});
@@ -4374,8 +4518,8 @@ function buildGame(name,previous=null){const g=name==="Focused Checkouts"?focuse
   Object.assign(g,{tier,targets,step:0,target:targets[0],goal:4,lives:tier<=2?2:4,visits:0,points:0,scores:[],cleared:0,failures:0});
  }
  if(name==="Treble Hunt"){
-  const manualBeginner=data.assessment?.quickStart&&["30","under30"].includes(data.assessment.quickBand);const tier=manualBeginner?Math.max(6,pressureTier("scoring")):pressureTier("scoring"),beginner=tier>=6;
-  Object.assign(g,{tier,variant:beginner?"single":"treble",targets:beginner?dc11SingleTargetRoute():tier<=2?[20,19,18,17]:[20,19,18],targetIndex:0,lives:manualBeginner?12:tier<=2?2:5,goal:tier<=2?8:tier<=4?6:4,hits:0,misses:0,streak:0,thrown:0,targetLog:[]});
+  const tier=pressureTier("scoring"),beginner=tier>=6;
+  Object.assign(g,{tier,variant:beginner?"single":"treble",targets:beginner?dc11SingleTargetRoute():tier<=2?[20,19,18,17]:[20,19,18],targetIndex:0,lives:tier<=2?2:5,goal:tier<=2?8:tier<=4?6:4,hits:0,misses:0,streak:0,thrown:0,targetLog:[]});
  }
  if(name==="Doubles Streak"){
   const tier=pressureTier("doubles"),singles=tier>=6;
@@ -4424,7 +4568,7 @@ function buildGame(name,previous=null){const g=name==="Focused Checkouts"?focuse
  }
  if(name==="Double Double"){
   const tier=pressureTier("doubles"),targets=tier<=2?[20,20]:tier<=4?[16,8]:[20,10];
-  Object.assign(g,{tier,targets,index:0,allowed:[6,8,10,12,14,18,24][tier-1],thrown:0,hits:0});
+  Object.assign(g,{tier,targets,index:0,allowed:[6,8,10,12,16,24,72][tier-1],thrown:0,hits:0});
  }
  if(name==="Double-In 201"){
   const tier=pressureTier("checkout");Object.assign(g,{tier,remaining:201,entered:false,entryMisses:0,entryLimit:[2,3,4,5,6,8,10][tier-1],visits:0,maxVisits:[6,7,8,9,11,13,16][tier-1],points:0,scores:[],busts:0,wins:0,thrown:0,dartsUsed:0,nextVisitDarts:3,entryDouble:null});
@@ -4513,7 +4657,7 @@ function buildGame(name,previous=null){const g=name==="Focused Checkouts"?focuse
  if(name==="Double Duel"){
   const tier=pressureTier("doubles");Object.assign(g,{tier,target:20,player:0,opponent:0,turn:0,thrown:0,matchDone:false});
  }
- return dc20AttachForecast(dc80Block(dc19ApplyTuning(dc12ApplyRecovery(g)),previous))}
+ return dc20AttachForecast(dc80Block(dcRC2Beginner(dc19ApplyTuning(dc12ApplyRecovery(g))),previous))}
 
 function shanghaiDart(hit){if(typeof hit!=="boolean")return;
  const s=session(),g=activeGame;if(!s||s.pausedAt||s.phase!=="playing"||!g||g.name!=="Shanghai Combo")return;
@@ -4578,7 +4722,7 @@ function newGameDart(action){
   return;
  }else if(name==="Switchback"){
   g.thrown++;if(action==="hit"){g.hits++;g.index++;if(g.index>=g.sequence.length){endRound();return}}
-  else{g.misses++;g.index=Math.max(0,g.index-2)}
+  else{g.misses++;g.index=Math.max(0,g.index-(g.beginner?0:2))}
   if(g.thrown>=g.allowed){endRound();return}
  }
  data.game=g;save();
@@ -4586,6 +4730,10 @@ function newGameDart(action){
 function rescueAim(choice){const g=activeGame;if(g?.name!=="Last Dart Rescue"||session()?.phase!=="playing"||session()?.pausedAt||g.aim||!/^D(?:[1-9]|1[0-9]|20)$|^BULL$/.test(choice))return;const target=g.targets[g.index],correct=target===50?"BULL":"D"+(target/2);snapshot();
  if(choice===correct){g.aim=correct;data.game=g;save()}else{g.aim=null;g.lives--;if(g.lives<=0){endRound();return}data.game=g;save()}}
 function rescueDart(hit){if(typeof hit!=="boolean")return;const g=activeGame,s=session();if(!s||s.pausedAt||s.phase!=="playing"||g?.name!=="Last Dart Rescue"||!g.aim)return;snapshot();g.thrown++;if(hit){g.hits++;g.index++}else g.lives--;g.aim=null;if(g.index>=g.targets.length||g.lives<=0){endRound();return}data.game=g;save()}
+function riskTarget(g){
+ const thresholds=g.choice==='risk'?[140,130,120,110,100,90,80]:[85,75,65,55,45,35,25];
+ return thresholds[g.tier-1];
+}
 function setRisk(choice){if(activeGame?.name!=="Risk or Reward"||session()?.phase!=="playing"||session()?.pausedAt||!["safe","risk"].includes(choice))return;snapshot();activeGame.choice=choice;data.game=activeGame;save()}
 function sprintWin(){
  const g=activeGame,s=session();if(!s||s.pausedAt||s.phase!=="playing"||g?.name!=="101 Sprint")return;
@@ -4662,7 +4810,7 @@ function new40Dart(value,checkoutDarts){
  if(name==='Dartboard Bingo'){
   g.thrown++;g.used++;
   const hit=value==='hit';
-  g.targetLog.push({target:g.called,ring:'D',hit});
+  g.targetLog.push({target:g.called,ring:g.ring||'D',hit});
   if(hit){g.marked.push(g.called);g.hits++}
   g.lines=dc22BingoLines(g);g.line=g.lines>0;
   g.fullHouse=g.marked.length===20;
@@ -4686,6 +4834,11 @@ function new40Dart(value,checkoutDarts){
   if(g.player>=4||g.opponent>=4||g.turn>=12){g.matchDone=true;endRound();return}
  }data.game=g;save();
 }
+function highLowAimHigher(g){
+ if(g.previous<g.diff)return true;
+ if(g.previous+g.diff>180)return false;
+ return g.index%2===0;
+}
 function new40Score(){
  const g=activeGame,s=session(),input=$("scoreInput");if(!g||!s||s.pausedAt||s.phase!=="playing"||!input||input.value==="")return;
  if(!["High-Low","Split the Difference"].includes(g.name))return;
@@ -4693,7 +4846,7 @@ function new40Score(){
  snapshot();padSet("");g.visits++;g.scores.push(score);
  if(score===180)g.oneEighties=num(g.oneEighties)+1;
  if(g.name==="High-Low"){
-  const higher=g.index%2===0,success=higher?score>=g.previous+g.diff:score<=g.previous-g.diff;
+  const higher=highLowAimHigher(g),success=higher?score>=g.previous+g.diff:score<=g.previous-g.diff;
   if(success)g.won++;else{g.losses++;g.lives--}
   g.previous=score;g.index++;if(g.index>=5||g.lives<=0){endRound();return}
  }else{
@@ -4713,6 +4866,10 @@ function undoGame(){const s=session();if(!s||s.pausedAt||s.phase!=="playing")ret
  if(idx<0)return;
  data.games.splice(idx,1);activeGame=clone(last.previousGame);data.game=activeGame;
  s.round=Math.max(1,s.round-1);s.roundsCompleted=Math.max(0,s.roundsCompleted-1);s.lastRoundUndo=null;
+ if(last.previousTotals){
+  for(const key of ['bestDouble','bestCheckout','doublesHit','doublesThrown'])data[key]=num(last.previousTotals[key]);
+  hideRoundAnnouncement();save();return;
+ }
  data.bestDouble=0;data.bestCheckout=0;data.doublesHit=0;data.doublesThrown=0;
  for(const g of data.games){if(g.completion!=="natural")continue;
   if(g.name==="Doubles Survival"&&g.variant==="doubles"){data.bestDouble=Math.max(data.bestDouble,num(g.highest));data.doublesHit+=num(g.hits);data.doublesThrown+=num(g.thrown)}
@@ -4742,7 +4899,7 @@ function dc65CorrectFinalSinglesDart(){
  if(s.pausedAt){s.pausedTotal+=Math.max(0,Date.now()-s.pausedAt)}
  s.pausedAt=null;
  s.phase="playing";
- s.activityAccumulated=num(complete.seconds)*1000;
+ s.activityAccumulated=num(complete.benchmarkElapsedExact??complete.seconds)*1000;
  s.activityStarted=Date.now();
  s.lastRoundUndo=null;
  activeGame=g;data.game=g;undoSnapshot=null;
@@ -4759,7 +4916,7 @@ function checkoutHit(){if(session()?.phase!=="playing")return;const g=activeGame
 function bullDart(value){if(![0,25,50].includes(value)||session()?.phase!=="playing")return;const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){if(typeof hit!=="boolean"||session()?.phase!=="playing")return;const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){if(typeof hit!=="boolean"||session()?.phase!=="playing")return;const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={practiceBlock:g.practiceBlock?clone(g.practiceBlock):undefined,name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,exerciseId:currentExercise()?.provenanceId||null,exerciseIndex:Number.isInteger(session()?.index)?session().index:null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"5.99.10",result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
+function gameResult(g,completion){const e={practiceBlock:g.practiceBlock?clone(g.practiceBlock):undefined,name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,exerciseId:currentExercise()?.provenanceId||null,exerciseIndex:Number.isInteger(session()?.index)?session().index:null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"6.1-RC1",ruleVersion:g.ruleVersion||null,result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
  prospectiveForecast:g.prospectiveForecast&&completion==='natural'&&
  !g.recovery&&!g.challengeTuning&&!session()?.quick?clone(g.prospectiveForecast):null};
  if(completion==="natural"&&!session()?.quick&&!g.recovery){
@@ -4857,7 +5014,7 @@ function gameResult(g,completion){const e={practiceBlock:g.practiceBlock?clone(g
    g.name==="Treble Hunt"?g.hits>=g.goal:
    g.name==="Doubles Streak"?g.best>=g.goal:
    g.name==="301 Pressure"?g.wins>0:
-   g.name==="Staying Straight"?g.index>=5&&g.points>=[75,65,55,45,35,25,15][pressureTier("scoring")-1]:
+   g.name==="Staying Straight"?g.index>=5&&g.points>=(g.roundPointGoal??[75,65,55,45,35,25,15][pressureTier("scoring")-1]):
    g.name==="Checkout Climb"?g.target>=100:
    g.name==="Focused Checkouts"?!!g.completed:
    g.name==="Bull Accuracy"?g.thrown>=30&&(g.inner+g.outer)>=[18,15,12,10,8,6,4][pressureTier("bull")-1]:
@@ -4885,9 +5042,13 @@ function gameResult(g,completion){const e={practiceBlock:g.practiceBlock?clone(g
  if(g.recovery&&completion==="natural")e.result="RECOVERY · "+e.result;
  if(g.challengeTuning&&completion==="natural")e.result=(g.challengeTuning==="stretch"?"STRETCH":"STEPPING STONE")+" · "+e.result;
  if(completion!=="natural"){e.win=null;e.loss=null;e.benchmark=false;e.result="INCOMPLETE · "+e.result.replace(/^(WIN|LOSE) · /, "")}
+ if(g.priorFirstCheckout===0&&firstClimbCheckout(g)){
+  e.firstCheckoutScore=firstClimbCheckout(g);
+  e.result+=" · First checkout achieved ("+e.firstCheckoutScore+")";
+ }
  return e}
 /* Round completion records the result and restarts the SAME game. The exercise clock never resets. */
-function endRound(){const s=session();if(!s||s.phase!=="playing"||s.pausedAt||!activeGame)return;const item=currentExercise(),previousGame=clone(undoSnapshot||activeGame),result=gameResult(activeGame,"natural");s.lastRoundUndo={previousGame,resultAt:result.at,name:result.name};data.games.push(result);s.roundsCompleted++;s.round++;flash=(result.win===true?"WIN":result.win===false?"LOSE":"Round ended")+" · Round "+s.roundsCompleted+" saved";activeGame=buildGame(item.name,activeGame);data.game=activeGame;undoSnapshot=null;save();announceRound(s.round,(result.win===true?"WIN":result.win===false?"LOSE":"ROUND COMPLETE")+" · Previous round"+(result.name==="Setup Shot"&&result.details?.setupOutcome?" · "+result.details.setupOutcome.replaceAll("-"," "):""))}
+function endRound(){const s=session();if(!s||s.phase!=="playing"||s.pausedAt||!activeGame)return;const item=currentExercise(),previousGame=clone(undoSnapshot||activeGame),previousTotals={bestDouble:data.bestDouble,bestCheckout:data.bestCheckout,doublesHit:data.doublesHit,doublesThrown:data.doublesThrown},result=gameResult(activeGame,"natural");s.lastRoundUndo={previousGame,previousTotals,resultAt:result.at,name:result.name};data.games.push(result);s.roundsCompleted++;s.round++;flash=(result.win===true?"WIN":result.win===false?"LOSE":"Round ended")+" · Round "+s.roundsCompleted+" saved";activeGame=buildGame(item.name,activeGame);data.game=activeGame;undoSnapshot=null;save();announceRound(s.round,(result.win===true?"WIN":result.win===false?"LOSE":"ROUND COMPLETE")+" · Previous round"+(result.name==="Setup Shot"&&result.details?.setupOutcome?" · "+result.details.setupOutcome.replaceAll("-"," "):""))}
 function playExercise(){
  const s=session();if(!s||s.phase!=="rules")return;
  if(s.pausedAt){s.pausedTotal+=Math.max(0,Date.now()-s.pausedAt);s.pausedAt=null}
@@ -4908,14 +5069,17 @@ function completeExercise(completion="manual"){
  if(item.name==="Big Singles"&&completion!=="natural")return;
  // V5.72: timer completion must dismiss a pending checkout decision.
  closeCheckoutDartPicker();
- const elapsed=exerciseElapsed();
+ const observed=exerciseElapsed();
+ const elapsed=completion==='timed'&&item.mode==='timed'?Math.min(observed,item.seconds):observed;
+ // A delayed timer callback must not consume the following segment's budget.
+ if(observed>elapsed)s.pausedTotal=num(s.pausedTotal)+(observed-elapsed)*1000;
  if(item.name==="Big Singles")s.benchmarkSeconds=num(s.benchmarkSeconds)+elapsed;
  if(activeGame&&!["Warm-up","Review","Big Singles"].includes(item.name)){
   const g=activeGame;
   const activity=g.dc598Action===true||Object.entries(g).some(([key,value])=>["thrown","darts","visits","attempt","attempts","hits","fail","success","used","shots","entryMisses","dartsUsed","misses","strokes"].includes(key)&&((Array.isArray(value)&&value.length>0)||typeof value==="number"&&value>0));
   if(activity)data.games.push(gameResult(g,completion==="timed"?"partial":"manual"));
  }
- s.completed.push({name:item.name,exerciseId:item.provenanceId||null,exerciseIndex:s.index,at:Date.now(),seconds:Math.round(elapsed),...(item.name==="Big Singles"?{benchmarkElapsedExact:elapsed}:{}),rounds:s.roundsCompleted,plannedSeconds:s.provenanceLocked?.exercises?.find(x=>x.id===item.provenanceId)?.plannedSeconds??null});
+ s.completed.push({name:item.name,exerciseId:item.provenanceId||null,exerciseIndex:s.index,at:Date.now(),seconds:Math.round(elapsed),...(item.name==="Big Singles"?{benchmarkElapsedExact:elapsed}:{}),rounds:s.roundsCompleted,...(firstClimbCheckout(activeGame)?{firstCheckoutScore:firstClimbCheckout(activeGame)}:{}),plannedSeconds:s.provenanceLocked?.exercises?.find(x=>x.id===item.provenanceId)?.plannedSeconds??null});
  s.activityAccumulated=elapsed*1000;s.activityStarted=null;
  s.phase="complete";s.pausedAt=Date.now();undoSnapshot=null;hideRoundAnnouncement();
  save();
@@ -4923,16 +5087,7 @@ function completeExercise(completion="manual"){
 /* V5.10.1: the coach consumes wins and losses privately. End-of-session
    messages are positive-only; a bad night never becomes a public verdict. */
 function generateSessionReport(sessionData){
- if(sessionData.quick)return null;
- const p=dc10PressureSummary(data.games,sessionData.id);
- const completed=data.games.filter(g=>g.sessionId===sessionData.id&&g.completion==='natural');
- const oneEighties=completed.reduce((sum,g)=>sum+num(g.oneEighties),0);
- const good=p.rounds?"You completed "+p.rounds+" competitive rounds and won "+p.wins+"."+(oneEighties?" You also recorded "+oneEighties+" 180(s).":""):
-  "You completed your training block. The coach will use each recorded result as more evidence arrives.";
- const highlight=p.gamesPlayed.length?"You trained through "+p.gamesPlayed.length+" different competitive challenge"+(p.gamesPlayed.length===1?"":"s")+" today.":
-  "Your consistent training routine is building a useful baseline.";
- const plan="Your coach keeps the core programme stable, adjusts the pressure using repeated results across days, and continues tracking each skill independently.";
- return {good,bad:"",ugly:"",highlight,plan,at:Date.now(),pressure:p,version:5};
+ return coach61SessionReport(sessionData);
 }
 function displayCoachReport(report){
  const box=$("sessionCoachReport");if(!box)return;
@@ -5023,13 +5178,13 @@ function finishView(){const wasQuick=data.sessions.length&&data.sessions[data.se
 /* TRAINING DISPLAY */
 const EXTRA_RULES={
  "Last Dart Standing":"Six one-dart situations. For an even remainder choose a finishing double; for an odd remainder choose a setup single. Then record whether your dart hit its chosen target. Wrong route or miss costs a life. Solve all six to WIN.",
- "Pressure Cricket":"Close 20, 19 and 18 with three marks each. Single = 1 mark, double = 2, treble = 3. A closed number earns twice its value. A fixed simulated rival scores after every three darts. Close all three AND finish ahead to WIN.",
+ "Pressure Cricket":"Close each of the three displayed numbers with three marks each. Single = 1 mark, double = 2, treble = 3. A closed number earns twice its value. A fixed simulated rival scores after every three darts. Close all three AND finish ahead to WIN.",
  "Bull Blackjack":"Bank 25 for outer bull or 50 for bullseye. Reach the EXACT displayed target before your darts expire. Go over and you LOSE immediately.",
  "Neighbour Trap":"Aim at the displayed large single. A hit adds one progress. Hitting either neighbouring single removes one progress; a different miss uses a dart without progress. Reach the target before darts run out to WIN.",
  "Double Jackpot":"Choose from the four displayed doubles (or beginner singles). Each target can score ONCE per round. After a hit you must choose a different unused target. Bank the exact goal without going over. A bust loses the round.",
  "Dartboard Bingo":"The coach calls one random double at a time. Record each dart as Hit or Miss. You get a skill-adjusted dart allowance per call. Hit doubles disappear; missed doubles return later. Any horizontal line of FIVE is BINGO; all 20 is FULL HOUSE. A fresh random card follows each completed round.",
  "Target Mastery":"Coach-selected practice across singles, doubles, trebles, bull, checkouts, straight darts, target switching, setup, scoring and pressure. Each drill measures only what you actually record.",
- "High-Low":"Enter five three-dart visit totals. Starting from 90, each visit must alternate HIGHER then LOWER than the previous visit by at least the displayed gap. Four correct comparisons to WIN; run out of lives or visits to LOSE.",
+ "High-Low":"Enter five three-dart visit totals. Starting from the displayed score, each visit must alternate HIGHER then LOWER than the previous visit by at least the displayed gap. If that direction would be impossible, follow the direction shown. Four correct comparisons to WIN; run out of lives or visits to LOSE.",
  "Split the Difference":"Throw pairs of three-dart visits and enter each total. Each second visit must be within the displayed tolerance of the first. Match at least two of three pairs to WIN; two failed pairs means LOSE.",
  "Checkout Poker":"Pick a checkout card from the three available. You have three darts to check out on a double. Record Checkout completed or Failed 3 darts. Choose and finish two different cards within the total attempts to WIN.",
  "Double Bull Bridge":"Complete three stages in strict order: nominated double, bull, nominated double. Record one dart at a time. Hit all three stages within your total dart allowance to WIN.",
@@ -5063,7 +5218,7 @@ let dc88Resume=null;
 function dc88Open(){const s=session(),d=$('dc88Dialog');if(!s||s.phase!=="playing"||d.open)return;dc88Resume=null;$('dc88RulesTitle').textContent=$('exerciseName').textContent+' · Rules';$('dc88RulesText').textContent=[$('exerciseRules').textContent,$('dc80Goal').dataset.full||$('dc80Goal').textContent,$('dc80Condition').textContent].filter(Boolean).join('\n\n');if(!s.pausedAt){pauseSession();dc88Resume={id:s.id,index:s.index,at:s.pausedAt}}d.onclose=()=>{const p=dc88Resume;dc88Resume=null;const now=session();if(p&&now&&now.id===p.id&&now.index===p.index&&now.pausedAt===p.at&&now.phase==='playing'&&!document.hidden)pauseSession()};d.showModal()}
 function dc88Compact(g,heading,detail,mini,label){
  const split=t=>t.split(' · ').filter(Boolean);let d=split(detail),m=split(mini);const redundant=t=>((label==='LIVES LEFT'&&/^Lives(?: left)?[: ]/i.test(t))||(/DARTS LEFT/.test(label)&&/^Darts (?:left|remaining)[: ]/i.test(t))||(/MISSES LEFT/.test(label)&&/^Misses left[: ]/i.test(t))||(/VISITS LEFT/.test(label)&&/^Visits left[: ]/i.test(t)));d=d.filter(t=>!redundant(t));m=m.filter(t=>!redundant(t)&&! /^(Miss =|Miss costs|Wrong route costs|Finish on a double|Must finish on a double|Hit both nominated|Hit the cumulative|Zero, one|Record actual darts|Decide before|25 = outer|50 = bullseye|Failure costs|Failure steps)/i.test(t));
- const clean={"Scoring Survival":["",g.cleared+"/5 successful visits"],"Scoring Ladder":["Step "+(g.step+1)+"/4","Cleared: "+g.cleared],"Setup Shot":["Do not check out",""],"Checkout Climb":["",""],"Doubles Survival":["",""],"Bull Survival":["",""],"Bull Bank":["",""],"Number Lock":["",m.join(' · ')],"Double Double":["Double "+(g.index+1)+"/"+(g.targets?.length||4),""],"Switchback":[d.join(' · '),""],"Bull Blackjack":["",""],"Double Jackpot":["",m.join(' · ')],"Pressure Cricket":["",m.join(' · ')],"Dartboard Bingo":["",m.join(' · ')],"First Nine Siege":["", ""],"Cricket Countdown":[d.join(' · '),""],"Double Bull Bridge":["Stage "+(g.index+1)+"/3",m.filter(t=>!/^Stage /.test(t)).join(' · ')]};
+ const clean={"Scoring Survival":["",g.cleared+"/5 successful visits"],"Scoring Ladder":["Step "+(g.step+1)+"/4","Cleared: "+g.cleared],"Setup Shot":["Do not check out",""],"Checkout Climb":["",g.priorFirstCheckout===undefined?"":firstClimbCheckout(g)?"First checkout achieved · "+firstClimbCheckout(g):"First goal · Complete one checkout"],"Doubles Survival":["",""],"Bull Survival":["",""],"Bull Bank":["",""],"Number Lock":["",m.join(' · ')],"Double Double":["Double "+(g.index+1)+"/"+(g.targets?.length||4),""],"Switchback":[d.join(' · '),""],"Bull Blackjack":["",""],"Double Jackpot":["",m.join(' · ')],"Pressure Cricket":["",m.join(' · ')],"Dartboard Bingo":["",m.join(' · ')],"First Nine Siege":["", ""],"Cricket Countdown":[d.join(' · '),""],"Double Bull Bridge":["Stage "+(g.index+1)+"/3",m.filter(t=>!/^Stage /.test(t)).join(' · ')]};
  let v=clean[g.name]||[d.join(' · '),m.join(' · ')];$('gameProgress').textContent=v[0];if(!['301 Pressure','501 Pressure','170 Challenge','Double-In 201'].includes(g.name))$('miniMetrics').textContent=v[1];else {for(const x of $('miniMetrics').querySelectorAll('.hudChip'))if(x.textContent==='Double-out'||(label==='LIVES LEFT'&&x.textContent.startsWith('Lives left')))x.remove()}
  const goal=$('dc80Goal'),b=$('dc80BlockLabel');goal.dataset.full=goal.textContent;if(['Scoring Survival','Scoring Ladder','Doubles Survival','Checkout Climb','Focused Checkouts','Bull Survival','Bull Accuracy','Staying Straight','301 Pressure','501 Pressure','170 Challenge','Target Mastery','Double Jackpot','Bull Blackjack','First Nine Siege','Risk or Reward','Bull Bank'].includes(g.name))goal.textContent='';$('dc80Objective').classList.toggle('dc88Empty',!goal.textContent&&!b.textContent);const note=$('dc36PressureMessage');if(!['FINAL CHANCE','LAST ONE','NO CHANCES LEFT'].includes(note.textContent))note.textContent='';
 }
@@ -5082,9 +5237,13 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  if(!s){const prompt=$("reassessmentPrompt");if(prompt)prompt.classList.toggle("hidden",!reassessmentDue());return}const e=currentExercise();let g=activeGame||data.game;if(!e)return;if(g?.name==='Dartboard Bingo'&&(!Array.isArray(g.targets)||g.targets.length!==20||!Number.isInteger(g.called))){g=buildGame('Dartboard Bingo');activeGame=g;data.game=g;save(false)}const elapsed=exerciseElapsed(),isBenchmark=e.name==="Big Singles",seconds=e.seconds||0;
  $("sessionType").textContent=(s.quick?"Quick Play":s.extra?"Extra Training":"Today's Training")+(!s.extra&&(isBenchmark||s.benchmarkSeconds)?" · +"+fmt(s.benchmarkSeconds+(isBenchmark?elapsed:0)):"");$("sessionStepLabel").textContent="Exercise "+(s.index+1)+"/"+s.plan.length;$("exerciseName").textContent=g?.name==="Target Mastery"?"Mastery · "+dc23MasteryDescriptor(g):g&&g.name==="Doubles Survival"&&g.variant==="singles"?"Singles Survival":e.name;
  let rule=EXTRA_RULES[e.name]||RULES[e.name]||"";if(g&&g.name==="Doubles Survival"&&g.variant==="singles")rule="Hit the displayed SINGLE (either single section) within nine darts. A completed round restarts.";if(g&&g.name==="Treble Hunt"&&g.variant==="single")rule="Beginner target: hit the SINGLE shown. A miss costs one life. Clear the hit goal before lives run out.";
+ if(g?.name==='Switchback'&&g.beginner)rule='Hit the displayed SINGLE, then switch to the next target. A miss uses a dart but keeps your position. Complete the sequence before your total darts run out.';
  if(g&&g.name==="Doubles Streak"&&g.variant==="singles")rule="Hit the SINGLE shown to build a streak. A miss breaks it and costs a life. Reach the goal before lives run out.";
  if(g&&["Bull Survival","Bull Streak"].includes(g.name))rule=(g.target==="CENTRE"?"CENTRE = anywhere INSIDE the inner edge of the treble ring, including the bull. ":g.target==="50"?"Only the red bullseye (50) counts. ":"Either outer bull (25) or bullseye (50) counts. ")+rule;
  if(g&&g.name==='Target Mastery')rule=dc23MasteryDescriptor(g)+': '+(g.mode==='bull'?'Aim at the bull and record 25, 50 or Miss for every dart.':g.mode==='checkout'?'Attempt the displayed finish within three darts, ending on a double. Record the actual number thrown on success, or Not finished. No dart locations are inferred.':g.mode==='straight'?'Aim at the same exact segment and build a streak. Record every dart.':g.mode==='switch'?'Switch to each displayed target after every dart, recording Hit or Miss.':g.mode==='setup'?'Hit each nominated single to practise controlled setup targets.':g.mode==='pressure'?'Hit the nominated '+(g.ring==='S'?'single':'double')+' with three darts per visit. Record each dart.':g.mode==='scoring'?'Rotate through nominated scoring '+(g.ring==='S'?'singles':'trebles')+', recording each dart.':'Hit the nominated exact segment. Record every dart.');
+ if(g?.name==='Shanghai Combo')rule=g.variant==='singles'?'Hit the displayed single three times. Each miss costs one life. Complete all three stages before lives run out.':'Hit the displayed single, then double, then treble of the same number. Each miss costs one life. Complete all three stages before lives run out.';
+ if(g?.name==='Dartboard Bingo'&&g.ring==='S')rule='Aim at the called SINGLE (either single section). Record Hit or Miss for each dart. A hit closes that square; after the displayed dart allowance a missed square returns to the bag. Any horizontal line of five is BINGO; all 20 is a full house. Play until the call limit.';
+ if(g?.priorFirstCheckout!==undefined)rule='Your first goal is one checkout on a double or bullseye. Tap Checkout Hit and confirm the darts used. Keep climbing after your first finish. Each finish raises the target by five. Three missed darts lower it by one. Reach 100 to win the full climb. Below 50 starts another round.';
  if(g&&g.recovery)rule+=(rule?"\n\n":"")+g.recoveryMessage;
  if(g&&g.challengeTuning)rule+=(rule?"\n\n":"")+g.challengeMessage;
  $("exerciseRules").textContent=rule;$("exerciseTimeLabel").textContent=isBenchmark?"60 darts · extra time":"Exercise time";$("exerciseClock").textContent=isBenchmark?(g?g.darts.length:0)+"/60":fmt(Math.max(0,seconds-elapsed));$("exerciseBar").style.width=isBenchmark?((g?g.darts.length:0)/60*100)+"%":clamp(100*elapsed/Math.max(1,seconds),0,100)+"%";$("sessionClock").textContent=fmt(sessionRemaining());$("sessionBar").style.width=clamp(100*sessionElapsed()/sessionBudget(),0,100)+"%";$("pauseButton").textContent=s.pausedAt?"Resume Session":"Pause Session";
@@ -5100,9 +5259,12 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  const displayTitle=g&&g.name==="Doubles Survival"&&g.variant==="singles"?"Singles Survival":e.name;
  if(phase==="rules"){
   $("introTitle").textContent=displayTitle;
-  $("introRules").textContent=(s.quick?"Warm-up advice: we recommend at least ten minutes of comfortable throwing before Quick Play. It is optional and does not change your game time.\n\n":"")+rule;
+  const aim=coach61SessionAim(e);
+  $("introRules").textContent=(aim?aim+"\n\n":"")+(s.quick?"Warm-up advice: we recommend at least ten minutes of comfortable throwing before Quick Play. It is optional and does not change your game time.\n\n":"")+rule;
  }else if(phase==="complete"){
   $("doneSummary").textContent=e.name==="Warm-up"?"Ten-minute warm-up complete.":e.name==="Big Singles"?"All 60 darts recorded. Your accuracy result is saved.":e.name==="Review"?"Training complete. Your session is ready to save.":s.roundsCompleted?displayTitle+" complete. "+s.roundsCompleted+" round"+(s.roundsCompleted===1?"":"s")+" saved.":displayTitle+" complete. Your exercise result has been saved.";
+  const firstCheckout=s.completed.at(-1)?.firstCheckoutScore;
+  if(e.name==='Checkout Climb'&&firstCheckout)$("doneSummary").textContent+=" First checkout achieved ("+firstCheckout+").";
   $("nextExerciseButton").textContent=s.index===s.plan.length-1?"Finish Session":"Next Exercise";
   $("dc65FixBenchmark").classList.toggle("hidden",!(e.name==="Big Singles"&&g?.darts?.length===60));
  }
@@ -5135,7 +5297,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   mini="Lives left: "+g.lives+" · Busts: "+g.busts+" · Finish on a double";
   html=padMarkup()+button("Record Visit","scoringVisit()");break;
 
- case "Staying Straight":normaliseStraightGame(g);heading=STRAIGHT_TARGETS[Math.min(4,g.index)]+"s";detail="Mini-game "+(Math.min(4,g.index)+1)+"/5";$("straightDisplay").innerHTML='<div class="targetGrid">'+STRAIGHT_TARGETS.map((n,i)=>'<div class="'+(i===g.index?"active":"")+'">'+n+'s<strong>'+g.counts[i]+'</strong></div>').join("")+'</div>';$("straightDisplay").classList.remove("hidden");mini="Total: "+g.points+" points";html=button("Single +1","straightDart(1)")+button("Double +2","straightDart(2)")+button("Treble +3","straightDart(3)")+button("Miss / Next","straightDart(0)");break;
+ case "Staying Straight":normaliseStraightGame(g);heading=STRAIGHT_TARGETS[Math.min(4,g.index)]+"s";detail="Mini-game "+(Math.min(4,g.index)+1)+"/5";$("straightDisplay").innerHTML='<div class="targetGrid">'+STRAIGHT_TARGETS.map((n,i)=>'<div class="'+(i===g.index?"active":"")+'">'+n+'s<strong>'+g.counts[i]+'</strong></div>').join("")+'</div>';$("straightDisplay").classList.remove("hidden");mini="Total: "+g.points+" points"+(g.roundPointGoal?" · Round goal: "+g.roundPointGoal:"");html=button("Single +1","straightDart(1)")+button("Double +2","straightDart(2)")+button("Treble +3","straightDart(3)")+button("Miss / Next","straightDart(0)");break;
  case "Checkout Climb":heading=String(g.target);detail="Darts remaining: "+(3-g.attempt);html=button("Checkout Hit","checkoutHit()")+button("Missed Dart","checkoutMiss()");break;
  case "Focused Checkouts":{
   const c=g.config;
@@ -5148,8 +5310,8 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   break;
  }
  case "Shanghai Combo":
-  heading=["S","D","T"][Math.min(g.stage,2)]+g.target;
-  detail="Stage "+(g.stage+1)+"/3 · Single → Double → Treble";
+  heading=(g.variant==="singles"?"S":["S","D","T"][Math.min(g.stage,2)])+g.target;
+  detail="Stage "+(g.stage+1)+"/3 · "+(g.variant==="singles"?"Three single hits":"Single → Double → Treble");
   mini="Lives: "+g.lives+" · Hits: "+g.hits;
   html=button("Hit","shanghaiDart(true)")+button("Miss","shanghaiDart(false)");break;
  case "Bull Bank":
@@ -5197,7 +5359,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  }
  case "Switchback":
   heading=g.ring+g.sequence[Math.min(g.index,g.sequence.length-1)];detail="Sequence "+(g.index+1)+"/7";
-  mini="Darts left: "+(g.allowed-g.thrown)+" · Miss = back two targets";
+  mini="Darts left: "+(g.allowed-g.thrown)+(g.beginner?" · Miss uses a dart":" · Miss = back two targets");
   html=button("Hit","newGameDart('hit')")+button("Miss","newGameDart('miss')");break;
  case "501 Pressure":
   heading=String(g.remaining);detail="501 · Darts used "+g.dartsUsed+"/"+g.maxDarts;
@@ -5218,7 +5380,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   mini="Hit the cumulative points target to WIN";html=padMarkup()+button("Enter Score","scoringVisit()");break;
  case "Risk or Reward":
   heading=g.points+" / "+g.goal;detail="Visit "+(g.visits+1)+"/"+g.maxVisits+" · Lives "+g.lives;
-  mini="Approach: "+g.choice.toUpperCase()+" · Risk success +35 bonus, risk failure −50 and 1 life";
+  mini=g.choice.toUpperCase()+" target: "+riskTarget(g)+" or more · Risk success +35 bonus, risk failure −50 and 1 life";
   html='<div class="riskButtons">'+button("Safe target","setRisk('safe')")+button("Risky target","setRisk('risk')")+'</div>'+padMarkup()+button("Enter Score","scoringVisit()");break;
 
  case "Last Dart Standing":{
@@ -5244,11 +5406,11 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   mini="Used: "+((g.usedTargets||[]).map(n=>g.ring+n).join(', ')||'none')+" · Darts left "+(g.allowed-g.thrown);
   html='<div class="dc33JackGrid">'+[20,16,10,5].map(n=>'<button type="button" class="'+((g.usedTargets||[]).includes(n)?'used':g.choice===n?'selected':'')+'" '+((g.usedTargets||[]).includes(n)?'disabled':'')+' onclick="new40Choice('+n+')">'+g.ring+n+'</button>').join('')+'</div>'+(g.choice?button('Hit '+g.ring+g.choice,"new40Dart('hit')")+button('Miss',"new40Dart('miss')"):'<div class="dc33TailStatus">Choose another unused target</div>');break;
  case 'Dartboard Bingo':
-  heading='D'+g.called;detail='Caller controls the doubles · 5 in a horizontal line = BINGO';
-  mini='Darts left '+(g.allowed-g.used)+' · Lines '+g.lines+'/4 · '+g.marked.length+'/20 doubles';
-  html=button('Hit D'+g.called,"new40Dart('hit')")+button('Miss',"new40Dart('miss')");
+  heading=(g.ring||'D')+g.called;detail='Caller controls the targets · 5 in a horizontal line = BINGO';
+  mini='Darts left '+(g.allowed-g.used)+' · Lines '+g.lines+'/4 · '+g.marked.length+'/20 targets';
+  html=button('Hit '+(g.ring||'D')+g.called,"new40Dart('hit')")+button('Miss',"new40Dart('miss')");
   $('straightDisplay').classList.remove('hidden');
-  $('straightDisplay').innerHTML='<div class="dc22BingoCard">'+g.targets.map(n=>'<span class="'+(g.marked.includes(n)?'done':n===g.called?'called':'')+'">'+(g.marked.includes(n)?'✓ ':'')+'D'+n+'</span>').join('')+'</div>';
+  $('straightDisplay').innerHTML='<div class="dc22BingoCard">'+g.targets.map(n=>'<span class="'+(g.marked.includes(n)?'done':n===g.called?'called':'')+'">'+(g.marked.includes(n)?'✓ ':'')+(g.ring||'D')+n+'</span>').join('')+'</div>';
   break;
  case 'Target Mastery':
   heading=g.mode==='bull'?'BULL 25 / 50':g.mode==='checkout'?String(g.checkoutExample):g.ring+g.target;
@@ -5266,7 +5428,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
    g.mode==='checkout'?button('Finished · 1 dart',"dc23MasteryInput('finish1')")+button('Finished · 2 darts',"dc23MasteryInput('finish2')")+button('Finished · 3 darts',"dc23MasteryInput('finish3')")+button('Not finished',"dc23MasteryInput('miss')"):
    button('Hit','dc23MasteryInput(\'hit\')')+button('Miss','dc23MasteryInput(\'miss\')');break;
  case "High-Low":
-  heading=g.index%2===0?"HIGHER":"LOWER";detail="Previous visit "+g.previous+" · Gap "+g.diff;
+  heading=highLowAimHigher(g)?"HIGHER":"LOWER";detail="Previous visit "+g.previous+" · Gap "+g.diff;
   mini="Won "+g.won+"/4 · Lives "+g.lives+" · Visit "+(g.index+1)+"/5";
   html=padMarkup()+button("Enter Visit","new40Score()");break;
  case "Split the Difference":
@@ -5284,7 +5446,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  case "Double Duel":
   heading=(g.tier>=6?"S":"D")+g.target;detail="First to 4 points against a fixed rival";
   mini="You "+g.player+" · Rival "+g.opponent+" · Turn "+(g.turn+1)+"/12";
-  html=button("Double Hit","new40Dart('hit')")+button("Miss","new40Dart('miss')");break;
+  html=button(g.tier>=6?"Single Hit":"Double Hit","new40Dart('hit')")+button("Miss","new40Dart('miss')");break;
  case "Bull Accuracy":heading="BULL";detail="Dart "+(g.thrown+1)+"/30";mini="Outer 25: "+g.outer+" · Bullseyes: "+g.inner;html=button("Bullseye 50","bullDart(50)")+button("Outer Bull 25","bullDart(25)")+button("Miss","bullDart(0)");break;
  case "Bull Survival":heading=g.target;detail="Darts remaining: "+(g.allowed-g.used);html=button("Hit","bullSurvival(true)")+button("Miss","bullSurvival(false)");break;
  case "Bull Streak":heading=g.target;detail="Streak "+g.streak+"/"+g.goal;mini="Best streak: "+g.best+" · Misses left: "+(num(g.allowedMisses||7)-num(g.misses));html=button("Hit","bullStreak(true)")+button("Miss","bullStreak(false)");break;
@@ -5295,7 +5457,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  'Big Singles':['HIT LARGE SINGLE ONLY','Other segments = miss · 3 darts per number'],
  'Doubles Survival':['HIT '+heading,'Miss all allowed darts = round ends'],
  'Scoring Challenge':['MAXIMISE YOUR 10 VISITS','3 darts per visit · no pass/fail target'],
- 'Staying Straight':['KEEP HITTING '+heading,'First miss ends this number · maximise points'],
+ 'Staying Straight':['KEEP HITTING '+heading,g.roundPointGoal?'First miss ends this number · reach '+g.roundPointGoal+' points overall':'First miss ends this number · maximise points'],
  'Checkout Climb':['FINISH '+heading,'Double-out · success +5 · failure −1 · below 50 ends'],
  'Focused Checkouts':['FINISH '+heading,'Double-out · clear range before lives expire'],
  'Scoring Survival':['SCORE '+g.target+' OR MORE','5 successful visits wins · low score costs a life'],
@@ -5309,7 +5471,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  'Bull Accuracy':['RECORD ALL 30 DARTS','25 / 50 / miss · no pass/fail target'],
  'Bull Survival':['HIT '+heading,'Miss all allowed darts = loss'],
  'Bull Streak':['BUILD '+g.goal+' CONSECUTIVE HITS','Miss resets streak · no misses left = loss'],
- 'Shanghai Combo':['COMPLETE SINGLE → DOUBLE → TREBLE','Same number · miss costs a life'],
+ 'Shanghai Combo':[g.variant==='singles'?'HIT THREE SINGLES':'COMPLETE SINGLE → DOUBLE → TREBLE','Same number · miss costs a life'],
  'Bull Bank':['REACH '+g.goal+' POINTS','25 / 50 · run out of darts below goal = loss'],
  'Number Lock':['CLOSE EVERY SHOWN NUMBER','Miss allowance exhausted = loss'],
  'Halve It':['BANK AT LEAST '+g.goal,'6 visits · zero hits halves your score'],
@@ -5319,7 +5481,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  'Cricket Countdown':['CLOSE ALL TARGETS','3 marks each · finish before darts run out'],
  'Double Double':['HIT ALL DOUBLES IN ORDER','Darts exhausted = loss'],
  'Double-In 201':[g.entered?'CHECK OUT '+heading:'HIT ANY DOUBLE',g.entered?'Double-out · bust restores score · visit limit applies':'Entry allowance exhausted = loss'],
- 'Switchback':['CLEAR THE SEQUENCE','Miss sends you back 2 steps · darts exhausted = loss'],
+ 'Switchback':['CLEAR THE SEQUENCE',g.beginner?'Miss uses a dart · keep your position':'Miss sends you back 2 steps · darts exhausted = loss'],
  'Last Dart Rescue':['SOLVE ALL FIVE FINISHES','One dart per try · wrong route or miss costs life'],
  'First Nine Siege':['SCORE '+g.goal+' IN 9 DARTS','3 visits · below goal = loss'],
  'Risk or Reward':['BANK '+g.goal+' POINTS','Safe / risky thresholds apply · no lives or visits = loss'],
@@ -5330,14 +5492,14 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  'Double Jackpot':['EXACTLY '+g.goal+' POINTS','Each target once · overshoot or darts exhausted = loss'],
  'Dartboard Bingo':['COMPLETE A LINE OF FIVE','Full house = all 20 · call limit applies'],
  'Target Mastery':['PRACTISE '+heading,'Record actual results · no fabricated pass/fail'],
- 'High-Low':[g.index%2===0?'SCORE AT LEAST '+(g.previous+g.diff):'SCORE AT MOST '+(g.previous-g.diff),'4 correct comparisons · no lives or visits = loss'],
+ 'High-Low':[highLowAimHigher(g)?'SCORE AT LEAST '+(g.previous+g.diff):'SCORE AT MOST '+(g.previous-g.diff),'4 correct comparisons · no lives or visits = loss'],
  'Split the Difference':[g.previous===null?'SET YOUR SCORE':'MATCH WITHIN ±'+g.tolerance,'Match 2 of 3 pairs · 2 failed pairs = loss'],
  'Checkout Poker':['FINISH TWO DIFFERENT CARDS','3 darts per attempt · attempt limit applies'],
  'Double Bull Bridge':['DOUBLE → BULL → DOUBLE','Hit all 3 before darts run out'],
  'Double Duel':['FIRST TO 4 POINTS','Beat rival within 12 turns']
  };
  const goal=goals[g.name];objective.classList.toggle('hidden',!goal);
- if(goal){$('dc80Goal').textContent=goal[0];$('dc80Condition').textContent=goal[1];$('dc80BlockLabel').textContent=g.practiceBlock?"":'';}
+ if(goal){$('dc80Goal').textContent=goal[0];$('dc80Condition').textContent=goal[1];$('dc80BlockLabel').textContent=g.name==='Setup Shot'&&g.practiceBlock?'Attempt '+g.practiceBlock.attempt+' of 5':'';}
 
  const danger=$('dc22Danger');
  if(danger){
@@ -5345,7 +5507,7 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
   if(g.name==='Setup Shot'){remaining=1;label='VISIT LEFT · 3 DARTS'}
   else if(g.name==='Focused Checkouts'){remaining=3-g.attempt;label='DARTS LEFT FOR FINISH'}
   else if(g.name==='301 Pressure'||g.name==='501 Pressure'){remaining=g.maxDarts-g.dartsUsed;label='DARTS LEFT'}
-  else if(g.name==='Dartboard Bingo'){remaining=g.allowed-g.used;label='DARTS LEFT FOR D'+g.called}
+  else if(g.name==='Dartboard Bingo'){remaining=g.allowed-g.used;label='DARTS LEFT FOR '+(g.ring||'D')+g.called}
   else if(g.name==='Target Mastery'){remaining=g.goal-(g.mode==='checkout'?g.attempts:g.thrown);label=g.mode==='checkout'?'ATTEMPTS LEFT':'DARTS LEFT'}
   else if(g.name==='Checkout Poker'){remaining=g.allowed-g.attempts;label='ATTEMPTS LEFT'}
   else if(g.name==='Checkout Climb'){remaining=3-g.attempt;label='DARTS LEFT FOR FINISH'}
@@ -5391,15 +5553,180 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  const controlMode=g.name==="Double-In 201"?(g.entered?(g.entryTailActive?"201-tail":"201-scoring"):(g.dc591Opening?"201-confirm":"201-entry")):"standard";
  const keepsPad=["Scoring Challenge","Scoring Survival","Scoring Ladder","301 Pressure","501 Pressure","Double-In 201","Risk or Reward","First Nine Siege","170 Challenge","Setup Shot","High-Low","Split the Difference"].includes(g.name);
  if(controls.dataset.game!==g.name||controls.dataset.mode!==controlMode||!keepsPad||!controls.querySelector("#scoreInput")){
-  controls.innerHTML=html;controls.dataset.game=g.name;controls.dataset.mode=controlMode;
+  controls.innerHTML=html;for(const x of controls.querySelectorAll('[disabled]'))x.dataset.ruleDisabled="yes";controls.dataset.game=g.name;controls.dataset.mode=controlMode;
  }
- controls.classList.toggle("hasPad",!!controls.querySelector("#scoreInput"));controls.classList.remove("bingoGrid");for(const x of controls.querySelectorAll("button,input,select")){if(g.dc591Opening&&x.hasAttribute("disabled"))continue;x.disabled=!!s.pausedAt;}
+ controls.classList.toggle("hasPad",!!controls.querySelector("#scoreInput"));controls.classList.remove("bingoGrid");for(const x of controls.querySelectorAll("button,input,select")){x.disabled=!!s.pausedAt||x.dataset.ruleDisabled==='yes';}
 }
 function dc78Text(id,value){const el=$(id),v=String(value);if(el&&el.textContent!==v)el.textContent=v;}
 function dc78Width(id,value){const el=$(id);if(el&&el.style.width!==value)el.style.width=value;}
+function finishExpiredExercise(){
+ const s=session(),item=currentExercise();
+ if(!s||s.phase!=='playing'||s.pausedAt||!item||item.name==='Big Singles'||!(item.seconds>0)||exerciseElapsed()<item.seconds)return false;
+ completeExercise('timed');
+ return true;
+}
+document.addEventListener('click',event=>{
+ if(event.target.closest?.('#gameControls,#checkoutDartPicker,#exercisePanel,#sessionFooter')&&finishExpiredExercise()){
+  event.preventDefault();
+  event.stopImmediatePropagation();
+ }
+},true);
 function trainingTimer(){const s=session();if(!s||s.pausedAt||s.phase==="rules"||s.phase==="complete")return;const item=currentExercise();if(!item)return;const elapsed=exerciseElapsed();if(item.name==="Big Singles"){if(currentTab==="train"){const g=activeGame||data.game;dc78Text("sessionClock",fmt(sessionRemaining()));if(g){dc78Text("exerciseClock",g.darts.length+"/60");dc78Width("exerciseBar",g.darts.length/60*100+"%")}}return}if(elapsed>=num(item.seconds)){completeExercise("timed");return}if(currentTab==="train"){dc78Text("exerciseClock",fmt(Math.max(0,item.seconds-elapsed)));dc78Width("exerciseBar",clamp(100*elapsed/Math.max(1,item.seconds),0,100)+"%");dc78Text("sessionClock",fmt(sessionRemaining()));dc78Width("sessionBar",clamp(100*sessionElapsed()/sessionBudget(),0,100)+"%")}}
 /* HOME + PROGRESS */
-function renderHome(){const s=session(),today=new Date().getDay(),scheduled=data.days.includes(today),needsAssessment=!s&&assessmentDue();$("homeHeading").textContent=needsAssessment?(eligibleForStartChoice()?"Choose How to Start":"Continue Your Assessment"):s?"Training In Progress":scheduled?"Your Training Is Ready":"Today Is a Rest Day";$("homeMessage").textContent=needsAssessment?(eligibleForStartChoice()?"Take the full assessment or select your usual average to begin immediately.":"Continue your measured assessment to unlock training."):s?"Continue where you left off.":scheduled?"Your coach has prepared today's session.":"Rest and recovery are part of your programme.";$("homeDuration").textContent=s?fmt(sessionRemaining()):needsAssessment?(eligibleForStartChoice()?"2 OPTIONS":"6 TESTS"):scheduled?"60 MIN":"60 MIN";let actions="";if(needsAssessment)actions='<button class="primary" onclick="show(&quot;train&quot;)">Choose Starting Method</button>';else if(s)actions='<button class="primary" onclick="show(\'train\')">Continue Training</button>';else{const done=data.sessions.some(x=>x.date===dateKey()&&!x.extra&&x.completed);if(scheduled&&!done)actions='<button class="primary" onclick="beginTraining(false)">Start Training</button>';else if(scheduled)actions='<div class="info">Scheduled training completed today.</div>';actions+='<button class="secondary" style="width:100%;margin-top:10px" onclick="beginTraining(true)">Extra Training</button>';if(reassessmentDue())actions+='<button class="secondary" style="width:100%;margin-top:10px" onclick="startReassessment()">Four-week Assessment Ready</button>'}$("homeAction").innerHTML=actions;$("homeDays").innerHTML=[...data.days].sort((a,b)=>a-b).map(n=>'<span class="tag" style="margin:3px">'+DAY_NAMES[n]+'</span>').join("");if(!blockStart()){$("blockStatus").textContent="Your first training block begins with your first session.";$("blockBar").style.width="0%";$("blockInfo").textContent="Four weeks per block."}else{const i=currentBlockIndex(),begin=blockBoundary(i),end=blockBoundary(i+1),elapsed=Date.now()-begin;$("blockStatus").textContent="Training Block "+(i+1);$("blockBar").style.width=clamp(100*elapsed/(end-begin),0,100)+"%";$("blockInfo").textContent="Week "+clamp(Math.floor(elapsed/(7*DAY_MS))+1,1,4)+" of 4"};renderHomeHighlights()}
+/* Coaching 6.1. All summaries are derived from saved observations. */
+const COACH61_NAMES={scoring:'Scoring',doubles:'Doubles',checkout:'Checkouts',bull:'Bull'};
+function coach61Evidence(now=Date.now()){
+ const samples=skillSamples(),out={};
+ for(const key of SKILLS){
+  const days=dailySamples(samples[key].filter(r=>r.time>=now-56*DAY_MS&&r.time<=now)).filter(r=>r.volume>0);
+  const volume=days.reduce((sum,row)=>sum+row.volume,0);
+  out[key]={days:days.length,volume,rows:days,
+   ready:days.length>=8&&volume>=({scoring:80,doubles:120,checkout:80,bull:120}[key])};
+ }
+ return out;
+}
+function coach61PracticeNeed(evidence,policy={},now=Date.now()){
+ const estimates=[];
+ for(const key of SKILLS){
+  const e=evidence[key];if(!e.ready)continue;
+  const half=Math.floor(e.rows.length/2);
+  const tiers=[e.rows.slice(0,half),e.rows.slice(half)].map(rows=>{
+   const mean=rows.reduce((sum,r)=>sum+valueOf([r],key),0)/rows.length;
+   return tierFor(mean,key);
+  });
+  estimates.push({key,tier:Math.min(...tiers),days:e.days});
+ }
+ if(estimates.length<2)return null;
+ const sorted=estimates.map(x=>x.tier).sort((a,b)=>a-b);
+ const middle=(sorted[Math.floor((sorted.length-1)/2)]+sorted[Math.floor(sorted.length/2)])/2;
+ const minutes=Object.fromEntries(SKILLS.map(key=>[key,0]));
+ for(const day of dc28CategoryLedger(now).filter(x=>x.at>=now-7*DAY_MS))
+  for(const key of SKILLS)minutes[key]+=day.minutes[key];
+ const total=SKILLS.reduce((sum,key)=>sum+minutes[key],0);
+ return estimates.filter(x=>{
+  const control=policy.categories?.[x.key];
+  return x.tier-middle>=2&&!control?.overexposed&&!control?.policySafety&&!control?.learning?.protect&&
+   (total<60||minutes[x.key]/total<.40);
+ }).sort((a,b)=>b.tier-a.tier||minutes[a.key]-minutes[b.key]||a.key.localeCompare(b.key))[0]||null;
+}
+function coach61SessionAim(item){
+ if(item.name==='Target Mastery'){
+  const m=item.mastery||{};
+  return 'Focused practice'+(m.target?' on '+(m.ring||'')+m.target:'')+(item.coachDecision?' selected from repeated measured results.':'. Record each attempt to build your practice history.');
+ }
+ const key=dc28GameCategory(item.name);
+ return ({scoring:'Build scoring control and consistency across visits.',
+  doubles:'Practise finishing targets with a repeatable doubles routine.',
+  checkout:'Practise finishing decisions and execution under pressure.',
+  bull:'Build a repeatable aim at the centre of the board.'})[key]||'';
+}
+function coach61Briefing(){
+ const box=$('coach61Briefing');if(!box)return;
+ box.classList.toggle('hidden',assessmentDue());
+ if(assessmentDue())return;
+ const now=Date.now(),evidence=coach61Evidence(now),need=coach61PracticeNeed(evidence,{},now);
+ const selectedSession=session(),plan=selectedSession?.plan,upcoming=plan?.slice(selectedSession.index).filter(x=>x.name!=='Warm-up'&&x.name!=='Review');
+ const title=need?'Practice focus · '+COACH61_NAMES[need.key]:'Build your complete game';
+ let html='<h2>'+esc(title)+'</h2><p>'+
+  (need?'Repeated measurements across '+need.days+' days support extra attention to '+COACH61_NAMES[need.key].toLowerCase()+'. Your coach balances this with the rest of your training.':
+   'Your coach balances scoring, doubles, checkouts and bull, using repeated measurements as they become available.')+'</p>';
+ const target=dc22MasteryCandidate();
+ if(target){
+  const label=target.target?(target.ring||'')+target.target:target.mode==='bull'?'Bull accuracy':target.band?'Checkout finishes '+target.band:'Finishing practice';
+  html+='<p><strong>Target focus · '+esc(label)+'</strong><br>Selected from repeated measurements across different training days.</p>';
+ }
+ html+='<details><summary>What your coach has measured</summary>';
+ for(const key of SKILLS){
+  const e=evidence[key];
+  html+='<p><strong>'+COACH61_NAMES[key]+'</strong> · '+(e.days?e.days+' measured day'+(e.days===1?'':'s')+' in the past eight weeks':'Gathering measurements')+'</p>';
+ }
+ html+='</details>';
+ if(upcoming?.length){
+  html+='<details><summary>Your current session</summary>';
+  for(const item of upcoming)html+='<p><strong>'+esc(item.name)+'</strong> · '+
+   (item.mode==='benchmark'?'60-dart daily benchmark':selectedSession.allocated?Math.round(item.seconds/60)+' minutes':'time set after warm-up')+'</p>';
+  html+='</details>';
+ }
+ box.innerHTML=html;
+}
+function coach61ComparableDays(key,start,end,samples=skillSamples()){
+ // Match the same measured protocol in both halves of a progress comparison.
+ const source=key==='scoring'?'Scoring Challenge':key==='doubles'?'Doubles Survival':key==='checkout'?'Checkout Climb':'Bull Accuracy';
+ if(key==='checkout'){
+  const bands=[[2,40],[41,60],[61,80],[81,100],[101,170]],groups=new Map();
+  for(const g of data.games){
+   if(g.name!=='Checkout Climb'||g.completion!=='natural'||g.quick||g.recovery||g.challengeTuning||
+    !Number.isFinite(g.at)||g.at<start||g.at>=end||!Array.isArray(g.attemptLog)||
+    g.attemptLog.length!==num(g.success)+num(g.fail))continue;
+   for(const attempt of g.attemptLog){
+    if(!Number.isInteger(attempt?.target)||(attempt.hit!==0&&attempt.hit!==1))continue;
+    const band=bands.find(([a,b])=>attempt.target>=a&&attempt.target<=b);if(!band)continue;
+    const protocol=band.join('–'),rows=groups.get(protocol)||[];
+    rows.push({time:g.at,hits:attempt.hit,volume:1});groups.set(protocol,rows);
+   }
+  }
+  return groups;
+ }
+ const rows=samples[key].filter(r=>!r.quick&&r.time>=start&&r.time<end&&r.source.split(':')[0]===source&&r.volume>0);
+ const byProtocol=new Map();
+ for(const r of rows){
+  // Doubles routes/variants can differ. Keep their recorded protocol.
+  const protocol=key==='doubles'?r.source.replace(/:tier[1-7]/,''):source;
+  const list=byProtocol.get(protocol)||[];list.push(r);byProtocol.set(protocol,list);
+ }
+ return byProtocol;
+}
+function coach61Gain(before,after,key){
+ const early=dailySamples(before),late=dailySamples(after);
+ const minimum=key==='scoring'?40:key==='checkout'?30:60;
+ if(early.length<6||late.length<6||[early,late].some(days=>days.reduce((s,d)=>s+d.volume,0)<minimum))return null;
+ const means=days=>days.map(row=>valueOf([row],key));
+ const a=means(early),b=means(late),mean=x=>x.reduce((s,v)=>s+v,0)/x.length;
+ const variance=x=>x.reduce((s,v)=>s+(v-mean(x))**2,0)/Math.max(1,x.length-1);
+ const change=mean(b)-mean(a);
+ // Day-level variability and a minimum uncertainty floor prevent an isolated
+ // long practice or a tiny numerical difference from creating a progress claim.
+ const uncertainty=Math.sqrt(variance(a)/a.length+variance(b)/b.length+(key==='scoring'?2:1.5)**2);
+ if(change<2||change<=3*uncertainty)return null;
+ return {improvement:Math.round(change*10)/10,beforeDays:a.length,afterDays:b.length};
+}
+function coach61BlockReview(index,samples){
+ const start=blockBoundary(index),mid=addDays(start,14),end=blockBoundary(index+1),highlights=[];
+ for(const key of SKILLS){
+  const before=coach61ComparableDays(key,start,mid,samples),after=coach61ComparableDays(key,mid,end,samples);
+  const protocols=[...before.keys()].filter(protocol=>after.has(protocol)).sort((a,b)=>
+   Math.min(dailySamples(before.get(b)).length,dailySamples(after.get(b)).length)-
+   Math.min(dailySamples(before.get(a)).length,dailySamples(after.get(a)).length)||a.localeCompare(b));
+  const protocol=protocols[0],gain=protocol?coach61Gain(before.get(protocol),after.get(protocol),key):null;
+  const best=gain?{...gain,protocol}:null;
+  if(best)highlights.push({name:COACH61_NAMES[key]+(key==='scoring'?' average':key==='checkout'?' finishing ('+best.protocol+')':' accuracy'),
+   ...best,unit:key==='scoring'?' points':' percentage points'});
+ }
+ return {index,start,end,highlights,createdAt:Date.now(),version:'6.1',method:'comparable-protocol independent training days'};
+}
+function coach61SessionReport(record){
+ if(record.quick)return null;
+ const now=Date.now(),rows=data.games.filter(g=>g.sessionId===record.id&&g.at<=now&&g.completion==='natural');
+ const games=[...new Set(rows.map(g=>g.name))],pressure=dc10PressureSummary(rows,record.id);
+ const totalMinutes=(record.activities||[]).reduce((sum,a)=>sum+Math.max(0,num(a.seconds)),0)/60;
+ const benchmarks=(data.bigSingles||[]).filter(b=>b?.complete===true&&b.sessionId===record.id&&Array.isArray(b.perNumber)&&b.perNumber.length===20&&b.perNumber.every(h=>Number.isInteger(h)&&h>=0&&h<=3));
+ const achievements=[];
+ if(benchmarks.length){const b=benchmarks.at(-1);achievements.push('Daily Big Singles completed with '+b.perNumber.reduce((sum,h)=>sum+h,0)+'/60 large singles.')}
+ const scoring=rows.filter(g=>g.name==='Scoring Challenge'&&g.visits===10&&Number.isInteger(g.points)&&g.points>=0&&g.points<=1800);
+ if(scoring.length){const avg=scoring.reduce((sum,g)=>sum+g.points,0)/(scoring.length*10);achievements.push('Completed scoring benchmark average '+avg.toFixed(1)+'.')}
+ const finishes=rows.filter(g=>g.name==='Checkout Climb').reduce((sum,g)=>sum+num(g.success),0);
+ if(finishes)achievements.push(finishes+' checkout'+(finishes===1?'':'s')+' completed in Checkout Climb.');
+ const bigScores=rows.reduce((sum,g)=>sum+num(g.oneEighties),0);
+ if(bigScores)achievements.push(bigScores+' recorded 180'+(bigScores===1?'':'s')+'.');
+ if(!achievements.length)achievements.push(pressure.rounds?'You completed '+pressure.rounds+' competitive rounds.':'Your recorded practice is saved.');
+ const evidence=coach61Evidence(now),need=coach61PracticeNeed(evidence,{},now);
+ const plan=need?'Repeated results support more '+COACH61_NAMES[need.key].toLowerCase()+' practice alongside your regular skill mix.':
+  'Your next sessions continue building scoring, doubles, checkouts and bull. Repeated results guide each skill independently.';
+ return {good:achievements.join(' '),highlight:Math.round(totalMinutes)+' minutes of completed exercises'+(games.length?' across '+games.length+' training game'+(games.length===1?'':'s'):'')+'.',
+  plan,at:now,pressure,version:'6.1',measured:{completedExerciseSeconds:Math.round(totalMinutes*60),naturalRounds:rows.length}};
+}
+
+function renderHome(){coach61Briefing();const s=session(),today=new Date().getDay(),scheduled=data.days.includes(today),needsAssessment=!s&&assessmentDue();$("homeHeading").textContent=needsAssessment?(eligibleForStartChoice()?"Choose How to Start":"Continue Your Assessment"):s?"Training In Progress":scheduled?"Your Training Is Ready":"Today Is a Rest Day";$("homeMessage").textContent=needsAssessment?(eligibleForStartChoice()?"Take the full assessment or select your usual average to begin immediately.":"Continue your measured assessment to unlock training."):s?"Continue where you left off.":scheduled?"Your coach has prepared today's session.":"Rest and recovery are part of your programme.";$("homeDuration").textContent=s?fmt(sessionRemaining()):needsAssessment?(eligibleForStartChoice()?"2 OPTIONS":"6 TESTS"):scheduled?"60 MIN":"60 MIN";let actions="";if(needsAssessment)actions='<button class="primary" onclick="show(&quot;train&quot;)">Choose Starting Method</button>';else if(s)actions='<button class="primary" onclick="show(\'train\')">Continue Training</button>';else{const done=data.sessions.some(x=>x.date===dateKey()&&!x.extra&&x.completed);if(scheduled&&!done)actions='<button class="primary" onclick="beginTraining(false)">Start Training</button>';else if(scheduled)actions='<div class="info">Scheduled training completed today.</div>';actions+='<button class="secondary" style="width:100%;margin-top:10px" onclick="beginTraining(true)">Extra Training</button>';if(reassessmentDue())actions+='<button class="secondary" style="width:100%;margin-top:10px" onclick="startReassessment()">Four-week Assessment Ready</button>'}$("homeAction").innerHTML=actions;$("homeDays").innerHTML=[...data.days].sort((a,b)=>a-b).map(n=>'<span class="tag" style="margin:3px">'+DAY_NAMES[n]+'</span>').join("");if(!blockStart()){$("blockStatus").textContent="Your first training block begins with your first session.";$("blockBar").style.width="0%";$("blockInfo").textContent="Four weeks per block."}else{const i=currentBlockIndex(),begin=blockBoundary(i),end=blockBoundary(i+1),elapsed=Date.now()-begin;$("blockStatus").textContent="Training Block "+(i+1);$("blockBar").style.width=clamp(100*elapsed/(end-begin),0,100)+"%";$("blockInfo").textContent="Week "+clamp(Math.floor(elapsed/(7*DAY_MS))+1,1,4)+" of 4"};renderHomeHighlights()}
 function renderHomeHighlights(){
  const area=$("homeHighlights"),chart=$("homeWeekBars");if(!area||!chart)return;
  const sessions=Array.isArray(data.sessions)?data.sessions:[],games=Array.isArray(data.games)?data.games:[];
@@ -6325,7 +6652,11 @@ async function saveMonthlyReport(){try{const snap=reportSnapshot(selectedReportM
 async function shareMonthlyReport(){const snap=reportSnapshot(selectedReportMonth||monthString(Date.now()));if(!snap)return;try{const blob=await canvasBlob(createMonthlyCanvas(snap));const filename="darts-coach-report-"+snap.ym+".png";const file=new File([blob],filename,{type:"image/png"});if(navigator.share&&(!navigator.canShare||navigator.canShare({files:[file]}))){try{await navigator.share({files:[file],title:"Darts Coach · "+snap.title,text:"Monthly training report"});return}catch(e){if(e.name==="AbortError")return}}downloadBlob(blob,filename);alert("Report image saved. You can share it from Photos or Files.")}catch(e){alert("Unable to share report: "+e.message)}}
 /* Full fresh start: preserve only non-performance preferences. */
 function resetTrainingStatistics(){
- if(!confirm("Delete all your training data, statistics and progress? This cannot be undone without a backup."))return;
+ const dialog=$('dcRC2Reset');if(dialog.open)return;dialog.showModal();$('dcRC2ResetNo').focus();
+}
+function dcRC2ConfirmReset(){
+ if(!$('dcRC2Reset').open)return;
+ $('dcRC2Reset').close();
  const replacement=blank();
  replacement.days=[...data.days];
  replacement.throwingHand=data.throwingHand;
@@ -6335,6 +6666,7 @@ function resetTrainingStatistics(){
   alert("Unable to save reset state. The reset was not completed. Export a JSON backup before proceeding.");
   return;
  }
+ closeCheckoutDartPicker();hideRoundAnnouncement();dc88Resume=null;if($('dc88Dialog').open)$('dc88Dialog').close();
  data=normaliseData(replacement);
  // Reset the transient onboarding choice too: this is not stored in player data.
  selectedFullBaseline=false;
@@ -6553,7 +6885,7 @@ function renderProgress(){
   '<details><summary class="pill">Probability calibration</summary>'+audit.groups.map((x,i)=>'<p>'+
    ['Below 35%','35–65%','Above 65%'][i]+': '+x.n+' rounds'+(x.n>=10?' · forecast '+(x.p*100).toFixed(0)+'% · actual '+(x.won*100).toFixed(0)+'% wins':' · gathering evidence')+'</p>').join('')+'</details></div>';
  const blocks=[...(data.coach.completedBlocks||[])].reverse();$("blockReport").innerHTML=blocks.length?blocks.map(b=>'<div class="entry"><h3>Training Block '+(num(b.index)+1)+'</h3><p>'+formatDate(b.start)+' to '+formatDate(b.end-1)+'</p>'+(b.highlights&&b.highlights.length?b.highlights.map(h=>'<p>✓ '+esc(h.name)+': improved by '+num(h.improvement).toFixed(1)+esc(h.unit)+'</p>').join(''):'<p>Block completed. Your coach has prepared the next phase.</p>')+'</div>').join(''):'<p class="muted">The first four-week review appears once sufficient training data is available.</p>';
- $("sessionHistory").innerHTML=data.sessions.slice(-30).reverse().map(s=>'<div class="entry"><strong>'+esc(s.date||'Session')+'</strong> · '+num(s.minutes).toFixed(1)+' minutes'+(s.quick?' · Quick Play':s.extra?' · Extra session':'')+(s.coachReport?'<details><summary>Coach’s Report</summary>'+[['Good',s.coachReport.good],['Bad',s.coachReport.bad],['Ugly',s.coachReport.ugly],['Plan',s.coachReport.plan]].map(([name,msg])=>'<p><strong>'+esc(name)+':</strong> '+esc(msg)+'</p>').join('')+'</details>':'')+'</div>').join('')||'<p>No sessions recorded yet.</p>';
+ $("sessionHistory").innerHTML=data.sessions.slice(-30).reverse().map(s=>'<div class="entry"><strong>'+esc(s.date||'Session')+'</strong> · '+num(s.minutes).toFixed(1)+' minutes'+(s.quick?' · Quick Play':s.extra?' · Extra session':'')+(s.coachReport?'<details><summary>Coach’s Report</summary>'+[['Today’s Achievements',s.coachReport.good],['Training Completed',s.coachReport.highlight],['Coach’s Next Steps',s.coachReport.plan]].filter(x=>x[1]).map(([name,msg])=>'<p><strong>'+esc(name)+':</strong> '+esc(msg)+'</p>').join('')+'</details>':'')+'</div>').join('')||'<p>No sessions recorded yet.</p>';
  $("gameHistory").innerHTML=data.games.slice(-40).reverse().map(g=>'<div class="entry"><strong>'+esc(g.name==="Doubles Survival"&&g.variant==="singles"?'Singles Survival':g.name||'Game')+'</strong> · '+esc(g.result||'Completed')+(g.completion==='partial'?' (partial)':'')+'</div>').join('')||'<p>No games recorded yet.</p>';
  $("historySection").classList.toggle('hidden',!historyVisible);$("historyToggle").textContent=historyVisible?'Hide Training History':'View Training History';
 }
@@ -6669,7 +7001,7 @@ function startFullCalibration(){
  if(assessmentDue()){selectedFullBaseline=true;show("train");return}
  if(!confirm("Start a full player assessment? This measures scoring, doubles, bull, checkouts, 301 legs and Big Singles. Your previous assessment and all training history are retained. You can save and resume the assessment."))return;
  data.assessmentHistory.push(clone(data.assessment));
- data.assessment=newAssessment();selectedFullBaseline=true;
+ data.assessment=newAssessment();data.assessment.requestedAt=Date.now();selectedFullBaseline=true;
  save(false);checkpointData();show("train");
 }
 function toggleQuickCalibration(){
@@ -6711,7 +7043,7 @@ function upgradeQuickStartAssessment(){
  if(!data.assessment||!data.assessment.quickStart||session())return;
  if(!confirm("Start the full assessment? Your games, history and current skill levels will be kept. Training and Quick Play will be paused until you finish the assessment. Your measured results will replace the provisional starting tiers."))return;
  data.assessmentHistory.push(clone(data.assessment));
- data.assessment=newAssessment();save(false);show("train");
+ data.assessment=newAssessment();data.assessment.requestedAt=Date.now();save(false);show("train");
 }
 function renderAssessmentMenu(){
  const showChoice=eligibleForStartChoice()&&!selectedFullBaseline;
@@ -7002,7 +7334,7 @@ if(data.activeSession){
 // Do not auto-resume: the player must choose Resume Session when ready to throw.
 function dc74PauseForBackground(){
  const s=session();
- if(s&&s.phase==="playing"&&!s.pausedAt)pauseSession();
+ if(s&&s.phase==="playing"&&!s.pausedAt&&!finishExpiredExercise())pauseSession();
 }
 document.addEventListener('visibilitychange',()=>{
  if(document.hidden){dc74PauseForBackground();if(activeStage==='warmup')pauseAssessmentWarmup();}
@@ -7013,7 +7345,7 @@ performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);setIn
 
 </script><div id="welcomeOverlay" class="welcomeOverlay hidden" role="dialog" aria-modal="true" aria-labelledby="welcomeHeading">
  <div class="welcomePanel dc36InfoPanel">
-  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V6.0 RC2 development</span></div>
+  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V6.1 RC1</span></div>
   <h2 id="welcomeHeading">Your game.<br><span>Your next level.</span></h2>
   <p class="dc36InfoLead">Darts Coach combines structured practice, measurable results and an adaptive training planner. It gives you a purposeful session, then learns cautiously from what you actually complete.</p>
   <div class="dc36InfoStats"><div><strong>41</strong><small>Training games</small></div><div><strong>7</strong><small>Hidden skill levels</small></div><div><strong>60</strong><small>Minute core session</small></div></div>
