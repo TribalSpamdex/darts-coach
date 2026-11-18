@@ -4598,27 +4598,24 @@ function dcVisitSpec(g){
  return null;
 }
 function dcVisitMarkup(spec){
- const choices=spec.kind==='bull'?['25','50','miss']:['hit','miss'];
- return '<div style="display:grid;gap:8px;grid-column:1/-1"><div style="font-weight:800;text-align:center">'+spec.targets.join(' → ')+'</div><div style="text-align:center">Throw the shown darts in order, then record each result.</div>'+spec.targets.map((t,i)=>'<div style="display:flex;gap:8px;align-items:center"><strong style="min-width:65px">'+(i+1)+'. '+t+'</strong>'+choices.map(v=>'<button type="button" style="flex:1" data-visit-row="'+i+'" data-visit-value="'+v+'" aria-pressed="false" onclick="dcVisitPick(this)">'+(v==='hit'?'Hit':v==='miss'?'Miss':v)+'</button>').join('')+'</div>').join('')+'<button type="button" id="dcVisitSubmit" disabled onclick="dcVisitCommit()">Record visit</button></div>';
+ const g=activeGame, choices=spec.kind==='bull'?['50','25','miss']:['hit','miss'];
+ const counts={};
+ function add(t,hit){counts[t]??=[0,0];counts[t][1]++;if(hit)counts[t][0]++;}
+ if(spec.kind==='mastery')for(const t of g.targetLog||[])add(t.ring+t.target,t.hit);
+ if(spec.kind==='big')g.darts.forEach((v,i)=>add('S'+(Math.floor(i/3)+1),v));
+ if(spec.kind==='duel')for(const t of g.dcVisitLog||[])add(t.target,t.hit);
+ if(spec.kind==='bull'){counts['50']=[g.inner||0,g.thrown||0];counts['25']=[g.outer||0,g.thrown||0];}
+ else for(const t of [...(g.route||[]).map(t=>t.ring+t.target),...spec.targets])counts[t]??=[0,0];
+ const tally=Object.entries(counts).map(([t,v])=>'<span style="white-space:nowrap">'+t+' <strong>'+v[0]+'/'+v[1]+'</strong></span>').join(' · ');
+ return '<div style="grid-column:1/-1;text-align:center;font-size:14px">Round hits: '+tally+'</div>'+choices.map(v=>'<button type="button" onclick="dcVisitRecord(\''+v+'\')">'+(v==='hit'?'Hit':v==='miss'?'Miss':v==='50'?'Bullseye 50':'Outer Bull 25')+'</button>').join('');
 }
-function dcVisitPick(b){
- if(session()?.pausedAt||session()?.phase!=='playing')return;
- const row=b.dataset.visitRow;
- document.querySelectorAll('[data-visit-row="'+row+'"]').forEach(x=>{x.setAttribute('aria-pressed',String(x===b));x.style.outline=x===b?'2px solid #7fffb8':''});
- const spec=dcVisitSpec(activeGame);$('dcVisitSubmit').disabled=document.querySelectorAll('[data-visit-row][aria-pressed="true"]').length!==spec.targets.length;
-}
-function dcVisitCommit(){
+function dcVisitRecord(v){
  const g=activeGame,s=session(),spec=g&&dcVisitSpec(g);
- if(!spec||!s||s.pausedAt||s.phase!=='playing')return;
- const values=spec.targets.map((_,i)=>document.querySelector('[data-visit-row="'+i+'"][aria-pressed="true"]')?.dataset.visitValue);
- if(values.some(v=>!v))return;
- for(const v of values){
-  if(activeGame!==g||session()?.phase!=='playing'||session()?.pausedAt)break;
-  if(spec.kind==='big')recordBig(v==='hit');
-  else if(spec.kind==='duel')new40Dart(v);
-  else if(spec.kind==='bull'&&g.name==='Bull Accuracy')bullDart(v==='miss'?0:Number(v));
-  else dc23MasteryInput(v);
- }
+ if(!spec?.targets.length||!s||s.pausedAt||s.phase!=='playing')return;
+ if(spec.kind==='big')recordBig(v==='hit');
+ else if(spec.kind==='duel')new40Dart(v);
+ else if(spec.kind==='bull'&&g.name==='Bull Accuracy')bullDart(v==='miss'?0:Number(v));
+ else dc23MasteryInput(v);
 }
 function dc22MasteryDart(hit){dc23MasteryInput(hit?'hit':'miss')}
 /* V5.80: practice blocks preserve state in existing game/undo/checkpoint records. */
@@ -5191,6 +5188,7 @@ function new40Dart(value,checkoutDarts){
   if(g.index>=3||g.thrown>=g.allowed){endRound();return}
  }
  if(name==="Double Duel"){
+  (g.dcVisitLog??=[]).push({target:(g.tier>=6?"S":"D")+(g.sequence||[20,16,8,10,12,6])[g.turn%(g.sequence||[20,16,8,10,12,6]).length],hit:value==="hit"});
   g.turn++;g.thrown++;if(value==="hit")g.player++;
   // The opponent is a fixed published rule, not a random or secretly adjusted outcome.
   if(g.turn%([2,2,3,3,4,5,6][g.tier-1])===0)g.opponent++;
@@ -5827,8 +5825,8 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  case "Bull Streak":heading=g.target;detail="Streak "+g.streak+"/"+g.goal;mini="Best streak: "+g.best+" · Misses left: "+(num(g.allowedMisses||7)-num(g.misses));html=button("Hit","bullStreak(true)")+button("Miss","bullStreak(false)");break;
  }
  const visitSpec=dcVisitSpec(g);
- if(visitSpec?.targets.length){heading=visitSpec.targets.join(' → ');detail='Throw '+visitSpec.targets.length+' dart'+(visitSpec.targets.length===1?'':'s')+' before recording';html=dcVisitMarkup(visitSpec);}
- $("gameTarget").textContent=heading;$("gameProgress").textContent=detail;
+ if(visitSpec?.targets.length){heading=visitSpec.targets.join(' → ');detail='Record results in throw order · '+visitSpec.targets.length+' left in visit';html=dcVisitMarkup(visitSpec);}
+ $("gameTarget").style.fontSize=visitSpec?.targets.length>1?"clamp(26px,7.5vw,44px)":"";$("gameTarget").textContent=heading;$("gameProgress").textContent=detail;
  const objective=$('dc80Objective');
  const goals={
  'Big Singles':['HIT LARGE SINGLE ONLY','Other segments = miss · 3 darts per number'],
