@@ -4582,6 +4582,44 @@ function dc23MasteryInput(value){
  if((mode==='checkout'?g.attempts:g.thrown)>=g.goal){endRound();return}
  data.game=g;save();
 }
+/* Fixed visits: reveal every target before throwing, then record in order. */
+function dcVisitSpec(g){
+ if(g.name==='Target Mastery' && !['bull','checkout'].includes(g.mode)){
+  const n=Math.min(3-(g.thrown%3),g.goal-g.thrown);
+  return {targets:Array.from({length:n},(_,i)=>{const t=g.route?.length?g.route[(g.step+i)%g.route.length]:g;return t.ring+t.target}),kind:'mastery'};
+ }
+ if(g.name==='Big Singles')return {targets:Array(3-g.darts.length%3).fill('S'+(Math.floor(g.darts.length/3)+1)),kind:'big'};
+ if(g.name==='Bull Accuracy'||(g.name==='Target Mastery'&&g.mode==='bull'))return {targets:Array(Math.min(3-g.thrown%3,(g.goal||30)-g.thrown)).fill('BULL'),kind:'bull'};
+ if(g.name==='Double Duel'){
+  const interval=[2,2,3,3,4,5,6][g.tier-1],route=g.sequence||[20,16,8,10,12,6];
+  const n=Math.min(3-g.turn%3,4-g.player,(4-g.opponent)*interval-g.turn%interval,12-g.turn);
+  return {targets:Array.from({length:n},(_,i)=>(g.tier>=6?'S':'D')+route[(g.turn+i)%route.length]),kind:'duel'};
+ }
+ return null;
+}
+function dcVisitMarkup(spec){
+ const choices=spec.kind==='bull'?['25','50','miss']:['hit','miss'];
+ return '<div style="display:grid;gap:8px;grid-column:1/-1"><div style="font-weight:800;text-align:center">'+spec.targets.join(' → ')+'</div><div style="text-align:center">Throw the shown darts in order, then record each result.</div>'+spec.targets.map((t,i)=>'<div style="display:flex;gap:8px;align-items:center"><strong style="min-width:65px">'+(i+1)+'. '+t+'</strong>'+choices.map(v=>'<button type="button" style="flex:1" data-visit-row="'+i+'" data-visit-value="'+v+'" aria-pressed="false" onclick="dcVisitPick(this)">'+(v==='hit'?'Hit':v==='miss'?'Miss':v)+'</button>').join('')+'</div>').join('')+'<button type="button" id="dcVisitSubmit" disabled onclick="dcVisitCommit()">Record visit</button></div>';
+}
+function dcVisitPick(b){
+ if(session()?.pausedAt||session()?.phase!=='playing')return;
+ const row=b.dataset.visitRow;
+ document.querySelectorAll('[data-visit-row="'+row+'"]').forEach(x=>{x.setAttribute('aria-pressed',String(x===b));x.style.outline=x===b?'2px solid #7fffb8':''});
+ const spec=dcVisitSpec(activeGame);$('dcVisitSubmit').disabled=document.querySelectorAll('[data-visit-row][aria-pressed="true"]').length!==spec.targets.length;
+}
+function dcVisitCommit(){
+ const g=activeGame,s=session(),spec=g&&dcVisitSpec(g);
+ if(!spec||!s||s.pausedAt||s.phase!=='playing')return;
+ const values=spec.targets.map((_,i)=>document.querySelector('[data-visit-row="'+i+'"][aria-pressed="true"]')?.dataset.visitValue);
+ if(values.some(v=>!v))return;
+ for(const v of values){
+  if(activeGame!==g||session()?.phase!=='playing'||session()?.pausedAt)break;
+  if(spec.kind==='big')recordBig(v==='hit');
+  else if(spec.kind==='duel')new40Dart(v);
+  else if(spec.kind==='bull'&&g.name==='Bull Accuracy')bullDart(v==='miss'?0:Number(v));
+  else dc23MasteryInput(v);
+ }
+}
 function dc22MasteryDart(hit){dc23MasteryInput(hit?'hit':'miss')}
 /* V5.80: practice blocks preserve state in existing game/undo/checkpoint records. */
 /* RC2 variation: state belongs to the player record, never the clock or render.
@@ -5788,6 +5826,8 @@ function renderTraining(){const s=session(),visible=!!s&&currentTab==="train",as
  case "Bull Survival":heading=g.target;detail="Darts remaining: "+(g.allowed-g.used);html=button("Hit","bullSurvival(true)")+button("Miss","bullSurvival(false)");break;
  case "Bull Streak":heading=g.target;detail="Streak "+g.streak+"/"+g.goal;mini="Best streak: "+g.best+" · Misses left: "+(num(g.allowedMisses||7)-num(g.misses));html=button("Hit","bullStreak(true)")+button("Miss","bullStreak(false)");break;
  }
+ const visitSpec=dcVisitSpec(g);
+ if(visitSpec?.targets.length){heading=visitSpec.targets.join(' → ');detail='Throw '+visitSpec.targets.length+' dart'+(visitSpec.targets.length===1?'':'s')+' before recording';html=dcVisitMarkup(visitSpec);}
  $("gameTarget").textContent=heading;$("gameProgress").textContent=detail;
  const objective=$('dc80Objective');
  const goals={
