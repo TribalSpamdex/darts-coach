@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V6.1 RC12</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V6.1 RC13</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -973,7 +973,7 @@ html[data-appearance=light] body nav[aria-label="Main navigation"]:not(#dc590a):
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset asks for one confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V6.1 RC12</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V6.1 RC13</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutConfirm primary" id="checkoutConfirmBtn" onclick="confirmCheckoutDarts()" disabled>Confirm Checkout</button><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><dialog id="dcRC2Reset" aria-labelledby="dcRC2ResetTitle" style="color:var(--text);background:#080c0a;border:1px solid #29463b;border-radius:18px;padding:24px;max-width:calc(100% - 32px);width:400px">
 <h2 id="dcRC2ResetTitle">Reset all data?</h2><p>Are you sure you want to delete all your training data, statistics and progress?</p><p>This action cannot be undone.</p><div class="row"><button id="dcRC2ResetNo" type="button" onclick="document.getElementById('dcRC2Reset').close()">No</button><button class="danger" type="button" onclick="dcRC2ConfirmReset()">Yes, delete</button></div></dialog>
 <script>
@@ -5176,7 +5176,7 @@ function checkoutHit(){if(session()?.phase!=="playing")return;const g=activeGame
 function bullDart(value){if(![0,25,50].includes(value)||session()?.phase!=="playing")return;const g=activeGame;if(!g||g.name!=="Bull Accuracy"||session().pausedAt)return;snapshot();g.thrown++;if(value===50)g.inner++;else if(value===25)g.outer++;else g.misses++;if(g.thrown>=30){endRound();return}data.game=g;save()}
 function bullSurvival(hit){if(typeof hit!=="boolean"||session()?.phase!=="playing")return;const g=activeGame;if(!g||g.name!=="Bull Survival"||session().pausedAt)return;snapshot();g.used++;g.thrown++;if(hit){g.hits++;g.wins++;endRound();return}if(g.used>=g.allowed){endRound();return}data.game=g;save()}
 function bullStreak(hit){if(typeof hit!=="boolean"||session()?.phase!=="playing")return;const g=activeGame;if(!g||g.name!=="Bull Streak"||session().pausedAt)return;snapshot();g.thrown++;if(hit){g.hits++;g.streak++;g.best=Math.max(g.best,g.streak);if(g.streak>=g.goal){endRound();return}}else{g.streak=0;g.misses=num(g.misses)+1;if(g.misses>=num(g.allowedMisses||7)){endRound();return}}data.game=g;save()}
-function gameResult(g,completion){const e={practiceBlock:g.practiceBlock?clone(g.practiceBlock):undefined,name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,exerciseId:currentExercise()?.provenanceId||null,exerciseIndex:Number.isInteger(session()?.index)?session().index:null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"6.1-RC12",ruleVersion:g.ruleVersion||null,result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
+function gameResult(g,completion){const e={practiceBlock:g.practiceBlock?clone(g.practiceBlock):undefined,name:g.name,mode:g.name,at:Date.now(),day:dateKey(),date:new Date().toLocaleString(),extra:!!session()?.extra,sessionId:session()?.id||null,exerciseId:currentExercise()?.provenanceId||null,exerciseIndex:Number.isInteger(session()?.index)?session().index:null,quick:!!session()?.quick,quickMinutes:session()?.quick?Math.round(num(session().quickSeconds)/60):0,completion,benchmark:completion==="natural"||completion==="timed",version:"6.1-RC13",ruleVersion:g.ruleVersion||null,result:"Activity completed",oneEighties:num(g.oneEighties),recovery:!!g.recovery,challengeTuning:g.challengeTuning||null,challengeTuningVersion:g.challengeTuningVersion||null,
  prospectiveForecast:g.prospectiveForecast&&completion==='natural'&&
  !g.recovery&&!g.challengeTuning&&!session()?.quick?clone(g.prospectiveForecast):null};
  if(completion==="natural"&&!session()?.quick&&!g.recovery){
@@ -7752,7 +7752,7 @@ performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);setIn
 
 </script><div id="welcomeOverlay" class="welcomeOverlay hidden" role="dialog" aria-modal="true" aria-labelledby="welcomeHeading">
  <div class="welcomePanel dc36InfoPanel">
-  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V6.1 RC12</span></div>
+  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V6.1 RC13</span></div>
   <h2 id="welcomeHeading">Your game.<br><span>Your next level.</span></h2>
   <p class="dc36InfoLead">Darts Coach combines structured practice, measurable results and an adaptive training planner. It gives you a purposeful session, then learns cautiously from what you actually complete.</p>
   <div class="dc36InfoStats"><div><strong>41</strong><small>Training games</small></div><div><strong>7</strong><small>Hidden skill levels</small></div><div><strong>60</strong><small>Minute core session</small></div></div>
@@ -7877,16 +7877,16 @@ window.casualGames=(()=>{
  ['Count Up','Eight visits each. Every dart scores. Highest total wins.'],
  ['Golf','Nine holes on numbers 1–9. Treble = 1 stroke, double = 2, single = 3, miss = 5. Best dart of three counts. Lowest total wins.']
  ];
- let state=null,undo=[],notice='';
+ let state=null,undo=[],notice='',botPlaying=false;
  const host=()=>document.getElementById('casualContent');
  function persist(){
   try{localStorage.setItem(key,JSON.stringify({state,undo}));notice=''}
   catch(e){notice='This game could not be saved. Keep this page open to continue.'}
  }
  function valid(saved){
-  return saved && catalogue.some(([name])=>name===saved.name) &&
+  return saved && (!saved.bot || (saved.players?.length===2 && ['singles','doubles','bull','checkout','average'].every(k=>Number.isFinite(saved.bot[k])&&saved.bot[k]>0) && saved.bot.singles<=1 && saved.bot.doubles<=1 && saved.bot.bull<=1 && saved.bot.average<=180 && saved.bot.checkout<=2 && Number.isInteger(saved.seed) && saved.seed>=0 && Array.isArray(saved.botVisit) && saved.botVisit.every(v=>typeof v==='string'&&/^(Miss|Bull|25|[SDT][0-9]{1,2})$/.test(v)))) && catalogue.some(([name])=>name===saved.name) &&
    Array.isArray(saved.players) && saved.players.length>=1 && saved.players.length<=2 &&
-   saved.players.every(p=>p && /^Player [12]$/.test(p.name) && Number.isFinite(p.score) &&
+   saved.players.every(p=>p && /^(Player [12]|Coach Bot)$/.test(p.name) && Number.isFinite(p.score) &&
     Number.isInteger(p.target) && p.target>=1 && p.target<=21 && Array.isArray(p.marks) &&
     p.marks.length===7 && p.marks.every(m=>Number.isInteger(m)&&m>=0&&m<=3)) &&
    Number.isInteger(saved.turn) && saved.turn>=0 && saved.turn<saved.players.length &&
@@ -7905,11 +7905,81 @@ window.casualGames=(()=>{
   }catch(e){state=null;undo=[]}
  }
  function start(name,players=1){
+  const bot=players==='bot';if(bot)players=2;
   if(session()){notice='Finish your training session before starting a casual game.';render();return}
   if(!catalogue.some(([n])=>n===name)||![1,2].includes(players))return;
   state={name,players:Array.from({length:players},(_,i)=>({name:'Player '+(i+1),score:/^\d+$/.test(name)?Number(name):0,target:1,marks:Array(7).fill(0)})),
    turn:0,dart:0,round:1,visitStart:Number(name)||0,rings:[],hole:5,finished:false,message:''};
+  if(bot){state.players[1].name='Coach Bot';state.bot=botProfile();state.seed=(Math.random()*4294967296)>>>0;state.botVisit=[]}
   undo=[];persist();render();
+ }
+ function botProfile(){
+  const levels=Object.fromEntries(SKILLS.map(k=>[k,Math.max(1,Math.min(7,Number(data.skills[k]?.level)||7))]));
+  const means=[120,100,82,67,52,37,25];
+  const rate=(key,defaults)=>{
+   const estimate=data.coach?.estimates?.[key];
+   return estimate&&estimate.trainingDays>=4&&estimate.effectiveVolume>=40&&Number.isFinite(estimate.value)
+    ?Math.max(.02,Math.min(.85,estimate.value/100)):defaults[levels[key]-1];
+  };
+  return {singles:[.96,.93,.89,.84,.77,.67,.55][levels.scoring-1],
+   average:means[levels.scoring-1],checkout:[1.08,1.04,1,.95,.9,.85,.8][levels.checkout-1],doubles:rate('doubles',[.65,.52,.4,.31,.23,.16,.09]),
+   bull:rate('bull',[.75,.62,.5,.39,.28,.17,.1])};
+ }
+ function random(){
+  state.seed=(Math.imul(Number(state.seed)||1,1664525)+1013904223)>>>0;
+  return state.seed/4294967296;
+ }
+ function botAim(){
+  const player=state.players[1];
+  if(/^\d+$/.test(state.name)){
+   const left=player.score;
+   if(left<=170){
+    const route=checkoutRoute(left).split(' → ');
+    if(route.length<=3-state.dart){
+     const first=route[0];
+     if(first==='Bull')return [25,2];
+     if(first==='25')return [25,1];
+     const match=/^([SDT])(\d+)$/.exec(first);
+     if(match)return [Number(match[2]),{S:1,D:2,T:3}[match[1]]];
+    }
+   }
+   if(left<=60)return [left%2?1:Math.min(20,left-40),1];
+   return [20,3];
+  }
+  if(state.name==='Cricket'){
+   const open=player.marks.findIndex(m=>m<3);
+   if(open>=0)return [open===6?25:20-open,open===6?2:3];
+   const scoring=state.players[0].marks.findIndex(m=>m<3);
+   return [scoring===6?25:20-scoring,scoring===6?2:3];
+  }
+  if(state.name==='Around the Board')return [player.target,1];
+  if(state.name==='Count Up')return [20,3];
+  if(state.name==='Shanghai')return [state.round,[1,2,3].find(r=>!state.rings.includes(r))||3];
+  return [state.round,3];
+ }
+ function botThrow(number,ring){
+  const profile=state.bot,r=random();
+  if(number===25)return r<profile.bull*(ring===2?.45:1)?[25,ring]:r<profile.bull?[25,1]:[0,0];
+  if(ring===2){
+   const finishing=/^\d+$/.test(state.name)?profile.checkout:1;
+   const chance=Math.min(.85,profile.doubles*finishing);
+   return r<chance?[number,2]:r<chance+.48?[number,1]:[0,0];
+  }
+  if(ring===1)return r<profile.singles?[number,1]:[0,0];
+  const singles=Math.min(profile.singles,profile.average/60);
+  const treble=Math.max(0,Math.min(.8,(profile.average/3-20*singles)/40));
+  return r<treble?[number,3]:r<singles?[number,1]:[0,0];
+ }
+ function playBot(){
+  if(!state?.bot||state.finished||state.turn!==1||session()||botPlaying)return;
+  botPlaying=true;state.botVisit=[];
+  try{
+   for(let i=0;i<3&&state.turn===1&&!state.finished;i++){
+    const [number,ring]=botThrow(...botAim());
+    state.botVisit.push(number===0?'Miss':number===25?ring===2?'Bull':'25':['','S','D','T'][ring]+number);
+    dart(number,ring);
+   }
+  }finally{botPlaying=false}
  }
  function finish(message){state.finished=true;state.message=message}
  function endVisit(){
@@ -7924,9 +7994,9 @@ window.casualGames=(()=>{
   }
  }
  function dart(number,ring){
-  if(!state||state.finished||session())return;
+  if(!state||state.finished||session()||(state.bot&&state.turn===1&&!botPlaying))return;
   if(!Number.isInteger(number)||!Number.isInteger(ring)||!((number===0&&ring===0)||(number>=1&&number<=20&&ring>=1&&ring<=3)||(number===25&&[1,2].includes(ring))))return;
-  undo.push(JSON.parse(JSON.stringify(state)));if(undo.length>60)undo.shift();
+  if(!botPlaying){undo.push(JSON.parse(JSON.stringify(state)));if(undo.length>60)undo.shift()}
   const p=state.players[state.turn],score=number*ring;
   let visitOver=false;
   if(/^\d+$/.test(state.name)){
@@ -7951,7 +8021,7 @@ window.casualGames=(()=>{
    if(state.name==='Shanghai'){state.rings.push(ring);if([1,2,3].every(r=>state.rings.includes(r)))finish(p.name+' wins with Shanghai!')}
   }
   if(!state.finished){state.dart++;if(visitOver||state.dart===3)endVisit()}
-  persist();render();
+  if(!botPlaying){if(state.bot&&!state.finished&&state.turn===1)playBot();persist();render()}
  }
  function back(){if(!undo.length||session())return;state=undo.pop();persist();render()}
  function clear(){state=null;undo=[];try{localStorage.removeItem(key)}catch(e){}render()}
@@ -7960,9 +8030,9 @@ window.casualGames=(()=>{
   if(!host())return;
   const warning=notice?'<p role="status">'+notice+'</p>':'';
   if(!state){
-   host().innerHTML=warning+'<label>Players <select id="casualPlayers"><option value="1">Solo</option><option value="2">Two players</option></select></label><div id="casualCatalogue"></div>';
+   host().innerHTML=warning+'<label>Players <select id="casualPlayers"><option value="1">Solo</option><option value="2">Two players</option><option value="bot">Play Coach Bot</option></select></label><div id="casualCatalogue"></div>';
    const list=document.getElementById('casualCatalogue');
-   catalogue.forEach(([name,rules])=>{const item=document.createElement('div');item.className='info';const b=document.createElement('button');b.textContent=name;b.onclick=()=>start(name,Number(document.getElementById('casualPlayers').value));const p=document.createElement('p');p.textContent=rules;item.append(b,p);list.append(item)});return;
+   catalogue.forEach(([name,rules])=>{const item=document.createElement('div');item.className='info';const b=document.createElement('button');b.textContent=name;b.onclick=()=>start(name,document.getElementById('casualPlayers').value==='bot'?'bot':Number(document.getElementById('casualPlayers').value));const p=document.createElement('p');p.textContent=rules;item.append(b,p);list.append(item)});return;
   }
   const p=state.players[state.turn],rules=catalogue.find(([n])=>n===state.name)[1];
   host().innerHTML=warning+'<h2>'+state.name+'</h2><p>'+rules+'</p><div class="info">'+state.players.map((p,i)=>'<p><strong>'+p.name+'</strong> '+p.score+(state.name==='Around the Board'?' · Target '+Math.min(20,p.target):'')+(state.name==='Cricket'?'<br>'+[20,19,18,17,16,15,'Bull'].map((n,j)=>n+': '+p.marks[j]+'/3').join(' · '):'')+'</p>').join('')+'</div><p class="big" style="font-size:26px">'+(state.finished?state.message:p.name+' · Dart '+(state.dart+1)+'/3')+'</p>'+(!state.finished?'<p>'+(state.name==='Around the Board'?'Aim at '+p.target:['Baseball','Shanghai','Golf'].includes(state.name)?'Target '+state.round:'Visit '+state.round)+'</p><div id="casualDarts"></div>':'')+'<div class="row"><button id="casualUndo">Undo dart</button><button id="casualRestart">Restart</button><button id="casualMenu">Choose game</button></div>';
@@ -7970,6 +8040,10 @@ window.casualGames=(()=>{
   document.getElementById('casualRestart').onclick=()=>document.getElementById('casualRestartDialog').showModal();
   document.getElementById('casualMenu').onclick=menu;
   const grid=document.getElementById('casualDarts');
+  if(state.bot){
+   const info=document.createElement('p');info.className='info';info.textContent='Bot matched to your current coaching profile for this match.'+(state.botVisit?.length?' Last bot visit: '+state.botVisit.join(' · '):'');host().append(info);
+   if(state.turn===1&&!state.finished){grid.innerHTML='';const button=document.createElement('button');button.textContent='Play bot turn';button.onclick=()=>{playBot();persist();render()};grid.append(button);return}
+  }
   if(grid){
    grid.className='casualDartGrid';
    const add=(label,n,r)=>{const b=document.createElement('button');b.textContent=label;b.onclick=()=>dart(n,r);grid.append(b)};
@@ -7978,7 +8052,7 @@ window.casualGames=(()=>{
   }
  }
  load();
- return {render,start,dart,back,clear,restart(){if(state)start(state.name,state.players.length)},inspect:()=>JSON.parse(JSON.stringify({state,undo}))};
+ return {render,start,dart,back,clear,restart(){if(state)start(state.name,state.bot?'bot':state.players.length)},inspect:()=>JSON.parse(JSON.stringify({state,undo}))};
 })();
 casualGames.render();
 </script></body></html>
