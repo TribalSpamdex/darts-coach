@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V6.1 RC16</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#020605"><title>Darts Coach V6.2</title>
 <style>
 :root{--bg:var(--dc-t0,#020605);--panel:var(--dc-t1,#0d1814);--panel2:var(--dc-t2,#14231d);--line:var(--dc-t3,#29463b);--green:var(--dc-t4,#7fffb8);--text:#f3fbf7;--muted:var(--dc-t5,#9fb7af);--red:#db7777}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:15px Arial,sans-serif}button,input,textarea{font:inherit}button{border:0;border-radius:10px;background:var(--green);color:var(--dc-t6,#102019);padding:13px;font-weight:700;cursor:pointer}button.secondary{background:#3b4e60;color:#fff}button.danger{background:var(--red);color:white}button:disabled{opacity:.4}header{padding:19px 12px;text-align:center;background:#192633}header h1{margin:0;font-size:26px;color:var(--green)}header small{display:block;margin-top:6px;color:var(--muted)}nav{display:flex;position:sticky;top:0;z-index:10;background:#192633;border-top:1px solid #344656}nav button{flex:1;border-radius:0;background:transparent;color:#bbcbd7;padding:13px 3px;font-size:13px}nav button.selected{color:var(--green);border-bottom:2px solid var(--green)}section{padding-bottom:25px}.card{background:var(--panel);margin:12px;border-radius:16px;padding:16px}h2{margin:0 0 14px;font-size:20px}h3{color:var(--green);font-size:16px}p{line-height:1.5}.muted{color:var(--muted)}.hidden{display:none!important}.primary{width:100%;padding:18px;font-size:17px}.row{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}.row button{flex:1;min-width:75px}.big{font-size:43px;color:var(--green);font-weight:800;text-align:center;margin:12px 0}.hero{text-align:center;padding:25px 12px}.heroIcon{font-size:43px;margin-bottom:10px}.hero h2{font-size:27px;margin-bottom:9px}.hero p{color:var(--muted)}.info{background:var(--panel2);padding:12px;border-radius:9px;margin:10px 0;line-height:1.5}.progress{height:7px;background:#35495a;border-radius:20px;overflow:hidden}.progress div{height:100%;background:var(--green);width:0}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.metric{padding:12px 5px;text-align:center;background:var(--panel2);border-radius:9px}.metric strong{display:block;font-size:24px;color:var(--green)}.metric small{display:block;font-size:11px;color:var(--muted);margin-top:6px}.dayRow{display:flex;gap:5px;flex-wrap:wrap}.dayRow label{flex:1;min-width:70px;background:var(--panel2);border-radius:8px;padding:12px 4px;text-align:center}input[type=checkbox]{accent-color:var(--green)}input[type=number]{padding:13px;border:0;border-radius:9px;max-width:100%;background:white;color:#111;font-size:18px}.entry{padding:13px 0;border-bottom:1px solid var(--line)}.tag{display:inline-block;padding:6px 9px;background:#364a5b;border-radius:8px;font-size:12px;color:#d9e7ee}.rule{line-height:1.4;color:#d8e7ed;white-space:pre-line}.targetGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:7px 0}.targetGrid div{text-align:center;background:var(--panel2);border-radius:8px;padding:7px 2px;font-size:11px}.targetGrid div.active{outline:2px solid var(--green)}.targetGrid strong{display:block;font-size:16px;color:var(--green);margin-top:3px}.rulePanel{background:var(--panel2);padding:11px;border-radius:10px;margin:10px 0}.center{text-align:center}.statLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #3d5060;padding:10px 0}.statLine span:last-child{text-align:right}button.linklike{background:transparent;color:var(--muted);padding:10px}.resultCard{padding:17px;background:var(--dc-t7,#294639);border-radius:13px;text-align:center}.resultCard strong{color:var(--green);font-size:20px}input[type=file]{max-width:100%;margin:12px 0}.backupText{display:block;width:100%;min-height:160px;max-height:380px;resize:vertical;overflow:auto;margin:12px 0;padding:12px;background:#0e1822;color:#e9f5f8;border:1px solid var(--line);border-radius:10px;font-size:12px;font-family:monospace;line-height:1.45}.backupStatus{padding:11px;border-radius:9px;background:var(--panel2);color:var(--muted);margin:10px 0;line-height:1.5;font-size:13px}.backupStatus.ok{color:var(--green)}.backupStatus.error{color:#ffabab}.backupActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.backupHelp{color:var(--muted);font-size:12px;line-height:1.6}.backupDivider{border:0;border-top:1px solid var(--line);margin:22px 0}
@@ -805,7 +805,7 @@ nav{background-color:#050706!important;backdrop-filter:none!important;-webkit-ba
 /* V5.90: fully opaque navigation backing, including glossy gradient stops. */
 html body nav[aria-label="Main navigation"]:not(#dc590a):not(#dc590b){background:linear-gradient(146deg,#171c19 0%,#090c0a 36%,#000 36.3%,#050505 68%,#101010 100%) #050706!important;opacity:1!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;isolation:isolate;mix-blend-mode:normal!important}
 html[data-appearance=light] body nav[aria-label="Main navigation"]:not(#dc590a):not(#dc590b){background:linear-gradient(145deg,#fff 0%,#e2e7e5 36%,#fff 36.3%,#f9faf9 70%,#dce4df) #f8faf9!important}
-</style><style>#dc22Danger.near:not(.last){background:linear-gradient(125deg,#302a20,#171714 55%,#26241e)!important;border-color:#b6a786!important}#dc22Danger.near:not(.last) .dc36PressureCount strong,#dc22Danger.near:not(.last) .dc36PressureCopy em{color:#e5d6b8!important}#dc22Danger.near:not(.last) .dc36PressureTrack i{background:linear-gradient(90deg,#aa9875,#eee0c2)!important}</style><style>#exerciseIntro #coach62PlanButton{width:auto;min-height:34px;font-size:13px;padding:6px 10px}#coach62PlanDialog #coach62PlanClose{width:34px;min-height:34px;flex:0 0 34px;padding:0;font-size:24px}#coach62Week .statLine{gap:10px;flex-wrap:wrap}#coach62Week .entry{margin-top:10px}</style><style>.casualDartGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.casualDartGrid button{min-height:44px}#casual select{padding:12px;border-radius:8px}#navCasual{min-width:0}nav button{min-width:0}</style></head><body><dialog id="coach62PlanDialog" aria-labelledby="coach62PlanTitle"><div class="row" style="align-items:center;justify-content:space-between"><h2 id="coach62PlanTitle" tabindex="-1">Your session plan</h2><button id="coach62PlanClose" type="button" aria-label="Close session plan" onclick="document.getElementById('coach62PlanDialog').close()">×</button></div><p id="coach62PlanFocus"></p><div id="coach62PlanItems"></div><button type="button" onclick="document.getElementById('coach62PlanDialog').close()">Back to practice</button></dialog><dialog id="dc88Dialog" aria-labelledby="dc88RulesTitle"><h2 id="dc88RulesTitle">Game rules</h2><div id="dc88RulesText"></div><button type="button" onclick="document.getElementById('dc88Dialog').close()">Back to game</button></dialog>
+</style><style>#dc22Danger.near:not(.last){background:linear-gradient(125deg,#302a20,#171714 55%,#26241e)!important;border-color:#b6a786!important}#dc22Danger.near:not(.last) .dc36PressureCount strong,#dc22Danger.near:not(.last) .dc36PressureCopy em{color:#e5d6b8!important}#dc22Danger.near:not(.last) .dc36PressureTrack i{background:linear-gradient(90deg,#aa9875,#eee0c2)!important}</style><style>#exerciseIntro #coach62PlanButton{width:auto;min-height:34px;font-size:13px;padding:6px 10px}#coach62PlanDialog #coach62PlanClose{width:34px;min-height:34px;flex:0 0 34px;padding:0;font-size:24px}#coach62Week .statLine{gap:10px;flex-wrap:wrap}#coach62Week .entry{margin-top:10px}</style><style>.casualDartGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.casualDartGrid button{min-height:44px}#casual select{padding:12px;border-radius:8px}#navCasual{min-width:0}nav button{min-width:0}</style><style id="dc62VisitPolish">.dc62RoundTally{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:center;gap:4px;max-height:112px;overflow-y:auto;padding:3px 0;font-size:12px;flex:0 0 auto}.dc62RoundTally span{white-space:nowrap;border:1px solid var(--line);border-radius:7px;padding:4px 7px;background:var(--panel2)}.dc62RoundTally strong{color:var(--green)}#gameControls:has(.dc62RoundTally) button{min-height:64px;touch-action:manipulation}#gameTarget{overflow-wrap:anywhere}@media(max-height:740px){.dc62RoundTally{max-height:84px}#gameControls:has(.dc62RoundTally) button{min-height:52px}}</style></head><body><dialog id="coach62PlanDialog" aria-labelledby="coach62PlanTitle"><div class="row" style="align-items:center;justify-content:space-between"><h2 id="coach62PlanTitle" tabindex="-1">Your session plan</h2><button id="coach62PlanClose" type="button" aria-label="Close session plan" onclick="document.getElementById('coach62PlanDialog').close()">×</button></div><p id="coach62PlanFocus"></p><div id="coach62PlanItems"></div><button type="button" onclick="document.getElementById('coach62PlanDialog').close()">Back to practice</button></dialog><dialog id="dc88Dialog" aria-labelledby="dc88RulesTitle"><h2 id="dc88RulesTitle">Game rules</h2><div id="dc88RulesText"></div><button type="button" onclick="document.getElementById('dc88Dialog').close()">Back to game</button></dialog>
 <header><div class="brandMark" aria-hidden="true"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none"><circle cx="15" cy="17" r="12" stroke="currentColor" stroke-width="1.4" opacity=".55"/><circle cx="15" cy="17" r="7" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="17" r="2.4" fill="currentColor"/><path d="M15 17L28 4M23 4h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="brandCopy"><h1>DARTS COACH</h1><small>PERSONALISED TRAINING</small></div><div class="headerActions">
 <button id="headerRhythm" type="button" aria-label="Open Rhythm Coach" title="Rhythm Coach"><svg class="headerLineIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8.4 5.3h7.2l4.1 15H4.3l4.1-15Z"/><path d="M12 5.3V2.7M11.7 12.8l6.8-8.9"/><circle cx="11.7" cy="12.8" r="1"/></svg></button>
 <button id="headerInfo" type="button" aria-label="About Darts Coach" title="About Darts Coach" onclick="openWelcome()"><svg class="headerLineIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 10.5v5.5"/><circle cx="12" cy="7.5" r=".85" fill="currentColor" stroke="none"/></svg></button>
@@ -973,7 +973,7 @@ html[data-appearance=light] body nav[aria-label="Main navigation"]:not(#dc590a):
 <p>Clear all test sessions, games, statistics, assessments, assessment history and coaching progress. Your training days and throwing hand stay saved. After resetting, choose the full assessment or Quick Start to begin training.</p>
 <p><strong>Permanent action.</strong> Make a JSON backup first. Reset asks for one confirmation.</p>
 <button class="danger" onclick="resetTrainingStatistics()">Reset Everything</button><div id="resetMessage" aria-live="polite">No statistics have been reset.</div>
-</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V6.1 RC16</p></section>
+</div><p class="appVersionInfo" style="text-align:center;margin:20px 14px">Darts Coach · V6.2</p></section>
 <div id="checkoutDartPicker" class="hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutPickerTitle"><div class="checkoutPickerCard"><h2 id="checkoutPickerTitle">How many darts to check out?</h2><p id="checkoutPickerSubtitle">Choose the number of darts you actually threw. Your final dart must have hit a double or bullseye.</p><div id="checkoutChoices" class="checkoutChoices"><button type="button" onclick="chooseCheckoutDarts(1)">1</button><button type="button" onclick="chooseCheckoutDarts(2)">2</button><button type="button" onclick="chooseCheckoutDarts(3)">3</button></div><button type="button" class="checkoutConfirm primary" id="checkoutConfirmBtn" onclick="confirmCheckoutDarts()" disabled>Confirm Checkout</button><button type="button" class="checkoutSecondary" id="checkoutBustBtn" onclick="checkoutDidNotFinish()">Bust / Didn't finish on a double</button><button type="button" class="checkoutSecondary" onclick="closeCheckoutDartPicker()">Cancel · Go back</button><p class="checkoutNote" id="checkoutPickerNote">Select 1, 2 or 3 darts to confirm the finish.</p></div></div><dialog id="dcRC2Reset" aria-labelledby="dcRC2ResetTitle" style="color:var(--text);background:#080c0a;border:1px solid #29463b;border-radius:18px;padding:24px;max-width:calc(100% - 32px);width:400px">
 <h2 id="dcRC2ResetTitle">Reset all data?</h2><p>Are you sure you want to delete all your training data, statistics and progress?</p><p>This action cannot be undone.</p><div class="row"><button id="dcRC2ResetNo" type="button" onclick="document.getElementById('dcRC2Reset').close()">No</button><button class="danger" type="button" onclick="dcRC2ConfirmReset()">Yes, delete</button></div></dialog>
 <script>
@@ -4606,12 +4606,15 @@ function dcVisitMarkup(spec){
  if(spec.kind==='duel')for(const t of g.dcVisitLog||[])add(t.target,t.hit);
  if(spec.kind==='bull'){counts['50']=[g.inner||0,g.thrown||0];counts['25']=[g.outer||0,g.thrown||0];}
  else for(const t of [...(g.route||[]).map(t=>t.ring+t.target),...spec.targets])counts[t]??=[0,0];
- const tally=Object.entries(counts).map(([t,v])=>'<span style="white-space:nowrap">'+t+' <strong>'+v[0]+'/'+v[1]+'</strong></span>').join(' · ');
- return '<div style="grid-column:1/-1;text-align:center;font-size:14px">Round hits: '+tally+'</div>'+choices.map(v=>'<button type="button" onclick="dcVisitRecord(\''+v+'\')">'+(v==='hit'?'Hit':v==='miss'?'Miss':v==='50'?'Bullseye 50':'Outer Bull 25')+'</button>').join('');
+ const tally=Object.entries(counts).map(([t,v])=>'<span>'+t+' <strong>'+v[0]+'/'+v[1]+'</strong></span>').join('');
+ return '<div class="dc62RoundTally" aria-label="Round target accuracy">'+tally+'</div>'+choices.map(v=>'<button type="button" onclick="dcVisitRecord(\''+v+'\')">'+(v==='hit'?'Hit':v==='miss'?'Miss':v==='50'?'Bullseye 50':'Outer Bull 25')+'</button>').join('');
 }
 function dcVisitRecord(v){
  const g=activeGame,s=session(),spec=g&&dcVisitSpec(g);
  if(!spec?.targets.length||!s||s.pausedAt||s.phase!=='playing')return;
+ if(!(spec.kind==='bull'?['50','25','miss']:['hit','miss']).includes(v))return;
+ const item=currentExercise();
+ if(item?.mode==='timed'&&item.name!=='Big Singles'&&exerciseElapsed()>=item.seconds){completeExercise('timed');return}
  if(spec.kind==='big')recordBig(v==='hit');
  else if(spec.kind==='duel')new40Dart(v);
  else if(spec.kind==='bull'&&g.name==='Bull Accuracy')bullDart(v==='miss'?0:Number(v));
@@ -7864,7 +7867,7 @@ performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);setIn
 
 </script><div id="welcomeOverlay" class="welcomeOverlay hidden" role="dialog" aria-modal="true" aria-labelledby="welcomeHeading">
  <div class="welcomePanel dc36InfoPanel">
-  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V6.1 RC16</span></div>
+  <div class="dc36InfoKicker"><span class="dc36InfoGem">✦</span> BUILT FOR BETTER DARTS <span class="dc36InfoVersion">V6.2</span></div>
   <h2 id="welcomeHeading">Your game.<br><span>Your next level.</span></h2>
   <p class="dc36InfoLead">Darts Coach combines structured practice, measurable results and an adaptive training planner. It gives you a purposeful session, then learns cautiously from what you actually complete.</p>
   <div class="dc36InfoStats"><div><strong>41</strong><small>Training games</small></div><div><strong>7</strong><small>Hidden skill levels</small></div><div><strong>60</strong><small>Minute core session</small></div></div>
@@ -7915,28 +7918,28 @@ performCoachReview();checkCompletedBlocks();setInterval(trainingTimer,500);setIn
    Array.from(beats.children).forEach((e,i)=>{if(e.classList.contains('active')!==(i===beat))e.classList.toggle('active',i===beat);});
    dc78Text("rhythmToggle",state.running?'Pause':state.elapsed>0&&state.elapsed<duration?'Resume':'Start 3-minute practice');
    get('headerRhythm').classList.toggle('rhythmRunning',state.running);
-   if(state.running) status('PLAYING · '+state.bpm+' BPM');
+   if(state.running) status(state.sound&&state.audio?.state!=='running'?'VISUAL RHYTHM · Pause and resume to retry audio':'PLAYING · '+state.bpm+' BPM');
  }
  function audioInit(){
    if(!state.sound)return;
    try{const C=window.AudioContext||window.webkitAudioContext;if(!C){status('Visual rhythm only · Audio unavailable');return}if(!state.audio||state.audio.state==="closed")state.audio=new C();const p=state.audio.resume();if(p&&typeof p.catch==='function')p.catch(()=>{});}catch(e){status('Visual rhythm only · Check iPhone sound settings')}
  }
  function beep(accent){
-   if(!state.sound)return;
+   if(!state.sound)return true;
    const c=state.audio;
-   if(!c||c.state!=='running')return;
+   if(!c||c.state!=='running')return false;
    try{const o=c.createOscillator(),g=c.createGain(),t=c.currentTime;
      o.type='sine';o.frequency.value=accent?990:700;
      g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.22,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+.11);
      o.onended=()=>{o.disconnect();g.disconnect()};
-     o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+.12);
-   }catch(_){}
+     o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+.12);return true;
+   }catch(_){return false}
  }
  function tick(){
    if(!state.running)return;
    const ms=elapsed();if(ms>=duration){stop(true);return}
    const beat=Math.floor(ms/(60000/state.bpm));
-   if(beat!==state.lastBeat){state.lastBeat=beat;if(!document.hidden)beep(beat%state.count===0)}
+   if(beat!==state.lastBeat&&!document.hidden){if(beep(beat%state.count===0))state.lastBeat=beat}
    if(!get('rhythmOverlay').classList.contains('hidden'))render();
  }
  function startPause(){
@@ -7987,6 +7990,7 @@ window.casualGames=(()=>{
  ['Baseball','Nine innings, aiming at the inning number. Single = 1 run, double = 2, treble = 3. Three darts per inning.'],
  ['Shanghai','Seven rounds on numbers 1–7. Score only on the round number. A single, double and treble in one visit wins immediately.'],
  ['Count Up','Eight visits each. Every dart scores. Highest total wins.'],
+ ['Halve-It','Start on 40 points. Seven visits: 20, 16, any double, 14, any treble, 18, bull. Score only qualifying darts. If all three miss, halve your score (round down). Highest total wins.'],
  ['Golf','Nine holes on numbers 1–9. Treble = 1 stroke, double = 2, single = 3, miss = 5. Best dart of three counts. Lowest total wins.']
  ];
  let state=null,undo=[],notice='',botPlaying=false;
@@ -8020,7 +8024,7 @@ window.casualGames=(()=>{
   const bot=players==='bot';if(bot)players=2;
   if(session()){notice='Finish your training session before starting a casual game.';render();return}
   if(!catalogue.some(([n])=>n===name)||![1,2].includes(players))return;
-  state={name,players:Array.from({length:players},(_,i)=>({name:'Player '+(i+1),score:/^\d+$/.test(name)?Number(name):0,target:1,marks:Array(7).fill(0)})),
+  state={name,players:Array.from({length:players},(_,i)=>({name:'Player '+(i+1),score:/^\d+$/.test(name)?Number(name):name==='Halve-It'?40:0,target:1,marks:Array(7).fill(0)})),
    turn:0,dart:0,round:1,visitStart:Number(name)||0,rings:[],hole:5,finished:false,message:''};
   if(bot){state.players[1].name='Coach Bot';state.bot=botProfile();state.seed=(Math.random()*4294967296)>>>0;state.botVisit=[]}
   undo=[];persist();render();
@@ -8055,7 +8059,7 @@ window.casualGames=(()=>{
      if(match)return [Number(match[2]),{S:1,D:2,T:3}[match[1]]];
     }
    }
-   if(left<=60)return [left%2?1:Math.min(20,left-40),1];
+   if(left<=60)return left%2?[1,1]:left<=40?[left/2,2]:[Math.min(20,left-40),1];
    return [20,3];
   }
   if(state.name==='Cricket'){
@@ -8066,6 +8070,7 @@ window.casualGames=(()=>{
   }
   if(state.name==='Around the Board')return [player.target,1];
   if(state.name==='Count Up')return [20,3];
+  if(state.name==='Halve-It')return [[20,3],[16,3],[20,2],[14,3],[20,3],[18,3],[25,2]][state.round-1];
   if(state.name==='Shanghai')return [state.round,[1,2,3].find(r=>!state.rings.includes(r))||3];
   return [state.round,3];
  }
@@ -8098,7 +8103,7 @@ window.casualGames=(()=>{
   state.dart=0;state.rings=[];state.hole=5;state.turn++;
   if(state.turn>=state.players.length){state.turn=0;state.round++}
   state.visitStart=state.players[state.turn].score;
-  const limit={Baseball:9,Shanghai:7,'Count Up':8,Golf:9}[state.name];
+  const limit={Baseball:9,Shanghai:7,'Count Up':8,Golf:9,'Halve-It':7}[state.name];
   if(limit&&state.round>limit){
    const scores=state.players.map(p=>p.score),best=state.name==='Golf'?Math.min(...scores):Math.max(...scores);
    const winners=state.players.filter(p=>p.score===best);
@@ -8124,6 +8129,10 @@ window.casualGames=(()=>{
    }
   }else if(state.name==='Around the Board'){
    if(number===p.target){p.target++;if(p.target>20)finish(p.name+' wins!')}
+  }else if(state.name==='Halve-It'){
+   const target=[20,16,'D',14,'T',18,25][state.round-1];
+   if(number!==0&&(target==='D'?ring===2&&number<=20:target==='T'?ring===3:number===target)){p.score+=score;state.rings.push(ring)}
+   if(state.dart===2&&!state.rings.length)p.score=Math.floor(p.score/2);
   }else if(state.name==='Count Up')p.score+=score;
   else if(state.name==='Golf'){
    if(number===state.round)state.hole=Math.min(state.hole,ring===3?1:ring===2?2:3);
@@ -8147,7 +8156,7 @@ window.casualGames=(()=>{
    catalogue.forEach(([name,rules])=>{const item=document.createElement('div');item.className='info';const b=document.createElement('button');b.textContent=name;b.onclick=()=>start(name,document.getElementById('casualPlayers').value==='bot'?'bot':Number(document.getElementById('casualPlayers').value));const p=document.createElement('p');p.textContent=rules;item.append(b,p);list.append(item)});return;
   }
   const p=state.players[state.turn],rules=catalogue.find(([n])=>n===state.name)[1];
-  host().innerHTML=warning+'<h2>'+state.name+'</h2><p>'+rules+'</p><div class="info">'+state.players.map((p,i)=>'<p><strong>'+p.name+'</strong> '+p.score+(state.name==='Around the Board'?' · Target '+Math.min(20,p.target):'')+(state.name==='Cricket'?'<br>'+[20,19,18,17,16,15,'Bull'].map((n,j)=>n+': '+p.marks[j]+'/3').join(' · '):'')+'</p>').join('')+'</div><p class="big" style="font-size:26px">'+(state.finished?state.message:p.name+' · Dart '+(state.dart+1)+'/3')+'</p>'+(!state.finished?'<p>'+(state.name==='Around the Board'?'Aim at '+p.target:['Baseball','Shanghai','Golf'].includes(state.name)?'Target '+state.round:'Visit '+state.round)+'</p><div id="casualDarts"></div>':'')+'<div class="row"><button id="casualUndo">Undo dart</button><button id="casualRestart">Restart</button><button id="casualMenu">Choose game</button></div>';
+  host().innerHTML=warning+'<h2>'+state.name+'</h2><p>'+rules+'</p><div class="info">'+state.players.map((p,i)=>'<p><strong>'+p.name+'</strong> '+p.score+(state.name==='Around the Board'?' · Target '+Math.min(20,p.target):'')+(state.name==='Cricket'?'<br>'+[20,19,18,17,16,15,'Bull'].map((n,j)=>n+': '+p.marks[j]+'/3').join(' · '):'')+'</p>').join('')+'</div><p class="big" style="font-size:26px">'+(state.finished?state.message:p.name+' · Dart '+(state.dart+1)+'/3')+'</p>'+(!state.finished?'<p>'+(state.name==='Around the Board'?'Aim at '+p.target:state.name==='Halve-It'?'Aim at '+[20,16,'any double',14,'any treble',18,'bull'][state.round-1]:['Baseball','Shanghai','Golf'].includes(state.name)?'Target '+state.round:'Visit '+state.round)+'</p><div id="casualDarts"></div>':'')+'<div class="row"><button id="casualUndo">Undo dart</button><button id="casualRestart">Restart</button><button id="casualMenu">Choose game</button></div>';
   document.getElementById('casualUndo').disabled=!undo.length;document.getElementById('casualUndo').onclick=back;
   document.getElementById('casualRestart').onclick=()=>document.getElementById('casualRestartDialog').showModal();
   document.getElementById('casualMenu').onclick=menu;
